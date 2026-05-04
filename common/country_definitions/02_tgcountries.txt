@@ -315,6 +315,83 @@ YOK = {
 	cultures = { hokan }
 }
 
+NPI = { #North Paiute
+	color = { 0 174 239 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	capital = STATE_CALIFORNIA	
+	cultures = { paiute }
+}
+
+SPI = { #South Paiute
+	color = { 139 69 19 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	capital = STATE_CALIFORNIA	
+	cultures = { paiute }
+}
+
+SHO = {
+	color = { 156 102 0 }
+	
+	country_type = decentralized
+	
+	tier = principality
+	
+	capital = STATE_CALIFORNIA	
+	cultures = { paiute }
+}
+
+IOW = {
+    color = { 120 170 200 }
+
+	country_type = decentralized
+	
+	tier = principality
+
+	capital = STATE_MISSOURI	
+	cultures = { siouan }
+}
+
+SRO = {
+    color = { 210 140 80 }
+
+	country_type = decentralized
+	
+	tier = principality
+
+	capital = STATE_CALIFORNIA	
+	cultures = { hokan }
+}
+
+CAD = { # Caddo
+    color = { 90 180 90 }
+
+	country_type = decentralized
+
+	tier = principality
+
+	capital = STATE_ARKANSAS
+	cultures = { caddoan }
+}
+
+OSA = { # Osage
+    color = { 200 60 60 }
+
+	country_type = decentralized
+
+	tier = principality
+
+	capital = STATE_ARKANSAS
+	cultures = { siouan }
+}
+
 # Carribean
 
 HAI = {
