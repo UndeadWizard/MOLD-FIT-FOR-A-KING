@@ -5,5 +5,6 @@
  gov_dominion_american_parliamentary_desc:2 "George Washington's delegation and the resulting agreement led to the formation of a new [concept_government_type]. Under a Governor-General who represents Britian, a great deal of autonomy was given to the American colonies.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
  gov_governor_american_presidential:0 "American Governorship"
  gov_governor_american_presidential_desc:2 "Under the American Dominion, some states were given a greater degree of autonomy.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
- gov_princely_state_american:0 "American Princely State"
+ gov_princely_state_american:0 "Covenant Prince"
+ gov_princely_state_american_desc:0 "A form of government based around a British-confirmed representative that acts as the supreme power over the traditional Iroquois Council.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
  RULER_TITLE_GRAND_HOYANEH:0 "Grand Hoyaneh"

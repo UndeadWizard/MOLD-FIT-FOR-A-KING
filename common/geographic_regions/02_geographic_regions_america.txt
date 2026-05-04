@@ -226,5 +226,6 @@ geographic_region_greater_canada = {
 		STATE_WASHINGTON
 		STATE_IDAHO
 		STATE_OREGON
+		STATE_COLUMBIA
 	}
 }

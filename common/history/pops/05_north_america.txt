@@ -942,6 +942,20 @@
 				size = 28200
 			}
 		}
+		region_state:CTF = {
+			create_pop = {
+				culture = cree
+				size = 18200
+			}
+			create_pop = {
+				culture = siouan
+				size = 2000
+			}
+			create_pop = {
+				culture = algonquian
+				size = 13902
+			}
+		}
 	}
 	s:STATE_NEW_BRUNSWICK = {
 		# New Brunswick: 119457 in 1834, not counting First Nations
