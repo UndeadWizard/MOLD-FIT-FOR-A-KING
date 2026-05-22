@@ -392,6 +392,38 @@ OSA = { # Osage
 	cultures = { siouan }
 }
 
+YUM = { # Yuman
+    color = { 184 134 11 }
+
+	country_type = decentralized
+	
+	tier = principality
+
+	capital = STATE_UTAH	
+	cultures = { hokan }
+}
+
+WIT = { # Wichita
+    color = { 160 82 45 }
+
+	country_type = decentralized
+
+	tier = principality
+
+	capital = STATE_OKLAHOMA
+	cultures = { caddoan }
+}
+
+KIO = { # Kiowa
+	color = { 70 130 180 }
+
+	country_type = decentralized
+
+	tier = principality
+
+	capital = STATE_OKLAHOMA
+	cultures = { comanche }
+}
 # Carribean
 
 HAI = {
