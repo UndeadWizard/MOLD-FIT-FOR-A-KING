@@ -1,4 +1,4 @@
-﻿je_texas_lou = {
+﻿je_cajun_rebellion = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 
 	group = je_group_historical_content
