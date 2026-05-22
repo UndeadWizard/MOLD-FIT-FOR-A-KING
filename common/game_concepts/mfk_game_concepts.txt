@@ -1,0 +1,3 @@
+﻿concept_great_insult = {
+	texture = "gfx/interface/icons/generic_icons/legitimacy.dds"
+}
