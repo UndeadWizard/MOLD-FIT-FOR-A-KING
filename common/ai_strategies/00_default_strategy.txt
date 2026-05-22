@@ -1059,6 +1059,19 @@ ai_strategy_default = {
 			add = 0.25
 		}
 
+		# Louisiana should want Texas
+		if = {
+			limit = {
+				has_journal_entry = je_cajun_rebellion
+				scope:enemy_country = {
+					OR = {
+						has_state_in_state_region = STATE_TEXAS
+					}
+				}
+			}
+			add = 0.25
+		}
+
 		# USA should Manifest a lot of Destiny
 		if = {
 			limit = {

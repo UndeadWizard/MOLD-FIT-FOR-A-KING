@@ -51,11 +51,63 @@
 					building={
 						type="building_financial_district"
 						country="c:LOU"
-						levels=6
+						levels=3
 						region="STATE_LOUISIANA"
 					}
 				}
 				reserves=1
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:LOU"
+						levels=2
+						region="STATE_LOUISIANA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_sheep_farms"  "pm_standard_fences" "pm_unrefrigerated" "pm_butchering_tools" }
+			}
+			create_building={
+				building="building_shipyard"
+				add_ownership={
+					building={
+						type="building_shipyard"
+						country="c:LOU"
+						levels=1
+						region="STATE_LOUISIANA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_shipbuilding"  }
+			}
+			create_building={
+				building="building_coal_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:LOU"
+						levels=1
+						region="STATE_LOUISIANA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts"  }
+			}
+			create_building={
+				building="building_tooling_workshop"
+				add_ownership={
+					building={
+						type="building_tooling_workshop"
+						country="c:LOU"
+						levels=1
+						region="STATE_LOUISIANA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_crude_tools" "pm_automation_disabled"  }
 			}
 			create_building={
 				building="building_logging_camp"
@@ -63,7 +115,7 @@
 					building={
 						type="building_financial_district"
 						country="c:LOU"
-						levels=1
+						levels=2
 						region="STATE_LOUISIANA"
 					}
 				}

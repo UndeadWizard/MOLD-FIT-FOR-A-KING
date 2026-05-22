@@ -1,0 +1,8 @@
+﻿tea = {
+	texture = "gfx/interface/icons/goods_icons/vat_moss.dds"
+	cost = 1
+	category = industrial
+
+	prestige_factor = 1
+	traded_quantity = 1
+}
