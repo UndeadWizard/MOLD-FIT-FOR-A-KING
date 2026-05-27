@@ -1,3 +1,7 @@
 ﻿concept_great_insult = {
 	texture = "gfx/interface/icons/generic_icons/legitimacy.dds"
 }
+
+concept_grand_derangement = {
+	texture = "gfx/interface/icons/generic_icons/legitimacy.dds"
+}
