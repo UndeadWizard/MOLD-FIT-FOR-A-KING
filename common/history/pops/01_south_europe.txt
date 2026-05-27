@@ -259,7 +259,7 @@
 	s:STATE_BASQUE_COUNTRY = {
 		# 287.530 in Basque Country, 230.925 in Navarre
 		# Spanish/Basque split based on adjusted estimates by Ladislao de Velasco 1866-1868
-		region_state:SPC = {
+		region_state:SPA = {
 			create_pop = {
 				culture = spanish
 				size = 229003
@@ -274,7 +274,7 @@
 		region_state:SPA = {
 			create_pop = {
 				culture = spanish
-				size = 389486
+				size = 429486
 			}
 			create_pop = {
 				culture = catalan
@@ -286,30 +286,16 @@
 				size = 214874
 			}
 		}
-		# Maestrazgo + about another 50k moved here for gameplay reasons
-		region_state:SPC = {
-			create_pop = {
-				culture = spanish
-				size = 100123
-			}
-		}
 	}
 	s:STATE_CATALONIA = {
 		region_state:SPA = {
 			create_pop = {
 				culture = catalan
-				size = 926100
+				size = 956100
 			}
 			create_pop = {
 				culture = spanish
 				size = 50010
-			}
-		}
-		# Carlist controlled territories + 50k moved here for gameplay reasons
-		region_state:SPC = {
-			create_pop = {
-				culture = catalan
-				size = 74512
 			}
 		}
 	}

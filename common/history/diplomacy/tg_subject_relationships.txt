@@ -137,9 +137,14 @@
 			type = personal_union
 		}
 	}
-	c:FRA ?= {
+c:FRA ?= {
 		create_diplomatic_pact = {
 			country = c:HAI
+			type = colony
+		}
+		# Colony of Ceylon
+		create_diplomatic_pact = {
+			country = c:BCE
 			type = colony
 		}
 	}
@@ -274,11 +279,6 @@
 		# Colony of Tasmania, historically called Van Dieman's Land until 1856
 		create_diplomatic_pact = {
 			country = c:TAS
-			type = colony
-		}
-		# Colony of Ceylon
-		create_diplomatic_pact = {
-			country = c:BCE
 			type = colony
 		}
 		# United Tribes of New Zealand
