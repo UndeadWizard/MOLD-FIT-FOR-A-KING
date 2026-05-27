@@ -518,6 +518,8 @@ owned_central_asia_region_states = {
 }
 
 owned_great_plains_region_states = {
+	owns_entire_state_region = STATE_MONTANA
+	owns_entire_state_region = STATE_SOUTH_DAKOTA
 	owns_entire_state_region = STATE_NEBRASKA
 	owns_entire_state_region = STATE_WYOMING
 	owns_entire_state_region = STATE_COLORADO
@@ -526,8 +528,10 @@ owned_great_plains_region_states = {
 }
 
 owned_pacific_coast_region_states = {
+	owns_entire_state_region = STATE_IDAHO
 	owns_entire_state_region = STATE_OREGON
 	owns_entire_state_region = STATE_UTAH
+	owns_entire_state_region = STATE_ARIZONA
 	owns_entire_state_region = STATE_CALIFORNIA
 	owns_entire_state_region = STATE_BAJA_CALIFORNIA
 }
@@ -1862,6 +1866,7 @@ is_princely_state = {
 			NOR = {
 				c:BHT ?= this
 				c:BIC ?= this
+				c:MLD ?= this
 				has_variable = indian_federation_member
 			}
 			OR = {
