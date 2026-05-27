@@ -2088,7 +2088,7 @@ MEX = {
 MTC = {
 	color = { 221  186  163 }
 
-	country_type = unrecognized
+	country_type = recognized
 
 	tier = principality
 
@@ -2151,7 +2151,7 @@ QUE = {
 
 	tier = principality
 
-	cultures = { franco_canadian }
+	cultures = { anglo_canadian }
 	capital = STATE_QUEBEC
 
 	is_named_from_capital = yes
@@ -4715,7 +4715,7 @@ BCE = { # British Ceylon
 	tier = principality
 
 	capital = STATE_CEYLON
-	cultures = { british }
+	cultures = { french }
 }
 
 MLD = { # Maldives

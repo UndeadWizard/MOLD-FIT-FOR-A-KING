@@ -1,5 +1,0 @@
-﻿COUNTRIES = {
-	c:YOK ?= {
-		activate_law = law_type:law_slavery_banned
-	}
-}
