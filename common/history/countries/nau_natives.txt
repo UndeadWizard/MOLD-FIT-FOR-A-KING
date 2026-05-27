@@ -1,0 +1,208 @@
+﻿COUNTRIES = {
+	c:IRO ?= {
+		effect_starting_technology_tier_3_tech = yes
+		
+		set_market_capital = STATE_SIX_NATIONS	
+		
+		effect_starting_politics_liberal = yes
+		activate_law = law_type:law_presidential_republic
+		activate_law = law_type:law_clan_mother
+		activate_law = law_type:law_women_own_property
+		activate_law = law_type:law_public_schools
+		activate_law = law_type:law_migration_controls
+		activate_law = law_type:law_right_of_assembly
+	}
+
+	c:CAD ?= {
+		mfk_native_startup = yes
+	}
+
+	c:CTF ?= {
+		mfk_native_startup = yes
+	}
+
+	c:NPI ?= {
+		mfk_native_startup = yes
+	}
+
+	c:IOW ?= {
+		mfk_native_startup = yes
+	}
+
+	c:TAT ?= {
+		mfk_native_startup = yes
+	}
+
+	c:QUA ?= {
+		mfk_native_startup = yes
+	}
+
+	c:HOK ?= {
+		mfk_native_startup = yes
+	}
+
+	c:MDC ?= {
+		mfk_native_startup = yes
+	}
+
+	c:YUR ?= {
+		mfk_native_startup = yes
+	}
+
+	c:SPI ?= {
+		mfk_native_startup = yes
+	}
+
+	c:SRO ?= {
+		mfk_native_startup = yes
+	}
+
+	c:SHP ?= {
+		mfk_native_startup = yes
+	}
+
+	c:KLA ?= {
+		mfk_native_startup = yes
+	}
+
+	c:OSA ?= {
+		mfk_native_startup = yes
+	}
+
+	c:YUM ?= {
+		mfk_native_startup = yes
+	}
+
+	c:GVT ?= {
+		mfk_native_startup = yes
+	}
+
+	c:SLS ?= {
+		mfk_native_startup = yes
+	}
+
+	c:KTN ?= {
+		mfk_native_startup = yes
+	}
+
+	c:SAL ?= {
+		mfk_native_startup = yes
+	}
+
+	c:WKS ?= {
+		mfk_native_startup = yes
+	}
+
+	c:DKL ?= {
+		mfk_native_startup = yes
+	}
+
+	c:TSI ?= {
+		mfk_native_startup = yes
+	}
+
+	c:TLT ?= {
+		mfk_native_startup = yes
+	}
+
+	c:DNZ ?= {
+		mfk_native_startup = yes
+	}
+
+	c:DNC ?= {
+		mfk_native_startup = yes
+	}
+
+	c:CPW ?= {
+		mfk_native_startup = yes
+	}
+
+	c:DGB ?= {
+		mfk_native_startup = yes
+	}
+	
+	c:STU ?= {
+		mfk_native_startup = yes
+	}
+
+	c:INV ?= {
+		mfk_native_startup = yes
+	}
+
+	c:HCR ?= {
+		mfk_native_startup = yes
+	}
+
+	c:OJI ?= {
+		mfk_native_startup = yes
+	}
+
+	c:WCR ?= {
+		mfk_native_startup = yes
+	}
+
+	c:ECR ?= {
+		mfk_native_startup = yes
+	}
+
+	c:INN ?= {
+		mfk_native_startup = yes
+	}
+
+	c:VIK ?= {
+		mfk_native_startup = yes
+	}
+
+	c:TTC ?= {
+		mfk_native_startup = yes
+	}
+
+	c:GWC ?= {
+		mfk_native_startup = yes
+	}
+
+	c:IPQ ?= {
+		mfk_native_startup = yes
+	}
+
+	c:TNN ?= {
+		mfk_native_startup = yes
+	}
+
+	c:AHT ?= {
+		mfk_native_startup = yes
+	}
+
+	c:KYK ?= {
+		mfk_native_startup = yes
+	}
+
+	c:KIO ?= {
+		mfk_native_startup = yes
+	}
+
+	c:WIT ?= {
+		mfk_native_startup = yes
+	}
+
+	c:UTE ?= {
+		mfk_native_startup = yes
+	}
+
+	c:COM ?= {
+		mfk_native_startup = yes
+	}
+
+	c:SHO ?= {
+		mfk_native_startup = yes
+	}
+
+	c:BNN ?= {
+		mfk_native_startup = yes
+	}
+
+	c:YOK ?= {
+		mfk_native_startup = yes
+		activate_law = law_type:law_slavery_banned
+	}
+}
