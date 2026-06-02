@@ -453,3 +453,70 @@ anglo_african = {
 	}
 	graphics = african
 }
+REPLACE:iroquoian = {
+	color = rgb{ 233 116 10 }
+	religion = animist
+	heritage = heritage_eastern_woodlands_indian
+	language = language_iroquoian
+	traditions = { }
+	
+	male_common_first_names = {
+		Akwiraron Akwirente
+		Canassatego Carondawanna Cayenqueraghta
+		Deganawida Deseronto Domagaya
+		Ga-Na-Gua Garangula Gaustarax Guyasuta Ganio-dai-io Gyantwachia
+		Hadawa-ko Hanyerry Hayonhwonhish Hendrick Honayawas Hiawatha Hutgohsodoneh
+		Kaintwakon Kanaghsadirhon Kiotsaton Kiotseahton
+		Ondaaheiont Onistagrawa Oretskani Oronhiatekha Otsochiah Otstango
+		Skenandoa Sganyodaiyo Sakokwenionkwas Sagoyewatha Sayenqueraghta Shikellamy Sigwaahdohgwih Sose Sosondowa
+		Tadodaho Taignoagny Tanacharison Tarachiawagon Tayandanegea Tejonihokarawa Tekarihoken Teyoninhokarawen Tewahangarahken Thaonawyuthe Theyanoguin
+		Wathatotarho
+	}
+	
+	female_common_first_names = {
+		Akat Alliquippa Asihewan
+		Dehhewanis
+		Gahonnoneh Ganeodiyo Gonwatsijayenni Gowongo
+		Kahaon Kaniehtiio Kanyenster Karenaho Kateri Kawisenhawe Konwatsitsiaienni
+		Lydia
+		Manatens Mary Molly
+		Ondiaon Wari
+		Skaouendes Skawennati
+		Tekakwitha Tsioronhio Tyonajanegen Tsatoke
+	}
+	
+	noble_last_names = {
+		Abeel Atiatoharongwen
+		Brant Blacksnake
+		Chaussi Cornplanter
+		Deserontyon Doxtator
+		Johnson Jones
+		Onais Oundiaga
+		Peters
+		Splitlog
+		Thayendanegea
+	}
+	
+	common_last_names = {
+		Bennett Buck Brant
+		Canadien Crants
+		Decaire Deer Delisle Doxtatator
+		Garlow Gibson Goodleaf Green
+		Heron Hill Hubbard
+		Jacobs Jean-Baptiste Jemison John Joseph
+		Kahnawake Kanatakta King
+		Lazarre Lewis Littlebear Longboat Loran Lyons
+		Maracle Martin Mohawk Montour Moses
+		Newhouse Norton
+		Pallan Parker Patterson Phillips Pierce Plummer Point Powless
+		Rice Ross
+		Schuyler Seneca Sharrow Smith Staats Steele Sunday
+		Tarbell Thomas Twoarrows
+		Watt White Williams Wood
+	}
+	
+	ethnicities = {
+		1 = native_american
+	}
+	graphics = decentralised_americas
+}

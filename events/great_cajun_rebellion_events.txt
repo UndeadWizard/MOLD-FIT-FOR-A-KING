@@ -25,6 +25,7 @@ great_cajun_rebellion.1 = {
 
 	option = {
 		name = great_cajun_rebellion.1.a
+		default_option = yes
 		s:STATE_TEXAS = {
 			add_homeland = cu:cajun
 			remove_claim = c:SC1

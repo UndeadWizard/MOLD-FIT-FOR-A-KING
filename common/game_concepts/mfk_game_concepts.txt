@@ -5,3 +5,11 @@
 concept_grand_derangement = {
 	texture = "gfx/interface/icons/generic_icons/legitimacy.dds"
 }
+
+concept_grand_hoyaneh = {
+	texture = "gfx/interface/icons/faction_icons/faction_grand_hoyaneh.dds"
+}
+
+concept_covenant_chain = {
+	texture = "gfx/interface/icons/generic_icons/legitimacy.dds"
+}

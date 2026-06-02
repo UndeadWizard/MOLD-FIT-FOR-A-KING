@@ -6,7 +6,7 @@
 		
 		activate_law = law_type:law_colonial_administration
 		activate_law = law_type:law_oligarchy
-		activate_law = law_type:law_cultural_exclusion
+		activate_law = law_type:law_subjecthood
 		activate_law = law_type:law_mercantilism
 		activate_law = law_type:law_agrarianism
 		activate_law = law_type:law_censorship

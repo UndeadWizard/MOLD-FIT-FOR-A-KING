@@ -292,7 +292,7 @@ POPS = {
 		}
 	}
 	s:STATE_ANTOFAGASTA = {
-		region_state:SC3 = {
+		region_state:CHL = {
 			create_pop = {
 				culture = south_andean
 				size = 43996

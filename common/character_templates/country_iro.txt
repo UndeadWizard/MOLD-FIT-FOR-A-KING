@@ -1,0 +1,27 @@
+﻿### Iroquois character template file ###
+
+## game start interest group leaders ##
+
+IRO_john_brant= {
+	first_name = "John"
+	last_name = "Brant"
+	ruler = yes
+	dna = dna_john_brant
+	birth_date = 1794.9.27
+	culture = cu:iroquoian
+	interest_group = ig_devout
+	ideology = ideology_traditionalist
+	home_region = STATE_SIX_NATIONS
+	traits = {
+        ambitious
+    }
+}
+
+IRO_james_brant = {
+	first_name = "James"
+	last_name = "Brant"
+	dna = dna_james_brant
+	birth_date = 1822.6.2
+	culture = cu:iroquoian
+	home_region = STATE_SIX_NATIONS
+}

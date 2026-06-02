@@ -1,0 +1,28 @@
+﻿je_john_brant_rule = {
+	group = je_group_john_brant
+	icon = "gfx/interface/icons/faction_icons/faction_grand_hoyaneh.dds"
+
+	widget = {
+		gui = "gui/journal_entry_widgets/iroquois_widgets.gui"
+		name = "widget_je_grand_hoyaneh"
+		container = "custom_widget_container_je_icon"
+	}
+
+	complete = {
+		is_subject = no
+		is_at_war = yes
+	}
+
+	weight = 100
+
+	transferable = no
+
+	invalid = {
+		NOT = { exists = c:IRO }
+	}
+	
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+# Isaac Brant created a seperate council of loyalists as a counterweight to the hoyaneh and clan mothers
+

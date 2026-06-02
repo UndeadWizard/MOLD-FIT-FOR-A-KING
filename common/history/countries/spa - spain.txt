@@ -61,7 +61,5 @@
 			add_ruling_interest_group = yes
 			add_ideology = ideology_conservative_praetorian
 		}
-
-		trigger_event = { id = spain_politics.1 days = 30 }
 	}
 }

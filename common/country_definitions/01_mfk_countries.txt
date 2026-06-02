@@ -143,6 +143,7 @@ IRO = { # Haudenosaunee, archaically known as the Iroquois Confederacy
 	tier = principality
 
 	cultures = { iroquoian }
+	religion = protestant
 
 	capital = STATE_SIX_NATIONS
 }
@@ -191,17 +192,6 @@ QUA = { # Osage Quapaw
 
 	cultures = { siouan }
 	capital = STATE_ARKANSAS
-}
-
-NZP = {
-	color = { 220 190 50 }
-
-	country_type = decentralized
-
-	tier = principality
-
-	cultures = { nez_perce }
-	capital = STATE_OREGON	
 }
 
 ABS = {
@@ -447,7 +437,7 @@ HOK = { # Hokan
 	cultures = { hokan }
 }
 
-YUR = { # Yurok
+YRK = { # Yurok
 	color = { 196 50 80 }
 	
 	country_type = decentralized
@@ -799,6 +789,17 @@ HDA = {
 	capital = STATE_BRITISH_COLUMBIA
 }
 
+IWK = {
+	color = { 34 85 28 }
+
+	country_type = decentralized
+
+	tier = principality
+
+	cultures = { algonquian }
+	capital = STATE_ILLINOIS
+}
+
 # Carribean
 
 HAI = {
@@ -894,7 +895,7 @@ PAD = {
 }
 
 # MENA
-ALD = {
+REPLACE:ALD = {
 	color = { 220  202  96 }
 
 	country_type = unrecognized

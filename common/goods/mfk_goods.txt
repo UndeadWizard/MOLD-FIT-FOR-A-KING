@@ -1,8 +1,19 @@
-﻿tea = {
+﻿vatmoss = {
 	texture = "gfx/interface/icons/goods_icons/vat_moss.dds"
-	cost = 1
+	cost = 40
 	category = industrial
 
-	prestige_factor = 1
-	traded_quantity = 1
+	prestige_factor = 4
+	traded_quantity = 5
+}
+
+plasm = {
+	texture = "gfx/interface/icons/goods_icons/sulfur.dds"
+	cost = 100
+	category = industrial
+
+	prestige_factor = 8
+
+	traded_quantity = 4 # 240
+	convoy_cost_multiplier = 1.0
 }

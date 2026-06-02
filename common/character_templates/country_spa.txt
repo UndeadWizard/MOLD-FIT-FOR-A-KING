@@ -5,7 +5,7 @@
 # Spain
 
 ### Rulers
-SPC_carlos_v_de_borbon_template = { # Carlos María Isidro Benito de Borbón y Borbón-Parma, Count of Molina
+REPLACE:SPC_carlos_v_de_borbon_template = { # Carlos María Isidro Benito de Borbón y Borbón-Parma, Count of Molina
     first_name = "Carlos"
     last_name = "de_BorbO_n_Anjou"
     historical = yes
@@ -26,7 +26,7 @@ SPC_carlos_v_de_borbon_template = { # Carlos María Isidro Benito de Borbón y B
     }
 }
 
-SPC_carlos_vi_de_borbon_template = { # Carlos Luis María de Borbón, Count of Montemolín
+REPLACE:SPC_carlos_vi_de_borbon_template = { # Carlos Luis María de Borbón, Count of Montemolín
     first_name = "Carlos"
     last_name = "de_BorbO_n_Anjou"
     historical = yes
@@ -46,7 +46,7 @@ SPC_carlos_vi_de_borbon_template = { # Carlos Luis María de Borbón, Count of M
 		set_variable = legitimist_leader
     }
 }
-SPC_juan_iii_de_borbon_template = { # Juan Carlos María Isidro de Borbón
+REPLACE:SPC_juan_iii_de_borbon_template = { # Juan Carlos María Isidro de Borbón
     first_name = "Juan"
     last_name = "de_Borbon"
     historical = yes
@@ -75,7 +75,7 @@ SPC_juan_iii_de_borbon_template = { # Juan Carlos María Isidro de Borbón
     }
 }
 
-SPC_carlos_vii_de_borbon_template = { # Carlos de Borbón y Austria-Este
+REPLACE:SPC_carlos_vii_de_borbon_template = { # Carlos de Borbón y Austria-Este
     first_name = "Carlos"
     last_name = "de_BorbO_n_Anjou"
     historical = yes
@@ -104,7 +104,7 @@ SPC_carlos_vii_de_borbon_template = { # Carlos de Borbón y Austria-Este
     }
 }
 
-SPC_jaime_iii_de_borbon_template = { # Jaime de Borbón y de Borbón-Parma, Duke of Madrid
+REPLACE:SPC_jaime_iii_de_borbon_template = { # Jaime de Borbón y de Borbón-Parma, Duke of Madrid
     first_name = "Jaime"
     last_name = "de_Borbon"
     historical = yes
@@ -133,7 +133,7 @@ SPC_jaime_iii_de_borbon_template = { # Jaime de Borbón y de Borbón-Parma, Duke
     }
 }
 
-SPC_alfonso_i_de_borbon_template = { # Alfonso Carlos de Borbón
+REPLACE:SPC_alfonso_i_de_borbon_template = { # Alfonso Carlos de Borbón
     first_name = "Alfonso"
     last_name = "de_Borbon"
     historical = yes
