@@ -8,6 +8,8 @@
  LOU_ADJ: "Louisianis"
 
 #Natives
+ BNN: "Bannock"
+ BNN_ADJ: "Bannock"
  YOK: "Yokut"
  YOK_ADJ: "Yokut"
  QUA: "Quapaw"
@@ -37,8 +39,8 @@
  TAT_ADJ: "Three Tribes"
  HOK: "Hokan"
  HOK_ADJ: "Hokan"
- YUR: "Yurok"
- YUR_ADJ: "Yurok"
+ YRK: "Yurok"
+ YRK_ADJ: "Yurok"
  MDC: "Modoc"
  MDC_ADJ: "Modoc"
  KLA: "Klamath"
@@ -98,6 +100,9 @@
  GWC_ADJ: "Gwich'in"
  AHT: "Atna Nenn'"
  AHT_ADJ: "Ahtna"
+ IWK: "Illinois Confederacy"
+ IWK_ADJ: "Illiniwek"
+
 #German Minors
  KOL: "Cologne"
  KOL_ADJ: "Colognian"

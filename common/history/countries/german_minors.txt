@@ -24,7 +24,7 @@
 	c:DUS ?= {
 		effect_starting_technology_tier_2_tech = yes
 		effect_starting_politics_conservative = yes
-		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_state_religion
 		
 		set_institution_investment_level = {
 			institution = institution_schools
@@ -48,7 +48,7 @@
 	c:MUN ?= {
 		effect_starting_technology_tier_2_tech = yes
 		effect_starting_politics_conservative = yes
-		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_state_religion
 		
 		set_institution_investment_level = {
 			institution = institution_schools
@@ -59,7 +59,7 @@
 	c:PAD ?= {
 		effect_starting_technology_tier_2_tech = yes
 		effect_starting_politics_conservative = yes
-		activate_law = law_type:law_freedom_of_conscience
+		activate_law = law_type:law_state_religion
 		
 		set_institution_investment_level = {
 			institution = institution_schools

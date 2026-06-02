@@ -1,0 +1,17 @@
+﻿CHARACTERS = {
+	c:IRO ?= {
+		# Ruler / Heir
+		create_character = {
+			template = IRO_john_brant
+			on_created = {
+				c:IRO ?= {
+					set_variable = { name = grand_hoyaneh_var value = PREV }
+				}
+			}
+		}
+
+		create_character = {
+			template = IRO_james_brant
+		}
+	}
+}

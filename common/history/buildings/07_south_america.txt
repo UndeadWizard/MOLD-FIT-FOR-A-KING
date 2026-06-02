@@ -1942,14 +1942,14 @@
 		}
 	}
 	s:STATE_PARA={
-		region_state:PRA={
+		region_state:BRZ={
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_limited" }
 				add_ownership={
 					building={
 						type="building_trade_center"
-						country="c:PRA"
+						country="c:BRZ"
 						levels=1
 						region="STATE_PARA"
 					}
@@ -1961,7 +1961,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:PRA"
+						country="c:BRZ"
 						levels=1
 						region="STATE_PARA"
 					}
@@ -1974,7 +1974,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:PRA"
+						country="c:BRZ"
 						levels=2
 						region="STATE_PARA"
 					}
@@ -1986,7 +1986,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:PRA"
+						country="c:BRZ"
 						levels=1
 					}
 				}
@@ -2041,7 +2041,7 @@
 	s:STATE_AMAZONAS={
 		region_state:SC3={
 		}
-		region_state:PRA={
+		region_state:BRZ={
 		}
 		region_state:SC3={
 		}
@@ -2141,13 +2141,13 @@
 		}
 	}
 	s:STATE_RIO_GRANDE_DO_SUL={
-		region_state:PNI={
+		region_state:BRZ={
 			create_building={
 				building="building_livestock_ranch"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:PNI"
+						country="c:BRZ"
 						levels=2
 						region="STATE_RIO_GRANDE_DO_SUL"
 					}
@@ -2160,7 +2160,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:PNI"
+						country="c:BRZ"
 						levels=2
 						region="STATE_RIO_GRANDE_DO_SUL"
 					}
@@ -2173,7 +2173,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:PNI"
+						country="c:BRZ"
 						levels=1
 						region="STATE_RIO_GRANDE_DO_SUL"
 					}
@@ -2185,7 +2185,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:PNI"
+						country="c:BRZ"
 						levels=1
 					}
 				}
@@ -2707,23 +2707,12 @@
 					building={
 						type="building_shipyard"
 						country="c:BRZ"
-						levels=1
+						levels=2
 						region="STATE_BAHIA"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding"  }
-			}
-			create_building={
-				building="building_military_shipyard"
-				add_ownership={
-					country={
-						country="c:BRZ"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden"  }
 			}
 			create_building={
 				building="building_coffee_plantation"

@@ -1,0 +1,16 @@
+﻿##Define journal entry groups here:
+
+# journalentrygroup_mygroup = {
+# context = none/country
+# }
+
+# Global groups
+
+
+
+## Place flavour content above generic groups
+
+je_group_john_brant = {
+	context = country
+	updates_strategic_region_stances = yes
+}

@@ -952,13 +952,6 @@ GLOBAL = {
         }
 	}
 
-	s:STATE_WEST_VIRGINIA = {
-        set_variable = {
-            name = usa_state_flag_block
-            value = yes
-        }
-	}
-
 	c:UCA ?= {
 		add_radicals = {
 			value = 0.25

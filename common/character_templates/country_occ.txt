@@ -1,0 +1,23 @@
+﻿### France character template file ###
+
+## game start interest group leaders ##
+
+FRA_louis_xvii= {
+	# Louis XVII, King of France
+	first_name = "Louis_XVII"
+	last_name = "de_Bourbon"
+	historical = yes
+	ruler = yes
+	dna = dna_louis_xvii
+	birth_date = 1785.3.27
+	culture = cu:french
+	interest_group = ig_armed_forces
+	ideology = ideology_legitimist
+	home_region = STATE_ILE_DE_FRANCE
+	traits = {
+		bigoted
+	}
+	on_created = {
+		set_variable = house_bourbon
+	}
+}

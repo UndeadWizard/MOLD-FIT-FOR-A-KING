@@ -488,17 +488,6 @@
 				activate_production_methods={ "pm_basic_shipbuilding"  }
 			}
 			create_building={
-				building="building_military_shipyard"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden"  }
-			}
-			create_building={
 				building="building_port"
 				add_ownership={
 					country={
@@ -2153,6 +2142,19 @@
 	s:STATE_SIX_NATIONS={
 		region_state:IRO={
 			create_building={
+				building="building_trade_center"
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:IRO"
+						levels=1
+						region="STATE_SIX_NATIONS"
+					}
+				}
+				reserves=1
+			}
+			create_building={
 				building="building_tooling_workshop"
 				add_ownership={
 					building={
@@ -2184,7 +2186,7 @@
 					building={
 						type="building_manor_house"
 						country="c:IRO"
-						levels=1
+						levels=2
 						region="STATE_SIX_NATIONS"
 					}
 				}
@@ -2210,7 +2212,7 @@
 					building={
 						type="building_livestock_ranch"
 						country="c:IRO"
-						levels=2
+						levels=1
 						region="STATE_SIX_NATIONS"
 					}
 				}
@@ -2823,17 +2825,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_shipbuilding"  }
-			}
-			create_building={
-				building="building_military_shipyard"
-				add_ownership={
-					country={
-						country="c:QUE"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_military_shipbuilding_wooden"  }
 			}
 			create_building={
 				building="building_iron_mine"

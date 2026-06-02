@@ -1,0 +1,13 @@
+﻿l_english:
+ building_vatmoss_plantation:0 "Vatmoss Plantations"
+ building_vatmoss_plantation_lens_option:0 "Expand $building_vatmoss_plantation$"
+ building_vatmoss_plantation_discovered_resource:0 "Vatmoss"
+ pmg_base_building_vatmoss_plantation:0 "Vatmoss Base Building"
+ pm_simple_vatmoss:0 "Vatmoss Planting"
+ automatic_irrigation_building_vatmoss_plantation:0 "Automatic Vatmoss Irrigation"
+
+ building_plasm_industry:0 "Plasm Industries"
+ building_plasm_industry_lens_option:0 "Expand $building_plasm_industry$"
+ pmg_base_building_plasm_industry:0 "Base Building Plasm"
+ pm_steam_plasm:0 "Steam Plasm"
+ pm_electric_plasm:0 "Electric Plasm"

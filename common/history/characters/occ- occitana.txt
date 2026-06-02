@@ -1,0 +1,8 @@
+﻿CHARACTERS = {
+	c:FRA ?= {
+		# Ruler / Heir
+		create_character = {
+			template = FRA_louis_xvii
+		}
+	}
+}

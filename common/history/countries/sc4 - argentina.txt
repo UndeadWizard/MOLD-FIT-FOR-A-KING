@@ -37,11 +37,6 @@
 		}			
 
 		set_institution_investment_level = {
-			institution = institution_colonial_affairs
-			level = 2
-		}		
-
-		set_institution_investment_level = {
 			institution = institution_home_affairs
 			level = 1
 		}		

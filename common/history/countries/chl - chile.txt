@@ -29,11 +29,6 @@
 			goods = g:tools
 			level = no_tariffs_or_subventions
 		}		
-		
-		set_institution_investment_level = {
-			institution = institution_colonial_affairs
-			level = 2
-		}
 
 		ig:ig_armed_forces ?= {
 			add_ruling_interest_group = yes
