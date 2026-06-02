@@ -562,7 +562,7 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 22432
+				size = 62432
 			}
 		}
 	}
@@ -592,19 +592,11 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 892200
+				size = 392200
 			}
 			create_pop = {
 				culture = afro_american
 				size = 16008
-			}
-			create_pop = {
-				culture = north_german
-				size = 128000
-			}
-			create_pop = {
-				culture = irish
-				size = 108004
 			}
 		}
 	}
@@ -612,11 +604,11 @@
 		region_state:USA = {
 			create_pop = {
 				culture = dixie
-				size = 239988
+				size = 139988
 			}
 			create_pop = {
 				culture = yankee
-				size = 316392
+				size = 116392
 			}
 			create_pop = {
 				culture = afro_american
@@ -625,7 +617,7 @@
 			create_pop = {
 				pop_type = slaves
 				culture = afro_american
-				size = 161879
+				size = 81879
 			}
 			create_pop = {
 				culture = irish
@@ -637,7 +629,7 @@
 		region_state:USA = {
 			create_pop = {
 				culture = dixie
-				size = 369604
+				size = 269604
 			}
 			create_pop = {
 				culture = cherokee
@@ -645,7 +637,7 @@
 			}
 			create_pop = {
 				culture = yankee
-				size = 204800
+				size = 104800
 			}
 			create_pop = {
 				culture = afro_american
@@ -654,11 +646,11 @@
 			create_pop = {
 				pop_type = slaves
 				culture = afro_american
-				size = 142960
+				size = 92960
 			}
 			create_pop = {
 				culture = irish
-				size = 39996
+				size = 19996
 			}
 			create_pop = {
 				culture = cherokee
@@ -740,7 +732,7 @@
 		region_state:FLR = {
 			create_pop = {
 				culture = dixie
-				size = 47996
+				size = 87996
 			}
 			create_pop = {
 				culture = afro_american
@@ -749,7 +741,7 @@
 			create_pop = {
 				pop_type = slaves
 				culture = afro_american
-				size = 31183
+				size = 55183
 			}
 			create_pop = {
 				culture = muskogean
