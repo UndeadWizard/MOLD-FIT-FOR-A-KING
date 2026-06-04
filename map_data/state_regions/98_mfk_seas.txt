@@ -1,0 +1,4 @@
+﻿STATE_GREAT_LAKES = {
+    id = 3149
+    provinces = { "x1ACBFD" }
+}

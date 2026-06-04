@@ -278,7 +278,7 @@ STATE_SOUTH_DAKOTA = {
 STATE_NEBRASKA = {
     id = 278
     subsistence_building = "building_subsistence_farm"
-    provinces = { "x1B1E8B" "x05C8DA" "x05E33E" "x085848" "x09025B" "x0B51E5" "x0F6ED8" "x1040C0" "x10C040" "x1204FB" "x199C35" "x24CC25" "x26D7F5" "x2D821B" "x35C80B" "x369A5E" "x394431" "x3CA80A" "x3E62DB" "x428D5B" "x46C0C9" "x4A5CBE" "x4C746E" "x511F34" "x5196C1" "x5551C2" "x574B34" "x574C53" "x5A6816" "x5AE35B" "x5BD057" "x5FA3C8" "x6298F3" "x63FAC0" "x63FFC3" "x671F4C" "x675507" "x6C6CF4" "x72799C" "x742D27" "x75B4EE" "x76F2C5" "x770EB3" "x782001" "x7F42E1" "x814008" "x836A23" "x8B2E2A" "x8E9862" "x8E9E5A" "x90C040" "x9215D8" "x921E4D" "x924593" "x9324D1" "x939662" "x996A90" "x9B4CC5" "xA8C3AF" "xA912ED" "xABDA2C" "xB83435" "xB9B03E" "xBE4BF0" "xC020D9" "xC0F9BB" "xC547CE" "xC97B5E" "xCC97E9" "xD08040" "xD1616D" "xD4B162" "xD5A04C" "xD7F409" "xDFB7E3" "xE2B0F1" "xE3FE43" "xE85180" "xF500FF" "xF5DE3F" "xF7CF1A" "xF823F6" "xF972E7" "xFB92A2" "xFFE6CD" }
+    provinces = { "x05C8DA" "x05E33E" "x085848" "x09025B" "x0B51E5" "x0F6ED8" "x1040C0" "x10C040" "x1204FB" "x199C35" "x24CC25" "x26D7F5" "x2D821B" "x35C80B" "x369A5E" "x394431" "x3CA80A" "x3E62DB" "x428D5B" "x46C0C9" "x4A5CBE" "x4C746E" "x511F34" "x5196C1" "x5551C2" "x574B34" "x574C53" "x5A6816" "x5AE35B" "x5BD057" "x5FA3C8" "x6298F3" "x63FAC0" "x63FFC3" "x671F4C" "x675507" "x6C6CF4" "x72799C" "x742D27" "x75B4EE" "x76F2C5" "x770EB3" "x782001" "x7F42E1" "x814008" "x836A23" "x8B2E2A" "x8E9862" "x8E9E5A" "x90C040" "x9215D8" "x921E4D" "x924593" "x9324D1" "x939662" "x996A90" "x9B4CC5" "xA8C3AF" "xA912ED" "xABDA2C" "xB83435" "xB9B03E" "xBE4BF0" "xC020D9" "xC0F9BB" "xC547CE" "xC97B5E" "xCC97E9" "xCF5B71" "xD08040" "xD1616D" "xD4B162" "xD5A04C" "xD7F409" "xDFB7E3" "xE2B0F1" "xE3FE43" "xE85180" "xF500FF" "xF5DE3F" "xF7CF1A" "xF823F6" "xF972E7" "xFB92A2" "xFFE6CD" }
     traits = { "state_trait_the_great_plains" }
     city = "x3E62DB"
     farm = "xF7CF1A"
@@ -319,7 +319,7 @@ STATE_KANSAS = {
 STATE_OKLAHOMA = {
     id = 280
     subsistence_building = "building_subsistence_farm"
-    provinces = { "x029975" "x0364B8" "x08A728" "x10C0C0" "x13C47E" "x158786" "x1711F0" "x25C814" "x269541" "x286941" "x32D681" "x3449B1" "x37CCC2" "x384259" "x3DC254" "x432B51" "x47C329" "x49BF7D" "x4A5328" "x4BE9C6" "x51621D" "x54AC76" "x5A143B" "x5D421A" "x5F2DBA" "x6377BB" "x70D146" "x7507ED" "x76A411" "x7A707B" "x7A74B8" "x876BD0" "x8BDF6D" "x8CD89B" "x9040C0" "x90C0C0" "x94D9C2" "x9A9935" "xA00FE0" "xA07F85" "xA1D6F3" "xA68A21" "xAB5E06" "xAE0966" "xB8266A" "xBFD5C4" "xC03040" "xC62026" "xCE7722" "xCF5B71" "xD545C6" "xD6ADF2" "xD72549" "xDA6117" "xE0ACB6" "xE1CC08" "xE5842F" "xE64C00" "xE80F7D" "xEB66DA" "xEEC0B1" "xEF15A7" "xF6681C" "xF98E99" }
+    provinces = { "x029975" "x0364B8" "x08A728" "x10C0C0" "x13C47E" "x158786" "x1711F0" "x1B1E8B" "x25C814" "x269541" "x286941" "x32D681" "x3449B1" "x37CCC2" "x384259" "x3DC254" "x432B51" "x47C329" "x49BF7D" "x4A5328" "x4BE9C6" "x51621D" "x54AC76" "x5A143B" "x5D421A" "x5F2DBA" "x6377BB" "x70D146" "x7507ED" "x76A411" "x7A707B" "x7A74B8" "x876BD0" "x8BDF6D" "x8CD89B" "x9040C0" "x90C0C0" "x94D9C2" "x9A9935" "xA00FE0" "xA07F85" "xA1D6F3" "xA68A21" "xAB5E06" "xAE0966" "xB8266A" "xBFD5C4" "xC03040" "xC62026" "xCE7722" "xD545C6" "xD6ADF2" "xD72549" "xDA6117" "xE0ACB6" "xE1CC08" "xE5842F" "xE64C00" "xE80F7D" "xEB66DA" "xEEC0B1" "xEF15A7" "xF6681C" "xF98E99" }
     city = "xD6ADF2"
     farm = "xEB66DA"
     mine = "xC03040"
@@ -388,6 +388,7 @@ STATE_WISCONSIN = {
     farm = "x900040"
     mine = "xFDA0D8"
     wood = "x941A5A"
+    port = "x80A0C0"
     arable_land = 180
     arable_resources = { "building_maize_farm" "building_livestock_ranch" "building_tobacco_plantation" }
     capped_resources = {
@@ -400,9 +401,10 @@ STATE_WISCONSIN = {
         undiscovered_amount = 20
     }
     resource = {
-        type="building_vatmoss_plantation"
+        type = "building_vatmoss_plantation"
         undiscovered_amount = 8
     }
+    naval_exit_id = 3149
 }
 
 STATE_INDIANA = {
@@ -414,6 +416,7 @@ STATE_INDIANA = {
     farm = "x30D889"
     mine = "x708040"
     wood = "x4BAF24"
+    port = "xE236DD"
     arable_land = 220
     arable_resources = { "building_maize_farm" "building_livestock_ranch" "building_vineyard" "building_tobacco_plantation" }
     capped_resources = {
@@ -421,6 +424,7 @@ STATE_INDIANA = {
         building_logging_camp = 28
         building_vatmoss_plantation = 4
     }
+    naval_exit_id = 3149
 }
 
 STATE_MICHIGAN = {
@@ -432,6 +436,7 @@ STATE_MICHIGAN = {
     farm = "x2455A8"
     mine = "x28FA31"
     wood = "xC1AE21"
+    port = "x0B0C98"
     arable_land = 180
     arable_resources = { "building_maize_farm" "building_livestock_ranch" "building_vineyard" }
     capped_resources = {
@@ -440,9 +445,10 @@ STATE_MICHIGAN = {
         building_logging_camp = 50
     }
     resource = {
-        type="building_vatmoss_plantation"
+        type = "building_vatmoss_plantation"
         undiscovered_amount = 12
     }
+    naval_exit_id = 3149
 }
 
 STATE_OHIO = {
@@ -454,6 +460,7 @@ STATE_OHIO = {
     farm = "xC08BCD"
     mine = "x2158FB"
     wood = "xA92D73"
+    port = "x8B892B"
     arable_land = 180
     arable_resources = { "building_maize_farm" "building_livestock_ranch" "building_tobacco_plantation" "building_vineyard" }
     capped_resources = {
@@ -466,6 +473,7 @@ STATE_OHIO = {
         type = "building_oil_rig"
         undiscovered_amount = 30
     }
+    naval_exit_id = 3149
 }
 
 STATE_KENTUCKY = {
@@ -679,6 +687,7 @@ STATE_ILLINOIS = {
     provinces = { "x00A080" "x0212BC" "x108040" "x1B1B01" "x22BBD7" "x26D283" "x2938A5" "x2B0E33" "x2FBF72" "x33B258" "x34036E" "x3FEEB5" "x445F91" "x4A94CA" "x4E0162" "x50C040" "x543986" "x585A65" "x67EB18" "x6B3BE8" "x6D1F7A" "x6D8AAA" "x6F02DA" "x746E6F" "x7514E0" "x7A2E59" "x806000" "x908040" "x977A71" "x999D9F" "x9EA280" "xA36021" "xA53D3B" "xAD5337" "xB90E0D" "xBCB645" "xBD8B8B" "xCD3BFC" "xD998BB" "xEB7340" "xF68D89" "xF82338" }
     traits = { "state_trait_mississippi_river" }
     city = "xF68D89"
+    port = "xF68D89"
     farm = "x1B1B01"
     mine = "x4E0162"
     wood = "xAD5337"
@@ -690,9 +699,10 @@ STATE_ILLINOIS = {
         building_logging_camp = 22
     }
     resource = {
-        type="building_vatmoss_plantation"
-        undiscovered_amount=8
+        type = "building_vatmoss_plantation"
+        undiscovered_amount = 8
     }
+    naval_exit_id = 3149
 }
 
 STATE_RHODE_ISLAND = {
@@ -781,12 +791,13 @@ STATE_NEW_HAMPSHIRE = {
 STATE_SIX_NATIONS = {
     id = 304
     subsistence_building = "building_subsistence_farm"
-    provinces = { "x01D042" "x05187E" "x195B49" "x235E9F" "x2CA754" "x308000" "x345319" "x38C881" "x3CB274" "x42D496" "x4B0747" "x533151" "x606D4F" "x70C080" "x73A16C" "x8C059D" "x8C787A" "x9484F3" "x99CB10" "xA6BED5" "xA7B5FE" "xB00080" "xB343E6" "xB7EDCF" "xC4DED4" "xC786AB" "xE217B5" "xE7BE2D" "xEC2EAA" "xEDC7DA" "xFCF1BE" }
+    provinces = { "x01D042" "x05187E" "x195B49" "x235E9F" "x2CA754" "x308000" "x345319" "x38C881" "x3CB274" "x42D496" "x4B0747" "x533151" "x606D4F" "x70C080" "x73A16C" "x8C059D" "x8C787A" "x9484F3" "x99CB10" "xA6BED5" "xA7B5FE" "xAF2323" "xB00080" "xB343E6" "xB7EDCF" "xC4DED4" "xC786AB" "xDCB827" "xE217B5" "xE7BE2D" "xEC2EAA" "xEDC7DA" "xFCF1BE" }
     traits = { "state_trait_niagara_falls" "state_trait_great_lakes" "state_trait_american_chestnuts" }
     city = "xE217B5"
     farm = "x235E9F"
     mine = "x99CB10"
     wood = "x308000"
+    port = "x195B49"
     arable_land = 125
     arable_resources = { "building_wheat_farm" "building_livestock_ranch" "building_tobacco_plantation" }
     capped_resources = {
@@ -794,6 +805,7 @@ STATE_SIX_NATIONS = {
         building_logging_camp = 14
         building_vatmoss_plantation = 10
     }
+    naval_exit_id = 3149
 }
 
 STATE_MAINE = {

@@ -12,6 +12,20 @@ on_game_started = {
 # No root scope set
 on_game_started_after_lobby = {
 	effect = {
+		#MFAK
+		
+		if = {
+			c:IRO ?= {
+				set_variable = {
+					name = brant_gdp_goal
+					value = {
+						value = c:IRO.gdp
+						multiply = 1.35
+					}
+				}
+			}
+		}
+
 		# Game Rule: No Dynamic Naming
 		if = {
 			limit = {

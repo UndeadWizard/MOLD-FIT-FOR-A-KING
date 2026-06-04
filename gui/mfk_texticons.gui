@@ -1,0 +1,17 @@
+texticon = {
+  icon = imperial_estate
+  iconsize = {
+    offset = { 0 7 }
+    texture = "gfx/interface/icons/diplomatic_action_icons/crown_land_15.dds"
+    fontsize = 22
+  }
+}
+
+texticon = {
+  icon = combat_unit_group_armor   # same as database key
+  iconsize = {
+    offset = { 0 20 }
+    texture = "gfx/interface/icons/generic_icons/battalions.dds"
+    fontsize = 91
+  }
+}

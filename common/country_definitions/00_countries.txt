@@ -2187,7 +2187,7 @@ NBS = {
 
 	tier = principality
 
-	cultures = { anglo_canadian franco_canadian }
+	cultures = { new_englander }
 	capital = STATE_NEW_BRUNSWICK
 }
 
@@ -2198,7 +2198,7 @@ NVS = {
 
 	tier = principality
 
-	cultures = { anglo_canadian }
+	cultures = { new_englander }
 	capital = STATE_NEW_BRUNSWICK
 }
 

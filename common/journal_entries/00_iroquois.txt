@@ -9,10 +9,12 @@
 	}
 
 	complete = {
-		is_subject = no
-		is_at_war = yes
+		custom_tooltip = {
+			text = je_brant_crisis_success_tt
+			brant_total_agenda_goals_completed >= 8
+		}
 	}
-
+	
 	weight = 100
 
 	transferable = no

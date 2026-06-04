@@ -20,7 +20,7 @@ combat_unit_type_behemoth = {
         unit_offense_add = 45
         unit_defense_add = 15
         unit_devastation_mult = 0.1
-        unit_morale_loss_add = 4
+        unit_morale_loss_add = 10
     }
 
     combat_unit_image = {

@@ -15,3 +15,5 @@
  STATE_GALVESTON:0 "Galveston"
  STATE_COMANCHE:0 "Comanche"
  STATE_SIX_NATIONS:0 "Six Nations"
+ STATE_GREAT_LAKES:0 "Great Lakes"
+ region_great_lakes:0 "$STATE_GREAT_LAKES$"
