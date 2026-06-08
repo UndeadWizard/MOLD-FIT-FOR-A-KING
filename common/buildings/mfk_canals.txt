@@ -19,10 +19,7 @@
 
 	possible = {
 		owner = {
-			OR = {
-				owns_treaty_port_in = STATE_SIX_NATIONS
-				owns_entire_state_region = STATE_SIX_NATIONS
-			}
+			this = c:GBR
 		}
 	}
 

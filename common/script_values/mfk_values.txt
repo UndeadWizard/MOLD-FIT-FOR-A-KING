@@ -77,7 +77,7 @@ brant_total_agenda_goals_completed = {
 	# Clan Mother Agendas
 	if = { # Clan Mothers: Social Control
 		limit = {
-			has_law_or_variant = law_type:law_clan_mother
+			has_law_or_variant = law_type:law_oligarchy
 		}
 		add = 1
 	}

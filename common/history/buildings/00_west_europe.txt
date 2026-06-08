@@ -8736,7 +8736,7 @@
 					building={
 						type="building_financial_district"
 						country="c:PRU"
-						levels=2
+						levels=1
 						region="STATE_BRANDENBURG"
 					}
 				}

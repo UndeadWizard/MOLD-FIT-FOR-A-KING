@@ -385,36 +385,9 @@
 
 
 	# Starting liberty desire
-	c:BIC ?= {
-		add_liberty_desire = -30
-	}
-
+	
 	c:DEI ?= {
 		add_liberty_desire = -30
-	}
-
-	c:SAF ?= {
-		add_liberty_desire = -30
-	}
-
-	c:NSW ?= {
-		add_liberty_desire = -30
-	}
-
-	c:WAS ?= {
-		add_liberty_desire = -30
-	}
-
-	c:SAS ?= {
-		add_liberty_desire = -30
-	}
-
-	c:TAS ?= {
-		add_liberty_desire = -30
-	}
-
-	c:UNT ?= {
-		add_liberty_desire = 10
 	}
 
 	c:FIN ?= {
@@ -430,10 +403,6 @@
 	}
 
 	c:UZH ?= {
-		add_liberty_desire = 10
-	}
-
-	c:SEQ ?= {
 		add_liberty_desire = 10
 	}
 

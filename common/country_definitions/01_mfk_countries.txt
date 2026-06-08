@@ -213,7 +213,7 @@ IRC = {
 	tier = principality
 
 	cultures = { cree siouan }
-	capital = STATE_WASHINGTON
+	capital = STATE_SASKATCHEWAN
 }
 
 SEQ = {

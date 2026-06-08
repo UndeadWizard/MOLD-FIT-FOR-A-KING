@@ -27,7 +27,7 @@
 		any_state_in_greater_canada = {
 			filter = {
 				NOR = {
-					this.state_region = s:STATE_WASHINGTON
+					this.state_region = s:STATE_SASKATCHEWAN
 					this.state_region = s:STATE_IDAHO
 					this.state_region = s:STATE_OREGON
 					this.state_region = s:STATE_NEWFOUNDLAND

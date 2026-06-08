@@ -366,16 +366,16 @@ game_object_locator={
 }
 game_object_locator={
 	name="canal_kanien_locator"
-	clamp_to_water_level=yes
-	render_under_water=no
+	clamp_to_water_level=no
+	render_under_water=yes
 	generated_content=no
 	layer="static"
 	instances={
 		{
 			id=1
-			position={ 2296.000000 0.000000 2555.00000 }
-			rotation={ 0.000000 0.658000 0.000000 0.752000 }
-			scale={ 0.420000 1.000000 0.200000 }
+			position={ 2297.000000 -2.200000 2556.00000 }
+			rotation={ 0.000000 0.658000 0.000000 0.682000 }
+			scale={ 0.440000 1.000000 0.400000 }
 		}
 	}
 }

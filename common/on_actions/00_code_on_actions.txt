@@ -1095,15 +1095,6 @@ on_monthly_pulse_country = {
 			portugal_generate_scripted_heirs = yes
 		}
 
-		# Spain
-		if = {
-			limit = {
-				country_has_primary_culture = cu:spanish
-				can_generate_scripted_heirs = yes
-			}
-			spain_generate_scripted_heirs = yes
-		}
-
 		# Great Britain
 		if = {
 			limit = {
@@ -3048,18 +3039,7 @@ on_new_ruler = {
 					}
 					character_france_ruler_succession_chain_effect = yes
 				}
-				### Spanish Monarchs
-				if = {
-					limit = {
-						owner ?= {
-							OR = {
-								c:SPA ?= this
-								was_formed_from = SPA
-							}
-						}
-					}
-					character_spain_ruler_succession_chain_effect = yes
-				}
+
 				### Portuguese Monarchs
 				if = {
 					limit = {

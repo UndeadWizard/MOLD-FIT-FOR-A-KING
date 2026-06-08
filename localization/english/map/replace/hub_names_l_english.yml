@@ -28,3 +28,53 @@
  HUB_NAME_STATE_COMANCHE_farm: "Quahadi"
  HUB_NAME_STATE_COMANCHE_wood: "Parua"
  HUB_NAME_STATE_COMANCHE_mine: "Nokoni"
+
+## Cherokee Territory
+HUB_NAME_STATE_ALABAMA_city: "New Echota"
+HUB_NAME_STATE_ALABAMA_port: "Mabile"
+HUB_NAME_STATE_ALABAMA_mine: "Chisha' Tálla'a'"
+HUB_NAME_STATE_ALABAMA_wood: "Econneka"
+HUB_NAME_STATE_ALABAMA_farm: "Sowashee"
+
+## Missouri
+HUB_NAME_STATE_MISSOURI_city: "Des Moines"
+HUB_NAME_STATE_MISSOURI_mine: "Ottumwa"
+HUB_NAME_STATE_MISSOURI_farm: "Iowa City"
+HUB_NAME_STATE_MISSOURI_wood: "Mason City"
+
+## Arkansas
+HUB_NAME_STATE_ARKANSAS_city: "St Louis"
+HUB_NAME_STATE_ARKANSAS_mine: "Springfield"
+HUB_NAME_STATE_ARKANSAS_farm: "Little Rock"
+HUB_NAME_STATE_ARKANSAS_wood: "Cape Girardeau"
+
+## Kansas
+HUB_NAME_STATE_KANSAS_city: "Amarillo"
+HUB_NAME_STATE_KANSAS_mine: "Guymon"
+HUB_NAME_STATE_KANSAS_farm: "Garden City"
+HUB_NAME_STATE_KANSAS_wood: "Dodge City"
+
+## Oklahoma
+HUB_NAME_STATE_OKLAHOMA_city: "Tulsa"
+HUB_NAME_STATE_OKLAHOMA_mine: "Idabel"
+HUB_NAME_STATE_OKLAHOMA_farm: "Topeka"
+HUB_NAME_STATE_OKLAHOMA_wood: "Wichita"
+
+## Montana
+HUB_NAME_STATE_MONTANA_city: "Helena"
+HUB_NAME_STATE_MONTANA_mine: "Butte"
+HUB_NAME_STATE_MONTANA_farm: "Bozeman"
+HUB_NAME_STATE_MONTANA_wood: "Missoula"
+
+## Mississippi
+HUB_NAME_STATE_MISSISSIPPI_city: "Minneapolis"
+HUB_NAME_STATE_MISSISSIPPI_mine: "Stanton"
+HUB_NAME_STATE_MISSISSIPPI_farm: "Duluth"
+HUB_NAME_STATE_MISSISSIPPI_wood: "Devils Lake"
+
+## Toronto
+HUB_NAME_STATE_TORONTO_city: "Toronto"
+HUB_NAME_STATE_TORONTO_mine: "Hamilton"
+HUB_NAME_STATE_TORONTO_farm: "Sarina"
+HUB_NAME_STATE_TORONTO_wood: "London"
+HUB_NAME_STATE_TORONTO_port: "Port of Toronto"

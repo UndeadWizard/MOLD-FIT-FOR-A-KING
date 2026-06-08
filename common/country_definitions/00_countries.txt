@@ -2176,7 +2176,7 @@ ONT = {
 	tier = principality
 
 	cultures = { anglo_canadian }
-	capital = STATE_ONTARIO
+	capital = STATE_TORONTO
 	is_named_from_capital = yes
 }
 

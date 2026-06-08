@@ -6,7 +6,7 @@
 				add_ownership={
 					country={
 						country="c:USA"
-						levels=10
+						levels=1
 					}
 				}
 				reserves=1
@@ -22,23 +22,6 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port"}
-			}
-			create_building={
-				building="building_white_house"
-				level=1
-			}
-		}
-	}
-	if = {
-		limit = {
-			has_american_buildings_dlc_trigger = yes
-		}
-		s:STATE_DISTRICT_OF_COLUMBIA={
-			region_state:USA={
-				create_building={
-					building="building_capitol_hill"
-					level=1
-				}
 			}
 		}
 	}
@@ -542,10 +525,6 @@
 		region_state:ATB={
 		}
 	}
-	s:STATE_WASHINGTON={
-		region_state:ORG={
-		}
-	}
 	s:STATE_OREGON={
 		region_state:ORG={
 			create_building={
@@ -570,144 +549,37 @@
 		}
 		region_state:UTE={
 		}
-		region_state:USA={
-		}
 	}
 	s:STATE_WYOMING={
-		region_state:USA={
-		}
 		region_state:LKT={
 		}
 		region_state:ARP={
 		}
 	}
 	s:STATE_NEBRASKA={
-		region_state:USA={
-		}
 		region_state:LKT={
 		}
 		region_state:PWN={
 		}
 	}
 	s:STATE_KANSAS={
-		region_state:USA={
-		}
-		region_state:PWN={
-		}
 		region_state:COM={
 		}
 	}
 	s:STATE_OKLAHOMA={
-		region_state:SEQ={
-		}
 		region_state:COM={
 		}
 	}
 	s:STATE_ARKANSAS={
-		region_state:USA={
-			create_building={
-				building="building_cotton_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:USA"
-						levels=1
-						region="STATE_ARKANSAS"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts"  }
-			}
-			create_building={
-				building="building_livestock_ranch"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:USA"
-						levels=1
-						region="STATE_ARKANSAS"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated"  }
-			}
+		region_state:QUA={
 		}
 	}
 	s:STATE_MISSOURI={
-		region_state:USA={
-			create_building={
-				building="building_government_administration"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_professional_bureaucrats" "pm_secular_bureaucrats" }
-			}
-			create_building={
-				building="building_trade_center"
-				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_MISSOURI"
-					}
-				}
-				reserves=1
-			}
-			create_building={
-				building="building_lead_mine"
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:USA"
-						levels=1
-						region="STATE_MISSOURI"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_picks_and_shovels_building_lead_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts"  }
-			}
-			create_building={
-				building="building_maize_farm"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:USA"
-						levels=1
-						region="STATE_MISSOURI"
-					}
-					building={
-						type="building_maize_farm"
-						country="c:USA"
-						levels=1
-						region="STATE_MISSOURI"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_soil_enriching_farming" "pm_no_secondary" "pm_tools_disabled"  }
-			}
-			create_building={
-				building="building_livestock_ranch"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:USA"
-						levels=1
-						region="STATE_MISSOURI"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated"  }
-			}
+		region_state:IOW={
 		}
 	}
 	s:STATE_WISCONSIN={
-		region_state:USA={
+		region_state:CTF={
 		}
 	}
 	s:STATE_INDIANA={
@@ -1131,72 +1003,16 @@
 		}
 	}
 	s:STATE_MISSISSIPPI={
-		region_state:USA={
-			create_building={
-				building="building_government_administration"
-				add_ownership={
-					country={
-						country="c:USA"
-						levels=1
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_professional_bureaucrats" "pm_secular_bureaucrats" }
-			}
-			create_building={
-				building="building_cotton_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:USA"
-						levels=4
-						region="STATE_MISSISSIPPI"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "default_building_cotton_plantation" "pm_road_carts"  }
-			}
-			create_building={
-				building="building_maize_farm"
-				add_ownership={
-					building={
-						type="building_maize_farm"
-						country="c:USA"
-						levels=2
-						region="STATE_MISSISSIPPI"
-					}
-					building={
-						type="building_manor_house"
-						country="c:USA"
-						levels=2
-						region="STATE_MISSISSIPPI"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_soil_enriching_farming" "pm_no_secondary" "pm_tools_disabled"  }
-			}
-			create_building={
-				building="building_tobacco_plantation"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:USA"
-						levels=2
-						region="STATE_MISSISSIPPI"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "default_building_tobacco_plantation" "pm_road_carts"  }
-			}
+		region_state:LKT={
 		}
 	}
 	s:STATE_ALABAMA={
-		region_state:USA={
+		region_state:SEQ={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:USA"
+						country="c:SEQ"
 						levels=1
 					}
 				}
@@ -1208,13 +1024,13 @@
 				add_ownership={
 					building={
 						type="building_maize_farm"
-						country="c:USA"
+						country="c:SEQ"
 						levels=3
 						region="STATE_ALABAMA"
 					}
 					building={
 						type="building_manor_house"
-						country="c:USA"
+						country="c:SEQ"
 						levels=3
 						region="STATE_ALABAMA"
 					}
@@ -1227,7 +1043,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:USA"
+						country="c:SEQ"
 						levels=10
 						region="STATE_ALABAMA"
 					}
@@ -1240,7 +1056,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:USA"
+						country="c:SEQ"
 						levels=3
 						region="STATE_ALABAMA"
 					}
@@ -1252,7 +1068,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:USA"
+						country="c:SEQ"
 						levels=1
 					}
 				}
@@ -1262,16 +1078,16 @@
 		}
 	}
 	s:STATE_FLORIDA={
-		region_state:USA={
+		region_state:FLR={
 		}
 	}
 	s:STATE_GEORGIA={
-		region_state:USA={
+		region_state:GRG={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:USA"
+						country="c:GRG"
 						levels=2
 					}
 				}
@@ -1283,13 +1099,13 @@
 				add_ownership={
 					building={
 						type="building_maize_farm"
-						country="c:USA"
+						country="c:GRG"
 						levels=3
 						region="STATE_GEORGIA"
 					}
 					building={
 						type="building_manor_house"
-						country="c:USA"
+						country="c:GRG"
 						levels=2
 						region="STATE_GEORGIA"
 					}
@@ -1302,7 +1118,7 @@
 				add_ownership={
 					building={
 						type="building_livestock_ranch"
-						country="c:USA"
+						country="c:GRG"
 						levels=1
 						region="STATE_GEORGIA"
 					}
@@ -1315,7 +1131,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:USA"
+						country="c:GRG"
 						levels=1
 						region="STATE_GEORGIA"
 					}
@@ -1328,7 +1144,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:USA"
+						country="c:GRG"
 						levels=8
 						region="STATE_GEORGIA"
 					}
@@ -1341,7 +1157,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:USA"
+						country="c:GRG"
 						levels=3
 						region="STATE_GEORGIA"
 					}
@@ -1353,7 +1169,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:USA"
+						country="c:GRG"
 						levels=1
 					}
 				}
@@ -2140,22 +1956,24 @@
 		}
 	}
 	s:STATE_SIX_NATIONS={
-		region_state:IRO={
+		region_state:GBR={
 			create_building={
-				building="building_trade_center"
-				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+				building="building_kanien_canal"
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:IRO"
+						country="c:GBR"
 						levels=1
 						region="STATE_SIX_NATIONS"
 					}
 				}
 				reserves=1
 			}
+		}
+		region_state:IRO={
 			create_building={
-				building="building_kanien_canal"
+				building="building_trade_center"
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
 				add_ownership={
 					building={
 						type="building_financial_district"
@@ -2311,12 +2129,12 @@
 		}
 	}
 	s:STATE_NORTH_CAROLINA={
-		region_state:USA={
+		region_state:NCR={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:USA"
+						country="c:NCR"
 						levels=2
 					}
 				}
@@ -2328,7 +2146,7 @@
 				add_ownership={
 					building={
 						type="building_food_industry"
-						country="c:USA"
+						country="c:NCR"
 						levels=1
 						region="STATE_NORTH_CAROLINA"
 					}
@@ -2341,7 +2159,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:USA"
+						country="c:NCR"
 						levels=2
 						region="STATE_NORTH_CAROLINA"
 					}
@@ -2354,7 +2172,7 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:USA"
+						country="c:NCR"
 						levels=1
 						region="STATE_NORTH_CAROLINA"
 					}
@@ -2367,13 +2185,13 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:USA"
+						country="c:NCR"
 						levels=2
 						region="STATE_NORTH_CAROLINA"
 					}
 					building={
 						type="building_maize_farm"
-						country="c:USA"
+						country="c:NCR"
 						levels=3
 						region="STATE_NORTH_CAROLINA"
 					}
@@ -2386,7 +2204,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:USA"
+						country="c:NCR"
 						levels=10
 						region="STATE_NORTH_CAROLINA"
 					}
@@ -2398,7 +2216,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:USA"
+						country="c:NCR"
 						levels=1
 					}
 				}
@@ -2408,20 +2226,18 @@
 		}
 	}
 	s:STATE_UTAH={
-		region_state:SC1={
-		}
 		region_state:NVJ={
 		}
 		region_state:UTE={
 		}
 	}
 	s:STATE_SOUTH_CAROLINA={
-		region_state:USA={
+		region_state:SCR={
 			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
-						country="c:USA"
+						country="c:SCR"
 						levels=2
 					}
 				}
@@ -2434,9 +2250,9 @@
 				add_ownership={
 					building={
 						type="building_financial_district"
-						country="c:USA"
+						country="c:SCR"
 						levels=6
-						region="STATE_MASSACHUSETTS"
+						region="STATE_SOUTH_CAROLINA"
 					}
 				}
 				reserves=1
@@ -2446,7 +2262,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:USA"
+						country="c:SCR"
 						levels=10
 						region="STATE_SOUTH_CAROLINA"
 					}
@@ -2459,7 +2275,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:USA"
+						country="c:SCR"
 						levels=5
 						region="STATE_SOUTH_CAROLINA"
 					}
@@ -2472,7 +2288,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:USA"
+						country="c:SCR"
 						levels=2
 						region="STATE_SOUTH_CAROLINA"
 					}
@@ -2485,13 +2301,13 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:USA"
+						country="c:SCR"
 						levels=2
 						region="STATE_SOUTH_CAROLINA"
 					}
 					building={
 						type="building_maize_farm"
-						country="c:USA"
+						country="c:SCR"
 						levels=3
 						region="STATE_SOUTH_CAROLINA"
 					}
@@ -2503,7 +2319,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:USA"
+						country="c:SCR"
 						levels=1
 					}
 				}
@@ -2618,6 +2434,8 @@
 				activate_production_methods={ "pm_saw_mills"  "pm_no_equipment" "pm_road_carts" "pm_hardwood" }
 			}
 		}
+	}
+	s:STATE_TORONTO={
 		region_state:ONT={
 			create_building={
 				building="building_trade_center"
@@ -2639,24 +2457,11 @@
 						type="building_financial_district"
 						country="c:ONT"
 						levels=6
-						region="STATE_ONTARIO"
+						region="STATE_TORONTO"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_sulfur_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts"  }
-			}
-			create_building={
-				building="building_wheat_farm"
-				add_ownership={
-					building={
-						type="building_manor_house"
-						country="c:ONT"
-						levels=1
-						region="STATE_ONTARIO"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_simple_farming"  "pm_tools_disabled" "pm_citrus_orchards" }
 			}
 			create_building={
 				building="building_livestock_ranch"
@@ -2665,7 +2470,7 @@
 						type="building_livestock_ranch"
 						country="c:ONT"
 						levels=1
-						region="STATE_ONTARIO"
+						region="STATE_TORONTO"
 					}
 				}
 				reserves=1
@@ -2678,7 +2483,7 @@
 						type="building_manor_house"
 						country="c:ONT"
 						levels=1
-						region="STATE_ONTARIO"
+						region="STATE_TORONTO"
 					}
 				}
 				reserves=1
@@ -2979,9 +2784,11 @@
 				activate_production_methods={ "pm_no_organization" }
 			}
 		}
-		region_state:ATB={
-		}
+	}
+	s:STATE_SASKATCHEWAN={
 		region_state:HBC={
+		}
+		region_state:IRC={
 		}
 	}
 	s:STATE_MANITOBA={
@@ -3014,15 +2821,15 @@
 		}
 	}
 	s:STATE_YUKON_TERRITORY={
-		region_state:HBC={
+		region_state:IPQ={
 		}
 	}
 	s:STATE_NORTHWEST_TERRITORIES={
-		region_state:HBC={
+		region_state:INV={
 		}
 	}
 	s:STATE_NUNAVUT={
-		region_state:HBC={
+		region_state:INV={
 		}
 	}
 	s:STATE_BERMUDA={
@@ -3742,13 +3549,13 @@
 		}
 	}
 	s:STATE_CHIAPAS={
-		region_state:SC1={
+		region_state:UCA={
 			create_building={
 				building="building_dye_plantation"
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:SC1"
+						country="c:UCA"
 						levels=1
 						region="STATE_CHIAPAS"
 					}
@@ -3761,7 +3568,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:SC1"
+						country="c:UCA"
 						levels=1
 						region="STATE_CHIAPAS"
 					}
@@ -3769,8 +3576,6 @@
 				reserves=1
 				activate_production_methods={ "default_building_banana_plantation" "pm_road_carts"  }
 			}
-		}
-		region_state:UCA={
 		}
 	}
 	s:STATE_BAJA_CALIFORNIA={

@@ -135,10 +135,16 @@ je_canada_pacific_railway = {
 				state_region = s:STATE_ONTARIO
 			}
 			any_scope_state = {
+				state_region = s:STATE_TORONTO
+			}
+			any_scope_state = {
+				state_region = s:STATE_SUPERIOR
+			}
+			any_scope_state = {
 				state_region = s:STATE_ALBERTA
 			}
 			any_scope_state = {
-				state_region = s:STATE_WASHINGTON
+				state_region = s:STATE_SASKATCHEWAN
 			}
 			any_scope_state = {
 				state_region = s:STATE_MANITOBA
@@ -158,10 +164,16 @@ je_canada_pacific_railway = {
 			state_region = s:STATE_ONTARIO
 		}
 		any_scope_state = {
+			state_region = s:STATE_TORONTO
+		}
+		any_scope_state = {
+			state_region = s:STATE_SUPERIOR
+		}
+		any_scope_state = {
 			state_region = s:STATE_ALBERTA
 		}
 		any_scope_state = {
-			state_region = s:STATE_WASHINGTON
+			state_region = s:STATE_SASKATCHEWAN
 		}
 		any_scope_state = {
 			state_region = s:STATE_MANITOBA
@@ -182,11 +194,19 @@ je_canada_pacific_railway = {
 			has_building = building_railway
 		}
 		any_scope_state = {
+			state_region = s:STATE_TORONTO
+			has_building = building_railway
+		}
+		any_scope_state = {
+			state_region = s:STATE_SUPERIOR
+			has_building = building_railway
+		}
+		any_scope_state = {
 			state_region = s:STATE_ALBERTA
 			has_building = building_railway
 		}
 		any_scope_state = {
-			state_region = s:STATE_WASHINGTON
+			state_region = s:STATE_SASKATCHEWAN
 			has_building = building_railway
 		}
 		any_scope_state = {
