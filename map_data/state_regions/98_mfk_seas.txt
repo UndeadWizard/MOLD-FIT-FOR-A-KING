@@ -1,6 +1,0 @@
-﻿STATE_GREAT_LAKES = {
-    id = 3149
-    provinces = { "x1ACBFD" }
-    diorama_radius_multiplier = 1.2
-    diorama_center_offset = { 10.0 -15.0 }
-}
