@@ -2996,19 +2996,6 @@ ai_strategy_default = {
 			add = 5
 		}
 
-		# Acre claimant wants Acre
-		if = {
-			limit = {
-				has_journal_entry = je_acre_dispute
-				scope:target_country = {
-					any_scope_state = {
-						state_region = s:STATE_ACRE
-					}
-				}
-			}
-			add = 0.5
-		}
-
 		# Italian minors will want to help San Marco if involved
 		if = {
 			limit = {

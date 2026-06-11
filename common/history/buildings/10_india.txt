@@ -2210,7 +2210,7 @@
 						type="building_financial_district"
 						country="c:BIC"
 						levels=1
-						region="STATE_MADRAS"
+						region="STATE_CIRCARS"
 					}
 				}
 				reserves=1
@@ -2353,7 +2353,7 @@
 				add_ownership = {
 					building = {
 						type = "building_manor_house"
-						country = "c:BIC"
+						country = "c:MYS"
 						levels = 1
 						region = "STATE_MYSORE"
 					}

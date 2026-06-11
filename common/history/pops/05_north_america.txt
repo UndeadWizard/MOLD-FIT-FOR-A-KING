@@ -198,10 +198,10 @@
 		}
 	}
 	s:STATE_OREGON = {
-		region_state:ABS = {
+		region_state:NPI = {
 			create_pop = {
-				culture = siouan
-				size = 33000
+				culture = paiute
+				size = 16436
 			}
 		}
 		region_state:KLA = {
@@ -247,10 +247,10 @@
 			}
 		}
 		
-		region_state:NZP = {
+		region_state:SHO = {
 			create_pop = {
-				culture = nez_perce
-				size = 40000
+				culture = paiute
+				size = 17647
 			}
 		}
 	}
@@ -428,22 +428,20 @@
 		}
 	}
 	s:STATE_KANSAS = {
-		region_state:PWN = {
+		region_state:COM = {
 			create_pop = {
 				culture = caddoan
-				size = 20000
+				size = 11542
+			}
+			create_pop = {
+				culture = siouan
+				size = 4000
 			}
 		}
 		region_state:ARP = {
 			create_pop = {
 				culture = siouan
 				size = 6132
-			}
-		}
-		region_state:COM = {
-			create_pop = {
-				culture = siouan
-				size = 4000
 			}
 		}
 	}

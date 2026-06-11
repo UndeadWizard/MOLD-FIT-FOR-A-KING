@@ -5214,13 +5214,13 @@
 		}
 	}
 	s:STATE_CRETE={
-		region_state:EGY={
+		region_state:TUR={
 			create_building={
 				building="building_cotton_plantation"
 				add_ownership={
 					building={
 						type="building_cotton_plantation"
-						country="c:EGY"
+						country="c:TUR"
 						levels=1
 						region="STATE_CRETE"
 					}
@@ -5233,7 +5233,7 @@
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:EGY"
+						country="c:TUR"
 						levels=1
 						region="STATE_CRETE"
 					}
@@ -5245,7 +5245,7 @@
 				building="building_port"
 				add_ownership={
 					country={
-						country="c:EGY"
+						country="c:TUR"
 						levels=1
 					}
 				}

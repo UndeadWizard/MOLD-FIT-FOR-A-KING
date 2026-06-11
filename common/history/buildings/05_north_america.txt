@@ -1985,6 +1985,19 @@
 				reserves=1
 			}
 			create_building={
+				building="building_vatmoss_plantation"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:IRO"
+						levels=2
+						region="STATE_SIX_NATIONS"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_vatmoss"}
+			}
+			create_building={
 				building="building_tooling_workshop"
 				add_ownership={
 					building={
@@ -2456,7 +2469,7 @@
 					building={
 						type="building_financial_district"
 						country="c:ONT"
-						levels=6
+						levels=1
 						region="STATE_TORONTO"
 					}
 				}
