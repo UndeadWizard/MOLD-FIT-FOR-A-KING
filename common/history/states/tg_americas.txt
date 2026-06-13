@@ -718,6 +718,7 @@ STATES = {
 				x657999 x900040 xEF4297 xD0C040
 			}
 		}
+		add_claim = c:USA
 		add_homeland = cu:dakota
 		add_homeland = cu:algonquian
 	}
@@ -1666,6 +1667,7 @@ STATES = {
                 xEC2CF8 xFF1907 x79E1C6 x46467A xC303BD x3ED2DB
 			}
 		}
+		add_claim = c:HBC
 		add_homeland = cu:franco_canadian
 		add_homeland = cu:anglo_canadian
 	}
