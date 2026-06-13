@@ -3798,17 +3798,6 @@ ai_strategy_default = {
             add = 25
         }
 
-		# Acre claimant wants Acre
-		if = {
-			limit = {
-				has_journal_entry = je_acre_dispute
-				scope:target_country = {
-					has_state_in_state_region = STATE_ACRE
-				}
-			}
-			add = 25
-		}
-
         # Great Powers with slavery banned should be more aggressive against an openly slave trading Brazil
 		if = {
 			limit = {
@@ -5814,32 +5803,6 @@ ai_strategy_default = {
 								capital.region = sr:region_south_china
 								capital.region = sr:region_indonesia
 							}
-						}
-					}
-					add = 200
-				}
-
-				if = { # Try to be on good terms with GBR/USA to avoid intervention
-					limit = {
-						has_journal_entry = je_reconquista
-						scope:target_country = {
-							country_rank = rank_value:great_power
-							OR = {
-								c:GBR ?= this
-								AND = {
-									is_in_geographic_region = geographic_region_americas
-									is_historical_spanish_american_colony = no
-								}
-							}
-						}
-					}
-					add = 200
-				}
-				else_if = { # Reconcile with former Spanish Colonies
-					limit = {
-						has_journal_entry = je_hispanoamerica
-						scope:target_country = {
-							has_modifier = modifier_not_recognized_by_spain
 						}
 					}
 					add = 200

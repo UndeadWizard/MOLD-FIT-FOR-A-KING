@@ -1104,15 +1104,6 @@ on_monthly_pulse_country = {
 			britain_generate_scripted_heirs = yes
 		}
 
-		# France
-		if = {
-			limit = {
-				country_has_primary_culture = cu:french
-				can_generate_scripted_heirs = yes
-			}
-			france_generate_scripted_heirs = yes
-		}
-
 		if = {
 			limit = {
 				game_date >= 1910.5.06
