@@ -253,18 +253,6 @@
 				count = 3
 			}
 
-			combat_unit = { # 31st, 32nd and 33rd Dominican-manned regiments
-				type = unit_type:combat_unit_type_line_infantry
-				state_region = s:STATE_SANTO_DOMINGO
-				count = 3
-			}
-
-			combat_unit = { # Civil Guards
-				type = unit_type:combat_unit_type_irregular_infantry
-				state_region = s:STATE_SANTO_DOMINGO
-				count = 4
-			}
-
 			combat_unit = {
 				type = unit_type:combat_unit_type_irregular_infantry
 				state_region = s:STATE_HAITI

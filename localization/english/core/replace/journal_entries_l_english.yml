@@ -5,3 +5,5 @@
  je_group_john_brant:0 "Horns of John Brant"
  je_john_brant_rule:0 "The Horns of John Brant"
  je_john_brant_rule_reason:0 "Four years ago, Isaac Brant's tyranny came to a bloody end. Blinded by British gold and alcohol, Isaac attempted to rule the League as an absolute Autocrat - intimidating the Longhouse with a personal militia of young, radicalized warriors. After enduring his iron grip for twenty long years, a traditionalist faction led by his half-brother, John Brant, launched a coup, assassinating the tyrant and reclaiming the Great Law of Peace. Taking up the mantle of [concept_grand_hoyaneh], John now rules with a singular focus: to reconcile the fractured clans."
+ je_brant_crisis_success_tt:0 "We have completed at least #v 8#! agenda goals"
+ je_brant_crisis_success_2_tt:0 "Depending on the number of #tooltippable;tooltip:tenpo_shared_tt #b Shared#!#!, #tooltippable;tooltip:tenpo_reformer_tt #b Reformer#!#!, or #tooltippable;tooltip:tenpo_hardliner_tt #b Hardliner#!#! goals completed, the reward will change"
