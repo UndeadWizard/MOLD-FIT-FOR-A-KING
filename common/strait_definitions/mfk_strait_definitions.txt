@@ -1,0 +1,12 @@
+﻿canal_kanien = {
+	type = artifical
+
+	total_block_requires_full_control = no
+	military_block_requires_full_control = no
+
+	first_land_endpoint = xAF2323
+	second_land_endpoint = xDCB827
+
+	first_sea_endpoint = x1ACBFD
+	second_sea_endpoint = x74FBFB
+}

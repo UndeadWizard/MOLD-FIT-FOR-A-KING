@@ -1,0 +1,3 @@
+﻿region_great_lakes = {
+	states = { STATE_GREAT_LAKES  }
+}

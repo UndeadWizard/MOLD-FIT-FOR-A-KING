@@ -383,7 +383,7 @@ in_volcanic_zone = {
 		state_region = s:STATE_BAJA_CALIFORNIA
 		state_region = s:STATE_CALIFORNIA
 		state_region = s:STATE_OREGON
-		state_region = s:STATE_WASHINGTON
+		state_region = s:STATE_COLUMBIA
 		state_region = s:STATE_BRITISH_COLUMBIA
 		state_region = s:STATE_ALASKA
 		state_region = s:STATE_SICILY
@@ -528,6 +528,7 @@ owned_great_plains_region_states = {
 }
 
 owned_pacific_coast_region_states = {
+	owns_entire_state_region = STATE_COLUMBIA
 	owns_entire_state_region = STATE_IDAHO
 	owns_entire_state_region = STATE_OREGON
 	owns_entire_state_region = STATE_UTAH

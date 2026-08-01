@@ -171,7 +171,7 @@
 			}
 		}
 	}
-	s:STATE_WASHINGTON = {
+	s:STATE_SASKATCHEWAN = {
 		region_state:GVT = {
 			create_pop = {
 				culture = siouan
@@ -198,10 +198,10 @@
 		}
 	}
 	s:STATE_OREGON = {
-		region_state:ABS = {
+		region_state:NPI = {
 			create_pop = {
-				culture = siouan
-				size = 33000
+				culture = paiute
+				size = 16436
 			}
 		}
 		region_state:KLA = {
@@ -247,10 +247,10 @@
 			}
 		}
 		
-		region_state:NZP = {
+		region_state:SHO = {
 			create_pop = {
-				culture = nez_perce
-				size = 40000
+				culture = paiute
+				size = 17647
 			}
 		}
 	}
@@ -428,22 +428,20 @@
 		}
 	}
 	s:STATE_KANSAS = {
-		region_state:PWN = {
+		region_state:COM = {
 			create_pop = {
 				culture = caddoan
-				size = 20000
+				size = 11542
+			}
+			create_pop = {
+				culture = siouan
+				size = 4000
 			}
 		}
 		region_state:ARP = {
 			create_pop = {
 				culture = siouan
 				size = 6132
-			}
-		}
-		region_state:COM = {
-			create_pop = {
-				culture = siouan
-				size = 4000
 			}
 		}
 	}
@@ -541,6 +539,35 @@
 			create_pop = {
 				culture = dakota
 				size = 2462
+			}
+		}
+	}
+	s:STATE_TORONTO = {
+		region_state:ONT = {
+			create_pop = {
+				culture = anglo_canadian
+				size = 226792
+			}
+			create_pop = {
+				culture = cree
+				size = 2200
+			}
+			create_pop = {
+				culture = franco_canadian
+				size = 13400
+			}
+			create_pop = {
+				culture = iroquoian
+				size = 1902
+			}
+			create_pop = {
+				culture = algonquian
+				size = 1902
+			}
+			create_pop = {
+				culture = franco_canadian
+				religion = protestant
+				size = 600
 			}
 		}
 	}
@@ -940,6 +967,16 @@
 		}
 	}
 	s:STATE_SIX_NATIONS = {
+		region_state:GBR = {
+			create_pop = {
+				culture = british
+				size = 4000
+			}
+			create_pop = {
+				culture = iroquoian
+				size = 2000
+			}
+		}
 		region_state:IRO = {
 			create_pop = {
 				culture = iroquoian
@@ -1156,33 +1193,6 @@
 		}
 	}
 	s:STATE_ONTARIO = {
-		region_state:ONT = {
-			create_pop = {
-				culture = anglo_canadian
-				size = 366792
-			}
-			create_pop = {
-				culture = cree
-				size = 12200
-			}
-			create_pop = {
-				culture = franco_canadian
-				size = 23400
-			}
-			create_pop = {
-				culture = iroquoian
-				size = 3902
-			}
-			create_pop = {
-				culture = algonquian
-				size = 3902
-			}
-			create_pop = {
-				culture = franco_canadian
-				religion = protestant
-				size = 600
-			}
-		}
 		region_state:HCR = {
 			create_pop = {
 				culture = cree

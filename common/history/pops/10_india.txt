@@ -1771,12 +1771,12 @@ POPS = {
 		region_state:MYS = {
 			create_pop = {
 				culture = tamil
-				size = 7168370
+				size = 7368370
 			}
 			create_pop = {
 				culture = tamil
 				religion = protestant
-				size = 61145
+				size = 71145
 			}
 			create_pop = {
 				culture = kannada
@@ -1785,7 +1785,7 @@ POPS = {
 			create_pop = {
 				culture = tamil
 				religion = sunni
-				size = 498443
+				size = 528443
 			}
 			create_pop = {
 				culture = tamil
@@ -1800,31 +1800,11 @@ POPS = {
 			create_pop = {
 				pop_type = slaves
 				culture = kannada
-				size = 34002
-			}
-		}
-		region_state:PUD = {
-			create_pop = {
-				culture = tamil
-				size = 202480
+				size = 37002
 			}
 			create_pop = {
 				culture = telegu
 				size = 4768
-			}
-			create_pop = {
-				culture = kannada
-				size = 3428
-			}
-			create_pop = {
-				culture = tamil
-				religion = sunni
-				size = 23840
-			}
-			create_pop = {
-				culture = tamil
-				religion = protestant
-				size = 7152
 			}
 		}
 	}

@@ -1,3 +1,5 @@
 ﻿l_english:
  vatmoss: "Vatmoss"
  plasm: "Plasm"
+ goods_input_plasm_add: "@plasm! Plasm Input"
+ goods_input_plasm_add_desc: "The amount of @plasm! consumed by buildings"

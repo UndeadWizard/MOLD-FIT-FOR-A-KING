@@ -9,7 +9,8 @@
   "game_custom_data": {
     "multiplayer_synchronized": true,
     "replace_paths": [
-      "common/history/states"
+      "common/history/states",
+      "map_data/state_regions"
     ]
   }
 }
