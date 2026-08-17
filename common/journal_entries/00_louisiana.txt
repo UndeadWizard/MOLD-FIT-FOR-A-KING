@@ -4,6 +4,7 @@
 	group = je_group_historical_content
 
 	complete = {
+		exists = c:LOU
 		is_subject = no
 		is_at_war = no
 	}

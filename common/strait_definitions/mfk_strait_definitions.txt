@@ -1,5 +1,5 @@
 ﻿canal_kanien = {
-	type = artifical
+	type = artificial
 
 	total_block_requires_full_control = no
 	military_block_requires_full_control = no

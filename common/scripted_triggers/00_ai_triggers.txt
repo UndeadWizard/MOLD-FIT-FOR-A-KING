@@ -227,7 +227,6 @@ has_je_conquest_reason = {
 				any_scope_state = {
 					OR = {
 						state_region = s:STATE_CALIFORNIA
-						state_region = s:STATE_NEVADA
 						state_region = s:STATE_UTAH
 						state_region = s:STATE_COLORADO
 						state_region = s:STATE_ARIZONA

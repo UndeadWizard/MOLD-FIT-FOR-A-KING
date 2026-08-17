@@ -13,6 +13,7 @@ STATES = {
 		}
 
 		add_homeland = cu:cajun
+		add_homeland = cu:mexican
 		add_homeland = cu:afro_antillean
 		add_homeland = cu:muskogean
 		add_homeland = cu:caddoan
@@ -1056,6 +1057,7 @@ STATES = {
 
 		add_homeland = cu:comanche
 		add_homeland = cu:cajun
+		add_homeland = cu:mexican
 		add_claim = c:SC1
 	}
 
@@ -2973,7 +2975,7 @@ STATES = {
 			owned_provinces = {
 				x946CC7 x575CCC x41AC27 xEDD51C x99CB13 x7F5540 xC02080 
 				x4F5A4D x9EA705 x6BDFF3 xC0696D x1A505E xB963F3 x7E7783
-				x6C53BA
+				x6C53BA xE6B7A4
 				xA4DCB6 xDAEDDD 
 			}
 		}

@@ -1552,11 +1552,6 @@ on_yearly_pulse_country = {
 	events = {
 		utopian.2
 		austria_events.40
-		portuguese_monarchs.4
-		spanish_africa.2
-		spanish_africa.3
-		spanish_africa.4
-		spain_politics.2
 		japan_politics.1
 		japan_politics.2
 		japan_politics.3
@@ -1813,10 +1808,8 @@ on_yearly_pulse_country = {
 		delay = { days = 1 }
 		russian_monarchy_yearly_events
 		japan_monarchy_yearly_events
-		spain_single_fire_yearly_events
 		delay = { days = 1 }
 		austrian_monarchy_yearly_events
-		portugal_single_fire_yearly_events
 		delay = { days = 2 }
 		bp1_misc_yearly_events
 		delay = { days = 3 }
@@ -3017,7 +3010,7 @@ on_new_ruler = {
 					}
 					character_france_ruler_succession_chain_effect = yes
 				}
-
+				
 				### Portuguese Monarchs
 				if = {
 					limit = {
@@ -3596,6 +3589,17 @@ on_treaty_dissolved = {
 on_treaty_article_removed = {
 	effect = {
 		post_notification = treaty_article_removed
+	}
+}
+
+# Root = New host country that inherited the treaty ports (e.g. a victorious revolution or annexation)
+# scope:target_country = Foreign power that holds the inherited treaty port(s)
+on_treaty_ports_inherited = {
+	effect = {
+		trigger_event = {
+			id = treaty_port_inheritance_events.1
+			popup = yes
+		}
 	}
 }
 
@@ -6190,6 +6194,15 @@ on_political_movement_supported_law_cancelled = {
 # scope:wargoal_impact = the impact of the wargoal enforced
 on_wargoal_enforced = {
 	effect = {
+		# Any war victory over the country that reneged on our inherited treaty ports settles the grudge
+		if = {
+			limit = {
+				has_variable = wants_treaty_port_revenge_against
+				var:wants_treaty_port_revenge_against ?= scope:target
+			}
+			remove_variable = wants_treaty_port_revenge_against
+		}
+
 		if = {
 			limit = {
 				OR = {
@@ -6692,6 +6705,7 @@ on_company_established = {
 # scope:company = The company that was disbanded
 on_company_disbanded = {
 	effect = {
+		re_add_disbanded_company_prestige_good_jes = yes
 	}
 }
 
@@ -7837,6 +7851,20 @@ on_strait_access_setting_changed = {
 # scope:amendment = amendment being repealed
 on_amendment_repealed = {
 	effect = {}
+}
+
+# Root = Country
+# scope:amendment = amendment that timed out
+# scope:law = law the amendment was attached to
+on_amendment_timeout = {
+	effect = {
+		scope:amendment.type = {
+			save_scope_as = timed_out_amendment_type
+		}
+		scope:law = {
+			post_notification = amendment_timed_out
+		}
+	}
 }
 
 # Root = Invader Country
