@@ -21,8 +21,6 @@
 		activate_law = law_type:law_no_schools
 		activate_law = law_type:law_agrarianism
 
-		initialise_caciquismo_effect = yes
-		
 		set_import_tariff_level = { 
 			goods = g:artillery
 			level = high_subventions
@@ -41,9 +39,6 @@
 
 		ig:ig_devout ?= {
 			set_interest_group_name = ig_catholic_church
-		}
-		add_modifier = {
-			name = unrestricted_slave_trade_modifier
 		}
 	}
 }

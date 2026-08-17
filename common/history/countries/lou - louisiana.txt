@@ -29,10 +29,6 @@
 			level = high_subventions
 		}
 		
-		add_modifier = {
-			name = modifier_texas_war_of_independence
-			months = 12
-		}
 		add_journal_entry = {
 			type = je_cajun_rebellion
 		}

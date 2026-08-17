@@ -31,9 +31,11 @@ great_cajun_rebellion.1 = {
 			remove_claim = c:SC1
 		}
 		s:STATE_GALVESTON = {
+			remove_homeland = cu:mexican
 			remove_claim = c:SC1
 		}
 		s:STATE_LOUISIANA = {
+			remove_homeland = cu:mexican
 			remove_claim = c:SC1
 		}
 	}
@@ -44,9 +46,11 @@ great_cajun_rebellion.1 = {
 			remove_claim = c:SC1
 		}
 		s:STATE_GALVESTON = {
+			remove_homeland = cu:mexican
 			remove_claim = c:SC1
 		}
 		s:STATE_LOUISIANA = {
+			remove_homeland = cu:mexican
 			remove_claim = c:SC1
 		}
 	}

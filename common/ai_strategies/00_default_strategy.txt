@@ -1682,7 +1682,6 @@ ai_strategy_default = {
 								state_region = s:STATE_OKLAHOMA
 								state_region = s:STATE_ARIZONA
 								state_region = s:STATE_CALIFORNIA
-								state_region = s:STATE_NEVADA
 								state_region = s:STATE_NEW_MEXICO
 							}
 						}
@@ -3328,7 +3327,6 @@ ai_strategy_default = {
 					any_scope_state = {
 						OR = {
 							state_region = s:STATE_CALIFORNIA
-							state_region = s:STATE_NEVADA
 							state_region = s:STATE_UTAH
 							state_region = s:STATE_COLORADO
 							state_region = s:STATE_ARIZONA
@@ -5181,6 +5179,8 @@ ai_strategy_default = {
 		# Certain Great Powers care about Egyptian-Ottoman conflict in the early game
 		if = {
 			limit = {
+				exists = c:TUR
+				exists = c:EGY
 				OR = {
 					has_variable = veiled_protectorate_support_ottomans
 					has_variable = veiled_protectorate_support_egypt

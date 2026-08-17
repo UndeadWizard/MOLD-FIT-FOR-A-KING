@@ -163,7 +163,7 @@ c:FRA ?= {
 		}
 		create_diplomatic_pact = {
 			country = c:SC1
-			type = colony
+			type = dominion
 		}
 		create_diplomatic_pact = {
 			country = c:UCA
