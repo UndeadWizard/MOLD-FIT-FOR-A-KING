@@ -79,3 +79,17 @@ HUB_NAME_STATE_TORONTO_mine: "Hamilton"
 HUB_NAME_STATE_TORONTO_farm: "Sarina"
 HUB_NAME_STATE_TORONTO_wood: "London"
 HUB_NAME_STATE_TORONTO_port: "Port of Toronto"
+
+## Superior
+HUB_NAME_STATE_SUPERIOR_city: "Superior"
+HUB_NAME_STATE_SUPERIOR_mine: "Duluth"
+HUB_NAME_STATE_SUPERIOR_farm: "Ashland"
+HUB_NAME_STATE_SUPERIOR_wood: "Bayfield"
+HUB_NAME_STATE_SUPERIOR_port: "Superior Port"
+
+## Columbia
+HUB_NAME_STATE_COLUMBIA_city: "Columbia"
+HUB_NAME_STATE_COLUMBIA_mine: "Fulton"
+HUB_NAME_STATE_COLUMBIA_farm: "Jefferson City"
+HUB_NAME_STATE_COLUMBIA_wood: "Sedalia"
+HUB_NAME_STATE_COLUMBIA_port: "Columbia Port"
