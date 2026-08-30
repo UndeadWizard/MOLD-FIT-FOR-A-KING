@@ -2734,13 +2734,13 @@
 		}
 	}
 	s:STATE_NEWFOUNDLAND={
-		region_state:GBR={
+		region_state:NEW={
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={
 					building={
 						type="building_fishing_wharf"
-						country="c:GBR"
+						country="c:NEW"
 						levels=2
 						region="STATE_NEWFOUNDLAND"
 					}

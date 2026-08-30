@@ -518,29 +518,11 @@ on_monthly_pulse_country = {
 		set_hierarchy_event.1 # Sets British Indian Caste System
 		set_hierarchy_event.2 # Replaces British Indian Caste System with Default
 
-		# Hungary Events
-		hungary_events.11 # Franz Joseph revokes the April Laws
-		hungary_events.13 # Crown of St. Stephen
-
-		# Austria Events
-		eastern_question_austria.1
-
 		# Regency ending
 		regency.3
 
-		# Pedro regency ending
-		pedro.3
-
 		# Philippines Events
 		philippines.7
-
-		# Portuguese monarchy events
-		portuguese_monarchs.1
-		portuguese_monarchs.2
-		# portuguese_monarchs.3 is fired by on_enact of various republican laws
-
-		peru_bolivia_events.8
-		peru_bolivia_events.9
 
 		unable_to_enact.1
 
