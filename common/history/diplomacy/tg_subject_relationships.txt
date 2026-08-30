@@ -254,6 +254,11 @@ c:FRA ?= {
 			country = c:NVS
 			type = colony
 		}
+		#Newfoundland
+		create_diplomatic_pact = {
+			country = c:NEW
+			type = colony
+		}
 		# Hudson Bay Company has a weird autonomous charter
 		create_diplomatic_pact = {
 			country = c:HBC
