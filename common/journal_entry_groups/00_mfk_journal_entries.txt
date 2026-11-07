@@ -14,3 +14,10 @@ je_group_john_brant = {
 	context = country
 	updates_strategic_region_stances = yes
 }
+
+je_group_louisiana = {
+	context = country
+	updates_strategic_region_stances = yes
+	illustration = "gfx/interface/illustrations/journal/je_group_illu_manifest_destiny.dds"
+	themed = yes
+}

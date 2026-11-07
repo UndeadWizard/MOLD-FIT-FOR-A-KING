@@ -4,6 +4,7 @@
 dna_louis_xvii={
 	portrait_info={
 	genes={ 		
+ 		gene_asian_east={ "asian_east" 0 "asian_east" 0 }
 		hair_color={ 154 150 112 71 }
  		skin_color={ 81 29 81 29 }
  		eye_color={ 182 132 182 132 }

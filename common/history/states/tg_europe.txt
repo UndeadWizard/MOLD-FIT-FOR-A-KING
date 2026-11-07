@@ -696,7 +696,6 @@
 			state_type = unincorporated
 		}
 
-		add_homeland = cu:siberian
 		add_homeland = cu:inuit
 		add_homeland = cu:chukchi
 	}
@@ -709,7 +708,7 @@
 			state_type = unincorporated
 		}
 
-		add_homeland = cu:siberian
+		add_homeland = cu:evenki
 		add_homeland = cu:russian
 	}
 
@@ -756,7 +755,7 @@
 			}
 			state_type = unincorporated
 		}
-		add_homeland = cu:siberian
+		add_homeland = cu:evenki
 		add_homeland = cu:russian
 	}
 	s:STATE_TOBOLSK = {
@@ -767,7 +766,7 @@
 		}
 
 		add_homeland = cu:russian
-		add_homeland = cu:siberian
+		add_homeland = cu:evenki
 		add_homeland = cu:ugrian
 	}
 
@@ -779,7 +778,7 @@
 		}
 
 		add_homeland = cu:russian
-		add_homeland = cu:siberian
+		add_homeland = cu:evenki
 	}
 
 	s:STATE_OB = {
@@ -872,7 +871,7 @@
 			owned_provinces = { x8FD393 xC09041 x0F3A99 x3B6A9E x84A24F xC01040 }
 		}
 
-		add_homeland = cu:north_caucasian
+		add_homeland = cu:dagestani
 		add_claim = c:CHC
 		add_claim = c:RUS
 		add_homeland = cu:caucasian_turk
@@ -1073,7 +1072,8 @@
 		}
 		add_claim = c:CHC
 		add_claim = c:RUS
-	    add_homeland = cu:north_caucasian
+	    add_homeland = cu:ossetian
+	    add_homeland = cu:caucasian_turk
 	    add_homeland = cu:chechen
 	}
 

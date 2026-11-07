@@ -230,6 +230,25 @@ geographic_region_greater_canada = {
 	}
 }
 
+geographic_region_canadian_confederation = {
+	short_key = "canadian_confederation"
+
+	state_regions = {
+		STATE_NORTHWEST_TERRITORIES
+		STATE_NUNAVUT
+		STATE_ONTARIO
+		STATE_TORONTO
+		STATE_SUPERIOR
+		STATE_QUEBEC
+		STATE_MANITOBA
+		STATE_ALBERTA
+		STATE_SASKATCHEWAN
+		STATE_BRITISH_COLUMBIA
+		STATE_YUKON_TERRITORY
+		STATE_NEW_BRUNSWICK
+	}
+}
+
 geographic_region_north_andes = { # North Andean homelands
 	short_key = "north_andes"
 

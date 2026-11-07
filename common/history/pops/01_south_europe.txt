@@ -517,7 +517,7 @@
 			}
 			create_pop = {
 				pop_type = slaves
-				culture = north_caucasian
+				culture = circassian
 				size = 6000
 			}
 			create_pop = {
@@ -1030,7 +1030,7 @@
 			}
 			create_pop = {
 				pop_type = slaves
-				culture = north_caucasian
+				culture = circassian
 				size = 200
 			}
 			create_pop = {
@@ -1056,7 +1056,7 @@
 			}
 			create_pop = {
 				pop_type = slaves
-				culture = north_caucasian
+				culture = circassian
 				size = 300
 			}
 			create_pop = {

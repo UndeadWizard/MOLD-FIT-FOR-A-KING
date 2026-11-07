@@ -463,7 +463,7 @@ SPA_pablo_iglesias_posse = { # Pablo Iglesias Posse
 	dna = dna_pablo_iglesias
 	religion = rel:catholic
 	interest_group = ig_trade_unions
-	ideology = ideology_social_democrat
+	ideology = ideology_reformer
 	birth_date = 1850.10.17
 	home_region = STATE_GALICIA
 	traits = {
@@ -3313,4 +3313,25 @@ SPA_juan_donoso_cortes = { # Juan Donoso Cortés
     }
 	trait_generation = { }
 	on_created = { }
+}
+
+spa_isabel_de_borbon_template = { # Isabel II, María Isabel Luisa de Borbón y Borbón-Dos Sicilias
+    first_name = "Isabel"
+    last_name = "de_Borbon"
+    female = yes
+    dna = dna_queen_isabella_02
+    historical = yes
+    birth_date = 1830.10.10
+    heir = yes # Regency at game start
+    culture = cu:spanish
+    religion = rel:catholic
+    interest_group = ig_petty_bourgeoisie
+    ideology = ideology_moderate
+    home_region = STATE_NEW_CASTILE
+    traits = {
+        trait_child
+    }
+    on_created = {
+		set_variable = { name = dynasty_var value = flag:house_bourbon }
+    }
 }

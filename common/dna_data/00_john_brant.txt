@@ -3,6 +3,7 @@
 dna_john_brant={
 	portrait_info={
 	genes={ 		
+ 		gene_asian_east={ "asian_east" 0 "asian_east" 0 }
 		hair_color={ 57 251 57 251 }
  		skin_color={ 196 112 116 165 }
  		eye_color={ 45 247 45 247 }
