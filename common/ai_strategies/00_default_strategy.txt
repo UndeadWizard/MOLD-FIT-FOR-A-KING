@@ -7179,33 +7179,6 @@ ai_strategy_default = {
 			}
 		}
 
-		# Monroe Doctrine
-		if = {
-			limit = {
-				has_variable = monroe_doctrine
-				scope:region = {
-					is_in_geographic_region = geographic_region_americas
-				}
-			}
-			add = 100
-
-			if = {
-				limit = {
-					scope:region = sr:region_pacific_coast
-				}
-				add = 900
-			}
-		}
-
-		# Conquest of Algeria
-		if = {
-			limit = {
-				has_journal_entry = je_conquest_of_algeria
-				scope:region = sr:region_north_africa
-			}
-			add = 1000
-		}
-
 		# Ensure we maintain interests in colonies
 		if = {
 			limit = {
@@ -7378,32 +7351,6 @@ ai_strategy_default = {
 								capital.region = sr:region_south_china
 								capital.region = sr:region_indonesia
 							}
-						}
-					}
-					add = 200
-				}
-
-				if = { # Try to be on good terms with GBR/USA to avoid intervention
-					limit = {
-						has_journal_entry = je_reconquista
-						scope:target_country = {
-							country_rank = rank_value:great_power
-							OR = {
-								c:GBR ?= this
-								AND = {
-									is_in_geographic_region = geographic_region_americas
-									is_historical_spanish_american_colony = no
-								}
-							}
-						}
-					}
-					add = 200
-				}
-				else_if = { # Reconcile with former Spanish Colonies
-					limit = {
-						has_journal_entry = je_hispanoamerica
-						scope:target_country = {
-							has_modifier = modifier_not_recognized_by_spain
 						}
 					}
 					add = 200
