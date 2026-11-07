@@ -143,7 +143,7 @@
 					building={
 						type="building_financial_district"
 						country="c:SAR"
-						levels=3
+						levels=5
 						region="STATE_PIEDMONT"
 					}
 				}
@@ -632,7 +632,7 @@
 					building={
 						type="building_financial_district"
 						country="c:SIC"
-						levels=2
+						levels=4
 						region="STATE_CAMPANIA"
 					}
 					building={

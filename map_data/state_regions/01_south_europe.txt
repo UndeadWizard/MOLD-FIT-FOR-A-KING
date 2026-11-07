@@ -18,6 +18,8 @@
         type = "building_oil_rig"
         undiscovered_amount = 20
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.41
 }
 
 STATE_PIEDMONT = {
@@ -40,6 +42,8 @@ STATE_PIEDMONT = {
         building_fishing_wharf = 6
     }
     naval_exit_id = 3098
+    min_cold_effect = 0.00
+    max_cold_effect = 0.40
 }
 
 STATE_SARDINIA = {
@@ -62,6 +66,8 @@ STATE_SARDINIA = {
         building_fishing_wharf = 10
     }
     naval_exit_id = 3032
+    min_cold_effect = 0.00
+    max_cold_effect = 0.27
 }
 
 STATE_MALTA = {
@@ -80,6 +86,8 @@ STATE_MALTA = {
         building_fishing_wharf = 3
     }
     naval_exit_id = 3033
+    min_cold_effect = 0.00
+    max_cold_effect = 0.18
 }
 
 STATE_UMBRIA = {
@@ -99,6 +107,8 @@ STATE_UMBRIA = {
         building_fishing_wharf = 5
     }
     naval_exit_id = 3093
+    min_cold_effect = 0.00
+    max_cold_effect = 0.36
 }
 
 STATE_CORSICA = {
@@ -117,6 +127,8 @@ STATE_CORSICA = {
         building_fishing_wharf = 7
     }
     naval_exit_id = 3098
+    min_cold_effect = 0.00
+    max_cold_effect = 0.33
 }
 
 STATE_CAMPANIA = {
@@ -135,6 +147,8 @@ STATE_CAMPANIA = {
         building_fishing_wharf = 10
     }
     naval_exit_id = 3102
+    min_cold_effect = 0.00
+    max_cold_effect = 0.29
 }
 
 STATE_CALABRIA = {
@@ -155,6 +169,12 @@ STATE_CALABRIA = {
         building_fishing_wharf = 12
     }
     naval_exit_id = 3033
+    blockade_locator = {
+        position = { 4450 0 2422 }
+        yaw = -5
+    }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.26
 }
 
 STATE_APULIA = {
@@ -174,6 +194,12 @@ STATE_APULIA = {
         building_fishing_wharf = 14
     }
     naval_exit_id = 3033
+    blockade_locator = {
+        position = { 4486 0 2484 }
+        yaw = -9
+    }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.30
 }
 
 STATE_ABRUZZO = {
@@ -192,6 +218,8 @@ STATE_ABRUZZO = {
         building_fishing_wharf = 7
     }
     naval_exit_id = 3093
+    min_cold_effect = 0.00
+    max_cold_effect = 0.33
 }
 
 STATE_SAVOY = {
@@ -210,6 +238,8 @@ STATE_SAVOY = {
         building_lead_mine = 24
         building_logging_camp = 11
     }
+    min_cold_effect = 0.10
+    max_cold_effect = 0.55
 }
 
 STATE_EMILIA = {
@@ -230,6 +260,8 @@ STATE_EMILIA = {
         building_fishing_wharf = 3
     }
     naval_exit_id = 3098
+    min_cold_effect = 0.00
+    max_cold_effect = 0.38
 }
 
 STATE_TUSCANY = {
@@ -252,6 +284,8 @@ STATE_TUSCANY = {
         building_fishing_wharf = 5
     }
     naval_exit_id = 3098
+    min_cold_effect = 0.00
+    max_cold_effect = 0.36
 }
 
 STATE_ROMAGNA = {
@@ -271,6 +305,8 @@ STATE_ROMAGNA = {
         building_fishing_wharf = 6
     }
     naval_exit_id = 3093
+    min_cold_effect = 0.00
+    max_cold_effect = 0.38
 }
 
 STATE_LAZIO = {
@@ -289,6 +325,8 @@ STATE_LAZIO = {
         building_fishing_wharf = 7
     }
     naval_exit_id = 3102
+    min_cold_effect = 0.00
+    max_cold_effect = 0.33
 }
 
 STATE_VENETIA = {
@@ -310,6 +348,8 @@ STATE_VENETIA = {
         building_fishing_wharf = 12
     }
     naval_exit_id = 3093
+    min_cold_effect = 0.00
+    max_cold_effect = 0.41
 }
 
 STATE_SICILY = {
@@ -330,6 +370,12 @@ STATE_SICILY = {
         building_fishing_wharf = 10
     }
     naval_exit_id = 3033
+    blockade_locator = {
+        position = { 4451 0 2420 }
+        yaw = -12
+    }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.21
 }
 
 STATE_NEW_CASTILE = {
@@ -349,6 +395,8 @@ STATE_NEW_CASTILE = {
         building_iron_mine = 3
         building_sulfur_mine = 6
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.27
 }
 
 STATE_GALICIA = {
@@ -371,6 +419,8 @@ STATE_GALICIA = {
         building_whaling_station = 1
     }
     naval_exit_id = 3029
+    min_cold_effect = 0.00
+    max_cold_effect = 0.18
 }
 
 STATE_ASTURIAS = {
@@ -393,6 +443,8 @@ STATE_ASTURIAS = {
         building_fishing_wharf = 7
     }
     naval_exit_id = 3029
+    min_cold_effect = 0.00
+    max_cold_effect = 0.36
 }
 
 STATE_OLD_CASTILE = {
@@ -415,6 +467,8 @@ STATE_OLD_CASTILE = {
         building_fishing_wharf = 3
     }
     naval_exit_id = 3029
+    min_cold_effect = 0.00
+    max_cold_effect = 0.32
 }
 
 STATE_BASQUE_COUNTRY = {
@@ -438,6 +492,8 @@ STATE_BASQUE_COUNTRY = {
         building_whaling_station = 1
     }
     naval_exit_id = 3029
+    min_cold_effect = 0.00
+    max_cold_effect = 0.35
 }
 
 STATE_ARAGON = {
@@ -455,6 +511,8 @@ STATE_ARAGON = {
         building_iron_mine = 5
         building_logging_camp = 8
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.32
 }
 
 STATE_CATALONIA = {
@@ -476,6 +534,8 @@ STATE_CATALONIA = {
         building_fishing_wharf = 12
     }
     naval_exit_id = 3098
+    min_cold_effect = 0.00
+    max_cold_effect = 0.32
 }
 
 STATE_BALEARIC_ISLANDS = {
@@ -495,6 +555,8 @@ STATE_BALEARIC_ISLANDS = {
         building_fishing_wharf = 5
     }
     naval_exit_id = 3098
+    min_cold_effect = 0.00
+    max_cold_effect = 0.25
 }
 
 STATE_LOWER_ANDALUSIA = {
@@ -517,6 +579,8 @@ STATE_LOWER_ANDALUSIA = {
         building_fishing_wharf = 9
     }
     naval_exit_id = 3089
+    min_cold_effect = 0.00
+    max_cold_effect = 0.21
 }
 
 STATE_UPPER_ANDALUSIA = {
@@ -538,6 +602,8 @@ STATE_UPPER_ANDALUSIA = {
         building_fishing_wharf = 8
     }
     naval_exit_id = 3032
+    min_cold_effect = 0.00
+    max_cold_effect = 0.21
 }
 
 STATE_EXTREMADURA = {
@@ -556,6 +622,8 @@ STATE_EXTREMADURA = {
         building_sulfur_mine = 4
         building_iron_mine = 2
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.25
 }
 
 STATE_VALENCIA = {
@@ -577,6 +645,8 @@ STATE_VALENCIA = {
         building_fishing_wharf = 10
     }
     naval_exit_id = 3032
+    min_cold_effect = 0.00
+    max_cold_effect = 0.26
 }
 
 STATE_BEIRA = {
@@ -599,6 +669,8 @@ STATE_BEIRA = {
         building_fishing_wharf = 4
     }
     naval_exit_id = 3089
+    min_cold_effect = 0.00
+    max_cold_effect = 0.28
 }
 
 STATE_ESTREMADURA = {
@@ -618,6 +690,8 @@ STATE_ESTREMADURA = {
         building_fishing_wharf = 8
     }
     naval_exit_id = 3089
+    min_cold_effect = 0.00
+    max_cold_effect = 0.09
 }
 
 STATE_ALENTEJO = {
@@ -626,7 +700,7 @@ STATE_ALENTEJO = {
     provinces = { "x207080" "x84A822" "x88DCE1" "x8B17E3" "xA07080" "xB0177A" "xC3BFC4" "xEBA935" "xEFC9BC" }
     traits = { "state_trait_tagus_river" }
     city = "xEFC9BC"
-    port = "x88DCE1"
+    port = "x207080"
     farm = "x207080"
     mine = "xA07080"
     wood = "xC3BFC4"
@@ -641,6 +715,8 @@ STATE_ALENTEJO = {
         building_fishing_wharf = 6
     }
     naval_exit_id = 3089
+    min_cold_effect = 0.00
+    max_cold_effect = 0.23
 }
 
 STATE_CAPE_VERDE = {
@@ -680,6 +756,8 @@ STATE_CANARY_ISLANDS = {
         building_fishing_wharf = 4
     }
     naval_exit_id = 3089
+    min_cold_effect = 0.00
+    max_cold_effect = 0.07
 }
 
 STATE_AZORES = {
@@ -700,6 +778,8 @@ STATE_AZORES = {
         building_whaling_station = 5
     }
     naval_exit_id = 3085
+    min_cold_effect = 0.00
+    max_cold_effect = 0.23
 }
 
 STATE_MADEIRA = {
@@ -719,6 +799,8 @@ STATE_MADEIRA = {
         building_fishing_wharf = 3
     }
     naval_exit_id = 3089
+    min_cold_effect = 0.00
+    max_cold_effect = 0.13
 }
 
 STATE_EASTERN_THRACE = {
@@ -739,6 +821,8 @@ STATE_EASTERN_THRACE = {
         building_fishing_wharf = 10
     }
     naval_exit_id = 3035
+    min_cold_effect = 0.00
+    max_cold_effect = 0.30
 }
 
 STATE_DOBRUDJA = {
@@ -758,6 +842,8 @@ STATE_DOBRUDJA = {
         building_fishing_wharf = 7
     }
     naval_exit_id = 3036
+    min_cold_effect = 0.00
+    max_cold_effect = 0.38
 }
 
 STATE_ALBANIA = {
@@ -782,6 +868,8 @@ STATE_ALBANIA = {
         undiscovered_amount = 20
     }
     naval_exit_id = 3093
+    min_cold_effect = 0.00
+    max_cold_effect = 0.31
 }
 
 STATE_BOSNIA = {
@@ -799,6 +887,8 @@ STATE_BOSNIA = {
         building_lead_mine = 39
         building_logging_camp = 14
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.38
 }
 
 STATE_NORTHERN_THRACE = {
@@ -819,6 +909,8 @@ STATE_NORTHERN_THRACE = {
         building_fishing_wharf = 6
     }
     naval_exit_id = 3036
+    min_cold_effect = 0.00
+    max_cold_effect = 0.33
 }
 
 STATE_BULGARIA = {
@@ -839,6 +931,8 @@ STATE_BULGARIA = {
         building_fishing_wharf = 2
     }
     naval_exit_id = 3036
+    min_cold_effect = 0.00
+    max_cold_effect = 0.35
 }
 
 STATE_SLOVENIA = {
@@ -856,6 +950,8 @@ STATE_SLOVENIA = {
         building_coal_mine = 60
         building_logging_camp = 11
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.42
 }
 
 STATE_DALMATIA = {
@@ -875,6 +971,12 @@ STATE_DALMATIA = {
         building_fishing_wharf = 13
     }
     naval_exit_id = 3093
+    blockade_locator = {
+        position = { 4449 0 2583 }
+        yaw = -20
+    }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.36
 }
 
 STATE_CROATIA = {
@@ -895,6 +997,12 @@ STATE_CROATIA = {
         building_fishing_wharf = 5
     }
     naval_exit_id = 3093
+    blockade_locator = {
+        position = { 4425 0 2615 }
+        yaw = -17
+    }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.40
 }
 
 STATE_SLAVONIA = {
@@ -911,6 +1019,8 @@ STATE_SLAVONIA = {
     capped_resources = {
         building_logging_camp = 14
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.40
 }
 
 STATE_ISTRIA = {
@@ -931,6 +1041,8 @@ STATE_ISTRIA = {
         building_fishing_wharf = 14
     }
     naval_exit_id = 3093
+    min_cold_effect = 0.00
+    max_cold_effect = 0.41
 }
 # adjusted based on https://ipe.ro/Country%20Report%20Montenegro.pdf
 STATE_MONTENEGRO = {
@@ -953,6 +1065,8 @@ STATE_MONTENEGRO = {
         building_vatmoss_plantation = 8
     }
     naval_exit_id = 3093
+    min_cold_effect = 0.00
+    max_cold_effect = 0.34
 }
 
 STATE_WESTERN_SERBIA = {
@@ -972,6 +1086,8 @@ STATE_WESTERN_SERBIA = {
         building_logging_camp = 13
         building_vatmoss_plantation = 12
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.37
 }
 
 STATE_EASTERN_SERBIA = {
@@ -992,6 +1108,8 @@ STATE_EASTERN_SERBIA = {
         building_logging_camp = 10
         building_vatmoss_plantation = 10
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.36
 }
 
 STATE_KOSOVO = {
@@ -1011,6 +1129,8 @@ STATE_KOSOVO = {
         building_logging_camp = 4
         building_vatmoss_plantation = 2
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.34
 }
 
 STATE_CRETE = {
@@ -1029,6 +1149,8 @@ STATE_CRETE = {
         building_fishing_wharf = 5
     }
     naval_exit_id = 3034
+    min_cold_effect = 0.00
+    max_cold_effect = 0.17
 }
 
 STATE_WEST_AEGEAN_ISLANDS = {
@@ -1047,6 +1169,8 @@ STATE_WEST_AEGEAN_ISLANDS = {
         building_fishing_wharf = 4
     }
     naval_exit_id = 3117
+    min_cold_effect = 0.00
+    max_cold_effect = 0.20
 }
 
 STATE_EAST_AEGEAN_ISLANDS = {
@@ -1064,6 +1188,8 @@ STATE_EAST_AEGEAN_ISLANDS = {
         building_fishing_wharf = 6
     }
     naval_exit_id = 3034
+    min_cold_effect = 0.00
+    max_cold_effect = 0.22
 }
 
 STATE_ATTICA = {
@@ -1085,6 +1211,12 @@ STATE_ATTICA = {
         building_fishing_wharf = 8
     }
     naval_exit_id = 3033
+    blockade_locator = {
+        position = { 4583 0 2432 }
+        yaw = 48
+    }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.23
 }
 
 STATE_THESSALIA = {
@@ -1103,6 +1235,8 @@ STATE_THESSALIA = {
         building_fishing_wharf = 5
     }
     naval_exit_id = 3117
+    min_cold_effect = 0.00
+    max_cold_effect = 0.26
 }
 
 STATE_SKOPIA = {
@@ -1119,6 +1253,8 @@ STATE_SKOPIA = {
         building_iron_mine = 36
         building_logging_camp = 16
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.31
 }
 
 STATE_MACEDONIA = {
@@ -1137,6 +1273,8 @@ STATE_MACEDONIA = {
         building_fishing_wharf = 3
     }
     naval_exit_id = 3117
+    min_cold_effect = 0.00
+    max_cold_effect = 0.28
 }
 
 STATE_WESTERN_THRACE = {
@@ -1156,6 +1294,8 @@ STATE_WESTERN_THRACE = {
         building_fishing_wharf = 10
     }
     naval_exit_id = 3117
+    min_cold_effect = 0.00
+    max_cold_effect = 0.30
 }
 
 STATE_IONIAN_ISLANDS = {
@@ -1173,6 +1313,8 @@ STATE_IONIAN_ISLANDS = {
         building_fishing_wharf = 5
     }
     naval_exit_id = 3033
+    min_cold_effect = 0.00
+    max_cold_effect = 0.24
 }
 
 STATE_PELOPONNESE = {
@@ -1192,6 +1334,12 @@ STATE_PELOPONNESE = {
         building_fishing_wharf = 10
     }
     naval_exit_id = 3033
+    blockade_locator = {
+        position = { 4603 0 2394 }
+        yaw = 20
+    }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.21
 }
 
 STATE_MURCIA = {
@@ -1214,6 +1362,8 @@ STATE_MURCIA = {
         building_fishing_wharf = 6
     }
     naval_exit_id = 3032
+    min_cold_effect = 0.00
+    max_cold_effect = 0.23
 }
 
 STATE_LEON = {
@@ -1232,6 +1382,8 @@ STATE_LEON = {
         building_coal_mine = 12
         building_logging_camp = 7
     }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.32
 }
 
 STATE_ENTRE_DOURO_E_MINHO = {
@@ -1255,4 +1407,6 @@ STATE_ENTRE_DOURO_E_MINHO = {
         building_fishing_wharf = 6
     }
     naval_exit_id = 3089
+    min_cold_effect = 0.00
+    max_cold_effect = 0.31
 }

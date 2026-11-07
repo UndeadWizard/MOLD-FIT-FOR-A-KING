@@ -23,7 +23,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated"  }
+				activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated"  }
 			}
 			create_building={
 				building="building_rye_farm"
@@ -64,7 +64,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated"  }
+				activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated"  }
 			}
 			create_building={
 				building="building_port"
@@ -76,6 +76,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_basic_port" }
+			}
+			create_building={ # Imperial Dorpat University
+				building="building_university"
+				add_ownership={
+					country={
+						country="c:UBD"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_scholastic_education" "pm_religious_academia" }
 			}
 		}
 	}
@@ -132,7 +143,7 @@
 					building={
 						type="building_financial_district"
 						country="c:UBD"
-						levels=2
+						levels=1
 						region="STATE_RIGA"
 					}
 				}
@@ -540,6 +551,15 @@
 				reserves=1
 				activate_production_methods={ "pm_picks_and_shovels_building_iron_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts"  }
 			}
+			if = {
+				limit = {
+					has_dlc_feature = ip5_content
+				}
+				create_building={
+					building="building_kizhi_pogost"
+					level=1
+				}
+			}
 		}
 	}
 	s:STATE_KOLA={
@@ -555,7 +575,7 @@
 					building={
 						type="building_financial_district"
 						country="c:RUS"
-						levels=10
+						levels=6
 						region="STATE_INGRIA"
 					}
 				}
@@ -588,11 +608,11 @@
 				add_ownership={
 					country={
 						country="c:RUS"
-						levels=10
+						levels=15
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_religious_bureaucrats" "pm_hereditary_bureaucrats" "pm_horizontal_drawer_cabinets" }
+				activate_production_methods={ "pm_religious_bureaucrats" "pm_military_bureaucrats" "pm_horizontal_drawer_cabinets" }
 			}
 			create_building={
 				building="building_construction_sector"
@@ -637,7 +657,7 @@
 					building={
 						type="building_manor_house"
 						country="c:RUS"
-						levels=1
+						levels=2
 						region="STATE_INGRIA"
 					}
 				}
@@ -673,7 +693,7 @@
 				add_ownership={
 					country={
 						country="c:RUS"
-						levels=1
+						levels=2
 					}
 				}
 				reserves=1
@@ -699,6 +719,19 @@
 					}
 				}
 				activate_production_methods={ "pm_naval_fortification_basic"  }
+			}
+			if = {
+				limit = {
+					has_dlc_feature = ip5_content
+				}
+				create_building={
+					building="building_winter_palace"
+					level=1
+				}
+				create_building={
+					building="building_saint_isaacs_cathedral"
+					level=1
+				}
 			}
 		}
 	}
@@ -726,7 +759,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_military_bureaucrats" "pm_religious_bureaucrats" }
 			}
 			create_building={
 				building="building_naval_administration"
@@ -756,7 +789,7 @@
 					building={
 						type="building_tooling_workshop"
 						country="c:RUS"
-						levels=7
+						levels=4
 						region="STATE_MOSCOW"
 					}
 				}
@@ -806,7 +839,7 @@
 					building={
 						type="building_financial_district"
 						country="c:RUS"
-						levels=10
+						levels=3
 						region="STATE_MOSCOW"
 					}
 				}
@@ -829,6 +862,19 @@
 			create_building={
 				building="building_saint_basils_cathedral"
 				level=1
+			}
+			if = {
+				limit = {
+					has_dlc_feature = ip5_content
+				}
+				create_building={
+					building="building_grand_kremlin_palace"
+					level=1
+				}
+				create_building={
+					building="building_cathedral_of_christ_the_savior"
+					level=1
+				}
 			}
 		}
 	}
@@ -901,7 +947,7 @@
 					building={
 						type="building_financial_district"
 						country="c:RUS"
-						levels=2
+						levels=4
 						region="STATE_KIEV"
 					}
 				}
@@ -916,7 +962,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_military_bureaucrats" "pm_religious_bureaucrats" }
 			}
 			create_building={
 				building="building_naval_administration"
@@ -961,13 +1007,13 @@
 					building={
 						type="building_manor_house"
 						country="c:RUS"
-						levels=22
+						levels=5
 						region="STATE_KIEV"
 					}
 					building={
 						type="building_manor_house"
 						country="c:RUS"
-						levels=12
+						levels=5
 						region="STATE_INGRIA"
 					}
 				}
@@ -992,6 +1038,17 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_handsewn_clothes" "pm_no_luxury_clothes" "pm_traditional_looms"  }
+			}
+			create_building={ # Imperial University of St. Vladimir
+				building="building_university"
+				add_ownership={
+					country={
+						country="c:RUS"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_scholastic_education" "pm_religious_academia" }
 			}
 		}
 	}
@@ -1029,14 +1086,8 @@
 					building={
 						type="building_logging_camp"
 						country="c:RUS"
-						levels=8
+						levels=1
 						region="STATE_ORYOL"
-					}
-					building={
-						type="building_financial_district"
-						country="c:RUS"
-						levels=2
-						region="STATE_MOSCOW"
 					}
 				}
 				reserves=1
@@ -1172,13 +1223,13 @@
 					building={
 						type="building_logging_camp"
 						country="c:RUS"
-						levels=4
+						levels=1
 						region="STATE_SMOLENSK"
 					}
 					building={
 						type="building_financial_district"
 						country="c:RUS"
-						levels=4
+						levels=1
 						region="STATE_MOSCOW"
 					}
 				}
@@ -1195,13 +1246,13 @@
 					building={
 						type="building_logging_camp"
 						country="c:RUS"
-						levels=6
+						levels=2
 						region="STATE_MOGILEV"
 					}
 					building={
 						type="building_financial_district"
 						country="c:RUS"
-						levels=2
+						levels=1
 						region="STATE_MOSCOW"
 					}
 				}
@@ -1249,7 +1300,18 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated"  }
+				activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated"  }
+			}
+			create_building={
+				building="building_shipyard"
+				add_ownership={
+					country={
+						country="c:RUS"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_shipbuilding"  }
 			}
 			create_building={
 				building="building_port"
@@ -1285,7 +1347,7 @@
 					building={
 						type="building_logging_camp"
 						country="c:RUS"
-						levels=4
+						levels=2
 						region="STATE_NOVGOROD"
 					}
 					building={
@@ -1313,7 +1375,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated"  }
+				activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated"  }
 			}
 			create_building={
 				building="building_vineyard"
@@ -1373,6 +1435,17 @@
 				}
 				activate_production_methods={ "pm_naval_fortification_basic"  }
 			}
+			create_building={
+				building="building_shipyard"
+				add_ownership={
+					country={
+						country="c:RUS"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_basic_shipbuilding"  }
+			}
 		}
 	}
 	s:STATE_KHARKOV={
@@ -1383,7 +1456,7 @@
 					building={
 						type="building_manor_house"
 						country="c:RUS"
-						levels=10
+						levels=3
 						region="STATE_KHARKOV"
 					}
 				}
@@ -1396,12 +1469,23 @@
 					building={
 						type="building_manor_house"
 						country="c:RUS"
-						levels=20
+						levels=5
 						region="STATE_KHARKOV"
 					}
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled"  }
+			}
+			create_building={ # Imperial Kharkov University
+				building="building_university"
+				add_ownership={
+					country={
+						country="c:RUS"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_scholastic_education" "pm_religious_academia" }
 			}
 		}
 	}
@@ -1413,7 +1497,7 @@
 					building={
 						type="building_manor_house"
 						country="c:RUS"
-						levels=8
+						levels=3
 						region="STATE_KURSK"
 					}
 				}
@@ -1426,14 +1510,8 @@
 					building={
 						type="building_logging_camp"
 						country="c:RUS"
-						levels=7
+						levels=1
 						region="STATE_KURSK"
-					}
-					building={
-						type="building_financial_district"
-						country="c:RUS"
-						levels=3
-						region="STATE_KIEV"
 					}
 				}
 				reserves=1
@@ -1449,13 +1527,13 @@
 					building={
 						type="building_logging_camp"
 						country="c:RUS"
-						levels=7
+						levels=2
 						region="STATE_TVER"
 					}
 					building={
 						type="building_financial_district"
 						country="c:RUS"
-						levels=3
+						levels=1
 						region="STATE_MOSCOW"
 					}
 				}
@@ -1473,13 +1551,13 @@
 					building={
 						type="building_financial_district"
 						country="c:RUS"
-						levels=1
+						levels=2
 						region="STATE_CHERSON"
 					}
 					building={
 						type="building_financial_district"
 						country="c:RUS"
-						levels=1
+						levels=2
 						region="STATE_MOSCOW"
 					}
 				}
@@ -1501,11 +1579,9 @@
 			create_building={
 				building="building_shipyard"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					country={
 						country="c:RUS"
-						levels=5
-						region="STATE_KIEV"
+						levels=1
 					}
 				}
 				reserves=1
@@ -1528,7 +1604,7 @@
 					building={
 						type="building_manor_house"
 						country="c:RUS"
-						levels=8
+						levels=3
 						region="STATE_CHERSON"
 					}
 				}
@@ -1541,7 +1617,7 @@
 					building={
 						type="building_manor_house"
 						country="c:RUS"
-						levels=10
+						levels=4
 						region="STATE_CHERSON"
 					}
 				}
@@ -1602,7 +1678,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_military_bureaucrats" "pm_religious_bureaucrats" }
 			}
 			create_building={
 				building="building_naval_administration"
@@ -1647,7 +1723,7 @@
 					building={
 						type="building_logging_camp"
 						country="c:RUS"
-						levels=3
+						levels=2
 						region="STATE_MINSK"
 					}
 					building={
@@ -1677,6 +1753,7 @@
 	}
 	s:STATE_ROSTOV={
 		region_state:RUS={
+			establish_cossack_host = yes
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
@@ -1717,19 +1794,6 @@
 				activate_production_methods={ "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated"  }
 			}
 			create_building={
-				building="building_logging_camp"
-				add_ownership={
-					building={
-						type="building_logging_camp"
-						country="c:RUS"
-						levels=2
-						region="STATE_ROSTOV"
-					}
-				}
-				reserves=1
-				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts"  }
-			}
-			create_building={
 				building="building_naval_administration"
 				add_ownership={
 					country={
@@ -1741,17 +1805,15 @@
 				activate_production_methods={ "pm_simple_sailor_recruitment" }
 			}
 			create_building={
-				building="building_shipyard"
+				building="building_port"
 				add_ownership={
-					building={
-						type="building_financial_district"
+					country={
 						country="c:RUS"
-						levels=2
-						region="STATE_ROSTOV"
+						levels=1
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_basic_shipbuilding"  }
+				activate_production_methods={ "pm_basic_port" }
 			}
 		}
 	}
@@ -1796,7 +1858,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_religious_bureaucrats" }
+				activate_production_methods={ "pm_horizontal_drawer_cabinets" "pm_military_bureaucrats" "pm_religious_bureaucrats" }
 			}
 			create_building={
 				building="building_arms_industry"
@@ -1858,7 +1920,7 @@
 					building={
 						type="building_logging_camp"
 						country="c:RUS"
-						levels=4
+						levels=2
 						region="STATE_KAZAN"
 					}
 					building={
@@ -1871,10 +1933,22 @@
 				reserves=1
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts"  }
 			}
+			create_building={ # Imperial Kazan University
+				building="building_university"
+				add_ownership={
+					country={
+						country="c:RUS"
+						levels=1
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_scholastic_education" "pm_religious_academia" }
+			}
 		}
 	}
 	s:STATE_URALSK={
 		region_state:RUS={
+			establish_cossack_host = yes
 		}
 		region_state:KZH={
 			create_building={
@@ -1958,9 +2032,7 @@
 				activate_production_methods={ "pm_no_organization" }
 			}
 		}
-	}
-	s:STATE_JETISY={
-		region_state:CHI={
+		region_state:RUS={
 		}
 	}
 	s:STATE_AKMOLINSK={
@@ -1978,6 +2050,7 @@
 			}
 		}
 		region_state:RUS={
+			establish_cossack_host = yes
 		}
 	}
 	s:STATE_FERGANA={
@@ -2008,6 +2081,7 @@
 	}
 	s:STATE_NORTH_CAUCASUS={
 		region_state:RUS={
+			establish_cossack_host = yes
 		}
 		region_state:CHC={
 			create_building={
@@ -2042,19 +2116,20 @@
 	}
 	s:STATE_TAURIDA={
 		region_state:RUS={
+			establish_cossack_host = yes
 			create_building={
 				building="building_wheat_farm"
 				add_ownership={
 					building={
 						type="building_manor_house"
 						country="c:RUS"
-						levels=15
+						levels=4
 						region="STATE_TAURIDA"
 					}
 					building={
 						type="building_manor_house"
 						country="c:RUS"
-						levels=5
+						levels=2
 						region="STATE_KIEV"
 					}
 				}
@@ -2085,7 +2160,7 @@
 					}
 				}
 				reserves=1
-				activate_production_methods={ "pm_simple_fishing" "pm_unrefrigerated"  }
+				activate_production_methods={ "pm_fishing_trawlers" "pm_unrefrigerated"  }
 			}
 		}
 	}
@@ -2223,13 +2298,13 @@
 					building={
 						type="building_logging_camp"
 						country="c:RUS"
-						levels=4
+						levels=2
 						region="STATE_VITEBSK"
 					}
 					building={
 						type="building_financial_district"
 						country="c:RUS"
-						levels=2
+						levels=1
 						region="STATE_INGRIA"
 					}
 				}
@@ -2289,7 +2364,7 @@
 					building={
 						type="building_logging_camp"
 						country="c:RUS"
-						levels=4
+						levels=2
 						region="STATE_YAROSLAVL"
 					}
 				}
@@ -2400,6 +2475,7 @@
 	}
 	s:STATE_UFA={
 		region_state:RUS={
+			establish_cossack_host = yes
 			create_building={
 				building="building_iron_mine"
 				add_ownership={
@@ -2429,6 +2505,20 @@
 	}
 	s:STATE_BURYATIA={
 		region_state:RUS={
+			create_building={ # Kyakhta trading post
+				building="building_trade_center"
+				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:RUS"
+						levels=6
+						region="STATE_INGRIA"
+					}
+				}
+				subsidized=yes
+				reserves=1
+			}
 		}
 	}
 	s:STATE_KOLYMA={
@@ -2441,6 +2531,7 @@
 	}
 	s:STATE_CHELYABINSK={
 		region_state:RUS={
+			establish_cossack_host = yes
 			create_building={
 				building="building_iron_mine"
 				add_ownership={
@@ -2480,13 +2571,13 @@
 					building={
 						type="building_manor_house"
 						country="c:RUS"
-						levels=15
+						levels=3
 						region="STATE_CHERNIHIV"
 					}
 					building={
 						type="building_manor_house"
 						country="c:RUS"
-						levels=5
+						levels=1
 						region="STATE_KIEV"
 					}
 				}
@@ -2500,7 +2591,7 @@
 					building={
 						type="building_manor_house"
 						country="c:RUS"
-						levels=5
+						levels=2
 						region="STATE_CHERNIHIV"
 					}
 				}

@@ -42,6 +42,25 @@ RUS = {
 
 	cultures = { russian }
 	capital = STATE_INGRIA
+
+	regnal_numbers = {
+		Aleksandr = 2
+		Alexei = 2
+		Anna = 2
+		Boris = 2 # Boris Godunov
+		Elizabeta = 2
+		Fyodor = 4
+		Ivan = 7 # up to the infant Ivan VI
+		Mikhail = 2
+		Pavel = 2
+		Pyotr = 4
+		Vasily = 5 # the Muscovite Vasilys, up to Vasily IV
+		Yekaterina = 3
+	}
+
+	primary_unit_color = { 49 67 53 }
+	secondary_unit_color  = { 247 243 230 }
+	tertiary_unit_color = { 40 40 40 }
 }
 
 FRA = {
@@ -103,6 +122,11 @@ AUS = {
 	primary_unit_color = { 211 220 240 }
 	secondary_unit_color  = { 94 120 165 }
 	tertiary_unit_color = { 20 20 20 }
+	seal_and_signature_texture = "gfx/interface/diplomatic_treaties/seal_and_signature_cultures/diplomatic_treaties_seal_and_signature_austrian.dds"
+
+	regnal_numbers = {
+		Franz = 2 # Franz I, Emperor of Austria, died 1835. Habsburg names carried over from the Holy Roman Empire are deliberately left out, as the Austrian Empire restarted its numbering in 1804
+	}
 }
 
 CSA = {
@@ -327,6 +351,20 @@ POR = {
 
 	cultures = { portuguese }
 	capital = STATE_ESTREMADURA
+
+	regnal_numbers = {
+		Afonso = 7
+		Duarte = 2
+		Fernando = 2
+		Filipe = 4 # the three Spanish Habsburg kings of Portugal
+		Henrique = 2
+		JoA_o = 7
+		Manuel = 2
+		Maria = 2
+		Pedro = 5
+		Sancho = 3
+		Sebastiao = 2
+	}
 }
 
 SCO = {
@@ -667,6 +705,10 @@ MOD = {
 
 	cultures = { north_italian }
 	capital = STATE_EMILIA
+
+	regnal_numbers = {
+		Francesco = 4
+	}
 }
 
 PAP = {
@@ -678,6 +720,10 @@ PAP = {
 
 	cultures = { south_italian north_italian }
 	capital = STATE_LAZIO
+
+	regnal_numbers = {
+		Gregorius = 16
+	}
 }
 
 PAR = {
@@ -713,6 +759,10 @@ SAR = {
 	cultures = { north_italian }
 	capital = STATE_PIEDMONT
 	is_named_from_capital = yes
+
+	regnal_numbers = {
+		Vittorio_Emanuele = 2
+	}
 }
 
 SIC = {
@@ -724,6 +774,11 @@ SIC = {
 
 	cultures = { south_italian }
 	capital = STATE_CAMPANIA
+
+	regnal_numbers = {
+		Ferdinando = 2
+		Francesco = 2
+	}
 }
 
 TRE = {
@@ -747,6 +802,10 @@ TUS = {
 	capital = STATE_TUSCANY
 	cultures = { north_italian }
 	is_named_from_capital = yes
+
+	regnal_numbers = {
+		Leopoldo = 2
+	}
 }
 
 VEN = {
@@ -791,7 +850,7 @@ CRI = {
 
 	tier = principality
 
-	cultures = { tatar }
+	cultures = { crimean_tatar }
 	capital = STATE_CRIMEA
 	is_named_from_capital = yes
 }
@@ -1042,6 +1101,10 @@ MON = {
 	cultures = { serb }
 	capital = STATE_MONTENEGRO
 	is_named_from_capital = yes
+
+	regnal_numbers = {
+		Petar = 2
+	}
 }
 
 ROM = {
@@ -1101,6 +1164,10 @@ WAL = {
 	cultures = { romanian }
 	capital = STATE_WALLACHIA
 	is_named_from_capital = yes
+
+	regnal_numbers = {
+		Alexandru = 2
+	}
 }
 
 YUG = {
@@ -1156,7 +1223,7 @@ DAG = {
 
 	tier = kingdom
 
-	cultures = { north_caucasian }
+	cultures = { dagestani }
 	capital = STATE_DAGESTAN
 	is_named_from_capital = yes
 }
@@ -1356,6 +1423,10 @@ ZAI = {
 	cultures = { yemenite bedouin }
 #   religion = Technically Sunni at game start, but if it re-emerges, it should be Shiite
 	capital = STATE_YEMEN
+
+	regnal_numbers = {
+		Al-Mansur_Ali = 2
+	}
 }
 
 LAH = {
@@ -1558,6 +1629,10 @@ KAL = {
 
 	cultures = { baluchi }
 	capital = STATE_BALUCHISTAN
+
+	regnal_numbers = {
+		Nasir = 2
+	}
 }
 
 KAS = {
@@ -1722,6 +1797,10 @@ BAL = {
 
 	cultures = { balinese moluccan }
 	capital = STATE_SUNDA_ISLANDS
+
+	regnal_numbers = {
+		Putra = 2
+	}
 }
 
 BHU = {
@@ -1755,6 +1834,10 @@ BRU = {
 
 	cultures = { bornean }
 	capital = STATE_NORTH_BORNEO
+
+	regnal_numbers = {
+		Omar_Ali = 2
+	}
 }
 
 BUR = {
@@ -2682,7 +2765,7 @@ SIB = { # Siberia
 	country_type = unrecognized
 
 	tier = kingdom
-	cultures = { yakut siberian inuit buryat }
+	cultures = { yakut evenki inuit buryat }
 	capital = STATE_TOMSK
 }
 
@@ -3228,7 +3311,7 @@ TNS = {
 	color = { 11 115 39 }
 	country_type = unrecognized
 	tier = principality
-	cultures = { siberian }
+	cultures = { evenki }
 	capital = STATE_UPPER_YENISEYSK
 }
 
@@ -3236,7 +3319,7 @@ FER = {
  	color = { 147 25 25 }
 	country_type = unrecognized
 	tier = principality
-	cultures = { siberian inuit }
+	cultures = { evenki inuit }
 	capital = STATE_TRANS_BAIKAL
 }
 
@@ -3252,7 +3335,7 @@ NCA = {
 	color = { 97 162 242 }
 	country_type = recognized
 	tier = principality
-	cultures = { north_caucasian }
+	cultures = { ossetian caucasian_turk }
 	capital = STATE_NORTH_CAUCASUS
 }
 
@@ -3763,7 +3846,7 @@ KMC = {
 
 	tier = principality
 
-	cultures = { siberian }
+	cultures = { chukchi }
 	capital = STATE_KAMCHATKA
 }
 
@@ -3774,7 +3857,7 @@ CKC = {
 
 	tier = principality
 
-	cultures = { siberian }
+	cultures = { chukchi }
 	capital = STATE_KAMCHATKA
 }
 
@@ -4982,17 +5065,17 @@ SKH = { # Sakhalin
 
 	tier = principality
 
-	cultures = { siberian }
+	cultures = { evenki }
 	capital = STATE_SAKHALIN
 }
 
 ULT = { # Ulta
-	color = { 122 229 256 }
+	color = { 122 229 255 }
 
 	country_type = decentralized
 
 	tier = principality
 
-	cultures = { siberian }
+	cultures = { evenki }
 	capital = STATE_SAKHALIN
 }

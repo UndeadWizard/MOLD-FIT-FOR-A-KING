@@ -1,4 +1,7 @@
-﻿character_russia_ruler_succession_chain_effect = {
+﻿# dynasty_var values: flag:house_[name]
+# houses: orleans, bonaparte, bourbon, savoy, braganca, espartero, hohenzollern,
+# obrenovic, karadordevic, yamato (Japanese Imperial House), tokugawa, habsburg
+character_russia_ruler_succession_chain_effect = {
 	if = {
 		limit = {
 			has_template = RUS_alexander_ii
@@ -53,6 +56,11 @@
 		}
 		owner ?= {
 			trigger_event = { id = russia_monarchy.11 popup = yes }
+		}
+	}
+	else = {
+		owner ?= {
+			trigger_event = { id = russia_monarchy.12 popup = yes }
 		}
 	}
 }
@@ -112,7 +120,7 @@ character_serbia_ruler_succession_chain_effect = {
 	### Orleanists
 	if = {
 		limit = {
-			has_variable = house_obrenovic
+			var:dynasty_var ?= flag:house_obrenovic
 		}
 		character_generate_obrenovic_serbia_heir = yes
 	}
@@ -120,7 +128,7 @@ character_serbia_ruler_succession_chain_effect = {
 	### Legitimists
 	if = {
 		limit = {
-			has_variable = house_karadordevic
+			var:dynasty_var ?= flag:house_karadordevic
 		}
 		character_generate_karadordevic_serbia_heir = yes
 	}
@@ -282,7 +290,7 @@ character_france_ruler_succession_chain_effect = {
 	### Orleanists
 	if ={
 		limit = {
-			has_variable = house_orleans
+			var:dynasty_var ?= flag:house_orleans
 		}
 		character_generate_orleanist_france_heir = yes
 	}
@@ -298,7 +306,7 @@ character_france_ruler_succession_chain_effect = {
 	### Bonapartists
 	if ={
 		limit = {
-			has_variable = house_bonaparte
+			var:dynasty_var ?= flag:house_bonaparte
 		}
 		character_generate_bonapartist_france_heir = yes
 	}
@@ -459,6 +467,219 @@ character_generate_bonapartist_france_heir = {
 		owner ?= {
 			country_summon_heir_effect = {
 				TEMPLATE = FRA_louis_bonaparte
+			}
+		}
+	}
+}
+
+character_spain_ruler_succession_chain_effect = {
+	### Carlists
+	if ={
+		limit = {
+			character_has_carlist_ideology = yes
+		}
+		character_generate_carlist_spain_heir = yes
+	}
+
+	### Constitutionalists
+	if = {
+		limit = {
+			NOT = {
+				character_has_carlist_ideology = yes
+			}
+		}
+		character_generate_constitutional_spain_heir = yes
+	}
+}
+
+character_generate_carlist_spain_heir = {
+	### Carlist Spanish Monarchs
+	if = {
+		limit = {
+			is_ruler_of_own_country = yes
+			has_template = SPC_carlos_v_de_borbon_template
+			game_date < 1861.1.13
+		}
+		owner = {
+			create_character = {
+				template = SPC_carlos_vi_de_borbon_template
+				on_created = {
+					character_carlist_or_legitimist_switch_effect = yes
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			is_ruler_of_own_country = yes
+			has_template = SPC_carlos_vi_de_borbon_template
+			game_date < 1887.11.18
+		}
+		if = {
+			limit = {
+				any_character = {
+					has_template = SPC_juan_iii_de_borbon_template
+				}
+			}
+			random_character = {
+				limit = {
+					has_template = SPC_juan_iii_de_borbon_template
+				}
+				save_scope_as = new_heir_scope
+			}
+			owner ?= {
+				set_character_of_unknown_status_as_heir = yes
+			}
+		}
+		else = {
+			owner ?= {
+				create_character = {
+					template = SPC_juan_iii_de_borbon_template
+					on_created = {
+						character_carlist_or_legitimist_switch_effect = yes
+					}
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			is_ruler_of_own_country = yes
+			has_template = SPC_juan_iii_de_borbon_template
+			game_date < 1909.8.15
+			game_date > 1848.4.3
+		}
+		if = {
+			limit = {
+				any_character = {
+					has_template = SPC_carlos_vii_de_borbon_template
+				}
+			}
+			random_character = {
+				limit = {
+					has_template = SPC_carlos_vii_de_borbon_template
+				}
+				save_scope_as = new_heir_scope
+			}
+			owner ?= {
+				set_character_of_unknown_status_as_heir = yes
+			}
+		}
+		else = {
+			owner ?= {
+				create_character = {
+					template = SPC_carlos_vii_de_borbon_template
+					on_created = {
+						character_carlist_or_legitimist_switch_effect = yes
+					}
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			is_ruler_of_own_country = yes
+			has_template = SPC_carlos_vii_de_borbon_template
+			game_date < 1931.10.2
+			game_date > 1870.6.7
+		}
+		if = {
+			limit = {
+				any_character = {
+					has_template = SPC_jaime_iii_de_borbon_template
+				}
+			}
+			random_character = {
+				limit = {
+					has_template = SPC_jaime_iii_de_borbon_template
+				}
+				save_scope_as = new_heir_scope
+			}
+			owner ?= {
+				set_character_of_unknown_status_as_heir = yes
+			}
+		}
+		else = {
+			owner ?= {
+				create_character = {
+					template = SPC_jaime_iii_de_borbon_template
+					on_created = {
+						character_carlist_or_legitimist_switch_effect = yes
+					}
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			is_ruler_of_own_country = yes
+			has_template = SPC_jaime_iii_de_borbon_template
+			game_date > 1849.9.12
+		}
+		if = {
+			limit = {
+				any_character = {
+					has_template = SPC_alfonso_i_de_borbon_template
+				}
+			}
+			random_character = {
+				limit = {
+					has_template = SPC_alfonso_i_de_borbon_template
+				}
+				save_scope_as = new_heir_scope
+			}
+			owner ?= {
+				set_character_of_unknown_status_as_heir = yes
+			}
+		}
+		else = {
+			owner ?= {
+				create_character = {
+					template = SPC_alfonso_i_de_borbon_template
+					on_created = {
+						character_carlist_or_legitimist_switch_effect = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+character_generate_constitutional_spain_heir = {
+	if = {
+		limit = {
+			has_template = spa_isabel_de_borbon_template
+			game_date <= 1857.11.28
+			game_date > 1851.12.20
+		}
+		owner = {
+			create_character = {
+				template = spa_isabel_francisca_de_borbon_template
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_template = spa_isabel_de_borbon_template
+			game_date < 1886.5.17
+			game_date > 1857.11.28
+		}
+		owner = {
+			create_character = {
+				template = spa_alfonso_xii_de_borbon_template
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_template = spa_alfonso_xii_de_borbon_template
+			game_date > 1886.5.17
+		}
+		owner = {
+			create_character = {
+				template = spa_alfonso_xiii_de_borbon_template
 			}
 		}
 	}

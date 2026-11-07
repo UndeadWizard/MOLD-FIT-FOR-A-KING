@@ -1,5 +1,5 @@
 ﻿POPS = {
-	s:STATE_VILNIUS = { #DONE
+	s:STATE_VILNIUS = {
 		region_state:RUS = {
 			create_pop = { # Most Lithuanian aristocrats identified as Polish
 				culture = polish
@@ -8,6 +8,7 @@
 			}
 			create_pop = {
 				culture = byelorussian
+				religion = catholic # Uniate Greek Catholic Church (Pre Synod of Polotsk)
 				size = 147130
 			}
 			create_pop = {
@@ -36,6 +37,7 @@
 			}
 			create_pop = {
 				culture = ukrainian
+				religion = catholic # Uniate Greek Catholic Church (Pre Synod of Polotsk)
 				size = 500
 			}
 			create_pop = {
@@ -573,31 +575,36 @@
 			}
 		}
 	}
-	s:STATE_EAST_KARELIA = { #DONE
+	s:STATE_EAST_KARELIA = {
 		region_state:RUS = {
 			create_pop = {
 				culture = russian
-				size = 114636
+				size = 99000
 			}
 			create_pop = {
 				culture = finnish
-				size = 757
+				size = 400
 			}
 			create_pop = {
 				culture = karelian
-				size = 53619
+				size = 70000
 			}
 		}
 	}
-	s:STATE_NENETSIA = { #DONE
+	s:STATE_NENETSIA = {
 		region_state:RUS = {
 			create_pop = {
 				culture = russian
-				size = 17170
+				size = 6000
 			}
 			create_pop = {
 				culture = ugrian
-				size = 13904
+				religion = orthodox
+				size = 11500
+			}
+			create_pop = {
+				culture = ugrian
+				size = 6000
 			}
 		}
 	}
@@ -622,11 +629,16 @@
 			}
 		}
 	}
-	s:STATE_BREST = { #DONE
+	s:STATE_BREST = {
 		region_state:RUS = {
 			create_pop = {
 				culture = byelorussian
-				size = 512334
+				religion = catholic # Uniate Greek Catholic Church (Pre Synod of Polotsk)
+				size = 309127
+			}
+			create_pop = {
+				culture = byelorussian
+				size = 203207
 			}
 			create_pop = {
 				culture = lithuanian
@@ -634,7 +646,12 @@
 			}
 			create_pop = {
 				culture = ukrainian
-				size = 133659
+				religion = catholic # Uniate Greek Catholic Church (Pre Synod of Polotsk)
+				size = 98908
+			}
+			create_pop = {
+				culture = ukrainian
+				size = 34751
 			}
 			create_pop = {
 				culture = polish
@@ -650,7 +667,7 @@
 			}
 		}
 	}
-	s:STATE_MINSK = { #DONE
+	s:STATE_MINSK = {
 		region_state:RUS = {
 			create_pop = {
 				culture = polish
@@ -658,7 +675,12 @@
 			}
 			create_pop = {
 				culture = byelorussian
-				size = 569714
+				religion = catholic # Uniate Greek Catholic Church (Pre Synod of Polotsk)
+				size = 292068
+			}
+			create_pop = {
+				culture = byelorussian
+				size = 277646
 			}
 			create_pop = {
 				culture = ashkenazi
@@ -670,7 +692,7 @@
 			}
 		}
 	}
-	s:STATE_MOGILEV = { #DONE
+	s:STATE_MOGILEV = {
 		region_state:RUS = {
 			create_pop = {
 				culture = russian
@@ -678,7 +700,12 @@
 			}
 			create_pop = {
 				culture = byelorussian
-				size = 514176
+				religion = catholic # Uniate Greek Catholic Church (Pre Synod of Polotsk)
+				size = 242513
+			}
+			create_pop = {
+				culture = byelorussian
+				size = 271663
 			}
 			create_pop = {
 				culture = ashkenazi
@@ -690,7 +717,7 @@
 			}
 		}
 	}
-	s:STATE_VITEBSK = { #DONE
+	s:STATE_VITEBSK = {
 		region_state:RUS = {
 			create_pop = {
 				culture = russian
@@ -698,7 +725,12 @@
 			}
 			create_pop = {
 				culture = byelorussian
-				size = 317823
+				religion = catholic # Uniate Greek Catholic Church (Pre Synod of Polotsk)
+				size = 238367
+			}
+			create_pop = {
+				culture = byelorussian
+				size = 79456
 			}
 			create_pop = {
 				culture = ashkenazi
@@ -714,11 +746,16 @@
 			}
 		}
 	}
-	s:STATE_VOLHYNIA = { #DONE
+	s:STATE_VOLHYNIA = {
 		region_state:RUS = {
 			create_pop = {
 				culture = ukrainian
-				size = 526356
+				religion = catholic # Uniate Greek Catholic Church (Pre Synod of Polotsk)
+				size = 121062
+			}
+			create_pop = {
+				culture = ukrainian
+				size = 405294
 			}
 			create_pop = {
 				culture = ashkenazi
@@ -780,59 +817,58 @@
 			}
 		}
 	}
-	s:STATE_CRIMEA = { #DONE
+	s:STATE_CRIMEA = {
 		region_state:RUS = {
-			create_pop = {
-				culture = ukrainian
-				size = 24006
+			create_pop = { # includes 6706 Romani
+				culture = crimean_tatar
+				religion = sunni
+				size = 240005
 			}
 			create_pop = {
 				culture = russian
-				size = 72719
+				religion = orthodox
+				size = 12294
 			}
 			create_pop = {
-				culture = tatar
-				size = 75704
-			}
-			create_pop = {
-				culture = east_german
-				size = 12010
-			}
-			create_pop = {
-				culture = ashkenazi
-				size = 9388
-			}
-			create_pop = {
-				culture = bulgarian
-				size = 2816
+				culture = ukrainian
+				religion = orthodox
+				size = 8661
 			}
 			create_pop = {
 				culture = greek
-				size = 6582
+				religion = orthodox
+				size = 5389
 			}
 			create_pop = {
 				culture = armenian
-				size = 2626
+				religion = oriental_orthodox
+				size = 4191
 			}
 			create_pop = {
-				culture = polish
-				size = 2097
+				culture = sephardic
+				religion = jewish
+				size = 5588 # 3073 Karaites + 2515 Krymchak/Rabbinite Crimean Jews
 			}
 			create_pop = {
-				culture = czech
-				size = 239
+				culture = east_german
+				religion = protestant
+				size = 1406
 			}
 			create_pop = {
-				culture = estonian
-				size = 318
+				culture = east_german
+				religion = catholic
+				size = 351
 			}
 			create_pop = {
-				culture = turkish
-				size = 427
+				culture = north_italian
+				pop_type = shopkeepers
+				religion = catholic
+				size = 398
 			}
 			create_pop = {
-				culture = south_italian
-				size = 326
+				culture = bulgarian
+				religion = orthodox
+				size = 1117
 			}
 		}
 	}
@@ -961,23 +997,27 @@
 			}
 		}
 	}
-	s:STATE_NORTH_CAUCASUS = { #DONE
+	s:STATE_NORTH_CAUCASUS = {
 		region_state:RUS = {
 			create_pop = {
 				culture = russian
-				size = 62731
+				size = 20500
 			}
 			create_pop = {
 				culture = ukrainian
-				size = 16443
+				size = 8000
 			}
 			create_pop = {
 				culture = chechen
-				size = 21197
+				size = 41197
 			}
 			create_pop = {
-				culture = north_caucasian
-				size = 79030
+				culture = ossetian
+				size = 45030
+			}
+			create_pop = {
+				culture = caucasian_turk
+				size = 14000
 			}
 			create_pop = {
 				culture = circassian
@@ -998,7 +1038,7 @@
 				size = 85000
 			}
 			create_pop = {
-				culture = north_caucasian
+				culture = dagestani
 				size = 21000
 			}
 		}
@@ -1008,12 +1048,12 @@
 				size = 57809
 			}
 			create_pop = {
-				culture = north_caucasian
+				culture = caucasian_turk
 				size = 13000
 			}
 		}
 	}
-	s:STATE_ELIZAVETPOL = { #DONE
+	s:STATE_ELIZAVETPOL = {
 		region_state:RUS = {
 			create_pop = {
 				culture = azerbaijani
@@ -1041,32 +1081,28 @@
 				size = 681
 			}
 			create_pop = {
-				culture = north_caucasian
+				culture = dagestani
 				size = 4691
 			}
 		}
 	}
-	s:STATE_STAVROPOL = { #DONE
+	s:STATE_STAVROPOL = {
 		region_state:RUS = {
 			create_pop = {
 				culture = russian
-				size = 289248
+				size = 190000
 			}
 			create_pop = {
 				culture = ukrainian
-				size = 191784
+				size = 40000
 			}
 			create_pop = {
-				culture = kazak
-				size = 12054
-			}
-			create_pop = {
-				culture = turkmen
-				size = 8908
+				culture = caucasian_turk
+				size = 40000
 			}
 			create_pop = {
 				culture = kalmyk
-				size = 6288
+				size = 10000
 			}
 		}
 	}
@@ -1114,7 +1150,7 @@
 			}
 		}
 	}
-	s:STATE_YAROSLAVL = { #DONE
+	s:STATE_YAROSLAVL = {
 		region_state:RUS = {
 			create_pop = {
 				culture = russian
@@ -1122,7 +1158,7 @@
 			}
 			create_pop = {
 				culture = ugrian
-				size = 4795
+				size = 5000
 			}
 		}
 	}
@@ -1227,39 +1263,43 @@
 			}
 		}
 	}
-	s:STATE_UFA = { #DONE
+	s:STATE_UFA = {
 		region_state:RUS = {
 			create_pop = {
 				culture = bashkir
-				size = 156746
+				size = 140000
 			}
 			create_pop = {
 				culture = russian
-				size = 137400
+				size = 150000
 			}
 			create_pop = {
 				culture = tatar
-				size = 44970
+				size = 160000
 			}
 			create_pop = {
 				culture = mari
-				size = 13488
+				size = 33000
+			}
+			create_pop = {
+				culture = udmurt
+				size = 12000
 			}
 			create_pop = {
 				culture = chuvash
-				size = 10220
+				size = 11000
 			}
 			create_pop = {
 				culture = mordvin
-				size = 6711
+				size = 7000
 			}
 		}
 	}
-	s:STATE_CHELYABINSK = { #DONE
+	s:STATE_CHELYABINSK = {
 		region_state:KZH = {
 			create_pop = {
 				culture = russian
-				size = 27045
+				size = 10045
 			}
 			create_pop = {
 				culture = bashkir
@@ -1311,7 +1351,7 @@
 		region_state:RUS = {
 			create_pop = {
 				culture = russian
-				size = 278355
+				size = 86355
 			}
 			create_pop = {
 				culture = bashkir

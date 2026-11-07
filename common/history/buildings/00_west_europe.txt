@@ -4911,7 +4911,7 @@
 					building={
 						type="building_financial_district"
 						country="c:NET"
-						levels=6
+						levels=9
 						region="STATE_HOLLAND"
 					}
 				}
@@ -5470,7 +5470,7 @@
 					building={
 						type="building_financial_district"
 						country="c:BEL"
-						levels=6
+						levels=8
 						region="STATE_FLANDERS"
 					}
 				}

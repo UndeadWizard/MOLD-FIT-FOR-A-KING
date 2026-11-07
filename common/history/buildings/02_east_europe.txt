@@ -20,33 +20,11 @@
 					building={
 						type="building_financial_district"
 						country="c:POL"
-						levels=3
+						levels=2
 						region="STATE_MAZOVIA"
 					}
 				}
 				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts"  }
-			}
-		}
-	}
-	s:STATE_BREST={
-		region_state:RUS={
-			create_building={
-				building="building_logging_camp"
-				add_ownership={
-					building={
-						type="building_logging_camp"
-						country="c:RUS"
-						levels=4
-						region="STATE_BREST"
-					}
-					building={
-						type="building_financial_district"
-						country="c:RUS"
-						levels=1
-						region="STATE_BREST"
-					}
-				}
-				activate_production_methods={ "pm_saw_mills" "pm_increased_hardwood" "pm_no_equipment" "pm_road_carts"  }
 			}
 		}
 	}
@@ -1559,6 +1537,7 @@
 	}
 	s:STATE_BESSARABIA={
 		region_state:RUS={
+			establish_cossack_host = yes
 			create_building={
 				building="building_fishing_wharf"
 				add_ownership={

@@ -26,6 +26,12 @@
 			sg:silk = {
 				add_exports = 6
 			}
+			sg:tools = {
+				add_imports = 6
+			}
+			sg:coal = {
+				add_imports = 4
+			}
 		}
 	}
 	s:STATE_WEST_BENGAL={
@@ -69,7 +75,7 @@
 				add_exports = 100
 			}
 			sg:tea = {
-				add_exports = 60
+				add_exports = 85
 			}
 		}
 		region_state:POR={
@@ -105,6 +111,9 @@
 			sg:tools = {
 				add_imports = 10
 			}
+			sg:copper = {
+				add_imports = 2
+			}
 		}
 	}
 	s:STATE_HOME_COUNTIES={
@@ -128,6 +137,75 @@
 		region_state:PRU={
 			sg:artillery = {
 				add_exports = 5
+			}
+		}
+	}
+	s:STATE_BURYATIA={
+		region_state:RUS={
+			sg:tea = {
+				add_imports = 35
+			}
+		}
+	}
+	s:STATE_PIEDMONT={
+		region_state:SAR={
+			sg:fabric = {
+				add_imports = 8
+			}
+			sg:sugar = {
+				add_imports = 2
+			}
+		}
+	}
+	s:STATE_ISTRIA={
+		region_state:AUS={
+			sg:tea = {
+				add_imports = 5
+			}
+			sg:coffee = {
+				add_imports = 5
+			}
+			sg:copper = {
+				add_imports = 2
+			}
+		}
+	}
+	s:STATE_CHERSON={
+		region_state:RUS={
+			sg:tobacco = {
+				add_imports = 10
+			}
+			sg:coffee = {
+				add_imports = 8
+			}
+			sg:silk = {
+				add_imports = 6
+			}
+		}
+	}
+	s:STATE_HOLLAND={
+		region_state:NET={
+			sg:wood = {
+				add_imports = 10
+			}
+			sg:coal = {
+				add_imports = 5
+			}
+			sg:hardwood = {
+				add_imports = 4
+			}
+			sg:iron = {
+				add_imports = 3
+			}
+		}
+	}
+	s:STATE_FLANDERS={
+		region_state:BEL={
+			sg:fabric = {
+				add_imports = 10
+			}
+			sg:coffee = {
+				add_imports = 5
 			}
 		}
 	}

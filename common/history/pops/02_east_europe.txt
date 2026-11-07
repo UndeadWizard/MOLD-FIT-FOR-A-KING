@@ -174,20 +174,28 @@
 			}
 			create_pop = {
 				culture = ugrian
-				size = 5002
+				size = 5000
 			}
 			create_pop = {
 				culture = tatar
-				size = 19124
+				size = 29000
 			}
 			create_pop = {
 				culture = bashkir
-				size = 29880
+				size = 37000
 			}
 			create_pop = {
 				culture = ugrian
 				religion = orthodox
-				size = 41453
+				size = 47000
+			}
+			create_pop = {
+				culture = mari
+				size = 8000
+			}
+			create_pop = {
+				culture = udmurt
+				size = 5000
 			}
 		}
 	}
@@ -407,10 +415,21 @@
 			}
 			create_pop = {
 				culture = south_german
-				size = 28000
+				size = 19949
+			}
+			create_pop = {
+				culture = south_german
+				religion = protestant # lutheran
+				size = 7253
+			}
+			create_pop = {
+				culture = south_german
+				religion = protestant # reformed
+				size = 798
 			}
 			create_pop = {
 				culture = ukrainian
+				religion = catholic # Greek Catholic
 				size = 152000
 			}
 			create_pop = {
@@ -448,6 +467,7 @@
 			}
 			create_pop = {
 				culture = ukrainian
+				religion = catholic # Greek Catholic
 				size = 16000
 			}
 		}
@@ -461,6 +481,7 @@
 			}
 			create_pop = {
 				culture = ukrainian
+				religion = catholic # Greek Catholic
 				size = 6000
 				pop_type = aristocrats
 			}
@@ -485,11 +506,32 @@
 			}
 			create_pop = {
 				culture = ukrainian
+				religion = catholic # Greek Catholic
 				size = 1543804
 			}
 			create_pop = {
+				culture = ukrainian
+				religion = orthodox
+				size = 433
+			}
+			create_pop = {
 				culture = south_german
-				size = 20004
+				religion = protestant # lutheran
+				size = 19707
+			}
+			create_pop = {
+				culture = south_german
+				religion = protestant # reformed
+				size = 3342
+			}
+			create_pop = {
+				culture = armenian
+				religion = catholic # Armenian Catholic
+				size = 2307
+			}
+			create_pop = {
+				culture = armenian # Armenian Apostolic
+				size = 73
 			}
 			create_pop = {
 				culture = ashkenazi

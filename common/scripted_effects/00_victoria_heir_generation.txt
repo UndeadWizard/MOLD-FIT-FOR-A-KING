@@ -1,19 +1,21 @@
-﻿japan_generate_scripted_heirs = {
+﻿# dynasty_var values: flag:house_[name]
+# houses: orleans, bonaparte, bourbon, savoy, braganca, espartero, hohenzollern,
+# obrenovic, karadordevic, yamato (Japanese Imperial House), tokugawa, habsburg
+japan_generate_scripted_heirs = {
 	if = {
 		limit = {
 			ruler = {
-				has_variable = house_yamato
+				var:dynasty_var ?= flag:house_yamato
 			}
 		}
 		if = {
 			limit = {
 				game_date >= 1831.7.22
-				NOT = { has_variable = heir_komei_spawned }
+				NOT = { is_template_used = JAP_komei_yamato }
 				ruler ?= {
 					has_template = JAP_ninko_yamato
 				}
 			}
-			set_variable = heir_komei_spawned
 			create_character = {
 				template = JAP_komei_yamato
 				on_created = {
@@ -24,12 +26,11 @@
 		if = {
 			limit = {
 				game_date >= 1852.11.3
-				NOT = { has_variable = heir_meiji_spawned }
+				NOT = { is_template_used = JAP_meiji_yamato }
 				ruler ?= {
 					has_template = JAP_komei_yamato
 				}
 			}
-			set_variable = heir_meiji_spawned
 			create_character = {
 				template = JAP_meiji_yamato
 				on_created = {
@@ -40,12 +41,11 @@
 		else_if = {
 			limit = {
 				game_date >= 1879.8.31
-				NOT = { has_variable = heir_taisho_spawned }
+				NOT = { is_template_used = JAP_taisho_yamato }
 				ruler ?= {
 					has_template = JAP_meiji_yamato
 				}
 			}
-			set_variable = heir_taisho_spawned
 			create_character = {
 				template = JAP_taisho_yamato
 				on_created = {
@@ -56,12 +56,11 @@
 		else_if = {
 			limit = {
 				game_date >= 1901.4.29
-				NOT = { has_variable = heir_showa_spawned }
+				NOT = { is_template_used = JAP_showa_yamato }
 				ruler ?= {
 					has_template = JAP_taisho_yamato
 				}
 			}
-			set_variable = heir_showa_spawned
 			create_character = {
 				template = JAP_showa_yamato
 				on_created = {
@@ -73,7 +72,7 @@
 	else_if = {
 		limit = {
 			ruler = {
-				has_variable = house_tokugawa
+				var:dynasty_var ?= flag:house_tokugawa
 			}
 		}
 		if = {
@@ -201,6 +200,120 @@ france_generate_scripted_heirs = {
 		}
 		country_summon_heir_effect = {
 			TEMPLATE = FRA_napoleon_eugene_louis_bonaparte
+		}
+	}
+}
+
+spain_generate_scripted_heirs = {
+	### Constitutional Spain - mirrors character_generate_constitutional_spain_heir
+	if = {
+		limit = {
+			game_date <= 1857.11.28
+			game_date > 1851.12.20
+			NOT = { has_variable = isabel_francisca_heir_var }
+			ruler ?= {
+				has_template = spa_isabel_de_borbon_template
+			}
+		}
+		set_variable = isabel_francisca_heir_var
+		create_character = {
+			template = spa_isabel_francisca_de_borbon_template
+		}
+	}
+	else_if = {
+		limit = {
+			game_date < 1886.5.17
+			game_date > 1857.11.28
+			NOT = { has_variable = alfonso_xii_heir_var }
+			ruler ?= {
+				has_template = spa_isabel_de_borbon_template
+			}
+		}
+		set_variable = alfonso_xii_heir_var
+		create_character = {
+			template = spa_alfonso_xii_de_borbon_template
+		}
+	}
+	else_if = {
+		limit = {
+			game_date > 1886.5.17
+			NOT = { has_variable = alfonso_xiii_heir_var }
+			ruler ?= {
+				has_template = spa_alfonso_xii_de_borbon_template
+			}
+		}
+		set_variable = alfonso_xiii_heir_var
+		create_character = {
+			template = spa_alfonso_xiii_de_borbon_template
+		}
+	}
+
+	# Carlist Spain - mirrors character_generate_carlist_spain_heir
+	if = {
+		limit = {
+			game_date < 1861.1.13
+			NOT = { has_variable = carlos_vi_heir_var }
+			ruler ?= {
+				has_template = SPC_carlos_v_de_borbon_template
+			}
+		}
+		set_variable = carlos_vi_heir_var
+		create_character = {
+			template = SPC_carlos_vi_de_borbon_template
+		}
+	}
+	else_if = {
+		limit = {
+			game_date < 1887.11.18
+			NOT = { has_variable = juan_iii_heir_var }
+			ruler ?= {
+				has_template = SPC_carlos_vi_de_borbon_template
+			}
+		}
+		set_variable = juan_iii_heir_var
+		create_character = {
+			template = SPC_juan_iii_de_borbon_template
+		}
+	}
+	else_if = {
+		limit = {
+			game_date < 1909.8.15
+			game_date > 1848.4.3
+			NOT = { has_variable = carlos_vii_heir_var }
+			ruler ?= {
+				has_template = SPC_juan_iii_de_borbon_template
+			}
+		}
+		set_variable = carlos_vii_heir_var
+		create_character = {
+			template = SPC_carlos_vii_de_borbon_template
+		}
+	}
+	else_if = {
+		limit = {
+			game_date < 1931.10.2
+			game_date > 1870.6.7
+			NOT = { has_variable = jaime_iii_heir_var }
+			ruler ?= {
+				has_template = SPC_carlos_vii_de_borbon_template
+			}
+		}
+		set_variable = jaime_iii_heir_var
+		create_character = {
+			template = SPC_jaime_iii_de_borbon_template
+		}
+	}
+	else_if = {
+		limit = {
+			game_date > 1849.9.12
+			NOT = { has_variable = alfonso_i_heir_var }
+			ruler ?= {
+				has_template = SPC_jaime_iii_de_borbon_template
+			}
+		}
+		set_variable = alfonso_i_heir_var
+		create_character = {
+			template = SPC_alfonso_i_de_borbon_template
 		}
 	}
 }
