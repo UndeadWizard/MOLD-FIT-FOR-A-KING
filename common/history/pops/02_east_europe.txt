@@ -48,15 +48,28 @@
 		region_state:RUS = {
 			create_pop = {
 				culture = russian
-				size = 3327590
+				size = 1327590
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 23410
+				size = 13410
 			}
 			create_pop = {
 				culture = ukrainian
 				size = 5122
+			}
+		}
+	}
+
+	s:STATE_TULA = {
+		region_state:RUS = {
+			create_pop = {
+				culture = russian
+				size = 2030596
+			}
+			create_pop = {
+				culture = ashkenazi
+				size = 10204
 			}
 		}
 	}

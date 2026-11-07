@@ -830,7 +830,7 @@ LIT = {
 	tier = principality
 
 	cultures = { lithuanian }
-	capital = STATE_KAUNAS
+	capital = STATE_LITHUANIA
 }
 
 LAT = {
@@ -853,6 +853,10 @@ POL = {
 
 	cultures = { polish }
 	capital = STATE_GREATER_POLAND
+
+	primary_unit_color = { 134 144 145 }
+	secondary_unit_color  = { 134 144 145 }
+	tertiary_unit_color = { 145 58 46 }
 }
 
 GAL = {
@@ -3771,7 +3775,7 @@ CKC = {
 	tier = principality
 
 	cultures = { siberian }
-	capital = STATE_CHUKOTKA
+	capital = STATE_KAMCHATKA
 }
 
 ALI = {
@@ -4215,13 +4219,77 @@ TRM = { # Turkmenia
 ABK = { # Abkhazia
 	color = { 92 188 73 }
 
-	country_type = recognized
+	country_type = unrecognized
 
 	tier = principality
 
-	cultures = { north_caucasian }
+	cultures = { abkhazian }
+
+	religion = orthodox
 
 	capital = STATE_GREATER_CAUCASUS
+}
+
+BKH = {
+	color = { 120 140 110 }
+
+	country_type = unrecognized
+
+	tier = principality
+
+	cultures = { kazak }
+	capital = STATE_URALSK
+}
+
+MNL = { # Mingrelia
+	color = { 184 138 156 }
+
+	country_type = unrecognized
+
+	tier = principality
+
+	cultures = { georgian }
+
+	capital = STATE_GREATER_CAUCASUS
+
+	regnal_numbers = {
+		Levan = 5
+	}
+}
+
+SVN = { # Svaneti
+	color = { 64 158 118 }
+
+	country_type = unrecognized
+
+	tier = principality
+
+	cultures = { georgian }
+
+	capital = STATE_GREATER_CAUCASUS
+}
+
+TKI = { # Tarki
+	color = { 180 150 90 }
+
+	country_type = unrecognized
+
+	tier = principality
+
+	cultures = { caucasian_turk }
+
+	capital = STATE_DAGESTAN
+}
+
+RSR = { # Russian Civil War Tag
+	color = { 122 62 128 }
+
+	country_type = recognized
+
+	tier = empire
+
+	cultures = { russian }
+	capital = STATE_INGRIA
 }
 
 LUR = { # Luristan

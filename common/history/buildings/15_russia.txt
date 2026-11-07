@@ -169,7 +169,7 @@
 			}
 		}
 	}
-	s:STATE_KAUNAS={
+	s:STATE_LITHUANIA={
 		region_state:RUS={
 			create_building={
 				building="building_rye_farm"
@@ -178,7 +178,7 @@
 						type="building_manor_house"
 						country="c:RUS"
 						levels=2
-						region="STATE_KAUNAS"
+						region="STATE_LITHUANIA"
 					}
 				}
 				reserves=1
@@ -998,13 +998,63 @@
 	s:STATE_ORYOL={
 		region_state:RUS={
 			create_building={
+				building="building_food_industry"
+				add_ownership={
+					building={
+						type="building_food_industry"
+						country="c:RUS"
+						levels=1
+						region="STATE_ORYOL"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_bakery" "pm_disabled_canning" "pm_pot_stills" "pm_manual_dough_processing"  }
+			}
+			create_building={
+				building="building_rye_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:RUS"
+						levels=6
+						region="STATE_ORYOL"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_tools_disabled" "pm_sugar_beets" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					building={
+						type="building_logging_camp"
+						country="c:RUS"
+						levels=8
+						region="STATE_ORYOL"
+					}
+					building={
+						type="building_financial_district"
+						country="c:RUS"
+						levels=2
+						region="STATE_MOSCOW"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_saw_mills"  "pm_no_equipment" "pm_road_carts" "pm_no_hardwood" }
+			}
+		}
+	}
+
+	s:STATE_TULA={
+		region_state:RUS={
+			create_building={
 				building="building_textile_mill"
 				add_ownership={
 					building={
 						type="building_textile_mill"
 						country="c:RUS"
 						levels=2
-						region="STATE_ORYOL"
+						region="STATE_TULA"
 					}
 				}
 				reserves=1
@@ -1016,8 +1066,8 @@
 					building={
 						type="building_food_industry"
 						country="c:RUS"
-						levels=2
-						region="STATE_ORYOL"
+						levels=1
+						region="STATE_TULA"
 					}
 				}
 				reserves=1
@@ -1030,7 +1080,7 @@
 						type="building_tooling_workshop"
 						country="c:RUS"
 						levels=2
-						region="STATE_ORYOL"
+						region="STATE_TULA"
 					}
 				}
 				reserves=1
@@ -1053,8 +1103,8 @@
 					building={
 						type="building_manor_house"
 						country="c:RUS"
-						levels=8
-						region="STATE_ORYOL"
+						levels=2
+						region="STATE_TULA"
 					}
 				}
 				reserves=1
@@ -1066,14 +1116,8 @@
 					building={
 						type="building_logging_camp"
 						country="c:RUS"
-						levels=8
-						region="STATE_ORYOL"
-					}
-					building={
-						type="building_financial_district"
-						country="c:RUS"
-						levels=2
-						region="STATE_MOSCOW"
+						levels=1
+						region="STATE_TULA"
 					}
 				}
 				reserves=1
@@ -1517,7 +1561,7 @@
 			}
 		}
 	}
-	s:STATE_GALICH={
+	s:STATE_VOLOGDA={
 		region_state:RUS={
 			create_building={
 				building="building_rye_farm"
@@ -1526,7 +1570,7 @@
 						type="building_manor_house"
 						country="c:RUS"
 						levels=3
-						region="STATE_GALICH"
+						region="STATE_VOLOGDA"
 					}
 				}
 				reserves=1
@@ -1539,7 +1583,7 @@
 						type="building_logging_camp"
 						country="c:RUS"
 						levels=2
-						region="STATE_GALICH"
+						region="STATE_VOLOGDA"
 					}
 				}
 				reserves=1
@@ -2262,6 +2306,24 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_sailor_recruitment" }
+			}
+		}
+	}
+
+	s:STATE_KOSTROMA={
+		region_state:RUS={
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					building={
+						type="building_logging_camp"
+						country="c:RUS"
+						levels=1
+						region="STATE_KOSTROMA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_saw_mills"  "pm_no_equipment" "pm_road_carts" "pm_hardwood" }
 			}
 		}
 	}

@@ -2,6 +2,18 @@
 GLOBAL = {
 	add_contextless_journal_entry = je_uneasy_raj
 
+	if = {
+		limit = {
+			has_dlc_feature = ip5_content
+		}
+		c:POL ?= {
+			trigger_event = {
+				id = congress_poland.1000
+				days = 14 # 15 January
+			}
+		}
+	}
+
 	every_country = {
 		limit = { NOT = { has_law_or_variant = law_type:law_slavery_banned } }
 		if = {
@@ -1237,6 +1249,13 @@ GLOBAL = {
                 value = medium_radicals
                 culture = cu:bulgarian
             }
+		}
+	}
+
+	c:BKH ?= {
+		add_radicals = {
+			value = 0.25
+			pop_type = peasants
 		}
 	}
 }

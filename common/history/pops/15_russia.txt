@@ -213,20 +213,20 @@
 			}
 		}
 	}
-	s:STATE_KAUNAS = { #DONE
+	s:STATE_LITHUANIA = {
 		region_state:RUS = {
 			create_pop = { # Most Lithuanian aristocrats identified as Polish
 				culture = polish
 				pop_type = aristocrats
-				size = 4500
+				size = 3272
 			}
 			create_pop = {
 				culture = lithuanian
-				size = 442209
+				size = 337968
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 91653
+				size = 77926
 			}
 			create_pop = {
 				culture = latvian
@@ -234,57 +234,173 @@
 			}
 			create_pop = {
 				culture = polish
-				size = 1500
+				size = 0
 			}
 			create_pop = {
 				culture = east_german
-				size = 26366
+				size = 21688
 			}
 			create_pop = {
 				culture = russian
-				size = 9366
+				size = 4079
 			}
 			create_pop = {
 				culture = byelorussian
-				size = 16056
+				size = 15797
 			}
 		}
-	}
-	s:STATE_MAZOVIA = { #Mazovia - DONE
-		region_state:RUS = {
+		region_state:POL = {
 			create_pop = {
-				culture = polish
-				pop_type = aristocrats
-				size = 12400
+				culture = lithuanian
+				religion = catholic
+				size = 91968
+			}
+			create_pop = {
+				culture = lithuanian
+				religion = protestant
+				size = 319
 			}
 			create_pop = {
 				culture = polish
-				size = 958392
+				religion = catholic
+				pop_type = aristocrats
+				size = 1228
+			}
+			create_pop = {
+				culture = polish
+				religion = catholic
+				size = 13105
 			}
 			create_pop = {
 				culture = ashkenazi
-				size = 180591
+				religion = jewish
+				size = 13727
 			}
 			create_pop = {
 				culture = east_german
-				size = 39499
+				religion = protestant
+				size = 4678
 			}
 			create_pop = {
 				culture = russian
-				size = 53083
+				religion = orthodox
+				pop_type = officers
+				size = 589
+			}
+			create_pop = {
+				culture = russian
+				religion = orthodox
+				size = 4698
 			}
 			create_pop = {
 				culture = byelorussian
-				size = 50440
+				religion = orthodox
+				size = 259
 			}
 			create_pop = {
 				culture = ukrainian
-				size = 21106
+				religion = orthodox
+				size = 194
+			}
+			create_pop = {
+				culture = tatar
+				religion = sunni
+				size = 155
 			}
 		}
 	}
-	s:STATE_GREATER_POLAND = { #Warszawa - DONE
+	s:STATE_MAZOVIA = { #Mazovia
+		region_state:POL = {
+			create_pop = {
+				culture = polish
+				pop_type = aristocrats
+				size = 8900
+			}
+			create_pop = {
+				culture = polish
+				size = 830338
+			}
+			create_pop = {
+				culture = ashkenazi
+				size = 124722
+			}
+			create_pop = {
+				culture = east_german
+				size = 34936
+			}
+			create_pop = {
+				culture = russian
+				size = 37678
+			}
+		}
 		region_state:RUS = {
+			create_pop = {
+				culture = byelorussian
+				religion = catholic # Uniate Greek Catholic Church (Pre Synod of Polotsk)
+				size = 70000
+			}
+			create_pop = {
+				culture = byelorussian
+				religion = orthodox
+				size = 20311
+			}
+			create_pop = {
+				culture = ukrainian
+				religion = catholic # Uniate Greek Catholic Church (Chelm Eparchy, converted 1875)
+				size = 30000
+			}
+			create_pop = {
+				culture = ukrainian
+				religion = orthodox
+				size = 7855
+			}
+			create_pop = {
+				culture = polish
+				religion = catholic
+				pop_type = aristocrats
+				size = 3500
+			}
+			create_pop = {
+				culture = polish
+				religion = catholic
+				size = 71195
+			}
+			create_pop = {
+				culture = ashkenazi
+				religion = jewish
+				pop_type = shopkeepers
+				size = 6000
+			}
+			create_pop = {
+				culture = ashkenazi
+				religion = jewish
+				size = 49869
+			}
+			create_pop = {
+				culture = east_german
+				religion = protestant
+				size = 4563
+			}
+			create_pop = {
+				culture = russian
+				religion = orthodox
+				pop_type = officers
+				size = 1200
+			}
+			create_pop = {
+				culture = russian
+				religion = orthodox
+				size = 14205
+			}
+			create_pop = {
+				culture = tatar
+				religion = sunni
+				size = 239
+			}
+		}
+	}
+	s:STATE_GREATER_POLAND = { #Warszawa
+		region_state:POL = {
 			create_pop = {
 				culture = polish
 				pop_type = aristocrats
@@ -318,8 +434,8 @@
 			}
 		}
 	}
-	s:STATE_LESSER_POLAND = { #Lublin - DONE
-		region_state:RUS = {
+	s:STATE_LESSER_POLAND = { #Lublin
+		region_state:POL = {
 			create_pop = {
 				culture = polish
 				size = 633163
@@ -339,6 +455,7 @@
 			}
 			create_pop = {
 				culture = ukrainian
+				religion = catholic # Uniate Greek Catholic Church (Chelm Eparchy, converted 1875)
 				size = 160774
 			}
 			create_pop = {
@@ -492,7 +609,7 @@
 			}
 		}
 	}
-	s:STATE_GALICH = { #DONE
+	s:STATE_VOLOGDA = { #DONE
 		region_state:RUS = {
 			create_pop = {
 				culture = russian
@@ -1001,11 +1118,20 @@
 		region_state:RUS = {
 			create_pop = {
 				culture = russian
-				size = 3005300
+				size = 1950000
 			}
 			create_pop = {
 				culture = ugrian
 				size = 4795
+			}
+		}
+	}
+
+	s:STATE_KOSTROMA = {
+		region_state:RUS = {
+			create_pop = {
+				culture = russian
+				size = 1055300
 			}
 		}
 	}
