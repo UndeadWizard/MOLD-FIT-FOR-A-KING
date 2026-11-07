@@ -2,7 +2,7 @@
   "name" : "Mold Fit for a King",
 	"id" : "",
   "version": "0.1",
-  "supported_game_version": "1.13.*",
+  "supported_game_version": "1.15.*",
   "short_description" : "",
   "tags": ["Alternative History" ],
   "relationships" : [],
