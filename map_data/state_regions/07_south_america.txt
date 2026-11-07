@@ -276,6 +276,7 @@ STATE_TARAPACA = {
     capped_resources = {
         building_iron_mine = 18
         building_sulfur_mine = 24
+        building_copper_mine = 18
         building_whaling_station = 3
         building_fishing_wharf = 5
     }
@@ -286,7 +287,7 @@ STATE_ANTOFAGASTA = {
     id = 362
     subsistence_building = "building_subsistence_farm"
     provinces = { "x1B2EC2" "x2000F0" "x208070" "x20E574" "x291C71" "x2DF128" "x3FDC05" "x40D35C" "x4DCF72" "x694D06" "x6B33D0" "x71C02C" "x7984DF" "x8238EF" "x82A274" "x8BA717" "x8F918A" "xCAECEF" "xCC472E" "xCE7F3B" "xDE43F7" "xE96CF4" "xEE0067" "xF39FDA" "xF5E20E" }
-    traits = { "state_trait_andes" "state_trait_atacama_desert" }
+    traits = { "state_trait_andes" "state_trait_atacama_desert" "state_trait_domeyko_fault" }
     city = "x7984DF"
     port = "x2000F0"
     farm = "x694D06"
@@ -297,6 +298,7 @@ STATE_ANTOFAGASTA = {
     capped_resources = {
         building_iron_mine = 30
         building_sulfur_mine = 48
+        building_copper_mine = 30
         building_fishing_wharf = 5
     }
     resource = {
@@ -345,6 +347,7 @@ STATE_LA_PAZ = {
     capped_resources = {
         building_logging_camp = 20
         building_gold_mine = 4
+        building_copper_mine = 6
     }
     resource = {
         type = "building_rubber_plantation"
@@ -369,6 +372,7 @@ STATE_POTOSI = {
     arable_resources = { "building_rice_farm" "building_livestock_ranch" "building_coffee_plantation" "building_dye_plantation" "building_tobacco_plantation" "building_banana_plantation" }
     capped_resources = {
         building_lead_mine = 12
+        building_copper_mine = 7
         building_logging_camp = 9
         building_gold_mine = 4
     }
@@ -464,6 +468,7 @@ STATE_AREQUIPA = {
     capped_resources = {
         building_iron_mine = 21
         building_sulfur_mine = 32
+        building_copper_mine = 6
         building_logging_camp = 4
         building_fishing_wharf = 5
     }
@@ -726,6 +731,7 @@ STATE_SANTIAGO = {
         building_gold_mine = 5
         building_iron_mine = 33
         building_sulfur_mine = 36
+        building_copper_mine = 6
         building_logging_camp = 6
         building_whaling_station = 2
         building_fishing_wharf = 8

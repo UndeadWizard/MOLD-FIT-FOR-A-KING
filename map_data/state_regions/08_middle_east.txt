@@ -142,6 +142,7 @@ STATE_CYPRUS = {
     capped_resources = {
         building_logging_camp = 2
         building_fishing_wharf = 5
+        building_copper_mine = 6
         building_iron_mine = 5
         building_sulfur_mine = 5
     }
@@ -462,6 +463,7 @@ STATE_ISFAHAN = {
         building_coal_mine = 22
         building_iron_mine = 51
         building_lead_mine = 28
+        building_copper_mine = 4
         building_logging_camp = 4
     }
 }
@@ -537,6 +539,7 @@ STATE_TABRIZ = {
         building_coal_mine = 20
         building_iron_mine = 20
         building_lead_mine = 25
+        building_copper_mine = 6
         building_logging_camp = 5
     }
 }
@@ -671,6 +674,7 @@ STATE_KASTAMONU = {
     arable_resources = { "building_wheat_farm" "building_livestock_ranch" "building_cotton_plantation" "building_tea_plantation" "building_tobacco_plantation" "building_opium_plantation" "building_vineyard" }
     capped_resources = {
         building_coal_mine = 72
+        building_copper_mine = 6
         building_logging_camp = 11
         building_fishing_wharf = 10
     }
@@ -690,6 +694,7 @@ STATE_DIYARBAKIR = {
     arable_resources = { "building_wheat_farm" "building_livestock_ranch" "building_cotton_plantation" "building_tea_plantation" "building_tobacco_plantation" "building_vineyard" }
     capped_resources = {
         building_coal_mine = 32
+        building_copper_mine = 6
     }
 }
 
@@ -779,6 +784,7 @@ STATE_KARS = {
     arable_land = 10
     arable_resources = { "building_wheat_farm" "building_livestock_ranch" "building_cotton_plantation" "building_tea_plantation" "building_tobacco_plantation" }
     capped_resources = {
+        building_copper_mine = 6
         building_logging_camp = 9
         building_fishing_wharf = 5
     }

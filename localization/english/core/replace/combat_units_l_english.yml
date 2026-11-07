@@ -4,3 +4,6 @@
 
   combat_unit_type_behemoth: "Behemoth"
   combat_unit_type_behemoth_desc: "Light Infantry which is positioned in a loose formation, allowing a high degree of flexibility."
+
+  combat_unit_type_boar_hound: "Boar Hound"
+  combat_unit_type_boar_hound_desc: "A type of heavy cavalry known for its ferocity and strength in battle."

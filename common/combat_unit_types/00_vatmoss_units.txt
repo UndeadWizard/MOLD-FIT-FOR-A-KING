@@ -1,9 +1,4 @@
-﻿###
-### Keep "unit tiers" per group in ascending order; the system will determine the default unit type for a country
-### by the last defined unit type that it can build
-###
-
-### ARMY
+﻿### ARMY
 
 ### Infantry
 
@@ -27,6 +22,26 @@ combat_unit_type_behemoth = {
         texture = "gfx/unit_illustrations/infantry_east_asian_skirmish.dds"
     }
 
+}
+
+combat_unit_type_boar_hound = {
+    group = combat_unit_group_armor
+    max_manpower = 1o00
+    supply_capacity = 12
+
+    upkeep_modifier = {
+        goods_input_plasm_add = 2
+    }
+
+    battle_modifier = {
+        unit_offense_add = 35
+        unit_defense_add = 15
+        unit_morale_damage_mult = 0.05
+    }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/infantry_east_asian_skirmish.dds"
+    }
 }
 
 ### Artillery

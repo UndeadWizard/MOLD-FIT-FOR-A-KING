@@ -57,6 +57,7 @@ STATE_ARMENIA = {
     capped_resources = {
         building_iron_mine = 27
         building_lead_mine = 21
+        building_copper_mine = 6
         building_logging_camp = 2
     }
 }
@@ -301,6 +302,7 @@ STATE_HERAT = {
     capped_resources = {
         building_iron_mine = 6
         building_lead_mine = 8
+        building_copper_mine = 4
     }
 }
 
@@ -370,6 +372,7 @@ STATE_KABUL = {
     capped_resources = {
         building_coal_mine = 6
         building_iron_mine = 10
+        building_copper_mine = 4
         building_logging_camp = 4
     }
 }
@@ -389,6 +392,7 @@ STATE_BALUCHISTAN = {
     capped_resources = {
         building_iron_mine = 20
         building_lead_mine = 10
+        building_copper_mine = 4
         building_logging_camp = 1
         building_fishing_wharf = 5
     }

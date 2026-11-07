@@ -15,6 +15,7 @@
         building_coal_mine = 84
         building_iron_mine = 96
         building_lead_mine = 81
+        building_copper_mine = 6
         building_gold_mine = 2
         building_logging_camp = 27
     }
@@ -103,6 +104,7 @@ STATE_UPPER_YENISEYSK = {
     capped_resources = {
         building_coal_mine = 15
         building_iron_mine = 10
+        building_copper_mine = 6
         building_logging_camp = 48
     }
 }

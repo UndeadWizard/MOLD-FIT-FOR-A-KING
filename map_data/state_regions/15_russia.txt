@@ -782,6 +782,7 @@ STATE_SYRDARYA = {
     capped_resources = {
         building_iron_mine = 15
         building_lead_mine = 60
+        building_copper_mine = 6
         building_logging_camp = 6
     }
 }
@@ -1169,6 +1170,7 @@ STATE_CHELYABINSK = {
     capped_resources = {
         building_iron_mine = 95
         building_coal_mine = 25
+        building_copper_mine = 6
         building_logging_camp = 16
         building_gold_mine = 3
     }

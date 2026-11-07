@@ -13,6 +13,7 @@
     capped_resources = {
         building_iron_mine = 60
         building_lead_mine = 18
+        building_copper_mine = 6
         building_logging_camp = 45
         building_fishing_wharf = 11
     }
@@ -173,6 +174,7 @@ STATE_NORTHERN_NORWAY = {
     capped_resources = {
         building_iron_mine = 18
         building_sulfur_mine = 20
+        building_copper_mine = 6
         building_logging_camp = 24
         building_whaling_station = 10
         building_fishing_wharf = 10
@@ -276,6 +278,7 @@ STATE_LANCASHIRE = {
         building_coal_mine = 100
         building_iron_mine = 60
         building_lead_mine = 45
+        building_copper_mine = 4
         building_logging_camp = 9
         building_fishing_wharf = 15
         building_vatmoss_plantation = 4
@@ -301,6 +304,7 @@ STATE_WALES = {
     arable_resources = { "building_rye_farm" "building_livestock_ranch" }
     capped_resources = {
         building_coal_mine = 80
+        building_copper_mine = 6
         building_logging_camp = 14
         building_fishing_wharf = 4
     }
@@ -413,6 +417,7 @@ STATE_WEST_COUNTRY = {
         building_lead_mine = 60
         building_logging_camp = 6
         building_fishing_wharf = 9
+        building_copper_mine = 12
     }
     naval_exit_id = 3028
 }
@@ -470,6 +475,7 @@ STATE_MUNSTER = {
     arable_resources = { "building_rye_farm" "building_livestock_ranch" }
     capped_resources = {
         building_lead_mine = 24
+        building_copper_mine = 6
         building_logging_camp = 4
         building_fishing_wharf = 12
     }
@@ -490,6 +496,7 @@ STATE_LEINSTER = {
     capped_resources = {
         building_iron_mine = 33
         building_lead_mine = 27
+        building_copper_mine = 6
         building_logging_camp = 6
         building_fishing_wharf = 6
     }
@@ -1160,6 +1167,7 @@ STATE_ANHALT = {
     arable_resources = { "building_rye_farm" "building_livestock_ranch" }
     capped_resources = {
         building_coal_mine = 44
+        building_copper_mine = 6
         building_logging_camp = 20
     }
 }
@@ -1213,6 +1221,7 @@ STATE_BRANDENBURG = {
     arable_resources = { "building_rye_farm" "building_livestock_ranch" }
     capped_resources = {
         building_coal_mine = 44
+        building_copper_mine = 6
         building_logging_camp = 6
     }
 }
@@ -1308,6 +1317,7 @@ STATE_BRUNSWICK = {
         building_coal_mine = 40
         building_iron_mine = 45
         building_lead_mine = 45
+        building_copper_mine = 6
         building_logging_camp = 6
     }
 }
@@ -1363,6 +1373,7 @@ STATE_SAXONY = {
         building_coal_mine = 80
         building_iron_mine = 30
         building_sulfur_mine = 80
+        building_copper_mine = 6
         building_logging_camp = 6
     }
 }
@@ -1382,6 +1393,7 @@ STATE_HESSE = {
         building_coal_mine = 60
         building_iron_mine = 30
         building_sulfur_mine = 40
+        building_copper_mine = 4
         building_logging_camp = 8
     }
 }
