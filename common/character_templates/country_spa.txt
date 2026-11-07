@@ -21,7 +21,7 @@ spa_amadeo_i_de_savoy_template = { # Amedeo Ferdinando Maria di Savoia, Duke of 
         reserved
     }
     on_created = {
-		set_variable = house_savoy
+		set_variable = { name = dynasty_var value = flag:house_savoy }
     }
 }
 
@@ -41,7 +41,7 @@ spa_luisa_fernanda_de_borbon_template = { # María Luisa Fernanda de Borbón y B
         aesthete
     }
     on_created = {
-		set_variable = house_bourbon
+		set_variable = { name = dynasty_var value = flag:house_bourbon }
     }
 }
 
@@ -61,7 +61,7 @@ spa_isabel_francisca_de_borbon_template = { # María Isabel Francisca de Asís C
         basic_diplomat
     }
     on_created = {
-		set_variable = house_bourbon
+		set_variable = { name = dynasty_var value = flag:house_bourbon }
     }
 }
 
@@ -81,7 +81,7 @@ spa_alfonso_xii_de_borbon_template = { # Alfonso Francisco de Asís Fernando Pí
         cautious
     }
     on_created = {
-		set_variable = house_bourbon
+		set_variable = { name = dynasty_var value = flag:house_bourbon }
     }
 }
 
@@ -101,7 +101,7 @@ spa_alfonso_xiii_de_borbon_template = { # Alfonso León Fernando María Santiago
         reckless
     }
     on_created = {
-		set_variable = house_bourbon
+		set_variable = { name = dynasty_var value = flag:house_bourbon }
     }
 }
 
@@ -161,7 +161,7 @@ SPA_baldomero_espartero = {
         experienced_political_operator # Exceptional amongst Spanish commanders, as he ensured his soldiers actually got paid.
 	}
     on_created = {
-        set_variable = house_espartero
+        set_variable = { name = dynasty_var value = flag:house_espartero }
     }
 }
 

@@ -133,6 +133,24 @@
 				add_ideology = ideology_caudillismo
 			}
 		}
+		# Jannisary
+		else_if = {
+			limit = {
+				c:TUR ?= this
+			}
+			ig:ig_armed_forces ?= {
+				set_interest_group_name = ig_jannisary
+			}
+		}
+		# Mamaluk
+		else_if = {
+			limit = {
+				c:EGY ?= this
+			}
+			ig:ig_armed_forces ?= {
+				set_interest_group_name = ig_mamluk
+			}
+		}
 		else_if = { # Samurai
 			limit = {
 				country_has_primary_culture = cu:japanese
