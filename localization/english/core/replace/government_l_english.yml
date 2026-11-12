@@ -1,8 +1,8 @@
 ﻿l_english:
  gov_dominion_american_presidential:0 "American Republic"
- gov_dominion_american_presidential_desc:2 "In 1778, George Washington's delegation and the British Empire agreed to [concept_the_compact], an agreement that established an American parliament under a Governor-General confirmed by Britain.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
+ gov_dominion_american_presidential_desc:2 "In 1778, George Washington's delegation and the British Empire ratified the [concept_the_compact], an agreement that established an American parliament under a Governor-General confirmed by Britain.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
  gov_dominion_american_parliamentary:0 "American Dominion"
- gov_dominion_american_parliamentary_desc:2 "In 1778, George Washington's delegation and the British Empire agreed to [concept_the_compact], an agreement that established an American parliament under a Governor-General confirmed by Britain.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
+ gov_dominion_american_parliamentary_desc:2 "In 1778, George Washington's delegation and the British Empire ratified the [concept_the_compact], an agreement that established an American parliament under a Governor-General confirmed by Britain.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
  gov_governor_american_presidential:0 "American Governorship"
  gov_governor_american_presidential_desc:2 "Under the American Dominion, some states were given a greater degree of autonomy.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
  gov_princely_state_american:0 "Covenant Prince"
