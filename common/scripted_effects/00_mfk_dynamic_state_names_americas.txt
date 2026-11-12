@@ -225,3 +225,198 @@ STATE_LOUISIANA_state_name_assign = {
         reset_hub_names = yes
     }
 }
+
+REPLACE:assign_state_name_region_pacific_coast = { # region_pacific_coast
+    if = {
+        limit = {
+            state_region = {
+                s:STATE_COLUMBIA ?= this
+            }
+        }
+        STATE_WASHINGTON_state_name_assign = yes
+    }
+    else_if = {
+        limit = {
+            state_region = {
+                s:STATE_BRITISH_COLUMBIA ?= this
+            }
+        }
+        STATE_BRITISH_COLUMBIA_state_name_assign = yes
+    }
+    else_if = {
+        limit = {
+            state_region = {
+                s:STATE_CALIFORNIA ?= this
+            }
+        }
+        STATE_CALIFORNIA_state_name_assign = yes
+    }
+    else_if = {
+        limit = {
+            state_region = {
+                s:STATE_NORTHERN_CALIFORNIA ?= this
+            }
+        }
+        STATE_NORTHERN_CALIFORNIA_state_name_assign = yes
+    }
+    else_if = {
+        limit = {
+            state_region = {
+                s:STATE_SOUTHERN_CALIFORNIA ?= this
+            }
+        }
+        STATE_SOUTHERN_CALIFORNIA_state_name_assign = yes
+    }
+    else_if = {
+        limit = {
+            state_region = {
+                s:STATE_WASHOE ?= this
+            }
+        }
+        STATE_WASHOE_state_name_assign = yes
+    }
+}
+
+STATE_CALIFORNIA_state_name_assign = {
+    if = {
+        limit = {
+            owner = {
+                any_primary_culture = {
+                    has_discrimination_trait = language_hispanophone
+                }
+            }
+        }
+        set_hub_name = {
+            type = city
+            name = HUB_NAME_STATE_CALIFORNIA_city_spa
+        }
+        set_hub_name = {
+            type = port
+            name = HUB_NAME_STATE_CALIFORNIA_port_spa
+        }
+        set_hub_name = {
+            type = farm
+            name = HUB_NAME_STATE_CALIFORNIA_farm_spa
+        }
+        set_hub_name = {
+            type = wood
+            name = HUB_NAME_STATE_CALIFORNIA_wood_spa
+        }
+        set_hub_name = {
+            type = mine
+            name = HUB_NAME_STATE_CALIFORNIA_mine_spa
+        }
+        set_state_name = STATE_CALIFORNIA_spa
+    }
+    else = { # switch back to defaults
+        reset_state_name = yes
+        reset_hub_names = yes
+    }
+}
+
+STATE_NORTHERN_CALIFORNIA_state_name_assign = {
+    if = {
+        limit = {
+            owner = {
+                any_primary_culture = {
+                    has_discrimination_trait = language_hispanophone
+                }
+            }
+        }
+        set_hub_name = {
+            type = city
+            name = HUB_NAME_STATE_NORTHERN_CALIFORNIA_city_spa
+        }
+        set_hub_name = {
+            type = port
+            name = HUB_NAME_STATE_NORTHERN_CALIFORNIA_port_spa
+        }
+        set_hub_name = {
+            type = farm
+            name = HUB_NAME_STATE_NORTHERN_CALIFORNIA_farm_spa
+        }
+        set_hub_name = {
+            type = wood
+            name = HUB_NAME_STATE_NORTHERN_CALIFORNIA_wood_spa
+        }
+        set_hub_name = {
+            type = mine
+            name = HUB_NAME_STATE_NORTHERN_CALIFORNIA_mine_spa
+        }
+        set_state_name = STATE_NORTHERN_CALIFORNIA_spa
+    }
+    else = { # switch back to defaults
+        reset_state_name = yes
+        reset_hub_names = yes
+    }
+}
+
+STATE_SOUTHERN_CALIFORNIA_state_name_assign = {
+    if = {
+        limit = {
+            owner = {
+                any_primary_culture = {
+                    has_discrimination_trait = language_hispanophone
+                }
+            }
+        }
+        set_hub_name = {
+            type = city
+            name = HUB_NAME_STATE_SOUTHERN_CALIFORNIA_city_spa
+        }
+        set_hub_name = {
+            type = port
+            name = HUB_NAME_STATE_SOUTHERN_CALIFORNIA_port_spa
+        }
+        set_hub_name = {
+            type = farm
+            name = HUB_NAME_STATE_SOUTHERN_CALIFORNIA_farm_spa
+        }
+        set_hub_name = {
+            type = wood
+            name = HUB_NAME_STATE_SOUTHERN_CALIFORNIA_wood_spa
+        }
+        set_hub_name = {
+            type = mine
+            name = HUB_NAME_STATE_SOUTHERN_CALIFORNIA_mine_spa
+        }
+        set_state_name = STATE_SOUTHERN_CALIFORNIA_spa
+    }
+    else = { # switch back to defaults
+        reset_state_name = yes
+        reset_hub_names = yes
+    }
+}
+
+STATE_WASHOE_state_name_assign = {
+    if = {
+        limit = {
+            owner = {
+                any_primary_culture = {
+                    has_discrimination_trait = language_hispanophone
+                }
+            }
+        }
+        set_hub_name = {
+            type = city
+            name = HUB_NAME_STATE_WASHOE_city_spa
+        }
+        set_hub_name = {
+            type = farm
+            name = HUB_NAME_STATE_WASHOE_farm_spa
+        }
+        set_hub_name = {
+            type = wood
+            name = HUB_NAME_STATE_WASHOE_wood_spa
+        }
+        set_hub_name = {
+            type = mine
+            name = HUB_NAME_STATE_WASHOE_mine_spa
+        }
+        set_state_name = STATE_WASHOE_spa
+    }
+    else = { # switch back to defaults
+        reset_state_name = yes
+        reset_hub_names = yes
+    }
+}

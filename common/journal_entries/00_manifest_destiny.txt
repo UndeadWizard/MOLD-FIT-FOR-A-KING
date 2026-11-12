@@ -15,6 +15,9 @@
 		conclusion_desc = je_standard_completion_conclusion_desc
 		trigger = {
 			owns_entire_state_region_uncontested = STATE_CALIFORNIA
+			owns_entire_state_region_uncontested = STATE_NORTHERN_CALIFORNIA
+			owns_entire_state_region_uncontested = STATE_SOUTHERN_CALIFORNIA
+			owns_entire_state_region_uncontested = STATE_WASHOE
 			owns_entire_state_region_uncontested = STATE_UTAH
 			owns_entire_state_region_uncontested = STATE_ARIZONA
 			owns_entire_state_region_uncontested = STATE_NEW_MEXICO

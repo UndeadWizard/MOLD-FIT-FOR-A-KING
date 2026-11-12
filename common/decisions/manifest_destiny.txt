@@ -28,6 +28,9 @@
 		if = {
 			limit = {
 				owns_entire_state_region = STATE_CALIFORNIA
+				owns_entire_state_region = STATE_NORTHERN_CALIFORNIA
+				owns_entire_state_region = STATE_SOUTHERN_CALIFORNIA
+				owns_entire_state_region = STATE_WASHOE
 				owns_entire_state_region = STATE_BAJA_CALIFORNIA
 				owns_entire_state_region = STATE_UTAH
 				owns_entire_state_region = STATE_ARIZONA
@@ -81,6 +84,42 @@
 		}
 		# Add Claims
 		s:STATE_CALIFORNIA = {
+			if = {
+				limit = {
+					any_scope_state = {
+						 NOT = {
+							owner = ROOT
+						}
+					}
+				}
+				add_claim = ROOT
+			}
+		}
+		s:STATE_NORTHERN_CALIFORNIA = {
+			if = {
+				limit = {
+					any_scope_state = {
+						 NOT = {
+							owner = ROOT
+						}
+					}
+				}
+				add_claim = ROOT
+			}
+		}
+		s:STATE_SOUTHERN_CALIFORNIA = {
+			if = {
+				limit = {
+					any_scope_state = {
+						 NOT = {
+							owner = ROOT
+						}
+					}
+				}
+				add_claim = ROOT
+			}
+		}
+		s:STATE_WASHOE = {
 			if = {
 				limit = {
 					any_scope_state = {

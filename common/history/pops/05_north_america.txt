@@ -1803,11 +1803,11 @@
 		region_state:SC1 = {
 			create_pop = {
 				culture = hokan
-				size = 12313
+				size = 3972
 			}
 			create_pop = {
 				culture = mexican
-				size = 11996
+				size = 3870
 			}
 		}
 		region_state:YOK = {
@@ -1816,6 +1816,8 @@
 				size = 24124
 			}
 		}
+	}
+	s:STATE_NORTHERN_CALIFORNIA = {
 		region_state:HOK = {
 			create_pop = {
 				culture = hokan
@@ -1834,22 +1836,36 @@
 				size = 8124
 			}
 		}
+	}
+	s:STATE_SOUTHERN_CALIFORNIA = {
+		region_state:SC1 = {
+			create_pop = {
+				culture = hokan
+				size = 8341
+			}
+			create_pop = {
+				culture = mexican
+				size = 8126
+			}
+		}
 		region_state:SRO = {
 			create_pop = {
 				culture = hokan
 				size = 25105
 			}
 		}
-		region_state:NPI = {
-			create_pop = {
-				culture = paiute
-				size = 45086
-			}
-		}
 		region_state:SPI = {
 			create_pop = {
 				culture = paiute
 				size = 1241
+			}
+		}
+	}
+	s:STATE_WASHOE = {
+		region_state:NPI = {
+			create_pop = {
+				culture = paiute
+				size = 45086
 			}
 		}
 	}

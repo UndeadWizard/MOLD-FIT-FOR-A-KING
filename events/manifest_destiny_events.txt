@@ -28,6 +28,15 @@ manifest_destiny.1 = {
 		s:STATE_CALIFORNIA = {
 			add_homeland = cu:yankee
 		}
+		s:STATE_NORTHERN_CALIFORNIA = {
+			add_homeland = cu:yankee
+		}
+		s:STATE_SOUTHERN_CALIFORNIA = {
+			add_homeland = cu:yankee
+		}
+		s:STATE_WASHOE = {
+			add_homeland = cu:yankee
+		}
 		s:STATE_BAJA_CALIFORNIA = {
 			add_homeland = cu:yankee
 		}

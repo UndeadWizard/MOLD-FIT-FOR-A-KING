@@ -1855,73 +1855,63 @@ STATES = {
 	s:STATE_CALIFORNIA = {
 		create_state = {
 			country = c:SC1
-			owned_provinces = { 
-				x0898A3 x0E8D26 x108000 x108080 x1116AA
-				x2099C1 x2A2B04
-				x2D1B0B x2F8F36 x3117AA
-				x3F27C8 x4160C1 x4AB8EE x4C2D30 x508000
-				x5EF8F5
-				x76A57D x8A35D2 x8CC57E
-				x8CFB9B x8F1372 x908080
-				xA45ACA
-				xC2E1AA
-				xCD0B47 xD00000 xD6A835 xE4FC42
-				xE97768 xEBF5A0 xFD4509
-			}
-		}
-		create_state = {
-			country = c:HOK
-			owned_provinces = {
-				xBFE3A4 x370658 xC9F623 x607BA8 xA65FC5 xA24DA3 xB8F452 x2A91D8
-			}
-		}
-		create_state = {
-			country = c:YRK
-			owned_provinces = {
-				x1C6782 x42B7D9 xDAABF7 xE6440D xC1F518 xC78CD3
-			}
-		}
-		create_state = {
-			country = c:MDC
-			owned_provinces = {
-				x0425B3 x5A4650 xC4A8E9 x33EE3B xAF199E
-			}
-		}
-		create_state = {
-			country = c:NPI
-			owned_provinces = {
-				x307D50 x9C28A4 x577D08 xF7DB50 xB72458 xD401D0 x56F5CB x519529 xDE208B x441749
-				x0AE895 x1FE069 xCBA1C9 x209FC3 xB312C1 x5CC000 xEDCBF4
-				xE15291 x7D25E6 x3F791B xB6ED0A x187093 x1BAC1A xEF5007 x80BCA8 xA7D253 x7C1958 xA72957
-				x6D645C x2A9CAC xF0C923 x5AD9C0 x8F30EA xB2D968 xF13FC2 x4934EE x48E8C5 x7C7251 xE3A018 x455838 xEAB9B1
-				x8A5945 x60609D xDBA111 x6CF688 x5BE036 x91EF0D xCA0467
-				x8B11E1
-			}
+			owned_provinces = { x108000 x108080 x1116AA x2099C1 x3F27C8 x5EF8F5 x8CFB9B xD6A835 xE4FC42 xE97768 }
 		}
 		create_state = {
 			country = c:YOK
-			owned_provinces = { 
-				x161979 x1169B8 x25A37F x908000 xAB1AA2 xFE6E88 xC54807 xDBCBC6 x500CAD xF6B075
-				x2C84C4 x0AF8FD x2CE673 xA06435 x2F3B45 x6B8E78 xFDC502 x61A555 
-				xBD0F03 x783D1D x93A4C5 x298876 x7E8E1A x7A5DA6 x6F44CB x8D4E6D x7B005B
-			}
+			owned_provinces = { x0AF8FD x1169B8 x161979 x25A37F x298876 x2C84C4 x2CE673 x2F3B45 x500CAD x61A555 x6B8E78 x6F44CB x783D1D x7A5DA6 x7B005B x7E8E1A x8D4E6D x908000 x93A4C5 xA06435 xAB1AA2 xBD0F03 xC54807 xDBCBC6 xF6B075 xFDC502 xFE6E88 }
+		}
+
+		add_homeland = cu:hokan
+		add_homeland = cu:californio
+		add_claim = c:SC1
+	}
+
+	s:STATE_NORTHERN_CALIFORNIA = {
+		create_state = {
+			country = c:HOK
+			owned_provinces = { x2A91D8 x370658 x607BA8 xA24DA3 xA65FC5 xB8F452 xBFE3A4 xC9F623 }
+		}
+		create_state = {
+			country = c:MDC
+			owned_provinces = { x0425B3 x33EE3B x5A4650 xAF199E xC4A8E9 }
+		}
+		create_state = {
+			country = c:YRK
+			owned_provinces = { x1C6782 x42B7D9 xC1F518 xC78CD3 xDAABF7 xE6440D }
+		}
+
+		add_homeland = cu:hokan
+		add_claim = c:SC1
+	}
+
+	s:STATE_SOUTHERN_CALIFORNIA = {
+		create_state = {
+			country = c:SC1
+			owned_provinces = { x0898A3 x0E8D26 x2A2B04 x2D1B0B x2F8F36 x3117AA x4160C1 x4AB8EE x4C2D30 x508000 x76A57D x8A35D2 x8CC57E x8F1372 x908080 xA45ACA xC2E1AA xCD0B47 xD00000 xEBF5A0 xFD4509 }
 		}
 		create_state = {
 			country = c:SPI
-			owned_provinces = {
-				xF49BCD x5EAA35
-			}
+			owned_provinces = { x5EAA35 xF49BCD }
 		}
 		create_state = {
 			country = c:SRO
-			owned_provinces = {
-				xC5390E xF16E88 xB881EE x2B1204 x6E6D40 x7BCC6D x995E0F x5625EF xD507FA x914E48 xCC07D4
-				x032BE2 x6CCFDB xCA5813 x864B45 xB21AB9 x25842F
-			}
+			owned_provinces = { x032BE2 x25842F x2B1204 x5625EF x6CCFDB x6E6D40 x7BCC6D x864B45 x914E48 x995E0F xB21AB9 xB881EE xC5390E xCA5813 xCC07D4 xD507FA xF16E88 }
 		}
-		add_homeland = cu:paiute
+
 		add_homeland = cu:hokan
 		add_homeland = cu:californio
+		add_homeland = cu:paiute
+		add_claim = c:SC1
+	}
+
+	s:STATE_WASHOE = {
+		create_state = {
+			country = c:NPI
+			owned_provinces = { x0AE895 x187093 x1BAC1A x1FE069 x209FC3 x2A9CAC x307D50 x3F791B x441749 x455838 x48E8C5 x4934EE x519529 x56F5CB x577D08 x5AD9C0 x5BE036 x5CC000 x60609D x6CF688 x6D645C x7C1958 x7C7251 x7D25E6 x80BCA8 x8A5945 x8B11E1 x8F30EA x91EF0D x9C28A4 xA72957 xA7D253 xB2D968 xB312C1 xB6ED0A xB72458 xCA0467 xCBA1C9 xD401D0 xDBA111 xDE208B xE15291 xE3A018 xEAB9B1 xEDCBF4 xEF5007 xF0C923 xF13FC2 xF7DB50 }
+		}
+
+		add_homeland = cu:paiute
 		add_claim = c:SC1
 	}
 	s:STATE_SONORA = {

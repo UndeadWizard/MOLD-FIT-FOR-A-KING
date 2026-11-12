@@ -19,3 +19,6 @@
  STATE_SUPERIOR:0 "Superior"
  STATE_GREAT_LAKES:0 "Great Lakes"
  region_great_lakes:0 "$STATE_GREAT_LAKES$"
+ STATE_NORTHERN_CALIFORNIA:0 "Northern California"
+ STATE_SOUTHERN_CALIFORNIA:0 "Southern California"
+ STATE_WASHOE:0 "Washoe"

@@ -359,6 +359,9 @@ in_volcanic_zone = {
 		state_region = s:STATE_SONORA
 		state_region = s:STATE_BAJA_CALIFORNIA
 		state_region = s:STATE_CALIFORNIA
+		state_region = s:STATE_NORTHERN_CALIFORNIA
+		state_region = s:STATE_SOUTHERN_CALIFORNIA
+		state_region = s:STATE_WASHOE
 		state_region = s:STATE_OREGON
 		state_region = s:STATE_COLUMBIA
 		state_region = s:STATE_BRITISH_COLUMBIA
@@ -511,6 +514,9 @@ owned_pacific_coast_region_states = {
 	owns_entire_state_region = STATE_UTAH
 	owns_entire_state_region = STATE_ARIZONA
 	owns_entire_state_region = STATE_CALIFORNIA
+	owns_entire_state_region = STATE_NORTHERN_CALIFORNIA
+	owns_entire_state_region = STATE_SOUTHERN_CALIFORNIA
+	owns_entire_state_region = STATE_WASHOE
 	owns_entire_state_region = STATE_BAJA_CALIFORNIA
 }
 

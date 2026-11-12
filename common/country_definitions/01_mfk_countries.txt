@@ -312,7 +312,7 @@ NPI = { #North Paiute
 	
 	tier = principality
 	
-	capital = STATE_CALIFORNIA	
+	capital = STATE_WASHOE	
 	cultures = { paiute }
 }
 
@@ -323,7 +323,7 @@ SPI = { #South Paiute
 	
 	tier = principality
 	
-	capital = STATE_CALIFORNIA	
+	capital = STATE_SOUTHERN_CALIFORNIA	
 	cultures = { paiute }
 }
 
@@ -334,7 +334,7 @@ SHO = {
 	
 	tier = principality
 	
-	capital = STATE_CALIFORNIA	
+	capital = STATE_WASHOE	
 	cultures = { paiute }
 }
 
@@ -356,7 +356,7 @@ SRO = {
 	
 	tier = principality
 
-	capital = STATE_CALIFORNIA	
+	capital = STATE_SOUTHERN_CALIFORNIA	
 	cultures = { hokan }
 }
 
@@ -433,7 +433,7 @@ HOK = { # Hokan
 	
 	tier = principality
 	
-	capital = STATE_CALIFORNIA
+	capital = STATE_NORTHERN_CALIFORNIA
 	cultures = { hokan }
 }
 
@@ -444,7 +444,7 @@ YRK = { # Yurok
 	
 	tier = principality
 	
-	capital = STATE_CALIFORNIA
+	capital = STATE_NORTHERN_CALIFORNIA
 	cultures = { hokan }
 }
 
@@ -456,7 +456,7 @@ MDC = { # Modoc
 	
 	cultures = { salish }
 	
-	capital = STATE_CALIFORNIA
+	capital = STATE_NORTHERN_CALIFORNIA
 }
 
 KLA = { # Klamath
