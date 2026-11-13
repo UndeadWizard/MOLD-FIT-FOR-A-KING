@@ -7,3 +7,11 @@
   # Mamluk IGs
  ig_mamluk:0 "Mamluk"
  ig_mamluk_desc:0 "Much like the Jannisaries, the Mamluk are a privileged, ethnically diverse military caste of slave soldiers. With the decline of Ottoman power they now control local tax revenues and government - forcing Ottoman authories to work through them."
+
+ # Mold Fit for a King
+ ig_clan_mothers: "Clan Mothers"
+ ig_clan_mothers_desc: "The Clan Mothers of the Haudenosaunee hold the titles of the League. They raise up the chiefs who speak for their clans, counsel them, and when a chief fails his people, take back his antlers of office."
+ ig_royaneh: "Royaneh"
+ ig_royaneh_desc: "The hereditary chiefs of the League, raised up by the Clan Mothers to speak for their clans in council."
+ ig_longhouse_families: "Longhouse Families"
+ ig_longhouse_families_desc: "The farming households of the Haudenosaunee, who still plant the Three Sisters in the old way."

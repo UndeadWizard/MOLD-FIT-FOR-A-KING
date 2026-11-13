@@ -96,6 +96,8 @@ types mfk_tadodaho_types
 flowcontainer = {
 	name = "widget_je_tadodaho"
 	ignoreinvisible = yes
+	direction = vertical
+
 
 	### TADODAHO
 	flowcontainer = {
@@ -215,4 +217,5 @@ flowcontainer = {
 			}
 		}
 	}
+
 }

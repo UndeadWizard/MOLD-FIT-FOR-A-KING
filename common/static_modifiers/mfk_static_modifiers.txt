@@ -47,3 +47,33 @@ mfk_onondaga_council_fire = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 	country_legitimacy_base_add = 5
 }
+
+mfk_council_harmony_high = { # Clan Mother path
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_legitimacy_base_add = 10
+	interest_group_ig_devout_pol_str_mult = 0.15
+}
+
+mfk_council_harmony_low = { # Grand Hoyaneh path
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	country_legitimacy_base_add = -5
+	country_law_enactment_success_add = 0.1
+	interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.15
+	interest_group_ig_industrialists_pol_str_mult = 0.15
+	interest_group_ig_devout_pol_str_mult = -0.15
+}
+
+mfk_council_reconciled = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_legitimacy_base_add = 5
+}
+
+mfk_confederacy_divided = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	country_legitimacy_base_add = -15
+}
+
+mfk_hoyaneh_humbled = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	interest_group_approval_add = -5
+}

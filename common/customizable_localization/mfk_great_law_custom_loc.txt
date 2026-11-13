@@ -1,0 +1,43 @@
+﻿mfk_nation_name = {
+	type = character
+	text = {
+		trigger = { var:mfk_nation ?= flag:mohawk }
+		localization_key = mfk_nation_mohawk
+	}
+	text = {
+		trigger = { var:mfk_nation ?= flag:oneida }
+		localization_key = mfk_nation_oneida
+	}
+	text = {
+		trigger = { var:mfk_nation ?= flag:onondaga }
+		localization_key = mfk_nation_onondaga
+	}
+	text = {
+		trigger = { var:mfk_nation ?= flag:cayuga }
+		localization_key = mfk_nation_cayuga
+	}
+	text = {
+		trigger = { var:mfk_nation ?= flag:seneca }
+		localization_key = mfk_nation_seneca
+	}
+	text = {
+		trigger = { var:mfk_nation ?= flag:tuscarora }
+		localization_key = mfk_nation_tuscarora
+	}
+	text = {
+		trigger = { var:mfk_nation ?= flag:lenape }
+		localization_key = mfk_nation_lenape
+	}
+	text = {
+		trigger = { var:mfk_nation ?= flag:mohican }
+		localization_key = mfk_nation_mohican
+	}
+	text = {
+		trigger = { var:mfk_nation ?= flag:nanticoke }
+		localization_key = mfk_nation_nanticoke
+	}
+	text = {
+		trigger = { var:mfk_nation ?= flag:tutelo }
+		localization_key = mfk_nation_tutelo
+	}
+}

@@ -1,0 +1,156 @@
+﻿mfk_brant_cb_cm_harmony = {
+	type = country
+	text = {
+		trigger = { je:je_tadodaho ?= { "scripted_bar_progress(mfk_council_harmony_bar)" >= 70 } }
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = { NOT = { je:je_tadodaho ?= { "scripted_bar_progress(mfk_council_harmony_bar)" >= 70 } } }
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_brant_cb_cm_clan_mother = {
+	type = country
+	text = {
+		trigger = { has_law = law_type:law_clan_mother }
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = { NOT = { has_law = law_type:law_clan_mother } }
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_brant_cb_cm_land = {
+	type = country
+	text = {
+		trigger = { owns_entire_state_region = STATE_SIX_NATIONS }
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = { NOT = { owns_entire_state_region = STATE_SIX_NATIONS } }
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_brant_cb_cm_maize = {
+	type = country
+	text = {
+		trigger = { country_has_building_type_levels = { target = bt:building_maize_farm value >= 20 } }
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = { NOT = { country_has_building_type_levels = { target = bt:building_maize_farm value >= 20 } } }
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_brant_cb_cm_pb_marginal = {
+	type = country
+	text = {
+		trigger = { ig:ig_petty_bourgeoisie ?= { is_marginal = yes } }
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = { NOT = { ig:ig_petty_bourgeoisie ?= { is_marginal = yes } } }
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_brant_cb_gh_harmony = {
+	type = country
+	text = {
+		trigger = { je:je_tadodaho ?= { "scripted_bar_progress(mfk_council_harmony_bar)" <= 30 } }
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = { NOT = { je:je_tadodaho ?= { "scripted_bar_progress(mfk_council_harmony_bar)" <= 30 } } }
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_brant_cb_gh_ascendancy = {
+	type = country
+	text = {
+		trigger = { has_law = law_type:law_hoyaneh_ascendancy }
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = { NOT = { has_law = law_type:law_hoyaneh_ascendancy } }
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_brant_cb_gh_army = {
+	type = country
+	text = {
+		trigger = { has_law_or_variant = law_type:law_professional_army }
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = { NOT = { has_law_or_variant = law_type:law_professional_army } }
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_brant_cb_gh_urban = {
+	type = country
+	text = {
+		trigger = { any_scope_state = { state_region = { is_homeland = cu:iroquoian } any_scope_building = { is_building_type = building_urban_center level >= 3 } } }
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = { NOT = { any_scope_state = { state_region = { is_homeland = cu:iroquoian } any_scope_building = { is_building_type = building_urban_center level >= 3 } } } }
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_brant_cb_gh_pb_clout = {
+	type = country
+	text = {
+		trigger = { ig:ig_petty_bourgeoisie ?= { ig_clout >= 0.1 } }
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = { NOT = { ig:ig_petty_bourgeoisie ?= { ig_clout >= 0.1 } } }
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_brant_cb_sh_famine = {
+	type = country
+	text = {
+		trigger = { NOT = { any_scope_state = { state_region = { is_homeland = cu:iroquoian } has_famine = yes } } }
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = { NOT = { NOT = { any_scope_state = { state_region = { is_homeland = cu:iroquoian } has_famine = yes } } } }
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_brant_cb_sh_crown = {
+	type = country
+	text = {
+		trigger = { c:GBR ?= { relations:root >= relations_threshold:cordial } }
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = { NOT = { c:GBR ?= { relations:root >= relations_threshold:cordial } } }
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_brant_cb_sh_army = {
+	type = country
+	text = {
+		trigger = { army_power_projection > 100 }
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = { NOT = { army_power_projection > 100 } }
+		localization_key = checkbox_unticked
+	}
+}
+

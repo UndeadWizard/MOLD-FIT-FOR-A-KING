@@ -39,3 +39,24 @@ character_role_tadodaho = {
 		texture = "gfx/interface/character_panel/backgrounds/char_role_politician.dds"
 	}
 }
+
+# Grand Hoyaneh
+character_role_nation_chief = {
+	texture = "gfx/interface/icons/faction_icons/faction_grand_hoyaneh.dds"
+
+	type = other
+	priority = 20
+
+	can_be_interest_group_leader = no
+
+	title_format = from_name
+	title_preposition = PREP_OF
+
+	character_modifier = {
+		character_prominence_add = 15
+	}
+
+	character_background = {
+		texture = "gfx/interface/character_panel/backgrounds/char_role_politician.dds"
+	}
+}

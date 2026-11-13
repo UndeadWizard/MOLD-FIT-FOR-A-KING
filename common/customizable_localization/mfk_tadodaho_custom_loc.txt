@@ -1,0 +1,155 @@
+﻿mfk_harmony_cb_clan_mother = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_clan_mother
+		}
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = {
+			NOT = { has_law = law_type:law_clan_mother }
+		}
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_harmony_cb_traditional = {
+	type = country
+	text = {
+		trigger = {
+			ruler ?= { has_ideology = ideology:ideology_traditionalist }
+		}
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = {
+			NOT = { ruler ?= { has_ideology = ideology:ideology_traditionalist } }
+		}
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_harmony_cb_devout_content = {
+	type = country
+	text = {
+		trigger = {
+			ig:ig_devout ?= { ig_approval >= 5 }
+		}
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = {
+			NOT = { ig:ig_devout ?= { ig_approval >= 5 } }
+		}
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_harmony_cb_no_clan_mother = {
+	type = country
+	text = {
+		trigger = {
+			NOT = { has_law = law_type:law_clan_mother }
+		}
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = {
+			NOT = { NOT = { has_law = law_type:law_clan_mother } }
+		}
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_harmony_cb_untraditional = {
+	type = country
+	text = {
+		trigger = {
+			ruler ?= { NOT = { has_ideology = ideology:ideology_traditionalist } }
+		}
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = {
+			NOT = { ruler ?= { NOT = { has_ideology = ideology:ideology_traditionalist } } }
+		}
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_harmony_cb_devout_angry = {
+	type = country
+	text = {
+		trigger = {
+			ig:ig_devout ?= { ig_approval <= -5 }
+		}
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = {
+			NOT = { ig:ig_devout ?= { ig_approval <= -5 } }
+		}
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_harmony_cb_mission_schools = {
+	type = country
+	text = {
+		trigger = {
+			has_law = law_type:law_religious_schools
+		}
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = {
+			NOT = { has_law = law_type:law_religious_schools }
+		}
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_harmony_cb_war = {
+	type = country
+	text = {
+		trigger = {
+			is_at_war = yes
+		}
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = {
+			NOT = { is_at_war = yes }
+		}
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_harmony_cb_unrest = {
+	type = country
+	text = {
+		trigger = {
+			any_scope_state = { turmoil > 0.2 }
+		}
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = {
+			NOT = { any_scope_state = { turmoil > 0.2 } }
+		}
+		localization_key = checkbox_unticked
+	}
+}
+
+mfk_harmony_cb_ascendancy = {
+	type = country
+	text = {
+		trigger = { has_law = law_type:law_hoyaneh_ascendancy }
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = { NOT = { has_law = law_type:law_hoyaneh_ascendancy } }
+		localization_key = checkbox_unticked
+	}
+}

@@ -1,0 +1,149 @@
+﻿mfk_council_harmony_bar = {
+	name = "mfk_council_harmony_bar"
+	desc = "mfk_council_harmony_bar_desc"
+
+	default_green = yes
+
+	monthly_progress = {
+		scope:journal_entry ?= {
+			# The council slowly settles back toward an uneasy balance
+			progress_condition = {
+				limit = { root = { je:je_tadodaho ?= { "scripted_bar_progress(mfk_council_harmony_bar)" > 55 } } }
+				add = {
+					desc = "mfk_council_harmony_drift_down"
+					value = -0.5
+				}
+			}
+			progress_condition = {
+				limit = { root = { je:je_tadodaho ?= { "scripted_bar_progress(mfk_council_harmony_bar)" < 45 } } }
+				add = {
+					desc = "mfk_council_harmony_drift_up"
+					value = 0.5
+				}
+			}
+			# A Grand Hoyaneh who keeps to the old ways pleases the council
+			progress_condition = {
+				limit = {
+					root = {
+						ruler ?= { has_ideology = ideology:ideology_traditionalist }
+					}
+				}
+				add = {
+					desc = "mfk_council_harmony_traditional_hoyaneh"
+					value = 0.5
+				}
+			}
+			progress_condition = {
+				limit = {
+					root = {
+						ruler ?= { NOT = { has_ideology = ideology:ideology_traditionalist } }
+					}
+				}
+				add = {
+					desc = "mfk_council_harmony_untraditional_hoyaneh"
+					value = -0.5
+				}
+			}
+			# Things the Grand Hoyaneh can act on
+			progress_condition = {
+				limit = { root = { has_law = law_type:law_hoyaneh_ascendancy } }
+				add = {
+					desc = "mfk_council_harmony_ascendancy"
+					value = -1
+				}
+			}
+			progress_condition = {
+				limit = {
+					root = {
+						has_law = law_type:law_clan_mother
+					}
+				}
+				add = {
+					desc = "mfk_council_harmony_clan_mothers_heard"
+					value = 0.5
+				}
+			}
+			progress_condition = {
+				limit = {
+					root = {
+						NOT = { has_law = law_type:law_clan_mother }
+					}
+				}
+				add = {
+					desc = "mfk_council_harmony_clan_mothers_silenced"
+					value = -1
+				}
+			}
+			progress_condition = {
+				limit = {
+					root = {
+						ig:ig_devout ?= { ig_approval >= 5 }
+					}
+				}
+				add = {
+					desc = "mfk_council_harmony_devout_content"
+					value = 0.5
+				}
+			}
+			progress_condition = {
+				limit = {
+					root = {
+						ig:ig_devout ?= { ig_approval <= -5 }
+					}
+				}
+				add = {
+					desc = "mfk_council_harmony_devout_angry"
+					value = -0.5
+				}
+			}
+			progress_condition = {
+				limit = {
+					root = {
+						has_law = law_type:law_religious_schools
+					}
+				}
+				add = {
+					desc = "mfk_council_harmony_mission_schools"
+					value = -0.25
+				}
+			}
+			progress_condition = {
+				limit = {
+					root = {
+						is_at_war = yes
+					}
+				}
+				add = {
+					desc = "mfk_council_harmony_at_war"
+					value = -0.5
+				}
+			}
+			progress_condition = {
+				limit = {
+					root = {
+						any_scope_state = { turmoil > 0.2 }
+					}
+				}
+				add = {
+					desc = "mfk_council_harmony_unrest"
+					value = -0.5
+				}
+			}
+			progress_condition = {
+				limit = {
+					root = {
+						je:je_tadodaho ?= { "scripted_bar_progress(mfk_council_harmony_bar)" > 75 }
+					}
+				}
+				add = {
+					desc = "mfk_council_harmony_complacent"
+					value = -1
+				}
+			}
+		}
+	}
+
+	start_value = 60
+	min_value = 0
+	max_value = 100
+}

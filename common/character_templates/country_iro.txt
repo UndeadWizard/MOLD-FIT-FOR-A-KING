@@ -9,7 +9,7 @@ IRO_john_brant= {
 	dna = dna_john_brant
 	birth_date = 1794.9.27
 	culture = cu:iroquoian
-	interest_group = ig_devout
+	interest_group = ig_landowners
 	ideology = ideology_traditionalist
 	home_region = STATE_SIX_NATIONS
 	traits = {
@@ -24,4 +24,22 @@ IRO_james_brant = {
 	birth_date = 1822.6.2
 	culture = cu:iroquoian
 	home_region = STATE_SIX_NATIONS
+}
+
+IRO_samuel_george = {
+	first_name = "Samuel"
+	last_name = "George"
+	historical = yes
+	female = no
+	birth_date = 1795.1.1
+	role = character_role_politician
+	culture = cu:iroquoian
+	religion = rel:animist # Longhouse tradition
+	interest_group = ig_devout
+	ideology = ideology_traditionalist
+	ig_leader = no
+	home_region = STATE_SIX_NATIONS
+	traits = {
+		inspirational_orator
+	}
 }

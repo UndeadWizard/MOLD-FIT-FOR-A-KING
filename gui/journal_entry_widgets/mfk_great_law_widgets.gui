@@ -1,0 +1,162 @@
+﻿### TYPES
+types mfk_great_law_types
+{
+	# A non-collapsing section header: a divider with a centred title
+	type mfk_je_section_header = flowcontainer {
+		direction = vertical
+		parentanchor = hcenter
+		margin_top = 6
+
+		divider_clean = {
+			parentanchor = hcenter
+			size = { 500 3 }
+		}
+
+		textbox = {
+			parentanchor = hcenter
+			size = { 520 34 }
+			align = center|nobaseline
+			default_format = "#title"
+			using = fontsize_xl
+			block "header_text" {
+				text = "MISSING"
+			}
+		}
+	}
+
+	type mfk_nation_chief_tile = widget {
+		size = { 84 110 }
+		datacontext = "[Scope.GetCharacter]"
+		visible = "[Scope.GetCharacter.IsValid]"
+
+		character_portrait_medium = {
+			datacontext = "[Scope.AccessCharacter]"
+			parentanchor = hcenter
+			position = { 0 4 }
+			using = tooltip_es
+			blockoverride "show_hat" {}
+			blockoverride "highlight" {}
+			blockoverride "rank_icon" {}
+		}
+
+		### Loyalty badge
+		widget = {
+			size = { 24 24 }
+			parentanchor = top|right
+			position = { -2 2 }
+			tooltip = "LOYALTY_BREAKDOWN"
+
+			icon = {
+				visible = "[GreaterThanOrEqualTo_CFixedPoint(Character.GetLoyalty, '(CFixedPoint)75')]"
+				size = { 100% 100% }
+				texture = "gfx/interface/icons/generic_icons/approval_icon.dds"
+			}
+			icon = {
+				visible = "[Between_CFixedPoint(Character.GetLoyalty, '(CFixedPoint)25', '(CFixedPoint)75')]"
+				size = { 100% 100% }
+				texture = "gfx/interface/icons/generic_icons/maybe_icon.dds"
+			}
+			icon = {
+				visible = "[LessThanOrEqualTo_CFixedPoint(Character.GetLoyalty, '(CFixedPoint)25')]"
+				size = { 100% 100% }
+				texture = "gfx/interface/icons/generic_icons/disapproval_icon.dds"
+			}
+		}
+
+		### Nation
+		textbox = {
+			parentanchor = bottom|hcenter
+			position = { 0 -4 }
+			size = { 84 22 }
+			align = center|nobaseline
+			text = "[Character.GetCustom('mfk_nation_name')]"
+			default_format = "#v"
+			using = fontsize_small
+			elide = right
+		}
+	}
+}
+
+### WIDGETS
+flowcontainer = {
+	name = "widget_je_great_law_nations"
+	ignoreinvisible = yes
+	direction = vertical
+	spacing = 4
+
+	mfk_je_section_header = {
+		blockoverride "header_text" {
+			text = "MFK_SECTION_NATIONS"
+		}
+	}
+
+	textbox = {
+		parentanchor = hcenter
+		size = { 520 28 }
+		align = center|nobaseline
+		text = "MFK_GREAT_LAW_NATIONS_HEADER"
+		default_format = "#v"
+		using = fontsize_medium
+	}
+
+	fixedgridbox = {
+		parentanchor = hcenter
+		datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('mfk_great_law_list')]"
+		datamodel_wrap = 6
+		flipdirection = yes
+		addcolumn = 86
+		addrow = 112
+
+		background = {
+			texture = "gfx/interface/tooltip/tooltip_title_bg.dds"
+			color = { 0.47 0.33 0.27 1 }
+			alpha = 0.4
+
+			modify_texture = {
+				using = texture_velvet
+			}
+		}
+
+		item = {
+			mfk_nation_chief_tile = {}
+		}
+	}
+
+	textbox = {
+		parentanchor = hcenter
+		size = { 520 28 }
+		align = center|nobaseline
+		text = "MFK_UNALIGNED_NATIONS_HEADER"
+		default_format = "#v"
+		using = fontsize_medium
+	}
+
+	fixedgridbox = {
+		parentanchor = hcenter
+		datamodel = "[JournalEntry.GetCountry.MakeScope.GetList('mfk_unaligned_list')]"
+		datamodel_wrap = 6
+		flipdirection = yes
+		addcolumn = 86
+		addrow = 112
+
+		background = {
+			texture = "gfx/interface/tooltip/tooltip_title_bg.dds"
+			color = { 0.47 0.33 0.27 1 }
+			alpha = 0.4
+
+			modify_texture = {
+				using = texture_velvet
+			}
+		}
+
+		item = {
+			mfk_nation_chief_tile = {}
+		}
+	}
+
+	mfk_je_section_header = {
+		blockoverride "header_text" {
+			text = "MFK_SECTION_HARMONY"
+		}
+	}
+}

@@ -138,3 +138,84 @@ REPLACE:ideology_jacksonian_democrat = { # Average Progressiveness - 55
 		}
 	}
 }
+
+ideology_hoyaneh_ascendant = {
+	icon = "gfx/interface/icons/ideology_icons/ideology_leader/ideology_leader_bonapartist.dds"
+
+	character_ideology = yes
+
+	lawgroup_distribution_of_power = {
+		law_autocracy = strongly_approve
+		law_technocracy = neutral
+		law_oligarchy = strongly_disapprove
+		law_landed_voting = disapprove
+		law_wealth_voting = disapprove
+		law_census_voting = disapprove
+		law_universal_suffrage = strongly_disapprove
+		law_anarchy = strongly_disapprove
+		law_single_party_state = approve
+	}
+
+	lawgroup_governance_principles = {
+		law_monarchy = approve
+		law_presidential_republic = neutral
+		law_parliamentary_republic = strongly_disapprove
+		law_council_republic = strongly_disapprove
+	}
+
+	lawgroup_army_model = {
+		law_professional_army = strongly_approve
+		law_mass_conscription = approve
+		law_national_militia = disapprove
+	}
+
+	lawgroup_internal_security = {
+		law_secret_police = approve
+		law_national_guard = approve
+		law_guaranteed_liberties = strongly_disapprove
+	}
+
+	lawgroup_free_speech = {
+		law_outlawed_dissent = approve
+		law_censorship = approve
+		law_right_of_assembly = disapprove
+		law_protected_speech = strongly_disapprove
+	}
+
+	country_trigger = {
+		country_has_primary_culture = cu:iroquoian
+	}
+
+	interest_group_leader_trigger = {
+		NOT = { is_interest_group_type = ig_devout } # never the Clan Mothers
+	}
+
+	non_interest_group_leader_trigger = {
+		interest_group ?= {
+			NOT = { is_interest_group_type = ig_devout }
+		}
+	}
+
+	interest_group_leader_weight = {
+		value = 50
+		if = {
+			limit = {
+				OR = {
+					is_interest_group_type = ig_armed_forces
+					is_interest_group_type = ig_landowners
+				}
+			}
+			add = 100
+		}
+		if = {
+			limit = {
+				owner ?= { has_law = law_type:law_hoyaneh_ascendancy }
+			}
+			multiply = 2
+		}
+	}
+
+	non_interest_group_leader_weight = {
+		value = 50
+	}
+}

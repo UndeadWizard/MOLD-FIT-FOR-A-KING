@@ -3,14 +3,12 @@ mfk_tadodaho_create = {
 	create_character = {
 		female = no # the title of Tadodaho is held by men
 		culture = cu:iroquoian
+		religion = rel:animist
 		interest_group = ig_devout
 		ideology = ideology_traditionalist
 		home_region = STATE_SIX_NATIONS
 		ig_leader = no
 		save_scope_as = new_tadodaho
-		on_created = {
-			set_variable = mfk_tadodaho
-		}
 	}
 	if = {
 		limit = { exists = scope:new_tadodaho }
@@ -35,11 +33,150 @@ mfk_tadodaho_ensure = {
 			limit = {
 				NOT = { any_scope_character = { has_role = character_role_tadodaho } }
 			}
-			mfk_tadodaho_create = yes
+			if = { # 1836: Samuel George is the Tadodaho
+				limit = {
+					NOT = { has_variable = mfk_samuel_george_raised }
+					any_scope_character = { has_template = IRO_samuel_george }
+				}
+				set_variable = mfk_samuel_george_raised
+				random_scope_character = {
+					limit = { has_template = IRO_samuel_george }
+					save_scope_as = new_tadodaho
+					add_character_role = character_role_tadodaho
+				}
+				set_variable = {
+					name = tadodaho_var
+					value = scope:new_tadodaho
+				}
+				if = {
+					limit = { NOT = { has_modifier = mfk_onondaga_council_fire } }
+					add_modifier = { name = mfk_onondaga_council_fire }
+				}
+			}
+			else = {
+				mfk_tadodaho_create = yes
+			}
 		}
 		if = {
 			limit = { NOT = { has_journal_entry = je_tadodaho } }
 			add_journal_entry = { type = je_tadodaho }
 		}
+		# Keep the Horns of John Brant widget pointed at whoever is Grand Hoyaneh now
+		if = {
+			limit = {
+				exists = ruler
+				NOT = { var:grand_hoyaneh_var ?= ruler }
+			}
+			set_variable = {
+				name = grand_hoyaneh_var
+				value = ruler
+			}
+		}
+		mfk_council_harmony_update = yes
+		mfk_clan_mothers_ig_update = yes
+		mfk_great_law_nations_setup = yes
+	}
+}
+
+mfk_clan_mothers_ig_update = {
+	ig:ig_devout ?= {
+		save_scope_as = clan_mothers_ig
+		set_interest_group_name = ig_clan_mothers
+	}
+	ig:ig_landowners ?= { set_interest_group_name = ig_royaneh }
+	ig:ig_rural_folk ?= { set_interest_group_name = ig_longhouse_families }
+	if = {
+		limit = {
+			exists = scope:clan_mothers_ig
+			scope:clan_mothers_ig = {
+				OR = {
+					NOT = { exists = leader }
+					leader ?= { is_female = no }
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_scope_character = {
+					interest_group ?= scope:clan_mothers_ig
+					is_female = yes
+					is_ruler_of_own_country = no
+					is_heir_of_own_country = no
+				}
+			}
+			random_scope_character = {
+				limit = {
+					interest_group ?= scope:clan_mothers_ig
+					is_female = yes
+					is_ruler_of_own_country = no
+					is_heir_of_own_country = no
+				}
+				set_as_interest_group_leader = yes
+			}
+		}
+		else = {
+			create_character = {
+				female = yes
+				culture = cu:iroquoian
+				interest_group = ig_devout
+				ideology = ideology_traditionalist
+				home_region = STATE_SIX_NATIONS
+				ig_leader = yes
+			}
+		}
+	}
+}
+
+mfk_council_harmony_update = {
+	if = {
+		limit = { je:je_tadodaho ?= { "scripted_bar_progress(mfk_council_harmony_bar)" >= 70 } }
+		if = {
+			limit = { NOT = { has_modifier = mfk_council_harmony_high } }
+			add_modifier = { name = mfk_council_harmony_high }
+		}
+	}
+	else_if = {
+		limit = { has_modifier = mfk_council_harmony_high }
+		remove_modifier = mfk_council_harmony_high
+	}
+	if = {
+		limit = { je:je_tadodaho ?= { "scripted_bar_progress(mfk_council_harmony_bar)" <= 30 } }
+		if = {
+			limit = { NOT = { has_modifier = mfk_council_harmony_low } }
+			add_modifier = { name = mfk_council_harmony_low }
+		}
+	}
+	else_if = {
+		limit = { has_modifier = mfk_council_harmony_low }
+		remove_modifier = mfk_council_harmony_low
+	}
+	if = {
+		limit = {
+			je:je_tadodaho ?= { "scripted_bar_progress(mfk_council_harmony_bar)" <= 15 }
+			NOT = { has_journal_entry = je_dehorning_crisis }
+			NOT = { has_variable = mfk_dehorning_cooldown }
+			exists = ruler
+		}
+		set_variable = {
+			name = mfk_dehorning_target
+			value = ruler
+		}
+		add_journal_entry = { type = je_dehorning_crisis }
+		trigger_event = { id = mfk_tadodaho.3 popup = yes }
+	}
+}
+
+# Change Council Harmony by $VALUE$.
+mfk_change_council_harmony = {
+	je:je_tadodaho ?= {
+		add_progress = { value = $VALUE$ name = mfk_council_harmony_bar }
+	}
+}
+
+mfk_dehorning_cleanup = {
+	remove_variable = mfk_dehorning_target
+	set_variable = {
+		name = mfk_dehorning_cooldown
+		years = 5
 	}
 }

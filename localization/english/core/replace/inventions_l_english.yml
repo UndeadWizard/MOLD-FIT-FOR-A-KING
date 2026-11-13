@@ -1,3 +1,7 @@
 ﻿l_english:
   napoleonic_warfare:0 "Coalition Warfare"
   napoleonic_warfare_desc:0 "Born from two decades of grueling attrition against a mass-conscripted French Republic, Prussian and Austrian reformers emphasized the importance of properly utilizing artillery."
+
+ # Mold Fit for a King
+ cankerborn_cultivation: "Cankerborn Cultivation"
+ cankerborn_cultivation_desc: "PLACEHOLDER - describe how the North American Union grows its Cankerborn soldiers."

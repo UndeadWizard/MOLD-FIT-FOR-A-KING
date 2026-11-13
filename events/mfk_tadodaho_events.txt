@@ -27,3 +27,112 @@ mfk_tadodaho.1 = {
 		default_option = yes
 	}
 }
+
+# The clan mothers move to dehorn the Grand Hoyaneh
+mfk_tadodaho.3 = {
+	type = country_event
+	placement = root
+
+	title = mfk_tadodaho.3.t
+	desc = mfk_tadodaho.3.d
+	flavor = mfk_tadodaho.3.f
+
+	event_image = {
+		video = "europenorthamerica_native_american"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/faction_icons/faction_grand_hoyaneh.dds"
+
+	duration = 3
+
+	immediate = {
+		random_scope_character = {
+			limit = { has_role = character_role_tadodaho }
+			save_scope_as = tadodaho_scope
+		}
+		var:mfk_dehorning_target ?= { save_scope_as = hoyaneh_scope }
+	}
+
+	option = {
+		name = mfk_tadodaho.3.a
+		default_option = yes
+		custom_tooltip = mfk_dehorning_begins_tt
+	}
+}
+
+# The dehorning crisis comes to a head
+mfk_tadodaho.4 = {
+	type = country_event
+	placement = root
+
+	title = mfk_tadodaho.4.t
+	desc = mfk_tadodaho.4.d
+	flavor = mfk_tadodaho.4.f
+
+	event_image = {
+		video = "europenorthamerica_native_american"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/faction_icons/faction_grand_hoyaneh.dds"
+
+	duration = 3
+
+	trigger = {
+		exists = var:mfk_dehorning_target
+	}
+
+	immediate = {
+		random_scope_character = {
+			limit = { has_role = character_role_tadodaho }
+			save_scope_as = tadodaho_scope
+		}
+		var:mfk_dehorning_target ?= { save_scope_as = hoyaneh_scope }
+	}
+
+	option = { # The antlers are taken
+		name = mfk_tadodaho.4.a
+		default_option = yes
+		custom_tooltip = mfk_dehorning_removed_tt
+		scope:hoyaneh_scope ?= {
+			retire_character = yes
+		}
+		mfk_change_council_harmony = { VALUE = 30 }
+		mfk_dehorning_cleanup = yes
+		ai_chance = { base = 25 }
+	}
+
+	option = { # The Grand Hoyaneh submits to the council
+		name = mfk_tadodaho.4.b
+		mfk_change_council_harmony = { VALUE = 25 }
+		scope:hoyaneh_scope ?= {
+			interest_group ?= {
+				add_modifier = {
+					name = mfk_hoyaneh_humbled
+					years = 3
+				}
+			}
+		}
+		mfk_dehorning_cleanup = yes
+		ai_chance = { base = 50 }
+	}
+
+	option = { # The Grand Hoyaneh calls on the Crown
+		name = mfk_tadodaho.4.c
+		if = {
+			limit = { exists = c:GBR }
+			change_relations = {
+				country = c:GBR
+				value = 20
+			}
+		}
+		add_modifier = {
+			name = mfk_confederacy_divided
+			years = 5
+		}
+		mfk_change_council_harmony = { VALUE = -10 }
+		mfk_dehorning_cleanup = yes
+		ai_chance = { base = 25 }
+	}
+}

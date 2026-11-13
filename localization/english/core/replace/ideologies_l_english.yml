@@ -1,2 +1,6 @@
 ﻿l_english:
  ideology_jacksonian_democrat:0 "Jacksonian Tory"
+
+ # Mold Fit for a King
+ ideology_hoyaneh_ascendant: "Brantist"
+ ideology_hoyaneh_ascendant_desc: "Brantists believe the League can only stand beside the British and the Union if the [concept_grand_hoyaneh] rules as its chief executive, as Isaac Brant did, with a standing force of warriors and the Grand Council and the Clan Mothers reduced to advisers."

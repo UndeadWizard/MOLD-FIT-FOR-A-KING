@@ -12,9 +12,9 @@ on_game_started = {
 # No root scope set
 on_game_started_after_lobby = {
 	effect = {
-		# Mold Fit for a King: the NAU starts with Lord Gosford as Governor-General
+		# the NAU starts with Lord Gosford as Governor-General
 		mfk_gg_starting_governor_general = yes
-		# Mold Fit for a King: the Iroquois start with a Tadodaho
+		# the Iroquois start with a Tadodaho
 		mfk_tadodaho_ensure = yes
 		# Game Rule: No Dynamic Naming
 		if = {
@@ -72,7 +72,7 @@ on_monthly_pulse = {
 			on_monthly_pulse_usa_capital_modifier_effect = yes
 		}
 
-		# Mold Fit for a King: keep the office of Tadodaho filled
+		# keep the office of Tadodaho filled
 		mfk_tadodaho_ensure = yes
 
 		### Scripted country lists
@@ -1175,7 +1175,12 @@ on_character_creation = {
 # Root = Character
 on_character_death = {
 	effect = {
-		# Mold Fit for a King: when the Tadodaho dies, the Onondaga raise up a successor
+		# when a nation's chief dies, the nation chooses a successor
+		if = {
+			limit = { has_role = character_role_nation_chief }
+			mfk_replace_nation_chief = yes
+		}
+		# when the Tadodaho dies, the Onondaga raise up a successor
 		if = {
 			limit = {
 				has_role = character_role_tadodaho
@@ -1187,7 +1192,7 @@ on_character_death = {
 				trigger_event = { id = mfk_tadodaho.1 popup = yes }
 			}
 		}
-		# Mold Fit for a King: when the Governor-General dies, Whitehall must name a successor
+		# when the Governor-General dies, Whitehall must name a successor
 		if = {
 			limit = {
 				has_role = character_role_governor_general
@@ -1589,7 +1594,7 @@ on_new_ruler = {
 			every_scope_character = {
 				limit = {
 					has_role = character_role_favorite
-					NOT = { has_role = character_role_governor_general } # Mold Fit for a King: the Governor-General outlasts President-Generals
+					NOT = { has_role = character_role_governor_general } # the Governor-General outlasts President-Generals
 				}
 				remove_character_role = favorite
 			}
@@ -3172,7 +3177,7 @@ on_law_activated = {
 			if = {
 				limit = {
 					NOT = { can_have_favorites = yes }
-					NOT = { mfk_crown_favourite_country = yes } # Mold Fit for a King: the Crown's Favourite in the NAU
+					NOT = { mfk_crown_favourite_country = yes } # the Crown's Favourite in the NAU
 				}
 				every_scope_character = {
 					limit = {

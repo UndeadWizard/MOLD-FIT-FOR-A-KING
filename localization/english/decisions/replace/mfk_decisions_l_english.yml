@@ -24,3 +24,13 @@
   je_canada_unite_can_button:0 "Absorb a Northern Colony"
   je_canada_unite_can_button_desc:0 "Propose the incorporation of a neighbouring northern colony into the North American Union."
   unite_canada_je_can_tt:0 "Have at least Amicable relations and greater GDP than a neighbouring northern colony with the same overlord"
+
+ # Mold Fit for a King
+ gbr_instruct_governor_general: "Appoint a Governor-General"
+ gbr_instruct_governor_general_desc: "Under the [concept_the_compact], the American House of Commons chooses the President-General, but it is His Majesty's [concept_governor_general] who confirms them, presides over the Canadian Provinces and carries the Crown's confidence in the American Parliament. Whitehall may send a peer from London or elevate an American it trusts."
+ gbr_instruct_gg_cooldown_tt: "No new [concept_governor_general] has been appointed in the last four years"
+ gbr_instruct_gg_vacant_tt: "The office of [concept_governor_general] is vacant"
+ found_victoria: "Found Victoria"
+ found_victoria_desc: "With Calhoun's revolt ended and the Cavalier States absorbed into the Union, the North American Union can raise a new federal capital on the banks of the Potomac."
+ found_victoria_calhoun_tt: "The Calhoun Revolt has been resolved"
+ found_victoria_cavaliers_tt: "Florida, Georgia, South Carolina and North Carolina have been absorbed into the Union"

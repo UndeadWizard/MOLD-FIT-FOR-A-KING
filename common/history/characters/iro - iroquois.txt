@@ -13,5 +13,10 @@
 		create_character = {
 			template = IRO_james_brant
 		}
+
+		# Tadodaho
+		create_character = {
+			template = IRO_samuel_george
+		}
 	}
 }
