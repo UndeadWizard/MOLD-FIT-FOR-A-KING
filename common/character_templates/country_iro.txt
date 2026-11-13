@@ -9,6 +9,7 @@ IRO_john_brant= {
 	dna = dna_john_brant
 	birth_date = 1794.9.27
 	culture = cu:iroquoian
+	religion = rel:protestant
 	interest_group = ig_landowners
 	ideology = ideology_traditionalist
 	home_region = STATE_SIX_NATIONS
@@ -23,6 +24,7 @@ IRO_james_brant = {
 	dna = dna_james_brant
 	birth_date = 1822.6.2
 	culture = cu:iroquoian
+	religion = rel:protestant
 	home_region = STATE_SIX_NATIONS
 }
 
