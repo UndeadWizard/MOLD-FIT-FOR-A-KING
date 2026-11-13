@@ -1302,7 +1302,7 @@ USA_benjamin_tucker = {
 	}
 }
 
-# Mold Fit for a King: Archibald Acheson, 2nd Earl of Gosford - Governor-General of the North American Union in 1836
+# Archibald Acheson, 2nd Earl of Gosford - Governor-General of the North American Union in 1836
 USA_lord_gosford = {
 	first_name = Archibald
 	last_name = Acheson
@@ -1313,6 +1313,7 @@ USA_lord_gosford = {
 	religion = rel:protestant
 	interest_group = ig_landowners
 	ideology = ideology_royalist
+	home_region = STATE_ULSTER # Gosford Castle, Markethill, County Armagh
 	ig_leader = no
 	traits = {
 		cautious

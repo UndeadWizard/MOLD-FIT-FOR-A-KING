@@ -111,6 +111,7 @@ mfk_gg_create_british_peer = {
 			culture = cu:british
 			interest_group = ig_landowners
 			ideology = ideology_royalist
+			home_region = STATE_HOME_COUNTIES
 			ig_leader = no
 			save_scope_as = new_crown_favourite
 			on_created = {
