@@ -16,3 +16,66 @@ mfk_starting_native_laws_effect = {
 	activate_law = law_type:law_no_police
 	activate_law = law_type:law_no_colonial_affairs
 }
+
+# Philadelphia is the seat of the Compact until Victoria is founded;
+# Afterwards the federal capital is Victoria (District of Columbia).
+REPLACE:on_monthly_pulse_usa_capital_modifier_effect = {
+	if = {
+		limit = { has_modifier = usa_capital_relocated }
+		remove_modifier = usa_capital_relocated
+	}
+	if = {
+		limit = { has_modifier = usa_capital_intact }
+		remove_modifier = usa_capital_intact
+	}
+	if = {
+		limit = {
+			has_variable = victoria_founded
+			capital.state_region = s:STATE_DISTRICT_OF_COLUMBIA
+		}
+		if = {
+			limit = { NOT = { has_modifier = mfk_capital_victoria } }
+			add_modifier = mfk_capital_victoria
+		}
+		if = {
+			limit = { has_modifier = mfk_capital_philadelphia }
+			remove_modifier = mfk_capital_philadelphia
+		}
+		if = {
+			limit = { has_modifier = mfk_capital_displaced }
+			remove_modifier = mfk_capital_displaced
+		}
+	}
+	else_if = {
+		limit = {
+			NOT = { has_variable = victoria_founded }
+			capital.state_region = s:STATE_PENNSYLVANIA
+		}
+		if = {
+			limit = { NOT = { has_modifier = mfk_capital_philadelphia } }
+			add_modifier = mfk_capital_philadelphia
+		}
+		if = {
+			limit = { has_modifier = mfk_capital_victoria }
+			remove_modifier = mfk_capital_victoria
+		}
+		if = {
+			limit = { has_modifier = mfk_capital_displaced }
+			remove_modifier = mfk_capital_displaced
+		}
+	}
+	else = {
+		if = {
+			limit = { NOT = { has_modifier = mfk_capital_displaced } }
+			add_modifier = mfk_capital_displaced
+		}
+		if = {
+			limit = { has_modifier = mfk_capital_philadelphia }
+			remove_modifier = mfk_capital_philadelphia
+		}
+		if = {
+			limit = { has_modifier = mfk_capital_victoria }
+			remove_modifier = mfk_capital_victoria
+		}
+	}
+}
