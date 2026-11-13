@@ -1,10 +1,11 @@
 ﻿l_english:
  gov_dominion_american_presidential:0 "American Republic"
- gov_dominion_american_presidential_desc:2 "In 1778, George Washington's delegation and the British Empire ratified the [concept_the_compact], an agreement that established an American parliament under a Governor-General confirmed by Britain.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
+ gov_dominion_american_presidential_desc:2 "In 1778, George Washington's delegation and the British Empire ratified the [concept_the_compact], an agreement that established an American parliament under a [Concept('concept_ruler','$RULER_TITLE_PRESIDENT_GENERAL|q$')] confirmed by Britain.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
  gov_dominion_american_parliamentary:0 "American Dominion"
- gov_dominion_american_parliamentary_desc:2 "In 1778, George Washington's delegation and the British Empire ratified the [concept_the_compact], an agreement that established an American parliament under a Governor-General confirmed by Britain.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
+ gov_dominion_american_parliamentary_desc:2 "In 1778, George Washington's delegation and the British Empire ratified the [concept_the_compact], an agreement that established an American parliament under a [Concept('concept_ruler','$RULER_TITLE_PRESIDENT_GENERAL|q$')] confirmed by Britain.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
  gov_governor_american_presidential:0 "American Governorship"
  gov_governor_american_presidential_desc:2 "Under the American Dominion, some states were given a greater degree of autonomy.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
  gov_princely_state_american:0 "Covenant Prince"
  gov_princely_state_american_desc:0 "A form of government established in 1778, based around a British-confirmed representative elected by a Council of Clan Mothers that acts as the supreme power over the traditional Iroquois Hoyaneh.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
  RULER_TITLE_GRAND_HOYANEH:0 "Grand Hoyaneh"
+ RULER_TITLE_PRESIDENT_GENERAL:0 "President-General"

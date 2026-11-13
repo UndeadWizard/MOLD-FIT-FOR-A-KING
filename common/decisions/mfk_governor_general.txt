@@ -1,0 +1,43 @@
+﻿# Mold Fit for a King: the Governor-General names the Crown's Favourite in the North American Union
+gbr_instruct_governor_general = {
+	is_shown = {
+		c:GBR ?= ROOT
+		exists = c:USA
+		c:USA = { mfk_crown_favourite_country = yes }
+	}
+
+	possible = {
+		OR = {
+			custom_tooltip = {
+				text = gbr_instruct_gg_cooldown_tt
+				NOT = { has_variable = crown_favourite_cooldown }
+			}
+			custom_tooltip = {
+				text = gbr_instruct_gg_vacant_tt
+				c:USA = {
+					NOT = {
+						any_scope_character = { has_role = character_role_favorite }
+					}
+				}
+			}
+		}
+	}
+
+	when_taken = {
+		trigger_event = { id = mfk_gg.1 popup = yes }
+	}
+
+	ai_chance = {
+		value = 10
+		if = {
+			limit = {
+				c:USA ?= {
+					NOT = {
+						any_scope_character = { has_role = character_role_favorite }
+					}
+				}
+			}
+			add = 100
+		}
+	}
+}

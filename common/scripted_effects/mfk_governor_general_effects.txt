@@ -1,0 +1,141 @@
+﻿# Mold Fit for a King: make scope:new_crown_favourite the Governor-General (and the Crown's Favourite) of the NAU.
+# Callers set Great Britain's crown_favourite_cooldown themselves.
+mfk_appoint_crown_favourite = {
+	c:USA ?= {
+		every_scope_character = {
+			limit = {
+				OR = {
+					has_role = character_role_favorite
+					has_role = character_role_governor_general
+				}
+				NOT = { this = scope:new_crown_favourite }
+			}
+			if = {
+				limit = { has_role = character_role_governor_general }
+				remove_character_role = character_role_governor_general
+			}
+			if = {
+				limit = { has_role = character_role_favorite }
+				revoke_favorite_effect = yes
+			}
+		}
+		every_interest_group = {
+			limit = { has_modifier = crown_favoured_ig }
+			remove_modifier = crown_favoured_ig
+		}
+		every_interest_group = {
+			limit = { has_modifier = crown_favourite_resentment }
+			remove_modifier = crown_favourite_resentment
+		}
+	}
+	scope:new_crown_favourite = {
+		if = {
+			limit = { NOT = { has_role = character_role_favorite } }
+			add_character_role = favorite
+		}
+		if = {
+			limit = { NOT = { has_role = character_role_governor_general } }
+			add_character_role = character_role_governor_general
+		}
+		if = {
+			limit = { has_modifier = revoked_favorite }
+			remove_modifier = revoked_favorite
+		}
+		interest_group ?= {
+			add_modifier = {
+				name = crown_favoured_ig
+				years = 5
+			}
+		}
+	}
+	c:USA ?= {
+		ig:ig_rural_folk ?= {
+			if = {
+				limit = {
+					NOT = { scope:new_crown_favourite.interest_group ?= this }
+				}
+				add_modifier = {
+					name = crown_favourite_resentment
+					years = 5
+					is_decaying = yes
+				}
+			}
+		}
+	}
+	mfk_gg_update_canadian_provinces = yes
+}
+
+# The Governor-General also presides over the Canadian Provinces. A British peer tightens the Crown's grip;
+# an American Governor-General draws the Provinces toward the Union.
+mfk_gg_update_canadian_provinces = {
+	every_country = {
+		limit = {
+			NOT = { c:USA ?= this }
+			exists = c:GBR
+			top_overlord = c:GBR
+			capital = {
+				is_in_geographic_region = geographic_region_greater_canada
+			}
+		}
+		if = {
+			limit = { has_modifier = gg_viceregal_administration }
+			remove_modifier = gg_viceregal_administration
+		}
+		if = {
+			limit = { has_modifier = gg_american_governor_general }
+			remove_modifier = gg_american_governor_general
+		}
+		if = {
+			limit = {
+				scope:new_crown_favourite ?= { has_variable = mfk_british_peer }
+			}
+			add_modifier = { name = gg_viceregal_administration }
+		}
+		else = {
+			add_modifier = { name = gg_american_governor_general }
+			if = {
+				limit = { exists = c:USA }
+				change_relations = {
+					country = c:USA
+					value = 20
+				}
+			}
+		}
+	}
+}
+
+# Send a peer from London: creates a British Governor-General in the NAU and saves him as scope:new_crown_favourite
+mfk_gg_create_british_peer = {
+	c:USA ?= {
+		create_character = {
+			culture = cu:british
+			interest_group = ig_landowners
+			ideology = ideology_royalist
+			ig_leader = no
+			save_scope_as = new_crown_favourite
+			on_created = {
+				set_variable = mfk_british_peer
+			}
+		}
+	}
+}
+
+# 1836: Lord Gosford is the Governor-General of the North American Union. Run once the game has started.
+mfk_gg_starting_governor_general = {
+	c:USA ?= {
+		if = {
+			limit = {
+				NOT = { any_scope_character = { has_role = character_role_governor_general } }
+			}
+			random_scope_character = {
+				limit = { has_template = USA_lord_gosford }
+				set_variable = mfk_british_peer
+				save_scope_as = new_crown_favourite
+			}
+		}
+	}
+	if = {
+		limit = { exists = scope:new_crown_favourite }
+		mfk_appoint_crown_favourite = yes
+	}
+}

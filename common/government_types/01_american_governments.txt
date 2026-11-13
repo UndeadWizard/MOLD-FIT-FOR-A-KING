@@ -2,8 +2,8 @@
 	transfer_of_power = presidential_elective
 	new_leader_on_reform_government = no
 
-	male_ruler = "RULER_TITLE_GOVERNOR_GENERAL"
-	female_ruler = "RULER_TITLE_GOVERNOR_GENERAL"
+	male_ruler = "RULER_TITLE_PRESIDENT_GENERAL"
+	female_ruler = "RULER_TITLE_PRESIDENT_GENERAL"
 
 	possible = {
 		exists = c:USA
@@ -28,8 +28,8 @@ gov_dominion_american_parliamentary = {
 	transfer_of_power = parliamentary_elective
 	new_leader_on_reform_government = no
 
-	male_ruler = "RULER_TITLE_GOVERNOR_GENERAL"
-	female_ruler = "RULER_TITLE_GOVERNOR_GENERAL"
+	male_ruler = "RULER_TITLE_PRESIDENT_GENERAL"
+	female_ruler = "RULER_TITLE_PRESIDENT_GENERAL"
 
 	possible = {
 		exists = c:USA

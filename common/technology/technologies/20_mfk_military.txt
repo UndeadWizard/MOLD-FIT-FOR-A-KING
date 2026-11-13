@@ -1,0 +1,10 @@
+﻿cankerborn_cultivation = {
+	era = era_1
+	texture = "gfx/interface/icons/invention_icons/pharmaceuticals.dds"
+	category = military
+	can_research = no
+
+	ai_weight = {
+		value = 1
+	}
+}

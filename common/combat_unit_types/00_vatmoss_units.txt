@@ -2,6 +2,38 @@
 
 ### Infantry
 
+combat_unit_type_cankerborn = {
+	group = combat_unit_group_infantry
+	max_manpower = 1000
+	supply_capacity = 30
+
+	upkeep_modifier = {
+		goods_input_small_arms_add = 1
+		goods_input_plasm_add = 1
+	}
+
+	battle_modifier = {
+		unit_offense_add = 25
+		unit_defense_add = 20
+		unit_morale_loss_add = 5
+		unit_naval_invasion_efficiency_mult = -0.25
+	}
+
+	unlocking_technologies = { cankerborn_cultivation }
+
+	combat_unit_image = {
+		# fallback until Cankerborn art exists
+		texture = "gfx/unit_illustrations/infantry_eu_line.dds"
+	}
+
+	upgrades = {
+		combat_unit_type_skirmish_infantry
+		combat_unit_type_trench_infantry
+		combat_unit_type_squad_infantry
+		combat_unit_type_mechanized_infantry
+	}
+}
+
 combat_unit_type_behemoth = {
     group = combat_unit_group_armor
 	max_manpower = 1000
@@ -26,7 +58,7 @@ combat_unit_type_behemoth = {
 
 combat_unit_type_boar_hound = {
     group = combat_unit_group_armor
-    max_manpower = 1o00
+    max_manpower = 1000
     supply_capacity = 12
 
     upkeep_modifier = {

@@ -1,0 +1,54 @@
+﻿found_victoria = {
+	is_shown = {
+		c:USA ?= ROOT
+		NOT = { has_variable = victoria_founded }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = found_victoria_calhoun_tt
+			has_variable = calhoun_revolt_resolved
+		}
+		custom_tooltip = {
+			text = found_victoria_cavaliers_tt
+			NOT = { exists = c:FLR }
+			NOT = { exists = c:GRG }
+			NOT = { exists = c:SCR }
+			NOT = { exists = c:NCR }
+		}
+		owns_entire_state_region = STATE_FLORIDA
+		owns_entire_state_region = STATE_GEORGIA
+		owns_entire_state_region = STATE_SOUTH_CAROLINA
+		owns_entire_state_region = STATE_NORTH_CAROLINA
+		s:STATE_DISTRICT_OF_COLUMBIA = {
+			any_scope_state = { owner = ROOT }
+		}
+	}
+
+	when_taken = {
+		set_variable = victoria_founded
+		set_global_variable = victoria_founded
+		set_capital = STATE_DISTRICT_OF_COLUMBIA
+		s:STATE_DISTRICT_OF_COLUMBIA = {
+			random_scope_state = {
+				limit = { owner = ROOT }
+				set_hub_name = {
+					type = city
+					name = HUB_NAME_STATE_DISTRICT_OF_COLUMBIA_city_victoria
+				}
+				create_building = {
+					building = building_government_administration
+					level = 3
+				}
+			}
+		}
+		add_modifier = {
+			name = victoria_founded_modifier
+			days = long_modifier_time
+		}
+	}
+
+	ai_chance = {
+		value = 100
+	}
+}

@@ -1,6 +1,7 @@
 ﻿# Contextless/global JE shared by the Canadian colonies and their overlord, working toward Confederation.
 # Folded from the former per-country je_canada_can (colony perspective) and je_canada_gbr (overlord perspective).
 je_canada = {
+	# Mold Fit for a King: Confederate America - the North American Union absorbs the northern colonies into the Union
 	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
 
 	group = je_group_global_international_situations
@@ -11,6 +12,8 @@ je_canada = {
 
 	should_be_involved = {
 		OR = {
+			# The North American Union
+			c:USA ?= THIS
 			# The Canadian colonies
 			AND = {
 				capital = {
@@ -39,6 +42,7 @@ je_canada = {
 
 	should_show_when_not_involved = {
 		OR = {
+			c:USA ?= THIS
 			AND = {
 				capital = {
 					is_in_geographic_region = geographic_region_greater_canada
@@ -56,6 +60,7 @@ je_canada = {
 
 	is_shown_in_lobby = {
 		OR = {
+			c:USA ?= THIS
 			AND = {
 				OR = {
 					country_has_primary_culture = cu:anglo_canadian
@@ -63,47 +68,30 @@ je_canada = {
 				}
 				is_in_geographic_region = geographic_region_greater_canada
 			}
-			AND = {
-				NOT = {
-					capital = {
-						is_in_geographic_region = geographic_region_greater_canada
-					}
-				}
-				any_subject_or_below = {
-					capital = {
-						is_in_geographic_region = geographic_region_greater_canada
-					}
-					count >= 2
-				}
-			}
 		}
 	}
 
 	is_shown_when_inactive = {
+		exists = c:USA
 		any_country_in_greater_canada = {
 			is_subject = yes
 			country_is_colonial_or_company = yes
-			overlord = {
-				any_subject_or_below = {
-					capital = {
-						is_in_geographic_region = geographic_region_greater_canada
-					}
-					count >= 2
-				}
-			}
 		}
 	}
 
 	possible = {
-		any_country_in_greater_canada = {
-			is_subject = yes
-			country_is_colonial_or_company = yes
+		exists = c:USA
+		c:USA ?= {
 			OR = {
 				has_technology_researched = nationalism
-				overlord = {
+				top_overlord = {
 					has_technology_researched = nationalism
 				}
 			}
+		}
+		any_country_in_greater_canada = {
+			is_subject = yes
+			country_is_colonial_or_company = yes
 		}
 	}
 
@@ -115,24 +103,9 @@ je_canada = {
 		color = "gold_positive"
 		conclusion_desc = je_standard_completion_conclusion_desc
 		trigger = {
-			any_country_in_greater_canada = {
-				save_temporary_scope_as = prospective_canadian_unifier
-				custom_tooltip = {
-					text = owns_all_confederate_canada_tt
-					any_state_region_in_canadian_confederation = {
-						any_scope_state = {
-							is_largest_state_in_region = yes
-							scope:prospective_canadian_unifier ?= owner
-						}
-						count = all
-					}
-				}
-				custom_tooltip = {
-					text = only_one_remains_in_canada_tt
-					any_country_in_canadian_confederation = {
-						count = 1
-					}
-				}
+			custom_tooltip = {
+				text = je_canada_nau_owns_all_tt
+				nau_owns_canadian_confederation = yes
 			}
 		}
 		effect = {
@@ -149,41 +122,19 @@ je_canada = {
 			je_canada_cleanup = yes
 		}
 		effect_all_involved = {
-			show_as_tooltip = {
+			if = {
+				limit = { c:USA ?= THIS }
 				trigger_event = { id = can_aus.5 }
 			}
-			hidden_effect = {
-				if = {
-					limit = {
+			else_if = {
+				limit = {
+					NOT = {
 						capital = {
 							is_in_geographic_region = geographic_region_greater_canada
 						}
-						owns_entire_state_region = STATE_ONTARIO
-						owns_entire_state_region = STATE_TORONTO
-						owns_entire_state_region = STATE_SUPERIOR
-						owns_entire_state_region = STATE_NEW_BRUNSWICK
-						owns_entire_state_region = STATE_QUEBEC
-						owns_entire_state_region = STATE_NEWFOUNDLAND
-						owns_entire_state_region = STATE_ALBERTA
-						owns_entire_state_region = STATE_BRITISH_COLUMBIA
-						owns_entire_state_region = STATE_SASKATCHEWAN
-						owns_entire_state_region = STATE_MANITOBA
-						owns_entire_state_region = STATE_YUKON_TERRITORY
-						owns_entire_state_region = STATE_NORTHWEST_TERRITORIES
-						owns_entire_state_region = STATE_NUNAVUT
 					}
-					trigger_event = { id = can_aus.5 }
 				}
-				else_if = {
-					limit = {
-						NOT = {
-							capital = {
-								is_in_geographic_region = geographic_region_greater_canada
-							}
-						}
-					}
-					trigger_event = { id = can_aus.6 }
-				}
+				trigger_event = { id = can_aus.6 }
 			}
 		}
 	}
@@ -192,10 +143,16 @@ je_canada = {
 		flags = { hidden invalid_outcome }
 		conclusion_desc = je_standard_failure_conclusion_desc
 		trigger = {
-			NOT = {
-				any_country_in_greater_canada = {
-					is_subject = yes
-					country_is_colonial_or_company = yes
+			OR = {
+				NOT = { exists = c:USA }
+				AND = {
+					NOT = {
+						any_country_in_greater_canada = {
+							is_subject = yes
+							country_is_colonial_or_company = yes
+						}
+					}
+					NOT = { nau_owns_canadian_confederation = yes }
 				}
 			}
 		}
@@ -218,6 +175,17 @@ je_canada = {
 				}
 				je:je_canada ?= {
 					add_involved_country = prev
+				}
+			}
+			# The North American Union is always involved
+			if = {
+				limit = {
+					c:USA ?= {
+						NOT = { is_involved_in_journal_entry = je_canada }
+					}
+				}
+				je:je_canada ?= {
+					add_involved_country = c:USA
 				}
 			}
 		}

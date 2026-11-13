@@ -5,6 +5,7 @@
 		set_tax_level = low
 		
 		effect_starting_technology_tier_1_tech = yes
+		add_technology_researched = cankerborn_cultivation
 		
 		set_market_capital = STATE_NEW_YORK		
 		

@@ -15,6 +15,7 @@
 
 can_have_favorites = {
 	has_dlc_feature = ip5_content
+	NOT = { is_subject_type = subject_type_personal_union }
 	OR = {
 		has_law_or_variant = law_type:law_autocracy
 		has_law_or_variant = law_type:law_oligarchy
@@ -2653,5 +2654,38 @@ neighboring_country_has_insurrectionary_movement_trigger = {
 				}
 			}
 		}
+	}
+}
+
+# Mold Fit for a King: the North American Union holds the largest state in every Canadian Confederation region
+nau_owns_canadian_confederation = {
+	c:USA ?= {
+		save_temporary_scope_as = nau_unifier
+		any_state_region_in_canadian_confederation = {
+			any_scope_state = {
+				is_largest_state_in_region = yes
+				scope:nau_unifier ?= owner
+			}
+			count = all
+		}
+	}
+}
+
+# Mold Fit for a King: the NAU's Favourite is chosen by the Crown (through the Governor-General), not by the NAU itself
+mfk_crown_favourite_country = {
+	exists = c:USA
+	c:USA = this
+	exists = c:GBR
+	is_subject_of = c:GBR
+}
+
+# Mold Fit for a King: an NAU interest group whose leader the Governor-General could name as Favourite. Scope = interest group
+mfk_crown_favourite_candidate_ig = {
+	is_marginal = no
+	exists = leader
+	leader = {
+		is_ruler_of_own_country = no
+		is_heir_of_own_country = no
+		NOT = { has_role = character_role_favorite }
 	}
 }

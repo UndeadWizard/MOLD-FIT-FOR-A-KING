@@ -1301,3 +1301,21 @@ USA_benjamin_tucker = {
 		persistent
 	}
 }
+
+# Mold Fit for a King: Archibald Acheson, 2nd Earl of Gosford - Governor-General of the North American Union in 1836
+USA_lord_gosford = {
+	first_name = Archibald
+	last_name = Acheson
+	historical = yes
+	birth_date = 1776.8.1
+	role = character_role_politician
+	culture = cu:british
+	religion = rel:protestant
+	interest_group = ig_landowners
+	ideology = ideology_royalist
+	ig_leader = no
+	traits = {
+		cautious
+		tactful
+	}
+}

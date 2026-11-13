@@ -40,5 +40,9 @@
 		create_character = {
 			template = USA_william_cramp
 		}
+		## Governor-General ##
+		create_character = {
+			template = USA_lord_gosford
+		}
 	}
 }

@@ -1,0 +1,293 @@
+﻿namespace = mfk_gg
+
+# Whitehall appoints a Governor-General for the North American Union (Great Britain)
+mfk_gg.1 = {
+	type = country_event
+	placement = root
+
+	title = mfk_gg.1.t
+	desc = mfk_gg.1.d
+	flavor = mfk_gg.1.f
+
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	trigger = {
+		exists = c:USA
+	}
+
+	immediate = {
+		c:USA = {
+			save_scope_as = nau_scope
+			ordered_interest_group = {
+				limit = {
+					mfk_crown_favourite_candidate_ig = yes
+				}
+				order_by = ig_clout
+				position = 0
+				check_range_bounds = no
+				leader = {
+					save_scope_as = crown_fav_1
+					set_temporary_event_immortality = { DURATION = 3 }
+				}
+			}
+			ordered_interest_group = {
+				limit = {
+					mfk_crown_favourite_candidate_ig = yes
+				}
+				order_by = ig_clout
+				position = 1
+				check_range_bounds = no
+				leader = {
+					save_scope_as = crown_fav_2
+					set_temporary_event_immortality = { DURATION = 3 }
+				}
+			}
+			ordered_interest_group = {
+				limit = {
+					mfk_crown_favourite_candidate_ig = yes
+				}
+				order_by = ig_clout
+				position = 2
+				check_range_bounds = no
+				leader = {
+					save_scope_as = crown_fav_3
+					set_temporary_event_immortality = { DURATION = 3 }
+				}
+			}
+			ordered_interest_group = {
+				limit = {
+					mfk_crown_favourite_candidate_ig = yes
+				}
+				order_by = ig_clout
+				position = 3
+				check_range_bounds = no
+				leader = {
+					save_scope_as = crown_fav_4
+					set_temporary_event_immortality = { DURATION = 3 }
+				}
+			}
+		}
+	}
+
+	option = { # Send a peer from London
+		name = mfk_gg.1.opt_f
+		default_option = yes
+		custom_tooltip = mfk_gg_british_peer_tt
+		custom_tooltip = mfk_gg_canada_british_tt
+		hidden_effect = {
+			mfk_gg_create_british_peer = yes
+			if = {
+				limit = { exists = scope:new_crown_favourite }
+				mfk_appoint_crown_favourite = yes
+				c:USA ?= { trigger_event = { id = mfk_gg.2 popup = yes } }
+			}
+			set_variable = { name = crown_favourite_cooldown years = 4 }
+		}
+		ai_chance = { base = 40 }
+	}
+
+	option = { # Elevate an American politician
+		name = mfk_gg.1.opt_a
+		trigger = { exists = scope:crown_fav_1 }
+		scope:crown_fav_1 = { save_scope_as = new_crown_favourite }
+		custom_tooltip = mfk_gg_appoint_tt_1
+		custom_tooltip = mfk_gg_canada_american_tt
+		hidden_effect = {
+			mfk_appoint_crown_favourite = yes
+			set_variable = { name = crown_favourite_cooldown years = 4 }
+			c:USA ?= { trigger_event = { id = mfk_gg.2 popup = yes } }
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				trigger = {
+					scope:crown_fav_1.interest_group ?= {
+						OR = {
+							is_interest_group_type = ig_petty_bourgeoisie
+							is_interest_group_type = ig_landowners
+							is_interest_group_type = ig_armed_forces
+							is_interest_group_type = ig_industrialists
+						}
+					}
+				}
+				add = 20
+			}
+			modifier = {
+				trigger = {
+					scope:crown_fav_1.interest_group ?= { is_interest_group_type = ig_rural_folk }
+				}
+				factor = 0.2
+			}
+		}
+	}
+	option = { # Elevate an American politician
+		name = mfk_gg.1.opt_b
+		trigger = { exists = scope:crown_fav_2 }
+		scope:crown_fav_2 = { save_scope_as = new_crown_favourite }
+		custom_tooltip = mfk_gg_appoint_tt_2
+		custom_tooltip = mfk_gg_canada_american_tt
+		hidden_effect = {
+			mfk_appoint_crown_favourite = yes
+			set_variable = { name = crown_favourite_cooldown years = 4 }
+			c:USA ?= { trigger_event = { id = mfk_gg.2 popup = yes } }
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				trigger = {
+					scope:crown_fav_2.interest_group ?= {
+						OR = {
+							is_interest_group_type = ig_petty_bourgeoisie
+							is_interest_group_type = ig_landowners
+							is_interest_group_type = ig_armed_forces
+							is_interest_group_type = ig_industrialists
+						}
+					}
+				}
+				add = 20
+			}
+			modifier = {
+				trigger = {
+					scope:crown_fav_2.interest_group ?= { is_interest_group_type = ig_rural_folk }
+				}
+				factor = 0.2
+			}
+		}
+	}
+	option = { # Elevate an American politician
+		name = mfk_gg.1.opt_c
+		trigger = { exists = scope:crown_fav_3 }
+		scope:crown_fav_3 = { save_scope_as = new_crown_favourite }
+		custom_tooltip = mfk_gg_appoint_tt_3
+		custom_tooltip = mfk_gg_canada_american_tt
+		hidden_effect = {
+			mfk_appoint_crown_favourite = yes
+			set_variable = { name = crown_favourite_cooldown years = 4 }
+			c:USA ?= { trigger_event = { id = mfk_gg.2 popup = yes } }
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				trigger = {
+					scope:crown_fav_3.interest_group ?= {
+						OR = {
+							is_interest_group_type = ig_petty_bourgeoisie
+							is_interest_group_type = ig_landowners
+							is_interest_group_type = ig_armed_forces
+							is_interest_group_type = ig_industrialists
+						}
+					}
+				}
+				add = 20
+			}
+			modifier = {
+				trigger = {
+					scope:crown_fav_3.interest_group ?= { is_interest_group_type = ig_rural_folk }
+				}
+				factor = 0.2
+			}
+		}
+	}
+	option = { # Elevate an American politician
+		name = mfk_gg.1.opt_d
+		trigger = { exists = scope:crown_fav_4 }
+		scope:crown_fav_4 = { save_scope_as = new_crown_favourite }
+		custom_tooltip = mfk_gg_appoint_tt_4
+		custom_tooltip = mfk_gg_canada_american_tt
+		hidden_effect = {
+			mfk_appoint_crown_favourite = yes
+			set_variable = { name = crown_favourite_cooldown years = 4 }
+			c:USA ?= { trigger_event = { id = mfk_gg.2 popup = yes } }
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				trigger = {
+					scope:crown_fav_4.interest_group ?= {
+						OR = {
+							is_interest_group_type = ig_petty_bourgeoisie
+							is_interest_group_type = ig_landowners
+							is_interest_group_type = ig_armed_forces
+							is_interest_group_type = ig_industrialists
+						}
+					}
+				}
+				add = 20
+			}
+			modifier = {
+				trigger = {
+					scope:crown_fav_4.interest_group ?= { is_interest_group_type = ig_rural_folk }
+				}
+				factor = 0.2
+			}
+		}
+	}
+	option = { # Keep the current arrangement
+		name = mfk_gg.1.opt_e
+		set_variable = {
+			name = crown_favourite_cooldown
+			years = 1
+		}
+		ai_chance = { base = 2 }
+	}
+}
+
+# The NAU learns who its new Governor-General is
+mfk_gg.2 = {
+	type = country_event
+	placement = root
+
+	title = mfk_gg.2.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:new_crown_favourite ?= { has_variable = mfk_british_peer } }
+				desc = mfk_gg.2.d_peer
+			}
+			triggered_desc = {
+				desc = mfk_gg.2.d_american
+			}
+		}
+	}
+	flavor = mfk_gg.2.f
+
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	trigger = {
+		exists = scope:new_crown_favourite
+	}
+
+	option = { # Accept the Crown's choice
+		name = mfk_gg.2.a
+		default_option = yes
+	}
+
+	option = { # Protest to Whitehall
+		name = mfk_gg.2.b
+		change_relations = {
+			country = c:GBR
+			value = -15
+		}
+		ig:ig_rural_folk ?= {
+			if = {
+				limit = { has_modifier = crown_favourite_resentment }
+				remove_modifier = crown_favourite_resentment
+			}
+		}
+		ai_chance = { base = 1 }
+	}
+}

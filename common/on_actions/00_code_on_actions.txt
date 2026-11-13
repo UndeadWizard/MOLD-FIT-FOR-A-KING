@@ -12,6 +12,8 @@ on_game_started = {
 # No root scope set
 on_game_started_after_lobby = {
 	effect = {
+		# Mold Fit for a King: the NAU starts with Lord Gosford as Governor-General
+		mfk_gg_starting_governor_general = yes
 		# Game Rule: No Dynamic Naming
 		if = {
 			limit = {
@@ -1168,6 +1170,24 @@ on_character_creation = {
 # Root = Character
 on_character_death = {
 	effect = {
+		# Mold Fit for a King: when the Governor-General dies, Whitehall must name a successor
+		if = {
+			limit = {
+				has_role = character_role_governor_general
+				owner ?= { c:USA ?= this }
+				exists = c:GBR
+			}
+			owner ?= {
+				every_interest_group = {
+					limit = { has_modifier = crown_favoured_ig }
+					remove_modifier = crown_favoured_ig
+				}
+			}
+			c:GBR = {
+				remove_variable = crown_favourite_cooldown
+				trigger_event = { id = mfk_gg.1 days = 7 popup = yes }
+			}
+		}
 		#JE about Hawaii triggered by an event
 		if = {
 			limit = {
@@ -1552,6 +1572,7 @@ on_new_ruler = {
 			every_scope_character = {
 				limit = {
 					has_role = character_role_favorite
+					NOT = { has_role = character_role_governor_general } # Mold Fit for a King: the Governor-General outlasts President-Generals
 				}
 				remove_character_role = favorite
 			}
@@ -3134,6 +3155,7 @@ on_law_activated = {
 			if = {
 				limit = {
 					NOT = { can_have_favorites = yes }
+					NOT = { mfk_crown_favourite_country = yes } # Mold Fit for a King: the Crown's Favourite in the NAU
 				}
 				every_scope_character = {
 					limit = {

@@ -17,3 +17,7 @@ concept_covenant_chain = {
 concept_the_compact = {
 	texture = "gfx/interface/icons/generic_icons/legitimacy.dds"
 }
+
+concept_governor_general = {
+	texture = "gfx/interface/icons/generic_icons/legitimacy.dds"
+}

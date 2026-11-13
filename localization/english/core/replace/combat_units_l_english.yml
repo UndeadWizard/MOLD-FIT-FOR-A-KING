@@ -7,3 +7,6 @@
 
   combat_unit_type_boar_hound: "Boar Hound"
   combat_unit_type_boar_hound_desc: "A type of heavy cavalry known for its ferocity and strength in battle."
+
+  combat_unit_type_cankerborn: "Cankerborn"
+  combat_unit_type_cankerborn_desc: "PLACEHOLDER - Cankerborn infantry description."

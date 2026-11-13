@@ -1,0 +1,38 @@
+﻿je_calhoun_revolt = {
+	# PLACEHOLDER: the Calhoun revolt. Currently resolves once South Carolina (Calhoun's country) no longer exists.
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_usa_american_civil_war
+
+	activation_description = {
+		always = yes
+	}
+
+	is_shown_when_inactive = {
+		c:USA ?= ROOT
+		exists = c:SCR
+	}
+
+	possible = {
+		c:USA ?= ROOT
+	}
+
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			custom_tooltip = {
+				text = je_calhoun_revolt_scr_gone_tt
+				NOT = { exists = c:SCR }
+			}
+		}
+		effect = {
+			set_variable = calhoun_revolt_resolved
+		}
+	}
+
+	weight = 100
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

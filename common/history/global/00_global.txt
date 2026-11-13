@@ -1281,4 +1281,11 @@ GLOBAL = {
 			pop_type = peasants
 		}
 	}
+
+	c:GBR ?= {
+		set_variable = {
+			name = crown_favourite_cooldown
+			days = 400 # Whitehall can reconsider after the December 1836 elections
+		}
+	}
 }
