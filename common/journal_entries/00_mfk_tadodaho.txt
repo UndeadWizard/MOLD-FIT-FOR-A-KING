@@ -1,0 +1,30 @@
+﻿# Mold Fit for a King: the Tadodaho keeps the Onondaga council fire, independent of the Grand Hoyaneh
+je_tadodaho = {
+	group = je_group_great_law
+
+	icon = "gfx/interface/icons/faction_icons/faction_grand_hoyaneh.dds"
+
+	activation_description = {
+		always = yes
+	}
+
+	widget = {
+		gui = "gui/journal_entry_widgets/mfk_tadodaho_widgets.gui"
+		name = "widget_je_tadodaho"
+		container = "custom_widget_container_je_icon"
+	}
+
+	outcome = {
+		flags = { hidden invalid_outcome }
+		conclusion_desc = je_standard_failure_conclusion_desc
+		trigger = {
+			NOT = { exists = c:IRO }
+		}
+	}
+
+	weight = 100
+
+	transferable = no
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

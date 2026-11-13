@@ -14,6 +14,8 @@ on_game_started_after_lobby = {
 	effect = {
 		# Mold Fit for a King: the NAU starts with Lord Gosford as Governor-General
 		mfk_gg_starting_governor_general = yes
+		# Mold Fit for a King: the Iroquois start with a Tadodaho
+		mfk_tadodaho_ensure = yes
 		# Game Rule: No Dynamic Naming
 		if = {
 			limit = {
@@ -69,6 +71,9 @@ on_monthly_pulse = {
 		c:USA ?= {
 			on_monthly_pulse_usa_capital_modifier_effect = yes
 		}
+
+		# Mold Fit for a King: keep the office of Tadodaho filled
+		mfk_tadodaho_ensure = yes
 
 		### Scripted country lists
 
@@ -1170,6 +1175,18 @@ on_character_creation = {
 # Root = Character
 on_character_death = {
 	effect = {
+		# Mold Fit for a King: when the Tadodaho dies, the Onondaga raise up a successor
+		if = {
+			limit = {
+				has_role = character_role_tadodaho
+				owner ?= { c:IRO ?= this }
+			}
+			owner = {
+				remove_variable = tadodaho_var
+				mfk_tadodaho_create = yes
+				trigger_event = { id = mfk_tadodaho.1 popup = yes }
+			}
+		}
 		# Mold Fit for a King: when the Governor-General dies, Whitehall must name a successor
 		if = {
 			limit = {

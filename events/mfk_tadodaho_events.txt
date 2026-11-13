@@ -1,0 +1,29 @@
+﻿namespace = mfk_tadodaho
+
+# A new Tadodaho is raised up at Onondaga
+mfk_tadodaho.1 = {
+	type = country_event
+	placement = root
+
+	title = mfk_tadodaho.1.t
+	desc = mfk_tadodaho.1.d
+	flavor = mfk_tadodaho.1.f
+
+	event_image = {
+		video = "europenorthamerica_native_american"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/faction_icons/faction_grand_hoyaneh.dds"
+
+	duration = 3
+
+	trigger = {
+		exists = scope:new_tadodaho
+	}
+
+	option = {
+		name = mfk_tadodaho.1.a
+		default_option = yes
+	}
+}

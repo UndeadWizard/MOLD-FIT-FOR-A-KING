@@ -1,0 +1,45 @@
+﻿# Mold Fit for a King: the Tadodaho of the Haudenosaunee. Scope = the Iroquois country.
+mfk_tadodaho_create = {
+	create_character = {
+		female = no # the title of Tadodaho is held by men
+		culture = cu:iroquoian
+		interest_group = ig_devout
+		ideology = ideology_traditionalist
+		home_region = STATE_SIX_NATIONS
+		ig_leader = no
+		save_scope_as = new_tadodaho
+		on_created = {
+			set_variable = mfk_tadodaho
+		}
+	}
+	if = {
+		limit = { exists = scope:new_tadodaho }
+		scope:new_tadodaho = {
+			add_character_role = character_role_tadodaho
+		}
+		set_variable = {
+			name = tadodaho_var
+			value = scope:new_tadodaho
+		}
+		if = {
+			limit = { NOT = { has_modifier = mfk_onondaga_council_fire } }
+			add_modifier = { name = mfk_onondaga_council_fire }
+		}
+	}
+}
+
+# Make sure the Iroquois have a Tadodaho (game start, or if the office has emptied)
+mfk_tadodaho_ensure = {
+	c:IRO ?= {
+		if = {
+			limit = {
+				NOT = { any_scope_character = { has_role = character_role_tadodaho } }
+			}
+			mfk_tadodaho_create = yes
+		}
+		if = {
+			limit = { NOT = { has_journal_entry = je_tadodaho } }
+			add_journal_entry = { type = je_tadodaho }
+		}
+	}
+}

@@ -21,3 +21,8 @@ je_group_louisiana = {
 	illustration = "gfx/interface/illustrations/journal/je_group_illu_manifest_destiny.dds"
 	themed = yes
 }
+
+je_group_great_law = {
+	context = country
+	updates_strategic_region_stances = yes
+}

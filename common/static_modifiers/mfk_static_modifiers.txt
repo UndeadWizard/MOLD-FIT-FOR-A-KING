@@ -42,3 +42,8 @@ mfk_capital_displaced = {
 	country_legitimacy_base_add = -15
 	state_incorporation_speed_mult = -0.25
 }
+
+mfk_onondaga_council_fire = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_legitimacy_base_add = 5
+}

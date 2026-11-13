@@ -1,4 +1,4 @@
-﻿# Mold Fit for a King: the Crown's representative in the North American Union. Always held together with the Favourite role.
+﻿# Governor-General
 character_role_governor_general = {
 	texture = "gfx/interface/icons/character_role_icons/favorite.dds"
 
@@ -12,6 +12,27 @@ character_role_governor_general = {
 
 	character_modifier = {
 		character_prominence_add = 25
+	}
+
+	character_background = {
+		texture = "gfx/interface/character_panel/backgrounds/char_role_politician.dds"
+	}
+}
+
+# Tadodaho
+character_role_tadodaho = {
+	texture = "gfx/interface/icons/faction_icons/faction_grand_hoyaneh.dds"
+
+	type = other
+	priority = 85
+
+	can_be_interest_group_leader = no
+
+	title_format = from_name
+	title_preposition = PREP_OF
+
+	character_modifier = {
+		character_prominence_add = 40
 	}
 
 	character_background = {

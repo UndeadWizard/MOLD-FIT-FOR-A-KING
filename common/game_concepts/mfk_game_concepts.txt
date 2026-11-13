@@ -21,3 +21,7 @@ concept_the_compact = {
 concept_governor_general = {
 	texture = "gfx/interface/icons/generic_icons/legitimacy.dds"
 }
+
+concept_tadodaho = {
+	texture = "gfx/interface/icons/faction_icons/faction_grand_hoyaneh.dds"
+}
