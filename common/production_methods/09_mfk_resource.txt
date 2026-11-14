@@ -54,7 +54,7 @@ pm_steam_plasm = {
 
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_lead_add = 30
+			goods_input_copper_add = 30
 			goods_input_sulfur_add = 10
 			goods_input_coal_add = 5
 			goods_input_vatmoss_add = 40
@@ -87,9 +87,10 @@ pm_electric_plasm = {
 	building_modifiers = {
 		workforce_scaled = {
 			# input goods
-			goods_input_lead_add = 40
+			goods_input_copper_add = 40
 			goods_input_sulfur_add = 10
 			goods_input_electricity_add = 30
+			goods_input_vatmoss_add = 60
 
 			# output goods
 			goods_output_plasm_add = 80
