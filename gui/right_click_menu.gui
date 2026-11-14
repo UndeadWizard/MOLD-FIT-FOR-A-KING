@@ -2088,20 +2088,42 @@ right_click_menu = {
 	}
 
 	blockoverride "items" {
-		dynamicgridbox = {
-			datamodel = "[MilitaryFormation.GetEligibleTypesByGroup( CombatUnitGroup.Self )]"
+			flowcontainer = {
+			direction = horizontal
+			spacing = 6
 
-			item = {
-				flowcontainer = {
-					# Mold Fit for a King: hide unit types this formation cannot switch to yet (e.g. missing technology), but always show the current one
-					visible = "[Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( CombatUnitType.Self ) ), ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) )]"
+			dynamicgridbox = {
+				datamodel = "[MilitaryFormation.GetEligibleTypesByGroup( CombatUnitGroup.Self )]"
 
-					default_unit_right_click_item = {
-						visible = "[Not(ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self))]"
+				item = {
+					flowcontainer = {
+						visible = "[And( Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( CombatUnitType.Self ) ), ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ), Not( Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_cankerborn').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_behemoth').Self), ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_boar_hound').Self) ) ) ) )]"
+
+						default_unit_right_click_item = {
+							visible = "[Not(ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self))]"
+						}
+
+						default_unit_right_click_item_selected = {
+							visible = "[ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self)]"
+						}
 					}
+				}
+			}
 
-					default_unit_right_click_item_selected = {
-						visible = "[ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self)]"
+			dynamicgridbox = {
+				datamodel = "[MilitaryFormation.GetEligibleTypesByGroup( CombatUnitGroup.Self )]"
+
+				item = {
+					flowcontainer = {
+						visible = "[And( Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( CombatUnitType.Self ) ), ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_cankerborn').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_behemoth').Self), ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_boar_hound').Self) ) ) )]"
+
+						default_unit_right_click_item = {
+							visible = "[Not(ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self))]"
+						}
+
+						default_unit_right_click_item_selected = {
+							visible = "[ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self)]"
+						}
 					}
 				}
 			}
