@@ -33,10 +33,10 @@ mfk_great_law_nations_setup = {
 	mfk_create_nation_chief = { NATION = cayuga IG = ig_landowners CULTURE = iroquoian RELIGION = animist LIST = mfk_great_law_list IDEOLOGY = traditionalist }
 	mfk_create_nation_chief = { NATION = seneca IG = ig_rural_folk CULTURE = iroquoian RELIGION = animist LIST = mfk_great_law_list IDEOLOGY = traditionalist }
 	mfk_create_nation_chief = { NATION = tuscarora IG = ig_petty_bourgeoisie CULTURE = iroquoian RELIGION = protestant LIST = mfk_great_law_list IDEOLOGY = moderate }
-	mfk_create_nation_chief = { NATION = lenape IG = ig_rural_folk CULTURE = algonquian RELIGION = protestant LIST = mfk_unaligned_list IDEOLOGY = humanitarian }
-	mfk_create_nation_chief = { NATION = mohican IG = ig_industrialists CULTURE = algonquian RELIGION = protestant LIST = mfk_unaligned_list IDEOLOGY = market_liberal }
-	mfk_create_nation_chief = { NATION = nanticoke IG = ig_rural_folk CULTURE = algonquian RELIGION = animist LIST = mfk_unaligned_list IDEOLOGY = pacifist }
-	mfk_create_nation_chief = { NATION = tutelo IG = ig_armed_forces CULTURE = siouan RELIGION = animist LIST = mfk_unaligned_list IDEOLOGY = jingoist_leader }
+	mfk_create_nation_chief = { NATION = ohionon IG = ig_armed_forces CULTURE = algonquian RELIGION = animist LIST = mfk_unaligned_list IDEOLOGY = traditionalist }
+	mfk_create_nation_chief = { NATION = erie_freemen IG = ig_trade_unions CULTURE = afro_american RELIGION = protestant LIST = mfk_unaligned_list IDEOLOGY = abolitionist }
+	mfk_create_nation_chief = { NATION = niagara_metis IG = ig_petty_bourgeoisie CULTURE = metis RELIGION = catholic LIST = mfk_unaligned_list IDEOLOGY = moderate }
+	mfk_create_nation_chief = { NATION = wabash_shawnee IG = ig_armed_forces CULTURE = algonquian RELIGION = animist LIST = mfk_unaligned_list IDEOLOGY = jingoist_leader }
 	}
 }
 
@@ -94,13 +94,69 @@ mfk_roll_chief_mfk_great_law_list = {
 }
 
 mfk_roll_chief_mfk_unaligned_list = {
-	random_list = {
-		20 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_rural_folk IDEOLOGY = moderate } }
-		20 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_rural_folk IDEOLOGY = humanitarian } }
-		15 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_intelligentsia IDEOLOGY = reformer } }
-		15 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_rural_folk IDEOLOGY = pacifist } }
-		15 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_armed_forces IDEOLOGY = jingoist_leader } }
-		10 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_petty_bourgeoisie IDEOLOGY = market_liberal } }
-		5 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_industrialists IDEOLOGY = market_liberal } }
+	if = {
+		limit = { scope:dead_nation_chief.var:mfk_nation ?= flag:ohionon }
+		random_list = {
+			50 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_armed_forces IDEOLOGY = traditionalist } }
+			30 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_armed_forces IDEOLOGY = moderate } }
+			20 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_rural_folk IDEOLOGY = moderate } }
+		}
+	}
+	else_if = {
+		limit = { scope:dead_nation_chief.var:mfk_nation ?= flag:erie_freemen }
+		random_list = {
+			50 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_trade_unions IDEOLOGY = abolitionist } }
+			25 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_rural_folk IDEOLOGY = abolitionist } }
+			25 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_trade_unions IDEOLOGY = moderate } }
+		}
+	}
+	else_if = {
+		limit = { scope:dead_nation_chief.var:mfk_nation ?= flag:niagara_metis }
+		random_list = {
+			35 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_petty_bourgeoisie IDEOLOGY = moderate } }
+			30 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_industrialists IDEOLOGY = market_liberal } }
+			20 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_intelligentsia IDEOLOGY = reformer } }
+			15 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_armed_forces IDEOLOGY = hoyaneh_ascendant } }
+		}
+	}
+	else_if = {
+		limit = { scope:dead_nation_chief.var:mfk_nation ?= flag:wabash_shawnee }
+		random_list = {
+			50 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_armed_forces IDEOLOGY = jingoist_leader } }
+			30 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_armed_forces IDEOLOGY = traditionalist } }
+			20 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_rural_folk IDEOLOGY = moderate } }
+		}
+	}
+	else = {
+		random_list = {
+			40 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_rural_folk IDEOLOGY = moderate } }
+			30 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_armed_forces IDEOLOGY = traditionalist } }
+			30 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_intelligentsia IDEOLOGY = reformer } }
+		}
+	}
+}
+
+# Saves made before the sheltering nations were reworked: retire the old chiefs and raise the new ones. Scope = Iroquois.
+mfk_sheltering_nations_update = {
+	if = {
+		limit = {
+			has_variable = mfk_nations_setup
+			NOT = { has_variable = mfk_sheltering_nations_v2 }
+		}
+		set_variable = mfk_sheltering_nations_v2
+		every_in_list = {
+			variable = mfk_unaligned_list
+			remove_character_role = character_role_nation_chief
+			retire_character = yes
+		}
+		clear_variable_list = mfk_unaligned_list
+		mfk_create_nation_chief = { NATION = ohionon IG = ig_armed_forces CULTURE = algonquian RELIGION = animist LIST = mfk_unaligned_list IDEOLOGY = traditionalist }
+		mfk_create_nation_chief = { NATION = erie_freemen IG = ig_trade_unions CULTURE = afro_american RELIGION = protestant LIST = mfk_unaligned_list IDEOLOGY = abolitionist }
+		mfk_create_nation_chief = { NATION = niagara_metis IG = ig_petty_bourgeoisie CULTURE = metis RELIGION = catholic LIST = mfk_unaligned_list IDEOLOGY = moderate }
+		mfk_create_nation_chief = { NATION = wabash_shawnee IG = ig_armed_forces CULTURE = algonquian RELIGION = animist LIST = mfk_unaligned_list IDEOLOGY = jingoist_leader }
+	}
+	else_if = {
+		limit = { NOT = { has_variable = mfk_sheltering_nations_v2 } }
+		set_variable = mfk_sheltering_nations_v2
 	}
 }

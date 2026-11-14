@@ -74,6 +74,7 @@ mfk_tadodaho_ensure = {
 		}
 		mfk_council_harmony_update = yes
 		mfk_clan_mothers_ig_update = yes
+		mfk_sheltering_nations_update = yes
 		mfk_great_law_nations_setup = yes
 	}
 }

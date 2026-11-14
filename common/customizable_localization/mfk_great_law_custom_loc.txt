@@ -25,19 +25,19 @@
 		localization_key = mfk_nation_tuscarora
 	}
 	text = {
-		trigger = { var:mfk_nation ?= flag:lenape }
-		localization_key = mfk_nation_lenape
+		trigger = { var:mfk_nation ?= flag:ohionon }
+		localization_key = mfk_nation_ohionon
 	}
 	text = {
-		trigger = { var:mfk_nation ?= flag:mohican }
-		localization_key = mfk_nation_mohican
+		trigger = { var:mfk_nation ?= flag:erie_freemen }
+		localization_key = mfk_nation_erie_freemen
 	}
 	text = {
-		trigger = { var:mfk_nation ?= flag:nanticoke }
-		localization_key = mfk_nation_nanticoke
+		trigger = { var:mfk_nation ?= flag:niagara_metis }
+		localization_key = mfk_nation_niagara_metis
 	}
 	text = {
-		trigger = { var:mfk_nation ?= flag:tutelo }
-		localization_key = mfk_nation_tutelo
+		trigger = { var:mfk_nation ?= flag:wabash_shawnee }
+		localization_key = mfk_nation_wabash_shawnee
 	}
 }
