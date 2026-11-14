@@ -8,7 +8,7 @@
 }
 
 plasm = {
-	texture = "gfx/interface/icons/goods_icons/sulfur.dds"
+	texture = "gfx/interface/icons/goods_icons/plasm.dds"
 	cost = 100
 	category = industrial
 
