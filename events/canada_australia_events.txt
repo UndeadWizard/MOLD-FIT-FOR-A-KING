@@ -363,7 +363,7 @@ can_aus.6 = {
 	}
 
 	immediate = {
-		if = { # Mold Fit for a King: the NAU is the unifier
+		if = {
 			limit = { exists = c:USA }
 			c:USA = { save_scope_as = canada_country }
 		}

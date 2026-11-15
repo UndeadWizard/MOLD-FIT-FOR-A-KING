@@ -1,7 +1,6 @@
 ﻿# Contextless/global JE shared by the Canadian colonies and their overlord, working toward Confederation.
 # Folded from the former per-country je_canada_can (colony perspective) and je_canada_gbr (overlord perspective).
 je_canada = {
-	# Mold Fit for a King: Confederate America - the North American Union absorbs the northern colonies into the Union
 	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
 
 	group = je_group_global_international_situations

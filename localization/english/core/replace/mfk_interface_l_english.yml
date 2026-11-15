@@ -1,6 +1,5 @@
 ﻿l_english:
 
- # Mold Fit for a King
  mfk_nation_mohawk: "Mohawk"
  mfk_nation_oneida: "Oneida"
  mfk_nation_onondaga: "Onondaga"
@@ -15,3 +14,5 @@
  MFK_UNALIGNED_NATIONS_HEADER: "Sheltering Nations"
  MFK_SECTION_NATIONS: "The Nations"
  MFK_SECTION_HARMONY: "Council Harmony"
+ MFK_GREAT_LAW_PANEL_TITLE: "The Nations of the Longhouse"
+ MFK_GREAT_LAW_BUTTON_TT: "#header The Nations of the Longhouse#!\nThe chiefs of the Great Law nations and the nations sheltering under it."

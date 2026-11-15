@@ -1,5 +1,4 @@
 ﻿je_canada_unite_can_button = {
-	# Mold Fit for a King: the North American Union absorbs a neighbouring northern colony into the Union
 	name = "je_canada_unite_can_button"
 	desc = "je_canada_unite_can_button_desc"
 

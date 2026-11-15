@@ -1,5 +1,4 @@
-﻿# Mold Fit for a King: make scope:new_crown_favourite the Governor-General (and the Crown's Favourite) of the NAU.
-# Callers set Great Britain's crown_favourite_cooldown themselves.
+﻿# Callers set Great Britain's crown_favourite_cooldown themselves.
 mfk_appoint_crown_favourite = {
 	c:USA ?= {
 		every_scope_character = {

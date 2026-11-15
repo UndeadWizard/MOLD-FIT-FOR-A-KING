@@ -1,4 +1,4 @@
-﻿# Mold Fit for a King: the Governor-General names the Crown's Favourite in the North American Union
+﻿# Governor-General gets named in the North American Union
 gbr_instruct_governor_general = {
 	is_shown = {
 		c:GBR ?= ROOT

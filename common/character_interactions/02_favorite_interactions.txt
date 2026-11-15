@@ -3,7 +3,7 @@
 	clicksound = "event:/SFX/UI/Military/command_grant"
 
 	potential = {
-		NOT = { owner ?= { mfk_crown_favourite_country = yes } } # Mold Fit for a King: chosen by the Governor-General
+		NOT = { owner ?= { mfk_crown_favourite_country = yes } }
 		has_dlc_feature = ip5_content
 		owner ?= scope:actor
 		is_ruler_of_own_country = no
@@ -282,7 +282,7 @@ revoke_favorite = {
 	clicksound = "event:/SFX/UI/Military/commander_retire"
 
 	potential = {
-		NOT = { owner ?= { mfk_crown_favourite_country = yes } } # Mold Fit for a King: chosen by the Governor-General
+		NOT = { owner ?= { mfk_crown_favourite_country = yes } }
 		has_dlc_feature = ip5_content
 		owner ?= scope:actor
 		has_role = character_role_favorite

@@ -1,5 +1,4 @@
-﻿# Mold Fit for a King: overrides of base-game character ideologies
-
+﻿
 REPLACE:ideology_jacksonian_democrat = { # Average Progressiveness - 55
 	icon = "gfx/interface/icons/ideology_icons/ideology_leader/jackson_democrat.dds"
 

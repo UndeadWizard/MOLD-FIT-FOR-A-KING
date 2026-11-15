@@ -1,5 +1,4 @@
-﻿# Mold Fit for a King: the Tadodaho of the Haudenosaunee. Scope = the Iroquois country.
-mfk_tadodaho_create = {
+﻿mfk_tadodaho_create = {
 	create_character = {
 		female = no # the title of Tadodaho is held by men
 		culture = cu:iroquoian

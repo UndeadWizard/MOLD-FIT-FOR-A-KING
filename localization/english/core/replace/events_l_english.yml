@@ -5,7 +5,6 @@
  great_cajun_rebellion.1.a:0 "I've got an envie for some boudin!"
  great_cajun_rebellion.1.b:0 "Laissez les bons temps rouler!"
 
- # Mold Fit for a King
  mfk_tadodaho.1.t: "The Fire Is Passed On"
  mfk_tadodaho.1.d: "The [concept_tadodaho] has gone on to the Sky World. After the condolence ceremony, the Clan Mothers of the Onondaga have raised up [SCOPE.sCharacter('new_tadodaho').GetFullName] to take up the title and keep the Council Fire burning as the Great Law intends."
  mfk_tadodaho.1.f: "The fire at Onondaga has never been allowed to go out."
