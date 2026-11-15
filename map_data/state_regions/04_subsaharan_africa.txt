@@ -1306,7 +1306,7 @@ STATE_CAPE_COLONY = {
         building_logging_camp = 8
         building_fishing_wharf = 10
         building_whaling_station = 4
-        building_vatmoss_plantation = 4
+        building_vatmoss_hotbed = 4
     }
     naval_exit_id = 3106
     min_cold_effect = 0.00

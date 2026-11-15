@@ -14,7 +14,7 @@ goods_input_vatmoss_add={
 	}
 }
 
-building_vatmoss_plantation_throughput_add={
+building_vatmoss_hotbed_throughput_add={
 	decimals=0
 	color=good
 	percent=yes
@@ -95,6 +95,33 @@ goods_input_plasm_add={
 }
 
 goods_output_plasm_mult={
+	decimals=1
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+# Voltaic Cell
+
+goods_output_voltaic_cell_add={
+	decimals=1
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_input_voltaic_cell_add={
+	decimals=1
+	color=bad
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_output_voltaic_cell_mult={
 	decimals=1
 	color=good
 	percent=yes

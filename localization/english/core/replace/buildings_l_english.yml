@@ -1,15 +1,23 @@
 ﻿l_english:
- building_vatmoss_plantation:0 "Vatmoss Plantations"
- building_vatmoss_plantation_lens_option:0 "Expand $building_vatmoss_plantation$"
- building_vatmoss_plantation_discovered_resource:0 "Vatmoss"
- pmg_base_building_vatmoss_plantation:0 "Vatmoss Base Building"
+ building_vatmoss_hotbed:0 "Vatmoss Hotbeds"
+ building_vatmoss_hotbed_lens_option:0 "Expand $building_vatmoss_hotbed$"
+ building_vatmoss_hotbed_discovered_resource:0 "Vatmoss"
+ pmg_base_building_vatmoss_hotbed:0 "Vatmoss Base Building"
  pm_simple_vatmoss:0 "Vatmoss Planting"
- automatic_irrigation_building_vatmoss_plantation:0 "Automatic Vatmoss Irrigation"
+ automatic_irrigation_building_vatmoss_hotbed:0 "Automatic Vatmoss Irrigation"
 
  building_plasm_industry:0 "Plasm Industries"
  building_plasm_industry_lens_option:0 "Expand $building_plasm_industry$"
  pmg_base_building_plasm_industry:0 "Base Building Plasm"
  pm_steam_plasm:0 "Steam Plasm"
  pm_electric_plasm:0 "Electric Plasm"
+ pmg_feedstock_building_vatmoss_hotbed:0 "Vat Feedstock"
+ pm_plant_grown_vatmoss:0 "Plant-Grown Vatmoss"
+ pm_flesh_grown_vatmoss:0 "Flesh-Grown Vatmoss"
 
  building_kanien_canal:0 "Royal Albert Cut"
+
+ building_voltaic_works:0 "Voltaic Works"
+ building_voltaic_works_lens_option:0 "Expand $building_voltaic_works$"
+ pmg_base_building_voltaic_works:0 "Base Building Voltaic"
+ pm_voltaic_piles:0 "Voltaic Piles"

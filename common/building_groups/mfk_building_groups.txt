@@ -34,7 +34,7 @@ bg_vatmoss = {
 
 	depletable_resource = no
 
-	default_building = building_vatmoss_plantation
+	default_building = building_vatmoss_hotbed
 
 	lens = agriculture
 

@@ -15,3 +15,38 @@ texticon = {
     fontsize = 91
   }
 }
+
+# Mold Fit for a King: inline icons for the mod's goods
+
+texticon = {
+	icon = vatmoss
+
+	iconsize = {
+		size = { 25 25 }
+		offset = { 0 7 }
+		fontsize = 18
+		texture = "gfx/interface/icons/goods_icons/vat_moss.dds"
+	}
+}
+
+texticon = {
+	icon = plasm
+
+	iconsize = {
+		size = { 25 25 }
+		offset = { 0 7 }
+		fontsize = 18
+		texture = "gfx/interface/icons/goods_icons/plasm.dds"
+	}
+}
+
+texticon = {
+	icon = voltaic_cell
+
+	iconsize = {
+		size = { 25 25 }
+		offset = { 0 7 }
+		fontsize = 18
+		texture = "gfx/interface/icons/goods_icons/voltaic_cell.dds"
+	}
+}

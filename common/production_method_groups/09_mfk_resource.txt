@@ -1,8 +1,8 @@
-﻿pmg_base_building_vatmoss_plantation = {
+﻿pmg_base_building_vatmoss_hotbed = {
 	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
 	production_methods = {
 		pm_simple_vatmoss
-		automatic_irrigation_building_vatmoss_plantation
+		automatic_irrigation_building_vatmoss_hotbed
 	}
 }
 
@@ -11,5 +11,20 @@ pmg_base_building_plasm_industry = {
 	production_methods = {
 		pm_steam_plasm
 		pm_electric_plasm
+	}
+}
+
+pmg_feedstock_building_vatmoss_hotbed = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_plant_grown_vatmoss
+		pm_flesh_grown_vatmoss
+	}
+}
+
+pmg_base_building_voltaic_works = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_voltaic_piles
 	}
 }

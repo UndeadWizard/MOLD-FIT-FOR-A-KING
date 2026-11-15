@@ -34,7 +34,7 @@ STATE_LOUISIANA = {
         building_sulfur_mine = 32
         building_logging_camp = 13
         building_fishing_wharf = 12
-        building_vatmoss_plantation = 8
+        building_vatmoss_hotbed = 8
     }
     resource = {
         type = "building_oil_rig"
@@ -63,7 +63,7 @@ STATE_NEW_YORK = {
         building_logging_camp = 35
         building_whaling_station = 5
         building_fishing_wharf = 6
-        building_vatmoss_plantation = 4
+        building_vatmoss_hotbed = 4
     }
     naval_exit_id = 3067
     min_cold_effect = 0.02
@@ -507,7 +507,7 @@ STATE_WISCONSIN = {
         undiscovered_amount = 20
     }
     resource = {
-        type = "building_vatmoss_plantation"
+        type = "building_vatmoss_hotbed"
         undiscovered_amount = 8
     }
     naval_exit_id = 3149
@@ -530,7 +530,7 @@ STATE_INDIANA = {
     capped_resources = {
         building_coal_mine = 48
         building_logging_camp = 28
-        building_vatmoss_plantation = 4
+        building_vatmoss_hotbed = 4
     }
     naval_exit_id = 3149
     min_cold_effect = 0.02
@@ -556,7 +556,7 @@ STATE_MICHIGAN = {
         building_logging_camp = 50
     }
     resource = {
-        type = "building_vatmoss_plantation"
+        type = "building_vatmoss_hotbed"
         undiscovered_amount = 12
     }
     naval_exit_id = 3149
@@ -580,7 +580,7 @@ STATE_OHIO = {
         building_coal_mine = 60
         building_lead_mine = 36
         building_logging_camp = 30
-        building_vatmoss_plantation = 6
+        building_vatmoss_hotbed = 6
     }
     resource = {
         type = "building_oil_rig"
@@ -672,7 +672,7 @@ STATE_ALABAMA = {
         building_iron_mine = 30
         building_lead_mine = 24
         building_logging_camp = 25
-        building_vatmoss_plantation = 6
+        building_vatmoss_hotbed = 6
     }
     resource = {
         type = "building_oil_rig"
@@ -699,7 +699,7 @@ STATE_FLORIDA = {
         building_logging_camp = 23
         building_fishing_wharf = 15
         building_sulfur_mine = 42
-        building_vatmoss_plantation = 4
+        building_vatmoss_hotbed = 4
     }
     resource = {
         type = "building_oil_rig"
@@ -724,7 +724,7 @@ STATE_GEORGIA = {
     capped_resources = {
         building_logging_camp = 20
         building_fishing_wharf = 6
-        building_vatmoss_plantation = 6
+        building_vatmoss_hotbed = 6
     }
     naval_exit_id = 3067
     min_cold_effect = 0.00
@@ -835,7 +835,7 @@ STATE_ILLINOIS = {
         building_logging_camp = 22
     }
     resource = {
-        type = "building_vatmoss_plantation"
+        type = "building_vatmoss_hotbed"
         undiscovered_amount = 8
     }
     naval_exit_id = 3149
@@ -949,7 +949,7 @@ STATE_SIX_NATIONS = {
     capped_resources = {
         building_iron_mine = 18
         building_logging_camp = 14
-        building_vatmoss_plantation = 10
+        building_vatmoss_hotbed = 10
     }
     naval_exit_id = 3045
 }
@@ -1081,7 +1081,7 @@ STATE_ONTARIO = {
         building_sulfur_mine = 40
         building_copper_mine = 6
         building_logging_camp = 90
-        building_vatmoss_plantation = 16
+        building_vatmoss_hotbed = 16
     }
     resource = {
         type = "building_oil_rig"
@@ -1395,7 +1395,7 @@ STATE_GALVESTON = {
         building_sulfur_mine = 16
         building_logging_camp = 8
         building_fishing_wharf = 6
-        building_vatmoss_plantation = 4
+        building_vatmoss_hotbed = 4
     }
     resource = {
         type = "building_oil_rig"

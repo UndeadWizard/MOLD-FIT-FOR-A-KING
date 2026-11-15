@@ -1062,7 +1062,7 @@ STATE_MONTENEGRO = {
         building_coal_mine = 50
         building_logging_camp = 15
         building_fishing_wharf = 15
-        building_vatmoss_plantation = 8
+        building_vatmoss_hotbed = 8
     }
     naval_exit_id = 3093
     min_cold_effect = 0.00
@@ -1084,7 +1084,7 @@ STATE_WESTERN_SERBIA = {
     capped_resources = {
         building_iron_mine = 24
         building_logging_camp = 13
-        building_vatmoss_plantation = 12
+        building_vatmoss_hotbed = 12
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.37
@@ -1106,7 +1106,7 @@ STATE_EASTERN_SERBIA = {
         building_lead_mine = 12
         building_copper_mine = 6
         building_logging_camp = 10
-        building_vatmoss_plantation = 10
+        building_vatmoss_hotbed = 10
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.36
@@ -1127,7 +1127,7 @@ STATE_KOSOVO = {
         building_lead_mine = 24
         building_copper_mine = 6
         building_logging_camp = 4
-        building_vatmoss_plantation = 2
+        building_vatmoss_hotbed = 2
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.34

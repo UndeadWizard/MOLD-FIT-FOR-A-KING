@@ -28,4 +28,24 @@
 			coa_def_monarchy_flag_trigger = yes
 		}
 	}
+	dynamic_country_name = {
+		name = dyn_c_united_states
+		adjective = dyn_c_north_american_union_adj
+
+		is_main_tag_only = yes
+		priority = 0
+
+		trigger = {
+			coa_def_monarchy_flag_trigger = no
+			NOT = {
+				any_country = {
+					has_diplomatic_pact = {
+						who = c:USA
+						type = dominion
+						is_initiator = yes
+					}
+				}
+			}
+		}
+	}
 }

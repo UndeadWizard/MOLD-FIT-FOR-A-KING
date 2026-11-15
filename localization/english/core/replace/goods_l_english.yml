@@ -3,3 +3,11 @@
  plasm: "Plasm"
  goods_input_plasm_add: "@plasm! Plasm Input"
  goods_input_plasm_add_desc: "The amount of @plasm! consumed by buildings"
+
+ voltaic_cell: "Voltaic Cells"
+ goods_input_voltaic_cell_add: "@voltaic_cell! Voltaic Cells Input"
+ goods_input_voltaic_cell_add_desc: "The amount of @voltaic_cell! consumed by buildings"
+ goods_output_voltaic_cell_add: "@voltaic_cell! Voltaic Cells Output"
+ goods_output_voltaic_cell_add_desc: "The amount of @voltaic_cell! produced by buildings"
+ goods_output_voltaic_cell_mult: "@voltaic_cell! Voltaic Cells Output"
+ goods_output_voltaic_cell_mult_desc: "Increases the amount of @voltaic_cell! produced by buildings"
