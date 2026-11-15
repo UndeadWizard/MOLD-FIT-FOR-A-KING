@@ -669,7 +669,7 @@
 					building={
 						type="building_financial_district"
 						country="c:USA"
-						levels=4
+						levels=1
 						region="STATE_MICHIGAN"
 					}
 				}
@@ -688,6 +688,60 @@
 				}
 				reserves=1
 				activate_production_methods={  "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated" "pm_open_air_stockyards" }
+			}
+		}
+		region_state:IRO={
+			create_building={
+				building="building_maize_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:IRO"
+						levels=2
+						region="STATE_MICHIGAN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:IRO"
+						levels=2
+						region="STATE_SIX_NATIONS"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
+			}
+			create_building={
+				building="building_copper_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:IRO"
+						levels=1
+						region="STATE_SIX_NATIONS"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_copper_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_livestock_ranch"
+						country="c:IRO"
+						levels=1
+						region="STATE_MICHIGAN"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
 			}
 		}
 	}
@@ -810,6 +864,73 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_butchering_tools" "pm_sheep_farms" "pm_standard_fences" "pm_unrefrigerated"  }
+			}
+		}
+		region_state:IRO={
+			create_building={
+				building="building_maize_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:IRO"
+						levels=2
+						region="STATE_OHIO"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_livestock_ranch"
+						country="c:IRO"
+						levels=1
+						region="STATE_OHIO"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
+			}
+			create_building={
+				building="building_coal_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:IRO"
+						levels=2
+						region="STATE_SIX_NATIONS"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_vatmoss_hotbed"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:IRO"
+						levels=2
+						region="STATE_SIX_NATIONS"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_vatmoss" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:IRO"
+						levels=1
+						region="STATE_SIX_NATIONS"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 			}
 		}
 	}
@@ -2512,6 +2633,73 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_no_organization" }
+			}
+		}
+		region_state:IRO={
+			create_building={
+				building="building_maize_farm"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:IRO"
+						levels=2
+						region="STATE_TORONTO"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" }
+			}
+			create_building={
+				building="building_tobacco_plantation"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:IRO"
+						levels=1
+						region="STATE_TORONTO"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_tobacco_plantation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_livestock_ranch"
+				add_ownership={
+					building={
+						type="building_livestock_ranch"
+						country="c:IRO"
+						levels=1
+						region="STATE_TORONTO"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated" }
+			}
+			create_building={
+				building="building_coal_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:IRO"
+						levels=1
+						region="STATE_SIX_NATIONS"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_coal_mine" "pm_no_explosives" "pm_no_steam_automation" "pm_road_carts" }
+			}
+			create_building={
+				building="building_logging_camp"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:IRO"
+						levels=1
+						region="STATE_SIX_NATIONS"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_saw_mills" "pm_hardwood" "pm_no_equipment" "pm_road_carts" }
 			}
 		}
 	}
