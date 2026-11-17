@@ -546,72 +546,63 @@
 		region_state:ONT = {
 			create_pop = {
 				culture = anglo_canadian
-				size = 171626
+				size = 147108
 			}
 			create_pop = {
 				culture = cree
-				size = 1665
+				size = 1427
 			}
 			create_pop = {
 				culture = franco_canadian
-				size = 10141
+				size = 8692
 			}
 			create_pop = {
 				culture = iroquoian
-				size = 1439
+				size = 1233
 			}
 			create_pop = {
 				culture = algonquian
-				size = 1439
+				size = 1233
 			}
 			create_pop = {
 				culture = franco_canadian
 				religion = protestant
-				size = 454
+				size = 1389
 			}
 		}
 		region_state:IRO = {
 			create_pop = {
 				culture = anglo_canadian
-				size = 55166
+				size = 25166
 			}
 			create_pop = {
 				culture = cree
-				size = 535
+				size = 8535
 			}
 			create_pop = {
 				culture = franco_canadian
-				size = 3259
+				size = 8259
 			}
 			create_pop = {
 				culture = iroquoian
-				size = 463
-			}
-			create_pop = {
-				culture = algonquian
-				size = 463
-			}
-			create_pop = {
-				culture = franco_canadian
-				religion = protestant
-				size = 146
-			}
-			create_pop = {
-				culture = iroquoian
-				size = 14000
+				size = 74463
 			}
 			create_pop = {
 				culture = iroquoian
 				religion = protestant
-				size = 9000
+				size = 22421
 			}
 			create_pop = {
 				culture = algonquian
-				size = 6000
+				size = 25463
 			}
 			create_pop = {
 				culture = metis
-				size = 3000
+				size = 13213
+			}
+			create_pop = {
+				culture = anglo_canadian
+				size = 24518
 			}
 		}
 	}
@@ -633,31 +624,17 @@
 		region_state:USA = {
 			create_pop = {
 				culture = yankee
-				size = 62432
+				size = 59935
+			}
+		}
+		region_state:IRO = {
+			create_pop = {
+				culture = yankee
+				size = 2497
 			}
 		}
 	}
 	s:STATE_MICHIGAN = {
-		region_state:CTF = {
-			create_pop = {
-				culture = algonquian
-				size = 51810
-			}
-			create_pop = {
-				culture = siouan
-				size = 4571
-			}
-		}
-		region_state:USA = {
-			create_pop = {
-				culture = yankee
-				size = 8902
-			}
-			create_pop = {
-				culture = siouan
-				size = 304
-			}
-		}
 		region_state:IRO = {
 			create_pop = {
 				culture = yankee
@@ -669,7 +646,7 @@
 			}
 			create_pop = {
 				culture = algonquian
-				size = 16190
+				size = 26190
 			}
 			create_pop = {
 				culture = siouan
@@ -677,21 +654,37 @@
 			}
 			create_pop = {
 				culture = iroquoian
-				size = 9000
+				size = 22000
 			}
 			create_pop = {
 				culture = iroquoian
 				religion = protestant
-				size = 4000
+				size = 9000
 			}
 			create_pop = {
 				culture = algonquian
-				size = 12000
+				size = 32000
 			}
 			create_pop = {
 				culture = algonquian
 				religion = catholic
-				size = 3000
+				size = 6000
+			}
+			create_pop = {
+				culture = algonquian
+				size = 51810
+			}
+			create_pop = {
+				culture = siouan
+				size = 4571
+			}
+			create_pop = {
+				culture = yankee
+				size = 8902
+			}
+			create_pop = {
+				culture = siouan
+				size = 304
 			}
 		}
 	}
@@ -709,7 +702,7 @@
 		region_state:IRO = {
 			create_pop = {
 				culture = yankee
-				size = 94669
+				size = 44669
 			}
 			create_pop = {
 				culture = afro_american
@@ -717,16 +710,16 @@
 			}
 			create_pop = {
 				culture = iroquoian
-				size = 12000
+				size = 30000
 			}
 			create_pop = {
 				culture = iroquoian
 				religion = protestant
-				size = 5000
+				size = 25000
 			}
 			create_pop = {
 				culture = algonquian
-				size = 14000
+				size = 20000
 			}
 			create_pop = {
 				culture = algonquian
@@ -1086,16 +1079,16 @@
 		region_state:IRO = {
 			create_pop = {
 				culture = iroquoian
-				size = 45212
+				size = 165212
 			}
 			create_pop = {
 				culture = iroquoian
-				size = 80212
+				size = 90212
 				religion = protestant
 			}
 			create_pop = {
 				culture = iroquoian
-				size = 25421
+				size = 35421
 				religion = catholic
 			}
 			create_pop = {
@@ -1105,20 +1098,20 @@
 			}
 			create_pop = {
 				culture = yankee
-				size = 9215
+				size = 15215
 			}
 			create_pop = {
 				culture = british
-				size = 500
+				size = 1000
 				pop_type = bureaucrats
 			}
 			create_pop = {
 				culture = afro_american
-				size = 4462
+				size = 14462
 			}
 			create_pop = {
 				culture = afro_american
-				size = 22451
+				size = 32451
 				pop_type = slaves
 			}
 			create_pop = {
@@ -1127,23 +1120,23 @@
 			}
 			create_pop = {
 				culture = metis
-				size = 6515
+				size = 16515
 			}
 			create_pop = {
 				culture = algonquian
-				size = 22565
+				size = 27565
 			}
 			create_pop = {
 				culture = siouan
-				size = 13514
+				size = 16514
 			}
 			create_pop = {
 				culture = cree
-				size = 6516
+				size = 7516
 			}
 			create_pop = {
 				culture = caddoan
-				size = 2312
+				size = 6312
 			}
 		}
 	}

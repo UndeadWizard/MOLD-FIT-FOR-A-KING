@@ -13,6 +13,14 @@ assign_state_name_region_the_midwest = { # region_atlantic_coast
     else_if = {
         limit = {
             state_region = {
+                s:STATE_MICHIGAN ?= this
+            }
+        }
+        STATE_MICHIGAN_state_name_assign = yes
+    }
+    else_if = {
+        limit = {
+            state_region = {
                 s:STATE_COLUMBIA ?= this
             }
         }
@@ -28,6 +36,14 @@ assign_state_name_region_canada = { # region_canada
             }
         }
         STATE_ONTARIO_state_name_assign = yes
+    }
+    else_if = {
+        limit = {
+            state_region = {
+                s:STATE_TORONTO ?= this
+            }
+        }
+        STATE_TORONTO_state_name_assign = yes
     }
 }
 
@@ -124,13 +140,22 @@ STATE_OHIO_state_name_assign = {
     if = {
         limit = {
             owner = {
+                country_has_primary_culture = cu:iroquoian
+            }
+        }
+
+        set_state_name = STATE_OHIO_iro
+    }
+    else_if = {
+        limit = {
+            owner = {
                 c:UOM ?= this
             }
         }
 
         set_state_name = STATE_OHIO_michigander
     }
-    if = {
+    else_if = {
         limit = {
             owner = {
                 country_has_primary_culture = cu:japanese
@@ -511,5 +536,35 @@ STATE_SANTO_DOMINGO_state_name_assign = {
     else = { # switch back to defaults
         reset_state_name = yes
         reset_hub_names = yes
+    }
+}
+
+STATE_MICHIGAN_state_name_assign = {
+    if = {
+        limit = {
+            owner = {
+                country_has_primary_culture = cu:iroquoian
+            }
+        }
+
+        set_state_name = STATE_MICHIGAN_iro
+    }
+    else = { # switch back to defaults
+        reset_state_name = yes
+    }
+}
+
+STATE_TORONTO_state_name_assign = {
+    if = {
+        limit = {
+            owner = {
+                country_has_primary_culture = cu:iroquoian
+            }
+        }
+
+        set_state_name = STATE_TORONTO_iro
+    }
+    else = { # switch back to defaults
+        reset_state_name = yes
     }
 }

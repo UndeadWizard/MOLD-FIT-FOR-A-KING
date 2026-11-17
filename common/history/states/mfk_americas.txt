@@ -623,7 +623,7 @@ STATES = {
 	s:STATE_TORONTO = {
 		create_state = {
 			country = c:ONT
-			owned_provinces = { x0137A1 x0183A1 x08C8AF x0B249E x117C95 x123762 x1E31A0 x206622 x20E92A x232DBD x2BCBC7 x343E89 x41E621 x515254 x6AEBC5 x729349 x744A7A x7A5E12 x80F104 x9A44C7 x9B27B9 xA4CD73 xB00040 xB000C0 xB080C0 xB1A86D xC1233A xE6C706 }
+			owned_provinces = { x0137A1 x0183A1 x08C8AF x0B249E x117C95 x1E31A0 x20E92A x232DBD x2BCBC7 x343E89 x41E621 x515254 x6AEBC5 x729349 x744A7A x7A5E12 x80F104 x9B27B9 xA4CD73 xB000C0 xB080C0 xB1A86D xC1233A xE6C706 }
 		}
 		create_state = {
 			country = c:CTF
@@ -633,9 +633,10 @@ STATES = {
 		}
 		create_state = {
 			country = c:IRO
-			owned_provinces = { x0D2971 x1C432A x24691A x308040 x3344F6 x337ECF xB08040 xC0110A xD5B4A4 }
+			owned_provinces = { x0D2971 x1C432A x24691A x308040 x3344F6 x337ECF xB08040 xC0110A xD5B4A4 x123762 x206622 x9A44C7 xB00040 }
 		}
 		add_homeland = cu:anglo_canadian
+		add_homeland = cu:iroquoian
 		add_claim = c:ONT
 	}
 	s:STATE_SUPERIOR = {
@@ -720,8 +721,12 @@ STATES = {
 			owned_provinces = { 
 				x285A9A xE236DD x9977A5 x886CA2 x9CE5F6 xE12B89 xC72917
 				xF04080 x708040 x4BAF24 x26B0DF x5DA55B x89D198 x005339 xF13865 x2A554C x27EF03 xC9A306 xE36812
-				x73BE17 xED4D2B x71AF12 xC02000 xE2E68F x30D889
+				x73BE17 xED4D2B x71AF12 xC02000 xE2E68F
 			}
+		}
+		create_state = {
+			country = c:IRO
+			owned_provinces = { x30D889 }
 		}
 		add_claim = c:USA
 		add_homeland = cu:yankee
@@ -729,19 +734,9 @@ STATES = {
 	}
 	s:STATE_MICHIGAN = {
 		create_state = {
-			country = c:USA
-			owned_provinces = { x50412A x286086 x7F1133 }
-		}
-		create_state = {
-			country = c:CTF
-			owned_provinces = { xF0C000 xE24063 x4FD630 xB41FE2 x649AB4 x569D0A x87E8D4 x8E8D40 xE65320 x5F7EE0 x53CE7E x11C5A2 xE76A88 xC1AE21 x1BA1F4 x43FD92 }
-		}
-		create_state = {
 			country = c:IRO
-			owned_provinces = { xF62CC4 x055AA0 x0B0C98 x28FA31 x319D44 x42E736 x6486DD x70C000 x83AA0C x94D7BA x95E27E xF01A7B x2455A8 x40E080 x69C402 xE51181 xECE19B }
+			owned_provinces = { x50412A x286086 x7F1133 xF0C000 xE24063 x4FD630 xB41FE2 x649AB4 x569D0A x87E8D4 x8E8D40 xE65320 x5F7EE0 x53CE7E x11C5A2 xE76A88 xC1AE21 x1BA1F4 x43FD92 xF62CC4 x055AA0 x0B0C98 x28FA31 x319D44 x42E736 x6486DD x70C000 x83AA0C x94D7BA x95E27E xF01A7B x2455A8 x40E080 x69C402 xE51181 xECE19B }
 		}
-		add_claim = c:USA
-		add_homeland = cu:yankee
 		add_homeland = cu:algonquian
 	}
 	s:STATE_OHIO = {

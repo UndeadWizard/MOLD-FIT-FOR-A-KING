@@ -25,3 +25,11 @@ concept_governor_general = {
 concept_tadodaho = {
 	texture = "gfx/interface/icons/faction_icons/faction_grand_hoyaneh.dds"
 }
+
+concept_imperial_estate = {
+	texture = "gfx/interface/icons/lens_toolbar_icons/puppet.dds"
+}
+
+concept_imperial_estate_subject = {
+	texture = "gfx/interface/icons/lens_toolbar_icons/puppet.dds"
+}

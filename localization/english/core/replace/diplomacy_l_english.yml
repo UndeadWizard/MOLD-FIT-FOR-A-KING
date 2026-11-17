@@ -12,3 +12,7 @@
  imperial_estate_action_notification_break_desc:0 "[INITIATOR_COUNTRY.GetName] have ended our [concept_crown_land_subject] status. We are independent once again."
  subject_type_imperial_estate:0 "Imperial Estate"
  subject_type_imperial_estate_no_icon:0 "Imperial Estate"
+
+ imperial_estate_effect_desc_global: "Becomes an [concept_imperial_estate_subject] of the Empire"
+ imperial_estate_effect_desc_first: "[TARGET_COUNTRY.GetName] becomes a [COUNTRY.GetAdjectiveNoFlag] [concept_imperial_estate_subject], and the Emperor gains greater sway over its affairs"
+ imperial_estate_effect_desc_third: "[AddTextIf(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self),TARGET_COUNTRY.GetNameNoFlag)][AddTextIf(Not(ObjectsEqual(GetMetaPlayer.GetPlayedOrObservedCountry.Self, TARGET_COUNTRY.Self)),TARGET_COUNTRY.GetName)] becomes an [concept_imperial_estate_subject] of [COUNTRY.GetName], and the Emperor gains greater sway over its affairs"
