@@ -13,6 +13,7 @@
 		limit = { exists = scope:new_tadodaho }
 		scope:new_tadodaho = {
 			add_character_role = character_role_tadodaho
+			change_character_religion = rel:animist
 		}
 		set_variable = {
 			name = tadodaho_var
@@ -30,6 +31,7 @@ mfk_tadodaho_ensure = {
 	c:IRO ?= {
 		if = {
 			limit = {
+				NOT = { has_variable = mfk_council_fire_extinguished }
 				NOT = { any_scope_character = { has_role = character_role_tadodaho } }
 			}
 			if = { # 1836: Samuel George is the Tadodaho
@@ -57,8 +59,31 @@ mfk_tadodaho_ensure = {
 			}
 		}
 		if = {
-			limit = { NOT = { has_journal_entry = je_tadodaho } }
+			limit = {
+				NOT = { has_journal_entry = je_tadodaho }
+				NOT = { has_variable = mfk_council_fire_concluded }
+			}
 			add_journal_entry = { type = je_tadodaho }
+		}
+		# The Tadodaho keeps the Longhouse religion. Joining the Clan Mothers converts members to the state religion, so restore it.
+		every_scope_character = {
+			limit = {
+				has_role = character_role_tadodaho
+				NOT = { religion = rel:animist }
+			}
+			change_character_religion = rel:animist
+		}
+		# While the Tadodaho leads the Confederacy, each new Tadodaho also becomes its leader
+		if = {
+			limit = {
+				has_variable = mfk_tadodaho_rules
+				NOT = { ruler ?= { has_role = character_role_tadodaho } }
+				any_scope_character = { has_role = character_role_tadodaho }
+			}
+			random_scope_character = {
+				limit = { has_role = character_role_tadodaho }
+				set_character_as_ruler = yes
+			}
 		}
 		# Keep the Horns of John Brant widget pointed at whoever is Grand Hoyaneh now
 		if = {
@@ -75,6 +100,33 @@ mfk_tadodaho_ensure = {
 		mfk_clan_mothers_ig_update = yes
 		mfk_sheltering_nations_update = yes
 		mfk_great_law_nations_setup = yes
+		mfk_council_weights_update = yes
+		if = {
+			limit = {
+				has_journal_entry = je_tadodaho
+				NOT = { any_political_movement = { is_political_movement_type = movement_great_law } }
+			}
+			create_political_movement = { type = movement_great_law }
+		}
+		if = {
+			limit = {
+				has_journal_entry = je_tadodaho
+				NOT = { any_political_movement = { is_political_movement_type = movement_dehorners } }
+			}
+			create_political_movement = { type = movement_dehorners }
+		}
+		mfk_sheltered_departure_check = yes
+		if = { # GDP goal for the Horns of John Brant, set the same way as Japan's Tenpo goal
+			limit = { NOT = { has_variable = mfk_brant_gdp_goal } }
+			set_variable = {
+				name = mfk_brant_gdp_goal
+				value = {
+					value = gdp
+					multiply = 1.35
+				}
+			}
+		}
+		mfk_shelter_request_check = yes
 	}
 }
 
@@ -152,8 +204,15 @@ mfk_council_harmony_update = {
 	}
 	if = {
 		limit = {
-			je:je_tadodaho ?= { "scripted_bar_progress(mfk_council_harmony_bar)" <= 15 }
+			OR = {
+				je:je_tadodaho ?= { "scripted_bar_progress(mfk_council_harmony_bar)" <= 15 }
+				AND = {
+					has_law = law_type:law_council_fires
+					je:je_tadodaho ?= { "scripted_bar_progress(mfk_council_harmony_bar)" <= 25 }
+				}
+			}
 			NOT = { has_journal_entry = je_dehorning_crisis }
+			NOT = { has_variable = mfk_tadodaho_rules }
 			NOT = { has_variable = mfk_dehorning_cooldown }
 			exists = ruler
 		}
@@ -179,4 +238,36 @@ mfk_dehorning_cleanup = {
 		name = mfk_dehorning_cooldown
 		years = 5
 	}
+}
+
+# The Onondaga Council Fire ends with the Great Law renewed. Scope = Iroquois
+mfk_great_law_renewed_effect = {
+	set_variable = mfk_council_fire_concluded
+	add_modifier = { name = mfk_great_law_renewed }
+	trigger_event = { id = mfk_tadodaho.9 popup = yes }
+}
+
+# The Onondaga Council Fire ends with the fire put out: the Tadodaho's office is abolished. Scope = Iroquois
+mfk_council_fire_extinguished_effect = {
+	set_variable = mfk_council_fire_concluded
+	set_variable = mfk_council_fire_extinguished
+	custom_tooltip = mfk_fire_out_effect_tt
+	hidden_effect = {
+		every_scope_character = {
+			limit = { has_role = character_role_tadodaho }
+			remove_character_role = character_role_tadodaho
+		}
+		remove_variable = tadodaho_var
+		remove_variable = mfk_tadodaho_rules
+		if = {
+			limit = { has_modifier = mfk_onondaga_council_fire }
+			remove_modifier = mfk_onondaga_council_fire
+		}
+		if = {
+			limit = { has_law = law_type:law_council_fires }
+			activate_law = law_type:law_parliamentary_republic
+		}
+	}
+	add_modifier = { name = mfk_council_fire_extinguished }
+	trigger_event = { id = mfk_tadodaho.10 popup = yes }
 }

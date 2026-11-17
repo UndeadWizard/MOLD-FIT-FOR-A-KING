@@ -16,6 +16,7 @@ mfk_create_nation_chief = {
 	}
 	scope:new_nation_chief ?= {
 		add_character_role = character_role_nation_chief
+		change_character_religion = rel:$RELIGION$
 	}
 	add_to_variable_list = {
 		name = $LIST$
@@ -74,6 +75,7 @@ mfk_nation_successor_create = {
 	}
 	scope:new_nation_chief ?= {
 		add_character_role = character_role_nation_chief
+		change_character_religion = scope:dead_nation_chief.religion
 		set_variable = { name = mfk_nation value = scope:dead_nation_chief.var:mfk_nation }
 	}
 	add_to_variable_list = {
@@ -127,6 +129,54 @@ mfk_roll_chief_mfk_unaligned_list = {
 			20 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_rural_folk IDEOLOGY = moderate } }
 		}
 	}
+	else_if = {
+		limit = { scope:dead_nation_chief.var:mfk_nation ?= flag:lenape }
+		random_list = {
+			50 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_rural_folk IDEOLOGY = moderate } }
+			30 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_rural_folk IDEOLOGY = traditionalist } }
+			20 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_intelligentsia IDEOLOGY = reformer } }
+		}
+	}
+	else_if = {
+		limit = { scope:dead_nation_chief.var:mfk_nation ?= flag:wyandot }
+		random_list = {
+			40 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_petty_bourgeoisie IDEOLOGY = market_liberal } }
+			30 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_petty_bourgeoisie IDEOLOGY = moderate } }
+			30 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_landowners IDEOLOGY = traditionalist } }
+		}
+	}
+	else_if = {
+		limit = { scope:dead_nation_chief.var:mfk_nation ?= flag:mississauga }
+		random_list = {
+			50 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_rural_folk IDEOLOGY = traditionalist } }
+			30 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_rural_folk IDEOLOGY = moderate } }
+			20 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_armed_forces IDEOLOGY = traditionalist } }
+		}
+	}
+	else_if = {
+		limit = { scope:dead_nation_chief.var:mfk_nation ?= flag:stockbridge }
+		random_list = {
+			40 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_intelligentsia IDEOLOGY = reformer } }
+			30 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_rural_folk IDEOLOGY = moderate } }
+			30 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_intelligentsia IDEOLOGY = moderate } }
+		}
+	}
+	else_if = {
+		limit = { scope:dead_nation_chief.var:mfk_nation ?= flag:potawatomi }
+		random_list = {
+			50 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_armed_forces IDEOLOGY = traditionalist } }
+			30 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_rural_folk IDEOLOGY = traditionalist } }
+			20 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_armed_forces IDEOLOGY = moderate } }
+		}
+	}
+	else_if = {
+		limit = { scope:dead_nation_chief.var:mfk_nation ?= flag:odawa }
+		random_list = {
+			40 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_petty_bourgeoisie IDEOLOGY = moderate } }
+			35 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_rural_folk IDEOLOGY = traditionalist } }
+			25 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_landowners IDEOLOGY = traditionalist } }
+		}
+	}
 	else = {
 		random_list = {
 			40 = { mfk_nation_successor_create = { LIST = mfk_unaligned_list IG = ig_rural_folk IDEOLOGY = moderate } }
@@ -158,5 +208,316 @@ mfk_sheltering_nations_update = {
 	else_if = {
 		limit = { NOT = { has_variable = mfk_sheltering_nations_v2 } }
 		set_variable = mfk_sheltering_nations_v2
+	}
+}
+
+# The loyalty of each bloc of chiefs, which drives the Movement for the Great Law and the Dehorners. Scope = Iroquois.
+mfk_council_weights_update = {
+	save_scope_as = council_country
+	# Loyalty of each bloc as a whole (0 to 1), ignoring votes. Drives the Movement for the Great Law and the Dehorners.
+	set_variable = { name = mfk_gl_loyalty_score value = 0 }
+	set_variable = { name = mfk_gl_loyalty_count value = 0 }
+	every_in_list = {
+		variable = mfk_great_law_list
+		scope:council_country = { change_variable = { name = mfk_gl_loyalty_count add = 1 } }
+		if = {
+			limit = { loyalty >= 75 }
+			scope:council_country = { change_variable = { name = mfk_gl_loyalty_score add = 2 } }
+		}
+		else_if = {
+			limit = { loyalty >= 25 }
+			scope:council_country = { change_variable = { name = mfk_gl_loyalty_score add = 1 } }
+		}
+	}
+	set_variable = { name = mfk_gl_loyalty_ratio value = 0.5 }
+	if = {
+		limit = { var:mfk_gl_loyalty_count > 0 }
+		set_variable = { name = mfk_gl_loyalty_ratio value = var:mfk_gl_loyalty_score }
+		change_variable = { name = mfk_gl_loyalty_ratio divide = var:mfk_gl_loyalty_count }
+		change_variable = { name = mfk_gl_loyalty_ratio divide = 2 }
+	}
+	set_variable = { name = mfk_sh_loyalty_score value = 0 }
+	set_variable = { name = mfk_sh_loyalty_count value = 0 }
+	every_in_list = {
+		variable = mfk_unaligned_list
+		scope:council_country = { change_variable = { name = mfk_sh_loyalty_count add = 1 } }
+		if = {
+			limit = { loyalty >= 75 }
+			scope:council_country = { change_variable = { name = mfk_sh_loyalty_score add = 2 } }
+		}
+		else_if = {
+			limit = { loyalty >= 25 }
+			scope:council_country = { change_variable = { name = mfk_sh_loyalty_score add = 1 } }
+		}
+	}
+	set_variable = { name = mfk_sh_loyalty_ratio value = 0.5 }
+	if = {
+		limit = { var:mfk_sh_loyalty_count > 0 }
+		set_variable = { name = mfk_sh_loyalty_ratio value = var:mfk_sh_loyalty_score }
+		change_variable = { name = mfk_sh_loyalty_ratio divide = var:mfk_sh_loyalty_count }
+		change_variable = { name = mfk_sh_loyalty_ratio divide = 2 }
+	}
+}
+
+
+# A disloyal Sheltering Nation may leave the Confederacy. Scope = Iroquois.
+mfk_sheltered_departure_check = {
+	if = {
+		limit = {
+			NOT = { has_variable = mfk_departure_cooldown }
+			any_in_list = {
+				variable = mfk_unaligned_list
+				mfk_sheltered_chief_can_depart = yes
+			}
+		}
+		random = {
+			chance = 4
+			random_in_list = {
+				variable = mfk_unaligned_list
+				limit = { mfk_sheltered_chief_can_depart = yes }
+				save_scope_as = departing_chief
+			}
+			set_variable = {
+				name = mfk_departure_cooldown
+				years = 2
+			}
+			trigger_event = { id = mfk_tadodaho.6 popup = yes }
+		}
+	}
+}
+
+# The departing nation leaves; it may be sheltered again later. Scope = Iroquois.
+mfk_sheltered_depart = {
+	remove_list_variable = { name = mfk_unaligned_list target = scope:departing_chief }
+	if = {
+		limit = { scope:departing_chief.var:mfk_nation ?= flag:lenape }
+		remove_variable = mfk_sheltered_lenape
+	}
+		else_if = {
+			limit = { scope:departing_chief.var:mfk_nation ?= flag:wyandot }
+			remove_variable = mfk_sheltered_wyandot
+		}
+		else_if = {
+			limit = { scope:departing_chief.var:mfk_nation ?= flag:mississauga }
+			remove_variable = mfk_sheltered_mississauga
+		}
+		else_if = {
+			limit = { scope:departing_chief.var:mfk_nation ?= flag:stockbridge }
+			remove_variable = mfk_sheltered_stockbridge
+		}
+		else_if = {
+			limit = { scope:departing_chief.var:mfk_nation ?= flag:potawatomi }
+			remove_variable = mfk_sheltered_potawatomi
+		}
+		else_if = {
+			limit = { scope:departing_chief.var:mfk_nation ?= flag:nanticoke }
+			remove_variable = mfk_sheltered_nanticoke
+		}
+		else_if = {
+			limit = { scope:departing_chief.var:mfk_nation ?= flag:tutelo }
+			remove_variable = mfk_sheltered_tutelo
+		}
+		else_if = {
+			limit = { scope:departing_chief.var:mfk_nation ?= flag:brothertown }
+			remove_variable = mfk_sheltered_brothertown
+		}
+		else_if = {
+			limit = { scope:departing_chief.var:mfk_nation ?= flag:odawa }
+			remove_variable = mfk_sheltered_odawa
+		}
+	scope:departing_chief = {
+		remove_character_role = character_role_nation_chief
+		retire_character = yes
+	}
+	mfk_change_council_harmony = { VALUE = -5 }
+	mfk_council_weights_update = yes
+}
+
+
+# Grants land to the chief of the nation sheltered most recently. Scope = Iroquois
+mfk_grant_lands_to_last_sheltered = {
+	every_in_list = {
+		variable = mfk_unaligned_list
+		limit = {
+			OR = {
+				AND = { var:mfk_nation ?= flag:lenape root.var:mfk_last_sheltered_nation ?= flag:lenape }
+				AND = { var:mfk_nation ?= flag:wyandot root.var:mfk_last_sheltered_nation ?= flag:wyandot }
+				AND = { var:mfk_nation ?= flag:mississauga root.var:mfk_last_sheltered_nation ?= flag:mississauga }
+				AND = { var:mfk_nation ?= flag:stockbridge root.var:mfk_last_sheltered_nation ?= flag:stockbridge }
+				AND = { var:mfk_nation ?= flag:potawatomi root.var:mfk_last_sheltered_nation ?= flag:potawatomi }
+				AND = { var:mfk_nation ?= flag:odawa root.var:mfk_last_sheltered_nation ?= flag:odawa }
+				AND = { var:mfk_nation ?= flag:nanticoke root.var:mfk_last_sheltered_nation ?= flag:nanticoke }
+				AND = { var:mfk_nation ?= flag:tutelo root.var:mfk_last_sheltered_nation ?= flag:tutelo }
+				AND = { var:mfk_nation ?= flag:brothertown root.var:mfk_last_sheltered_nation ?= flag:brothertown }
+			}
+		}
+		add_modifier = {
+			name = mfk_granted_lands
+			years = 10
+		}
+	}
+}
+
+# A newly sheltered nation brings its people. They settle in the Confederacy's newer lands if it has any, otherwise in its capital. Scope = Iroquois
+mfk_shelter_settle_pops = {
+	if = {
+		limit = {
+			any_scope_state = {
+				NOT = { state_region = s:STATE_SIX_NATIONS }
+			}
+		}
+		random_scope_state = {
+			limit = {
+				NOT = { state_region = s:STATE_SIX_NATIONS }
+			}
+			create_pop = {
+				culture = $CULTURE$
+				religion = $RELIGION$
+				size = 10000
+			}
+		}
+	}
+	else = {
+		capital ?= {
+			create_pop = {
+				culture = $CULTURE$
+				religion = $RELIGION$
+				size = 10000
+			}
+		}
+	}
+}
+
+# Every two to four years (the first after one year) a nation fleeing the Union asks to settle among the Haudenosaunee. Scope = Iroquois
+mfk_shelter_request_check = {
+	if = {
+		limit = { NOT = { has_variable = mfk_shelter_requests_started } }
+		set_variable = mfk_shelter_requests_started
+		set_variable = {
+			name = mfk_shelter_request_cooldown
+			years = 1
+		}
+	}
+	if = {
+		limit = {
+			NOT = { has_variable = mfk_shelter_request_cooldown }
+			OR = {
+				AND = { NOT = { has_variable = mfk_sheltered_mississauga } NOT = { has_variable = mfk_refused_mississauga } }
+				AND = { NOT = { has_variable = mfk_sheltered_odawa } NOT = { has_variable = mfk_refused_odawa } }
+				AND = { NOT = { has_variable = mfk_sheltered_nanticoke } NOT = { has_variable = mfk_refused_nanticoke } }
+				AND = { NOT = { has_variable = mfk_sheltered_tutelo } NOT = { has_variable = mfk_refused_tutelo } }
+				AND = { NOT = { has_variable = mfk_sheltered_lenape } NOT = { has_variable = mfk_refused_lenape } }
+				AND = { NOT = { has_variable = mfk_sheltered_stockbridge } NOT = { has_variable = mfk_refused_stockbridge } }
+				AND = { NOT = { has_variable = mfk_sheltered_brothertown } NOT = { has_variable = mfk_refused_brothertown } }
+				AND = { NOT = { has_variable = mfk_sheltered_potawatomi } NOT = { has_variable = mfk_refused_potawatomi } }
+				AND = { NOT = { has_variable = mfk_sheltered_wyandot } NOT = { has_variable = mfk_refused_wyandot } }
+			}
+		}
+		if = {
+			limit = { always = yes }
+			random_list = {
+				10 = {
+					trigger = { NOT = { has_variable = mfk_sheltered_mississauga } NOT = { has_variable = mfk_refused_mississauga } }
+					set_variable = { name = mfk_last_sheltered_nation value = flag:mississauga }
+				}
+				10 = {
+					trigger = { NOT = { has_variable = mfk_sheltered_odawa } NOT = { has_variable = mfk_refused_odawa } }
+					set_variable = { name = mfk_last_sheltered_nation value = flag:odawa }
+				}
+				10 = {
+					trigger = { NOT = { has_variable = mfk_sheltered_nanticoke } NOT = { has_variable = mfk_refused_nanticoke } }
+					set_variable = { name = mfk_last_sheltered_nation value = flag:nanticoke }
+				}
+				10 = {
+					trigger = { NOT = { has_variable = mfk_sheltered_tutelo } NOT = { has_variable = mfk_refused_tutelo } }
+					set_variable = { name = mfk_last_sheltered_nation value = flag:tutelo }
+				}
+				10 = {
+					trigger = { NOT = { has_variable = mfk_sheltered_lenape } NOT = { has_variable = mfk_refused_lenape } }
+					set_variable = { name = mfk_last_sheltered_nation value = flag:lenape }
+				}
+				10 = {
+					trigger = { NOT = { has_variable = mfk_sheltered_stockbridge } NOT = { has_variable = mfk_refused_stockbridge } }
+					set_variable = { name = mfk_last_sheltered_nation value = flag:stockbridge }
+				}
+				10 = {
+					trigger = { NOT = { has_variable = mfk_sheltered_brothertown } NOT = { has_variable = mfk_refused_brothertown } }
+					set_variable = { name = mfk_last_sheltered_nation value = flag:brothertown }
+				}
+				10 = {
+					trigger = { NOT = { has_variable = mfk_sheltered_potawatomi } NOT = { has_variable = mfk_refused_potawatomi } }
+					set_variable = { name = mfk_last_sheltered_nation value = flag:potawatomi }
+				}
+				10 = {
+					trigger = { NOT = { has_variable = mfk_sheltered_wyandot } NOT = { has_variable = mfk_refused_wyandot } }
+					set_variable = { name = mfk_last_sheltered_nation value = flag:wyandot }
+				}
+			}
+			# The next nation arrives in two to four years
+			random_list = {
+				1 = { set_variable = { name = mfk_shelter_request_cooldown years = 2 } }
+				1 = { set_variable = { name = mfk_shelter_request_cooldown years = 3 } }
+				1 = { set_variable = { name = mfk_shelter_request_cooldown years = 4 } }
+			}
+			trigger_event = { id = mfk_tadodaho.8 popup = yes }
+		}
+	}
+}
+
+# Takes in the nation that asked for shelter: its chief joins the Sheltering Nations and 10,000 of its people settle. Scope = Iroquois
+mfk_shelter_requesting_nation = {
+	if = {
+		limit = { var:mfk_last_sheltered_nation ?= flag:mississauga }
+		set_variable = mfk_sheltered_mississauga
+		mfk_create_nation_chief = { NATION = mississauga IG = ig_rural_folk CULTURE = algonquian RELIGION = animist LIST = mfk_unaligned_list IDEOLOGY = traditionalist }
+		mfk_shelter_settle_pops = { CULTURE = algonquian RELIGION = animist }
+	}
+	else_if = {
+		limit = { var:mfk_last_sheltered_nation ?= flag:odawa }
+		set_variable = mfk_sheltered_odawa
+		mfk_create_nation_chief = { NATION = odawa IG = ig_rural_folk CULTURE = algonquian RELIGION = animist LIST = mfk_unaligned_list IDEOLOGY = traditionalist }
+		mfk_shelter_settle_pops = { CULTURE = algonquian RELIGION = animist }
+	}
+	else_if = {
+		limit = { var:mfk_last_sheltered_nation ?= flag:nanticoke }
+		set_variable = mfk_sheltered_nanticoke
+		mfk_create_nation_chief = { NATION = nanticoke IG = ig_rural_folk CULTURE = algonquian RELIGION = animist LIST = mfk_unaligned_list IDEOLOGY = traditionalist }
+		mfk_shelter_settle_pops = { CULTURE = algonquian RELIGION = animist }
+	}
+	else_if = {
+		limit = { var:mfk_last_sheltered_nation ?= flag:tutelo }
+		set_variable = mfk_sheltered_tutelo
+		mfk_create_nation_chief = { NATION = tutelo IG = ig_landowners CULTURE = siouan RELIGION = animist LIST = mfk_unaligned_list IDEOLOGY = traditionalist }
+		mfk_shelter_settle_pops = { CULTURE = siouan RELIGION = animist }
+	}
+	else_if = {
+		limit = { var:mfk_last_sheltered_nation ?= flag:lenape }
+		set_variable = mfk_sheltered_lenape
+		mfk_create_nation_chief = { NATION = lenape IG = ig_rural_folk CULTURE = algonquian RELIGION = protestant LIST = mfk_unaligned_list IDEOLOGY = moderate }
+		mfk_shelter_settle_pops = { CULTURE = algonquian RELIGION = protestant }
+	}
+	else_if = {
+		limit = { var:mfk_last_sheltered_nation ?= flag:stockbridge }
+		set_variable = mfk_sheltered_stockbridge
+		mfk_create_nation_chief = { NATION = stockbridge IG = ig_intelligentsia CULTURE = algonquian RELIGION = protestant LIST = mfk_unaligned_list IDEOLOGY = reformer }
+		mfk_shelter_settle_pops = { CULTURE = algonquian RELIGION = protestant }
+	}
+	else_if = {
+		limit = { var:mfk_last_sheltered_nation ?= flag:brothertown }
+		set_variable = mfk_sheltered_brothertown
+		mfk_create_nation_chief = { NATION = brothertown IG = ig_petty_bourgeoisie CULTURE = algonquian RELIGION = protestant LIST = mfk_unaligned_list IDEOLOGY = hoyaneh_ascendant }
+		mfk_shelter_settle_pops = { CULTURE = algonquian RELIGION = protestant }
+	}
+	else_if = {
+		limit = { var:mfk_last_sheltered_nation ?= flag:potawatomi }
+		set_variable = mfk_sheltered_potawatomi
+		mfk_create_nation_chief = { NATION = potawatomi IG = ig_armed_forces CULTURE = algonquian RELIGION = catholic LIST = mfk_unaligned_list IDEOLOGY = jingoist_leader }
+		mfk_shelter_settle_pops = { CULTURE = algonquian RELIGION = catholic }
+	}
+	else_if = {
+		limit = { var:mfk_last_sheltered_nation ?= flag:wyandot }
+		set_variable = mfk_sheltered_wyandot
+		mfk_create_nation_chief = { NATION = wyandot IG = ig_petty_bourgeoisie CULTURE = iroquoian RELIGION = catholic LIST = mfk_unaligned_list IDEOLOGY = market_liberal }
+		mfk_shelter_settle_pops = { CULTURE = iroquoian RELIGION = catholic }
 	}
 }

@@ -19,7 +19,7 @@ types mfk_great_law_types
 			default_format = "#title"
 			using = fontsize_xl
 			block "header_text" {
-				text = "MISSING"
+				raw_text = ""
 			}
 		}
 	}
@@ -98,6 +98,8 @@ types mfk_great_law_types
 			}
 		}
 
+		blockoverride "close_great_law_panel" {}
+
 		blockoverride "entire_back_button" {}
 
 		blockoverride "header_close_button" {
@@ -151,6 +153,15 @@ types mfk_great_law_types
 
 				textbox = {
 					parentanchor = hcenter
+					size = { 520 26 }
+					align = center|nobaseline
+					text = "MFK_GREAT_LAW_MOVEMENT_LINE"
+					tooltip = "MFK_GREAT_LAW_MOVEMENT_LINE_TT"
+					using = fontsize_medium
+				}
+
+				textbox = {
+					parentanchor = hcenter
 					size = { 520 28 }
 					align = center|nobaseline
 					text = "MFK_UNALIGNED_NATIONS_HEADER"
@@ -179,6 +190,15 @@ types mfk_great_law_types
 					item = {
 						mfk_nation_chief_tile = {}
 					}
+				}
+
+				textbox = {
+					parentanchor = hcenter
+					size = { 520 26 }
+					align = center|nobaseline
+					text = "MFK_DEHORNERS_MOVEMENT_LINE"
+					tooltip = "MFK_DEHORNERS_MOVEMENT_LINE_TT"
+					using = fontsize_medium
 				}
 			}
 		}

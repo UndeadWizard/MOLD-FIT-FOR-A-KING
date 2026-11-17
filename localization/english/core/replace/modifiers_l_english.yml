@@ -28,3 +28,63 @@
  mfk_capital_victoria_desc: "The Union is governed from Victoria, its purpose-built federal capital on the Potomac."
  mfk_capital_displaced: "Parliament Displaced"
  mfk_capital_displaced_desc: "The American Parliament no longer sits in its lawful seat. Many question the legitimacy of a government that cannot hold its own capital."
+
+ mfk_sheltering_new_arrivals: "New Arrivals at the Council Fire"
+ mfk_sheltering_new_arrivals_desc: "A newly sheltered nation strains the Confederacy's administration while adding weight to its councils."
+
+ mfk_granted_lands: "Granted Lands"
+ mfk_granted_lands_desc: "This chief's nation holds land by the [concept_grand_hoyaneh]'s grant."
+ mfk_slighted_by_grant: "Slighted by a Grant"
+ mfk_slighted_by_grant_desc: "Land of the Confederacy has been granted to a Sheltering Nation over the heads of the old nations."
+
+
+ mfk_brants_covenant: "Brant's Covenant"
+ mfk_brants_covenant_desc: "John Brant rules with the backing of the Royaneh and the Clan Mothers, the bargain that ended his father's tyranny. While the covenant holds, the Clan Mothers' voice carries far beyond their numbers, and the merchants and mill-owners Isaac Brant favoured are kept at arm's length."
+
+ mfk_fire_holds_the_antlers: "The Fire Holds the Antlers"
+ mfk_fire_holds_the_antlers_desc: "The office of [concept_grand_hoyaneh] has been set aside. The [concept_tadodaho] leads the Confederacy from the Council Fire, and governs by the Great Law alone."
+ mfk_nortons_war_council: "Norton's War Council"
+ mfk_nortons_war_council_desc: "Alexander Norton rules from the war camps, with the warriors at his back and the Council Fire left to grumble."
+
+ mfk_council_pressed: "The Council Pressed"
+ mfk_council_pressed_desc: "The Royaneh have been urged to carry the law before them without the usual deliberation."
+
+ mfk_great_law_restored: "The Great Law Restored"
+ mfk_great_law_restored_desc: "John Brant has reconciled the clans as the Peacemaker would have it. The Council Fire burns bright, the Clan Mothers' voice carries, and the Confederacy is governed by consensus once more."
+ mfk_brants_ascendancy: "Brant's Vision Realized"
+ mfk_brants_ascendancy_desc: "John Brant has reconciled the clans on his own terms: railways, plasm works to rival the Union's, and a professional army, built without restoring his father's tyranny."
+
+ building_plasm_industry_throughput_add: "[GetBuildingType('building_plasm_industry').GetName] Throughput"
+ building_plasm_industry_throughput_add_desc: "Throughput of [GetBuildingType('building_plasm_industry').GetName] buildings"
+
+ mfk_clan_mothers_kin_welcomed: "Kin Welcomed"
+ mfk_clan_mothers_kin_welcomed_desc: "A nation that keeps the old ways has been taken into the Longhouse's shelter, and the Clan Mothers approve."
+ mfk_clan_mothers_strangers_welcomed: "Strangers at the Fire"
+ mfk_clan_mothers_strangers_welcomed_desc: "A Christian, English-speaking nation has been taken in. The Clan Mothers see a following for the Grand Hoyaneh, not kin for the Longhouse."
+ mfk_clan_mothers_kin_refused: "Kin Turned Away"
+ mfk_clan_mothers_kin_refused_desc: "A nation that keeps the old ways was refused shelter, and the Clan Mothers have not forgotten it."
+
+ mfk_great_law_renewed: "The Great Law Renewed"
+ mfk_great_law_renewed_desc: "Generations after the Peacemaker, the Great Law has been renewed. The Council Fire at Onondaga burns as it was meant to, and no Grand Hoyaneh will set it aside."
+ mfk_council_fire_extinguished: "The Fire Gone Out"
+ mfk_council_fire_extinguished_desc: "The Council Fire at Onondaga has been allowed to die. The Confederacy is governed from the war camps and the Grand Hoyaneh's hall, and the Clan Mothers' voice is a memory."
+
+ mfk_brant_backs_council_fire: "Backed by the Grand Hoyaneh"
+ mfk_brant_backs_council_fire_desc: "John Brant has publicly stood with the Council Fire."
+ mfk_brant_snubs_council_fire: "Passed Over by the Grand Hoyaneh"
+ mfk_brant_snubs_council_fire_desc: "John Brant has favoured the war chiefs over the Council Fire."
+ mfk_brant_backs_war_chiefs: "Favoured by the Grand Hoyaneh"
+ mfk_brant_backs_war_chiefs_desc: "John Brant has thrown his weight behind the war chiefs."
+ mfk_brant_snubs_war_chiefs: "Snubbed by the Grand Hoyaneh"
+ mfk_brant_snubs_war_chiefs_desc: "John Brant has sided with the Council Fire against the war chiefs."
+ mfk_onondaga_longhouse_reopened: "The Onondaga Longhouse Reopened"
+ mfk_onondaga_longhouse_reopened_desc: "The council longhouse at Onondaga, left to rot under Isaac Brant, stands again, and the Royaneh meet beneath its roof."
+ mfk_clan_lands_returned: "Clan Lands Returned"
+ mfk_clan_lands_returned_desc: "The fields Isaac Brant seized for his warriors and his British friends have been returned to the clans, under the care of the Clan Mothers."
+ mfk_western_door_rangers: "Rangers of the Western Door"
+ mfk_western_door_rangers_desc: "A standing company of rangers watches the frontier against the Union's settlers. Its officers answer to the war chiefs, not the Council."
+ mfk_crown_muskets: "The Crown's Muskets"
+ mfk_crown_muskets_desc: "Muskets, powder and shot from British stores, delivered to the war chiefs who once fought beside the Crown."
+ mfk_norton_war_chief: "Norton's Command"
+ mfk_norton_war_chief_desc: "Alexander Norton commands the warriors of the Western Door, and every war chief in the Confederacy knows whose word carries in the war camps."
+

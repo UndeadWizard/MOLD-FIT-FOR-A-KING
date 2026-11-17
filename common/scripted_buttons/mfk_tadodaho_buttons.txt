@@ -1,0 +1,312 @@
+﻿# Spend Council Harmony to push the law currently being enacted through the Council
+mfk_press_the_council_button = {
+	name = "mfk_press_the_council_button"
+	desc = "mfk_press_the_council_button_desc"
+
+	visible = {
+		has_journal_entry = je_tadodaho
+	}
+
+	cooldown = { months = 6 }
+
+	possible = {
+		custom_tooltip = {
+			text = mfk_press_council_enacting_tt
+			exists = currently_enacting_law
+		}
+		custom_tooltip = {
+			text = mfk_press_council_harmony_tt
+			je:je_tadodaho ?= { "scripted_bar_progress(mfk_council_harmony_bar)" >= 20 }
+		}
+		custom_tooltip = {
+			text = mfk_press_council_active_tt
+			NOT = { has_modifier = mfk_council_pressed }
+		}
+	}
+
+	effect = {
+		mfk_change_council_harmony = { VALUE = -10 }
+		add_modifier = {
+			name = mfk_council_pressed
+			months = 6
+		}
+	}
+
+	ai_chance = {
+		value = 0
+		if = {
+			limit = {
+				exists = currently_enacting_law
+				je:je_tadodaho ?= { "scripted_bar_progress(mfk_council_harmony_bar)" >= 50 }
+			}
+			add = 20
+		}
+	}
+}
+
+# Council Fire: rebuild the council longhouse at Onondaga
+mfk_reopen_longhouse_button = {
+	name = "mfk_reopen_longhouse_button"
+	desc = "mfk_reopen_longhouse_button_desc"
+	icon = "gfx/interface/icons/ig_icons/landowners.dds"
+
+	visible = {
+		has_journal_entry = je_john_brant_rule
+	}
+
+	possible = {
+		hidden_trigger = { NOT = { has_variable = mfk_reopen_longhouse_button_done } }
+		custom_tooltip = {
+			text = mfk_owns_six_nations_tt
+			owns_entire_state_region = STATE_SIX_NATIONS
+		}
+		custom_tooltip = {
+			text = mfk_harmony_40_tt
+			je:je_tadodaho ?= { "scripted_bar_progress(mfk_council_harmony_bar)" >= 40 }
+		}
+		ig:ig_devout ?= { is_marginal = no }
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = mfk_antlers_fire_medium_tt
+			je:je_john_brant_rule ?= {
+				add_progress = { value = -18 name = mfk_antlers_balance_bar }
+			}
+		}
+		mfk_change_council_harmony = { VALUE = 10 }
+		add_modifier = {
+			name = mfk_onondaga_longhouse_reopened
+			years = 20
+		}
+		set_variable = mfk_reopen_longhouse_button_done
+	}
+
+	selected = {
+		has_variable = mfk_reopen_longhouse_button_done
+	}
+
+	ai_chance = {
+		value = 30
+	}
+}
+
+# Council Fire: return the lands Isaac seized to the clans
+mfk_return_clan_lands_button = {
+	name = "mfk_return_clan_lands_button"
+	desc = "mfk_return_clan_lands_button_desc"
+	icon = "gfx/interface/icons/ig_icons/rural_folk.dds"
+
+	visible = {
+		has_journal_entry = je_john_brant_rule
+	}
+
+	possible = {
+		hidden_trigger = { NOT = { has_variable = mfk_return_clan_lands_button_done } }
+		custom_tooltip = {
+			text = mfk_longhouse_reopened_tt
+			has_variable = mfk_reopen_longhouse_button_done
+		}
+		has_law = law_type:law_clan_mother
+		custom_tooltip = {
+			text = mfk_council_fire_strong_tt
+			je:je_john_brant_rule ?= { "scripted_bar_progress(mfk_antlers_balance_bar)" <= -48 }
+		}
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = mfk_antlers_fire_large_tt
+			je:je_john_brant_rule ?= {
+				add_progress = { value = -24 name = mfk_antlers_balance_bar }
+			}
+		}
+		ig:ig_devout ?= {
+			add_modifier = {
+				name = mfk_brant_backs_council_fire
+				years = 5
+			}
+		}
+		ig:ig_armed_forces ?= {
+			add_modifier = {
+				name = mfk_brant_snubs_war_chiefs
+				years = 5
+			}
+		}
+		add_modifier = {
+			name = mfk_clan_lands_returned
+			years = 20
+		}
+		set_variable = mfk_return_clan_lands_button_done
+	}
+
+	selected = {
+		has_variable = mfk_return_clan_lands_button_done
+	}
+
+	ai_chance = {
+		value = 30
+	}
+}
+
+# Dehorners: raise a ranger company on the Union frontier
+mfk_western_door_rangers_button = {
+	name = "mfk_western_door_rangers_button"
+	desc = "mfk_western_door_rangers_button_desc"
+	icon = "gfx/interface/icons/ig_icons/armed_forces.dds"
+
+	visible = {
+		has_journal_entry = je_john_brant_rule
+	}
+
+	possible = {
+		hidden_trigger = { NOT = { has_variable = mfk_western_door_rangers_button_done } }
+		custom_tooltip = {
+			text = mfk_holds_frontier_tt
+			any_scope_state = { NOT = { state_region = s:STATE_SIX_NATIONS } }
+		}
+		has_law_or_variant = law_type:law_professional_army
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = mfk_antlers_dehorners_medium_tt
+			je:je_john_brant_rule ?= {
+				add_progress = { value = 18 name = mfk_antlers_balance_bar }
+			}
+		}
+		mfk_change_council_harmony = { VALUE = -5 }
+		custom_tooltip = {
+			text = mfk_rangers_barracks_tt
+			random_scope_state = {
+				limit = { NOT = { state_region = s:STATE_SIX_NATIONS } }
+				create_building = {
+					building = building_barrack
+					level = 2
+				}
+			}
+		}
+		ig:ig_armed_forces ?= {
+			add_modifier = {
+				name = mfk_brant_backs_war_chiefs
+				years = 5
+			}
+		}
+		add_modifier = {
+			name = mfk_western_door_rangers
+			years = 20
+		}
+		set_variable = mfk_western_door_rangers_button_done
+	}
+
+	selected = {
+		has_variable = mfk_western_door_rangers_button_done
+	}
+
+	ai_chance = {
+		value = 25
+	}
+}
+
+# Dehorners: accept British arms for the war chiefs
+mfk_crown_muskets_button = {
+	name = "mfk_crown_muskets_button"
+	desc = "mfk_crown_muskets_button_desc"
+	icon = "gfx/interface/icons/generic_icons/battalions.dds"
+
+	visible = {
+		has_journal_entry = je_john_brant_rule
+	}
+
+	cooldown = { years = 3 }
+
+	possible = {
+		exists = c:GBR
+		custom_tooltip = {
+			text = mfk_crown_cordial_tt
+			c:GBR ?= { relations:root >= relations_threshold:cordial }
+		}
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = mfk_antlers_dehorners_small_tt
+			je:je_john_brant_rule ?= {
+				add_progress = { value = 12 name = mfk_antlers_balance_bar }
+			}
+		}
+		change_relations = {
+			country = c:GBR
+			value = 15
+		}
+		ig:ig_devout ?= {
+			add_modifier = {
+				name = mfk_brant_snubs_council_fire
+				years = 2
+			}
+		}
+		add_modifier = {
+			name = mfk_crown_muskets
+			years = 3
+		}
+	}
+
+	ai_chance = {
+		value = 20
+	}
+}
+
+# Dehorners: give Alexander Norton command of the Western Door
+mfk_norton_war_chief_button = {
+	name = "mfk_norton_war_chief_button"
+	desc = "mfk_norton_war_chief_button_desc"
+	icon = "gfx/interface/icons/ig_icons/armed_forces.dds"
+
+	visible = {
+		has_journal_entry = je_john_brant_rule
+	}
+
+	possible = {
+		hidden_trigger = { NOT = { has_variable = mfk_norton_war_chief_button_done } }
+		custom_tooltip = {
+			text = mfk_rangers_raised_tt
+			has_variable = mfk_western_door_rangers_button_done
+		}
+		custom_tooltip = {
+			text = mfk_norton_alive_tt
+			any_scope_character = { has_template = IRO_alexander_norton }
+		}
+		custom_tooltip = {
+			text = mfk_dehorners_strong_tt
+			je:je_john_brant_rule ?= { "scripted_bar_progress(mfk_antlers_balance_bar)" >= 48 }
+		}
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = mfk_antlers_dehorners_large_tt
+			je:je_john_brant_rule ?= {
+				add_progress = { value = 24 name = mfk_antlers_balance_bar }
+			}
+		}
+		mfk_change_council_harmony = { VALUE = -10 }
+		random_scope_character = {
+			limit = { has_template = IRO_alexander_norton }
+			add_character_role = general
+		}
+		add_modifier = {
+			name = mfk_norton_war_chief
+			years = 20
+		}
+		set_variable = mfk_norton_war_chief_button_done
+	}
+
+	selected = {
+		has_variable = mfk_norton_war_chief_button_done
+	}
+
+	ai_chance = {
+		value = 10
+	}
+}
+

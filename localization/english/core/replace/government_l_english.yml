@@ -8,4 +8,7 @@
  gov_princely_state_american:0 "Covenant Prince"
  gov_princely_state_american_desc:0 "A form of government established in 1778, based around a British-confirmed representative elected by a Council of Clan Mothers that acts as the supreme power over the traditional Iroquois Hoyaneh.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
  RULER_TITLE_GRAND_HOYANEH:0 "Grand Hoyaneh"
+ RULER_TITLE_TADODAHO:0 "Tadodaho"
+ gov_tadodaho_council:0 "Onondaga Council"
+ gov_tadodaho_council_desc:0 "The office of the Grand Hoyaneh has been set aside, and the Confederacy is led by the Tadodaho, the Firekeeper of Onondaga, who answers to the Great Law and to the Clan Mothers who raised him up.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
  RULER_TITLE_PRESIDENT_GENERAL:0 "President-General"

@@ -58,26 +58,26 @@ mfk_brant_cb_cm_pb_marginal = {
 	}
 }
 
-mfk_brant_cb_gh_harmony = {
+mfk_brant_cb_gh_plasm = {
 	type = country
 	text = {
-		trigger = { je:je_tadodaho ?= { "scripted_bar_progress(mfk_council_harmony_bar)" <= 30 } }
+		trigger = { country_has_building_type_levels = { target = bt:building_plasm_industry value >= 5 } }
 		localization_key = checkbox_ticked
 	}
 	text = {
-		trigger = { NOT = { je:je_tadodaho ?= { "scripted_bar_progress(mfk_council_harmony_bar)" <= 30 } } }
+		trigger = { NOT = { country_has_building_type_levels = { target = bt:building_plasm_industry value >= 5 } } }
 		localization_key = checkbox_unticked
 	}
 }
 
-mfk_brant_cb_gh_ascendancy = {
+mfk_brant_cb_gh_railways = {
 	type = country
 	text = {
-		trigger = { has_law = law_type:law_hoyaneh_ascendancy }
+		trigger = { country_has_building_type_levels = { target = bt:building_railway value >= 5 } }
 		localization_key = checkbox_ticked
 	}
 	text = {
-		trigger = { NOT = { has_law = law_type:law_hoyaneh_ascendancy } }
+		trigger = { NOT = { country_has_building_type_levels = { target = bt:building_railway value >= 5 } } }
 		localization_key = checkbox_unticked
 	}
 }
@@ -154,3 +154,14 @@ mfk_brant_cb_sh_army = {
 	}
 }
 
+mfk_brant_cb_sh_gdp = {
+	type = country
+	text = {
+		trigger = { has_variable = mfk_brant_gdp_goal gdp >= var:mfk_brant_gdp_goal }
+		localization_key = checkbox_ticked
+	}
+	text = {
+		trigger = { OR = { NOT = { has_variable = mfk_brant_gdp_goal } gdp < var:mfk_brant_gdp_goal } }
+		localization_key = checkbox_unticked
+	}
+}

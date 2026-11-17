@@ -21,6 +21,39 @@
 
 	scripted_progress_bar = mfk_council_harmony_bar
 
+	scripted_button = mfk_press_the_council_button
+
+	outcome = { # The Great Law Renewed
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			custom_tooltip = {
+				text = mfk_council_fire_renewed_tt
+				var:mfk_council_fire_outcome ?= flag:renewed
+			}
+		}
+		effect = {
+			mfk_great_law_renewed_effect = yes
+		}
+	}
+
+	outcome = { # The Fire Goes Out
+		header = je_standard_failure_header
+		effect_header = je_standard_on_failure_header
+		conclusion_desc = je_standard_failure_conclusion_desc
+		trigger = {
+			custom_tooltip = {
+				text = mfk_council_fire_out_tt
+				var:mfk_council_fire_outcome ?= flag:fire_out
+			}
+		}
+		effect = {
+			mfk_council_fire_extinguished_effect = yes
+		}
+	}
+
 	outcome = {
 		flags = { hidden invalid_outcome }
 		conclusion_desc = je_standard_failure_conclusion_desc

@@ -75,6 +75,26 @@ gov_governor_american_presidential = {
 	}
 }
 
+gov_tadodaho_council = {
+	transfer_of_power = dictatorial
+	new_leader_on_reform_government = no
+
+	male_ruler = "RULER_TITLE_TADODAHO"
+	female_ruler = "RULER_TITLE_TADODAHO"
+
+	possible = {
+		country_has_primary_culture = cu:iroquoian
+		has_variable = mfk_tadodaho_rules
+	}
+
+	on_government_type_change = {
+		change_to_dictatorial = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_dictatorial = yes
+	}
+}
+
 gov_princely_state_american = {
 	transfer_of_power = dictatorial
 	new_leader_on_reform_government = no
@@ -84,6 +104,7 @@ gov_princely_state_american = {
 
 	possible = {
 		country_has_primary_culture = cu:iroquoian
+		NOT = { has_variable = mfk_tadodaho_rules }
 		OR = {
 			AND = { exists = c:GBR is_subject_of = c:GBR }
 			AND = { exists = c:USA is_subject_of = c:USA }

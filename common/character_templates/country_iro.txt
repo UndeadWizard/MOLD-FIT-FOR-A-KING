@@ -11,11 +11,14 @@ IRO_john_brant= {
 	culture = cu:iroquoian
 	religion = rel:protestant
 	interest_group = ig_landowners
-	ideology = ideology_traditionalist
+	ideology = ideology_covenant_reformer
 	home_region = STATE_SIX_NATIONS
 	traits = {
         ambitious
     }
+	on_created = {
+		change_character_religion = rel:protestant
+	}
 }
 
 IRO_james_brant = {
@@ -26,6 +29,9 @@ IRO_james_brant = {
 	culture = cu:iroquoian
 	religion = rel:protestant
 	home_region = STATE_SIX_NATIONS
+	on_created = {
+		change_character_religion = rel:protestant
+	}
 }
 
 IRO_samuel_george = {
@@ -43,5 +49,28 @@ IRO_samuel_george = {
 	home_region = STATE_SIX_NATIONS
 	traits = {
 		inspirational_orator
+	}
+	on_created = {
+		change_character_religion = rel:animist # Joining the Clan Mothers would otherwise convert him to the state religion
+	}
+}
+
+IRO_alexander_norton = {
+	first_name = "Alexander"
+	last_name = "Norton"
+	female = no
+	birth_date = 1810.3.1
+	is_agitator = yes
+	culture = cu:iroquoian
+	religion = rel:protestant
+	interest_group = ig_armed_forces
+	ideology = ideology_hoyaneh_ascendant
+	home_region = STATE_SIX_NATIONS
+	traits = {
+		brave
+		charismatic
+	}
+	on_created = {
+		change_character_religion = rel:protestant
 	}
 }

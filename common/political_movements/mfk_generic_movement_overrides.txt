@@ -1,0 +1,1331 @@
+﻿# Copies of base-game movements with one addition each: weaker among Iroquoian pops while the Great Law politics are active.
+# Refresh these from the base game after patches that change them.
+
+REPLACE:movement_liberal = {
+	category = movement_category_ideological
+
+	ideology = ideology_liberal_movement
+	character_ideologies = {
+		ideology_market_liberal
+		ideology_liberal_leader
+		ideology_republican_leader
+		ideology_radical
+		ideology_humanitarian
+	}
+
+	disband_trigger = {
+		has_council_republic_law = yes
+	}
+	on_disbanded = {
+		fold_movement_into_anti_communist_movement_effect = yes
+	}
+
+	creation_trigger = {
+		has_technology_researched = democracy
+		country_should_exclusively_focus_on_modernization = no
+	}
+	creation_weight = {
+		value = 100
+		if = {
+			limit = {
+				has_law = law_type:law_monarchy
+				country_has_voting_franchise = no
+			}
+			multiply = {
+				value = 0.1
+			}
+		}
+		if = {
+			limit = {
+				owner ?= { # If a movement of this type exists in a neighbouring country, make it more likely to spawn here as well
+					any_neighbouring_state = {
+						owner = {
+							prestige > ROOT.owner.prestige
+							any_political_movement = {
+								is_political_movement_type = movement_liberal
+							}
+						}
+					}
+				}
+			}
+			multiply = {
+				value = 2
+			}
+		}
+		if = {
+			limit = {
+				c:JAP ?= this
+				has_law = law_type:law_bakufu
+				country_has_pending_meiji_restoration = yes
+			}
+			multiply = {
+				value = 0.01
+			}
+		}
+	}
+	on_created = {
+		add_movement_enthusiasm_modifier = yes
+		if = {
+			limit = {
+				owner = {
+					c:FRA ?= this
+				}
+			}
+			set_core_ideology = ideology_liberal_republican_movement
+		}
+	}
+
+	character_support_trigger = {
+		OR = {
+			has_ideology = ideology:ideology_market_liberal
+			has_ideology = ideology:ideology_liberal_leader
+			has_ideology = ideology:ideology_republican_leader
+			has_ideology = ideology:ideology_radical
+			has_ideology = ideology:ideology_humanitarian
+			has_ideology = ideology:ideology_humanitarian_royalist
+			has_ideology = ideology:ideology_reformer
+			has_ideology = ideology:ideology_utopian
+			has_ideology = ideology:ideology_modernizer_leader
+			has_ideology = ideology:ideology_positivist
+		scope:interest_group ?= {
+		OR = {
+					has_ideology = ideology:ideology_liberal
+					has_ideology = ideology:ideology_universalist
+					has_ideology = ideology:ideology_liberal_modern
+					has_ideology = ideology:ideology_universalist_modern
+				}
+			}
+		}
+	}
+	character_support_weight = {
+		value = 200
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_republican_leader
+					has_ideology = ideology:ideology_liberal_leader
+					has_ideology = ideology:ideology_market_liberal
+				}
+			}
+			multiply = {
+				value = 5
+			}
+		}
+		else_if = {
+			limit = {
+				has_ideology = ideology:ideology_radical
+				NOT = {
+					owner ?= {
+						any_political_movement = {
+							is_political_movement_type = movement_radical
+						}
+					}
+				}
+			}
+			multiply = {
+				value = 5
+			}
+		}
+		else_if = {
+			limit = {
+				has_ideology = ideology:ideology_humanitarian
+				NOT = {
+					is_interest_group_type = ig_trade_unions
+				}
+			}
+			multiply = {
+				value = 5
+			}
+		}
+		else_if = {
+			limit = {
+				has_ideology = ideology:ideology_modernizer_leader
+			}
+			multiply = {
+				value = 2
+			}
+		}
+		if = { # Liberal agitators just inherently love liberalism
+			limit = {
+				scope:interest_group ?= {
+					OR = {
+						has_ideology = ideology:ideology_liberal
+						has_ideology = ideology:ideology_universalist
+						has_ideology = ideology:ideology_liberal_modern
+						has_ideology = ideology:ideology_universalist_modern
+					}
+				}
+			}
+			multiply = {
+				value = 2
+			}
+		}
+	}
+
+	pop_support_trigger = {
+		NOT = {
+			is_pop_type = slaves
+		}
+	}
+
+	pop_support_factors = {
+		movement_support_je_hungarian_revolution
+		movement_support_high_urbanization
+		movement_support_high_literacy
+		movement_support_capitalists
+		movement_support_aristocrats
+		movement_support_shopkeepers
+		movement_support_academics
+		movement_support_bureaucrats
+		movement_support_clerks
+	}
+
+	pop_support_weight = {
+		if = {
+			limit = {
+				exists = scope:political_movement
+				scope:political_movement ?= {
+						OR = {
+							is_being_suppressed = yes
+							is_being_bolstered = yes
+						}
+					}
+				}
+			if = {
+				limit = {
+					scope:political_movement = {
+						is_being_suppressed = yes
+					}
+				}
+				add = {
+					value = suppression_base_value
+					multiply = {
+						value = -0.5
+						add = owner.modifier:country_suppression_attraction_factor
+					}
+					desc = "concept_suppressed"
+				}
+			}
+			else = {
+				add = {
+					value = bolstering_base_value
+					multiply = {
+						value = 0.5
+						add = owner.modifier:country_bolster_attraction_factor
+					}
+					desc = "concept_bolstered"
+				}
+			}
+		}
+
+		add = {
+			value = 3
+			desc = "POP_BASE_SUPPORT"
+		}
+
+		add = {
+			desc = "URBAN_STATE"
+			value = 10
+			multiply = state.state_urbanization_rate
+		}
+
+		if = {
+			limit = {
+				strata = upper
+			}
+			if = {
+				limit = {
+					is_pop_type = capitalists
+				}
+				add = {
+					value = 50
+					desc = "POP_CAPITALISTS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = aristocrats
+				}
+				if = {
+					limit = {
+						culture = cu:hungarian
+						owner ?= {
+							has_journal_entry = je_hungarian_revolution
+						}
+					}
+					add = {
+						value = 25
+						desc = "je_hungarian_revolution"
+					}
+				}
+				else = {
+				add = {
+					value = 6
+					desc = "POP_ARISTOCRATS"
+				}
+			}
+			}
+			else = {
+				add = {
+					value = 9
+					desc = "UPPER_NO_ICON"
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				strata = middle
+			}
+			if = {
+				limit = {
+					is_pop_type = shopkeepers
+				}
+				add = {
+					value = 20
+					desc = "POP_SHOPKEEPERS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = academics
+				}
+				add = {
+					value = 35
+					desc = "POP_ACADEMICS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = bureaucrats
+				}
+				add = {
+					value = 15
+					desc = "POP_BUREAUCRATS"
+				}
+			}
+			else = {
+				add = {
+					value = 13
+					desc = "MIDDLE_NO_ICON"
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				strata = lower
+			}
+			if = {
+				limit = {
+					is_pop_type = clerks
+				}
+				add = {
+					value = 9
+					desc = "POP_CLERKS"
+				}
+			}
+			else_if = {
+				limit = {
+					is_pop_type = peasants
+				}
+				add = {
+					value = 0
+					desc = "POP_PEASANTS"
+				}
+			}
+			else = {
+				add = {
+					value = 3
+					desc = "LOWER_NO_ICON"
+				}
+			}
+		}
+
+		multiply = { # Illiterate pops participate at 1/10 the rate of fully literate pops
+			desc = "POP_LITERACY"
+			value = literacy_rate
+			add = 0.10
+		}
+		# Among the Haudenosaunee, the Great Law's own politics crowd out this movement
+		if = {
+			limit = {
+				culture = cu:iroquoian
+				owner ?= {
+					OR = {
+						has_journal_entry = je_john_brant_rule
+						has_journal_entry = je_tadodaho
+					}
+				}
+			}
+			multiply = {
+				value = 0.25
+				desc = "MFK_GREAT_LAW_POLITICS"
+			}
+		}
+	}
+
+	revolution = {
+		possible = {
+			political_movement_support >= 0.05
+		}
+
+		weight = {
+			value = 100
+		}
+
+		state_weight = {
+			value = state_urbanization_rate
+			#add = scope:clout
+			add = { value = this.turmoil divide = 2 }
+			subtract = this.loyalists
+		}
+	}
+
+	secession = {
+		possible = {
+			political_movement_support >= 0.05
+			scope:clout <= 0
+		}
+
+		weight = {
+			value = 1000
+		}
+
+		state_weight = {
+			value = state_urbanization_rate
+			add = { value = this.turmoil divide = 2 }
+			subtract = this.loyalists
+		}
+	}
+
+	additional_radicalism_factors = {
+		add = movement_radicalism_lack_of_suffrage
+		add = movement_radicalism_schools_funding
+		if = {
+			limit = {
+				owner ?= { has_journal_entry = je_devorismo }
+			}
+			add = {
+				value = 0.2
+				desc = "je_devorismo"
+			}
+		}
+
+		if = {
+			limit = {
+				owner ?= {
+					country_has_voting_franchise = yes
+					electoral_confidence < 0.9
+				}
+			}
+			add = {
+				value = 1
+				subtract = owner.electoral_confidence
+				divide = 5
+				multiply = {
+					value = 1
+					add = owner.modifier:country_electoral_confidence_impact_mult
+				}
+				desc = "low_electoral_confidence"
+			}
+		}
+
+		if = {
+			limit = {
+				neighboring_country_has_insurrectionary_movement_trigger = { TYPE = movement_liberal }
+			}
+			add = {
+				desc = "NEIGHBOURING_COUNTRY_WITH_REVOLUTION"
+				value = 0.15
+			}
+		}
+		add = movement_radicalism_suppressed_after_civil_war
+	}
+}
+
+REPLACE:movement_pro_slavery = {
+	category = movement_category_ideological
+
+	ideology = ideology_pro_slavery_movement
+	character_ideologies = {
+		ideology_slaver
+		ideology_jacksonian_democrat
+	}
+
+	creation_trigger = {
+		NOT = { has_law_or_variant = law_type:law_slavery_banned }
+	}
+	creation_weight = {
+		value = 100
+		if = {
+			limit = {
+				owner ?= { # If a movement of this type exists in a neighbouring country, make it more likely to spawn here as well
+					any_neighbouring_state = {
+						owner = {
+							prestige > ROOT.owner.prestige
+							any_political_movement = {
+								is_political_movement_type = movement_pro_slavery
+							}
+						}
+					}
+				}
+			}
+			multiply = {
+				value = 2
+			}
+		}
+	}
+	on_created = {
+		add_movement_enthusiasm_modifier = yes
+		if = {
+			limit = {
+				owner = {
+					has_law_or_variant = law_type:law_colonial_slavery
+				}
+			}
+			set_core_ideology = ideology_pro_slavery_colonial_movement
+		}
+	}
+
+	character_support_trigger = {
+		trigger_if = {
+			limit = {
+				is_in_exile_pool = yes
+			}
+			OR = {
+				has_ideology = ideology:ideology_slaver
+				has_ideology = ideology:ideology_jacksonian_democrat
+			}
+		}
+		trigger_else = {
+			OR = {
+				has_ideology = ideology:ideology_slaver
+				has_ideology = ideology:ideology_jacksonian_democrat
+				scope:interest_group ?= {
+					OR = {
+						has_ideology = ideology:ideology_pro_slavery
+						has_ideology = ideology:ideology_pro_slavery_colonial
+					}
+				}
+			}
+		}
+	}
+	character_support_weight = {
+		value = 200
+		if = {
+			limit = {
+				has_ideology = ideology:ideology_slaver
+			}
+			multiply = {
+				value = 5
+			}
+		}
+	}
+
+	pop_support_trigger = {
+		state = { is_slave_state = yes }
+	}
+
+	pop_support_factors = {
+		movement_support_slave_state
+		movement_support_high_literacy
+		movement_support_aristocrats
+		movement_support_farmers
+		movement_support_clergymen
+		movement_support_officers
+		movement_support_clergymen
+		movement_support_je_acw_countdown
+	}
+
+	pop_support_weight = {
+		if = {
+			limit = {
+				exists = scope:political_movement
+				scope:political_movement ?= {
+						OR = {
+							is_being_suppressed = yes
+							is_being_bolstered = yes
+						}
+					}
+				}
+			if = {
+				limit = {
+					scope:political_movement = {
+						is_being_suppressed = yes
+					}
+				}
+				add = {
+					value = suppression_base_value
+					multiply = {
+						value = -0.5
+						add = owner.modifier:country_suppression_attraction_factor
+					}
+					desc = "concept_suppressed"
+				}
+			}
+			else = {
+				add = {
+					value = bolstering_base_value
+					multiply = {
+						value = 0.5
+						add = owner.modifier:country_bolster_attraction_factor
+					}
+					desc = "concept_bolstered"
+				}
+			}
+		}
+		add = {
+			value = 9
+			desc = "SLAVE_STATE"
+		}
+
+		if = {
+			limit = {
+				is_pop_type = aristocrats
+			}
+			add = {
+				value = 45
+				desc = "POP_ARISTOCRATS"
+			}
+		}
+		else_if = {
+			limit = {
+				is_pop_type = farmers
+			}
+			add = {
+				value = 15
+				desc = "POP_FARMERS"
+			}
+		}
+		else_if = {
+			limit = {
+				is_pop_type = clergymen
+			}
+			add = {
+				value = 15
+				desc = "POP_CLERGYMEN"
+			}
+		}
+		else_if = {
+			limit = {
+				is_pop_type = officers
+			}
+			add = {
+				value = 15
+				desc = "POP_OFFICERS"
+			}
+		}
+
+		if = {
+			limit = {
+				owner ?= { has_journal_entry = je_acw_countdown }
+			}
+
+			multiply = {
+				value = 3.0
+				desc = "je_acw_countdown"
+			}
+		}
+
+		multiply = { # Illiterate pops participate at 1/10 the rate of fully literate pops
+			desc = "POP_LITERACY"
+			value = literacy_rate
+			add = 0.10
+		}
+		# Among the Haudenosaunee, the Great Law's own politics crowd out this movement
+		if = {
+			limit = {
+				culture = cu:iroquoian
+				owner ?= {
+					OR = {
+						has_journal_entry = je_john_brant_rule
+						has_journal_entry = je_tadodaho
+					}
+				}
+			}
+			multiply = {
+				value = 0.25
+				desc = "MFK_GREAT_LAW_POLITICS"
+			}
+		}
+	}
+
+	revolution = {
+		possible = {
+			political_movement_support >= 0.05
+		}
+
+		weight = {
+			value = 100
+		}
+
+		state_weight = {
+			value = 1
+			add = scope:clout
+			if = {
+			   limit = {
+					is_slave_state = no
+					NOT = { has_variable = former_slave_state }
+				}
+			    if = {
+					limit = {
+						owner ?= {
+							OR = {
+								has_journal_entry = je_acw_countdown
+								OR = {
+									has_law_or_variant = law_type:law_legacy_slavery
+									has_law_or_variant = law_type:law_colonial_slavery
+								}
+								has_variable = slavery_recently_abolished
+							}
+							any_scope_state = {
+								OR = {
+								   is_slave_state = yes
+								   has_variable = former_slave_state
+								}
+							}
+						}
+					}
+					multiply = 0.0
+				}
+				else = {
+					multiply = 0.25
+				}
+			}
+
+			if = {
+				limit = { is_capital = yes }
+				if = {
+					limit = { owner ?= { NOT = { has_law_or_variant = law_type:law_slavery_banned } } }
+					multiply = 10.0
+				}
+				else = {
+					multiply = 0.1
+				}
+			}
+		}
+	}
+
+	secession = {
+		possible = {
+			political_movement_support >= 0.05
+			OR = {
+				scope:clout <= 0
+				owner = {
+					OR = {
+						has_journal_entry = je_acw_countdown
+						OR = {
+							has_law_or_variant = law_type:law_legacy_slavery
+							has_law_or_variant = law_type:law_colonial_slavery
+						}
+						has_variable = slavery_recently_abolished
+					}
+				}
+			}
+		}
+
+		weight = {
+			value = 10
+
+			if = {
+				limit = {
+					OR = {
+						owner ?= {
+							OR = {
+								has_journal_entry = je_acw_countdown
+								has_law_or_variant = law_type:law_colonial_slavery
+								has_variable = slavery_recently_abolished
+							}
+						}
+						scope:clout <= 0
+					}
+				}
+				add = 1000
+			}
+		}
+
+		forced_tags = {
+			CSA = {
+				trigger = {
+					owner ?= { has_journal_entry = je_acw_countdown }
+				}
+				weight = 1000
+			}
+		}
+
+		state_weight = {
+			value = 1
+			add = scope:clout
+			if = {
+			   limit = {
+					is_slave_state = no
+					NOT = { has_variable = former_slave_state }
+			   }
+			   if = {
+					limit = {
+						owner ?= {
+							OR = {
+								has_journal_entry = je_acw_countdown
+								OR = {
+									has_law_or_variant = law_type:law_legacy_slavery
+									has_law_or_variant = law_type:law_colonial_slavery
+								}
+								has_variable = slavery_recently_abolished
+							}
+							any_scope_state = {
+								OR = {
+								   is_slave_state = yes
+								   has_variable = former_slave_state
+								}
+							}
+						}
+					}
+					multiply = 0.0
+				}
+				else = {
+					multiply = 0.25
+				}
+			}
+
+			if = {
+				limit = {
+					owner ?= { has_journal_entry = je_acw_countdown }
+				}
+
+				if = { # Ensure the union retains Washington DC/Maryland/Delaware in case of southern secession
+					limit = {
+						OR = {
+							state_region = s:STATE_MARYLAND
+							state_region = s:STATE_DELAWARE
+							state_region = s:STATE_DISTRICT_OF_COLUMBIA
+							state_region = s:STATE_WEST_VIRGINIA
+						}
+					}
+
+					multiply = 0.0
+				}
+				else_if = { # Virginia should be CSA capital
+					limit = {
+						state_region = s:STATE_VIRGINIA
+					}
+
+					multiply = 10.0
+				}
+			}
+		}
+	}
+
+	additional_radicalism_factors = {
+		if = {
+			limit = {
+				owner.ruler ?= {
+					OR = {
+						has_ideology = ideology:ideology_abolitionist
+						AND = {
+							NOR = {
+								has_ideology = ideology:ideology_slaver
+								has_ideology = ideology:ideology_jacksonian_democrat
+							}
+							interest_group ?= { has_ideology = ideology:ideology_anti_slavery }
+						}
+					}
+				}
+			}
+
+			add = {
+				value = 0.1
+				desc = "RULER_IS_ANTI_SLAVERY"
+			}
+		}
+
+		if = {
+			limit = {
+				owner.army_size > 0
+				owner = {
+					NOR = {
+						has_law_or_variant = law_type:law_slavery_banned
+						has_law_or_variant = law_type:law_colonial_slavery
+					}
+				}
+			}
+
+			add = {
+				owner = {
+					every_scope_building = {
+						limit = {
+							is_building_type = building_barrack
+							state = { is_slave_state = yes }
+						}
+						add = this.level
+					}
+				}
+
+				divide = {
+					value = owner.army_size
+					min = 1
+				}
+
+				subtract = 0.5
+				multiply = -1
+				min = 0
+				max = 0.5
+				desc = "ARMY_FRACTION_IN_SLAVE_STATES"
+			}
+		}
+
+		if = {
+			limit = {
+				owner.navy_size > 0
+				owner = {
+					NOR = {
+						has_law_or_variant = law_type:law_slavery_banned
+						has_law_or_variant = law_type:law_colonial_slavery
+					}
+				}
+			}
+
+			add = {
+				owner = {
+					every_scope_building = {
+						limit = {
+							is_building_type = building_naval_administration
+							state = { is_slave_state = yes }
+						}
+						add = this.level
+					}
+				}
+
+				divide = {
+					value = owner.navy_size
+					min = 1
+				}
+
+				subtract = 0.5
+				multiply = -0.5
+				min = 0
+				max = 0.25
+				desc = "NAVY_FRACTION_IN_SLAVE_STATES"
+			}
+		}
+
+		add = movement_radicalism_acw_countdown
+
+		if = {
+			limit = {
+				neighboring_country_has_insurrectionary_movement_trigger = { TYPE = movement_pro_slavery }
+			}
+			add = {
+				desc = "NEIGHBOURING_COUNTRY_WITH_REVOLUTION"
+				value = 0.15
+			}
+		}
+		add = movement_radicalism_suppressed_after_civil_war
+	}
+}
+
+REPLACE:movement_religious_majority = {
+	category = movement_category_religious
+
+	ideology = ideology_traditionalist_movement
+	character_ideologies = {
+		ideology_theocrat
+		ideology_traditionalist
+	}
+
+	can_cause_obstinance = yes
+
+	creation_trigger = {
+		NOT = {
+			has_law_or_variant = law_type:law_state_atheism
+		}
+	}
+	creation_weight = {
+		value = 100
+		if = {
+			limit = {
+				owner ?= {
+					any_political_movement = {
+						OR = {
+							is_political_movement_type = movement_legitimist
+							is_political_movement_type = movement_carlist
+							is_political_movement_type = movement_miguelist
+						}
+					}
+				}
+			}
+			multiply = {
+				value = 0.05
+			}
+		}
+	}
+	on_created = {}
+
+	disband_trigger = {
+		OR = {
+			scope:political_movement ?= {
+				religion = {
+					NOT = { is_state_religion = root }
+				}
+			}
+			has_council_republic_law = yes
+		}
+	}
+	on_disbanded = {
+		fold_movement_into_anti_communist_movement_effect = yes
+	}
+
+	religion_selection_trigger = {
+		is_state_religion = scope:country
+	}
+	religion_selection_weight = {
+		value = 100
+	}
+
+	character_support_trigger = {
+		religion = scope:religion
+		OR = {
+			is_interest_group_type = ig_devout
+			has_ideology = ideology:ideology_traditionalist
+			has_ideology = ideology:ideology_theocrat
+			has_ideology = ideology:ideology_integralist
+		}
+	}
+	character_support_weight = {
+		value = 100
+		if = {
+			limit = {
+				scope:interest_group ?= {
+					is_interest_group_type = ig_devout
+				}
+			}
+			multiply = {
+				value = 2
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ideology = ideology:ideology_traditionalist
+					has_ideology = ideology:ideology_theocrat
+				}
+			}
+			multiply = {
+				value = 5
+			}
+		}
+		else_if = {
+			limit = {
+				has_ideology = ideology:ideology_integralist
+			}
+			multiply = {
+				value = 2
+			}
+		}
+	}
+
+	pop_support_trigger = {
+		religion = scope:religion
+	}
+
+	pop_support_factors = {
+		movement_support_low_urbanization
+		movement_support_low_literacy
+		movement_support_clergymen
+		movement_support_aristocrats
+		movement_support_peasants
+		movement_support_corporatism_tech
+	}
+
+	pop_support_weight = {
+		if = {
+			limit = {
+				exists = scope:political_movement
+				scope:political_movement ?= {
+					OR = {
+						is_being_suppressed = yes
+						is_being_bolstered = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					scope:political_movement = {
+						is_being_suppressed = yes
+					}
+				}
+				add = {
+					value = suppression_base_value
+					multiply = {
+						value = -0.5
+						add = owner.modifier:country_suppression_attraction_factor
+					}
+					desc = "concept_suppressed"
+				}
+			}
+			else = {
+				add = {
+					value = bolstering_base_value
+					multiply = {
+						value = 0.5
+						add = owner.modifier:country_bolster_attraction_factor
+					}
+					desc = "concept_bolstered"
+				}
+			}
+		}
+
+		add = {
+			desc = "URBAN_STATE" # Increases support in rural states, decreases in urban
+			value = 0.5
+			subtract = state.state_urbanization_rate
+			multiply = 10
+		}
+
+		add = {
+			value = 10
+			desc = "POP_BASE_SUPPORT"
+		}
+
+		if = {
+			limit = {
+				is_pop_type = clergymen
+			}
+			add = {
+				value = 45
+				desc = "POP_CLERGYMEN"
+			}
+		}
+		else_if = {
+			limit = {
+				is_pop_type = aristocrats
+			}
+			add = {
+				value = 15
+				desc = "POP_ARISTOCRATS"
+			}
+		}
+		else_if = {
+			limit = {
+				is_pop_type = peasants
+			}
+			add = {
+				value = 10
+				desc = "POP_PEASANTS"
+			}
+		}
+
+		if = {
+			limit = {
+				NOT = {
+					is_pop_type = clergymen
+				}
+			}
+			add = { # Weakened by increasing literacy rates
+				desc = "POP_LITERACY"
+				this = {
+					value = literacy_rate
+					multiply = -2
+				}
+			}
+		}
+
+		if = { # Discriminated pops are less inclined to support the state church
+			limit = {
+				pop_acceptance < acceptance_status_5
+			}
+			multiply = {
+				desc = "POP_ACCEPTANCE"
+				value = pop_acceptance
+				divide = 100
+				add = 0.25
+			}
+		}
+
+		if = {
+			limit = {
+				owner ?= {
+					has_technology_researched = corporatism
+				}
+			}
+			multiply = {
+				value = 1.5
+				desc = "CORPORATISM_TECH"
+			}
+		}
+
+		if = {
+			limit = {
+				owner ?= {
+					any_political_movement = {
+						OR = {
+							is_political_movement_type = movement_legitimist
+							is_political_movement_type = movement_carlist
+							is_political_movement_type = movement_miguelist
+						}
+					}
+				}
+			}
+			multiply = {
+				value = 0.05
+			}
+		}
+		# Among the Haudenosaunee, the Great Law's own politics crowd out this movement
+		if = {
+			limit = {
+				culture = cu:iroquoian
+				owner ?= {
+					OR = {
+						has_journal_entry = je_john_brant_rule
+						has_journal_entry = je_tadodaho
+					}
+				}
+			}
+			multiply = {
+				value = 0.25
+				desc = "MFK_GREAT_LAW_POLITICS"
+			}
+		}
+	}
+
+	revolution = {
+		weight = {
+			value = 100
+		}
+
+		interest_group_can_join = {
+			leader = { religion = scope:political_movement.religion }
+		}
+
+		state_weight = {
+			value = 1
+
+			if = {
+				limit = {
+					religion_percent_state = {
+						target = scope:political_movement.religion
+						value >= 0.75
+					}
+				}
+				add = 75
+			}
+			else_if = {
+				limit = {
+					religion_percent_state = {
+						target = scope:political_movement.religion
+						value >= 0.5
+					}
+				}
+				add = 50
+			}
+			else_if = {
+				limit = {
+					religion_percent_state = {
+						target = scope:political_movement.religion
+						value >= 0.25
+					}
+				}
+				add = 25
+			}
+			else_if = {
+				limit = {
+					religion_percent_state = {
+						target = scope:political_movement.religion
+						value >= 0.1
+					}
+				}
+				add = 10
+			}
+		}
+	}
+
+	secession = {
+		can_secede_during_revolution = yes
+
+		possible = {
+			political_movement_support >= 0.05
+			scope:clout <= 0
+		}
+
+		weight = {
+			value = 1000
+		}
+
+		interest_group_can_join = {
+			leader = { religion = scope:political_movement.religion }
+		}
+
+		state_weight = {
+			value = 0
+
+			if = {
+				limit = {
+					religion_percent_state = {
+						target = scope:political_movement.religion
+						value >= 0.75
+					}
+				}
+				add = 250
+			}
+			else_if = {
+				limit = {
+					religion_percent_state = {
+						target = scope:political_movement.religion
+						value >= 0.5
+					}
+				}
+				add = 150
+			}
+			else_if = {
+				limit = {
+					religion_percent_state = {
+						target = scope:political_movement.religion
+						value >= 0.25
+					}
+				}
+				add = 50
+			}
+			else_if = {
+				limit = {
+					religion_percent_state = {
+						target = scope:political_movement.religion
+						value >= 0.1
+					}
+				}
+				add = 10
+			}
+		}
+	}
+
+	additional_radicalism_factors = {
+		if = {
+			limit = {
+				owner.ruler ?= {
+					NOT = { religion = root.religion }
+				}
+			}
+
+			add = {
+				value = 0.1
+				desc = "RULER_WRONG_RELIGION"
+			}
+		}
+
+		add = {
+			value = "owner.average_sol"
+			subtract = "owner.average_sol_for_religion(scope:religion)"
+			multiply = 0.05
+			max = 0.5
+			min = 0
+			desc = "STANDARD_OF_LIVING_FOR_RELIGION"
+		}
+
+		if = {
+			limit = {
+				religion = rel:catholic
+			}
+			add = movement_radicalism_poor_papal_relations
+		}
+
+		add = movement_radicalism_neighboring_religious_revolution
+		add = movement_radicalism_suppressed_after_civil_war
+	}
+}

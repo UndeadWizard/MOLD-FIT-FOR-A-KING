@@ -1,0 +1,290 @@
+﻿# The old nations rally to the Great Law when their chiefs turn against the Grand Hoyaneh
+movement_great_law = {
+	category = movement_category_ideological
+
+	ideology = ideology_great_law_movement
+	character_ideologies = {
+		ideology_traditionalist
+		ideology_pacifist
+	}
+
+	creation_trigger = {
+		has_journal_entry = je_tadodaho
+	}
+	creation_weight = {
+		value = 1000
+	}
+	on_created = {
+		add_movement_enthusiasm_modifier = yes
+	}
+
+	disband_trigger = {
+		NOT = { has_journal_entry = je_tadodaho }
+	}
+
+	character_support_trigger = {
+		OR = {
+			has_ideology = ideology:ideology_traditionalist
+			has_role = character_role_tadodaho
+			scope:interest_group ?= { is_interest_group_type = ig_devout }
+		}
+	}
+	character_support_weight = {
+		value = 200
+	}
+
+	pop_support_trigger = {
+		culture = cu:iroquoian
+		NOT = { is_pop_type = slaves }
+	}
+
+	pop_support_factors = {
+		movement_support_mfk_great_law_chiefs
+		movement_support_aristocrats
+		movement_support_clergymen
+		movement_support_farmers
+		movement_support_peasants
+	}
+
+	pop_support_weight = {
+		if = {
+			limit = {
+				exists = scope:political_movement
+				scope:political_movement ?= {
+					OR = {
+						is_being_suppressed = yes
+						is_being_bolstered = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					scope:political_movement = {
+						is_being_suppressed = yes
+					}
+				}
+				add = {
+					value = suppression_base_value
+					multiply = {
+						value = -0.5
+						add = owner.modifier:country_suppression_attraction_factor
+					}
+					desc = "concept_suppressed"
+				}
+			}
+			else = {
+				add = {
+					value = bolstering_base_value
+					multiply = {
+						value = 0.5
+						add = owner.modifier:country_bolster_attraction_factor
+					}
+					desc = "concept_bolstered"
+				}
+			}
+		}
+
+		if = {
+			limit = { is_pop_type = aristocrats }
+			add = {
+				value = 40
+				desc = "POP_ARISTOCRATS"
+			}
+		}
+		else_if = {
+			limit = { is_pop_type = clergymen }
+			add = {
+				value = 40
+				desc = "POP_CLERGYMEN"
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					is_pop_type = farmers
+					is_pop_type = peasants
+				}
+			}
+			add = {
+				value = 15
+				desc = "MFK_POP_LONGHOUSE_FAMILIES"
+			}
+		}
+		else = {
+			add = {
+				value = 4
+				desc = "LOWER_NO_ICON"
+			}
+		}
+
+		if = {
+			limit = { religion = rel:animist }
+			multiply = {
+				value = 1.5
+				desc = "MFK_POP_KEEPS_THE_OLD_WAYS"
+			}
+		}
+
+		multiply = {
+			value = owner.mfk_great_law_movement_factor
+			desc = "MFK_MOVEMENT_SUPPORT_GREAT_LAW_CHIEFS"
+		}
+	}
+
+	active_law_radicalism_multiplier = 0.5
+}
+
+# The Dehorners: warriors and Sheltering Nations who would take the antlers from John Brant
+movement_dehorners = {
+	category = movement_category_ideological
+
+	ideology = ideology_dehorners_movement
+	character_ideologies = {
+		ideology_hoyaneh_ascendant
+		ideology_jingoist_leader
+	}
+
+	creation_trigger = {
+		has_journal_entry = je_tadodaho
+	}
+	creation_weight = {
+		value = 1000
+	}
+	on_created = {
+		add_movement_enthusiasm_modifier = yes
+	}
+
+	disband_trigger = {
+		NOT = { has_journal_entry = je_tadodaho }
+	}
+
+	character_support_trigger = {
+		OR = {
+			has_template = IRO_alexander_norton
+			has_ideology = ideology:ideology_hoyaneh_ascendant
+			has_ideology = ideology:ideology_jingoist_leader
+		}
+	}
+	character_support_weight = {
+		value = 200
+		if = {
+			limit = { has_template = IRO_alexander_norton }
+			add = 10000
+		}
+	}
+
+	pop_support_trigger = {
+		NOT = { is_pop_type = slaves }
+		OR = {
+			OR = {
+				culture = cu:algonquian
+				culture = cu:metis
+				culture = cu:afro_american
+			}
+			AND = {
+				culture = cu:iroquoian
+				OR = {
+					is_pop_type = soldiers
+					is_pop_type = officers
+				}
+			}
+		}
+	}
+
+	pop_support_factors = {
+		movement_support_mfk_sheltered_chiefs
+		movement_support_mfk_sheltered_cultures
+		movement_support_officers
+		movement_support_soldiers
+	}
+
+	pop_support_weight = {
+		if = {
+			limit = {
+				exists = scope:political_movement
+				scope:political_movement ?= {
+					OR = {
+						is_being_suppressed = yes
+						is_being_bolstered = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					scope:political_movement = {
+						is_being_suppressed = yes
+					}
+				}
+				add = {
+					value = suppression_base_value
+					multiply = {
+						value = -0.5
+						add = owner.modifier:country_suppression_attraction_factor
+					}
+					desc = "concept_suppressed"
+				}
+			}
+			else = {
+				add = {
+					value = bolstering_base_value
+					multiply = {
+						value = 0.5
+						add = owner.modifier:country_bolster_attraction_factor
+					}
+					desc = "concept_bolstered"
+				}
+			}
+		}
+
+		if = {
+			limit = { is_pop_type = officers }
+			add = {
+				value = 60
+				desc = "POP_OFFICERS"
+			}
+		}
+		else_if = {
+			limit = { is_pop_type = soldiers }
+			add = {
+				value = 50
+				desc = "POP_SOLDIERS"
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+				culture = cu:algonquian
+				culture = cu:metis
+				culture = cu:afro_american
+			}
+			}
+			add = {
+				value = 30
+				desc = "MFK_MOVEMENT_SUPPORT_SHELTERED_CULTURES"
+			}
+		}
+		else = {
+			add = {
+				value = 8
+				desc = "LOWER_NO_ICON"
+			}
+		}
+
+		multiply = {
+			value = owner.mfk_dehorners_movement_factor
+			desc = "MFK_MOVEMENT_SUPPORT_SHELTERED_CHIEFS"
+		}
+	}
+
+	revolution = {
+		possible = {
+			political_movement_support >= 0.05
+		}
+
+		weight = {
+			value = 100
+		}
+	}
+
+	active_law_radicalism_multiplier = 0.5
+}

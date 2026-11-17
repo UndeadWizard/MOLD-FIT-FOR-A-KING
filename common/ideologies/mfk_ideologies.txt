@@ -218,3 +218,104 @@ ideology_hoyaneh_ascendant = {
 		value = 50
 	}
 }
+
+ideology_great_law_movement = {
+	icon = "gfx/interface/icons/ideology_icons/traditionalist.dds"
+
+	lawgroup_governance_principles = {
+		law_parliamentary_republic = strongly_approve
+		law_presidential_republic = strongly_disapprove
+		law_monarchy = disapprove
+		law_theocracy = neutral
+	}
+
+	lawgroup_distribution_of_power = {
+		law_oligarchy = strongly_approve
+		law_landed_voting = approve
+		law_census_voting = neutral
+		law_wealth_voting = disapprove
+		law_universal_suffrage = disapprove
+		law_autocracy = strongly_disapprove
+	}
+
+	lawgroup_education_system = {
+		law_no_schools = approve
+		law_religious_schools = disapprove
+	}
+}
+
+ideology_dehorners_movement = {
+	icon = "gfx/interface/icons/ideology_icons/militarist.dds"
+
+	lawgroup_governance_principles = {
+		law_presidential_republic = strongly_approve
+		law_monarchy = approve
+		law_parliamentary_republic = disapprove
+	}
+
+	lawgroup_distribution_of_power = {
+		law_autocracy = strongly_approve
+		law_landed_voting = neutral
+		law_oligarchy = strongly_disapprove
+	}
+
+	lawgroup_army_model = {
+		law_professional_army = strongly_approve
+		law_mass_conscription = approve
+		law_national_militia = disapprove
+		law_peasant_levies = disapprove
+	}
+}
+
+ideology_covenant_reformer = {
+	icon = "gfx/interface/icons/ideology_icons/ideology_leader/idealogy_leader_modernizer.dds"
+
+	character_ideology = yes
+
+	lawgroup_distribution_of_power = {
+		law_oligarchy = approve
+		law_landed_voting = approve
+		law_census_voting = neutral
+		law_wealth_voting = neutral
+		law_universal_suffrage = disapprove
+		law_autocracy = strongly_disapprove
+	}
+
+	lawgroup_governance_principles = {
+		law_parliamentary_republic = approve
+		law_presidential_republic = disapprove
+		law_monarchy = disapprove
+	}
+
+	lawgroup_army_model = {
+		law_professional_army = strongly_approve
+		law_peasant_levies = disapprove
+	}
+
+	lawgroup_economic_system = {
+		law_interventionism = approve
+		law_traditionalism = disapprove
+		law_agrarianism = neutral
+	}
+
+	country_trigger = {
+		country_has_primary_culture = cu:iroquoian
+	}
+
+	# Only John Brant holds this outlook; it is never rolled for other characters
+	interest_group_leader_trigger = {
+		always = no
+	}
+
+	non_interest_group_leader_trigger = {
+		always = no
+	}
+
+	interest_group_leader_weight = {
+		value = 0
+	}
+
+	non_interest_group_leader_weight = {
+		value = 0
+	}
+}

@@ -40,4 +40,80 @@
 		trigger = { var:mfk_nation ?= flag:wabash_shawnee }
 		localization_key = mfk_nation_wabash_shawnee
 	}
+	text = {
+		trigger = { var:mfk_nation ?= flag:lenape }
+		localization_key = mfk_nation_lenape
+	}
+	text = {
+		trigger = { var:mfk_nation ?= flag:wyandot }
+		localization_key = mfk_nation_wyandot
+	}
+	text = {
+		trigger = { var:mfk_nation ?= flag:mississauga }
+		localization_key = mfk_nation_mississauga
+	}
+	text = {
+		trigger = { var:mfk_nation ?= flag:stockbridge }
+		localization_key = mfk_nation_stockbridge
+	}
+	text = {
+		trigger = { var:mfk_nation ?= flag:potawatomi }
+		localization_key = mfk_nation_potawatomi
+	}
+	text = {
+		trigger = { var:mfk_nation ?= flag:odawa }
+		localization_key = mfk_nation_odawa
+	}
+	text = {
+		trigger = { var:mfk_nation ?= flag:nanticoke }
+		localization_key = mfk_nation_nanticoke
+	}
+	text = {
+		trigger = { var:mfk_nation ?= flag:tutelo }
+		localization_key = mfk_nation_tutelo
+	}
+	text = {
+		trigger = { var:mfk_nation ?= flag:brothertown }
+		localization_key = mfk_nation_brothertown
+	}
+}
+
+mfk_last_sheltered_nation_name = {
+	type = country
+	text = {
+		trigger = { var:mfk_last_sheltered_nation ?= flag:lenape }
+		localization_key = mfk_nation_lenape
+	}
+	text = {
+		trigger = { var:mfk_last_sheltered_nation ?= flag:wyandot }
+		localization_key = mfk_nation_wyandot
+	}
+	text = {
+		trigger = { var:mfk_last_sheltered_nation ?= flag:mississauga }
+		localization_key = mfk_nation_mississauga
+	}
+	text = {
+		trigger = { var:mfk_last_sheltered_nation ?= flag:stockbridge }
+		localization_key = mfk_nation_stockbridge
+	}
+	text = {
+		trigger = { var:mfk_last_sheltered_nation ?= flag:potawatomi }
+		localization_key = mfk_nation_potawatomi
+	}
+	text = {
+		trigger = { var:mfk_last_sheltered_nation ?= flag:odawa }
+		localization_key = mfk_nation_odawa
+	}
+	text = {
+		trigger = { var:mfk_last_sheltered_nation ?= flag:nanticoke }
+		localization_key = mfk_nation_nanticoke
+	}
+	text = {
+		trigger = { var:mfk_last_sheltered_nation ?= flag:tutelo }
+		localization_key = mfk_nation_tutelo
+	}
+	text = {
+		trigger = { var:mfk_last_sheltered_nation ?= flag:brothertown }
+		localization_key = mfk_nation_brothertown
+	}
 }

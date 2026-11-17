@@ -105,32 +105,32 @@ brant_total_agenda_goals_completed = {
 		}
 		add = 1
 	}
-	# Grand Hoyaneh Agenda
-	if = { # Grand Hoyaneh: Free Hand
+	# Brant's Vision
+	if = { # Brant's Vision: a plasm industry to rival the Union's
 		limit = {
-			je:je_tadodaho ?= { "scripted_bar_progress(mfk_council_harmony_bar)" <= 30 }
+			country_has_building_type_levels = { target = bt:building_plasm_industry value >= 5 }
 		}
 		add = 1
 	}
-	if = { # Grand Hoyaneh: Hoyaneh Ascendancy
+	if = { # Brant's Vision: railways to bind the Confederacy together
 		limit = {
-			has_law = law_type:law_hoyaneh_ascendancy
+			country_has_building_type_levels = { target = bt:building_railway value >= 5 }
 		}
 		add = 1
 	}
-	if = { # Grand Hoyaneh: a standing force of warriors
+	if = { # Brant's Vision: a standing force of warriors
 		limit = {
 			has_law_or_variant = law_type:law_professional_army
 		}
 		add = 1
 	}
-	if = { # Grand Hoyaneh: towns to rival the British
+	if = { # Brant's Vision: towns to rival the British
 		limit = {
 			any_scope_state = { state_region = { is_homeland = cu:iroquoian } any_scope_building = { is_building_type = building_urban_center level >= 3 } }
 		}
 		add = 1
 	}
-	if = { # Grand Hoyaneh: the merchants prosper
+	if = { # Brant's Vision: the merchants prosper
 		limit = {
 			ig:ig_petty_bourgeoisie ?= { ig_clout >= 0.1 }
 		}
@@ -149,6 +149,13 @@ brant_total_agenda_goals_completed = {
 		}
 		add = 1
 	}
+	if = { # Shared: a growing economy
+		limit = {
+			has_variable = mfk_brant_gdp_goal
+			gdp >= var:mfk_brant_gdp_goal
+		}
+		add = 1
+	}
 	if = { # Shared: able to defend the League
 		limit = {
 			army_power_projection > 100
@@ -156,3 +163,110 @@ brant_total_agenda_goals_completed = {
 		add = 1
 	}
 }
+
+# Disloyal Great Law chiefs rally their nations to the Movement for the Great Law. 1.5 when all are disloyal, 0.5 when all are loyal. Scope = Iroquois
+mfk_great_law_movement_factor = {
+	value = 1
+	if = {
+		limit = { has_variable = mfk_gl_loyalty_ratio }
+		value = 1.5
+		subtract = var:mfk_gl_loyalty_ratio
+	}
+	min = 0.5
+	max = 1.5
+}
+
+# Loyal Sheltering chiefs bring their nations behind the Brantist Movement. 0.5 when all are disloyal, 1.5 when all are loyal. Scope = Iroquois
+mfk_dehorners_movement_factor = {
+	value = 1
+	if = {
+		limit = { has_variable = mfk_sh_loyalty_ratio }
+		value = 0.5
+		add = var:mfk_sh_loyalty_ratio
+	}
+	min = 0.5
+	max = 1.5
+}
+
+mfk_great_law_movement_pct = {
+	value = mfk_great_law_movement_factor
+	subtract = 1
+	multiply = 100
+}
+
+mfk_dehorners_movement_pct = {
+	value = mfk_dehorners_movement_factor
+	subtract = 1
+	multiply = 100
+}
+
+# Clan Mother goals completed in the Horns of John Brant. Scope = Iroquois
+mfk_brant_clan_mother_goals = {
+	value = 0
+	if = { # Clan Mothers: Council Harmony
+		limit = {
+			je:je_tadodaho ?= { "scripted_bar_progress(mfk_council_harmony_bar)" >= 70 }
+		}
+		add = 1
+	}
+	if = { # Clan Mothers: the Clan Mothers keep their voice
+		limit = {
+			has_law = law_type:law_clan_mother
+		}
+		add = 1
+	}
+	if = { # Clan Mothers: no Six Nations land lost
+		limit = {
+			owns_entire_state_region = STATE_SIX_NATIONS
+		}
+		add = 1
+	}
+	if = { # Clan Mothers: the Three Sisters
+		limit = {
+			country_has_building_type_levels = { target = bt:building_maize_farm value >= 20 }
+		}
+		add = 1
+	}
+	if = { # Clan Mothers: the merchants kept in check
+		limit = {
+			ig:ig_petty_bourgeoisie ?= { is_marginal = yes }
+		}
+		add = 1
+	}
+}
+
+# Brant's Vision goals completed in the Horns of John Brant. Scope = Iroquois
+mfk_brant_grand_hoyaneh_goals = {
+	value = 0
+	if = { # Brant's Vision: a plasm industry to rival the Union's
+		limit = {
+			country_has_building_type_levels = { target = bt:building_plasm_industry value >= 5 }
+		}
+		add = 1
+	}
+	if = { # Brant's Vision: railways to bind the Confederacy together
+		limit = {
+			country_has_building_type_levels = { target = bt:building_railway value >= 5 }
+		}
+		add = 1
+	}
+	if = { # Brant's Vision: a standing force of warriors
+		limit = {
+			has_law_or_variant = law_type:law_professional_army
+		}
+		add = 1
+	}
+	if = { # Brant's Vision: towns to rival the British
+		limit = {
+			any_scope_state = { state_region = { is_homeland = cu:iroquoian } any_scope_building = { is_building_type = building_urban_center level >= 3 } }
+		}
+		add = 1
+	}
+	if = { # Brant's Vision: the merchants prosper
+		limit = {
+			ig:ig_petty_bourgeoisie ?= { ig_clout >= 0.1 }
+		}
+		add = 1
+	}
+}
+

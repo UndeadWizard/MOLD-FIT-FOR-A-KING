@@ -18,5 +18,10 @@
 		create_character = {
 			template = IRO_samuel_george
 		}
+
+		# Alexander Norton, grandson of John Norton and war chief of the Dehorners
+		create_character = {
+			template = IRO_alexander_norton
+		}
 	}
 }

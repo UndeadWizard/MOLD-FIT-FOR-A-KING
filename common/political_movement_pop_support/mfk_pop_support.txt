@@ -1,0 +1,23 @@
+﻿movement_support_mfk_great_law_chiefs = {
+	name = MFK_MOVEMENT_SUPPORT_GREAT_LAW_CHIEFS
+
+	visible = {
+		is_political_movement_type = movement_great_law
+	}
+}
+
+movement_support_mfk_sheltered_chiefs = {
+	name = MFK_MOVEMENT_SUPPORT_SHELTERED_CHIEFS
+
+	visible = {
+		is_political_movement_type = movement_dehorners
+	}
+}
+
+movement_support_mfk_sheltered_cultures = {
+	name = MFK_MOVEMENT_SUPPORT_SHELTERED_CULTURES
+
+	visible = {
+		is_political_movement_type = movement_dehorners
+	}
+}

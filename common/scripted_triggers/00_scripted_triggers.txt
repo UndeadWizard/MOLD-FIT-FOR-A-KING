@@ -2686,3 +2686,22 @@ mfk_crown_favourite_candidate_ig = {
 		NOT = { has_role = character_role_favorite }
 	}
 }
+
+# A disloyal Sheltering chief whose nation could leave. The four nations sheltered since before 1836 stay. Scope = character
+mfk_sheltered_chief_can_depart = {
+	loyalty < 25
+	NOT = { var:mfk_nation ?= flag:ohionon }
+	NOT = { var:mfk_nation ?= flag:erie_freemen }
+	NOT = { var:mfk_nation ?= flag:niagara_metis }
+	NOT = { var:mfk_nation ?= flag:wabash_shawnee }
+}
+
+# The nation asking for shelter keeps beliefs and ways close to the Longhouse. Scope = Iroquois
+mfk_requesting_nation_is_traditional = {
+	OR = {
+		var:mfk_last_sheltered_nation ?= flag:mississauga
+		var:mfk_last_sheltered_nation ?= flag:odawa
+		var:mfk_last_sheltered_nation ?= flag:nanticoke
+		var:mfk_last_sheltered_nation ?= flag:tutelo
+	}
+}

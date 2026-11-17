@@ -1,5 +1,12 @@
 ﻿l_english:
  ideology_jacksonian_democrat:0 "Jacksonian Tory"
 
- ideology_hoyaneh_ascendant: "Brantist"
- ideology_hoyaneh_ascendant_desc: "Brantists believe the League can only stand beside the British and the Union if the [concept_grand_hoyaneh] rules as its chief executive, as Isaac Brant did, with a standing force of warriors and the Grand Council and the Clan Mothers reduced to advisers."
+ ideology_hoyaneh_ascendant: "Dehorner"
+ ideology_hoyaneh_ascendant_desc: "Dehorners would take the Antlers of Office from any Grand Hoyaneh who answers to the Council Fire, and give them to a war chief who will rule as Isaac Brant did: a standing force of warriors, decrees in his name alone, and the Grand Council and the Clan Mothers reduced to advisers."
+ ideology_great_law_movement: "Great Law"
+ ideology_great_law_movement_desc: "This movement holds that the Confederacy must be governed as the Peacemaker ordained: by the Council Fire at Onondaga, the Royaneh of the elder nations and the Clan Mothers who raise them up, with no single man above the Great Law."
+ ideology_dehorners_movement: "Dehorner"
+ ideology_dehorners_movement_desc: "The Dehadína'ga·hä́·gwas hold that the Confederacy needs a war chief at its head, a standing force of warriors and the Sheltering Nations at his back, with the Council Fire reduced to giving counsel."
+
+ ideology_covenant_reformer: "Covenant Reformer"
+ ideology_covenant_reformer_desc: "John Brant came to power to undo his father's tyranny, and he will not betray the Council Fire or the Clan Mothers who raised him up. But he is no mere keeper of the old ways: he means to see the Confederacy stand beside the British and the Union, with railways, plasm works and a professional army, all within the Great Law."

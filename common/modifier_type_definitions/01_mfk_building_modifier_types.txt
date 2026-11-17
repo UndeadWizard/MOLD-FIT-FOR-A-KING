@@ -129,3 +129,12 @@ goods_output_voltaic_cell_mult={
 		ai_value=0
 	}
 }
+
+building_plasm_industry_throughput_add={
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}

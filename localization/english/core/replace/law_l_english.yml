@@ -2,4 +2,9 @@
  law_clan_mother:0 "Clan Mother"
  law_clan_mother_desc:0 "The Clan Mother holds much weight in the Haudenosaunee.  The Clan Mother is a leader not only of her clan, but of the nation as well.  The Clan Mother selects their spokesman (Hoyane or Chief) to represent them in council.  If their Hoyane doesn’t represent their clan, the Clan Mother has the authority to remove their leader as well after warnings.  The Hoyane and the Clan Mother work together to best represent the people of her clan."
  law_hoyaneh_ascendancy:0 "Hoyaneh Ascendancy"
- law_hoyaneh_ascendancy_desc:0 "The [concept_grand_hoyaneh] governs the League as its chief executive, as Isaac Brant once did. Treaties are signed, warriors raised and decrees issued in his name alone, while the Grand Council and the Clan Mothers are reduced to giving advice that may be ignored."
+ law_hoyaneh_ascendancy_desc:0 "The [concept_grand_hoyaneh] governs the League as its chief executive, as Isaac Brant once did. Treaties are signed, warriors raised and decrees issued in his name alone, while the Grand Council and the Clan Mothers are reduced to giving advice that may be ignored.
+
+This is the cause of the #b Dehorners#!, not of John Brant: enacting it strengthens their hand in the struggle for the Antlers of Office."
+
+ law_council_fires:0 "Council Fires"
+ law_council_fires_desc:0 "The Confederacy is governed as the Peacemaker ordained: by the Grand Council at Onondaga, where only the Royaneh of the five elder nations, the Mohawk, Oneida, Onondaga, Cayuga and Seneca, may decide. The Tuscarora, the adopted nations and the Sheltering Nations may sit by the fire and be heard, but they have no voice in its decisions."
