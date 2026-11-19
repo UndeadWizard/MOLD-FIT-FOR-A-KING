@@ -63,6 +63,62 @@ types mfk_great_law_types
 			}
 		}
 
+		### Sheltering nation badge
+		widget = {
+			size = { 24 24 }
+			parentanchor = top|left
+			position = { 2 2 }
+			datacontext = "[GetScriptedGui('mfk_nation_sponsor_sgui')]"
+			visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
+			tooltip = "MFK_NATION_SPONSOR_TT"
+
+			icon = {
+				size = { 100% 100% }
+				texture = "gfx/interface/icons/ai_attitude_icons/protective.dds"
+			}
+		}
+
+		### Stance on the law being enacted
+		widget = {
+			size = { 24 24 }
+			parentanchor = bottom|right
+			position = { -2 -28 }
+			datacontext = "[GetScriptedGui('mfk_stance_supportive_sgui')]"
+			visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
+			tooltip = "MFK_STANCE_SUPPORTIVE_TT"
+
+			icon = {
+				size = { 100% 100% }
+				texture = "gfx/interface/icons/generic_icons/green_checkmark.dds"
+			}
+		}
+		widget = {
+			size = { 24 24 }
+			parentanchor = bottom|right
+			position = { -2 -28 }
+			datacontext = "[GetScriptedGui('mfk_stance_deliberating_sgui')]"
+			visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
+			tooltip = "MFK_STANCE_DELIBERATING_TT"
+
+			icon = {
+				size = { 100% 100% }
+				texture = "gfx/interface/icons/diplo_play_icons/stance_on_the_fence.dds"
+			}
+		}
+		widget = {
+			size = { 24 24 }
+			parentanchor = bottom|right
+			position = { -2 -28 }
+			datacontext = "[GetScriptedGui('mfk_stance_opposed_sgui')]"
+			visible = "[ScriptedGui.IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
+			tooltip = "MFK_STANCE_OPPOSED_TT"
+
+			icon = {
+				size = { 100% 100% }
+				texture = "gfx/interface/icons/generic_icons/red_cross.dds"
+			}
+		}
+
 		### Nation
 		textbox = {
 			parentanchor = bottom|hcenter
@@ -125,6 +181,17 @@ types mfk_great_law_types
 					align = center|nobaseline
 					text = "MFK_GREAT_LAW_NATIONS_HEADER"
 					default_format = "#v"
+					using = fontsize_medium
+				}
+
+				textbox = {
+					parentanchor = hcenter
+					size = { 520 24 }
+					align = center|nobaseline
+					datacontext = "[GetScriptedGui('mfk_council_debate_sgui')]"
+					visible = "[And(GetPlayer.IsValid, ScriptedGui.IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					text = "MFK_COUNCIL_DEBATE_LINE"
+					tooltip = "MFK_COUNCIL_DEBATE_LINE_TT"
 					using = fontsize_medium
 				}
 

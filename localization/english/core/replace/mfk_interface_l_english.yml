@@ -29,7 +29,7 @@
  MFK_GREAT_LAW_MOVEMENT_LINE: "Support for the #b Movement for the Great Law#!: #v [GetPlayer.MakeScope.ScriptValue('mfk_great_law_movement_pct')|+=0]%#!"
  MFK_GREAT_LAW_MOVEMENT_LINE_TT: "#tooltip_header Movement for the Great Law#!\n$TOOLTIP_DELIMITER$\nWhen the chiefs of the Nations of the Great Law turn against the [concept_grand_hoyaneh], their people rally to the Movement for the Great Law.\n\nAll chiefs disloyal: #v +50%#! support\nAll chiefs loyal: #v -50%#! support"
  MFK_DEHORNERS_MOVEMENT_LINE: "Support for the #b Dehorners#!: #v [GetPlayer.MakeScope.ScriptValue('mfk_dehorners_movement_pct')|+=0]%#!"
- MFK_DEHORNERS_MOVEMENT_LINE_TT: "#tooltip_header Dehorners (Dehadína'ga·hä́·gwas)#!\n$TOOLTIP_DELIMITER$\nWhen the chiefs of the Sheltering Nations are loyal to the Confederacy's war leaders, their people join the Dehorners.\n\nAll chiefs loyal: #v +50%#! support\nAll chiefs disloyal: #v -50%#! support"
+ MFK_DEHORNERS_MOVEMENT_LINE_TT: "#tooltip_header Dehorners (Dehadína'ga·hä́·gwas)#!\n$TOOLTIP_DELIMITER$\nWhen the chiefs of the Sheltering Nations are loyal to the Confederacy's war leaders, their people join the Dehorners.\n\nAll chiefs loyal: #v +50%#! support\nAll chiefs disloyal: #v -50%#! support\n\nWhatever their chiefs think, peoples the Confederacy discriminates against lean toward the Dehorners, and more so while the Clan Mothers hold their law. White settlers back them too, whatever the chiefs think."
  MFK_MOVEMENT_SUPPORT_GREAT_LAW_CHIEFS: "Loyalty of the Great Law chiefs"
  MFK_MOVEMENT_SUPPORT_SHELTERED_CHIEFS: "Loyalty of the Sheltering chiefs"
  MFK_MOVEMENT_SUPPORT_SHELTERED_CULTURES: "Sheltering Nations"
@@ -37,3 +37,31 @@
  MFK_POP_KEEPS_THE_OLD_WAYS: "Keeps the old ways"
 
  MFK_GREAT_LAW_POLITICS: "The politics of the Great Law"
+
+ mfk_adopted_by_oneida: "Adopted by the #v Oneida#!"
+ mfk_sheltered_by_oneida: "Sheltered by the #v Oneida#!"
+ mfk_sheltered_by_cayuga: "Sheltered by the #v Cayuga#!"
+ mfk_sheltered_by_seneca: "Sheltered by the #v Seneca#!"
+ mfk_sheltered_by_mohawk: "Sheltered by the #v Mohawk#!"
+ MFK_NATION_SPONSOR_TT: "#tooltip_header [Character.GetCustom('mfk_nation_sponsor')]#!\n$TOOLTIP_DELIMITER$\nA nation is not sheltered by the Confederacy as a whole, but by one of its nations, which speaks for it at the Council.\n\nWhile a nation is sheltered, its chief gains #g +15#! loyalty when the sheltering nation's chief is #v loyal#!, and loses #r 15#! when they are #v disloyal#!. An adopted nation stands on its own.\n\n[Character.GetCustom('mfk_nation_belt')]"
+
+ mfk_consensus_tier_unanimity: "#g The Fire Is United#!"
+ mfk_consensus_tier_partial: "#v Across the Fire#!"
+ mfk_consensus_tier_deadlock: "#r Council Deadlock#!"
+ MFK_COUNCIL_DEBATE_LINE: "The Council debates the law: #v [GetPlayer.MakeScope.Var('mfk_consensus_count').GetValue|0]/5#! nations agree, [GetPlayer.GetCustom('mfk_council_consensus_tier')]"
+ MFK_COUNCIL_DEBATE_LINE_TT: "#tooltip_header The Council Debates#!\n$TOOLTIP_DELIMITER$\nWhile a law is being enacted under the [GetLawType('law_council_fires').GetName], each of the five founding nations takes a stance on it, following its chief's views. The Tuscarora sit with the Oneida and have no voice of their own.\n\n#b 5 of 5 agree#! (#g The Fire Is United#!): #g +25%#! enactment speed, #g +15%#! enactment success chance, #g +10#! legitimacy\n#b 3 or 4 agree#! (#v Across the Fire#!): no effect\n#b 0 to 2 agree#! (#r Council Deadlock#!): #r -35%#! enactment speed, #r +25%#! stall chance"
+ MFK_STANCE_SUPPORTIVE_TT: "#tooltip_header Supportive#!\n$TOOLTIP_DELIMITER$\n[Character.GetCustom('mfk_nation_name')] supports the law before the Council."
+ MFK_STANCE_DELIBERATING_TT: "#tooltip_header Deliberating#!\n$TOOLTIP_DELIMITER$\n[Character.GetCustom('mfk_nation_name')] has not yet made up its mind on the law before the Council."
+ MFK_STANCE_OPPOSED_TT: "#tooltip_header Opposed#!\n$TOOLTIP_DELIMITER$\n[Character.GetCustom('mfk_nation_name')] opposes the law before the Council." 
+
+ mfk_sheltered_by_grand_hoyaneh: "Sheltered by the #v Grand Hoyaneh#!"
+ mfk_belt_white_line: "They came bearing the #v White Belt of Peace#!."
+ mfk_belt_war_line: "They came bearing the #v War Belt#!."
+ mfk_belt_path_line: "They came bearing the #v Path Belt#!."
+ mfk_belt_none_line: ""
+
+ MFK_POP_SHUT_OUT_OF_THE_LONGHOUSE: "Kept apart from the Haudenosaunee"
+ MFK_POP_HARSHLY_DISCRIMINATED: "Harshly discriminated against"
+ MFK_POP_CLAN_MOTHERS_KEEP_THEM_OUT: "The Clan Mothers keep them from the Longhouse"
+
+ MFK_POP_SETTLERS_UNDER_THE_GREAT_LAW: "Settlers who want a government, not a Council"

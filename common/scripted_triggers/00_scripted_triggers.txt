@@ -2705,3 +2705,21 @@ mfk_requesting_nation_is_traditional = {
 		var:mfk_last_sheltered_nation ?= flag:tutelo
 	}
 }
+
+# The Wyandot (heirs of the Wendat) and the Potawatomi have no friend among the nations of the Great Law
+mfk_requesting_nation_is_unwanted = {
+	OR = {
+		var:mfk_last_sheltered_nation ?= flag:wyandot
+		var:mfk_last_sheltered_nation ?= flag:potawatomi
+	}
+}
+
+# White settlers living under the Great Law. Scope = pop
+mfk_pop_is_settler = {
+	OR = {
+		culture = cu:yankee
+		culture = cu:anglo_canadian
+		culture = cu:franco_canadian
+		culture = cu:british
+	}
+}

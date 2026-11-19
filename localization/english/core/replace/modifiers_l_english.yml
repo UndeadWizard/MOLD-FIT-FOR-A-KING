@@ -2,10 +2,6 @@
 
  mfk_onondaga_council_fire: "The Onondaga Council Fire"
  mfk_onondaga_council_fire_desc: "The [concept_tadodaho] keeps the Council Fire burning at Onondaga, lending the Confederacy's government the weight of the Great Law."
- mfk_council_harmony_high: "The Council Fire Burns Bright"
- mfk_council_harmony_high_desc: "The [concept_tadodaho] and the [concept_grand_hoyaneh] are of one mind. The League governs by consensus, as the Clan Mothers would have it."
- mfk_council_harmony_low: "The Grand Hoyaneh's Free Hand"
- mfk_council_harmony_low_desc: "The [concept_grand_hoyaneh] governs without waiting on the Council. Reform comes quicker and the merchants prosper, but many in the Longhouse question his authority."
  mfk_council_reconciled: "The Council Reconciled"
  mfk_council_reconciled_desc: "The quarrel between the [concept_grand_hoyaneh] and the Council has been mended."
  mfk_confederacy_divided: "A Divided Confederacy"
@@ -88,3 +84,26 @@
  mfk_norton_war_chief: "Norton's Command"
  mfk_norton_war_chief_desc: "Alexander Norton commands the warriors of the Western Door, and every war chief in the Confederacy knows whose word carries in the war camps."
 
+ mfk_sponsor_speaks_for_us: "Sheltering Nation Speaks for Us"
+ mfk_sponsor_speaks_for_us_desc: "The nation that shelters this chief's people is loyal to the [concept_grand_hoyaneh], and speaks for them at the Council."
+ mfk_sponsor_estranged: "Sheltering Nation Estranged"
+ mfk_sponsor_estranged_desc: "The nation that shelters this chief's people has turned against the [concept_grand_hoyaneh], and its grievances have become theirs." 
+
+ mfk_council_unanimity: "The Fire Is United"
+ mfk_council_unanimity_desc: "All five nations of the Great Law agree on the law before the Council. The matter passes across the fire in one mind."
+ mfk_council_partial_consensus: "Across the Fire"
+ mfk_council_partial_consensus_desc: "Most of the five nations agree on the law before the Council. The Elder and Younger Brothers throw the issue back and forth across the fire."
+ mfk_council_deadlock: "Council Deadlock"
+ mfk_council_deadlock_desc: "Too few of the five nations agree on the law before the Council. The Onondaga Fire Keepers will not confirm a matter the nations are not of one mind on." 
+
+ mfk_founding_nations_loyal: "The Founding Nations Stand Behind Us"
+ mfk_founding_nations_loyal_desc: "The chiefs of the five founding nations of the Great Law are loyal to the [concept_grand_hoyaneh], and their word carries his. Each loyal chief adds to his authority." 
+
+ mfk_white_belts_held: "White Belts of Peace"
+ mfk_white_belts_held_desc: "Sheltering Nations who came bearing the White Belt of Peace lend their word to the Confederacy's. Each such nation adds to it, up to three."
+ mfk_war_belts_held: "War Belts"
+ mfk_war_belts_held_desc: "Sheltering Nations who came bearing the War Belt send their warriors with ours, and they know the forests well. Each such nation adds to it, up to three."
+ mfk_path_belts_held: "Path Belts"
+ mfk_path_belts_held_desc: "Sheltering Nations who came bearing the Path Belt keep the old roads open between peoples, and their runners carry our word far. Each such nation adds to it, up to three."
+ mfk_white_belt_kept: "The White Belt Kept"
+ mfk_white_belt_kept_desc: "This chief's people laid down the White Belt of Peace when they came, and they hold to it."

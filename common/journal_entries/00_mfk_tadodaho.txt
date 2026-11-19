@@ -42,6 +42,7 @@
 	outcome = { # The Fire Goes Out
 		header = je_standard_failure_header
 		effect_header = je_standard_on_failure_header
+		color = "blue_negative"
 		conclusion_desc = je_standard_failure_conclusion_desc
 		trigger = {
 			custom_tooltip = {

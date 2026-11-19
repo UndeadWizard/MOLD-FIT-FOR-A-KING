@@ -6,7 +6,7 @@
  pm_simple_vatmoss:0 "Vatmoss Planting"
  automatic_irrigation_building_vatmoss_hotbed:0 "Automatic Vatmoss Irrigation"
 
- building_plasm_industry:0 "Plasm Industries"
+ building_plasm_industry:0 "Plasm Refineries"
  building_plasm_industry_lens_option:0 "Expand $building_plasm_industry$"
  pmg_base_building_plasm_industry:0 "Base Building Plasm"
  pm_steam_plasm:0 "Steam Plasm"

@@ -1,0 +1,35 @@
+﻿# Enacting any distribution of power law other than the Clan Mothers law. Scope = country
+mfk_enacting_distribution_of_power_law = {
+	OR = {
+		is_enacting_law = law_type:law_autocracy
+		is_enacting_law = law_type:law_bakufu
+		is_enacting_law = law_type:law_neo_absolutism
+		is_enacting_law = law_type:law_technocracy
+		is_enacting_law = law_type:law_oligarchy
+		is_enacting_law = law_type:law_organic_regulation
+		is_enacting_law = law_type:law_elder_council
+		is_enacting_law = law_type:law_landed_voting
+		is_enacting_law = law_type:law_wealth_voting
+		is_enacting_law = law_type:law_census_voting
+		is_enacting_law = law_type:law_universal_suffrage
+		is_enacting_law = law_type:law_anarchy
+		is_enacting_law = law_type:law_single_party_state
+		is_enacting_law = law_type:law_labour_suffrage
+		is_enacting_law = law_type:law_chiefdom
+		is_enacting_law = law_type:law_hoyaneh_ascendancy
+	}
+}
+
+# Enacting any governance principles law other than the Council Fires. Scope = country
+mfk_enacting_governance_principles_law = {
+	OR = {
+		is_enacting_law = law_type:law_monarchy
+		is_enacting_law = law_type:law_colonial_administration
+		is_enacting_law = law_type:law_presidential_republic
+		is_enacting_law = law_type:law_parliamentary_republic
+		is_enacting_law = law_type:law_theocracy
+		is_enacting_law = law_type:law_council_republic
+		is_enacting_law = law_type:law_corporate_state
+		is_enacting_law = law_type:law_social_monarchy
+	}
+}

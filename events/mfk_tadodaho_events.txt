@@ -274,6 +274,10 @@ mfk_tadodaho.8 = {
 	desc = {
 		first_valid = {
 			triggered_desc = {
+				trigger = { mfk_requesting_nation_is_unwanted = yes }
+				desc = mfk_tadodaho.8.d_unwanted
+			}
+			triggered_desc = {
 				trigger = { mfk_requesting_nation_is_traditional = yes }
 				desc = mfk_tadodaho.8.d_traditional
 			}
@@ -301,7 +305,9 @@ mfk_tadodaho.8 = {
 	option = {
 		name = mfk_tadodaho.8.a
 		default_option = yes
+		trigger = { mfk_requesting_nation_is_unwanted = no }
 		mfk_shelter_requesting_nation = yes
+		trigger_event = { id = mfk_tadodaho.13 popup = yes }
 		if = {
 			limit = { mfk_requesting_nation_is_traditional = yes }
 			ig:ig_devout ?= {
@@ -342,6 +348,7 @@ mfk_tadodaho.8 = {
 		name = mfk_tadodaho.8.b
 		mfk_shelter_requesting_nation = yes
 		mfk_grant_lands_to_last_sheltered = yes
+		trigger_event = { id = mfk_tadodaho.13 popup = yes }
 		every_in_list = {
 			variable = mfk_great_law_list
 			add_modifier = {
@@ -369,12 +376,17 @@ mfk_tadodaho.8 = {
 				trigger = { has_law = law_type:law_hoyaneh_ascendancy }
 				add = 35
 			}
+			modifier = {
+				trigger = { mfk_requesting_nation_is_unwanted = yes }
+				add = 20
+			}
 		}
 	}
 
 	# Turn them away
 	option = {
 		name = mfk_tadodaho.8.c
+		trigger = { mfk_requesting_nation_is_unwanted = no }
 		hidden_effect = {
 			if = {
 				limit = { var:mfk_last_sheltered_nation ?= flag:mississauga }
@@ -442,6 +454,25 @@ mfk_tadodaho.8 = {
 				add = 40
 			}
 		}
+	}
+
+	# Let the Council's answer stand
+	option = {
+		name = mfk_tadodaho.8.e
+		default_option = yes
+		trigger = { mfk_requesting_nation_is_unwanted = yes }
+		hidden_effect = {
+			if = {
+				limit = { var:mfk_last_sheltered_nation ?= flag:potawatomi }
+				set_variable = { name = mfk_refused_potawatomi years = 10 }
+			}
+			if = {
+				limit = { var:mfk_last_sheltered_nation ?= flag:wyandot }
+				set_variable = { name = mfk_refused_wyandot years = 10 }
+			}
+		}
+		mfk_change_council_harmony = { VALUE = 5 }
+		ai_chance = { base = 60 }
 	}
 }
 
@@ -558,5 +589,68 @@ mfk_tadodaho.11 = {
 			NOT = { mfk_brant_clan_mother_goals > mfk_brant_grand_hoyaneh_goals }
 			NOT = { mfk_brant_grand_hoyaneh_goals > mfk_brant_clan_mother_goals }
 		}
+	}
+}
+
+# The Council takes its stances the day after a law is put before it
+mfk_tadodaho.12 = {
+	type = country_event
+	hidden = yes
+
+	trigger = {
+		has_variable = mfk_nations_setup
+	}
+
+	immediate = {
+		mfk_council_consensus_update = yes
+	}
+}
+
+# The newly sheltered nation lays its wampum before the Council
+mfk_tadodaho.13 = {
+	type = country_event
+	placement = root
+
+	title = mfk_tadodaho.13.t
+	desc = mfk_tadodaho.13.d
+	flavor = mfk_tadodaho.13.f
+
+	event_image = {
+		video = "europenorthamerica_native_american"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/faction_icons/faction_grand_hoyaneh.dds"
+
+	duration = 3
+
+	trigger = {
+		has_variable = mfk_last_sheltered_nation
+	}
+
+	option = {
+		name = mfk_tadodaho.13.a
+		mfk_accept_wampum_belt = { BELT = white }
+		default_option = yes
+		custom_tooltip = mfk_belt_white_tt
+		mfk_change_council_harmony = { VALUE = 5 }
+		ai_chance = { base = 40 }
+	}
+
+	option = {
+		name = mfk_tadodaho.13.b
+		mfk_accept_wampum_belt = { BELT = war }
+		custom_tooltip = mfk_belt_war_tt
+		je:je_john_brant_rule ?= {
+			add_progress = { value = 6 name = mfk_antlers_balance_bar }
+		}
+		ai_chance = { base = 30 }
+	}
+
+	option = {
+		name = mfk_tadodaho.13.c
+		mfk_accept_wampum_belt = { BELT = path }
+		custom_tooltip = mfk_belt_path_tt
+		ai_chance = { base = 30 }
 	}
 }

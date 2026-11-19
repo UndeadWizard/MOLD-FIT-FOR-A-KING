@@ -2594,6 +2594,11 @@ on_law_enactment_started = {
 			}
 			set_variable = unanimity_achievement_possible
 		}
+		if = {
+			limit = { has_variable = mfk_nations_setup }
+			mfk_council_consensus_update = yes
+			trigger_event = { id = mfk_tadodaho.12 days = 1 }
+		}
 	}
 }
 
@@ -2946,6 +2951,10 @@ on_law_checkpoint_stall = {
 on_law_enactment_pass = {
 	effect = {
 		if = {
+			limit = { has_variable = mfk_nations_setup }
+			mfk_council_law_passed = yes
+		}
+		if = {
 			limit = {
 				c:MON ?= this
 				OR = {
@@ -3078,6 +3087,10 @@ on_law_enactment_ended = {
 			}
 			remove_variable = unanimity_achievement_possible
 		}
+		if = {
+			limit = { has_variable = mfk_nations_setup }
+			mfk_council_consensus_clear = yes
+		}
 	}
 }
 
@@ -3096,6 +3109,12 @@ on_law_enactment_ended = {
 # null law
 on_law_activated = {
 	effect = {
+		owner ?= {
+			if = {
+				limit = { has_variable = mfk_nations_setup }
+				mfk_council_consensus_clear = yes
+			}
+		}
 		if = {
 			limit = {
 				c:CHI ?= owner

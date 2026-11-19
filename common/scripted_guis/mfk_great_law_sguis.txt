@@ -5,3 +5,43 @@
 		has_journal_entry = je_tadodaho
 	}
 }
+
+mfk_nation_sponsor_sgui = {
+	scope = character
+
+	is_shown = {
+		has_variable = mfk_sponsor
+	}
+}
+
+mfk_council_debate_sgui = {
+	scope = country
+
+	is_shown = {
+		has_variable = mfk_consensus_count
+	}
+}
+
+mfk_stance_supportive_sgui = {
+	scope = character
+
+	is_shown = {
+		var:mfk_law_stance ?= flag:supportive
+	}
+}
+
+mfk_stance_deliberating_sgui = {
+	scope = character
+
+	is_shown = {
+		var:mfk_law_stance ?= flag:deliberating
+	}
+}
+
+mfk_stance_opposed_sgui = {
+	scope = character
+
+	is_shown = {
+		var:mfk_law_stance ?= flag:opposed
+	}
+}

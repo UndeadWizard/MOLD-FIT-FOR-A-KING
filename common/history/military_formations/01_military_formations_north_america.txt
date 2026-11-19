@@ -328,4 +328,30 @@
 			}
 		}
 	}
+
+	c:IRO ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_atlantic_coast
+			name = Army_of_the_Longhouse
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_SIX_NATIONS
+				count = 3
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_OHIO
+				count = 1
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_skirmish_infantry
+				state_region = s:STATE_MICHIGAN
+				count = 1
+			}
+		}
+	}
 }

@@ -180,6 +180,12 @@ movement_dehorners = {
 				culture = cu:algonquian
 				culture = cu:metis
 				culture = cu:afro_american
+				culture = cu:siouan
+			}
+			# Any people the Confederacy holds apart from the Haudenosaunee
+			AND = {
+				NOT = { culture = cu:iroquoian }
+				pop_acceptance < acceptance_status_4
 			}
 			AND = {
 				culture = cu:iroquoian
@@ -252,16 +258,17 @@ movement_dehorners = {
 		}
 		else_if = {
 			limit = {
-				OR = {
-				culture = cu:algonquian
-				culture = cu:metis
-				culture = cu:afro_american
-			}
+				NOT = { culture = cu:iroquoian }
+				mfk_pop_is_settler = no
 			}
 			add = {
 				value = 30
 				desc = "MFK_MOVEMENT_SUPPORT_SHELTERED_CULTURES"
 			}
+		}
+		else_if = {
+			limit = { mfk_pop_is_settler = yes }
+			add = 0
 		}
 		else = {
 			add = {
@@ -273,6 +280,42 @@ movement_dehorners = {
 		multiply = {
 			value = owner.mfk_dehorners_movement_factor
 			desc = "MFK_MOVEMENT_SUPPORT_SHELTERED_CHIEFS"
+		}
+
+		# Settlers owe nothing to the Sheltering chiefs, but want a Grand Hoyaneh who rules like a government
+		if = {
+			limit = { mfk_pop_is_settler = yes }
+			add = {
+				value = 20
+				desc = "MFK_POP_SETTLERS_UNDER_THE_GREAT_LAW"
+			}
+		}
+
+		# Whatever their chiefs think, a people kept out of the Longhouse looks to the Dehorners.
+		# This is not scaled by the chiefs' loyalty.
+		if = {
+			limit = {
+				NOT = { culture = cu:iroquoian }
+				pop_acceptance < acceptance_status_4
+			}
+			add = {
+				value = 20
+				desc = "MFK_POP_SHUT_OUT_OF_THE_LONGHOUSE"
+			}
+			if = {
+				limit = { pop_acceptance < acceptance_status_3 }
+				add = {
+					value = 15
+					desc = "MFK_POP_HARSHLY_DISCRIMINATED"
+				}
+			}
+			if = {
+				limit = { owner = { has_law = law_type:law_clan_mother } }
+				add = {
+					value = 15
+					desc = "MFK_POP_CLAN_MOTHERS_KEEP_THEM_OUT"
+				}
+			}
 		}
 	}
 

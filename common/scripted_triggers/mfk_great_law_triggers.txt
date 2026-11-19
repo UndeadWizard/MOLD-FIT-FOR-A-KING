@@ -1,0 +1,44 @@
+﻿# A chief's stance on the law being enacted, taken from their ideology's view of enacting it (the new law compared
+# with the law it replaces, as the game's own endorsement uses). A chief's own
+# ideology only covers a few laws; on any other law, the chief speaks for their interest group's ideologies. Scope = nation chief, with scope:consensus_country saved.
+mfk_chief_supports_enacting_law = {
+	OR = {
+		law_enactment_stance = {
+			law = scope:consensus_country.currently_enacting_law.type
+			value > neutral
+		}
+		AND = {
+			law_enactment_stance = {
+				law = scope:consensus_country.currently_enacting_law.type
+				value = neutral
+			}
+			interest_group ?= {
+				law_enactment_stance = {
+					law = scope:consensus_country.currently_enacting_law.type
+					value > neutral
+				}
+			}
+		}
+	}
+}
+
+mfk_chief_opposes_enacting_law = {
+	OR = {
+		law_enactment_stance = {
+			law = scope:consensus_country.currently_enacting_law.type
+			value < neutral
+		}
+		AND = {
+			law_enactment_stance = {
+				law = scope:consensus_country.currently_enacting_law.type
+				value = neutral
+			}
+			interest_group ?= {
+				law_enactment_stance = {
+					law = scope:consensus_country.currently_enacting_law.type
+					value < neutral
+				}
+			}
+		}
+	}
+}

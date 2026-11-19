@@ -554,10 +554,7 @@ STATE_MICHIGAN = {
         building_sulfur_mine = 32
         building_copper_mine = 36
         building_logging_camp = 50
-    }
-    resource = {
-        type = "building_vatmoss_hotbed"
-        undiscovered_amount = 12
+        building_vatmoss_hotbed = 16
     }
     naval_exit_id = 3149
     min_cold_effect = 0.02
@@ -580,7 +577,7 @@ STATE_OHIO = {
         building_coal_mine = 60
         building_lead_mine = 36
         building_logging_camp = 30
-        building_vatmoss_hotbed = 6
+        building_vatmoss_hotbed = 12
     }
     resource = {
         type = "building_oil_rig"
@@ -949,7 +946,7 @@ STATE_SIX_NATIONS = {
     capped_resources = {
         building_iron_mine = 18
         building_logging_camp = 14
-        building_vatmoss_hotbed = 10
+        building_vatmoss_hotbed = 16
     }
     naval_exit_id = 3045
 }

@@ -48,6 +48,43 @@
 		}
 	}
 
+	outcome = { # Council Harmony has run out: the Council deposes Brant
+		header = je_standard_failure_header
+		effect_header = je_standard_on_failure_header
+		color = "blue_negative"
+		conclusion_desc = je_standard_failure_conclusion_desc
+		trigger = {
+			custom_tooltip = {
+				text = je_brant_deposed_tt
+				has_variable = mfk_brant_deposed
+			}
+		}
+		effect = {
+			hidden_effect = {
+				if = {
+					limit = { has_modifier = mfk_brants_covenant }
+					remove_modifier = mfk_brants_covenant
+				}
+				if = {
+					limit = { je:je_john_brant_rule ?= { "scripted_bar_progress(mfk_antlers_balance_bar)" > 0 } }
+					set_variable = { name = mfk_antlers_winner value = flag:dehorners }
+					set_variable = { name = mfk_council_fire_outcome value = flag:fire_out }
+				}
+				else = {
+					set_variable = { name = mfk_antlers_winner value = flag:council_fire }
+					set_variable = { name = mfk_council_fire_outcome value = flag:renewed }
+				}
+				# The Council starts again from a fresh fire
+				set_variable = {
+					name = mfk_dehorning_cooldown
+					years = 5
+				}
+				mfk_change_council_harmony = { VALUE = 40 }
+			}
+			trigger_event = { id = mfk_tadodaho.7 popup = yes }
+		}
+	}
+
 	timeout = 3650
 
 	outcome = { # Brant has run out of time: the antlers fall

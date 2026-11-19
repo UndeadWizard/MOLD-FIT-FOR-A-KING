@@ -48,21 +48,6 @@ mfk_onondaga_council_fire = {
 	country_legitimacy_base_add = 5
 }
 
-mfk_council_harmony_high = { # Clan Mother path
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-	country_legitimacy_base_add = 10
-	interest_group_ig_devout_pol_str_mult = 0.15
-}
-
-mfk_council_harmony_low = { # Grand Hoyaneh path
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
-	country_legitimacy_base_add = -5
-	country_law_enactment_success_add = 0.1
-	interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.15
-	interest_group_ig_industrialists_pol_str_mult = 0.15
-	interest_group_ig_devout_pol_str_mult = -0.15
-}
-
 mfk_council_reconciled = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 	country_legitimacy_base_add = 5
@@ -225,3 +210,57 @@ mfk_norton_war_chief = {
 	interest_group_ig_devout_pol_str_mult = -0.1
 }
 
+mfk_sponsor_speaks_for_us = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	character_loyalty_add = 15
+}
+
+mfk_sponsor_estranged = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	character_loyalty_add = -15
+}
+
+mfk_council_unanimity = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_law_enactment_speed_mult = 0.25
+	country_law_enactment_success_add = 0.15
+	country_legitimacy_base_add = 10
+}
+
+mfk_council_partial_consensus = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+}
+
+mfk_council_deadlock = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_law_enactment_speed_mult = -0.35
+	country_law_enactment_stall_add = 0.25
+}
+
+# Applied once per loyal founding nation
+mfk_founding_nations_loyal = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_authority_add = 20
+}
+
+# Wampum belts, applied once per Sheltering Nation holding the belt
+mfk_white_belts_held = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_legitimacy_base_add = 3
+}
+
+mfk_war_belts_held = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	unit_offense_forested_mult = 0.05
+	unit_defense_forested_mult = 0.05
+}
+
+mfk_path_belts_held = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_influence_add = 10
+}
+
+mfk_white_belt_kept = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	character_loyalty_add = 10
+}

@@ -117,3 +117,73 @@ mfk_last_sheltered_nation_name = {
 		localization_key = mfk_nation_brothertown
 	}
 }
+
+mfk_nation_sponsor = {
+	type = character
+	text = {
+		trigger = { var:mfk_sponsor ?= flag:grand_hoyaneh }
+		localization_key = mfk_sheltered_by_grand_hoyaneh
+	}
+	text = {
+		trigger = { var:mfk_nation ?= flag:tuscarora }
+		localization_key = mfk_adopted_by_oneida
+	}
+	text = {
+		trigger = { var:mfk_sponsor ?= flag:oneida }
+		localization_key = mfk_sheltered_by_oneida
+	}
+	text = {
+		trigger = { var:mfk_sponsor ?= flag:cayuga }
+		localization_key = mfk_sheltered_by_cayuga
+	}
+	text = {
+		trigger = { var:mfk_sponsor ?= flag:seneca }
+		localization_key = mfk_sheltered_by_seneca
+	}
+	text = {
+		trigger = { var:mfk_sponsor ?= flag:mohawk }
+		localization_key = mfk_sheltered_by_mohawk
+	}
+}
+
+mfk_council_consensus_tier = {
+	type = country
+	text = {
+		trigger = {
+			has_variable = mfk_consensus_count
+			var:mfk_consensus_count >= 5
+		}
+		localization_key = mfk_consensus_tier_unanimity
+	}
+	text = {
+		trigger = {
+			has_variable = mfk_consensus_count
+			var:mfk_consensus_count >= 3
+		}
+		localization_key = mfk_consensus_tier_partial
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = mfk_consensus_tier_deadlock
+	}
+}
+
+mfk_nation_belt = {
+	type = character
+	text = {
+		trigger = { var:mfk_belt ?= flag:white }
+		localization_key = mfk_belt_white_line
+	}
+	text = {
+		trigger = { var:mfk_belt ?= flag:war }
+		localization_key = mfk_belt_war_line
+	}
+	text = {
+		trigger = { var:mfk_belt ?= flag:path }
+		localization_key = mfk_belt_path_line
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = mfk_belt_none_line
+	}
+}
