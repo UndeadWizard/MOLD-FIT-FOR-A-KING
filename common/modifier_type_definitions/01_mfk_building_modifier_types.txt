@@ -1,4 +1,6 @@
-﻿goods_output_vatmoss_add={
+﻿# Vatmoss
+
+goods_output_vatmoss_add={
 	decimals=1
 	color=good
 	game_data={
@@ -103,6 +105,15 @@ goods_output_plasm_mult={
 	}
 }
 
+building_plasm_industry_throughput_add={
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
 # Voltaic Cell
 
 goods_output_voltaic_cell_add={
@@ -130,8 +141,27 @@ goods_output_voltaic_cell_mult={
 	}
 }
 
-building_plasm_industry_throughput_add={
-	decimals=0
+
+# Iksir
+
+goods_output_iksir_add={
+	decimals=1
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_input_iksir_add={
+	decimals=1
+	color=bad
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_output_iksir_mult={
+	decimals=1
 	color=good
 	percent=yes
 	game_data={

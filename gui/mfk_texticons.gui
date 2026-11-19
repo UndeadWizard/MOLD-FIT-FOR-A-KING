@@ -49,3 +49,14 @@ texticon = {
 		texture = "gfx/interface/icons/goods_icons/voltaic_cell.dds"
 	}
 }
+
+texticon = {
+	icon = iksir
+
+	iconsize = {
+		size = { 25 25 }
+		offset = { 0 7 }
+		fontsize = 18
+		texture = "gfx/interface/icons/goods_icons/oil.dds"
+	}
+}

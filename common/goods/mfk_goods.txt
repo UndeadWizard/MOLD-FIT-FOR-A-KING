@@ -30,3 +30,14 @@ voltaic_cell = {
 	traded_quantity = 4
 	convoy_cost_multiplier = 1.0
 }
+
+iksir = {
+	texture = "gfx/interface/icons/goods_icons/oil.dds"
+	cost = 40
+	category = industrial
+
+	prestige_factor = 6
+	traded_quantity = 6
+
+	consumption_tax_cost = 200
+}

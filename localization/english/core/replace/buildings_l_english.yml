@@ -21,3 +21,8 @@
  building_voltaic_works_lens_option:0 "Expand $building_voltaic_works$"
  pmg_base_building_voltaic_works:0 "Base Building Voltaic"
  pm_voltaic_piles:0 "Voltaic Piles"
+
+ building_iksir_athanory:0 "Iksir Athanory"
+ building_iksir_athanory_lens_option:0 "Expand $building_iksir_athanory$"
+ pmg_base_building_iksir_athanory:0 "Base Building Iksir"
+ pm_vatmoss_distillation:0 "Vatmoss Distillation"

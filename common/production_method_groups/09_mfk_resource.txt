@@ -28,3 +28,10 @@ pmg_base_building_voltaic_works = {
 		pm_voltaic_piles
 	}
 }
+
+pmg_base_building_iksir_athanory = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_vatmoss_distillation
+	}
+}

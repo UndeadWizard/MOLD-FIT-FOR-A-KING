@@ -11,3 +11,11 @@
  goods_output_voltaic_cell_add_desc: "The amount of @voltaic_cell! produced by buildings"
  goods_output_voltaic_cell_mult: "@voltaic_cell! Voltaic Cells Output"
  goods_output_voltaic_cell_mult_desc: "Increases the amount of @voltaic_cell! produced by buildings"
+
+ iksir: "Iksir"
+ goods_input_iksir_add: "@iksir! Iksir Input"
+ goods_input_iksir_add_desc: "The amount of @iksir! consumed by buildings"
+ goods_output_iksir_add: "@iksir! Iksir Output"
+ goods_output_iksir_add_desc: "The amount of @iksir! produced by buildings"
+ goods_output_iksir_mult: "@iksir! Iksir Output"
+ goods_output_iksir_mult_desc: "Increases the amount of @iksir! produced by buildings"
