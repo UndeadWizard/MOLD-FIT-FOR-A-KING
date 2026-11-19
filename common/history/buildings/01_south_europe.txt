@@ -4394,6 +4394,17 @@
 				}
 				activate_production_methods={ "pm_naval_fortification_basic"  }
 			}
+			create_building={
+				building="building_iksir_athanory"
+				add_ownership={
+					country={
+						country="c:TUR"
+						levels=4
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_vatmoss_distillation" }
+			}
 		}
 	}
 	s:STATE_DOBRUDJA={
@@ -4594,6 +4605,19 @@
 				reserves=1
 				activate_production_methods={ "pm_open_air_stockyards" "pm_simple_ranch" "pm_standard_fences" "pm_unrefrigerated"  }
 			}
+			create_building={
+				building="building_vatmoss_hotbed"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:TUR"
+						levels=4
+						region="STATE_BOSNIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_vatmoss" }
+			}
 		}
 	}
 	s:STATE_NORTHERN_THRACE={
@@ -4675,6 +4699,19 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_saw_mills"  "pm_no_equipment" "pm_road_carts" "pm_hardwood" }
+			}
+			create_building={
+				building="building_vatmoss_hotbed"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:TUR"
+						levels=3
+						region="STATE_NORTHERN_THRACE"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_vatmoss" }
 			}
 		}
 	}
@@ -4767,6 +4804,19 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_saw_mills"  "pm_no_equipment" "pm_road_carts" "pm_hardwood" }
+			}
+			create_building={
+				building="building_vatmoss_hotbed"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:TUR"
+						levels=6
+						region="STATE_BULGARIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_vatmoss" }
 			}
 		}
 	}
@@ -5617,6 +5667,19 @@
 				}
 				reserves=1
 				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled"  }
+			}
+			create_building={
+				building="building_vatmoss_hotbed"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:TUR"
+						levels=4
+						region="STATE_MACEDONIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_vatmoss" }
 			}
 		}
 	}
