@@ -35,3 +35,20 @@ pmg_base_building_iksir_athanory = {
 		pm_vatmoss_distillation
 	}
 }
+
+pmg_base_building_saika_mine = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	production_methods = {
+		pm_picks_and_shovels_building_saika_mine
+		pm_atmospheric_engine_pump_building_saika_mine
+	}
+}
+
+pmg_saika_steel_building_steel_mill = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	production_methods = {
+		pm_no_saika_steel
+		pm_saika_steel
+		pm_increased_saika_steel
+	}
+}

@@ -41,3 +41,21 @@ iksir = {
 
 	consumption_tax_cost = 200
 }
+
+saika = {
+	texture = "gfx/interface/icons/goods_icons/sulfur.dds"
+	cost = 50
+	category = industrial
+
+	prestige_factor = 6
+	traded_quantity = 5
+}
+
+saika_steel = {
+	texture = "gfx/interface/icons/goods_icons/steel.dds"
+	cost = 100
+	category = industrial
+
+	prestige_factor = 7
+	traded_quantity = 4
+}

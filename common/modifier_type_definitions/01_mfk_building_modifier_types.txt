@@ -168,3 +168,110 @@ goods_output_iksir_mult={
 		ai_value=0
 	}
 }
+
+# Saika
+
+goods_output_saika_add={
+	decimals=1
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_input_saika_add={
+	decimals=1
+	color=bad
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_output_saika_mult={
+	decimals=1
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_group_bg_saika_mining_laborers_mortality_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_group_bg_saika_mining_slaves_mortality_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_group_bg_saika_mining_tax_mult={
+	decimals=1
+	color=neutral
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_group_bg_saika_mining_mortality_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_group_bg_saika_mining_standard_of_living_add={
+	decimals=1
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+building_group_bg_saika_mining_employee_mult={
+	decimals=1
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+# Saika Steel
+
+goods_output_saika_steel_add={
+	decimals=1
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_input_saika_steel_add={
+	decimals=1
+	color=bad
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_output_saika_steel_mult={
+	decimals=1
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}

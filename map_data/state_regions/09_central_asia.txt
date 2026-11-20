@@ -205,6 +205,10 @@ STATE_UZBEKIA = {
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.30
+    resource = {
+        type = "building_saika_mine"
+        discovered_amount = 6
+    }
 }
 
 STATE_TAJIKISTAN = {
@@ -263,6 +267,11 @@ STATE_TURKMENIA = {
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.27
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 12
+        discovered_amount = 6
+    }
 }
 
 STATE_PASHTUNISTAN = {
@@ -319,6 +328,10 @@ STATE_NORTHERN_BALUCHISTAN = {
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.09
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 10
+    }
 }
 
 STATE_HERAT = {
@@ -338,6 +351,11 @@ STATE_HERAT = {
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.14
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 4
+        discovered_amount = 4
+    }
 }
 
 STATE_BALKH = {
@@ -376,6 +394,10 @@ STATE_QUETTA = {
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.10
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 6
+    }
 }
 
 STATE_KANDAHAR = {
@@ -396,6 +418,10 @@ STATE_KANDAHAR = {
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.12
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 8
+    }
 }
 
 STATE_KABUL = {
@@ -441,6 +467,11 @@ STATE_BALUCHISTAN = {
     naval_exit_id = 3048
     min_cold_effect = 0.00
     max_cold_effect = 0.06
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 8
+        discovered_amount = 4
+    }
 }
 
 STATE_LHASA = {

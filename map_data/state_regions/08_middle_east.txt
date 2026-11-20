@@ -44,6 +44,10 @@ STATE_OMAN = {
     naval_exit_id = 3073
     min_cold_effect = 0.00
     max_cold_effect = 0.01
+    resource = {
+        type = "building_saika_mine"
+        discovered_amount = 6
+    }
 }
 
 STATE_ABU_DHABI = {
@@ -69,6 +73,11 @@ STATE_ABU_DHABI = {
     naval_exit_id = 3046
     min_cold_effect = 0.00
     max_cold_effect = 0.04
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 8
+        discovered_amount = 4
+    }
 }
 
 STATE_YEMEN = {
@@ -94,6 +103,10 @@ STATE_YEMEN = {
         undiscovered_amount = 30
     }
     naval_exit_id = 3047
+    resource = {
+        type = "building_saika_mine"
+        discovered_amount = 4
+    }
 }
 
 STATE_HEDJAZ = {
@@ -115,6 +128,11 @@ STATE_HEDJAZ = {
     naval_exit_id = 3047
     min_cold_effect = 0.00
     max_cold_effect = 0.03
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 10
+        discovered_amount = 6
+    }
 }
 
 STATE_HAIL = {
@@ -140,6 +158,10 @@ STATE_HAIL = {
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.07
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 16
+    }
 }
 
 STATE_CYPRUS = {
@@ -184,6 +206,11 @@ STATE_TRANSJORDAN = {
     naval_exit_id = 3047
     min_cold_effect = 0.00
     max_cold_effect = 0.10
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 4
+        discovered_amount = 4
+    }
 }
 
 STATE_PALESTINE = {
@@ -286,6 +313,10 @@ STATE_BAGHDAD = {
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.14
+    resource = {
+        type = "building_saika_mine"
+        discovered_amount = 4
+    }
 }
 
 STATE_MOSUL = {
@@ -323,6 +354,10 @@ STATE_DEIR_EZ_ZOR = {
     arable_resources = { "building_millet_farm" "building_livestock_ranch" "building_tobacco_plantation" }
     min_cold_effect = 0.00
     max_cold_effect = 0.18
+    resource = {
+        type = "building_saika_mine"
+        discovered_amount = 4
+    }
 }
 
 STATE_BASRA = {
@@ -348,6 +383,10 @@ STATE_BASRA = {
     naval_exit_id = 3046
     min_cold_effect = 0.00
     max_cold_effect = 0.10
+    resource = {
+        type = "building_saika_mine"
+        discovered_amount = 6
+    }
 }
 
 STATE_FARS = {
@@ -375,6 +414,10 @@ STATE_FARS = {
     naval_exit_id = 3046
     min_cold_effect = 0.00
     max_cold_effect = 0.08
+    resource = {
+        type = "building_saika_mine"
+        discovered_amount = 8
+    }
 }
 
 STATE_LARISTAN = {
@@ -401,6 +444,11 @@ STATE_LARISTAN = {
     naval_exit_id = 3046
     min_cold_effect = 0.00
     max_cold_effect = 0.06
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 6
+        discovered_amount = 6
+    }
 }
 
 STATE_KERMAN = {
@@ -422,6 +470,11 @@ STATE_KERMAN = {
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.08
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 6
+        discovered_amount = 10
+    }
 }
 
 STATE_SISTAN = {
@@ -444,6 +497,10 @@ STATE_SISTAN = {
     naval_exit_id = 3048
     min_cold_effect = 0.00
     max_cold_effect = 0.06
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 12
+    }
 }
 
 STATE_KHORASAN = {
@@ -467,6 +524,11 @@ STATE_KHORASAN = {
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.16
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 4
+        discovered_amount = 6
+    }
 }
 
 STATE_KHUZESTAN = {
@@ -492,6 +554,10 @@ STATE_KHUZESTAN = {
     naval_exit_id = 3046
     min_cold_effect = 0.00
     max_cold_effect = 0.10
+    resource = {
+        type = "building_saika_mine"
+        discovered_amount = 6
+    }
 }
 
 STATE_ISFAHAN = {
@@ -514,6 +580,10 @@ STATE_ISFAHAN = {
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.12
+    resource = {
+        type = "building_saika_mine"
+        discovered_amount = 8
+    }
 }
 
 STATE_MAZANDARAN = {
@@ -577,6 +647,11 @@ STATE_SEMNAN = {
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.16
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 8
+        discovered_amount = 4
+    }
 }
 
 STATE_TABRIZ = {

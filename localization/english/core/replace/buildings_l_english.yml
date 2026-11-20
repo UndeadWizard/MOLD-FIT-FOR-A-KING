@@ -26,3 +26,16 @@
  building_iksir_athanory_lens_option:0 "Expand $building_iksir_athanory$"
  pmg_base_building_iksir_athanory:0 "Base Building Iksir"
  pm_vatmoss_distillation:0 "Vatmoss Distillation"
+
+ bg_saika_mining: "Sâika Mines"
+ building_saika_mine:0 "Sâika Mine"
+ building_saika_mine_lens_option:0 "Expand $building_saika_mine$"
+ building_saika_mine_discovered_resource:0 "Sâika"
+ pmg_base_building_saika_mine:0 "Mining Equipment"
+ pm_picks_and_shovels_building_saika_mine:0 "Picks and Shovels"
+ pm_atmospheric_engine_pump_building_saika_mine:0 "Atmospheric Engine Pump"
+
+ pmg_saika_steel_building_steel_mill:0 "Sâika Alloying"
+ pm_no_saika_steel:0 "No Sâika Steel"
+ pm_saika_steel:0 "Sâika Steel"
+ pm_increased_saika_steel:0 "Increased Sâika Steel"

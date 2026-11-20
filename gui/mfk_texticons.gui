@@ -60,3 +60,25 @@ texticon = {
 		texture = "gfx/interface/icons/goods_icons/oil.dds"
 	}
 }
+
+texticon = {
+	icon = saika
+
+	iconsize = {
+		size = { 25 25 }
+		offset = { 0 7 }
+		fontsize = 18
+		texture = "gfx/interface/icons/goods_icons/sulfur.dds"
+	}
+}
+
+texticon = {
+	icon = saika_steel
+
+	iconsize = {
+		size = { 25 25 }
+		offset = { 0 7 }
+		fontsize = 18
+		texture = "gfx/interface/icons/goods_icons/steel.dds"
+	}
+}
