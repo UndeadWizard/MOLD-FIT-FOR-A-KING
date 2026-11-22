@@ -1,0 +1,4 @@
+﻿heritage_chimeric = {
+	type = heritage
+	trait_group = heritage_group_chimeric
+}

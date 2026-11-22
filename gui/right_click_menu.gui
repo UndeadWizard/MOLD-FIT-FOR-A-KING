@@ -2097,7 +2097,7 @@ right_click_menu = {
 
 				item = {
 					flowcontainer = {
-						visible = "[And( Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( CombatUnitType.Self ) ), ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ), Not( Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_cankerborn').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_behemoth').Self), ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_boar_hound').Self) ) ) ) )]"
+						visible = "[And( Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( CombatUnitType.Self ) ), ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ), Not( Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_grafted').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_behemoth').Self), ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_boar_hound').Self) ) ) ) )]"
 
 						default_unit_right_click_item = {
 							visible = "[Not(ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self))]"
@@ -2115,7 +2115,7 @@ right_click_menu = {
 
 				item = {
 					flowcontainer = {
-						visible = "[And( Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( CombatUnitType.Self ) ), ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_cankerborn').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_behemoth').Self), ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_boar_hound').Self) ) ) )]"
+						visible = "[And( Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( CombatUnitType.Self ) ), ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_grafted').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_behemoth').Self), ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_boar_hound').Self) ) ) )]"
 
 						default_unit_right_click_item = {
 							visible = "[Not(ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self))]"

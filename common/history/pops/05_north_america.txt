@@ -686,6 +686,10 @@
 				culture = siouan
 				size = 304
 			}
+			create_pop = {
+				culture = verdigri
+				size = 400
+			}
 		}
 	}
 	s:STATE_OHIO = {
@@ -725,6 +729,10 @@
 				culture = algonquian
 				religion = protestant
 				size = 3000
+			}
+			create_pop = {
+				culture = verdigri
+				size = 600
 			}
 		}
 	}
@@ -854,6 +862,11 @@
 				culture = afro_american
 				size = 15643
 			}
+			create_pop = {
+				pop_type = slaves
+				culture = verdigri
+				size = 800
+			}
 		}
 	}
 	s:STATE_FLORIDA = {
@@ -874,6 +887,11 @@
 			create_pop = {
 				culture = muskogean
 				size = 3421
+			}
+			create_pop = {
+				pop_type = slaves
+				culture = verdigri
+				size = 2950
 			}
 		}
 		region_state:SML = {
@@ -907,6 +925,11 @@
 				pop_type = slaves
 				culture = afro_american
 				size = 256172
+			}
+			create_pop = {
+				pop_type = slaves
+				culture = verdigri
+				size = 16000
 			}
 		}
 	}
@@ -1138,6 +1161,10 @@
 				culture = caddoan
 				size = 6312
 			}
+			create_pop = {
+				culture = verdigri
+				size = 2000
+			}
 		}
 	}
 	s:STATE_MAINE = {
@@ -1170,6 +1197,11 @@
 			create_pop = {
 				culture = cherokee
 				size = 3644 # 1835 Cherokee Census "Henderson Roll"
+			}
+			create_pop = {
+				pop_type = slaves
+				culture = verdigri
+				size = 14800
 			}
 		}
 	}
@@ -1248,6 +1280,11 @@
 				pop_type = slaves
 				culture = afro_american
 				size = 318693
+			}
+			create_pop = {
+				pop_type = slaves
+				culture = verdigri
+				size = 11800
 			}
 		}
 	}

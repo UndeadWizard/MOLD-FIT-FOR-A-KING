@@ -520,3 +520,29 @@ REPLACE:iroquoian = {
 	}
 	graphics = decentralised_americas
 }
+
+verdigri = {
+	color = rgb{ 67 179 174 }
+	religion = protestant
+	heritage = heritage_chimeric
+	language = language_anglophone
+
+	traditions = { }
+
+	male_common_first_names = {
+		Abel Amos Asa Cato Cyrus Ezra Gideon Isaac Jacob Jonas Josiah Moses Nathan Pompey Reuben Samson Silas Solomon Titus Zeke
+	}
+
+	female_common_first_names = {
+		Abigail Bess Chloe Delia Dinah Esther Hagar Hannah Jemima Keziah Leah Lettie Lucy Mercy Patience Phoebe Rhoda Ruth Sukey Tabitha
+	}
+
+	common_last_names = {
+		Brass Brazier Cauldwell Copper Copperpot Kettle Kettleby Ladle Patten Penny Pewter Tinker Tinsley Vatwell Verdier
+	}
+
+	ethnicities = {
+		1 = neutral
+	}
+	graphics = african
+}

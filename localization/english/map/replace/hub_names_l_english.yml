@@ -88,11 +88,11 @@ HUB_NAME_STATE_SUPERIOR_wood: "Bayfield"
 HUB_NAME_STATE_SUPERIOR_port: "Superior Port"
 
 ## Columbia
-HUB_NAME_STATE_COLUMBIA_city: "Columbia"
-HUB_NAME_STATE_COLUMBIA_mine: "Fulton"
-HUB_NAME_STATE_COLUMBIA_farm: "Jefferson City"
-HUB_NAME_STATE_COLUMBIA_wood: "Sedalia"
-HUB_NAME_STATE_COLUMBIA_port: "Columbia Port"
+HUB_NAME_STATE_COLUMBIA_city: "Fort Nisqually"
+HUB_NAME_STATE_COLUMBIA_mine: "Bellingham"
+HUB_NAME_STATE_COLUMBIA_farm: "Kamloops"
+HUB_NAME_STATE_COLUMBIA_wood: "Spokane"
+HUB_NAME_STATE_COLUMBIA_port: "Port Townshend"
 
 ## California
 HUB_NAME_STATE_CALIFORNIA_mine: "Placerville"

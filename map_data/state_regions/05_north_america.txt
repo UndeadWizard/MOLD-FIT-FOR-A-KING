@@ -126,21 +126,25 @@ STATE_COLUMBIA = {
     id = 270
     subsistence_building = "building_subsistence_farm"
     provinces = { "x004935" "x00A000" "x0187D7" "x036981" "x052300" "x064FE6" "x0667C7" "x0682D7" "x06EEAC" "x082A0F" "x085961" "x08B5F9" "x09EC2E" "x0A48BB" "x0D33A7" "x0D5E87" "x0EAE6C" "x0FD228" "x1A505E" "x1A8981" "x1BD217" "x20C0C0" "x21CE74" "x227733" "x249E28" "x24FAB0" "x2541A9" "x266DDD" "x277AC6" "x2B750F" "x2BBEA4" "x2BCA5E" "x2BF430" "x2CE4D9" "x2FEE4D" "x30DED0" "x335573" "x34639F" "x34C789" "x3575A8" "x362E8F" "x37C6AC" "x37D2E9" "x38DFFE" "x3A17A7" "x3B97B7" "x3E4D28" "x3F0EE7" "x41AC27" "x44535C" "x453F2B" "x46BACD" "x48A9D1" "x490D37" "x496526" "x4B2499" "x4B49F2" "x4C08A9" "x4D08E1" "x4D3ACE" "x4DF1B5" "x4EBD49" "x4F0C2D" "x4F5A4D" "x501E7B" "x515BE2" "x51B430" "x521640" "x53444F" "x5502EC" "x551707" "x553AEE" "x575CCC" "x5A6F3E" "x5AE4F9" "x5BB5B5" "x5DFA9B" "x6040C0" "x605F60" "x611AE5" "x61CACB" "x639A2C" "x64DA01" "x64E0B4" "x68129D" "x687C61" "x6A0A2C" "x6AA85B" "x6BDFF3" "x6C53BA" "x6CF452" "x6DFDD1" "x7147A2" "x738AFD" "x74558E" "x76CD59" "x77AD45" "x7A8F60" "x7B567F" "x7B7595" "x7BDC98" "x7E7783" "x7F5540" "x804A90" "x83B2A7" "x83EC3F" "x841727" "x852913" "x872665" "x896ABB" "x89C9AC" "x8B9B2E" "x8C707D" "x8CF087" "x8D62E7" "x90BFEF" "x940588" "x946CC7" "x94B02F" "x95DD40" "x999E9B" "x99CB13" "x9A3053" "x9A43D9" "x9A96C1" "x9AA5A8" "x9B5B04" "x9C275B" "x9E03D5" "x9E2648" "x9EA705" "x9F2532" "xA040C0" "xA0D447" "xA23EFD" "xA4DCB6" "xA4DD56" "xA599DF" "xA92FD8" "xAA8177" "xABC1F1" "xAC33A4" "xAFE769" "xB3A699" "xB3D999" "xB4D972" "xB5A331" "xB94979" "xB963F3" "xBB97D1" "xBBBE62" "xBD2011" "xBFA9C4" "xC02080" "xC0696D" "xC0A000" "xC0B693" "xC0F8C2" "xC40501" "xC6EB78" "xC77F08" "xC8510A" "xC8CBF4" "xC964E5" "xC9A9AB" "xCAC122" "xCD3BA9" "xCDAF46" "xCF4646" "xCF67BB" "xCFC60A" "xCFD016" "xD080F5" "xD1EAE5" "xD31024" "xD4AFEA" "xD5A5B1" "xD61B40" "xD833D7" "xD96A8E" "xD9A050" "xDA702A" "xDAC21E" "xDAEDDD" "xDB515A" "xDCF81F" "xDCF8ED" "xDD172E" "xE01E2E" "xE06C22" "xE3380D" "xE3FA4D" "xE52F87" "xE6B7A4" "xE764C0" "xE811D1" "xE836AA" "xE9AC75" "xED64F1" "xEDD51C" "xEDE38B" "xEE0358" "xEE83F2" "xF4C54B" "xFA6F59" "xFA7D25" "xFBE9A2" "xFC0388" "xFD4C5E" "xFDF070" "xFE866D" "xFF3644" "xFFBEF7" }
+    traits = { "state_trait_columbia_river" "state_trait_cascades" }
     city = "x036981"
     farm = "x064FE6"
     mine = "x004935"
     wood = "x085961"
     port = "xCF4646"
     arable_land = 200
-    arable_resources = { "building_maize_farm" "building_livestock_ranch" "building_cotton_plantation" "building_sugar_plantation" "building_vineyard" }
+    arable_resources = { "building_wheat_farm" "building_livestock_ranch" "building_vineyard" }
     capped_resources = {
-        building_coal_mine = 8
-        building_sulfur_mine = 8
-        building_logging_camp = 8
+        building_coal_mine = 32
+        building_logging_camp = 70
+        building_fishing_wharf = 6
+        building_whaling_station = 3
+        building_vatmoss_hotbed = 14
     }
     resource = {
-        type = "building_oil_rig"
-        undiscovered_amount = 60
+        type = "building_gold_field"
+        depleted_type = "building_gold_mine"
+        undiscovered_amount = 6
     }
     naval_exit_id = 3154
 }
@@ -162,6 +166,7 @@ STATE_OREGON = {
         building_logging_camp = 60
         building_fishing_wharf = 5
         building_whaling_station = 5
+        building_vatmoss_hotbed = 10
     }
     resource = {
         type = "building_oil_rig"
@@ -1205,6 +1210,7 @@ STATE_BRITISH_COLUMBIA = {
         building_logging_camp = 90
         building_whaling_station = 6
         building_fishing_wharf = 9
+        building_vatmoss_hotbed = 14
     }
     resource = {
         type = "building_gold_field"

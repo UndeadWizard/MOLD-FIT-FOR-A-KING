@@ -11,6 +11,7 @@
  STATE_LOUISIANA:0 "Louisiana"
  STATE_ALBERTA:0 "Albertus"
  STATE_BRITISH_COLUMBIA:1 "Vancouver"
+ STATE_COLUMBIA:0 "Columbia"
  STATE_SASKATCHEWAN:0 "Saskatchewan"
  STATE_GALVESTON:0 "Galveston"
  STATE_COMANCHE:0 "Comanche"
