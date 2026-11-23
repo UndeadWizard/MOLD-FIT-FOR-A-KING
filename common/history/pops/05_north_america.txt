@@ -414,6 +414,22 @@
 				culture = siouan
 				size = 12059
 			}
+			create_pop = {
+				culture = dakota
+				size = 13576
+			}
+			create_pop = {
+				culture = siouan
+				size = 4242
+			}
+			create_pop = {
+				culture = dakota
+				size = 3280
+			}
+			create_pop = {
+				culture = siouan
+				size = 1025
+			}
 		}
 	}
 	s:STATE_NEBRASKA = {
@@ -537,7 +553,7 @@
 		region_state:LKT = {
 			create_pop = {
 				culture = dakota
-				size = 21124
+				size = 13047
 			}
 		}
 		region_state:IWK = {
@@ -623,7 +639,7 @@
 		region_state:CTF = {
 			create_pop = {
 				culture = algonquian
-				size = 26231
+				size = 16613
 			}
 		}
 		region_state:IWK = {
@@ -830,17 +846,29 @@
 		region_state:LKT = {
 			create_pop = {
 				culture = dakota
-				size = 31031
+				size = 17455
 			}
 			create_pop = {
 				culture = siouan
-				size = 9697
+				size = 5455
+			}
+			create_pop = {
+				culture = dakota
+				size = 10666
+			}
+			create_pop = {
+				culture = siouan
+				size = 3333
 			}
 		}
 		region_state:IRC = {
 			create_pop = {
 				culture = cree
 				size = 2820
+			}
+			create_pop = {
+				culture = cree
+				size = 1301
 			}
 		}
 		region_state:TAT = {
@@ -853,16 +881,26 @@
 				size = 1412
 			}
 		}
+		region_state:MTC = {
+			create_pop = {
+				culture = metis
+				size = 875
+			}
+			create_pop = {
+				culture = franco_canadian
+				size = 625
+			}
+		}
 	}
 	s:STATE_PEMBINA = {
 		region_state:MTC = {
 			create_pop = {
 				culture = metis
-				size = 3500
+				size = 2625
 			}
 			create_pop = {
 				culture = franco_canadian
-				size = 2500
+				size = 1875
 			}
 		}
 		region_state:CTF = {
@@ -870,21 +908,23 @@
 				culture = algonquian
 				size = 1500
 			}
+			create_pop = {
+				culture = algonquian
+				size = 9618
+			}
 		}
 		region_state:LKT = {
 			create_pop = {
 				culture = dakota
-				size = 32969
+				size = 19023
 			}
 			create_pop = {
 				culture = siouan
-				size = 10303
+				size = 5945
 			}
-		}
-		region_state:IRC = {
 			create_pop = {
-				culture = cree
-				size = 1301
+				culture = dakota
+				size = 8077
 			}
 		}
 	}
@@ -1301,23 +1341,11 @@
 		region_state:NVJ = {
 			create_pop = {
 				culture = paiute
-				size = 4531
+				size = 715
 			}
 			create_pop = {
 				culture = navajo
-				size = 26436
-			}
-		}
-		region_state:YUM = {
-			create_pop = {
-				culture = hokan
-				size = 8985
-			}
-		}
-		region_state:APC = {
-			create_pop = {
-				culture = apache
-				size = 531
+				size = 4174
 			}
 		}
 		region_state:UTE = {
@@ -1333,7 +1361,7 @@
 		region_state:SPI = {
 			create_pop = {
 				culture = paiute
-				size = 11571
+				size = 5785
 			}
 		}
 		region_state:SHO = {
@@ -1344,22 +1372,36 @@
 		}
 	}
 	s:STATE_NEVADA = {
-		region_state:NPI = {
-			create_pop = {
-				culture = paiute
-				size = 8482
-			}
-		}
 		region_state:SPI = {
 			create_pop = {
 				culture = paiute
-				size = 11570
+				size = 3085
 			}
-		}
-		region_state:SHO = {
 			create_pop = {
 				culture = paiute
-				size = 2892
+				size = 2700
+			}
+		}
+		region_state:NVJ = {
+			create_pop = {
+				culture = paiute
+				size = 3816
+			}
+			create_pop = {
+				culture = navajo
+				size = 22262
+			}
+		}
+		region_state:APC = {
+			create_pop = {
+				culture = apache
+				size = 531
+			}
+		}
+		region_state:YUM = {
+			create_pop = {
+				culture = hokan
+				size = 8985
 			}
 		}
 	}
@@ -2159,11 +2201,25 @@
 				culture = paiute
 				size = 29846
 			}
+			create_pop = {
+				culture = paiute
+				size = 8482
+			}
 		}
 		region_state:SHO = {
 			create_pop = {
 				culture = paiute
 				size = 19279
+			}
+			create_pop = {
+				culture = paiute
+				size = 2892
+			}
+		}
+		region_state:SPI = {
+			create_pop = {
+				culture = paiute
+				size = 11571
 			}
 		}
 	}

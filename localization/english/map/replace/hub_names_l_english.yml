@@ -68,10 +68,11 @@ HUB_NAME_STATE_MONTANA_farm: "Bozeman"
 HUB_NAME_STATE_MONTANA_wood: "Missoula"
 
 ## Pembina
-HUB_NAME_STATE_PEMBINA_city: "Pembina"
-HUB_NAME_STATE_PEMBINA_mine: "Otter Tail"
+HUB_NAME_STATE_PEMBINA_city: "Saint Anthony"
+HUB_NAME_STATE_PEMBINA_port: "Fond du Lac"
+HUB_NAME_STATE_PEMBINA_mine: "Duluth"
 HUB_NAME_STATE_PEMBINA_farm: "Saint Cloud"
-HUB_NAME_STATE_PEMBINA_wood: "Red Lake"
+HUB_NAME_STATE_PEMBINA_wood: "Aitkin"
 
 ## Toronto
 HUB_NAME_STATE_TORONTO_city: "Toronto"
@@ -120,7 +121,7 @@ HUB_NAME_STATE_WASHOE_mine: "Virginia City"
 HUB_NAME_STATE_WASHOE_wood: "Elko"
 
 ## Nevada
-HUB_NAME_STATE_NEVADA_city: "Las Vegas"
-HUB_NAME_STATE_NEVADA_farm: "Pahranagat"
-HUB_NAME_STATE_NEVADA_mine: "Candelaria"
-HUB_NAME_STATE_NEVADA_wood: "Pioche"
+HUB_NAME_STATE_NEVADA_city: "Fort Mojave"
+HUB_NAME_STATE_NEVADA_farm: "Mohave Valley"
+HUB_NAME_STATE_NEVADA_mine: "Kanab"
+HUB_NAME_STATE_NEVADA_wood: "Kaibab"
