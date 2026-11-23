@@ -146,6 +146,7 @@
 			owned_provinces = { x6B15F1 x7166FA xC744F9 x3EC5D1 xB3DED5 xD19AD8 xB00B6B }
 		}
 
+		add_claim = c:HYD
 		add_homeland = cu:telegu
 	}
 	s:STATE_PUNJAB = {
@@ -244,8 +245,14 @@
 	s:STATE_HYDERABAD = {
 		create_state = {
 			country = c:HYD
-			owned_provinces = { xC5F1D7 x75599C xD07020 x990C20 x4FCA8A x5E950F xE2709D x782368 xACAC7B xB4928F x90B0A0 x6C4C5A xC90323 x6B578E x9257D2 xD7D0CD x0607C9 xDE9FE5 x0B9150 x293762 x8729D5 x01F273 xE7E1D9 x774B02 x507020 xD0440A x1E32E0 x2B94C1 x25B964 xE3DECE xFFACEF xF189CD x49EAE4 xB08536 xA1516D x67DBD9 x50F020 xFDC9AD x511610 x78A5B6 x5EC767 xB83EA4 x90F0A0 xDF9BF7 xD9F23D }
+			owned_provinces = { xC5F1D7 x75599C xD07020 x4FCA8A x5E950F xE2709D x782368 xACAC7B xB4928F x90B0A0 x6C4C5A xC90323 x6B578E x9257D2 xD7D0CD x0607C9 xDE9FE5 x0B9150 x293762 x8729D5 x01F273 xE7E1D9 x774B02 x507020 xD0440A x1E32E0 x2B94C1 xE3DECE xF189CD x49EAE4 xA1516D xFDC9AD x511610 x78A5B6 x5EC767 xB83EA4 x90F0A0 xDF9BF7 xD9F23D }
 		}
+		# Raichur Doab, taken from the Nizam by Tipu Sultan
+		create_state = {
+			country = c:MYS
+			owned_provinces = { x990C20 x25B964 xFFACEF xB08536 x67DBD9 x50F020 }
+		}
+		add_claim = c:HYD
 		add_homeland = cu:telegu
 	    add_homeland = cu:deccani
 	    add_homeland = cu:marathi
@@ -618,13 +625,8 @@
 	}
 	s:STATE_KURNOOL = {
 	    create_state = {
-	    	country = c:BIC
-	    	owned_provinces = { x063403 x0F1912 x338BFB x34BB3B x35AB0E x461A00 x5170A0 x54D463 x59BBE1 x669373 xF2F82A xF46AEC  }
-			state_type = unincorporated
-		}
-	    create_state = {
-	    	country = c:KNO
-	    	owned_provinces = { x84EE56 xF91482 }
+	    	country = c:MYS
+	    	owned_provinces = { x063403 x0F1912 x338BFB x34BB3B x35AB0E x461A00 x5170A0 x54D463 x59BBE1 x669373 xF2F82A xF46AEC x84EE56 xF91482 }
 		}
 
 	    add_homeland = cu:telegu

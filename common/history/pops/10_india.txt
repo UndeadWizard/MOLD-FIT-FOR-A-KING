@@ -1401,8 +1401,13 @@ POPS = {
 				size = 16400
 			}
 			create_pop = {
-				culture = british
-				size = 7992
+				culture = french
+				size = 4992
+			}
+			create_pop = {
+				culture = dutch
+				religion = protestant
+				size = 3000
 			}
 			create_pop = {
 				culture = sinhala
@@ -1812,7 +1817,7 @@ POPS = {
 		region_state:HYD = {
 			create_pop = {
 				culture = telegu
-				size = 3038944
+				size = 2738944
 			}
 			create_pop = {
 				pop_type = slaves
@@ -1830,7 +1835,7 @@ POPS = {
 			}
 			create_pop = {
 				culture = kannada
-				size = 911683
+				size = 461683
 			}
 			create_pop = {
 				pop_type = slaves
@@ -1839,7 +1844,7 @@ POPS = {
 			}
 			create_pop = {
 				culture = deccani
-				size = 1716381
+				size = 1516381
 			}
 			create_pop = {
 				culture = deccani
@@ -1850,6 +1855,21 @@ POPS = {
 				pop_type = slaves
 				culture = deccani
 				size = 89394
+			}
+		}
+		region_state:MYS = {
+			create_pop = {
+				culture = kannada
+				size = 450000
+			}
+			create_pop = {
+				culture = telegu
+				size = 300000
+			}
+			create_pop = {
+				culture = deccani
+				religion = sunni
+				size = 200000
 			}
 		}
 	}
@@ -2024,7 +2044,7 @@ POPS = {
 		}
 	}
 	s:STATE_KURNOOL = {
-		region_state:BIC = {
+		region_state:MYS = {
 			create_pop = {
 				culture = telegu
 				size = 960075
@@ -2048,8 +2068,6 @@ POPS = {
 				culture = kannada
 				size = 301200
 			}
-		}
-		region_state:KNO = {
 			create_pop = {
 				culture = telegu
 				size = 279935

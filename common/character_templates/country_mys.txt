@@ -1,0 +1,64 @@
+﻿### Mysore character template file ###
+
+## game start ruler ##
+
+MYS_haidar_ali_sultan = {
+	# Grandson of Tipu Sultan, named for the dynasty's founder
+	first_name = Haidar_Ali
+	last_name = Sultan
+	noble = yes
+	birth_date = 1812.3.14
+	ruler = yes
+	culture = cu:deccani
+	religion = rel:sunni
+	interest_group = ig_armed_forces
+	ideology = ideology_modernizer_leader
+	home_region = STATE_MYSORE
+	traits = {
+		ambitious
+		reckless
+	}
+}
+
+## game start interest group leaders ##
+
+MYS_ghulam_muhammad_sultan = {
+	# Tipu Sultan's youngest son, passed over for the eldest line
+	first_name = Ghulam_Muhammad
+	last_name = Sultan
+	historical = yes
+	noble = yes
+	birth_date = 1795.3.1
+	culture = cu:deccani
+	religion = rel:sunni
+	interest_group = ig_devout
+	ideology = ideology_traditionalist
+	ig_leader = yes
+	home_region = STATE_MYSORE
+	traits = {
+		pious
+		persistent
+	}
+}
+
+## other characters ##
+
+MYS_krishnaraja_wodeyar = {
+	# Krishnaraja Wadiyar III, the captive Hindu prince
+	first_name = "Krishnaraja"
+	last_name = "Wodeyar"
+	historical = yes
+	noble = yes
+	birth_date = 1794.7.14
+	culture = cu:kannada
+	religion = rel:hindu
+	interest_group = ig_landowners
+	ideology = ideology_traditionalist
+	home_region = STATE_MYSORE
+	traits = {
+		meticulous
+	}
+	on_created = {
+		change_character_religion = rel:hindu
+	}
+}

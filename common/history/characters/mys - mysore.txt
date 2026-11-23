@@ -1,0 +1,18 @@
+﻿CHARACTERS = {
+	c:MYS ?= {
+		# Ruler
+		create_character = {
+			template = MYS_haidar_ali_sultan
+		}
+
+		# Tipu Sultan's youngest son, leader of the ulema
+		create_character = {
+			template = MYS_ghulam_muhammad_sultan
+		}
+
+		# The captive Wodeyar prince
+		create_character = {
+			template = MYS_krishnaraja_wodeyar
+		}
+	}
+}

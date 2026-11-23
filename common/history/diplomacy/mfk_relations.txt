@@ -89,6 +89,13 @@
 		set_relations = { country = c:PRU value = 10 }
 	}
 	
+	c:HYD ?= {
+		set_relations = { country = c:FRA value = 30 }
+		set_relations = { country = c:BCE value = 30 }
+		set_relations = { country = c:MYS value = -30 }
+		set_relations = { country = c:BIC value = -20 }
+	}
+
 	c:USA ?= {
 		set_relations = { country = c:SEQ value = -20 }
 		set_relations = { country = c:GRG value = 10 }
