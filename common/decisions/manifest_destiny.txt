@@ -33,9 +33,11 @@
 				owns_entire_state_region = STATE_WASHOE
 				owns_entire_state_region = STATE_BAJA_CALIFORNIA
 				owns_entire_state_region = STATE_UTAH
+				owns_entire_state_region = STATE_NEVADA
 				owns_entire_state_region = STATE_ARIZONA
 				owns_entire_state_region = STATE_NEW_MEXICO
 				owns_entire_state_region = STATE_TEXAS
+				owns_entire_state_region = STATE_GALVESTON
 				owns_entire_state_region = STATE_LOUISIANA
 				owns_entire_state_region = STATE_ARKANSAS
 			}
@@ -155,6 +157,18 @@
 				add_claim = ROOT
 			}
 		}
+		s:STATE_NEVADA = {
+			if = {
+				limit = {
+					any_scope_state = {
+						NOT = {
+							owner = ROOT
+						}
+					}
+				}
+				add_claim = ROOT
+			}
+		}
 		s:STATE_ARIZONA = {
 			if = {
 				limit = {
@@ -215,7 +229,19 @@
 				add_claim = ROOT
 			}
 		}
-		s:STATE_MISSISSIPPI = {
+		s:STATE_NORTH_DAKOTA = {
+			if = {
+				limit = {
+					any_scope_state = {
+						NOT = {
+							owner = ROOT
+						}
+					}
+				}
+				add_claim = ROOT
+			}
+		}
+		s:STATE_PEMBINA = {
 			if = {
 				limit = {
 					any_scope_state = {
@@ -252,6 +278,18 @@
 			}
 		}
 		s:STATE_TEXAS = {
+			if = {
+				limit = {
+					any_scope_state = {
+						NOT = {
+							owner = ROOT
+						}
+					}
+				}
+				add_claim = ROOT
+			}
+		}
+		s:STATE_GALVESTON = {
 			if = {
 				limit = {
 					any_scope_state = {

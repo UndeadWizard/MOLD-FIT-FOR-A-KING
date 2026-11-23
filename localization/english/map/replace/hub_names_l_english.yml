@@ -67,11 +67,11 @@ HUB_NAME_STATE_MONTANA_mine: "Butte"
 HUB_NAME_STATE_MONTANA_farm: "Bozeman"
 HUB_NAME_STATE_MONTANA_wood: "Missoula"
 
-## Mississippi
-HUB_NAME_STATE_MISSISSIPPI_city: "Minneapolis"
-HUB_NAME_STATE_MISSISSIPPI_mine: "Stanton"
-HUB_NAME_STATE_MISSISSIPPI_farm: "Duluth"
-HUB_NAME_STATE_MISSISSIPPI_wood: "Devils Lake"
+## Pembina
+HUB_NAME_STATE_PEMBINA_city: "Pembina"
+HUB_NAME_STATE_PEMBINA_mine: "Otter Tail"
+HUB_NAME_STATE_PEMBINA_farm: "Saint Cloud"
+HUB_NAME_STATE_PEMBINA_wood: "Red Lake"
 
 ## Toronto
 HUB_NAME_STATE_TORONTO_city: "Toronto"
@@ -115,6 +115,12 @@ HUB_NAME_STATE_SOUTHERN_CALIFORNIA_wood: "Santa Barbara"
 
 ## Washoe
 HUB_NAME_STATE_WASHOE_city: "Carson City"
-HUB_NAME_STATE_WASHOE_farm: "Candelaria"
+HUB_NAME_STATE_WASHOE_farm: "Lovelock"
 HUB_NAME_STATE_WASHOE_mine: "Virginia City"
-HUB_NAME_STATE_WASHOE_wood: "Truckee"
+HUB_NAME_STATE_WASHOE_wood: "Elko"
+
+## Nevada
+HUB_NAME_STATE_NEVADA_city: "Las Vegas"
+HUB_NAME_STATE_NEVADA_farm: "Pahranagat"
+HUB_NAME_STATE_NEVADA_mine: "Candelaria"
+HUB_NAME_STATE_NEVADA_wood: "Pioche"

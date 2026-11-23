@@ -1504,6 +1504,7 @@ ai_strategy_default = {
 				scope:enemy_country = {
 					OR = {
 						has_state_in_state_region = STATE_TEXAS
+						has_state_in_state_region = STATE_GALVESTON
 					}
 				}
 			}
@@ -1521,10 +1522,12 @@ ai_strategy_default = {
 						has_state_in_state_region = STATE_SOUTHERN_CALIFORNIA
 						has_state_in_state_region = STATE_WASHOE
 						has_state_in_state_region = STATE_UTAH
+						has_state_in_state_region = STATE_NEVADA
 						has_state_in_state_region = STATE_COLORADO
 						has_state_in_state_region = STATE_ARIZONA
 						has_state_in_state_region = STATE_NEW_MEXICO
 						has_state_in_state_region = STATE_TEXAS
+						has_state_in_state_region = STATE_GALVESTON
 						has_state_in_state_region = STATE_KANSAS
 						has_state_in_state_region = STATE_OKLAHOMA # if they somehow lose it
 					}
@@ -2619,7 +2622,9 @@ ai_strategy_default = {
 							OR = {
 								state_region = s:STATE_COLORADO
 								state_region = s:STATE_UTAH
+								state_region = s:STATE_NEVADA
 								state_region = s:STATE_TEXAS
+								state_region = s:STATE_GALVESTON
 								state_region = s:STATE_KANSAS
 								state_region = s:STATE_OKLAHOMA
 								state_region = s:STATE_ARIZONA
@@ -4066,10 +4071,12 @@ ai_strategy_default = {
 						has_state_in_state_region = STATE_SOUTHERN_CALIFORNIA
 						has_state_in_state_region = STATE_WASHOE
 						has_state_in_state_region = STATE_UTAH
+						has_state_in_state_region = STATE_NEVADA
 						has_state_in_state_region = STATE_COLORADO
 						has_state_in_state_region = STATE_ARIZONA
 						has_state_in_state_region = STATE_NEW_MEXICO
 						has_state_in_state_region = STATE_TEXAS
+						has_state_in_state_region = STATE_GALVESTON
 						has_state_in_state_region = STATE_KANSAS
 						has_state_in_state_region = STATE_OKLAHOMA # if they somehow lose it
 					}
@@ -4633,10 +4640,12 @@ ai_strategy_default = {
 							state_region = s:STATE_SOUTHERN_CALIFORNIA
 							state_region = s:STATE_WASHOE
 							state_region = s:STATE_UTAH
+							state_region = s:STATE_NEVADA
 							state_region = s:STATE_COLORADO
 							state_region = s:STATE_ARIZONA
 							state_region = s:STATE_NEW_MEXICO
 							state_region = s:STATE_TEXAS
+							state_region = s:STATE_GALVESTON
 							state_region = s:STATE_KANSAS
 							state_region = s:STATE_OKLAHOMA # if they somehow lose it
 						}

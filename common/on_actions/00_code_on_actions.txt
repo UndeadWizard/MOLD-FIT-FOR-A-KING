@@ -460,6 +460,9 @@ on_yearly_pulse_country = {
 		# Countries have a chance to change their mind about who they want to support in Egypt vs Ottomans conflicts
 		on_yearly_pulse_country_veiled_protectorate_support_effect = yes
 
+		# Chimeric Slavery: binding, refinement and penal sentences
+		mfk_chimeric_slavery_yearly_effect = yes
+
 		if = {
 			limit = {
 				NOR = {

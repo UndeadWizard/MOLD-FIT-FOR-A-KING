@@ -529,6 +529,12 @@ verdigri = {
 
 	traditions = { }
 
+	assimilation_rate = 0.0
+
+	obsessions = {
+		plasm
+	}
+
 	male_common_first_names = {
 		Abel Amos Asa Cato Cyrus Ezra Gideon Isaac Jacob Jonas Josiah Moses Nathan Pompey Reuben Samson Silas Solomon Titus Zeke
 	}

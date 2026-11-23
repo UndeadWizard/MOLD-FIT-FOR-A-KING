@@ -318,10 +318,13 @@ has_je_conquest_reason = {
 						state_region = s:STATE_SOUTHERN_CALIFORNIA
 						state_region = s:STATE_WASHOE
 						state_region = s:STATE_UTAH
+						state_region = s:STATE_NEVADA
 						state_region = s:STATE_COLORADO
 						state_region = s:STATE_ARIZONA
 						state_region = s:STATE_NEW_MEXICO
 						state_region = s:STATE_TEXAS
+						state_region = s:STATE_GALVESTON
+						state_region = s:STATE_LOUISIANA
 					}
 				}
 			}

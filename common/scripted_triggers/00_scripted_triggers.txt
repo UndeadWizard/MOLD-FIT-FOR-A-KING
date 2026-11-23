@@ -513,6 +513,7 @@ owned_pacific_coast_region_states = {
 	owns_entire_state_region = STATE_IDAHO
 	owns_entire_state_region = STATE_OREGON
 	owns_entire_state_region = STATE_UTAH
+	owns_entire_state_region = STATE_NEVADA
 	owns_entire_state_region = STATE_ARIZONA
 	owns_entire_state_region = STATE_CALIFORNIA
 	owns_entire_state_region = STATE_NORTHERN_CALIFORNIA

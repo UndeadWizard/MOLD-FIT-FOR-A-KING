@@ -43,10 +43,16 @@ manifest_destiny.1 = {
 		s:STATE_UTAH = {
 			add_homeland = cu:yankee
 		}
+		s:STATE_NEVADA = {
+			add_homeland = cu:yankee
+		}
 		s:STATE_LOUISIANA = {
 			add_homeland = cu:dixie
 		}
 		s:STATE_TEXAS = {
+			add_homeland = cu:dixie
+		}
+		s:STATE_GALVESTON = {
 			add_homeland = cu:dixie
 		}
 		s:STATE_NEW_MEXICO = {

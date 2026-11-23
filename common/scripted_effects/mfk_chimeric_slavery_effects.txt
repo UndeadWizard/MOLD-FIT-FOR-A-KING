@@ -1,0 +1,102 @@
+﻿# Root = country. Fired from on_yearly_pulse_country.
+# Chimeric Slavery blends Legacy and Debt Slavery:
+#  Legacy: existing slaves remain slaves and are refined into Verdigri.
+#  Debt:   free Verdigri are bound only when poor, for the cost of their
+#          refinement. Wealthier and middle/upper strata Verdigri stay free,
+#          and binding stops once a state is a quarter slaves.
+#  Penal:  criminals, orphans and the destitute are sentenced to the vats
+#          and leave as free but penniless Verdigri, open to binding.
+# Refinement and penal sentences only run in states whose market sells plasm.
+mfk_chimeric_slavery_yearly_effect = {
+	if = {
+		limit = { has_law = law_type:law_chimeric_slavery }
+
+		every_scope_state = {
+			# Debt binding runs first, so last year's penal converts are exposed to it
+			if = {
+				limit = {
+					pop_type_percent_state = {
+						target = pop_type:slaves
+						value < 0.25
+					}
+				}
+				every_scope_pop = {
+					limit = {
+						culture = cu:verdigri
+						strata = lower
+						NOT = { is_pop_type = slaves }
+						wealth <= 10
+					}
+					if = {
+						limit = { wealth <= 5 }
+						random = {
+							chance = { value = 50 }
+							change_poptype = pop_type:slaves
+						}
+					}
+					else = {
+						random = {
+							chance = { value = 20 }
+							change_poptype = pop_type:slaves
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					market ?= {
+						mg:plasm = {
+							market_goods_sell_orders > 0
+						}
+					}
+				}
+
+				# Planters refine their slaves
+				every_scope_pop = {
+					limit = {
+						is_pop_type = slaves
+						NOT = { culture = cu:verdigri }
+					}
+					change_pop_culture = {
+						target = cu:verdigri
+						value = 0.03
+					}
+				}
+
+				# Penal refinement needs police to make the arrests
+				if = {
+					limit = {
+						owner = {
+							NOT = { has_law = law_type:law_no_police }
+						}
+					}
+					every_scope_pop = {
+						limit = {
+							strata = lower
+							is_employed = no
+							NOT = { is_pop_type = slaves }
+							NOT = { culture = cu:verdigri }
+						}
+						if = {
+							# Orphanages sell children to the vats where child labour is legal
+							limit = {
+								owner = { has_law = law_type:law_child_labor_allowed }
+							}
+							change_pop_culture = {
+								target = cu:verdigri
+								value = 0.02
+							}
+						}
+						else = {
+							change_pop_culture = {
+								target = cu:verdigri
+								value = 0.01
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

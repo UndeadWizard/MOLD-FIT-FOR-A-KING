@@ -19,9 +19,12 @@
 			owns_entire_state_region_uncontested = STATE_SOUTHERN_CALIFORNIA
 			owns_entire_state_region_uncontested = STATE_WASHOE
 			owns_entire_state_region_uncontested = STATE_UTAH
+			owns_entire_state_region_uncontested = STATE_NEVADA
 			owns_entire_state_region_uncontested = STATE_ARIZONA
 			owns_entire_state_region_uncontested = STATE_NEW_MEXICO
 			owns_entire_state_region_uncontested = STATE_TEXAS
+			owns_entire_state_region_uncontested = STATE_GALVESTON
+			owns_entire_state_region_uncontested = STATE_LOUISIANA
 		}
 		effect = {
 			trigger_event = { id = manifest_destiny.1 }

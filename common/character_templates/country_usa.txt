@@ -584,7 +584,7 @@ csa_jefferson_davis_template = {
     ideology = ideology_slaver
     interest_group = ig_armed_forces
     birth_date = 1808.6.3
-	home_region = STATE_MISSISSIPPI
+	home_region = STATE_ALABAMA
     traits = {
         celebrity_commander
         explorer

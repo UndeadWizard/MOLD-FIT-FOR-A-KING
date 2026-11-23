@@ -94,6 +94,8 @@ je_trans_continental_railway = {
 		has_technology_researched = railways
 		owns_entire_state_region = STATE_NEBRASKA
 		owns_entire_state_region = STATE_CALIFORNIA
+		owns_entire_state_region = STATE_NORTHERN_CALIFORNIA
+		owns_entire_state_region = STATE_SOUTHERN_CALIFORNIA
 	}
 
 	outcome = {
@@ -115,7 +117,19 @@ je_trans_continental_railway = {
 				has_building = building_railway
 			}
 			any_scope_state = {
+				state_region = s:STATE_NEVADA
+				has_building = building_railway
+			}
+			any_scope_state = {
 				state_region = s:STATE_CALIFORNIA
+				has_building = building_railway
+			}
+			any_scope_state = {
+				state_region = s:STATE_NORTHERN_CALIFORNIA
+				has_building = building_railway
+			}
+			any_scope_state = {
+				state_region = s:STATE_SOUTHERN_CALIFORNIA
 				has_building = building_railway
 			}
 		}

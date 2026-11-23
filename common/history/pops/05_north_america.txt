@@ -17,6 +17,11 @@
 				culture = afro_american
 				size = 7818
 			}
+			create_pop = {
+				pop_type = slaves
+				culture = verdigri
+				size = 500
+			}
 		}
 	}
 	s:STATE_LOUISIANA = {
@@ -92,6 +97,15 @@
 				culture = irish
 				size = 16000
 			}
+			create_pop = {
+				pop_type = slaves
+				culture = verdigri
+				size = 2400
+			}
+			create_pop = {
+				culture = verdigri
+				size = 1600
+			}
 		}
 	}
 	s:STATE_VIRGINIA = { # population of VA proper minus Fairfax County, which had its population figures added to DC to inflate the pop count there
@@ -113,6 +127,11 @@
 				pop_type = slaves
 				culture = afro_american
 				size = 312079
+			}
+			create_pop = {
+				pop_type = slaves
+				culture = verdigri
+				size = 14000
 			}
 		}
 	}
@@ -247,12 +266,6 @@
 			}
 		}
 		
-		region_state:SHO = {
-			create_pop = {
-				culture = paiute
-				size = 17647
-			}
-		}
 	}
 	s:STATE_MONTANA = {
 		region_state:SLS = {
@@ -324,7 +337,7 @@
 		region_state:SHO = {
 			create_pop = {
 				culture = paiute
-				size = 12000
+				size = 29647
 			}
 		}
 	}
@@ -702,6 +715,15 @@
 				culture = afro_american
 				size = 12144
 			}
+			create_pop = {
+				pop_type = slaves
+				culture = verdigri
+				size = 200
+			}
+			create_pop = {
+				culture = verdigri
+				size = 400
+			}
 		}
 		region_state:IRO = {
 			create_pop = {
@@ -759,6 +781,11 @@
 				culture = irish
 				size = 20000
 			}
+			create_pop = {
+				pop_type = slaves
+				culture = verdigri
+				size = 3500
+			}
 		}
 	}
 	s:STATE_TENNESSEE = {
@@ -792,29 +819,28 @@
 				culture = cherokee
 				size = 2528 # 1835 Cherokee Census "Henderson Roll"
 			}
+			create_pop = {
+				pop_type = slaves
+				culture = verdigri
+				size = 4000
+			}
 		}
 	}
-	s:STATE_MISSISSIPPI = {
+	s:STATE_NORTH_DAKOTA = {
 		region_state:LKT = {
 			create_pop = {
 				culture = dakota
-				size = 64000
+				size = 31031
 			}
 			create_pop = {
 				culture = siouan
-				size = 20000
-			}
-		}
-		region_state:MTC = {
-			create_pop = {
-				culture = metis
-				size = 1212
+				size = 9697
 			}
 		}
 		region_state:IRC = {
 			create_pop = {
 				culture = cree
-				size = 4121
+				size = 2820
 			}
 		}
 		region_state:TAT = {
@@ -825,6 +851,40 @@
 			create_pop = {
 				culture = caddoan
 				size = 1412
+			}
+		}
+	}
+	s:STATE_PEMBINA = {
+		region_state:MTC = {
+			create_pop = {
+				culture = metis
+				size = 3500
+			}
+			create_pop = {
+				culture = franco_canadian
+				size = 2500
+			}
+		}
+		region_state:CTF = {
+			create_pop = {
+				culture = algonquian
+				size = 1500
+			}
+		}
+		region_state:LKT = {
+			create_pop = {
+				culture = dakota
+				size = 32969
+			}
+			create_pop = {
+				culture = siouan
+				size = 10303
+			}
+		}
+		region_state:IRC = {
+			create_pop = {
+				culture = cree
+				size = 1301
 			}
 		}
 	}
@@ -956,6 +1016,11 @@
 				culture = afro_american
 				size = 58467
 			}
+			create_pop = {
+				pop_type = slaves
+				culture = verdigri
+				size = 2500
+			}
 		}
 	}
 
@@ -1001,6 +1066,15 @@
 				culture = afro_american
 				size = 43996
 			}
+			create_pop = {
+				pop_type = slaves
+				culture = verdigri
+				size = 1500
+			}
+			create_pop = {
+				culture = verdigri
+				size = 1000
+			}
 		}
 	}
 	s:STATE_NEW_JERSEY = {
@@ -1017,6 +1091,15 @@
 			create_pop = {
 				culture = afro_american
 				size = 15996
+			}
+			create_pop = {
+				pop_type = slaves
+				culture = verdigri
+				size = 300
+			}
+			create_pop = {
+				culture = verdigri
+				size = 300
 			}
 		}
 	}
@@ -1068,6 +1151,15 @@
 				culture = yankee
 				religion = catholic
 				size = 28400
+			}
+			create_pop = {
+				pop_type = slaves
+				culture = verdigri
+				size = 400
+			}
+			create_pop = {
+				culture = verdigri
+				size = 600
 			}
 		}
 	}
@@ -1216,12 +1308,6 @@
 				size = 26436
 			}
 		}
-		region_state:NPI = {
-			create_pop = {
-				culture = paiute
-				size = 6124
-			}
-		}
 		region_state:YUM = {
 			create_pop = {
 				culture = hokan
@@ -1247,13 +1333,33 @@
 		region_state:SPI = {
 			create_pop = {
 				culture = paiute
-				size = 23141
+				size = 11571
 			}
 		}
 		region_state:SHO = {
 			create_pop = {
 				culture = paiute
-				size = 42415
+				size = 20244
+			}
+		}
+	}
+	s:STATE_NEVADA = {
+		region_state:NPI = {
+			create_pop = {
+				culture = paiute
+				size = 8482
+			}
+		}
+		region_state:SPI = {
+			create_pop = {
+				culture = paiute
+				size = 11570
+			}
+		}
+		region_state:SHO = {
+			create_pop = {
+				culture = paiute
+				size = 2892
 			}
 		}
 	}
@@ -1856,16 +1962,26 @@
 				size = 6000
 			}
 		}
+		region_state:COM = {
+			create_pop = {
+				culture = comanche
+				size = 3027
+			}
+			create_pop = {
+				culture = apache
+				size = 108
+			}
+		}
 	}
 	s:STATE_COMANCHE = {
 		region_state:COM = {
 			create_pop = {
 				culture = comanche
-				size = 28000
+				size = 24973
 			}
 			create_pop = {
 				culture = apache
-				size = 1000
+				size = 892
 			}
 		}
 	}
@@ -1938,18 +2054,52 @@
 	s:STATE_CALIFORNIA = {
 		region_state:SC1 = {
 			create_pop = {
-				culture = hokan
-				size = 3972
+				culture = californio
+				size = 35000
 			}
 			create_pop = {
 				culture = mexican
-				size = 3870
+				size = 25000
+			}
+			create_pop = {
+				culture = hokan
+				size = 8452
+			}
+			create_pop = {
+				culture = chilean
+				size = 6000
+			}
+			create_pop = {
+				culture = peruvian
+				size = 3000
+			}
+			create_pop = {
+				culture = yue
+				size = 7000
+			}
+			create_pop = {
+				culture = filipino
+				size = 2000
+			}
+			create_pop = {
+				culture = russian
+				size = 1500
+			}
+			create_pop = {
+				culture = yankee
+				size = 4000
 			}
 		}
 		region_state:YOK = {
 			create_pop = {
 				culture = hokan
-				size = 24124
+				size = 19644
+			}
+		}
+		region_state:NPI = {
+			create_pop = {
+				culture = paiute
+				size = 8281
 			}
 		}
 	}
@@ -1972,6 +2122,12 @@
 				size = 8124
 			}
 		}
+		region_state:NPI = {
+			create_pop = {
+				culture = paiute
+				size = 4601
+			}
+		}
 	}
 	s:STATE_SOUTHERN_CALIFORNIA = {
 		region_state:SC1 = {
@@ -1980,8 +2136,8 @@
 				size = 8341
 			}
 			create_pop = {
-				culture = mexican
-				size = 8126
+				culture = californio
+				size = 13126
 			}
 		}
 		region_state:SRO = {
@@ -2001,7 +2157,13 @@
 		region_state:NPI = {
 			create_pop = {
 				culture = paiute
-				size = 45086
+				size = 29846
+			}
+		}
+		region_state:SHO = {
+			create_pop = {
+				culture = paiute
+				size = 19279
 			}
 		}
 	}

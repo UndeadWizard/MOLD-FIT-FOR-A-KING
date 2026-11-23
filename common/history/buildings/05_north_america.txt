@@ -1095,7 +1095,7 @@
 			}
 		}
 	}
-	s:STATE_MISSISSIPPI={
+	s:STATE_NORTH_DAKOTA={
 		region_state:LKT={
 		}
 	}
@@ -3081,6 +3081,17 @@
 	}
 	s:STATE_CALIFORNIA={
 		region_state:SC1={
+			create_building={
+				building="building_gold_field"
+				add_ownership={
+					country={
+						country="c:SC1"
+						levels=5
+					}
+				}
+				reserves=1
+				activate_production_methods={ "default_building_gold_field" }
+			}
 		}
 	}
 	s:STATE_SONORA={

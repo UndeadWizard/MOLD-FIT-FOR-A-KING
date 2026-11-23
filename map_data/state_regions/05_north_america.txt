@@ -282,7 +282,7 @@ STATE_MONTANA = {
 STATE_COMANCHE = {
     id = 276
     subsistence_building = "building_subsistence_farm"
-    provinces = { "x00A88F" "x00B0C0" "x049490" "x04CD6D" "x1E553B" "x212F2F" "x22F5CE" "x25D807" "x2C9BF6" "x2E8063" "x317E88" "x3F2F5D" "x44F322" "x46137E" "x58AF61" "x5C6475" "x5C6FF5" "x5C9120" "x6FF4CE" "x7DCECB" "x80287B" "x824F92" "x869D5F" "x8B5EC8" "x907490" "x94E465" "x99A694" "x99A780" "x9D5716" "xA66212" "xB0D689" "xB114A9" "xC82BB4" "xE567C9" "xE6C09D" "xEE1B8C" "xFAB703" }
+    provinces = { "x00A88F" "x00B0C0" "x049490" "x04CD6D" "x1E553B" "x212F2F" "x22F5CE" "x25D807" "x2C9BF6" "x2E8063" "x317E88" "x3F2F5D" "x46137E" "x58AF61" "x5C6475" "x5C9120" "x6FF4CE" "x7DCECB" "x80287B" "x869D5F" "x8B5EC8" "x907490" "x94E465" "x99A694" "x99A780" "xA66212" "xB0D689" "xB114A9" "xC82BB4" "xE567C9" "xE6C09D" "xEE1B8C" "xFAB703" }
     city = "x44F322"
     farm = "x824F92"
     mine = "xA66212"
@@ -633,28 +633,45 @@ STATE_TENNESSEE = {
     max_cold_effect = 0.18
 }
 
-STATE_MISSISSIPPI = {
+STATE_NORTH_DAKOTA = {
     id = 291
     subsistence_building = "building_subsistence_farm"
-    provinces = { "x0020C0" "x002DE6" "x00A0C0" "x026750" "x03F3AE" "x080BEC" "x096804" "x0EADCE" "x108319" "x14E86D" "x17235E" "x17983F" "x17EF0F" "x184A57" "x18D7A9" "x198845" "x1B5ADB" "x1C9F35" "x1E5DFD" "x20A1FA" "x21D67D" "x224996" "x29243C" "x298347" "x2D7D62" "x30BADD" "x3160D9" "x329C17" "x3816BA" "x3EB1F2" "x40F27A" "x43E5A3" "x47FA09" "x4DCFD1" "x5080C0" "x532C36" "x54C77A" "x56C14E" "x57556B" "x5BED05" "x6466A1" "x647FB6" "x6B9ADF" "x71C380" "x746873" "x76F55B" "x7A9921" "x7A9D37" "x7AD306" "x8B54D5" "x8C905E" "x8CE0D2" "x8F0750" "x8F4ECF" "x913BCB" "x91A08A" "x9255F2" "x96B71E" "x96D61E" "x98A328" "x993FC6" "x9A9297" "x9D100E" "x9EA3FF" "x9FB4C1" "xA4C2F6" "xA5970F" "xA5A929" "xAA3B6E" "xAB458E" "xAB7707" "xAB7F2A" "xAD862C" "xAF6E5B" "xB182F3" "xB5FEC3" "xB7F25B" "xBB73D1" "xBD89ED" "xBDF621" "xBEFC85" "xC1C5C5" "xC5E30A" "xCCC204" "xCDE122" "xCE5B60" "xD000C0" "xD56C26" "xDD5888" "xDEFE70" "xDF2B35" "xDFFB08" "xE24F6E" "xE3F82F" "xE5FDC3" "xE649BF" "xECA010" "xEE7CFB" "xEE82BD" "xEF51A8" "xF03169" "xF276CA" "xF3479B" "xF3C4FA" "xF3CD0C" "xF3EC53" "xFAD908" "xFF83EB" }
-    traits = { "state_trait_mississippi_river" "state_trait_american_chestnuts" }
-    city = "xDFFB08"
-    farm = "xCCC204"
+    provinces = { "x002DE6" "x026750" "x080BEC" "x14E86D" "x17235E" "x17EF0F" "x184A57" "x18D7A9" "x198845" "x1C9F35" "x20A1FA" "x224996" "x2D7D62" "x3816BA" "x3EB1F2" "x43E5A3" "x47FA09" "x5080C0" "x532C36" "x5BED05" "x6466A1" "x6B9ADF" "x746873" "x7AD306" "x8B54D5" "x8CE0D2" "x8F0750" "x8F4ECF" "x913BCB" "x9255F2" "x96B71E" "x96D61E" "x98A328" "x993FC6" "x9EA3FF" "x9FB4C1" "xA4C2F6" "xA5970F" "xA5A929" "xAB458E" "xAB7707" "xAD862C" "xAF6E5B" "xB5FEC3" "xB7F25B" "xBB73D1" "xBD89ED" "xC1C5C5" "xD56C26" "xE24F6E" "xE5FDC3" "xEE82BD" "xF03169" "xF276CA" "xF3479B" "xF3C4FA" "xF3EC53" "xFAD908" }
+    traits = { "state_trait_the_great_plains" }
+    city = "x17EF0F"
+    farm = "xA4C2F6"
     mine = "x6B9ADF"
     wood = "x17235E"
-    arable_land = 280
-    arable_resources = { "building_maize_farm" "building_livestock_ranch" "building_tobacco_plantation" }
+    arable_land = 170
+    arable_resources = { "building_wheat_farm" "building_livestock_ranch" }
     capped_resources = {
-        building_coal_mine = 100
-        building_sulfur_mine = 40
-        building_logging_camp = 20
+        building_coal_mine = 48
+        building_logging_camp = 6
     }
     resource = {
         type = "building_oil_rig"
         undiscovered_amount = 20
     }
-    min_cold_effect = 0.00
-    max_cold_effect = 0.13
+    min_cold_effect = 0.05
+    max_cold_effect = 0.56
+}
+
+STATE_PEMBINA = {
+    id = 1104
+    subsistence_building = "building_subsistence_farm"
+    provinces = { "x0020C0" "x00A0C0" "x03F3AE" "x096804" "x0EADCE" "x108319" "x17983F" "x1B5ADB" "x1E5DFD" "x21D67D" "x29243C" "x298347" "x30BADD" "x3160D9" "x329C17" "x40F27A" "x4DCFD1" "x54C77A" "x56C14E" "x57556B" "x647FB6" "x71C380" "x76F55B" "x7A9921" "x7A9D37" "x8C905E" "x91A08A" "x9A9297" "x9D100E" "xAA3B6E" "xAB7F2A" "xB182F3" "xBDF621" "xBEFC85" "xC5E30A" "xCCC204" "xCDE122" "xCE5B60" "xD000C0" "xDD5888" "xDEFE70" "xDF2B35" "xDFFB08" "xE3F82F" "xE649BF" "xECA010" "xEE7CFB" "xEF51A8" "xF3CD0C" "xFF83EB" }
+    traits = { "state_trait_mississippi_river" }
+    city = "x76F55B"
+    farm = "xCCC204"
+    mine = "xDFFB08"
+    wood = "x1B5ADB"
+    arable_land = 140
+    arable_resources = { "building_wheat_farm" "building_maize_farm" "building_livestock_ranch" }
+    capped_resources = {
+        building_logging_camp = 18
+    }
+    min_cold_effect = 0.05
+    max_cold_effect = 0.55
 }
 
 STATE_ALABAMA = {
@@ -1003,7 +1020,7 @@ STATE_NORTH_CAROLINA = {
 STATE_UTAH = {
     id = 307
     subsistence_building = "building_subsistence_pasture"
-    provinces = { "x005C93" "x00D336" "x012DC1" "x0340EA" "x044448" "x0D95C2" "x0DF43E" "x10C000" "x13DF28" "x1546DA" "x163861" "x1741A2" "x174B8E" "x177225" "x1AFAE8" "x1B4789" "x1D0AA3" "x227FEB" "x23017D" "x24D112" "x25439E" "x2736CD" "x276EB1" "x2838B0" "x2C62ED" "x2D6DBC" "x2E93C4" "x2F5740" "x326026" "x34B00A" "x374A87" "x37D3FD" "x38A656" "x3E927D" "x3F5E68" "x3FB458" "x40437B" "x428B93" "x4736B3" "x47F30A" "x4C4586" "x4D739A" "x4DA90F" "x4FDFA6" "x52FA0B" "x53E828" "x54A0C5" "x557C77" "x567651" "x5708EE" "x5B065E" "x5CEFAC" "x6685A7" "x68B95E" "x6F049A" "x75E9AD" "x7629AB" "x780763" "x780DE4" "x7DE699" "x7E6D79" "x7F33D3" "x7F60DB" "x80FCE4" "x832FF7" "x83E7A7" "x84491D" "x894997" "x8B17C5" "x8C8183" "x8E2C1A" "x8F9823" "x901FD6" "x904000" "x9271BC" "x992C09" "x9ADC65" "x9B34F6" "x9BA0EB" "x9E50CC" "x9FC5C3" "x9FF17F" "xA3BC1C" "xA4D6D1" "xA54D29" "xA615B6" "xA721D9" "xA73DE5" "xA7E6DC" "xA8DB62" "xA9B917" "xAB025B" "xABB8E6" "xADCDE9" "xAEE311" "xAEE5AB" "xAF38BD" "xAF4B58" "xB03D4F" "xB2CC01" "xB33EEF" "xB3AE0B" "xB3DEA9" "xB6B187" "xB8C75E" "xBB2109" "xBB8631" "xBC1C92" "xC2D850" "xC351DC" "xC3F179" "xC71490" "xC79CD0" "xC94B0F" "xCBA4C1" "xCC1818" "xCCDB4C" "xCE729F" "xCF2942" "xD08080" "xD13E4A" "xD3B4EB" "xD4D9A8" "xD52E98" "xD66C7A" "xD9ABAF" "xE076DB" "xE49638" "xEC4FF4" "xEC5DC5" "xF10601" "xF1B928" "xF259D7" "xF31ACC" "xF3223E" "xF3B4BA" "xF441CF" "xF480A1" "xF9F480" "xFC38F6" "xFDBD34" }
+    provinces = { "x0340EA" "x044448" "x13DF28" "x1546DA" "x174B8E" "x177225" "x1AFAE8" "x1D0AA3" "x23017D" "x24D112" "x276EB1" "x2838B0" "x2C62ED" "x2E93C4" "x2F5740" "x326026" "x34B00A" "x37D3FD" "x38A656" "x3E927D" "x3F5E68" "x3FB458" "x40437B" "x428B93" "x4D739A" "x4DA90F" "x4FDFA6" "x52FA0B" "x53E828" "x54A0C5" "x557C77" "x567651" "x5708EE" "x5B065E" "x5CEFAC" "x6685A7" "x6F049A" "x75E9AD" "x7629AB" "x780DE4" "x7E6D79" "x7F33D3" "x83E7A7" "x894997" "x8C8183" "x8E2C1A" "x8F9823" "x901FD6" "x904000" "x9271BC" "x9ADC65" "x9B34F6" "x9BA0EB" "x9E50CC" "x9FC5C3" "xA3BC1C" "xA54D29" "xA615B6" "xA721D9" "xA73DE5" "xA7E6DC" "xA9B917" "xAB025B" "xABB8E6" "xADCDE9" "xAF38BD" "xB03D4F" "xB33EEF" "xB3AE0B" "xB3DEA9" "xB6B187" "xBC1C92" "xC2D850" "xC3F179" "xC71490" "xC79CD0" "xC94B0F" "xCBA4C1" "xCE729F" "xD08080" "xD13E4A" "xD4D9A8" "xD52E98" "xD9ABAF" "xE49638" "xEC4FF4" "xF10601" "xF259D7" "xF31ACC" "xF3B4BA" "xF441CF" "xF480A1" "xF9F480" "xFC38F6" "xFDBD34" }
     traits = { "state_trait_wasatch_range" "state_trait_american_copper_belt" }
     city = "xF3B4BA"
     farm = "xA7E6DC"
@@ -1022,6 +1039,29 @@ STATE_UTAH = {
     }
     min_cold_effect = 0.02
     max_cold_effect = 0.45
+}
+
+STATE_NEVADA = {
+    id = 1103
+    subsistence_building = "building_subsistence_pasture"
+    provinces = { "x005C93" "x012DC1" "x0DF43E" "x10C000" "x1741A2" "x25439E" "x2A9CAC" "x374A87" "x3F791B" "x4C4586" "x6D645C" "x7D25E6" "x7DE699" "x7F60DB" "x80FCE4" "x832FF7" "x8B17C5" "xA4D6D1" "xAF4B58" "xB2CC01" "xB6ED0A" "xB8C75E" "xCC1818" "xCCDB4C" "xE076DB" "xE15291" "xEDCBF4" }
+    traits = { "state_trait_the_great_basin_desert" }
+    city = "x80FCE4"
+    farm = "xB2CC01"
+    mine = "x7D25E6"
+    wood = "x8B17C5"
+    arable_land = 15
+    arable_resources = { "building_livestock_ranch" }
+    capped_resources = {
+        building_iron_mine = 8
+    }
+    resource = {
+        type = "building_gold_field"
+        depleted_type = "building_gold_mine"
+        undiscovered_amount = 7
+    }
+    min_cold_effect = 0.00
+    max_cold_effect = 0.25
 }
 
 STATE_SOUTH_CAROLINA = {
@@ -1385,7 +1425,7 @@ STATE_TEXAS = {
 STATE_GALVESTON = {
     id = 323
     subsistence_building = "building_subsistence_farm"
-    provinces = { "x013AEB" "x0DA281" "x1120AB" "x18EC9C" "x1AC45E" "x1B9E2A" "x1BB9FA" "x1C3B80" "x1DDB1A" "x2CBC3B" "x33031A" "x39DB21" "x56A8B5" "x5B5F82" "x61EACC" "x6FD534" "x71ACC7" "x798ACD" "x7E7CB0" "x803040" "x80B0C0" "x849B8F" "x8CDEAE" "x90B38D" "x973B1C" "x99A404" "xA33609" "xA909D2" "xB47B14" "xD19D8F" "xD22E00" "xD4536D" "xD4BE3A" "xEB7B97" "xEDA6C0" "xF0BA2E" "xFB5451" "xFD0D62" "xFE4703" }
+    provinces = { "x013AEB" "x0DA281" "x1120AB" "x18EC9C" "x1AC45E" "x1B9E2A" "x1BB9FA" "x1C3B80" "x1DDB1A" "x2CBC3B" "x33031A" "x39DB21" "x44F322" "x56A8B5" "x5B5F82" "x5C6FF5" "x61EACC" "x6FD534" "x71ACC7" "x798ACD" "x7E7CB0" "x803040" "x80B0C0" "x824F92" "x849B8F" "x8CDEAE" "x90B38D" "x973B1C" "x99A404" "x9D5716" "xA33609" "xA909D2" "xB47B14" "xD19D8F" "xD22E00" "xD4536D" "xD4BE3A" "xEB7B97" "xEDA6C0" "xF0BA2E" "xFB5451" "xFD0D62" "xFE4703" }
     city = "x803040"
     port = "x803040"
     farm = "xFB5451"
@@ -1455,7 +1495,7 @@ STATE_NEW_MEXICO = {
 STATE_CALIFORNIA = {
     id = 326
     subsistence_building = "building_subsistence_farm"
-    provinces = { "x0AF8FD" "x108000" "x108080" "x1116AA" "x1169B8" "x161979" "x2099C1" "x25A37F" "x298876" "x2A91D8" "x2C84C4" "x2CE673" "x2F3B45" "x3F27C8" "x500CAD" "x5EF8F5" "x61A555" "x6B8E78" "x6F44CB" "x783D1D" "x7A5DA6" "x7B005B" "x7E8E1A" "x8CFB9B" "x8D4E6D" "x908000" "x93A4C5" "xA06435" "xAB1AA2" "xBD0F03" "xC54807" "xD6A835" "xDBCBC6" "xE4FC42" "xE97768" "xF6B075" "xFDC502" "xFE6E88" }
+    provinces = { "x0AE895" "x0AF8FD" "x108000" "x108080" "x1116AA" "x1169B8" "x161979" "x1FE069" "x2099C1" "x209FC3" "x25A37F" "x298876" "x2A91D8" "x2C84C4" "x2CE673" "x2F3B45" "x3F27C8" "x441749" "x500CAD" "x519529" "x56F5CB" "x5EF8F5" "x61A555" "x6B8E78" "x6F44CB" "x783D1D" "x7A5DA6" "x7B005B" "x7E8E1A" "x8CFB9B" "x8D4E6D" "x908000" "x93A4C5" "xA06435" "xAB1AA2" "xBD0F03" "xC54807" "xCBA1C9" "xD401D0" "xD6A835" "xDBCBC6" "xDE208B" "xE4FC42" "xE97768" "xF6B075" "xFDC502" "xFE6E88" }
     traits = { "state_trait_central_valley" }
     city = "x5EF8F5"
     port = "x1116AA"
@@ -1474,7 +1514,8 @@ STATE_CALIFORNIA = {
     resource = {
         type = "building_gold_field"
         depleted_type = "building_gold_mine"
-        undiscovered_amount = 12
+        undiscovered_amount = 6
+        discovered_amount = 6
     }
     resource = {
         type = "building_oil_rig"
@@ -1488,7 +1529,7 @@ STATE_CALIFORNIA = {
 STATE_NORTHERN_CALIFORNIA = {
     id = 1100
     subsistence_building = "building_subsistence_farm"
-    provinces = { "x0425B3" "x1C6782" "x33EE3B" "x370658" "x42B7D9" "x5A4650" "x607BA8" "xA24DA3" "xA65FC5" "xAF199E" "xB8F452" "xBFE3A4" "xC1F518" "xC4A8E9" "xC78CD3" "xC9F623" "xDAABF7" "xE6440D" }
+    provinces = { "x0425B3" "x1C6782" "x307D50" "x33EE3B" "x370658" "x42B7D9" "x577D08" "x5A4650" "x607BA8" "x9C28A4" "xA24DA3" "xA65FC5" "xAF199E" "xB72458" "xB8F452" "xBFE3A4" "xC1F518" "xC4A8E9" "xC78CD3" "xC9F623" "xDAABF7" "xE6440D" "xF7DB50" }
     traits = { "state_trait_northern_california_coastal_forests" }
     city = "x607BA8"
     port = "x1C6782"
@@ -1539,18 +1580,18 @@ STATE_SOUTHERN_CALIFORNIA = {
 STATE_WASHOE = {
     id = 1102
     subsistence_building = "building_subsistence_pasture"
-    provinces = { "x0AE895" "x187093" "x1BAC1A" "x1FE069" "x209FC3" "x2A9CAC" "x307D50" "x3F791B" "x441749" "x455838" "x48E8C5" "x4934EE" "x519529" "x56F5CB" "x577D08" "x5AD9C0" "x5BE036" "x5CC000" "x60609D" "x6CF688" "x6D645C" "x7C1958" "x7C7251" "x7D25E6" "x80BCA8" "x8A5945" "x8B11E1" "x8F30EA" "x91EF0D" "x9C28A4" "xA72957" "xA7D253" "xB2D968" "xB312C1" "xB6ED0A" "xB72458" "xCA0467" "xCBA1C9" "xD401D0" "xDBA111" "xDE208B" "xE15291" "xE3A018" "xEAB9B1" "xEDCBF4" "xEF5007" "xF0C923" "xF13FC2" "xF7DB50" }
+    provinces = { "x00D336" "x0D95C2" "x163861" "x187093" "x1B4789" "x1BAC1A" "x227FEB" "x2736CD" "x2D6DBC" "x455838" "x4736B3" "x47F30A" "x48E8C5" "x4934EE" "x5AD9C0" "x5BE036" "x5CC000" "x60609D" "x68B95E" "x6CF688" "x780763" "x7C1958" "x7C7251" "x80BCA8" "x84491D" "x8A5945" "x8B11E1" "x8F30EA" "x91EF0D" "x992C09" "x9FF17F" "xA72957" "xA7D253" "xA8DB62" "xAEE311" "xAEE5AB" "xB2D968" "xB312C1" "xBB2109" "xBB8631" "xC351DC" "xCA0467" "xCF2942" "xD3B4EB" "xD66C7A" "xDBA111" "xE3A018" "xEAB9B1" "xEC5DC5" "xEF5007" "xF0C923" "xF13FC2" "xF1B928" "xF3223E" }
     traits = { "state_trait_the_great_basin_desert" }
-    city = "x56F5CB"
-    farm = "x7D25E6"
+    city = "x7C1958"
+    farm = "x7C7251"
     mine = "xA7D253"
-    wood = "xD401D0"
+    wood = "xBB8631"
     arable_land = 30
     arable_resources = { "building_livestock_ranch" }
     capped_resources = {
-        building_iron_mine = 7
+        building_iron_mine = 15
         building_sulfur_mine = 4
-        building_logging_camp = 3
+        building_logging_camp = 2
     }
     resource = {
         type = "building_gold_field"
