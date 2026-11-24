@@ -1602,6 +1602,19 @@ on_new_ruler = {
 				remove_character_role = favorite
 			}
 		}
+
+		# Whitehall confirms every new President-General; it only chooses how warmly
+		if = {
+			limit = {
+				game_date > 1836.2.1
+				owner = { mfk_crown_favourite_country = yes }
+			}
+			save_scope_as = new_president_general
+			owner = { save_scope_as = nau_scope }
+			c:GBR = {
+				trigger_event = { id = mfk_gg.3 popup = yes }
+			}
+		}
 	}
 }
 

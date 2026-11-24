@@ -15,6 +15,26 @@ crown_favourite_resentment = {
 	interest_group_approval_add = -3
 }
 
+mfk_crown_blessing = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	character_popularity_add = 10
+}
+
+mfk_crown_snub = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	character_popularity_add = -10
+}
+
+mfk_investiture_blessing_ig = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_approval_add = 2
+}
+
+mfk_answered_the_crown = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_approval_add = 3
+}
+
 gg_viceregal_administration = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 	country_liberty_desire_add = -10

@@ -2681,11 +2681,42 @@ mfk_crown_favourite_country = {
 mfk_crown_favourite_candidate_ig = {
 	is_marginal = no
 	exists = leader
+	mfk_ig_serves_crown = yes
 	leader = {
 		is_ruler_of_own_country = no
 		is_heir_of_own_country = no
 		NOT = { has_role = character_role_favorite }
 	}
+}
+
+# An interest group the Crown can back without working against British interests:
+# loyal to the Crown and not standing in the way of abolition. Scope = interest group
+mfk_ig_serves_crown = {
+	NOT = { is_interest_group_type = ig_rural_folk }
+	NOT = {
+		law_stance = {
+			law = law_type:law_slavery_banned
+			value < neutral
+		}
+	}
+	NOT = { has_ideology = ideology:ideology_republican }
+	NOT = {
+		leader ?= {
+			OR = {
+				has_ideology = ideology:ideology_republican_leader
+				has_ideology = ideology:ideology_radical
+				has_ideology = ideology:ideology_anarchist
+				has_ideology = ideology:ideology_communist_leader
+				has_ideology = ideology:ideology_vanguardist
+			}
+		}
+	}
+}
+
+# Whitehall trusts the Union enough to raise an American to Government House. Scope = Great Britain
+mfk_gbr_trusts_nau = {
+	exists = c:USA
+	"relations(c:USA)" >= relations_threshold:cordial
 }
 
 # A disloyal Sheltering chief whose nation could leave. The four nations sheltered since before 1836 stay. Scope = character

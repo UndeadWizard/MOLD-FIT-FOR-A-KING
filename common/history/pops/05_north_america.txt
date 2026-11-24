@@ -2001,13 +2001,7 @@
 			}
 			create_pop = {
 				culture = comanche
-				size = 6000
-			}
-		}
-		region_state:COM = {
-			create_pop = {
-				culture = comanche
-				size = 3027
+				size = 9027
 			}
 			create_pop = {
 				culture = apache

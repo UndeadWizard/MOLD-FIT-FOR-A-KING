@@ -81,6 +81,10 @@ mfk_gg.1 = {
 		default_option = yes
 		custom_tooltip = mfk_gg_british_peer_tt
 		custom_tooltip = mfk_gg_canada_british_tt
+		if = {
+			limit = { NOT = { mfk_gbr_trusts_nau = yes } }
+			custom_tooltip = mfk_gg_no_trust_tt
+		}
 		hidden_effect = {
 			mfk_gg_create_british_peer = yes
 			if = {
@@ -90,12 +94,21 @@ mfk_gg.1 = {
 			}
 			set_variable = { name = crown_favourite_cooldown years = 4 }
 		}
-		ai_chance = { base = 40 }
+		ai_chance = {
+			base = 40
+			modifier = {
+				trigger = { "relations(c:USA)" <= relations_threshold:poor }
+				add = 60
+			}
+		}
 	}
 
 	option = { # Elevate an American politician
 		name = mfk_gg.1.opt_a
-		trigger = { exists = scope:crown_fav_1 }
+		trigger = {
+			exists = scope:crown_fav_1
+			mfk_gbr_trusts_nau = yes
+		}
 		scope:crown_fav_1 = { save_scope_as = new_crown_favourite }
 		custom_tooltip = mfk_gg_appoint_tt_1
 		custom_tooltip = mfk_gg_canada_american_tt
@@ -120,16 +133,17 @@ mfk_gg.1 = {
 				add = 20
 			}
 			modifier = {
-				trigger = {
-					scope:crown_fav_1.interest_group ?= { is_interest_group_type = ig_rural_folk }
-				}
-				factor = 0.2
+				trigger = { "relations(c:USA)" >= relations_threshold:amicable }
+				factor = 2
 			}
 		}
 	}
 	option = { # Elevate an American politician
 		name = mfk_gg.1.opt_b
-		trigger = { exists = scope:crown_fav_2 }
+		trigger = {
+			exists = scope:crown_fav_2
+			mfk_gbr_trusts_nau = yes
+		}
 		scope:crown_fav_2 = { save_scope_as = new_crown_favourite }
 		custom_tooltip = mfk_gg_appoint_tt_2
 		custom_tooltip = mfk_gg_canada_american_tt
@@ -154,16 +168,17 @@ mfk_gg.1 = {
 				add = 20
 			}
 			modifier = {
-				trigger = {
-					scope:crown_fav_2.interest_group ?= { is_interest_group_type = ig_rural_folk }
-				}
-				factor = 0.2
+				trigger = { "relations(c:USA)" >= relations_threshold:amicable }
+				factor = 2
 			}
 		}
 	}
 	option = { # Elevate an American politician
 		name = mfk_gg.1.opt_c
-		trigger = { exists = scope:crown_fav_3 }
+		trigger = {
+			exists = scope:crown_fav_3
+			mfk_gbr_trusts_nau = yes
+		}
 		scope:crown_fav_3 = { save_scope_as = new_crown_favourite }
 		custom_tooltip = mfk_gg_appoint_tt_3
 		custom_tooltip = mfk_gg_canada_american_tt
@@ -188,16 +203,17 @@ mfk_gg.1 = {
 				add = 20
 			}
 			modifier = {
-				trigger = {
-					scope:crown_fav_3.interest_group ?= { is_interest_group_type = ig_rural_folk }
-				}
-				factor = 0.2
+				trigger = { "relations(c:USA)" >= relations_threshold:amicable }
+				factor = 2
 			}
 		}
 	}
 	option = { # Elevate an American politician
 		name = mfk_gg.1.opt_d
-		trigger = { exists = scope:crown_fav_4 }
+		trigger = {
+			exists = scope:crown_fav_4
+			mfk_gbr_trusts_nau = yes
+		}
 		scope:crown_fav_4 = { save_scope_as = new_crown_favourite }
 		custom_tooltip = mfk_gg_appoint_tt_4
 		custom_tooltip = mfk_gg_canada_american_tt
@@ -222,10 +238,8 @@ mfk_gg.1 = {
 				add = 20
 			}
 			modifier = {
-				trigger = {
-					scope:crown_fav_4.interest_group ?= { is_interest_group_type = ig_rural_folk }
-				}
-				factor = 0.2
+				trigger = { "relations(c:USA)" >= relations_threshold:amicable }
+				factor = 2
 			}
 		}
 	}
@@ -289,5 +303,193 @@ mfk_gg.2 = {
 			}
 		}
 		ai_chance = { base = 1 }
+	}
+}
+
+# A new President-General takes office and Whitehall sends its confirmation (Great Britain)
+mfk_gg.3 = {
+	type = country_event
+	placement = root
+
+	title = mfk_gg.3.t
+	desc = mfk_gg.3.d
+	flavor = mfk_gg.3.f
+
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	trigger = {
+		exists = c:USA
+		exists = scope:new_president_general
+		scope:new_president_general = { is_ruler_of_own_country = yes } # still in office
+	}
+
+	option = { # Royal congratulations
+		name = mfk_gg.3.a
+		trigger = { mfk_gbr_trusts_nau = yes }
+		change_relations = {
+			country = c:USA
+			value = 10
+		}
+		scope:new_president_general = {
+			add_modifier = {
+				name = mfk_crown_blessing
+				years = 2
+			}
+			interest_group ?= {
+				add_modifier = {
+					name = mfk_investiture_blessing_ig
+					years = 2
+				}
+			}
+		}
+		hidden_effect = {
+			c:USA = {
+				set_variable = { name = mfk_gg_warm_confirmation days = 30 }
+				trigger_event = { id = mfk_gg.5 popup = yes }
+			}
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				trigger = { "relations(c:USA)" >= relations_threshold:amicable }
+				add = 30
+			}
+		}
+	}
+
+	option = { # A formal confirmation
+		name = mfk_gg.3.b
+		default_option = yes
+		custom_tooltip = mfk_gg_formal_confirmation_tt
+		hidden_effect = {
+			c:USA = { trigger_event = { id = mfk_gg.5 popup = yes } }
+		}
+		ai_chance = { base = 20 }
+	}
+
+	option = { # A cold confirmation
+		name = mfk_gg.3.c
+		trigger = {
+			OR = {
+				NOT = { mfk_gbr_trusts_nau = yes }
+				scope:new_president_general.interest_group ?= {
+					NOT = { mfk_ig_serves_crown = yes }
+				}
+			}
+		}
+		change_relations = {
+			country = c:USA
+			value = -10
+		}
+		scope:new_president_general = {
+			add_modifier = {
+				name = mfk_crown_snub
+				years = 2
+			}
+		}
+		custom_tooltip = mfk_gg_cold_favour_tt
+		hidden_effect = {
+			c:USA = {
+				mfk_gg_favour_loyal_opposition = yes
+				trigger_event = { id = mfk_gg.4 popup = yes }
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				trigger = { "relations(c:USA)" <= relations_threshold:poor }
+				add = 40
+			}
+		}
+	}
+}
+
+# The Crown's confirmation arrives without a word of congratulation (NAU)
+mfk_gg.4 = {
+	type = country_event
+	placement = root
+
+	title = mfk_gg.4.t
+	desc = mfk_gg.4.d
+	flavor = mfk_gg.4.f
+
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	trigger = {
+		exists = scope:new_president_general
+		scope:new_president_general = { is_ruler_of_own_country = yes } # still in office
+	}
+
+	option = { # Let it pass
+		name = mfk_gg.4.a
+		default_option = yes
+	}
+
+	option = { # Answer in kind
+		name = mfk_gg.4.b
+		change_relations = {
+			country = c:GBR
+			value = -10
+		}
+		ig:ig_rural_folk ?= {
+			add_modifier = {
+				name = mfk_answered_the_crown
+				years = 2
+			}
+		}
+		ai_chance = { base = 1 }
+	}
+}
+
+# The Crown confirms the new President-General, warmly or with due formality (NAU)
+mfk_gg.5 = {
+	type = country_event
+	placement = root
+
+	title = mfk_gg.5.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { has_variable = mfk_gg_warm_confirmation }
+				desc = mfk_gg.5.d_warm
+			}
+			triggered_desc = {
+				desc = mfk_gg.5.d_formal
+			}
+		}
+	}
+	flavor = mfk_gg.5.f
+
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	trigger = {
+		exists = scope:new_president_general
+		scope:new_president_general = { is_ruler_of_own_country = yes } # still in office
+	}
+
+	option = {
+		name = mfk_gg.5.a
+		default_option = yes
 	}
 }

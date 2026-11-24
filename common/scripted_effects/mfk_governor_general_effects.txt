@@ -40,11 +40,22 @@ mfk_appoint_crown_favourite = {
 			limit = { has_modifier = revoked_favorite }
 			remove_modifier = revoked_favorite
 		}
-		interest_group ?= {
-			add_modifier = {
-				name = crown_favoured_ig
-				years = 5
+		# The Crown only backs a party that serves it. A peer whose own party does not
+		# lends the Crown's patronage to the strongest one that does.
+		if = {
+			limit = {
+				interest_group ?= { mfk_ig_serves_crown = yes }
 			}
+			interest_group = {
+				add_modifier = {
+					name = crown_favoured_ig
+					years = 5
+				}
+			}
+		}
+		else_if = {
+			limit = { has_variable = mfk_british_peer }
+			c:USA ?= { mfk_gg_favour_loyal_ig = yes }
 		}
 	}
 	c:USA ?= {
@@ -62,6 +73,46 @@ mfk_appoint_crown_favourite = {
 		}
 	}
 	mfk_gg_update_canadian_provinces = yes
+}
+
+# Gives the Crown's favour to the most influential interest group that serves British interests. Scope = NAU
+mfk_gg_favour_loyal_ig = {
+	ordered_interest_group = {
+		limit = {
+			is_marginal = no
+			mfk_ig_serves_crown = yes
+		}
+		order_by = ig_clout
+		position = 0
+		check_range_bounds = no
+		add_modifier = {
+			name = crown_favoured_ig
+			years = 5
+		}
+	}
+}
+
+# A cold investiture: the Crown withdraws its favour from every party and lends it to the
+# most influential loyal party outside the government. Scope = NAU
+mfk_gg_favour_loyal_opposition = {
+	every_interest_group = {
+		limit = { has_modifier = crown_favoured_ig }
+		remove_modifier = crown_favoured_ig
+	}
+	ordered_interest_group = {
+		limit = {
+			is_marginal = no
+			is_in_government = no
+			mfk_ig_serves_crown = yes
+		}
+		order_by = ig_clout
+		position = 0
+		check_range_bounds = no
+		add_modifier = {
+			name = crown_favoured_ig
+			years = 5
+		}
+	}
 }
 
 # The Governor-General also presides over the Canadian Provinces. A British peer tightens the Crown's grip;
