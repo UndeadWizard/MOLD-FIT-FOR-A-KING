@@ -1,0 +1,281 @@
+﻿### ARMY
+
+### Infantry
+
+combat_unit_type_grafted = {
+	group = combat_unit_group_infantry
+	max_manpower = 1000
+	supply_capacity = 30
+
+	upkeep_modifier = {
+		goods_input_small_arms_add = 1
+		goods_input_plasm_add = 1
+	}
+
+	battle_modifier = {
+		unit_offense_add = 25
+		unit_defense_add = 20
+		unit_morale_loss_add = 5
+		unit_naval_invasion_efficiency_mult = -0.25
+	}
+
+	unlocking_technologies = { vatmoss_grafting }
+
+	combat_unit_image = {
+		# fallback until Grafted art exists
+		texture = "gfx/unit_illustrations/infantry_eu_line.dds"
+	}
+
+	upgrades = {
+		combat_unit_type_regenerate
+		combat_unit_type_skirmish_infantry
+		combat_unit_type_trench_infantry
+		combat_unit_type_squad_infantry
+		combat_unit_type_mechanized_infantry
+	}
+}
+
+combat_unit_type_regenerate = {
+	group = combat_unit_group_infantry
+	max_manpower = 1000
+	supply_capacity = 30
+
+	upkeep_modifier = {
+		goods_input_small_arms_add = 1
+		goods_input_plasm_add = 2
+	}
+
+	battle_modifier = {
+		unit_offense_add = 25
+		unit_defense_add = 30
+		unit_recovery_rate_add = 0.15
+		unit_naval_invasion_efficiency_mult = -0.25
+	}
+
+	unlocking_technologies = { mfk_vat_regeneration }
+
+	combat_unit_image = {
+		# fallback until Regenerate art exists
+		texture = "gfx/unit_illustrations/infantry_eu_trench.dds"
+	}
+
+	upgrades = {
+		combat_unit_type_trench_infantry
+		combat_unit_type_squad_infantry
+		combat_unit_type_mechanized_infantry
+	}
+}
+
+combat_unit_type_saika_janissary = {
+	group = combat_unit_group_infantry
+	max_manpower = 1000
+	supply_capacity = 30
+
+	upkeep_modifier = {
+		goods_input_voltaic_cell_add = 1
+	}
+
+	battle_modifier = {
+		unit_offense_add = 25
+		unit_defense_add = 25
+	}
+
+	unlocking_technologies = { mfk_voltaic_arms }
+
+	combat_unit_image = {
+		# fallback until Sâika Janissary art exists
+		texture = "gfx/unit_illustrations/infantry_arabic_line.dds"
+	}
+
+	upgrades = {
+		combat_unit_type_tilsim
+		combat_unit_type_skirmish_infantry
+		combat_unit_type_trench_infantry
+		combat_unit_type_squad_infantry
+		combat_unit_type_mechanized_infantry
+	}
+}
+
+# Voltaic constructs run on iksir and do not break under fire.
+combat_unit_type_tilsim = {
+	group = combat_unit_group_infantry
+	max_manpower = 1000
+	supply_capacity = 30
+
+	upkeep_modifier = {
+		goods_input_iksir_add = 2
+	}
+
+	battle_modifier = {
+		unit_offense_add = 20
+		unit_defense_add = 30
+		unit_morale_loss_mult = -0.25
+		unit_naval_invasion_efficiency_mult = -0.25
+	}
+
+	unlocking_technologies = { mfk_tilsim_craft }
+
+	combat_unit_image = {
+		# fallback until Tılsım art exists
+		texture = "gfx/unit_illustrations/infantry_arabic_squad.dds"
+	}
+
+	upgrades = {
+		combat_unit_type_skirmish_infantry
+		combat_unit_type_trench_infantry
+		combat_unit_type_squad_infantry
+		combat_unit_type_mechanized_infantry
+	}
+}
+
+combat_unit_type_behemoth = {
+    group = combat_unit_group_armor
+	max_manpower = 1000
+	supply_capacity = 20
+
+	upkeep_modifier = {
+		goods_input_plasm_add = 8
+    }
+
+    battle_modifier = {
+        unit_offense_add = 70
+        unit_defense_add = 40
+        unit_devastation_mult = 0.25
+        unit_morale_loss_add = 10
+    }
+
+    unlocking_technologies = { mfk_behemoth_vats }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/infantry_east_asian_skirmish.dds"
+    }
+
+}
+
+combat_unit_type_boar_hound = {
+    group = combat_unit_group_armor
+    max_manpower = 1000
+    supply_capacity = 12
+
+    upkeep_modifier = {
+        goods_input_plasm_add = 2
+    }
+
+    battle_modifier = {
+        unit_offense_add = 35
+        unit_defense_add = 15
+        unit_morale_damage_mult = 0.05
+    }
+
+    unlocking_technologies = { mfk_plasm_beasts }
+
+    combat_unit_image = {
+        texture = "gfx/unit_illustrations/infantry_east_asian_skirmish.dds"
+    }
+}
+
+combat_unit_type_tunc_muhafiz = {
+	group = combat_unit_group_armor
+	max_manpower = 1000
+	supply_capacity = 20
+
+	upkeep_modifier = {
+		goods_input_iksir_add = 3
+		goods_input_saika_steel_add = 1
+	}
+
+	battle_modifier = {
+		unit_offense_add = 30
+		unit_defense_add = 45
+		unit_morale_loss_mult = -0.35
+	}
+
+	unlocking_technologies = { mfk_inscribed_bronze }
+
+	combat_unit_image = {
+		# fallback until Tunç Muhafız art exists
+		texture = "gfx/unit_illustrations/infantry_arabic_line.dds"
+	}
+}
+
+### Artillery
+
+combat_unit_type_saika_bearer = {
+	group = combat_unit_group_artillery
+	max_manpower = 1000
+	supply_capacity = 30
+
+	upkeep_modifier = {
+		goods_input_iksir_add = 4
+	}
+
+	battle_modifier = {
+		unit_offense_add = 40
+		unit_defense_add = 10
+		unit_devastation_mult = 0.1
+		unit_morale_loss_add = 10
+	}
+
+	unlocking_technologies = { mfk_saika_conduits }
+
+	combat_unit_image = {
+		# fallback until Sâika Bearer art exists
+		texture = "gfx/unit_illustrations/artillery_arabic_cannon.dds"
+	}
+}
+
+
+combat_unit_type_plasm_mortar = {
+	group = combat_unit_group_artillery
+	max_manpower = 1000
+	supply_capacity = 30
+
+	upkeep_modifier = {
+		goods_input_artillery_add = 1
+		goods_input_plasm_add = 3
+	}
+
+	battle_modifier = {
+		unit_offense_add = 35
+		unit_defense_add = 10
+		unit_devastation_mult = 0.25
+		unit_morale_damage_mult = 0.1
+		unit_morale_loss_add = 10
+	}
+
+	unlocking_technologies = { mfk_plasm_shells }
+
+	combat_unit_image = {
+		# fallback until Plasm Mortar art exists
+		texture = "gfx/unit_illustrations/artillery_eu_siege.dds"
+	}
+}
+
+### Cavalry
+
+combat_unit_type_chimera_riders = {
+	group = combat_unit_group_cavalry
+	max_manpower = 1000
+	supply_capacity = 20
+
+	upkeep_modifier = {
+		goods_input_small_arms_add = 1
+		goods_input_plasm_add = 2
+	}
+
+	battle_modifier = {
+		unit_offense_add = 35
+		unit_defense_add = 20
+		unit_morale_damage_mult = 0.05
+	}
+
+	unlocking_technologies = { mfk_chimeric_mounts }
+
+	combat_unit_image = {
+		# fallback until Chimera Rider art exists
+		texture = "gfx/unit_illustrations/cavalry_eu_lancer.dds"
+	}
+}
+
+
+### marines

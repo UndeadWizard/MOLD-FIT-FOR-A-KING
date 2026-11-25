@@ -1,0 +1,15 @@
+﻿# Used to bias AI research and army composition toward Voltaic or Galvanic troops.
+
+mfk_is_muslim_country = {
+	OR = {
+		country_has_state_religion = rel:sunni
+		country_has_state_religion = rel:shiite
+		country_has_state_religion = rel:ibadi
+	}
+}
+
+mfk_is_anglophone_country = {
+	any_primary_culture = {
+		has_discrimination_trait = language_anglophone
+	}
+}

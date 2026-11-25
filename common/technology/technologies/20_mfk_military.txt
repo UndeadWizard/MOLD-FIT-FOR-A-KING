@@ -1,10 +1,217 @@
-﻿vatmoss_grafting = {
-	era = era_1
+﻿# Roots are era 2 so the era-1 starting-tech grant doesn't hand them out; starting owners are granted them in history.
+
+# Galvanic tree (plasm). Anglophone countries favour it, Muslim countries shun it.
+vatmoss_grafting = {
+	era = era_2
 	texture = "gfx/interface/icons/invention_icons/pharmaceuticals.dds"
 	category = military
-	can_research = no
 
 	ai_weight = {
 		value = 1
+		if = {
+			limit = { mfk_is_anglophone_country = yes }
+			multiply = 4
+		}
+		if = {
+			limit = { mfk_is_muslim_country = yes }
+			multiply = 0.25
+		}
+	}
+}
+
+mfk_plasm_beasts = {
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/medical_degrees.dds"
+	category = military
+
+	unlocking_technologies = {
+		vatmoss_grafting
+	}
+
+	ai_weight = {
+		value = 1
+		if = {
+			limit = { mfk_is_anglophone_country = yes }
+			multiply = 4
+		}
+		if = {
+			limit = { mfk_is_muslim_country = yes }
+			multiply = 0.25
+		}
+	}
+}
+
+mfk_chimeric_mounts = {
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/antibiotics.dds"
+	category = military
+
+	unlocking_technologies = {
+		mfk_plasm_beasts
+	}
+
+	ai_weight = {
+		value = 2
+		if = {
+			limit = { mfk_is_anglophone_country = yes }
+			multiply = 4
+		}
+		if = {
+			limit = { mfk_is_muslim_country = yes }
+			multiply = 0.25
+		}
+	}
+}
+
+mfk_vat_regeneration = {
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/nitrogen_fixation.dds"
+	category = military
+
+	unlocking_technologies = {
+		vatmoss_grafting
+	}
+
+	ai_weight = {
+		value = 2
+		if = {
+			limit = { mfk_is_anglophone_country = yes }
+			multiply = 4
+		}
+		if = {
+			limit = { mfk_is_muslim_country = yes }
+			multiply = 0.25
+		}
+	}
+}
+
+mfk_plasm_shells = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/chemical_warfare.dds"
+	category = military
+
+	unlocking_technologies = {
+		mfk_vat_regeneration
+	}
+
+	ai_weight = {
+		value = 2
+		if = {
+			limit = { mfk_is_anglophone_country = yes }
+			multiply = 4
+		}
+		if = {
+			limit = { mfk_is_muslim_country = yes }
+			multiply = 0.25
+		}
+	}
+}
+
+# End-game Galvanic beast.
+mfk_behemoth_vats = {
+	era = era_5
+	texture = "gfx/interface/icons/invention_icons/chemical_warfare.dds"
+	category = military
+
+	unlocking_technologies = {
+		mfk_chimeric_mounts
+		mfk_plasm_shells
+	}
+
+	ai_weight = {
+		value = 2
+		if = {
+			limit = { mfk_is_anglophone_country = yes }
+			multiply = 4
+		}
+		if = {
+			limit = { mfk_is_muslim_country = yes }
+			multiply = 0.25
+		}
+	}
+}
+
+# Voltaic tree (iksir). Muslim countries favour it, Anglophone countries neglect it.
+mfk_voltaic_arms = {
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/electrical_generation.dds"
+	category = military
+
+	ai_weight = {
+		value = 1
+		if = {
+			limit = { mfk_is_muslim_country = yes }
+			multiply = 4
+		}
+		if = {
+			limit = { mfk_is_anglophone_country = yes }
+			multiply = 0.5
+		}
+	}
+}
+
+mfk_tilsim_craft = {
+	era = era_2
+	texture = "gfx/interface/icons/invention_icons/rotary_valve_engine.dds"
+	category = military
+
+	unlocking_technologies = {
+		mfk_voltaic_arms
+	}
+
+	ai_weight = {
+		value = 2
+		if = {
+			limit = { mfk_is_muslim_country = yes }
+			multiply = 4
+		}
+		if = {
+			limit = { mfk_is_anglophone_country = yes }
+			multiply = 0.5
+		}
+	}
+}
+
+mfk_inscribed_bronze = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/steelworking.dds"
+	category = military
+
+	unlocking_technologies = {
+		mfk_tilsim_craft
+	}
+
+	ai_weight = {
+		value = 2
+		if = {
+			limit = { mfk_is_muslim_country = yes }
+			multiply = 4
+		}
+		if = {
+			limit = { mfk_is_anglophone_country = yes }
+			multiply = 0.5
+		}
+	}
+}
+
+mfk_saika_conduits = {
+	era = era_3
+	texture = "gfx/interface/icons/invention_icons/electrical_capacitors.dds"
+	category = military
+
+	unlocking_technologies = {
+		mfk_tilsim_craft
+	}
+
+	ai_weight = {
+		value = 2
+		if = {
+			limit = { mfk_is_muslim_country = yes }
+			multiply = 4
+		}
+		if = {
+			limit = { mfk_is_anglophone_country = yes }
+			multiply = 0.5
+		}
 	}
 }

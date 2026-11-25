@@ -340,6 +340,10 @@ c:FRA ?= {
 			country = c:ALD
 			type = protectorate
 		}
+
+		every_subject_or_below = {
+			add_technology_researched = mfk_voltaic_arms
+		}
 	}
 
 	c:ALD ?= {

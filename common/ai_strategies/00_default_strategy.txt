@@ -6409,6 +6409,47 @@ ai_strategy_default = {
 				multiply = 1.5
 			}
 		}
+		# Armatura: beasts and constructs. Each unlock adds weight, more when it matches the country's tradition.
+		combat_unit_group_armor = {
+			value = 0
+			if = {
+				limit = { has_technology_researched = mfk_plasm_beasts }
+				add = 10
+				if = {
+					limit = { mfk_is_anglophone_country = yes }
+					add = 10
+				}
+			}
+			if = {
+				limit = { has_technology_researched = mfk_behemoth_vats }
+				add = 15
+				if = {
+					limit = { mfk_is_anglophone_country = yes }
+					add = 10
+				}
+			}
+			if = {
+				limit = { has_technology_researched = mfk_inscribed_bronze }
+				add = 15
+				if = {
+					limit = { mfk_is_muslim_country = yes }
+					add = 10
+				}
+			}
+
+			if = {
+				limit = { has_law_or_variant = law_type:law_peasant_levies }
+				multiply = 0.5
+			}
+			else_if = {
+				limit = { has_law_or_variant = law_type:law_national_militia }
+				multiply = 0.75
+			}
+			else_if = {
+				limit = { has_law_or_variant = law_type:law_professional_army }
+				multiply = 1.25
+			}
+		}
 	}
 
 	# How many conscript battalions should the AI aim to have for each regular battalion in a formation?

@@ -10,3 +10,32 @@
 
   combat_unit_type_grafted: "Grafted"
   combat_unit_type_grafted_desc: "PLACEHOLDER - Grafted infantry description."
+
+  combat_unit_type_regenerate: "Regenerates"
+  combat_unit_type_regenerate_desc: "Placeholder - Galvanic infantry. Grafted soldiers whose wounds close mid-battle. Recover faster."
+
+  combat_unit_type_chimera_riders: "Chimera Riders"
+  combat_unit_type_chimera_riders_desc: "Placeholder - Galvanic cavalry mounted on plasm-bred chimeric beasts."
+
+  combat_unit_type_plasm_mortar: "Plasm Mortars"
+  combat_unit_type_plasm_mortar_desc: "Placeholder - Galvanic artillery firing shells of raw plasm. High devastation."
+
+  combat_unit_type_saika_janissary: "[GetPlayer.GetCustom('mfk_unit_name_saika_janissary')]"
+  mfk_unit_saika_janissary_native: "Sâika Janissaries"
+  mfk_unit_saika_janissary_english: "Voltaic Fusiliers"
+  combat_unit_type_saika_janissary_desc: "Placeholder - Voltaic infantry. Soldiers in sâika plate armed with voltaic-cell weapons."
+
+  combat_unit_type_tilsim: "[GetPlayer.GetCustom('mfk_unit_name_tilsim')]"
+  mfk_unit_tilsim_native: "Tılsım Ranks"
+  mfk_unit_tilsim_english: "Talisman Ranks"
+  combat_unit_type_tilsim_desc: "Placeholder - Voltaic infantry. Faceless humanoid bronze constructs inscribed with hadith and powered by iksir. Resist morale loss."
+
+  combat_unit_type_tunc_muhafiz: "[GetPlayer.GetCustom('mfk_unit_name_tunc_muhafiz')]"
+  mfk_unit_tunc_muhafiz_native: "Tunç Muhafız"
+  mfk_unit_tunc_muhafiz_english: "Bronze Guardians"
+  combat_unit_type_tunc_muhafiz_desc: "Placeholder - Voltaic Armatura. Towering bronze guardian constructs braced with sâika steel. Very high defense."
+
+  combat_unit_type_saika_bearer: "[GetPlayer.GetCustom('mfk_unit_name_saika_bearer')]"
+  mfk_unit_saika_bearer_native: "Sâika Bearers"
+  mfk_unit_saika_bearer_english: "Thunderbolt Bearers"
+  combat_unit_type_saika_bearer_desc: "Placeholder - Voltaic artillery. Constructs carrying arc-masts that fire iksir lightning."

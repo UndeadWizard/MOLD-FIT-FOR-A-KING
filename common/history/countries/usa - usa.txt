@@ -6,6 +6,7 @@
 		
 		effect_starting_technology_tier_1_tech = yes
 		add_technology_researched = vatmoss_grafting
+		add_technology_researched = mfk_plasm_beasts
 		
 		set_market_capital = STATE_NEW_YORK		
 		

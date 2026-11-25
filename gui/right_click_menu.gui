@@ -2088,41 +2088,106 @@ right_click_menu = {
 	}
 
 	blockoverride "items" {
-			flowcontainer = {
+		# Columns: conventional, Voltaic, Galvanic. Generated from the unit lists; add new Voltaic or Galvanic units to both.
+		flowcontainer = {
 			direction = horizontal
-			spacing = 6
+			spacing = 12
 
-			dynamicgridbox = {
-				datamodel = "[MilitaryFormation.GetEligibleTypesByGroup( CombatUnitGroup.Self )]"
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				visible = "[Not( ObjectsEqual(CombatUnitGroup.Self, GetCombatUnitGroup('combat_unit_group_armor').Self) )]"
 
-				item = {
-					flowcontainer = {
-						visible = "[And( Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( CombatUnitType.Self ) ), ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ), Not( Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_grafted').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_behemoth').Self), ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_boar_hound').Self) ) ) ) )]"
+				textbox = {
+					visible = "[Or( Or( And( ObjectsEqual(GetCombatUnitGroup('combat_unit_group_infantry').Self, CombatUnitGroup.Self), Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( GetCombatUnitType('combat_unit_type_saika_janissary').Self ) ), ObjectsEqual(GetCombatUnitType('combat_unit_type_saika_janissary').Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ) ), Or( And( ObjectsEqual(GetCombatUnitGroup('combat_unit_group_infantry').Self, CombatUnitGroup.Self), Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( GetCombatUnitType('combat_unit_type_tilsim').Self ) ), ObjectsEqual(GetCombatUnitType('combat_unit_type_tilsim').Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ) ), Or( And( ObjectsEqual(GetCombatUnitGroup('combat_unit_group_armor').Self, CombatUnitGroup.Self), Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( GetCombatUnitType('combat_unit_type_tunc_muhafiz').Self ) ), ObjectsEqual(GetCombatUnitType('combat_unit_type_tunc_muhafiz').Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ) ), And( ObjectsEqual(GetCombatUnitGroup('combat_unit_group_artillery').Self, CombatUnitGroup.Self), Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( GetCombatUnitType('combat_unit_type_saika_bearer').Self ) ), ObjectsEqual(GetCombatUnitType('combat_unit_type_saika_bearer').Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ) ) ) ) ), Or( And( ObjectsEqual(GetCombatUnitGroup('combat_unit_group_infantry').Self, CombatUnitGroup.Self), Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( GetCombatUnitType('combat_unit_type_grafted').Self ) ), ObjectsEqual(GetCombatUnitType('combat_unit_type_grafted').Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ) ), Or( And( ObjectsEqual(GetCombatUnitGroup('combat_unit_group_infantry').Self, CombatUnitGroup.Self), Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( GetCombatUnitType('combat_unit_type_regenerate').Self ) ), ObjectsEqual(GetCombatUnitType('combat_unit_type_regenerate').Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ) ), Or( And( ObjectsEqual(GetCombatUnitGroup('combat_unit_group_armor').Self, CombatUnitGroup.Self), Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( GetCombatUnitType('combat_unit_type_behemoth').Self ) ), ObjectsEqual(GetCombatUnitType('combat_unit_type_behemoth').Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ) ), Or( And( ObjectsEqual(GetCombatUnitGroup('combat_unit_group_armor').Self, CombatUnitGroup.Self), Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( GetCombatUnitType('combat_unit_type_boar_hound').Self ) ), ObjectsEqual(GetCombatUnitType('combat_unit_type_boar_hound').Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ) ), Or( And( ObjectsEqual(GetCombatUnitGroup('combat_unit_group_cavalry').Self, CombatUnitGroup.Self), Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( GetCombatUnitType('combat_unit_type_chimera_riders').Self ) ), ObjectsEqual(GetCombatUnitType('combat_unit_type_chimera_riders').Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ) ), And( ObjectsEqual(GetCombatUnitGroup('combat_unit_group_artillery').Self, CombatUnitGroup.Self), Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( GetCombatUnitType('combat_unit_type_plasm_mortar').Self ) ), ObjectsEqual(GetCombatUnitType('combat_unit_type_plasm_mortar').Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ) ) ) ) ) ) ) )]"
+					text = "MFK_UNIT_FAMILY_CONVENTIONAL"
+					default_format = "#header"
+					autoresize = yes
+					align = nobaseline|left
+					margin_left = 6
+					margin_top = 8
+				}
 
-						default_unit_right_click_item = {
-							visible = "[Not(ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self))]"
-						}
+				dynamicgridbox = {
+					datamodel = "[MilitaryFormation.GetEligibleTypesByGroup( CombatUnitGroup.Self )]"
 
-						default_unit_right_click_item_selected = {
-							visible = "[ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self)]"
+					item = {
+						flowcontainer = {
+							visible = "[And( Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( CombatUnitType.Self ) ), ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ), Not( Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_saika_janissary').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_tilsim').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_tunc_muhafiz').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_saika_bearer').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_grafted').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_regenerate').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_behemoth').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_boar_hound').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_chimera_riders').Self), ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_plasm_mortar').Self) ) ) ) ) ) ) ) ) ) ) )]"
+
+							default_unit_right_click_item = {
+								visible = "[Not(ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self))]"
+							}
+
+							default_unit_right_click_item_selected = {
+								visible = "[ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self)]"
+							}
 						}
 					}
 				}
 			}
 
-			dynamicgridbox = {
-				datamodel = "[MilitaryFormation.GetEligibleTypesByGroup( CombatUnitGroup.Self )]"
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				visible = "[Or( And( ObjectsEqual(GetCombatUnitGroup('combat_unit_group_infantry').Self, CombatUnitGroup.Self), Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( GetCombatUnitType('combat_unit_type_saika_janissary').Self ) ), ObjectsEqual(GetCombatUnitType('combat_unit_type_saika_janissary').Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ) ), Or( And( ObjectsEqual(GetCombatUnitGroup('combat_unit_group_infantry').Self, CombatUnitGroup.Self), Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( GetCombatUnitType('combat_unit_type_tilsim').Self ) ), ObjectsEqual(GetCombatUnitType('combat_unit_type_tilsim').Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ) ), Or( And( ObjectsEqual(GetCombatUnitGroup('combat_unit_group_armor').Self, CombatUnitGroup.Self), Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( GetCombatUnitType('combat_unit_type_tunc_muhafiz').Self ) ), ObjectsEqual(GetCombatUnitType('combat_unit_type_tunc_muhafiz').Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ) ), And( ObjectsEqual(GetCombatUnitGroup('combat_unit_group_artillery').Self, CombatUnitGroup.Self), Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( GetCombatUnitType('combat_unit_type_saika_bearer').Self ) ), ObjectsEqual(GetCombatUnitType('combat_unit_type_saika_bearer').Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ) ) ) ) )]"
 
-				item = {
-					flowcontainer = {
-						visible = "[And( Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( CombatUnitType.Self ) ), ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_grafted').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_behemoth').Self), ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_boar_hound').Self) ) ) )]"
+				textbox = {
+					text = "MFK_UNIT_FAMILY_VOLTAIC"
+					default_format = "#header"
+					autoresize = yes
+					align = nobaseline|left
+					margin_left = 6
+					margin_top = 8
+				}
 
-						default_unit_right_click_item = {
-							visible = "[Not(ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self))]"
+				dynamicgridbox = {
+					datamodel = "[MilitaryFormation.GetEligibleTypesByGroup( CombatUnitGroup.Self )]"
+
+					item = {
+						flowcontainer = {
+							visible = "[And( Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( CombatUnitType.Self ) ), ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_saika_janissary').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_tilsim').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_tunc_muhafiz').Self), ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_saika_bearer').Self) ) ) ) )]"
+
+							default_unit_right_click_item = {
+								visible = "[Not(ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self))]"
+							}
+
+							default_unit_right_click_item_selected = {
+								visible = "[ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self)]"
+							}
 						}
+					}
+				}
+			}
 
-						default_unit_right_click_item_selected = {
-							visible = "[ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self)]"
+			flowcontainer = {
+				direction = vertical
+				spacing = 4
+				visible = "[Or( And( ObjectsEqual(GetCombatUnitGroup('combat_unit_group_infantry').Self, CombatUnitGroup.Self), Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( GetCombatUnitType('combat_unit_type_grafted').Self ) ), ObjectsEqual(GetCombatUnitType('combat_unit_type_grafted').Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ) ), Or( And( ObjectsEqual(GetCombatUnitGroup('combat_unit_group_infantry').Self, CombatUnitGroup.Self), Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( GetCombatUnitType('combat_unit_type_regenerate').Self ) ), ObjectsEqual(GetCombatUnitType('combat_unit_type_regenerate').Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ) ), Or( And( ObjectsEqual(GetCombatUnitGroup('combat_unit_group_armor').Self, CombatUnitGroup.Self), Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( GetCombatUnitType('combat_unit_type_behemoth').Self ) ), ObjectsEqual(GetCombatUnitType('combat_unit_type_behemoth').Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ) ), Or( And( ObjectsEqual(GetCombatUnitGroup('combat_unit_group_armor').Self, CombatUnitGroup.Self), Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( GetCombatUnitType('combat_unit_type_boar_hound').Self ) ), ObjectsEqual(GetCombatUnitType('combat_unit_type_boar_hound').Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ) ), Or( And( ObjectsEqual(GetCombatUnitGroup('combat_unit_group_cavalry').Self, CombatUnitGroup.Self), Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( GetCombatUnitType('combat_unit_type_chimera_riders').Self ) ), ObjectsEqual(GetCombatUnitType('combat_unit_type_chimera_riders').Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ) ), And( ObjectsEqual(GetCombatUnitGroup('combat_unit_group_artillery').Self, CombatUnitGroup.Self), Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( GetCombatUnitType('combat_unit_type_plasm_mortar').Self ) ), ObjectsEqual(GetCombatUnitType('combat_unit_type_plasm_mortar').Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ) ) ) ) ) ) )]"
+
+				textbox = {
+					text = "MFK_UNIT_FAMILY_GALVANIC"
+					default_format = "#header"
+					autoresize = yes
+					align = nobaseline|left
+					margin_left = 6
+					margin_top = 8
+				}
+
+				dynamicgridbox = {
+					datamodel = "[MilitaryFormation.GetEligibleTypesByGroup( CombatUnitGroup.Self )]"
+
+					item = {
+						flowcontainer = {
+							visible = "[And( Or( IsValid( MilitaryFormation.GetSetDefaultUnitTypeCommand( CombatUnitType.Self ) ), ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self) ), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_grafted').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_regenerate').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_behemoth').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_boar_hound').Self), Or( ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_chimera_riders').Self), ObjectsEqual(CombatUnitType.Self, GetCombatUnitType('combat_unit_type_plasm_mortar').Self) ) ) ) ) ) )]"
+
+							default_unit_right_click_item = {
+								visible = "[Not(ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self))]"
+							}
+
+							default_unit_right_click_item_selected = {
+								visible = "[ObjectsEqual(CombatUnitType.Self, MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).Self)]"
+							}
 						}
 					}
 				}
