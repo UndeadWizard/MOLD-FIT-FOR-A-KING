@@ -157,6 +157,7 @@ STATE_ANTIOQUIA = {
         building_iron_mine = 36
         building_logging_camp = 13
         building_fishing_wharf = 8
+        building_vatmoss_hotbed = 4
     }
     resource = {
         type = "building_rubber_plantation"
@@ -358,7 +359,7 @@ STATE_LA_PAZ = {
         building_logging_camp = 20
         building_gold_mine = 4
         building_copper_mine = 6
-        building_vatmoss_hotbed = 4
+        building_vatmoss_hotbed = 2
     }
     resource = {
         type = "building_rubber_plantation"
@@ -511,7 +512,7 @@ STATE_URUGUAY = {
         building_logging_camp = 9
         building_fishing_wharf = 6
         building_whaling_station = 2
-        building_vatmoss_hotbed = 6
+        building_vatmoss_hotbed = 4
     }
     resource = {
         type = "building_oil_rig"
@@ -603,7 +604,7 @@ STATE_BUENOS_AIRES = {
     capped_resources = {
         building_logging_camp = 9
         building_fishing_wharf = 12
-        building_vatmoss_hotbed = 6
+        building_vatmoss_hotbed = 4
     }
     naval_exit_id = 3065
     min_cold_effect = 0.00
@@ -652,6 +653,7 @@ STATE_RIO_NEGRO = {
     capped_resources = {
         building_coal_mine = 40
         building_sulfur_mine = 52
+        building_vatmoss_hotbed = 4
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.11
@@ -862,7 +864,7 @@ STATE_SOUTH_ATLANTIC_ISLANDS = {
     capped_resources = {
         building_whaling_station = 3
         building_fishing_wharf = 2
-        building_vatmoss_hotbed = 2
+        building_vatmoss_hotbed = 4
     }
     naval_exit_id = 3066
     min_cold_effect = 0.12
@@ -1030,7 +1032,7 @@ STATE_RIO_GRANDE_DO_SUL = {
         building_fishing_wharf = 6
         building_whaling_station = 2
         building_lead_mine = 30
-        building_vatmoss_hotbed = 10
+        building_vatmoss_hotbed = 6
     }
     resource = {
         type = "building_oil_rig"
@@ -1058,7 +1060,7 @@ STATE_PARANA = {
         building_logging_camp = 30
         building_fishing_wharf = 3
         building_whaling_station = 2
-        building_vatmoss_hotbed = 8
+        building_vatmoss_hotbed = 6
     }
     naval_exit_id = 3064
     min_cold_effect = 0.00
@@ -1082,7 +1084,7 @@ STATE_SANTA_CATARINA = {
         building_logging_camp = 7
         building_fishing_wharf = 2
         building_whaling_station = 2
-        building_vatmoss_hotbed = 10
+        building_vatmoss_hotbed = 8
     }
     naval_exit_id = 3064
     min_cold_effect = 0.00

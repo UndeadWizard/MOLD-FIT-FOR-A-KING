@@ -626,6 +626,11 @@ STATE_IRAKAJEMI = {
         building_iron_mine = 7
         building_lead_mine = 10
     }
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 6
+        discovered_amount = 4
+    }
     min_cold_effect = 0.00
     max_cold_effect = 0.17
 }
@@ -671,6 +676,10 @@ STATE_TABRIZ = {
         building_copper_mine = 6
         building_logging_camp = 5
     }
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 6
+    }
     min_cold_effect = 0.00
     max_cold_effect = 0.22
 }
@@ -713,6 +722,10 @@ STATE_LURISTAN = {
         building_logging_camp = 3
         building_iron_mine = 3
     }
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 4
+    }
     min_cold_effect = 0.00
     max_cold_effect = 0.13
 }
@@ -735,6 +748,10 @@ STATE_PERSIAN_KURDISTAN = {
     capped_resources = {
         building_logging_camp = 4
         building_iron_mine = 3
+    }
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 4
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.17

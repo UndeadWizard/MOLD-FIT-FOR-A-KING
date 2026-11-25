@@ -76,6 +76,7 @@ STATE_GREATER_POLAND = {
         building_iron_mine = 48
         building_lead_mine = 24
         building_logging_camp = 9
+        building_vatmoss_hotbed = 3
     }
     min_cold_effect = 0.02
     max_cold_effect = 0.58
@@ -117,6 +118,7 @@ STATE_WEST_PRUSSIA = {
         building_sulfur_mine = 40
         building_logging_camp = 8
         building_fishing_wharf = 10
+        building_vatmoss_hotbed = 4
     }
     naval_exit_id = 3074
     min_cold_effect = 0.02
@@ -137,6 +139,7 @@ STATE_EAST_PRUSSIA = {
     capped_resources = {
         building_logging_camp = 17
         building_fishing_wharf = 10
+        building_vatmoss_hotbed = 6
     }
     naval_exit_id = 3074
     min_cold_effect = 0.02
@@ -241,6 +244,7 @@ STATE_BEKES = {
     arable_resources = { "building_wheat_farm" "building_livestock_ranch" "building_vineyard" }
     capped_resources = {
         building_logging_camp = 11
+        building_vatmoss_hotbed = 4
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.44
@@ -300,6 +304,7 @@ STATE_BANAT = {
     arable_resources = { "building_wheat_farm" "building_livestock_ranch" "building_vineyard" }
     capped_resources = {
         building_logging_camp = 9
+        building_vatmoss_hotbed = 4
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.41

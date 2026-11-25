@@ -32,6 +32,7 @@ STATE_TARTU = {
     capped_resources = {
         building_logging_camp = 7
         building_fishing_wharf = 7
+        building_vatmoss_hotbed = 6
     }
     naval_exit_id = 3000
     blockade_locator = {
@@ -57,6 +58,7 @@ STATE_RIGA = {
     capped_resources = {
         building_logging_camp = 11
         building_fishing_wharf = 10
+        building_vatmoss_hotbed = 6
     }
     naval_exit_id = 3000
     min_cold_effect = 0.01
@@ -77,6 +79,7 @@ STATE_COURLAND = {
     capped_resources = {
         building_logging_camp = 7
         building_fishing_wharf = 6
+        building_vatmoss_hotbed = 6
     }
     naval_exit_id = 3000
     min_cold_effect = 0.01
@@ -97,6 +100,7 @@ STATE_LITHUANIA = {
     capped_resources = {
         building_logging_camp = 8
         building_fishing_wharf = 2
+        building_vatmoss_hotbed = 6
     }
     naval_exit_id = 3000
     min_cold_effect = 0.00
@@ -134,6 +138,7 @@ STATE_KUOPIO = {
     capped_resources = {
         building_logging_camp = 42
         building_iron_mine = 11
+        building_vatmoss_hotbed = 6
     }
     min_cold_effect = 0.08
     max_cold_effect = 0.83
@@ -178,6 +183,7 @@ STATE_WEST_KARELIA = {
         building_iron_mine = 18
         building_logging_camp = 28
         building_fishing_wharf = 2
+        building_vatmoss_hotbed = 6
     }
     naval_exit_id = 3082
     min_cold_effect = 0.07
@@ -220,6 +226,7 @@ STATE_OSTROBOTHNIA = {
         building_lead_mine = 5
         building_logging_camp = 25
         building_fishing_wharf = 10
+        building_vatmoss_hotbed = 6
     }
     naval_exit_id = 3000
     min_cold_effect = 0.09
@@ -243,6 +250,7 @@ STATE_OULU = {
         building_iron_mine = 45
         building_logging_camp = 56
         building_fishing_wharf = 10
+        building_vatmoss_hotbed = 4
     }
     naval_exit_id = 3000
     min_cold_effect = 0.13
@@ -310,6 +318,7 @@ STATE_INGRIA = {
     capped_resources = {
         building_logging_camp = 25
         building_fishing_wharf = 10
+        building_vatmoss_hotbed = 6
     }
     naval_exit_id = 3082
     blockade_locator = {
@@ -353,6 +362,7 @@ STATE_BREST = {
     arable_resources = { "building_rye_farm" "building_livestock_ranch" }
     capped_resources = {
         building_logging_camp = 14
+        building_vatmoss_hotbed = 12
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.57
@@ -372,6 +382,7 @@ STATE_VOLHYNIA = {
     capped_resources = {
         building_coal_mine = 42
         building_logging_camp = 18
+        building_vatmoss_hotbed = 6
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.52
@@ -466,6 +477,7 @@ STATE_MOGILEV = {
     arable_resources = { "building_rye_farm" "building_livestock_ranch" }
     capped_resources = {
         building_logging_camp = 21
+        building_vatmoss_hotbed = 4
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.58
@@ -487,6 +499,7 @@ STATE_ARKHANGELSK = {
         building_gold_mine = 2
         building_logging_camp = 14
         building_fishing_wharf = 10
+        building_vatmoss_hotbed = 6
     }
     resource = {
         type = "building_gold_field"
@@ -512,6 +525,7 @@ STATE_NOVGOROD = {
     capped_resources = {
         building_coal_mine = 24
         building_logging_camp = 40
+        building_vatmoss_hotbed = 8
     }
     min_cold_effect = 0.05
     max_cold_effect = 0.76
@@ -602,6 +616,7 @@ STATE_TVER = {
     capped_resources = {
         building_logging_camp = 36
         building_coal_mine = 8
+        building_vatmoss_hotbed = 4
     }
     min_cold_effect = 0.03
     max_cold_effect = 0.71
@@ -645,6 +660,7 @@ STATE_VOLOGDA = {
         building_logging_camp = 48
         building_coal_mine = 72
         building_iron_mine = 12
+        building_vatmoss_hotbed = 6
     }
     resource = {
         type = "building_oil_rig"
@@ -669,6 +685,7 @@ STATE_MINSK = {
         building_logging_camp = 35
         building_iron_mine = 8
         building_coal_mine = 5
+        building_vatmoss_hotbed = 10
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.56
@@ -781,6 +798,10 @@ STATE_KHIVA = {
     capped_resources = {
         building_logging_camp = 4
     }
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 8
+    }
     min_cold_effect = 0.00
     max_cold_effect = 0.36
 }
@@ -859,6 +880,11 @@ STATE_FERGANA = {
         building_iron_mine = 21
         building_logging_camp = 5
     }
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 6
+        discovered_amount = 4
+    }
     min_cold_effect = 0.00
     max_cold_effect = 0.29
 }
@@ -876,6 +902,10 @@ STATE_MERZ = {
     capped_resources = {
         building_iron_mine = 21
         building_logging_camp = 5
+    }
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 6
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.22
@@ -896,6 +926,10 @@ STATE_SYRDARYA = {
         building_lead_mine = 60
         building_copper_mine = 6
         building_logging_camp = 6
+    }
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 6
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.41
@@ -1048,6 +1082,7 @@ STATE_VITEBSK = {
     arable_resources = { "building_rye_farm" "building_livestock_ranch" }
     capped_resources = {
         building_logging_camp = 12
+        building_vatmoss_hotbed = 6
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.61
@@ -1066,6 +1101,7 @@ STATE_PSKOV = {
     arable_resources = { "building_rye_farm" "building_livestock_ranch" }
     capped_resources = {
         building_logging_camp = 24
+        building_vatmoss_hotbed = 6
     }
     min_cold_effect = 0.01
     max_cold_effect = 0.65
