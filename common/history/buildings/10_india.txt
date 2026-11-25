@@ -1961,6 +1961,30 @@
 	s:STATE_CEYLON= {
 		region_state:BCE= {
 			create_building = {
+				building = "building_government_administration"
+				add_ownership = {
+					country = {
+						country = "c:BCE"
+						levels = 1
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_secular_bureaucrats" }
+			}
+			create_building = {
+				building = "building_trade_center"
+				activate_production_methods = { "pm_trade_center_trade_quantity_normal" }
+				add_ownership = {
+					building = {
+						type = "building_financial_district"
+						country = "c:FRA"
+						levels = 1
+						region = "STATE_ILE_DE_FRANCE"
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
 				building = "building_fishing_wharf"
 				add_ownership = {
 					building = {
@@ -1971,29 +1995,16 @@
 					}
 				}
 				reserves = 1
-				activate_production_methods = { "pm_fishing_trawlers" "pm_unrefrigerated" }
-			}
-			create_building = {
-				building = "building_tea_plantation"
-				add_ownership = {
-					building = {
-						type = "building_manor_house"
-						country = "c:GBR"
-						levels = 4
-						region = "STATE_HOME_COUNTIES"
-					}
-				}
-				reserves = 1
-				activate_production_methods = { "default_building_tea_plantation" "pm_road_carts" }
+				activate_production_methods = { "pm_simple_fishing" }
 			}
 			create_building = {
 				building = "building_tobacco_plantation"
 				add_ownership = {
 					building = {
 						type = "building_manor_house"
-						country = "c:GBR"
+						country = "c:BCE"
 						levels = 2
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_CEYLON"
 					}
 				}
 				reserves = 1
@@ -2004,9 +2015,9 @@
 				add_ownership = {
 					building = {
 						type = "building_manor_house"
-						country = "c:GBR"
+						country = "c:FRA"
 						levels = 3
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_ILE_DE_FRANCE"
 					}
 				}
 				reserves = 1
@@ -2015,7 +2026,7 @@
 			create_building = {
 				building = "building_port"
 				add_ownership = {
-					country= {
+					country = {
 						country = "c:BCE"
 						levels = 1
 					}
@@ -2196,24 +2207,11 @@
 				add_ownership = {
 					country= {
 						country = "c:BIC"
-						levels = 5
+						levels = 2
 					}
 				}
 				reserves = 1
 				activate_production_methods = { "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_secular_bureaucrats" }
-			}
-			create_building={
-				building="building_trade_center"
-				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
-				add_ownership={
-					building={
-						type="building_financial_district"
-						country="c:BIC"
-						levels=1
-						region="STATE_CIRCARS"
-					}
-				}
-				reserves=1
 			}
 			create_building = {
 				building = "building_arms_industry"
@@ -2232,7 +2230,7 @@
 					building = {
 						type = "building_textile_mill"
 						country = "c:BIC"
-						levels = 5
+						levels = 2
 						region = "STATE_CIRCARS"
 					}
 				}
@@ -2258,52 +2256,105 @@
 				reserves = 1
 				activate_production_methods = { "default_building_tobacco_plantation" "pm_road_carts" }
 			}
+		}
+		region_state:FCO = {
+			create_building = {
+				building = "building_rice_farm"
+				add_ownership = {
+					building = {
+						type = "building_manor_house"
+						country = "c:FCO"
+						levels = 2
+						region = "STATE_CIRCARS"
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_simple_farming_building_rice_farm" }
+			}
+			create_building = {
+				building = "building_dye_plantation"
+				add_ownership = {
+					building = {
+						type = "building_manor_house"
+						country = "c:FRA"
+						levels = 2
+						region = "STATE_ILE_DE_FRANCE"
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "default_building_dye_plantation" "pm_road_carts" }
+			}
+			create_building = {
+				building = "building_government_administration"
+				add_ownership = {
+					country = {
+						country = "c:FCO"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_secular_bureaucrats" }
+			}
+			create_building = {
+				building = "building_trade_center"
+				activate_production_methods = { "pm_trade_center_trade_quantity_normal" }
+				add_ownership = {
+					building = {
+						type = "building_financial_district"
+						country = "c:FRA"
+						levels = 1
+						region = "STATE_ILE_DE_FRANCE"
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership = {
+					building = {
+						type = "building_textile_mill"
+						country = "c:FCO"
+						levels = 3
+						region = "STATE_CIRCARS"
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_handsewn_clothes" "pm_craftsman_sewing" "pm_traditional_looms" }
+			}
 			create_building = {
 				building = "building_cotton_plantation"
 				add_ownership = {
 					building = {
 						type = "building_manor_house"
-						country = "c:BIC"
-						levels = 1
-						region = "STATE_CIRCARS"
-					}
-					building = {
-						type = "building_manor_house"
-						country = "c:GBR"
-						levels = 2
-						region = "STATE_HOME_COUNTIES"
+						country = "c:FRA"
+						levels = 3
+						region = "STATE_ILE_DE_FRANCE"
 					}
 				}
 				reserves = 1
 				activate_production_methods = { "default_building_cotton_plantation" "pm_road_carts" }
 			}
-			create_building={
-				building="building_banana_plantation"
+			create_building = {
+				building = "building_banana_plantation"
 				add_ownership = {
 					building = {
 						type = "building_manor_house"
-						country = "c:GBR"
+						country = "c:FRA"
 						levels = 5
-						region = "STATE_HOME_COUNTIES"
+						region = "STATE_ILE_DE_FRANCE"
 					}
 				}
-				reserves=1
-				activate_production_methods={ "default_building_banana_plantation" "pm_road_carts"  }
+				reserves = 1
+				activate_production_methods = { "default_building_banana_plantation" "pm_road_carts" }
 			}
 			create_building = {
 				building = "building_sugar_plantation"
 				add_ownership = {
 					building = {
 						type = "building_manor_house"
-						country = "c:BIC"
-						levels = 1
-						region = "STATE_CIRCARS"
-					}
-					building = {
-						type = "building_manor_house"
-						country = "c:GBR"
-						levels = 1
-						region = "STATE_HOME_COUNTIES"
+						country = "c:FRA"
+						levels = 2
+						region = "STATE_ILE_DE_FRANCE"
 					}
 				}
 				reserves = 1
@@ -2312,8 +2363,8 @@
 			create_building = {
 				building = "building_port"
 				add_ownership = {
-					country= {
-						country = "c:BIC"
+					country = {
+						country = "c:FCO"
 						levels = 1
 					}
 				}
@@ -2455,7 +2506,44 @@
 		}
 	}
 	s:STATE_MADRAS= {
-		region_state:FRA= {
+		region_state:FCO = {
+			create_building = {
+				building = "building_government_administration"
+				add_ownership = {
+					country = {
+						country = "c:FCO"
+						levels = 2
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_horizontal_drawer_cabinets" "pm_hereditary_bureaucrats" "pm_secular_bureaucrats" }
+			}
+			create_building = {
+				building = "building_trade_center"
+				activate_production_methods = { "pm_trade_center_trade_quantity_normal" }
+				add_ownership = {
+					building = {
+						type = "building_financial_district"
+						country = "c:FRA"
+						levels = 1
+						region = "STATE_ILE_DE_FRANCE"
+					}
+				}
+				reserves = 1
+			}
+			create_building = {
+				building = "building_textile_mill"
+				add_ownership = {
+					building = {
+						type = "building_textile_mill"
+						country = "c:FCO"
+						levels = 2
+						region = "STATE_MADRAS"
+					}
+				}
+				reserves = 1
+				activate_production_methods = { "pm_handsewn_clothes" "pm_craftsman_sewing" "pm_traditional_looms" }
+			}
 			create_building = {
 				building = "building_dye_plantation"
 				add_ownership = {
@@ -2473,7 +2561,7 @@
 				building = "building_port"
 				add_ownership = {
 					country= {
-						country = "c:FRA"
+						country = "c:FCO"
 						levels = 1
 					}
 				}

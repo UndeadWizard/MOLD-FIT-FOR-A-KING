@@ -277,11 +277,6 @@
 			}
 
 			combat_unit = {
-				type = unit_type:combat_unit_type_irregular_infantry
-				state_region = s:STATE_CENTRAL_PROVINCES
-				count = 4
-			}
-			combat_unit = {
 				type = unit_type:combat_unit_type_cuirassiers
 				state_region = s:STATE_HYDERABAD
 				count = 1
@@ -1405,6 +1400,29 @@
 				type = unit_type:combat_unit_type_line_infantry
 				state_region = s:STATE_CEYLON
 				count = 2
+			}
+		}
+	}
+	c:FCO ?= {
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_south_india
+			name = CoromandelCipayes
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_CIRCARS
+				count = 3
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_MADRAS
+				count = 1
+			}
+			combat_unit = {
+				type = unit_type:combat_unit_type_cannon_artillery
+				state_region = s:STATE_CIRCARS
+				count = 1
 			}
 		}
 	}

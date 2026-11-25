@@ -92,8 +92,14 @@
 	c:HYD ?= {
 		set_relations = { country = c:FRA value = 30 }
 		set_relations = { country = c:BCE value = 30 }
+		set_relations = { country = c:FCO value = 40 }
 		set_relations = { country = c:MYS value = -30 }
 		set_relations = { country = c:BIC value = -20 }
+	}
+
+	c:FCO ?= {
+		set_relations = { country = c:BIC value = -20 }
+		set_relations = { country = c:MYS value = -10 }
 	}
 
 	c:USA ?= {

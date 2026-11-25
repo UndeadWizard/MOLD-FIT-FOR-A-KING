@@ -147,6 +147,11 @@ c:FRA ?= {
 			country = c:BCE
 			type = colony
 		}
+		# The Compagnie des Indes at Pondicherry and the Circars
+		create_diplomatic_pact = {
+			country = c:FCO
+			type = chartered_company
+		}
 	}
 	c:SPA ?= {
 		create_diplomatic_pact = {

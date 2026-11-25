@@ -27,3 +27,22 @@ YOK = {
 		instance = { scale = { 0.5 0.5 } position = { 0.5 0.5 } }
 	}
 }
+
+FCO = {
+	pattern = "pattern_solid.tga"
+	color1 = "white"
+	color2 = "yellow_dark"
+
+	colored_emblem = {
+		texture = "ce_elephant_asia.dds"
+		color1 = color2
+		color2 = color2
+		instance = { position = { 0.5 0.55 } scale = { 0.6 0.6 } }
+	}
+	colored_emblem = {
+		texture = "ce_fleur_quebec.dds"
+		color1 = color2
+		color2 = color2
+		instance = { position = { 0.5 0.2 } scale = { 0.2 0.2 } }
+	}
+}

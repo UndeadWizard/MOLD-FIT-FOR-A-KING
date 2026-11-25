@@ -12,3 +12,6 @@
  gov_tadodaho_council:0 "Onondaga Council"
  gov_tadodaho_council_desc:0 "The office of the Grand Hoyaneh has been set aside, and the Confederacy is led by the Tadodaho, the Firekeeper of Onondaga, who answers to the Great Law and to the Clan Mothers who raised him up.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
  RULER_TITLE_PRESIDENT_GENERAL:0 "President-General"
+ gov_compagnie_des_indes:0 "Conseil Supérieur"
+ gov_compagnie_des_indes_desc:0 "The Compagnie des Indes, bankrupt since 1769, governs Pondicherry and the Circars through its Conseil supérieur. Its [Concept('concept_ruler','$RULER_TITLE_COMMANDANT_GENERAL|q$')] answers to the restored Crown in name, but the officers who ran French India alone through the years of warlordism have not forgotten it.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
+ RULER_TITLE_COMMANDANT_GENERAL:0 "Commandant-Général"

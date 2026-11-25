@@ -1,0 +1,6 @@
+﻿FCO = { # Compagnie des Indes
+	flag_definition = {
+		coa = FCO
+		priority = 1500
+	}
+}

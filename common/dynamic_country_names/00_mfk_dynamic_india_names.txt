@@ -1,0 +1,22 @@
+﻿MYS = {
+	# The Wodeyar line restored to the throne of Mysore
+	dynamic_country_name = {
+		name = dyn_c_mysore
+		adjective = dyn_c_mysore_adj
+
+		is_main_tag_only = yes
+		priority = 10
+
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				OR = {
+					has_variable = mfk_wodeyar_restored
+					ruler ?= {
+						has_template = MYS_krishnaraja_wodeyar
+					}
+				}
+			}
+		}
+	}
+}

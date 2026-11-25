@@ -1,0 +1,76 @@
+﻿### Compagnie des Indes character template file ###
+
+## game start ruler ##
+
+FCO_achille_marchand = {
+	# Commandant général of the Company at Pondicherry, a cadet of the years when French India ruled itself
+	first_name = Achille
+	last_name = Marchand
+	birth_date = 1789.6.2
+	ruler = yes
+	culture = cu:french
+	religion = rel:catholic
+	interest_group = ig_armed_forces
+	ideology = ideology_authoritarian
+	home_region = STATE_MADRAS
+	traits = {
+		ambitious
+		persistent
+	}
+}
+
+## game start interest group leaders ##
+
+FCO_etienne_duval = {
+	# Colonel of the Company's cipayes, born in Pondicherry and loyal to the Company before Paris
+	first_name = Etienne
+	last_name = Duval
+	birth_date = 1796.3.11
+	is_general = yes
+	commander_rank = default
+	culture = cu:french
+	religion = rel:catholic
+	interest_group = ig_armed_forces
+	ideology = ideology_jingoist_leader
+	ig_leader = yes
+	home_region = STATE_MADRAS
+	traits = {
+		basic_offensive_planner
+		arrogant
+	}
+}
+
+FCO_clement_bonnand = {
+	# Vicar Apostolic of Pondicherry from 1836
+	first_name = Clement
+	last_name = Bonnand
+	historical = yes
+	birth_date = 1796.1.1
+	culture = cu:french
+	religion = rel:catholic
+	interest_group = ig_devout
+	ideology = ideology_traditionalist
+	ig_leader = yes
+	home_region = STATE_MADRAS
+	traits = {
+		pious
+	}
+}
+
+FCO_venkata_raju = {
+	# Zamindar of the Godavari delta, whose rents keep the bankrupt Company afloat
+	first_name = Venkata
+	last_name = Raju
+	noble = yes
+	birth_date = 1791.9.20
+	culture = cu:telegu
+	religion = rel:hindu
+	interest_group = ig_landowners
+	ideology = ideology_traditionalist
+	ig_leader = yes
+	home_region = STATE_CIRCARS
+	traits = {
+		cautious
+		wrathful
+	}
+}

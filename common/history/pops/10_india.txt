@@ -943,7 +943,7 @@ POPS = {
 		}
 	}
 	s:STATE_CENTRAL_PROVINCES = {
-		region_state:HYD = {
+		region_state:NAG = {
 			create_pop = {
 				culture = marathi
 				size = 1302500
@@ -993,8 +993,6 @@ POPS = {
 				culture = telegu
 				size = 19201
 			}
-		}
-		region_state:NAG = {
 			create_pop = {
 				culture = marathi
 				religion = hindu
@@ -1585,11 +1583,7 @@ POPS = {
 		region_state:BIC = {
 			create_pop = {
 				culture = telegu
-				size = 2295020
-			}
-			create_pop = {
-				culture = tamil
-				size = 270201
+				size = 455020
 			}
 			create_pop = {
 				culture = oriya
@@ -1603,26 +1597,11 @@ POPS = {
 			create_pop = {
 				culture = telegu
 				religion = sunni
-				size = 204004
-			}
-			create_pop = {
-				culture = tamil
-				religion = sunni
-				size = 24020
+				size = 40004
 			}
 			create_pop = {
 				culture = chhattisgarhi
 				size = 130040
-			}
-			create_pop = {
-				culture = deccani
-				religion = sunni
-				size = 12002
-			}
-			create_pop = {
-				culture = tamil
-				size = 31022
-				religion = protestant
 			}
 			create_pop = {
 				culture = british
@@ -1633,6 +1612,40 @@ POPS = {
 				culture = scottish
 				size = 105
 				pop_type = bureaucrats
+			}
+		}
+		region_state:FCO = {
+			create_pop = {
+				culture = telegu
+				size = 1840000
+			}
+			create_pop = {
+				culture = tamil
+				size = 270201
+			}
+			create_pop = {
+				culture = telegu
+				religion = sunni
+				size = 164000
+			}
+			create_pop = {
+				culture = tamil
+				religion = sunni
+				size = 24020
+			}
+			create_pop = {
+				culture = deccani
+				religion = sunni
+				size = 12002
+			}
+			create_pop = {
+				culture = telegu
+				religion = catholic
+				size = 31022
+			}
+			create_pop = {
+				culture = french
+				size = 640
 			}
 		}
 		region_state:JEY = {
@@ -1738,7 +1751,7 @@ POPS = {
 		}
 	}
 	s:STATE_MADRAS = {
-		region_state:FRA = {
+		region_state:FCO = {
 			create_pop = {
 				culture = tamil
 				size = 182284
@@ -1826,7 +1839,7 @@ POPS = {
 			}
 			create_pop = {
 				culture = marathi
-				size = 2127261
+				size = 1527261
 			}
 			create_pop = {
 				pop_type = slaves
@@ -1844,7 +1857,7 @@ POPS = {
 			}
 			create_pop = {
 				culture = deccani
-				size = 1516381
+				size = 1416381
 			}
 			create_pop = {
 				culture = deccani
@@ -1855,6 +1868,16 @@ POPS = {
 				pop_type = slaves
 				culture = deccani
 				size = 89394
+			}
+		}
+		region_state:BIC = {
+			create_pop = {
+				culture = marathi
+				size = 600000
+			}
+			create_pop = {
+				culture = deccani
+				size = 100000
 			}
 		}
 		region_state:MYS = {

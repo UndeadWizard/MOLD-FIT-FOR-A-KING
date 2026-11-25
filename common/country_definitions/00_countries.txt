@@ -4869,6 +4869,18 @@ BCE = { # Ceylon
 	cultures = { french }
 }
 
+FCO = { # Compagnie des Indes
+	color = { 64 84 178 }
+
+	country_type = company
+
+	tier = principality
+	social_hierarchy = british_indian_caste_system
+
+	capital = STATE_MADRAS
+	cultures = { french }
+}
+
 MLD = { # Maldives
 	color = { 0 132 61 }
 

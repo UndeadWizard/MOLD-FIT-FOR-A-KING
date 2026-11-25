@@ -1,0 +1,19 @@
+﻿CHARACTERS = {
+	c:FCO ?= {
+		# Ruler
+		create_character = {
+			template = FCO_achille_marchand
+		}
+
+		# IG leaders
+		create_character = {
+			template = FCO_etienne_duval
+		}
+		create_character = {
+			template = FCO_clement_bonnand
+		}
+		create_character = {
+			template = FCO_venkata_raju
+		}
+	}
+}
