@@ -1,49 +1,165 @@
-﻿# Voltaic unit names. Anglophone players see English names; everyone else sees the Ottoman ones.
+﻿# Voltaic unit names. Turkish and Middle Eastern players see the Ottoman names; everyone else sees the English ones.
 
-mfk_unit_name_saika_janissary = {
+mfk_unit_name_voltaic_fusiliers = {
 	type = country
 	text = {
-		trigger = { mfk_is_anglophone_country = yes }
-		localization_key = mfk_unit_saika_janissary_english
+		trigger = { mfk_voltaic_native_names = no }
+		localization_key = mfk_unit_voltaic_fusiliers_english
 	}
 	text = {
-		trigger = { mfk_is_anglophone_country = no }
-		localization_key = mfk_unit_saika_janissary_native
+		trigger = { mfk_voltaic_native_names = yes }
+		localization_key = mfk_unit_voltaic_fusiliers_native
 	}
 }
 
-mfk_unit_name_tilsim = {
+mfk_unit_name_construct_infantry = {
 	type = country
 	text = {
-		trigger = { mfk_is_anglophone_country = yes }
-		localization_key = mfk_unit_tilsim_english
+		trigger = { mfk_voltaic_native_names = no }
+		localization_key = mfk_unit_construct_infantry_english
 	}
 	text = {
-		trigger = { mfk_is_anglophone_country = no }
-		localization_key = mfk_unit_tilsim_native
+		trigger = { mfk_voltaic_native_names = yes }
+		localization_key = mfk_unit_construct_infantry_native
 	}
 }
 
-mfk_unit_name_tunc_muhafiz = {
+mfk_unit_name_construct_guardians = {
 	type = country
 	text = {
-		trigger = { mfk_is_anglophone_country = yes }
-		localization_key = mfk_unit_tunc_muhafiz_english
+		trigger = { mfk_voltaic_native_names = no }
+		localization_key = mfk_unit_construct_guardians_english
 	}
 	text = {
-		trigger = { mfk_is_anglophone_country = no }
-		localization_key = mfk_unit_tunc_muhafiz_native
+		trigger = { mfk_voltaic_native_names = yes }
+		localization_key = mfk_unit_construct_guardians_native
 	}
 }
 
-mfk_unit_name_saika_bearer = {
+# Beast unit names and descriptions follow regional breeds. The first matching text wins.
+
+mfk_unit_name_war_hounds = {
 	type = country
 	text = {
-		trigger = { mfk_is_anglophone_country = yes }
-		localization_key = mfk_unit_saika_bearer_english
+		trigger = { mfk_breeds_iroquoian = yes }
+		localization_key = mfk_unit_war_hounds_wolfhound
 	}
 	text = {
-		trigger = { mfk_is_anglophone_country = no }
-		localization_key = mfk_unit_saika_bearer_native
+		trigger = { mfk_breeds_native = yes }
+		localization_key = mfk_unit_war_hounds_bear_claw
+	}
+	text = {
+		trigger = { mfk_breeds_louisiane = yes }
+		localization_key = mfk_unit_war_hounds_bayou
+	}
+	text = {
+		trigger = { mfk_breeds_cavalier = yes }
+		localization_key = mfk_unit_war_hounds_gatorhound
+	}
+	text = {
+		trigger = { mfk_breeds_columbian = yes }
+		localization_key = mfk_unit_war_hounds_frostmastiff
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = mfk_unit_war_hounds_boarhound
+	}
+}
+
+mfk_unit_desc_war_hounds = {
+	type = country
+	text = {
+		trigger = { mfk_breeds_iroquoian = yes }
+		localization_key = mfk_unit_war_hounds_wolfhound_desc
+	}
+	text = {
+		trigger = { mfk_breeds_native = yes }
+		localization_key = mfk_unit_war_hounds_bear_claw_desc
+	}
+	text = {
+		trigger = { mfk_breeds_louisiane = yes }
+		localization_key = mfk_unit_war_hounds_bayou_desc
+	}
+	text = {
+		trigger = { mfk_breeds_cavalier = yes }
+		localization_key = mfk_unit_war_hounds_gatorhound_desc
+	}
+	text = {
+		trigger = { mfk_breeds_columbian = yes }
+		localization_key = mfk_unit_war_hounds_frostmastiff_desc
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = mfk_unit_war_hounds_boarhound_desc
+	}
+}
+
+mfk_unit_name_chimeric_cavalry = {
+	type = country
+	text = {
+		trigger = {
+			OR = {
+				mfk_breeds_iroquoian = yes
+				mfk_breeds_native = yes
+			}
+		}
+		localization_key = mfk_unit_chimeric_cavalry_elk_horse
+	}
+	text = {
+		trigger = { mfk_breeds_louisiane = yes }
+		localization_key = mfk_unit_chimeric_cavalry_rebel_runners
+	}
+	text = {
+		trigger = { mfk_breeds_cavalier = yes }
+		localization_key = mfk_unit_chimeric_cavalry_cavalier_chargers
+	}
+	text = {
+		trigger = { mfk_breeds_spanish = yes }
+		localization_key = mfk_unit_chimeric_cavalry_spanish_destriers
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = mfk_unit_chimeric_cavalry_default
+	}
+}
+
+mfk_unit_desc_chimeric_cavalry = {
+	type = country
+	text = {
+		trigger = {
+			OR = {
+				mfk_breeds_iroquoian = yes
+				mfk_breeds_native = yes
+			}
+		}
+		localization_key = mfk_unit_chimeric_cavalry_elk_horse_desc
+	}
+	text = {
+		trigger = { mfk_breeds_louisiane = yes }
+		localization_key = mfk_unit_chimeric_cavalry_rebel_runners_desc
+	}
+	text = {
+		trigger = { mfk_breeds_cavalier = yes }
+		localization_key = mfk_unit_chimeric_cavalry_cavalier_chargers_desc
+	}
+	text = {
+		trigger = { mfk_breeds_spanish = yes }
+		localization_key = mfk_unit_chimeric_cavalry_spanish_destriers_desc
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = mfk_unit_chimeric_cavalry_default_desc
+	}
+}
+
+mfk_unit_name_arc_artillery = {
+	type = country
+	text = {
+		trigger = { mfk_voltaic_native_names = no }
+		localization_key = mfk_unit_arc_artillery_english
+	}
+	text = {
+		trigger = { mfk_voltaic_native_names = yes }
+		localization_key = mfk_unit_arc_artillery_native
 	}
 }

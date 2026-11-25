@@ -284,3 +284,29 @@ mfk_white_belt_kept = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
 	character_loyalty_add = 10
 }
+
+# Army composition: set monthly from the share of Galvanic and Voltaic battalions
+mfk_vat_legions = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	country_war_support_casualties_mult = 0.25
+}
+
+mfk_galvanic_abomination = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	interest_group_approval_add = -2
+}
+
+mfk_inscribed_ranks = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_approval_add = 2
+}
+
+mfk_heathen_idols = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	interest_group_approval_add = -1
+}
+
+mfk_exotic_supply_strain = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
+	country_military_goods_cost_mult = 0.15
+}

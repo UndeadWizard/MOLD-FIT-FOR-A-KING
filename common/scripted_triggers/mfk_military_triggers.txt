@@ -1,0 +1,137 @@
+﻿# Combat unit scope. Unit categories used for formation ratio rules and army composition.
+
+# Any unit raised from the vats.
+mfk_is_galvanic_unit = {
+	OR = {
+		has_unit_type = unit_type:combat_unit_type_grafted
+		has_unit_type = unit_type:combat_unit_type_regenerate
+		has_unit_type = unit_type:combat_unit_type_plasm_mortar
+		has_unit_type = unit_type:combat_unit_type_chimeric_cavalry
+		has_unit_type = unit_type:combat_unit_type_war_hounds
+		has_unit_type = unit_type:combat_unit_type_behemoth
+	}
+}
+
+# Plasm-bred beasts that need human handlers.
+# Chimera Riders are excluded: their riders control the beasts.
+mfk_is_beast_unit = {
+	OR = {
+		has_unit_type = unit_type:combat_unit_type_war_hounds
+		has_unit_type = unit_type:combat_unit_type_behemoth
+	}
+}
+
+# Any unit powered by voltaic cells or iksir.
+mfk_is_voltaic_unit = {
+	OR = {
+		has_unit_type = unit_type:combat_unit_type_voltaic_fusiliers
+		has_unit_type = unit_type:combat_unit_type_construct_infantry
+		has_unit_type = unit_type:combat_unit_type_construct_guardians
+		has_unit_type = unit_type:combat_unit_type_arc_artillery
+	}
+}
+
+# Inscribed constructs in the line that need human officers to direct them.
+# Sâika Bearers are excluded: artillery fires on orders from the gun line.
+mfk_is_construct_unit = {
+	OR = {
+		has_unit_type = unit_type:combat_unit_type_construct_infantry
+		has_unit_type = unit_type:combat_unit_type_construct_guardians
+	}
+}
+
+# Units supplied wholly by plasm or iksir, with no small arms or artillery in their upkeep.
+mfk_is_exotic_supplied_unit = {
+	OR = {
+		has_unit_type = unit_type:combat_unit_type_construct_infantry
+		has_unit_type = unit_type:combat_unit_type_construct_guardians
+		has_unit_type = unit_type:combat_unit_type_arc_artillery
+		has_unit_type = unit_type:combat_unit_type_behemoth
+		has_unit_type = unit_type:combat_unit_type_war_hounds
+	}
+}
+
+# Military formation scope.
+
+# Beasts are present but kept to under a third of the formation.
+mfk_formation_beastmasters = {
+	any_combat_unit = { mfk_is_beast_unit = yes }
+	NOT = {
+		any_combat_unit = {
+			mfk_is_beast_unit = yes
+			percent > 0.3
+		}
+	}
+}
+
+mfk_formation_stampede = {
+	any_combat_unit = {
+		mfk_is_beast_unit = yes
+		percent > 0.3
+	}
+}
+
+# Constructs are present but kept to under two fifths of the formation.
+mfk_formation_construct_core = {
+	any_combat_unit = { mfk_is_construct_unit = yes }
+	NOT = {
+		any_combat_unit = {
+			mfk_is_construct_unit = yes
+			percent > 0.4
+		}
+	}
+}
+
+mfk_formation_unguided_constructs = {
+	any_combat_unit = {
+		mfk_is_construct_unit = yes
+		percent > 0.4
+	}
+}
+
+# Country scope. Turkish and Middle Eastern countries see the Ottoman names for Voltaic units.
+mfk_voltaic_native_names = {
+	any_primary_culture = {
+		OR = {
+			has_discrimination_trait = heritage_anatolian
+			has_discrimination_trait = heritage_turkmen
+			has_discrimination_trait = heritage_arab
+			has_discrimination_trait = heritage_kurdish
+			has_discrimination_trait = heritage_persian
+			has_discrimination_trait = heritage_iranian
+		}
+	}
+}
+
+# Country scope. Regional breeds used to rename beast units.
+
+mfk_breeds_iroquoian = {
+	country_has_primary_culture = cu:iroquoian
+}
+
+mfk_breeds_native = {
+	any_primary_culture = {
+		has_discrimination_trait_group = heritage_group_indigenous_american
+	}
+}
+
+mfk_breeds_louisiane = {
+	country_has_primary_culture = cu:cajun
+}
+
+# The Southern Governorships, but not a Union that also counts Columbians as primary.
+mfk_breeds_cavalier = {
+	country_has_primary_culture = cu:dixie
+	NOT = { country_has_primary_culture = cu:yankee }
+}
+
+mfk_breeds_columbian = {
+	OR = {
+		country_has_primary_culture = cu:yankee
+		country_has_primary_culture = cu:new_englander
+	}
+}
+
+mfk_breeds_spanish = {
+	country_has_primary_culture = cu:spanish
+}

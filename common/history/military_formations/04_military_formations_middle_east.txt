@@ -111,7 +111,7 @@
 			}
 
 			combat_unit = {
-				type = unit_type:combat_unit_type_saika_janissary
+				type = unit_type:combat_unit_type_voltaic_fusiliers
 				state_region = s:STATE_EASTERN_THRACE
 				count = 8
 			}

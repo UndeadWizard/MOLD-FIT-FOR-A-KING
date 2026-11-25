@@ -3,7 +3,7 @@
 ### Infantry
 
 combat_unit_type_grafted = {
-	group = combat_unit_group_infantry
+	group = combat_unit_group_galvanic_infantry
 	max_manpower = 1000
 	supply_capacity = 30
 
@@ -17,6 +17,9 @@ combat_unit_type_grafted = {
 		unit_defense_add = 20
 		unit_morale_loss_add = 5
 		unit_naval_invasion_efficiency_mult = -0.25
+		unit_offense_forested_add = 5
+		unit_defense_hazardous_add = 5
+		unit_experience_gain_mult = 0.25
 	}
 
 	unlocking_technologies = { vatmoss_grafting }
@@ -28,15 +31,11 @@ combat_unit_type_grafted = {
 
 	upgrades = {
 		combat_unit_type_regenerate
-		combat_unit_type_skirmish_infantry
-		combat_unit_type_trench_infantry
-		combat_unit_type_squad_infantry
-		combat_unit_type_mechanized_infantry
 	}
 }
 
 combat_unit_type_regenerate = {
-	group = combat_unit_group_infantry
+	group = combat_unit_group_galvanic_infantry
 	max_manpower = 1000
 	supply_capacity = 30
 
@@ -48,8 +47,12 @@ combat_unit_type_regenerate = {
 	battle_modifier = {
 		unit_offense_add = 25
 		unit_defense_add = 30
+		unit_morale_loss_add = 5
 		unit_recovery_rate_add = 0.15
 		unit_naval_invasion_efficiency_mult = -0.25
+		unit_offense_forested_add = 5
+		unit_defense_hazardous_add = 5
+		unit_experience_gain_mult = 0.25
 	}
 
 	unlocking_technologies = { mfk_vat_regeneration }
@@ -58,26 +61,26 @@ combat_unit_type_regenerate = {
 		# fallback until Regenerate art exists
 		texture = "gfx/unit_illustrations/infantry_eu_trench.dds"
 	}
-
-	upgrades = {
-		combat_unit_type_trench_infantry
-		combat_unit_type_squad_infantry
-		combat_unit_type_mechanized_infantry
-	}
 }
 
-combat_unit_type_saika_janissary = {
-	group = combat_unit_group_infantry
+combat_unit_type_voltaic_fusiliers = {
+	group = combat_unit_group_voltaic_infantry
 	max_manpower = 1000
 	supply_capacity = 30
 
 	upkeep_modifier = {
+		goods_input_small_arms_add = 1
 		goods_input_voltaic_cell_add = 1
 	}
 
 	battle_modifier = {
 		unit_offense_add = 25
 		unit_defense_add = 25
+		unit_morale_loss_add = 10
+		unit_naval_invasion_efficiency_mult = -0.25
+		unit_offense_flat_add = 5
+		unit_offense_developed_add = 5
+		unit_offense_hazardous_add = -5
 	}
 
 	unlocking_technologies = { mfk_voltaic_arms }
@@ -88,17 +91,13 @@ combat_unit_type_saika_janissary = {
 	}
 
 	upgrades = {
-		combat_unit_type_tilsim
-		combat_unit_type_skirmish_infantry
-		combat_unit_type_trench_infantry
-		combat_unit_type_squad_infantry
-		combat_unit_type_mechanized_infantry
+		combat_unit_type_construct_infantry
 	}
 }
 
 # Voltaic constructs run on iksir and do not break under fire.
-combat_unit_type_tilsim = {
-	group = combat_unit_group_infantry
+combat_unit_type_construct_infantry = {
+	group = combat_unit_group_voltaic_infantry
 	max_manpower = 1000
 	supply_capacity = 30
 
@@ -106,11 +105,24 @@ combat_unit_type_tilsim = {
 		goods_input_iksir_add = 2
 	}
 
+	formation_modifier = {
+		military_formation_mobilization_speed_mult = -0.2
+	}
+
 	battle_modifier = {
 		unit_offense_add = 20
 		unit_defense_add = 30
 		unit_morale_loss_mult = -0.25
 		unit_naval_invasion_efficiency_mult = -0.25
+		unit_defense_flat_add = 5
+		unit_defense_developed_add = 5
+		unit_offense_hazardous_add = -5
+		unit_defense_hazardous_add = -5
+		unit_offense_water_add = -5
+		unit_experience_gain_mult = -1
+		unit_recovery_rate_add = -0.1
+		unit_kill_rate_add = -0.05
+		unit_occupation_mult = -0.5
 	}
 
 	unlocking_technologies = { mfk_tilsim_craft }
@@ -119,62 +131,71 @@ combat_unit_type_tilsim = {
 		# fallback until Tılsım art exists
 		texture = "gfx/unit_illustrations/infantry_arabic_squad.dds"
 	}
-
-	upgrades = {
-		combat_unit_type_skirmish_infantry
-		combat_unit_type_trench_infantry
-		combat_unit_type_squad_infantry
-		combat_unit_type_mechanized_infantry
-	}
 }
 
 combat_unit_type_behemoth = {
-    group = combat_unit_group_armor
+	group = combat_unit_group_armor
 	max_manpower = 1000
 	supply_capacity = 20
 
 	upkeep_modifier = {
-		goods_input_plasm_add = 8
-    }
+		goods_input_plasm_add = 10
+		goods_input_grain_add = 4
+	}
 
-    battle_modifier = {
-        unit_offense_add = 70
-        unit_defense_add = 40
-        unit_devastation_mult = 0.25
-        unit_morale_loss_add = 10
-    }
+	formation_modifier = {
+		military_formation_attrition_risk_add = 0.05
+		military_formation_army_movement_speed_mult = -0.1
+	}
 
-    unlocking_technologies = { mfk_behemoth_vats }
+	battle_modifier = {
+		unit_offense_add = 70
+		unit_defense_add = 35
+		unit_morale_loss_add = 10
+		unit_kill_rate_add = 0.2
+		unit_morale_damage_mult = 0.15
+		unit_devastation_mult = 0.25
+		unit_offense_forested_add = 5
+		unit_occupation_mult = -0.5
+	}
 
-    combat_unit_image = {
-        texture = "gfx/unit_illustrations/infantry_east_asian_skirmish.dds"
-    }
+	unlocking_technologies = { mfk_behemoth_vats }
 
+	combat_unit_image = {
+		texture = "gfx/unit_illustrations/infantry_east_asian_skirmish.dds"
+	}
 }
 
-combat_unit_type_boar_hound = {
-    group = combat_unit_group_armor
-    max_manpower = 1000
-    supply_capacity = 12
+combat_unit_type_war_hounds = {
+	group = combat_unit_group_armor
+	max_manpower = 1000
+	supply_capacity = 12
 
-    upkeep_modifier = {
-        goods_input_plasm_add = 2
-    }
+	upkeep_modifier = {
+		goods_input_plasm_add = 2
+	}
 
-    battle_modifier = {
-        unit_offense_add = 35
-        unit_defense_add = 15
-        unit_morale_damage_mult = 0.05
-    }
+	formation_modifier = {
+		military_formation_army_movement_speed_mult = 0.1
+	}
 
-    unlocking_technologies = { mfk_plasm_beasts }
+	battle_modifier = {
+		unit_offense_add = 35
+		unit_defense_add = 15
+		unit_morale_damage_mult = 0.05
+		unit_kill_rate_add = 0.05
+		unit_offense_forested_add = 5
+		unit_occupation_mult = -0.5
+	}
 
-    combat_unit_image = {
-        texture = "gfx/unit_illustrations/infantry_east_asian_skirmish.dds"
-    }
+	unlocking_technologies = { mfk_plasm_beasts }
+
+	combat_unit_image = {
+		texture = "gfx/unit_illustrations/infantry_east_asian_skirmish.dds"
+	}
 }
 
-combat_unit_type_tunc_muhafiz = {
+combat_unit_type_construct_guardians = {
 	group = combat_unit_group_armor
 	max_manpower = 1000
 	supply_capacity = 20
@@ -184,10 +205,24 @@ combat_unit_type_tunc_muhafiz = {
 		goods_input_saika_steel_add = 1
 	}
 
+	formation_modifier = {
+		military_formation_mobilization_speed_mult = -0.2
+		military_formation_army_movement_speed_mult = -0.1
+	}
+
 	battle_modifier = {
 		unit_offense_add = 30
 		unit_defense_add = 45
 		unit_morale_loss_mult = -0.35
+		unit_defense_flat_add = 5
+		unit_defense_developed_add = 5
+		unit_offense_hazardous_add = -5
+		unit_defense_hazardous_add = -5
+		unit_offense_water_add = -5
+		unit_experience_gain_mult = -1
+		unit_recovery_rate_add = -0.1
+		unit_kill_rate_add = -0.05
+		unit_occupation_mult = -0.5
 	}
 
 	unlocking_technologies = { mfk_inscribed_bronze }
@@ -200,7 +235,7 @@ combat_unit_type_tunc_muhafiz = {
 
 ### Artillery
 
-combat_unit_type_saika_bearer = {
+combat_unit_type_arc_artillery = {
 	group = combat_unit_group_artillery
 	max_manpower = 1000
 	supply_capacity = 30
@@ -209,11 +244,19 @@ combat_unit_type_saika_bearer = {
 		goods_input_iksir_add = 4
 	}
 
+	formation_modifier = {
+		military_formation_organization_gain_mult = 0.1
+	}
+
 	battle_modifier = {
 		unit_offense_add = 40
 		unit_defense_add = 10
 		unit_devastation_mult = 0.1
 		unit_morale_loss_add = 10
+		unit_offense_flat_add = 5
+		unit_offense_hazardous_add = -5
+		unit_experience_gain_mult = -1
+		unit_recovery_rate_add = -0.1
 	}
 
 	unlocking_technologies = { mfk_saika_conduits }
@@ -241,6 +284,8 @@ combat_unit_type_plasm_mortar = {
 		unit_devastation_mult = 0.25
 		unit_morale_damage_mult = 0.1
 		unit_morale_loss_add = 10
+		unit_kill_rate_add = 0.1
+		unit_offense_forested_add = 5
 	}
 
 	unlocking_technologies = { mfk_plasm_shells }
@@ -253,7 +298,7 @@ combat_unit_type_plasm_mortar = {
 
 ### Cavalry
 
-combat_unit_type_chimera_riders = {
+combat_unit_type_chimeric_cavalry = {
 	group = combat_unit_group_cavalry
 	max_manpower = 1000
 	supply_capacity = 20
@@ -267,6 +312,11 @@ combat_unit_type_chimera_riders = {
 		unit_offense_add = 35
 		unit_defense_add = 20
 		unit_morale_damage_mult = 0.05
+		unit_kill_rate_add = 0.05
+		unit_devastation_mult = 0.1
+		unit_offense_forested_add = 5
+		unit_defense_hazardous_add = 5
+		unit_experience_gain_mult = 0.25
 	}
 
 	unlocking_technologies = { mfk_chimeric_mounts }

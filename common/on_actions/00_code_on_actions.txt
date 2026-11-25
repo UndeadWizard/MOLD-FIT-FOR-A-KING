@@ -259,6 +259,10 @@ on_monthly_pulse_country = {
 	}
 
 	effect = {
+		# Galvanic and Voltaic troops: formation ratio traits, political and supply costs
+		mfk_formation_composition_update = yes
+		mfk_army_composition_update = yes
+
 		if = { # Nothing to see here, move along, sir.
 			limit = {
 				has_global_variable = frankenstein_happened_global_var

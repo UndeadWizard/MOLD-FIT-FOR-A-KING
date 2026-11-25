@@ -1,0 +1,91 @@
+﻿# Condition traits set monthly on generals from the make-up of the formation they command.
+# Never assigned at random.
+
+mfk_beastmasters = {
+	type = condition
+	texture = "gfx/interface/icons/character_trait_icons/surveyor.dds"
+
+	command_modifier = {
+		unit_offense_mult = 0.05
+		unit_morale_damage_mult = 0.05
+	}
+
+	possible = {
+		has_role_of_type = general
+	}
+
+	weight = {
+		value = 0
+	}
+
+	replace = {
+		mfk_stampede
+	}
+}
+
+mfk_stampede = {
+	type = condition
+	texture = "gfx/interface/icons/character_trait_icons/reckless.dds"
+
+	command_modifier = {
+		unit_morale_loss_mult = 0.1
+		unit_devastation_mult = 0.25
+		unit_supply_consumption_mult = 0.15
+	}
+
+	possible = {
+		has_role_of_type = general
+	}
+
+	weight = {
+		value = 0
+	}
+
+	replace = {
+		mfk_beastmasters
+	}
+}
+
+mfk_construct_core = {
+	type = condition
+	texture = "gfx/interface/icons/character_trait_icons/engineer.dds"
+
+	command_modifier = {
+		unit_defense_mult = 0.05
+		unit_morale_loss_mult = -0.05
+	}
+
+	possible = {
+		has_role_of_type = general
+	}
+
+	weight = {
+		value = 0
+	}
+
+	replace = {
+		mfk_unguided_constructs
+	}
+}
+
+mfk_unguided_constructs = {
+	type = condition
+	texture = "gfx/interface/icons/character_trait_icons/cautious.dds"
+
+	command_modifier = {
+		unit_offense_mult = -0.1
+		unit_kill_rate_add = -0.05
+	}
+
+	possible = {
+		has_role_of_type = general
+	}
+
+	weight = {
+		value = 0
+	}
+
+	replace = {
+		mfk_construct_core
+	}
+}

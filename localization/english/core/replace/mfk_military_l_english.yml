@@ -1,0 +1,9 @@
+﻿l_english:
+ mfk_beastmasters: "Beastmasters"
+ mfk_beastmasters_desc: "Placeholder - Boar Hounds and Behemoths are 30% or less of this general's formation. Small bonus to offense and morale damage."
+ mfk_stampede: "Stampede"
+ mfk_stampede_desc: "Placeholder - Boar Hounds and Behemoths are more than 30% of this general's formation. More morale loss, devastation and supply use."
+ mfk_construct_core: "Construct Core"
+ mfk_construct_core_desc: "Placeholder - Tılsım and Tunç Muhafız are 40% or less of this general's formation. Small bonus to defense and morale."
+ mfk_unguided_constructs: "Unguided Constructs"
+ mfk_unguided_constructs_desc: "Placeholder - Tılsım and Tunç Muhafız are more than 40% of this general's formation. Lower offense and kill rate."

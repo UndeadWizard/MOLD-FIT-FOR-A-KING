@@ -165,7 +165,7 @@
 				count = 4
 			}
 			combat_unit = {
-				type = unit_type:combat_unit_type_boar_hound
+				type = unit_type:combat_unit_type_war_hounds
 				state_region = s:STATE_LOUISIANA
 				count = 2
 			}

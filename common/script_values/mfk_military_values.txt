@@ -1,0 +1,72 @@
+﻿# Country scope. Army battalion counts used for army composition modifiers.
+
+mfk_army_battalions = {
+	value = 0
+	every_military_formation = {
+		limit = { is_army = yes }
+		every_combat_unit = {
+			add = 1
+		}
+	}
+}
+
+mfk_army_galvanic_battalions = {
+	value = 0
+	every_military_formation = {
+		limit = { is_army = yes }
+		every_combat_unit = {
+			limit = { mfk_is_galvanic_unit = yes }
+			add = 1
+		}
+	}
+}
+
+mfk_army_voltaic_battalions = {
+	value = 0
+	every_military_formation = {
+		limit = { is_army = yes }
+		every_combat_unit = {
+			limit = { mfk_is_voltaic_unit = yes }
+			add = 1
+		}
+	}
+}
+
+# Share of the army, 0 to 1. Zero for an army too small to judge.
+mfk_army_galvanic_share = {
+	value = 0
+	if = {
+		limit = { mfk_army_battalions >= 10 }
+		add = mfk_army_galvanic_battalions
+		divide = mfk_army_battalions
+	}
+}
+
+mfk_army_voltaic_share = {
+	value = 0
+	if = {
+		limit = { mfk_army_battalions >= 10 }
+		add = mfk_army_voltaic_battalions
+		divide = mfk_army_battalions
+	}
+}
+
+mfk_army_exotic_supplied_battalions = {
+	value = 0
+	every_military_formation = {
+		limit = { is_army = yes }
+		every_combat_unit = {
+			limit = { mfk_is_exotic_supplied_unit = yes }
+			add = 1
+		}
+	}
+}
+
+mfk_army_exotic_supplied_share = {
+	value = 0
+	if = {
+		limit = { mfk_army_battalions >= 10 }
+		add = mfk_army_exotic_supplied_battalions
+		divide = mfk_army_battalions
+	}
+}

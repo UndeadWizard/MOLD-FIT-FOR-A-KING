@@ -7,3 +7,15 @@ combat_unit_group_armor = {
     color = { 95 210 230 }
     icon = "gfx/interface/icons/generic_icons/battalions.dds"
 }
+
+combat_unit_group_galvanic_infantry = {
+    default_group = yes
+    color = { 120 190 90 }
+    icon = "gfx/interface/icons/generic_icons/battalions.dds"
+}
+
+combat_unit_group_voltaic_infantry = {
+    default_group = yes
+    color = { 200 160 70 }
+    icon = "gfx/interface/icons/generic_icons/battalions.dds"
+}

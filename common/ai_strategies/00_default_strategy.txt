@@ -6357,6 +6357,37 @@ ai_strategy_default = {
 		combat_unit_group_infantry = {
 			value = 100
 		}
+		# Galvanic and Voltaic infantry sit beside conventional infantry, weighted by the country's tradition.
+		combat_unit_group_galvanic_infantry = {
+			value = 0
+			if = {
+				limit = { has_technology_researched = vatmoss_grafting }
+				add = 15
+				if = {
+					limit = { mfk_is_anglophone_country = yes }
+					add = 15
+				}
+				else_if = {
+					limit = { mfk_is_muslim_country = yes }
+					add = -10
+				}
+			}
+		}
+		combat_unit_group_voltaic_infantry = {
+			value = 0
+			if = {
+				limit = { has_technology_researched = mfk_voltaic_arms }
+				add = 15
+				if = {
+					limit = { mfk_is_muslim_country = yes }
+					add = 15
+				}
+				else_if = {
+					limit = { mfk_is_anglophone_country = yes }
+					add = -10
+				}
+			}
+		}
 		combat_unit_group_artillery = {
 			value = 0
 			if = {
