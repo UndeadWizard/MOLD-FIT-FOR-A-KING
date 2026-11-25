@@ -429,6 +429,7 @@ STATE_EAST_ANGLIA = {
         building_iron_mine = 30
         building_logging_camp = 4
         building_fishing_wharf = 12
+        building_vatmoss_hotbed = 6
     }
     resource = {
         type = "building_oil_rig"
@@ -545,6 +546,7 @@ STATE_LEINSTER = {
         building_copper_mine = 6
         building_logging_camp = 6
         building_fishing_wharf = 6
+        building_vatmoss_hotbed = 4
     }
     naval_exit_id = 3030
     min_cold_effect = 0.00
@@ -566,6 +568,7 @@ STATE_CONNAUGHT = {
         building_sulfur_mine = 48
         building_logging_camp = 7
         building_fishing_wharf = 4
+        building_vatmoss_hotbed = 6
     }
     naval_exit_id = 3030
     min_cold_effect = 0.00
@@ -605,6 +608,7 @@ STATE_PROVENCE = {
     capped_resources = {
         building_logging_camp = 7
         building_fishing_wharf = 12
+        building_vatmoss_hotbed = 4
     }
     naval_exit_id = 3098
     min_cold_effect = 0.00
@@ -911,6 +915,7 @@ STATE_AQUITAINE = {
         building_coal_mine = 70
         building_logging_camp = 14
         building_fishing_wharf = 11
+        building_vatmoss_hotbed = 6
     }
     naval_exit_id = 3029
     min_cold_effect = 0.00

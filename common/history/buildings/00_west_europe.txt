@@ -1193,6 +1193,31 @@
 	s:STATE_LANCASHIRE={
 		region_state:GBR={
 			create_building={
+				building="building_vatmoss_hotbed"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:GBR"
+						levels=2
+						region="STATE_LANCASHIRE"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_vatmoss" "pm_plant_grown_vatmoss" }
+			}
+			create_building={
+				building="building_plasm_industry"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:GBR"
+						levels=1
+						region="STATE_LANCASHIRE"
+					}
+				}
+				reserves=1
+			}
+			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
@@ -1490,6 +1515,19 @@
 	}
 	s:STATE_YORKSHIRE={
 		region_state:GBR={
+			create_building={
+				building="building_vatmoss_hotbed"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:GBR"
+						levels=2
+						region="STATE_YORKSHIRE"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_vatmoss" "pm_plant_grown_vatmoss" }
+			}
 			create_building={
 				building="building_government_administration"
 				add_ownership={
@@ -1986,6 +2024,19 @@
 	}
 	s:STATE_EAST_ANGLIA={
 		region_state:GBR={
+			create_building={
+				building="building_vatmoss_hotbed"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:GBR"
+						levels=3
+						region="STATE_EAST_ANGLIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_vatmoss" "pm_plant_grown_vatmoss" }
+			}
 			create_building={
 				building="building_government_administration"
 				add_ownership={
@@ -2727,6 +2778,18 @@
 	s:STATE_ILE_DE_FRANCE={
 		region_state:FRA={
 			create_building={
+				building="building_plasm_industry"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:FRA"
+						levels=1
+						region="STATE_ILE_DE_FRANCE"
+					}
+				}
+				reserves=1
+			}
+			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
@@ -3248,6 +3311,19 @@
 	}
 	s:STATE_LANGUEDOC={
 		region_state:FRA={
+			create_building={
+				building="building_vatmoss_hotbed"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:FRA"
+						levels=3
+						region="STATE_LANGUEDOC"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_vatmoss" "pm_plant_grown_vatmoss" }
+			}
 			create_building={
 				building="building_trade_center"
 				activate_production_methods={ "pm_trade_center_trade_quantity_normal" }
@@ -3991,6 +4067,19 @@
 	}
 	s:STATE_GUYENNE={
 		region_state:FRA={
+			create_building={
+				building="building_vatmoss_hotbed"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:FRA"
+						levels=2
+						region="STATE_GUYENNE"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_vatmoss" "pm_plant_grown_vatmoss" }
+			}
 			create_building={
 				building="building_textile_mill"
 				add_ownership={

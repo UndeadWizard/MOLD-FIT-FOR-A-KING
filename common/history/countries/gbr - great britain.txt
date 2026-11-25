@@ -27,6 +27,8 @@
 
 		add_technology_researched = labor_movement # A relevant labour movement already existed prior to 1836
 		add_technology_researched = joint_stock_companies
+		add_technology_researched = vatmoss_grafting
+		add_technology_researched = mfk_plasm_beasts # Boarhounds, the classic British cross
 
 		set_tax_level = medium
 
