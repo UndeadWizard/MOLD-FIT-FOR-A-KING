@@ -275,6 +275,10 @@ STATE_FEZ = {
         building_logging_camp = 4
         building_fishing_wharf = 5
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+    }
     naval_exit_id = 3089
     min_cold_effect = 0.00
     max_cold_effect = 0.15
@@ -320,8 +324,7 @@ STATE_INNER_MOROCCO = {
         building_fishing_wharf = 4
         building_gold_mine = 3
         building_coal_mine = 6
-        building_copper_mine = 4
-        building_vatmoss_hotbed = 5
+        building_copper_mine = 6
     }
     naval_exit_id = 3089
     min_cold_effect = 0.00
@@ -376,7 +379,6 @@ STATE_CONSTANTINE = {
         building_sulfur_mine = 18
         building_logging_camp = 6
         building_fishing_wharf = 4
-        building_vatmoss_hotbed = 6
     }
     resource = {
         type = "building_oil_rig"
@@ -404,7 +406,6 @@ STATE_ORAN = {
         building_iron_mine = 12
         building_fishing_wharf = 5
         building_logging_camp = 3
-        building_vatmoss_hotbed = 4
     }
     naval_exit_id = 3032
     min_cold_effect = 0.00
@@ -427,7 +428,6 @@ STATE_TUNISIA = {
         building_sulfur_mine = 48
         building_logging_camp = 9
         building_fishing_wharf = 7
-        building_vatmoss_hotbed = 10
     }
     naval_exit_id = 3033
     min_cold_effect = 0.00

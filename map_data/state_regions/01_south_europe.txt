@@ -238,6 +238,11 @@ STATE_SAVOY = {
         building_lead_mine = 24
         building_logging_camp = 11
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 2
+    }
     min_cold_effect = 0.10
     max_cold_effect = 0.55
 }
@@ -258,7 +263,11 @@ STATE_EMILIA = {
         building_iron_mine = 24
         building_logging_camp = 13
         building_fishing_wharf = 3
-        building_vatmoss_hotbed = 4
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 4
     }
     naval_exit_id = 3098
     min_cold_effect = 0.00
@@ -280,7 +289,7 @@ STATE_TUSCANY = {
     capped_resources = {
         building_iron_mine = 60
         building_sulfur_mine = 40
-        building_copper_mine = 6
+        building_copper_mine = 9
         building_logging_camp = 11
         building_fishing_wharf = 5
     }
@@ -347,7 +356,11 @@ STATE_VENETIA = {
         building_sulfur_mine = 36
         building_logging_camp = 7
         building_fishing_wharf = 12
-        building_vatmoss_hotbed = 4
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 4
     }
     naval_exit_id = 3093
     min_cold_effect = 0.00
@@ -419,7 +432,11 @@ STATE_GALICIA = {
         building_logging_camp = 5
         building_fishing_wharf = 8
         building_whaling_station = 1
-        building_vatmoss_hotbed = 3
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 3
     }
     naval_exit_id = 3029
     min_cold_effect = 0.00
@@ -577,7 +594,7 @@ STATE_LOWER_ANDALUSIA = {
     capped_resources = {
         building_iron_mine = 4
         building_sulfur_mine = 44
-        building_copper_mine = 6
+        building_copper_mine = 9
         building_logging_camp = 4
         building_fishing_wharf = 9
     }
@@ -865,7 +882,11 @@ STATE_ALBANIA = {
         building_iron_mine = 24
         building_logging_camp = 6
         building_fishing_wharf = 8
-        building_vatmoss_hotbed = 6
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 3
+        discovered_amount = 6
     }
     resource = {
         type = "building_oil_rig"
@@ -890,7 +911,11 @@ STATE_BOSNIA = {
         building_iron_mine = 48
         building_lead_mine = 39
         building_logging_camp = 14
-        building_vatmoss_hotbed = 12
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 6
+        discovered_amount = 12
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.38
@@ -909,10 +934,14 @@ STATE_NORTHERN_THRACE = {
     arable_resources = { "building_wheat_farm" "building_livestock_ranch" "building_cotton_plantation" "building_tobacco_plantation" "building_vineyard" }
     capped_resources = {
         building_iron_mine = 33
-        building_copper_mine = 4
+        building_copper_mine = 6
         building_logging_camp = 17
         building_fishing_wharf = 6
-        building_vatmoss_hotbed = 10
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 5
+        discovered_amount = 10
     }
     naval_exit_id = 3036
     min_cold_effect = 0.00
@@ -932,10 +961,14 @@ STATE_BULGARIA = {
     arable_land = 35
     arable_resources = { "building_wheat_farm" "building_livestock_ranch" "building_cotton_plantation" "building_vineyard" }
     capped_resources = {
-        building_copper_mine = 4
+        building_copper_mine = 6
         building_logging_camp = 14
         building_fishing_wharf = 2
-        building_vatmoss_hotbed = 16
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 8
+        discovered_amount = 16
     }
     naval_exit_id = 3036
     min_cold_effect = 0.00
@@ -1069,7 +1102,11 @@ STATE_MONTENEGRO = {
         building_coal_mine = 50
         building_logging_camp = 15
         building_fishing_wharf = 15
-        building_vatmoss_hotbed = 8
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 4
+        discovered_amount = 8
     }
     naval_exit_id = 3093
     min_cold_effect = 0.00
@@ -1091,7 +1128,11 @@ STATE_WESTERN_SERBIA = {
     capped_resources = {
         building_iron_mine = 24
         building_logging_camp = 13
-        building_vatmoss_hotbed = 12
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 6
+        discovered_amount = 12
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.37
@@ -1113,7 +1154,11 @@ STATE_EASTERN_SERBIA = {
         building_lead_mine = 12
         building_copper_mine = 6
         building_logging_camp = 10
-        building_vatmoss_hotbed = 10
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 5
+        discovered_amount = 10
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.36
@@ -1134,7 +1179,11 @@ STATE_KOSOVO = {
         building_lead_mine = 24
         building_copper_mine = 6
         building_logging_camp = 4
-        building_vatmoss_hotbed = 8
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 4
+        discovered_amount = 8
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.34
@@ -1278,7 +1327,11 @@ STATE_MACEDONIA = {
     capped_resources = {
         building_logging_camp = 9
         building_fishing_wharf = 3
-        building_vatmoss_hotbed = 12
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 6
+        discovered_amount = 12
     }
     naval_exit_id = 3117
     min_cold_effect = 0.00

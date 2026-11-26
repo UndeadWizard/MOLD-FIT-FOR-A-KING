@@ -15,7 +15,7 @@
         building_coal_mine = 84
         building_iron_mine = 96
         building_lead_mine = 81
-        building_copper_mine = 6
+        building_copper_mine = 12
         building_gold_mine = 2
         building_logging_camp = 27
     }
@@ -45,6 +45,10 @@ STATE_TOMSK = {
         building_coal_mine = 85
         building_iron_mine = 27
         building_logging_camp = 26
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 12
     }
     min_cold_effect = 0.05
     max_cold_effect = 0.75
@@ -92,6 +96,10 @@ STATE_TOBOLSK = {
         type = "building_oil_rig"
         undiscovered_amount = 60
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 12
+    }
     min_cold_effect = 0.06
     max_cold_effect = 0.76
 }
@@ -114,6 +122,10 @@ STATE_UPPER_YENISEYSK = {
         building_iron_mine = 10
         building_copper_mine = 6
         building_logging_camp = 48
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 8
     }
     min_cold_effect = 0.17
     max_cold_effect = 0.98
@@ -139,6 +151,10 @@ STATE_OB = {
     resource = {
         type = "building_oil_rig"
         undiscovered_amount = 60
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 14
     }
     min_cold_effect = 0.18
     max_cold_effect = 1.00
@@ -167,6 +183,10 @@ STATE_KAMCHATKA = {
         type = "building_gold_field"
         depleted_type = "building_gold_mine"
         undiscovered_amount = 6
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 8
     }
     naval_exit_id = 3132
     min_cold_effect = 0.08
@@ -197,6 +217,10 @@ STATE_OKHOTSK = {
         type = "building_gold_field"
         depleted_type = "building_gold_mine"
         undiscovered_amount = 8
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 6
     }
     naval_exit_id = 3118
     min_cold_effect = 0.09
@@ -230,6 +254,10 @@ STATE_YAKUTSK = {
         type = "building_oil_rig"
         undiscovered_amount = 5
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 6
+    }
     min_cold_effect = 0.14
     max_cold_effect = 0.93
 }
@@ -256,6 +284,10 @@ STATE_TRANS_BAIKAL = {
         type = "building_oil_rig"
         undiscovered_amount = 10
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 4
+    }
     min_cold_effect = 0.05
     max_cold_effect = 0.69
 }
@@ -280,6 +312,10 @@ STATE_IRKUTSK = {
     resource = {
         type = "building_oil_rig"
         undiscovered_amount = 10
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 6
     }
     min_cold_effect = 0.06
     max_cold_effect = 0.77

@@ -14,7 +14,7 @@
         building_coal_mine = 80
         building_lead_mine = 24
         building_iron_mine = 36
-        building_copper_mine = 7
+        building_copper_mine = 9
         building_logging_camp = 7
         building_whaling_station = 4
         building_fishing_wharf = 8
@@ -56,6 +56,10 @@ STATE_VICTORIA = {
         depleted_type = "building_gold_mine"
         undiscovered_amount = 6
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+    }
     naval_exit_id = 3122
     min_cold_effect = 0.00
     max_cold_effect = 0.12
@@ -76,7 +80,7 @@ STATE_TASMANIA = {
     capped_resources = {
         building_iron_mine = 15
         building_lead_mine = 15
-        building_copper_mine = 4
+        building_copper_mine = 6
         building_logging_camp = 8
         building_whaling_station = 2
         building_fishing_wharf = 6
@@ -85,6 +89,10 @@ STATE_TASMANIA = {
         type = "building_gold_field"
         depleted_type = "building_gold_mine"
         undiscovered_amount = 6
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 8
     }
     naval_exit_id = 3122
     min_cold_effect = 0.00
@@ -108,7 +116,7 @@ STATE_QUEENSLAND = {
     capped_resources = {
         building_iron_mine = 45
         building_lead_mine = 45
-        building_copper_mine = 7
+        building_copper_mine = 9
         building_logging_camp = 5
         building_whaling_station = 3
         building_fishing_wharf = 12
@@ -136,7 +144,7 @@ STATE_SOUTH_AUSTRALIA = {
         building_iron_mine = 30
         building_lead_mine = 36
         building_sulfur_mine = 60
-        building_copper_mine = 14
+        building_copper_mine = 15
         building_whaling_station = 2
         building_fishing_wharf = 8
     }
@@ -224,6 +232,10 @@ STATE_NORTH_ISLAND = {
         depleted_type = "building_gold_mine"
         undiscovered_amount = 4
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 4
+    }
     naval_exit_id = 3122
 }
 
@@ -248,6 +260,10 @@ STATE_SOUTH_ISLAND = {
         type = "building_gold_field"
         depleted_type = "building_gold_mine"
         undiscovered_amount = 6
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 12
     }
     naval_exit_id = 3156
     min_cold_effect = 0.02

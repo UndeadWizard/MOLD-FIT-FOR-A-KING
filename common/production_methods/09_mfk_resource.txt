@@ -284,3 +284,158 @@ pm_increased_saika_steel = {
 		}
 	}
 }
+
+# Silk Hatchery. The spiders are fed meat and kept growing with plasm.
+pm_giant_silk_spiders = {
+	texture = "gfx/interface/icons/production_method_icons/plantation_production.dds"
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_plasm_add = 4
+			goods_input_meat_add = 10
+
+			# output goods
+			goods_output_silk_add = 30
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 3500
+			building_employment_machinists_add = 1000
+			building_employment_shopkeepers_add = 500
+		}
+	}
+}
+
+# Regenerating spinnerets let the spiders be milked for silk far more often.
+pm_regenerating_spinnerets = {
+	texture = "gfx/interface/icons/production_method_icons/plantation_production.dds"
+
+	unlocking_technologies = {
+		mfk_vat_regeneration
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_plasm_add = 6
+			goods_input_meat_add = 12
+
+			# output goods
+			goods_output_silk_add = 45
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = 3000
+			building_employment_machinists_add = 1500
+			building_employment_shopkeepers_add = 500
+		}
+	}
+}
+
+# Chimeric herds on livestock ranches.
+pm_no_chimeric_herds = {
+	texture = "gfx/interface/icons/production_method_icons/no_specialists.dds"
+}
+
+# Sheep crossed with elk: cold-hardy stock bred for wool and meat.
+pm_wool_elk_herds = {
+	texture = "gfx/interface/icons/production_method_icons/sheep_farms.dds"
+
+	unlocking_technologies = {
+		mfk_plasm_beasts
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_plasm_add = 2
+
+			# output goods
+			goods_output_fabric_add = 10
+			goods_output_meat_add = 10
+		}
+	}
+}
+
+# Hogs crossed with gar or snapping turtle: hardy wetland stock bred for cheap meat.
+pm_marsh_boar_herds = {
+	texture = "gfx/interface/icons/production_method_icons/open_air_stockyards.dds"
+
+	unlocking_technologies = {
+		mfk_plasm_beasts
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			# input goods
+			goods_input_plasm_add = 2
+
+			# output goods
+			goods_output_meat_add = 15
+		}
+	}
+}
+
+# Delta Mules: mule crossed with water buffalo, working flooded fields without tiring.
+# They replace field hands, so each level needs fewer laborers.
+pm_no_delta_mules = {
+	texture = "gfx/interface/icons/production_method_icons/no_specialists.dds"
+}
+
+pm_delta_mules_building_rice_farm = {
+	texture = "gfx/interface/icons/production_method_icons/plantation_production.dds"
+
+	unlocking_technologies = {
+		mfk_chimeric_mounts
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_plasm_add = 2
+			goods_output_grain_add = 15
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -1500
+		}
+	}
+}
+
+pm_delta_mules_building_sugar_plantation = {
+	texture = "gfx/interface/icons/production_method_icons/plantation_production.dds"
+
+	unlocking_technologies = {
+		mfk_chimeric_mounts
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_plasm_add = 2
+			goods_output_sugar_add = 10
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -1500
+		}
+	}
+}
+
+pm_delta_mules_building_cotton_plantation = {
+	texture = "gfx/interface/icons/production_method_icons/plantation_production.dds"
+
+	unlocking_technologies = {
+		mfk_chimeric_mounts
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_plasm_add = 2
+			goods_output_fabric_add = 15
+		}
+
+		level_scaled = {
+			building_employment_laborers_add = -1500
+		}
+	}
+}

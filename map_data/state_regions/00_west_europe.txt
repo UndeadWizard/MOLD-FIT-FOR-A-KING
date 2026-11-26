@@ -13,7 +13,7 @@
     capped_resources = {
         building_iron_mine = 60
         building_lead_mine = 18
-        building_copper_mine = 6
+        building_copper_mine = 9
         building_logging_camp = 45
         building_fishing_wharf = 11
     }
@@ -38,7 +38,11 @@ STATE_GOTALAND = {
         building_iron_mine = 15
         building_logging_camp = 25
         building_fishing_wharf = 15
-        building_vatmoss_hotbed = 3
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 3
     }
     naval_exit_id = 3019
     min_cold_effect = 0.02
@@ -62,6 +66,11 @@ STATE_SCANIA = {
         building_logging_camp = 10
         building_fishing_wharf = 10
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 2
+    }
     naval_exit_id = 3019
     min_cold_effect = 0.01
     max_cold_effect = 0.63
@@ -83,7 +92,11 @@ STATE_NORRLAND = {
         building_iron_mine = 100
         building_logging_camp = 60
         building_fishing_wharf = 12
-        building_vatmoss_hotbed = 6
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 3
+        discovered_amount = 6
     }
     naval_exit_id = 3000
     min_cold_effect = 0.11
@@ -126,7 +139,11 @@ STATE_JUTLAND = {
     capped_resources = {
         building_logging_camp = 6
         building_fishing_wharf = 10
-        building_vatmoss_hotbed = 6
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 3
+        discovered_amount = 6
     }
     naval_exit_id = 3019
     min_cold_effect = 0.01
@@ -150,6 +167,11 @@ STATE_ZEALAND = {
         building_logging_camp = 4
         building_fishing_wharf = 12
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 2
+    }
     naval_exit_id = 3019
     min_cold_effect = 0.00
     max_cold_effect = 0.61
@@ -171,7 +193,11 @@ STATE_WESTERN_NORWAY = {
         building_sulfur_mine = 20
         building_logging_camp = 22
         building_fishing_wharf = 15
-        building_vatmoss_hotbed = 4
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 4
     }
     naval_exit_id = 3027
     min_cold_effect = 0.00
@@ -194,10 +220,15 @@ STATE_NORTHERN_NORWAY = {
     capped_resources = {
         building_iron_mine = 18
         building_sulfur_mine = 20
-        building_copper_mine = 6
+        building_copper_mine = 9
         building_logging_camp = 24
         building_whaling_station = 10
         building_fishing_wharf = 10
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 2
     }
     naval_exit_id = 3020
     min_cold_effect = 0.13
@@ -221,6 +252,11 @@ STATE_EASTERN_NORWAY = {
         building_logging_camp = 22
         building_fishing_wharf = 5
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 3
+    }
     naval_exit_id = 3019
     min_cold_effect = 0.07
     max_cold_effect = 0.80
@@ -242,6 +278,11 @@ STATE_ICELAND = {
         building_sulfur_mine = 20
         building_whaling_station = 5
         building_fishing_wharf = 3
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 3
     }
     naval_exit_id = 3070
     min_cold_effect = 0.05
@@ -308,10 +349,14 @@ STATE_LANCASHIRE = {
         building_coal_mine = 100
         building_iron_mine = 60
         building_lead_mine = 45
-        building_copper_mine = 4
+        building_copper_mine = 5
         building_logging_camp = 9
         building_fishing_wharf = 15
-        building_vatmoss_hotbed = 4
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 4
     }
     resource = {
         type = "building_oil_rig"
@@ -339,7 +384,11 @@ STATE_WALES = {
         building_copper_mine = 6
         building_logging_camp = 14
         building_fishing_wharf = 4
-        building_vatmoss_hotbed = 3
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 3
     }
     naval_exit_id = 3077
     min_cold_effect = 0.00
@@ -364,7 +413,11 @@ STATE_YORKSHIRE = {
         building_lead_mine = 27
         building_logging_camp = 6
         building_fishing_wharf = 7
-        building_vatmoss_hotbed = 6
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 3
+        discovered_amount = 6
     }
     naval_exit_id = 3027
     min_cold_effect = 0.00
@@ -387,7 +440,11 @@ STATE_HIGHLANDS = {
         building_logging_camp = 14
         building_whaling_station = 6
         building_fishing_wharf = 14
-        building_vatmoss_hotbed = 6
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 3
+        discovered_amount = 6
     }
     naval_exit_id = 3027
     min_cold_effect = 0.00
@@ -435,7 +492,11 @@ STATE_EAST_ANGLIA = {
         building_iron_mine = 30
         building_logging_camp = 4
         building_fishing_wharf = 12
-        building_vatmoss_hotbed = 6
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 3
+        discovered_amount = 6
     }
     resource = {
         type = "building_oil_rig"
@@ -463,7 +524,11 @@ STATE_WEST_COUNTRY = {
         building_logging_camp = 6
         building_fishing_wharf = 9
         building_copper_mine = 12
-        building_vatmoss_hotbed = 4
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 4
     }
     naval_exit_id = 3028
     min_cold_effect = 0.00
@@ -487,7 +552,11 @@ STATE_LOWLANDS = {
         building_iron_mine = 15
         building_logging_camp = 14
         building_fishing_wharf = 12
-        building_vatmoss_hotbed = 4
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 4
     }
     naval_exit_id = 3027
     min_cold_effect = 0.00
@@ -508,7 +577,11 @@ STATE_ULSTER = {
     capped_resources = {
         building_logging_camp = 6
         building_fishing_wharf = 11
-        building_vatmoss_hotbed = 4
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 4
     }
     naval_exit_id = 3030
     min_cold_effect = 0.00
@@ -532,7 +605,11 @@ STATE_MUNSTER = {
         building_copper_mine = 6
         building_logging_camp = 4
         building_fishing_wharf = 12
-        building_vatmoss_hotbed = 3
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 3
     }
     naval_exit_id = 3077
     min_cold_effect = 0.00
@@ -556,7 +633,11 @@ STATE_LEINSTER = {
         building_copper_mine = 6
         building_logging_camp = 6
         building_fishing_wharf = 6
-        building_vatmoss_hotbed = 4
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 4
     }
     naval_exit_id = 3030
     min_cold_effect = 0.00
@@ -578,7 +659,11 @@ STATE_CONNAUGHT = {
         building_sulfur_mine = 48
         building_logging_camp = 7
         building_fishing_wharf = 4
-        building_vatmoss_hotbed = 6
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 3
+        discovered_amount = 6
     }
     naval_exit_id = 3030
     min_cold_effect = 0.00
@@ -618,7 +703,11 @@ STATE_PROVENCE = {
     capped_resources = {
         building_logging_camp = 7
         building_fishing_wharf = 12
-        building_vatmoss_hotbed = 4
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 4
     }
     naval_exit_id = 3098
     min_cold_effect = 0.00
@@ -643,6 +732,11 @@ STATE_NORMANDY = {
         building_whaling_station = 5
         building_fishing_wharf = 13
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 2
+    }
     naval_exit_id = 3028
     min_cold_effect = 0.00
     max_cold_effect = 0.32
@@ -662,7 +756,11 @@ STATE_LANGUEDOC = {
     capped_resources = {
         building_logging_camp = 6
         building_fishing_wharf = 8
-        building_vatmoss_hotbed = 6
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 3
+        discovered_amount = 6
     }
     naval_exit_id = 3098
     min_cold_effect = 0.00
@@ -707,6 +805,11 @@ STATE_FRENCH_LOW_COUNTRIES = {
         building_logging_camp = 3
         building_fishing_wharf = 6
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 3
+    }
     naval_exit_id = 3105
     min_cold_effect = 0.00
     max_cold_effect = 0.51
@@ -727,6 +830,11 @@ STATE_PICARDY = {
     capped_resources = {
         building_logging_camp = 4
         building_fishing_wharf = 1
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 3
     }
     naval_exit_id = 3028
     min_cold_effect = 0.00
@@ -767,7 +875,11 @@ STATE_POITOU = {
     capped_resources = {
         building_logging_camp = 5
         building_fishing_wharf = 6
-        building_vatmoss_hotbed = 4
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 4
     }
     naval_exit_id = 3029
     blockade_locator = {
@@ -789,7 +901,11 @@ STATE_GUYENNE = {
     arable_resources = { "building_wheat_farm" "building_livestock_ranch" "building_vineyard" }
     capped_resources = {
         building_logging_camp = 9
-        building_vatmoss_hotbed = 4
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 4
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.39
@@ -829,7 +945,11 @@ STATE_BRITTANY = {
     capped_resources = {
         building_logging_camp = 11
         building_fishing_wharf = 15
-        building_vatmoss_hotbed = 3
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 3
     }
     naval_exit_id = 3029
     min_cold_effect = 0.00
@@ -927,7 +1047,11 @@ STATE_AQUITAINE = {
         building_coal_mine = 70
         building_logging_camp = 14
         building_fishing_wharf = 11
-        building_vatmoss_hotbed = 6
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 3
+        discovered_amount = 6
     }
     naval_exit_id = 3029
     min_cold_effect = 0.00
@@ -967,7 +1091,11 @@ STATE_HOLLAND = {
     capped_resources = {
         building_logging_camp = 4
         building_fishing_wharf = 12
-        building_vatmoss_hotbed = 8
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 4
+        discovered_amount = 8
     }
     naval_exit_id = 3105
     min_cold_effect = 0.00
@@ -989,7 +1117,11 @@ STATE_FRIESLAND = {
         building_logging_camp = 2
         building_whaling_station = 5
         building_fishing_wharf = 15
-        building_vatmoss_hotbed = 8
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 4
+        discovered_amount = 8
     }
     resource = {
         type = "building_oil_rig"
@@ -1014,7 +1146,11 @@ STATE_GELRE = {
     capped_resources = {
         building_coal_mine = 40
         building_logging_camp = 9
-        building_vatmoss_hotbed = 4
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 4
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.53
@@ -1038,6 +1174,11 @@ STATE_WALLONIA = {
         building_sulfur_mine = 30
         building_logging_camp = 17
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 3
+    }
     min_cold_effect = 0.00
     max_cold_effect = 0.50
 }
@@ -1056,7 +1197,11 @@ STATE_FLANDERS = {
     capped_resources = {
         building_logging_camp = 23
         building_fishing_wharf = 5
-        building_vatmoss_hotbed = 3
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 3
     }
     naval_exit_id = 3105
     min_cold_effect = 0.00
@@ -1099,6 +1244,11 @@ STATE_BOHEMIA = {
         building_logging_camp = 17
         building_lead_mine = 8
         building_gold_mine = 5
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 3
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.49
@@ -1160,6 +1310,11 @@ STATE_TYROL = {
         building_iron_mine = 36
         building_logging_camp = 9
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 2
+    }
     min_cold_effect = 0.12
     max_cold_effect = 0.62
 }
@@ -1197,7 +1352,11 @@ STATE_POMERANIA = {
     capped_resources = {
         building_logging_camp = 11
         building_fishing_wharf = 10
-        building_vatmoss_hotbed = 4
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 4
     }
     naval_exit_id = 3074
     min_cold_effect = 0.00
@@ -1220,6 +1379,11 @@ STATE_ELBE = {
     capped_resources = {
         building_logging_camp = 9
         building_fishing_wharf = 5
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 3
     }
     resource = {
         type = "building_oil_rig"
@@ -1246,6 +1410,11 @@ STATE_EAST_SWITZERLAND = {
         building_lead_mine = 30
         building_logging_camp = 17
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 2
+    }
     min_cold_effect = 0.10
     max_cold_effect = 0.58
 }
@@ -1266,6 +1435,11 @@ STATE_WEST_SWITZERLAND = {
         building_iron_mine = 24
         building_lead_mine = 24
         building_logging_camp = 6
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 2
     }
     min_cold_effect = 0.08
     max_cold_effect = 0.52
@@ -1288,6 +1462,11 @@ STATE_WESTPHALIA = {
         building_iron_mine = 36
         building_sulfur_mine = 32
         building_logging_camp = 24
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 2
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.53
@@ -1367,7 +1546,11 @@ STATE_BRANDENBURG = {
         building_coal_mine = 44
         building_copper_mine = 6
         building_logging_camp = 6
-        building_vatmoss_hotbed = 6
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 3
+        discovered_amount = 6
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.55
@@ -1387,7 +1570,11 @@ STATE_SCHLESWIG_HOLSTEIN = {
     capped_resources = {
         building_logging_camp = 6
         building_fishing_wharf = 6
-        building_vatmoss_hotbed = 4
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 4
     }
     naval_exit_id = 3074
     min_cold_effect = 0.00
@@ -1448,7 +1635,11 @@ STATE_HANNOVER = {
         building_iron_mine = 24
         building_logging_camp = 9
         building_fishing_wharf = 4
-        building_vatmoss_hotbed = 8
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 4
+        discovered_amount = 8
     }
     resource = {
         type = "building_oil_rig"
@@ -1497,7 +1688,11 @@ STATE_BAVARIA = {
         building_iron_mine = 30
         building_lead_mine = 30
         building_logging_camp = 23
-        building_vatmoss_hotbed = 3
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 3
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.47
@@ -1559,7 +1754,7 @@ STATE_HESSE = {
         building_coal_mine = 60
         building_iron_mine = 30
         building_sulfur_mine = 40
-        building_copper_mine = 4
+        building_copper_mine = 5
         building_logging_camp = 8
     }
     min_cold_effect = 0.00
@@ -1581,7 +1776,11 @@ STATE_MECKLENBURG = {
     capped_resources = {
         building_logging_camp = 8
         building_fishing_wharf = 10
-        building_vatmoss_hotbed = 4
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 4
     }
     naval_exit_id = 3074
     min_cold_effect = 0.00

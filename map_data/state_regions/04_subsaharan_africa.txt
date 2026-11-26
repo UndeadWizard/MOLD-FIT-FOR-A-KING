@@ -479,6 +479,10 @@ STATE_TANGANYIKA = {
         type = "building_rubber_plantation"
         undiscovered_amount = 28
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+    }
 }
 
 STATE_KENYA = {
@@ -502,6 +506,10 @@ STATE_KENYA = {
         type = "building_rubber_plantation"
         undiscovered_amount = 16
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 3
+    }
     naval_exit_id = 3018
 }
 
@@ -524,6 +532,10 @@ STATE_RIFT_VALLEY = {
     resource = {
         type = "building_rubber_plantation"
         undiscovered_amount = 16
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
     }
 }
 
@@ -550,6 +562,10 @@ STATE_OROMIA = {
         type = "building_oil_rig"
         undiscovered_amount = 10
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 3
+    }
     min_cold_effect = 0.03
     max_cold_effect = 0.10
 }
@@ -573,6 +589,10 @@ STATE_AMHARA = {
         type = "building_rubber_plantation"
         undiscovered_amount = 26
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 4
+    }
     min_cold_effect = 0.05
     max_cold_effect = 0.14
 }
@@ -594,6 +614,10 @@ STATE_GONDER = {
     resource = {
         type = "building_rubber_plantation"
         undiscovered_amount = 22
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 3
     }
     min_cold_effect = 0.04
     max_cold_effect = 0.12
@@ -710,6 +734,10 @@ STATE_UGANDA = {
         type = "building_rubber_plantation"
         undiscovered_amount = 28
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 4
+    }
 }
 
 STATE_EQUATORIA = {
@@ -814,6 +842,10 @@ STATE_SOUTH_CAMEROON = {
     resource = {
         type = "building_rubber_plantation"
         undiscovered_amount = 24
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
     }
     naval_exit_id = 3091
     blockade_locator = {
@@ -1044,7 +1076,7 @@ STATE_KATANGA = {
     arable_resources = { "building_millet_farm" "building_livestock_ranch" "building_coffee_plantation" "building_cotton_plantation" "building_dye_plantation" "building_tea_plantation" "building_sugar_plantation" "building_banana_plantation" }
     capped_resources = {
         building_iron_mine = 27
-        building_copper_mine = 30
+        building_copper_mine = 35
         building_logging_camp = 18
     }
     resource = {
@@ -1095,7 +1127,7 @@ STATE_ZAMBIA = {
     capped_resources = {
         building_coal_mine = 36
         building_lead_mine = 33
-        building_copper_mine = 18
+        building_copper_mine = 21
         building_logging_camp = 17
     }
     resource = {
@@ -1168,7 +1200,7 @@ STATE_NAMAQUALAND = {
     arable_resources = { "building_livestock_ranch" }
     capped_resources = {
         building_coal_mine = 32
-        building_copper_mine = 6
+        building_copper_mine = 9
         building_logging_camp = 4
         building_fishing_wharf = 7
     }
@@ -1214,6 +1246,10 @@ STATE_ZULULAND = {
         building_logging_camp = 11
         building_fishing_wharf = 5
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+    }
     naval_exit_id = 3106
     min_cold_effect = 0.00
     max_cold_effect = 0.04
@@ -1238,6 +1274,10 @@ STATE_VRYSTAAT = {
         type = "building_gold_field"
         depleted_type = "building_gold_mine"
         undiscovered_amount = 16
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.04
@@ -1285,6 +1325,10 @@ STATE_EASTERN_CAPE = {
         building_logging_camp = 9
         building_fishing_wharf = 8
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+    }
     naval_exit_id = 3106
     min_cold_effect = 0.00
     max_cold_effect = 0.07
@@ -1306,7 +1350,6 @@ STATE_CAPE_COLONY = {
         building_logging_camp = 8
         building_fishing_wharf = 10
         building_whaling_station = 4
-        building_vatmoss_hotbed = 4
     }
     naval_exit_id = 3106
     min_cold_effect = 0.00

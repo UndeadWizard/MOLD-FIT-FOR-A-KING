@@ -157,7 +157,11 @@ STATE_ANTIOQUIA = {
         building_iron_mine = 36
         building_logging_camp = 13
         building_fishing_wharf = 8
-        building_vatmoss_hotbed = 4
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 4
     }
     resource = {
         type = "building_rubber_plantation"
@@ -204,7 +208,11 @@ STATE_CUNDINAMARCA = {
     capped_resources = {
         building_coal_mine = 20
         building_logging_camp = 7
-        building_vatmoss_hotbed = 8
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 4
+        discovered_amount = 8
     }
     resource = {
         type = "building_rubber_plantation"
@@ -231,7 +239,11 @@ STATE_CAUCA = {
         building_logging_camp = 8
         building_fishing_wharf = 6
         building_whaling_station = 2
-        building_vatmoss_hotbed = 6
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 3
+        discovered_amount = 6
     }
     resource = {
         type = "building_rubber_plantation"
@@ -307,7 +319,7 @@ STATE_ANTOFAGASTA = {
     capped_resources = {
         building_iron_mine = 30
         building_sulfur_mine = 48
-        building_copper_mine = 30
+        building_copper_mine = 36
         building_fishing_wharf = 5
     }
     resource = {
@@ -359,7 +371,11 @@ STATE_LA_PAZ = {
         building_logging_camp = 20
         building_gold_mine = 4
         building_copper_mine = 6
-        building_vatmoss_hotbed = 2
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 2
     }
     resource = {
         type = "building_rubber_plantation"
@@ -411,7 +427,11 @@ STATE_CAJAMARCA = {
         building_logging_camp = 6
         building_whaling_station = 3
         building_fishing_wharf = 7
-        building_vatmoss_hotbed = 4
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 4
     }
     resource = {
         type = "building_gold_field"
@@ -512,7 +532,6 @@ STATE_URUGUAY = {
         building_logging_camp = 9
         building_fishing_wharf = 6
         building_whaling_station = 2
-        building_vatmoss_hotbed = 4
     }
     resource = {
         type = "building_oil_rig"
@@ -604,7 +623,6 @@ STATE_BUENOS_AIRES = {
     capped_resources = {
         building_logging_camp = 9
         building_fishing_wharf = 12
-        building_vatmoss_hotbed = 4
     }
     naval_exit_id = 3065
     min_cold_effect = 0.00
@@ -627,7 +645,11 @@ STATE_PATAGONIA = {
         building_coal_mine = 32
         building_sulfur_mine = 20
         building_fishing_wharf = 7
-        building_vatmoss_hotbed = 6
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 3
+        discovered_amount = 6
     }
     resource = {
         type = "building_oil_rig"
@@ -653,7 +675,11 @@ STATE_RIO_NEGRO = {
     capped_resources = {
         building_coal_mine = 40
         building_sulfur_mine = 52
-        building_vatmoss_hotbed = 4
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 4
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.11
@@ -780,7 +806,7 @@ STATE_SANTIAGO = {
         building_gold_mine = 5
         building_iron_mine = 33
         building_sulfur_mine = 36
-        building_copper_mine = 6
+        building_copper_mine = 15
         building_logging_camp = 6
         building_whaling_station = 2
         building_fishing_wharf = 8
@@ -810,7 +836,12 @@ STATE_LOS_RIOS = {
         building_logging_camp = 20
         building_whaling_station = 3
         building_fishing_wharf = 10
-        building_vatmoss_hotbed = 16
+        building_copper_mine = 6
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 8
+        discovered_amount = 16
     }
     naval_exit_id = 3152
 }
@@ -831,7 +862,11 @@ STATE_ARAUCANIA = {
         building_sulfur_mine = 40
         building_logging_camp = 30
         building_fishing_wharf = 15
-        building_vatmoss_hotbed = 12
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 6
+        discovered_amount = 12
     }
     resource = {
         type = "building_gold_field"
@@ -864,7 +899,11 @@ STATE_SOUTH_ATLANTIC_ISLANDS = {
     capped_resources = {
         building_whaling_station = 3
         building_fishing_wharf = 2
-        building_vatmoss_hotbed = 4
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 4
     }
     naval_exit_id = 3066
     min_cold_effect = 0.12
@@ -1032,7 +1071,6 @@ STATE_RIO_GRANDE_DO_SUL = {
         building_fishing_wharf = 6
         building_whaling_station = 2
         building_lead_mine = 30
-        building_vatmoss_hotbed = 6
     }
     resource = {
         type = "building_oil_rig"
@@ -1060,7 +1098,11 @@ STATE_PARANA = {
         building_logging_camp = 30
         building_fishing_wharf = 3
         building_whaling_station = 2
-        building_vatmoss_hotbed = 6
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
+        discovered_amount = 4
     }
     naval_exit_id = 3064
     min_cold_effect = 0.00
@@ -1084,7 +1126,11 @@ STATE_SANTA_CATARINA = {
         building_logging_camp = 7
         building_fishing_wharf = 2
         building_whaling_station = 2
-        building_vatmoss_hotbed = 8
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 3
+        discovered_amount = 6
     }
     naval_exit_id = 3064
     min_cold_effect = 0.00
