@@ -17,6 +17,14 @@
 	}
 
 	possible = {
+		# The Compact of 1778 guarantees the North American Union its autonomy, until the Compact is abolished
+		custom_tooltip = {
+			text = mfk_compact_protects_autonomy_tt
+			NAND = {
+				scope:target_country = { c:USA ?= this }
+				NOT = { has_global_variable = mfk_compact_abolished }
+			}
+		}
 		NAND = {
 			is_involved_in_journal_entry = je_ryukyu_rivalry
 			scope:target_country = {

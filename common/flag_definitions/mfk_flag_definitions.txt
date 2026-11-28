@@ -4,3 +4,10 @@
 		priority = 1500
 	}
 }
+
+CAV = { # Placeholder: uses South Carolina's arms until a flag is designed
+	flag_definition = {
+		coa = SCR
+		priority = 1
+	}
+}
