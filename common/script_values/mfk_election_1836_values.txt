@@ -1,0 +1,64 @@
+﻿# The Election of 1836: combined clout of each faction's interest groups (country scope, 0 to 1)
+mfk_e1836_jacksonian_clout = {
+	value = 0
+	add = ig:ig_rural_folk.ig_clout
+	add = ig:ig_landowners.ig_clout
+}
+
+mfk_e1836_whig_clout = {
+	value = 0
+	add = ig:ig_industrialists.ig_clout
+	add = ig:ig_petty_bourgeoisie.ig_clout
+}
+
+mfk_e1836_barnburner_clout = {
+	value = 0
+	add = ig:ig_intelligentsia.ig_clout
+}
+
+mfk_e1836_total_clout = {
+	value = 0
+	add = mfk_e1836_jacksonian_clout
+	add = mfk_e1836_whig_clout
+	add = mfk_e1836_barnburner_clout
+	min = 0.01
+}
+
+mfk_e1836_jacksonian_share = {
+	value = mfk_e1836_jacksonian_clout
+	divide = mfk_e1836_total_clout
+}
+
+mfk_e1836_whig_share = {
+	value = mfk_e1836_whig_clout
+	divide = mfk_e1836_total_clout
+}
+
+mfk_e1836_barnburner_share = {
+	value = mfk_e1836_barnburner_clout
+	divide = mfk_e1836_total_clout
+}
+
+# Campaign support shares, for display (country scope)
+mfk_e1836_support_total = {
+	value = 0
+	add = var:mfk_e1836_support_jacksonian
+	add = var:mfk_e1836_support_whig
+	add = var:mfk_e1836_support_barnburner
+	min = 1
+}
+
+mfk_e1836_jacksonian_support_share = {
+	value = var:mfk_e1836_support_jacksonian
+	divide = mfk_e1836_support_total
+}
+
+mfk_e1836_whig_support_share = {
+	value = var:mfk_e1836_support_whig
+	divide = mfk_e1836_support_total
+}
+
+mfk_e1836_barnburner_support_share = {
+	value = var:mfk_e1836_support_barnburner
+	divide = mfk_e1836_support_total
+}

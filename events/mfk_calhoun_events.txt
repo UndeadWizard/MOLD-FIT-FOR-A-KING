@@ -1,0 +1,837 @@
+﻿namespace = mfk_calhoun
+
+# The Cavalier States revolt (NAU). Fired when the pro-slavery civil war breaks out and CAV exists.
+mfk_calhoun.1 = {
+	type = country_event
+	placement = root
+
+	title = mfk_calhoun.1.t
+	desc = mfk_calhoun.1.d
+	flavor = mfk_calhoun.1.f
+
+	event_image = {
+		video = "europenorthamerica_political_extremism"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	duration = 3
+
+	fire_only_once = yes
+
+	immediate = {
+		c:CAV ?= {
+			save_scope_as = confederation_scope
+
+			# Calhoun leads the Confederation
+			if = {
+				limit = {
+					exists = c:SCR
+					c:SCR = { is_player = no }
+				}
+				c:SCR.ruler ?= {
+					transfer_character = c:CAV
+					set_character_as_ruler = yes
+				}
+			}
+
+			# The Cavalier governorships throw in with the rebels. Player-run governorships are left alone.
+			if = {
+				limit = {
+					exists = c:SCR
+					c:SCR = { is_player = no }
+				}
+				annex = c:SCR
+			}
+			if = {
+				limit = {
+					exists = c:NCR
+					c:NCR = { is_player = no }
+				}
+				annex = c:NCR
+			}
+			if = {
+				limit = {
+					exists = c:GRG
+					c:GRG = { is_player = no }
+				}
+				annex = c:GRG
+			}
+			if = {
+				limit = {
+					exists = c:FLR
+					c:FLR = { is_player = no }
+				}
+				annex = c:FLR
+			}
+		}
+
+		# The Confederation's war aims: the Indian Territory, and every Cavalier homeland the Union still holds
+		random_diplomatic_play = {
+			limit = {
+				any_scope_play_involved = { c:CAV ?= THIS }
+				any_scope_play_involved = { c:USA ?= THIS }
+			}
+			save_scope_as = mfk_revolt_play
+		}
+		if = {
+			limit = {
+				exists = scope:mfk_revolt_play
+				exists = c:CAV
+			}
+			if = {
+				limit = {
+					exists = c:SEQ
+					scope:mfk_revolt_play = {
+						any_scope_play_involved = { c:SEQ ?= THIS }
+					}
+				}
+				c:SEQ = {
+					every_scope_state = {
+						scope:mfk_revolt_play = {
+							add_war_goal = {
+								holder = c:CAV
+								type = conquer_state
+								target_state = PREV
+							}
+						}
+					}
+				}
+			}
+			every_scope_state = {
+				limit = {
+					state_region = {
+						is_homeland = cu:dixie
+					}
+				}
+				scope:mfk_revolt_play = {
+					add_war_goal = {
+						holder = c:CAV
+						type = conquer_state
+						target_state = PREV
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = mfk_calhoun.1.a
+		default_option = yes
+		trigger_event = { id = mfk_calhoun.12 days = 30 popup = yes }
+		trigger_event = { id = mfk_calhoun.13 days = 35 popup = yes }
+		trigger_event = { id = mfk_calhoun.14 days = 40 popup = yes }
+	}
+
+	option = {
+		name = mfk_calhoun.1.b
+		trigger = {
+			is_player = yes
+			exists = c:CAV
+		}
+		play_as = c:CAV
+	}
+}
+
+# South Carolina in revolt (NAU)
+mfk_calhoun.2 = {
+	type = country_event
+	placement = root
+
+	title = mfk_calhoun.2.t
+	desc = mfk_calhoun.2.d
+	flavor = mfk_calhoun.2.f
+
+	event_image = {
+		video = "europenorthamerica_before_the_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	duration = 3
+
+	option = {
+		name = mfk_calhoun.2.a
+		default_option = yes
+	}
+}
+
+# The revolt is over: a capital between North and South (NAU)
+mfk_calhoun.3 = {
+	type = country_event
+	placement = root
+
+	title = mfk_calhoun.3.t
+	desc = mfk_calhoun.3.d
+	flavor = mfk_calhoun.3.f
+
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	option = {
+		name = mfk_calhoun.3.a
+		default_option = yes
+		custom_tooltip = mfk_calhoun.3.tt
+
+		# After a war (not a peaceful absorption), the Cavalier States go through Reconstruction.
+		# Reuses the vanilla Reconstruction journal entries, reflavoured in loc.
+		if = {
+			limit = {
+				has_variable = mfk_calhoun_revolt_started
+				NOT = { has_variable = reconstruction_var }
+			}
+			set_variable = {
+				name = reconstruction_var
+				value = 0
+			}
+			set_variable = {
+				name = je_acw_wild_west_var
+				value = 0
+			}
+			every_scope_state = {
+				limit = {
+					is_incorporated = yes
+					is_capital = no
+					state_region = {
+						is_homeland = cu:dixie
+						NOT = { is_homeland = cu:yankee }
+						NOR = {
+							s:STATE_DELAWARE = this
+							s:STATE_DISTRICT_OF_COLUMBIA = this
+							s:STATE_MARYLAND = this
+						}
+					}
+				}
+				set_state_type = unincorporated
+				add_modifier = {
+					name = unreconstructed_state
+					years = 12
+				}
+			}
+			add_journal_entry = { type = je_acw_reconstruction }
+			add_journal_entry = { type = je_acw_reincorporate }
+			if = {
+				limit = {
+					has_law_or_variant = law_type:law_slavery_banned
+				}
+				add_journal_entry = { type = je_mfk_men_not_tools }
+			}
+			else = {
+				change_variable = {
+					name = reconstruction_var
+					add = 1
+				}
+			}
+			add_journal_entry = { type = je_acw_wild_wild_west }
+		}
+	}
+}
+
+# South Carolina breaks away (NAU)
+mfk_calhoun.4 = {
+	type = country_event
+	placement = root
+
+	title = mfk_calhoun.4.t
+	desc = mfk_calhoun.4.d
+	flavor = mfk_calhoun.4.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	duration = 3
+
+	option = {
+		name = mfk_calhoun.4.a
+		default_option = yes
+	}
+}
+
+# The Emancipation Proclamation (NAU, during the revolt)
+mfk_calhoun.10 = {
+	type = country_event
+	placement = root
+
+	title = mfk_calhoun.10.t
+	desc = mfk_calhoun.10.d
+	flavor = mfk_calhoun.10.f
+
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	cooldown = { days = normal_modifier_time }
+
+	duration = 3
+
+	trigger = {
+		# triggered by je_calhoun_revolt [on_monthly_pulse]
+		exists = c:CAV
+		has_war_with = c:CAV
+		NOT = { has_law = law_type:law_slavery_banned }
+		NOT = {
+			any_interest_group = {
+				has_modifier = delayed_emancipation
+			}
+		}
+	}
+
+	immediate = {
+		law_type:law_slavery_banned = {
+			save_scope_as = abolition_law
+		}
+		c:CAV = {
+			save_scope_as = confederation_scope
+		}
+	}
+
+	# Free every bondsman, Verdigri included
+	option = {
+		name = mfk_calhoun.10.a
+		default_option = yes
+		activate_law = law_type:law_slavery_banned
+		every_interest_group = {
+			limit = {
+				law_stance = {
+					law = law_type:law_slavery_banned
+					value > neutral
+				}
+			}
+			add_modifier = {
+				name = enacted_emancipation
+				days = normal_modifier_time
+			}
+		}
+	}
+
+	# Declare the rebels' bondsmen contraband of war, and leave the Verdigri question for later
+	option = {
+		name = mfk_calhoun.10.b
+		scope:confederation_scope = {
+			every_scope_state = {
+				add_radicals_in_state = {
+					value = 0.1
+				}
+			}
+		}
+		every_interest_group = {
+			limit = {
+				law_stance = {
+					law = law_type:law_slavery_banned
+					value > neutral
+				}
+			}
+			add_modifier = {
+				name = delayed_emancipation
+				days = short_modifier_time
+			}
+		}
+	}
+
+	# Not while the war hangs in the balance
+	option = {
+		name = mfk_calhoun.10.c
+		every_interest_group = {
+			limit = {
+				law_stance = {
+					law = law_type:law_slavery_banned
+					value > neutral
+				}
+			}
+			add_modifier = {
+				name = delayed_emancipation
+				days = normal_modifier_time
+			}
+		}
+	}
+}
+
+# The Free Upcountry of [state] (Cavalier Confederation, during the revolt)
+mfk_calhoun.11 = {
+	type = country_event
+	placement = scope:free_upcountry_state
+
+	title = mfk_calhoun.11.t
+	desc = mfk_calhoun.11.d
+	flavor = mfk_calhoun.11.f
+
+	event_image = {
+		video = "europenorthamerica_american_civil_war"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	cooldown = { days = short_modifier_time }
+
+	duration = 3
+
+	trigger = {
+		# triggered by je_calhoun_revolt [on_monthly_pulse]
+		exists = c:USA
+		has_war_with = c:USA
+	}
+
+	immediate = {
+		random_scope_state = {
+			save_scope_as = free_upcountry_state
+		}
+		c:USA = {
+			save_scope_as = unionist_nau
+		}
+	}
+
+	option = {
+		name = mfk_calhoun.11.a
+		default_option = yes
+		scope:free_upcountry_state = {
+			add_loyalists_in_state = {
+				value = 0.1
+			}
+			state_region = {
+				add_devastation = 5
+			}
+		}
+	}
+
+	option = {
+		name = mfk_calhoun.11.b
+		scope:free_upcountry_state = {
+			add_radicals_in_state = {
+				value = 0.25
+			}
+		}
+	}
+}
+
+# A Cavalier State of the Union chooses (NAU, shortly after the revolt begins). Its radicals decide which way it goes.
+mfk_calhoun.12 = {
+	type = country_event
+	placement = scope:wavering_state
+
+	title = mfk_calhoun.12.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { has_variable = mfk_virginia_defected }
+				desc = mfk_calhoun_wavers.d_defected
+			}
+			triggered_desc = {
+				trigger = { has_variable = mfk_virginia_martial_law_var }
+				desc = mfk_calhoun_wavers.d_held
+			}
+			triggered_desc = {
+				desc = mfk_calhoun_wavers.d_loyal
+			}
+		}
+	}
+	flavor = mfk_calhoun_wavers.f
+
+	event_image = {
+		video = "europenorthamerica_political_extremism"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		exists = c:CAV
+		has_variable = mfk_calhoun_revolt_started
+		s:STATE_VIRGINIA = {
+			any_scope_state = {
+				owner = ROOT
+			}
+		}
+	}
+
+	immediate = {
+		s:STATE_VIRGINIA = {
+			random_scope_state = {
+				limit = {
+					owner = ROOT
+				}
+				save_scope_as = wavering_state
+			}
+		}
+		c:CAV = {
+			save_scope_as = confederation_scope
+		}
+		if = {
+			limit = {
+				scope:wavering_state = {
+					radical_fraction = {
+						value > 0.25
+					}
+				}
+			}
+			set_variable = mfk_virginia_defected
+			scope:wavering_state = {
+				set_state_owner = scope:confederation_scope
+			}
+			add_modifier = {
+				name = mfk_rally_to_the_union
+				years = 5
+			}
+		}
+		else_if = {
+			limit = {
+				scope:wavering_state = {
+					radical_fraction = {
+						value > 0.10
+					}
+				}
+			}
+			set_variable = mfk_virginia_martial_law_var
+			scope:wavering_state = {
+				add_modifier = {
+					name = mfk_virginia_martial_law
+					years = 5
+				}
+				state_region = {
+					add_devastation = 10
+				}
+			}
+			ig:ig_landowners ?= {
+				add_modifier = {
+					name = mfk_virginia_occupied_planters
+					years = 5
+				}
+			}
+		}
+		else = {
+			scope:wavering_state = {
+				add_loyalists_in_state = {
+					value = 0.1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = mfk_calhoun_wavers.a
+		default_option = yes
+		trigger = { has_variable = mfk_virginia_defected }
+		custom_tooltip = mfk_calhoun_wavers.defected_tt
+	}
+
+	option = {
+		name = mfk_calhoun_wavers.b
+		default_option = yes
+		trigger = { has_variable = mfk_virginia_martial_law_var }
+		custom_tooltip = mfk_calhoun_wavers.held_tt
+	}
+
+	option = {
+		name = mfk_calhoun_wavers.c
+		default_option = yes
+		trigger = {
+			NOT = { has_variable = mfk_virginia_defected }
+			NOT = { has_variable = mfk_virginia_martial_law_var }
+		}
+		custom_tooltip = mfk_calhoun_wavers.loyal_tt
+	}
+}
+
+# A Cavalier State of the Union chooses (NAU, shortly after the revolt begins). Its radicals decide which way it goes.
+mfk_calhoun.13 = {
+	type = country_event
+	placement = scope:wavering_state
+
+	title = mfk_calhoun.13.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { has_variable = mfk_franklin_defected }
+				desc = mfk_calhoun_wavers.d_defected
+			}
+			triggered_desc = {
+				trigger = { has_variable = mfk_franklin_martial_law_var }
+				desc = mfk_calhoun_wavers.d_held
+			}
+			triggered_desc = {
+				desc = mfk_calhoun_wavers.d_loyal
+			}
+		}
+	}
+	flavor = mfk_calhoun_wavers.f
+
+	event_image = {
+		video = "europenorthamerica_political_extremism"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		exists = c:CAV
+		has_variable = mfk_calhoun_revolt_started
+		s:STATE_KENTUCKY = {
+			any_scope_state = {
+				owner = ROOT
+			}
+		}
+	}
+
+	immediate = {
+		s:STATE_KENTUCKY = {
+			random_scope_state = {
+				limit = {
+					owner = ROOT
+				}
+				save_scope_as = wavering_state
+			}
+		}
+		c:CAV = {
+			save_scope_as = confederation_scope
+		}
+		if = {
+			limit = {
+				scope:wavering_state = {
+					radical_fraction = {
+						value > 0.25
+					}
+				}
+			}
+			set_variable = mfk_franklin_defected
+			scope:wavering_state = {
+				set_state_owner = scope:confederation_scope
+			}
+			add_modifier = {
+				name = mfk_rally_to_the_union
+				years = 5
+			}
+		}
+		else_if = {
+			limit = {
+				scope:wavering_state = {
+					radical_fraction = {
+						value > 0.10
+					}
+				}
+			}
+			set_variable = mfk_franklin_martial_law_var
+			scope:wavering_state = {
+				add_modifier = {
+					name = mfk_virginia_martial_law
+					years = 5
+				}
+				state_region = {
+					add_devastation = 10
+				}
+			}
+			ig:ig_landowners ?= {
+				add_modifier = {
+					name = mfk_virginia_occupied_planters
+					years = 5
+				}
+			}
+		}
+		else = {
+			scope:wavering_state = {
+				add_loyalists_in_state = {
+					value = 0.1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = mfk_calhoun_wavers.a
+		default_option = yes
+		trigger = { has_variable = mfk_franklin_defected }
+		custom_tooltip = mfk_calhoun_wavers.defected_tt
+	}
+
+	option = {
+		name = mfk_calhoun_wavers.b
+		default_option = yes
+		trigger = { has_variable = mfk_franklin_martial_law_var }
+		custom_tooltip = mfk_calhoun_wavers.held_tt
+	}
+
+	option = {
+		name = mfk_calhoun_wavers.c
+		default_option = yes
+		trigger = {
+			NOT = { has_variable = mfk_franklin_defected }
+			NOT = { has_variable = mfk_franklin_martial_law_var }
+		}
+		custom_tooltip = mfk_calhoun_wavers.loyal_tt
+	}
+}
+
+# A Cavalier State of the Union chooses (NAU, shortly after the revolt begins). Its radicals decide which way it goes.
+mfk_calhoun.14 = {
+	type = country_event
+	placement = scope:wavering_state
+
+	title = mfk_calhoun.14.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { has_variable = mfk_tennessee_defected }
+				desc = mfk_calhoun_wavers.d_defected
+			}
+			triggered_desc = {
+				trigger = { has_variable = mfk_tennessee_martial_law_var }
+				desc = mfk_calhoun_wavers.d_held
+			}
+			triggered_desc = {
+				desc = mfk_calhoun_wavers.d_loyal
+			}
+		}
+	}
+	flavor = mfk_calhoun_wavers.f
+
+	event_image = {
+		video = "europenorthamerica_political_extremism"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		exists = c:CAV
+		has_variable = mfk_calhoun_revolt_started
+		s:STATE_TENNESSEE = {
+			any_scope_state = {
+				owner = ROOT
+			}
+		}
+	}
+
+	immediate = {
+		s:STATE_TENNESSEE = {
+			random_scope_state = {
+				limit = {
+					owner = ROOT
+				}
+				save_scope_as = wavering_state
+			}
+		}
+		c:CAV = {
+			save_scope_as = confederation_scope
+		}
+		if = {
+			limit = {
+				scope:wavering_state = {
+					radical_fraction = {
+						value > 0.25
+					}
+				}
+			}
+			set_variable = mfk_tennessee_defected
+			scope:wavering_state = {
+				set_state_owner = scope:confederation_scope
+			}
+			add_modifier = {
+				name = mfk_rally_to_the_union
+				years = 5
+			}
+		}
+		else_if = {
+			limit = {
+				scope:wavering_state = {
+					radical_fraction = {
+						value > 0.10
+					}
+				}
+			}
+			set_variable = mfk_tennessee_martial_law_var
+			scope:wavering_state = {
+				add_modifier = {
+					name = mfk_virginia_martial_law
+					years = 5
+				}
+				state_region = {
+					add_devastation = 10
+				}
+			}
+			ig:ig_landowners ?= {
+				add_modifier = {
+					name = mfk_virginia_occupied_planters
+					years = 5
+				}
+			}
+		}
+		else = {
+			scope:wavering_state = {
+				add_loyalists_in_state = {
+					value = 0.1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = mfk_calhoun_wavers.a
+		default_option = yes
+		trigger = { has_variable = mfk_tennessee_defected }
+		custom_tooltip = mfk_calhoun_wavers.defected_tt
+	}
+
+	option = {
+		name = mfk_calhoun_wavers.b
+		default_option = yes
+		trigger = { has_variable = mfk_tennessee_martial_law_var }
+		custom_tooltip = mfk_calhoun_wavers.held_tt
+	}
+
+	option = {
+		name = mfk_calhoun_wavers.c
+		default_option = yes
+		trigger = {
+			NOT = { has_variable = mfk_tennessee_defected }
+			NOT = { has_variable = mfk_tennessee_martial_law_var }
+		}
+		custom_tooltip = mfk_calhoun_wavers.loyal_tt
+	}
+}
+
+# Calhoun yields: abolition has held without a revolt (NAU)
+mfk_calhoun.5 = {
+	type = country_event
+	placement = root
+
+	title = mfk_calhoun.5.t
+	desc = mfk_calhoun.5.d
+	flavor = mfk_calhoun.5.f
+
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	fire_only_once = yes
+
+	option = {
+		name = mfk_calhoun.5.a
+		default_option = yes
+		custom_tooltip = mfk_calhoun.3.tt
+	}
+}

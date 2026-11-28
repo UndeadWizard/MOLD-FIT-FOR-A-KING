@@ -1,0 +1,112 @@
+﻿# Buttons for je_mfk_panic_1837. Root is the country pressing the button.
+
+# The Independent Treasury's way out: paper money, paid for later
+mfk_panic_treasury_notes_button = {
+	name = "mfk_panic_treasury_notes_button"
+	desc = "mfk_panic_treasury_notes_button_desc"
+
+	visible = {
+		c:USA ?= root
+		NOT = { has_variable = mfk_panic_notes_issued }
+	}
+
+	possible = {
+		has_modifier = mfk_independent_treasury
+		in_default = no
+	}
+
+	ai_chance = {
+		value = 20
+	}
+
+	effect = {
+		set_variable = mfk_panic_notes_issued
+		je:je_mfk_panic_1837 ?= {
+			add_progress = { value = 8 name = mfk_panic_1837_recovery_bar }
+		}
+		add_modifier = {
+			name = mfk_treasury_notes
+			years = 3
+			multiplier = money_amount_multiplier_medium
+		}
+	}
+}
+
+# Make the banks pay out in coin again: confidence returns, debtors suffer
+mfk_panic_resume_specie_button = {
+	name = "mfk_panic_resume_specie_button"
+	desc = "mfk_panic_resume_specie_button_desc"
+
+	visible = {
+		c:USA ?= root
+		NOT = { has_variable = mfk_panic_specie_resumed }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = mfk_panic_halfway_tt
+			je:je_mfk_panic_1837 ?= {
+				"scripted_bar_progress(mfk_panic_1837_recovery_bar)" >= 18
+			}
+		}
+		in_default = no
+	}
+
+	ai_chance = {
+		value = 30
+	}
+
+	effect = {
+		set_variable = mfk_panic_specie_resumed
+		je:je_mfk_panic_1837 ?= {
+			add_progress = { value = 8 name = mfk_panic_1837_recovery_bar }
+		}
+		add_modifier = {
+			name = mfk_specie_resumed
+			years = 2
+		}
+		ig:ig_landowners ?= {
+			add_modifier = {
+				name = mfk_specie_resumed_debtors
+				years = 2
+			}
+		}
+		ig:ig_rural_folk ?= {
+			add_modifier = {
+				name = mfk_specie_resumed_debtors
+				years = 2
+			}
+		}
+	}
+}
+
+# A Governorship shields its own debtors, at the Union's expense
+mfk_panic_stay_laws_button = {
+	name = "mfk_panic_stay_laws_button"
+	desc = "mfk_panic_stay_laws_button_desc"
+
+	visible = {
+		exists = c:USA
+		is_subject_of = c:USA
+		NOT = { has_variable = mfk_panic_stay_laws }
+	}
+
+	possible = {
+		in_default = no
+	}
+
+	ai_chance = {
+		value = 25
+	}
+
+	effect = {
+		set_variable = mfk_panic_stay_laws
+		add_modifier = {
+			name = mfk_stay_laws
+			years = 2
+		}
+		je:je_mfk_panic_1837 ?= {
+			add_progress = { value = -3 name = mfk_panic_1837_recovery_bar }
+		}
+	}
+}

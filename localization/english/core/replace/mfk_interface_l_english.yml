@@ -68,3 +68,13 @@
  MFK_UNIT_FAMILY_CONVENTIONAL: "Conventional"
  MFK_UNIT_FAMILY_VOLTAIC: "Voltaic"
  MFK_UNIT_FAMILY_GALVANIC: "Galvanic"
+ je_group_calhoun_revolt: "Calhoun's Revolt"
+ mfk_compact_protects_autonomy_tt:0 "The #v Compact of 1778#! guarantees the #v North American Union#! its autonomy"
+
+  # Interest group tooltip headers keep the group's own capitalisation
+ INTEREST_GROUP_TOOLTIP_OTHER_COUNTRY_NAME:0 "[InterestGroup.GetCountry.GetAdjective] [InterestGroup.GetNameNoFormatting]"
+ INTEREST_GROUP_TOOLTIP_PLAYER_COUNTRY_NAME:0 "[InterestGroup.GetNameNoFormatting]"
+ mfk_gg_bill_reserved_tt:0 "The bill is #v reserved#!: its enactment almost stops until London decides, in about #v 3#! months"
+ mfk_gg_wait_on_london_tt:0 "The Crown will give its assent or disallow the bill"
+ mfk_gg_royal_assent_tt:0 "The bill goes on through the Commons"
+ mfk_gg_disallowed_tt:0 "The bill is #r disallowed#! and its enactment ends"

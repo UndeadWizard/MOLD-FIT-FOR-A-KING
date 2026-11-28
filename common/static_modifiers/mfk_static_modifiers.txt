@@ -310,3 +310,301 @@ mfk_exotic_supply_strain = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
 	country_military_goods_cost_mult = 0.15
 }
+
+mfk_gag_rule = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	interest_group_ig_intelligentsia_approval_add = -2
+}
+
+mfk_cq_compensation_costs = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}
+
+mfk_cq_forced_settlement = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_legitimacy_base_add = -10
+}
+
+mfk_virginia_martial_law = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	building_throughput_add = -0.20
+	state_radicals_from_political_movements_mult = 0.5
+}
+
+mfk_virginia_occupied_planters = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	interest_group_approval_add = -2
+}
+
+
+mfk_rally_to_the_union = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_legitimacy_base_add = 15
+	interest_group_ig_intelligentsia_approval_add = 2
+	interest_group_ig_industrialists_approval_add = 2
+}
+
+# Applied to the Chimeric Question journal entry, scaled by Tension / 10 (0 to 10)
+mfk_cq_tension_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	state_radicals_from_political_movements_mult = 0.03
+	country_legitimacy_base_add = -1
+}
+
+mfk_cq_lobbying_costs = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}
+
+# NAU at game start: the government cannot be reformed until the 1836 election ends
+mfk_jacksons_coalition = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_block_government_reform_bool = yes
+	# Keeps Jackson's Rural Folk the strongest group in government, so he stays President-General
+	interest_group_ig_rural_folk_pol_str_mult = 0.25
+}
+
+
+# The winners of the Election of 1836
+mfk_e1836_mandate_jacksonian = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_ig_rural_folk_pol_str_mult = 0.25
+	interest_group_ig_landowners_pol_str_mult = 0.05
+}
+
+
+# The winners of the Election of 1836
+mfk_e1836_mandate_whig = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_ig_industrialists_pol_str_mult = 0.25
+	interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.10
+}
+
+
+# The winners of the Election of 1836
+mfk_e1836_mandate_barnburner = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_ig_intelligentsia_pol_str_mult = 0.25
+}
+
+# The Bank Crash of 1837: applied by its journal entry while it is active
+mfk_panic_1837 = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	state_construction_mult = -0.20
+	state_tax_collection_mult = -0.10
+	country_loan_interest_rate_add = 0.02
+	building_cotton_plantation_throughput_add = -0.20
+	# The British market buys less of everything British North America sells
+	building_wheat_farm_throughput_add = -0.10
+	building_group_bg_logging_throughput_add = -0.10
+}
+
+mfk_boe_credit = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_loan_interest_rate_add = -0.01
+}
+
+mfk_boe_repayments = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}
+
+mfk_independent_treasury = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_legitimacy_base_add = 5
+	# Tight money: the government's deposits are withdrawn from the banks
+	country_loan_interest_rate_add = 0.01
+	state_construction_mult = -0.05
+}
+
+# The bankers lose the government's deposits to the Independent Treasury
+mfk_independent_treasury_bankers = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	interest_group_approval_add = -2
+}
+
+mfk_cotton_relief_costs = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}
+
+# The Election of 1836: the Union is funding this faction's campaign (cost only)
+mfk_e1836_funding_jacksonian = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}
+
+# The Election of 1836: the Union is funding this faction's campaign (cost only)
+mfk_e1836_funding_whig = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}
+
+# The Election of 1836: the Union is funding this faction's campaign (cost only)
+mfk_e1836_funding_barnburner = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}
+
+# The Election of 1836: the funded faction's interest groups gain strength (kept separate from the money cost)
+mfk_e1836_rally_jacksonian = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_ig_rural_folk_pol_str_mult = 0.10
+	interest_group_ig_landowners_pol_str_mult = 0.10
+}
+
+# The Election of 1836: the funded faction's interest groups gain strength (kept separate from the money cost)
+mfk_e1836_rally_whig = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_ig_industrialists_pol_str_mult = 0.10
+	interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.10
+}
+
+# The Election of 1836: the funded faction's interest groups gain strength (kept separate from the money cost)
+mfk_e1836_rally_barnburner = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_ig_intelligentsia_pol_str_mult = 0.20
+}
+
+# The Crown's favourite's interest group, when the Union accepts the Governor-General's choice
+mfk_royal_patronage = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_approval_add = 2
+}
+
+# While Verdigri slavery holds as the law of the Union after the Verdigri Compromise
+mfk_compromise_holds = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_legitimacy_base_add = -5
+	interest_group_ig_intelligentsia_approval_add = -2
+	state_radicals_from_political_movements_mult = 0.10
+}
+
+# The Compromise was passed from an extreme, in open defiance of Westminster
+mfk_compromise_defiance = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_influence_mult = -0.15
+	country_legitimacy_base_add = -5
+	state_radicals_from_political_movements_mult = 0.10
+}
+
+# A Chimeric Question bill has the governing coalition's whips behind it
+mfk_cq_bill_backing = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_law_enactment_success_add = 0.3
+}
+
+# After the Election of 1836: the government the voters chose cannot be reshuffled straight away
+mfk_commons_has_spoken = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_block_government_reform_bool = yes
+}
+
+# Great Britain: the Bank of England's outlay to steady the Union's banks
+mfk_boe_loan_outlay = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}
+
+# Great Britain: the Union's repayments to the Bank of England
+mfk_boe_repayments_received = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_expenses_add = -1
+}
+
+# The Bank Crash of 1837: Treasury notes issued to carry the government through
+mfk_treasury_notes = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}
+
+# The Bank Crash of 1837: the banks pay out in coin again
+mfk_specie_resumed = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_legitimacy_base_add = 5
+	# Hard money: the banks call in loans to keep coin in their vaults
+	state_construction_mult = -0.10
+	country_loan_interest_rate_add = 0.01
+	state_radicals_from_political_movements_mult = 0.10
+}
+
+# The Bank Crash of 1837: indebted planters squeezed by hard money
+mfk_specie_resumed_debtors = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	interest_group_approval_add = -4
+}
+
+# The Bank Crash of 1837: Biddle buys up the cotton crop
+mfk_biddle_cotton = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	building_cotton_plantation_throughput_add = 0.20
+}
+
+# The Bank Crash of 1837: the bankers ruined by Biddle's collapse
+mfk_biddle_ruined = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	interest_group_approval_add = -3
+}
+
+# The Bank Crash of 1837: a Governorship suspends the collection of debts
+mfk_stay_laws = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	state_tax_collection_mult = 0.05
+	country_loan_interest_rate_add = 0.01
+}
+
+# The Florida Bonds: Philadelphia stands behind a Governorship's London debts
+mfk_bond_guarantee = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_expenses_add = 1
+}
+
+# The Florida Bonds: the Treasury in London stands behind American borrowing, and watches it
+mfk_imperial_bond_oversight = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	country_loan_interest_rate_add = -0.01
+	state_construction_mult = -0.05
+}
+
+# The Florida Bonds: farmers resent London's say over American borrowing
+mfk_crown_oversight_resented = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	interest_group_approval_add = -2
+}
+
+# The Florida Bonds: the Union let a Governorship default, and London remembers
+mfk_repudiation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+	country_loan_interest_rate_add = 0.02
+	country_legitimacy_base_add = -5
+}
+
+# The Hunters' Lodges: anti-imperial societies tolerated
+mfk_hunters_lodges = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	state_radicals_from_political_movements_mult = 0.15
+}
+
+# The Hunters' Lodges: members of the lodges broken up by the constables
+mfk_lodges_suppressed = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	interest_group_approval_add = -2
+}
+
+# The Governor-General reserves a bill for His Majesty's pleasure
+mfk_bill_reserved = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_law_enactment_speed_mult = -0.9
+}
+
+mfk_bill_disallowed = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_legitimacy_base_add = -5
+	state_radicals_from_political_movements_mult = 0.10
+}
+
+mfk_gg_reserved_against_countrymen = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -3
+}

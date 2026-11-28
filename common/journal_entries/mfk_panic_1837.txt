@@ -1,0 +1,115 @@
+﻿je_mfk_panic_1837 = {
+	# The Bank Crash of 1837. Shared by the Union and its Governorships.
+	# Recovery fills while the Union stays out of default: 18 months with Bank of England credit, 36 with an Independent Treasury.
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	group = je_group_global_international_situations
+
+	activation_description = {
+		always = yes
+	}
+
+	# Shown from when the crash strikes, so the world entry can activate
+	is_shown_when_inactive = {
+		has_global_variable = mfk_panic_1837_var
+	}
+
+	possible = {
+		has_global_variable = mfk_panic_1837_var
+	}
+
+	# The Union, its Governorships, and the British provinces of Canada: all of British North America sells to the same slumping market
+	should_be_involved = {
+		OR = {
+			c:USA ?= this
+			AND = {
+				exists = c:USA
+				is_subject_of = c:USA
+			}
+			AND = {
+				exists = c:GBR
+				is_subject_of = c:GBR
+				OR = {
+					c:ONT ?= this
+					c:QUE ?= this
+					c:NBS ?= this
+					c:NVS ?= this
+					c:NEW ?= this
+				}
+			}
+		}
+	}
+
+	should_show_when_not_involved = {
+		always = no
+	}
+
+	should_be_pinned_by_default_involved = yes
+	should_be_pinned_by_default_uninvolved_or_context = no
+
+	weight = 10000
+
+	scripted_progress_bar = mfk_panic_1837_recovery_bar
+
+	scripted_button = mfk_panic_treasury_notes_button
+	scripted_button = mfk_panic_resume_specie_button
+	scripted_button = mfk_panic_stay_laws_button
+
+	modifiers_while_active = {
+		mfk_panic_1837
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			scope:journal_entry ?= {
+				change_variable = { name = mfk_panic_months_var add = 1 }
+				if = {
+					limit = {
+						var:mfk_panic_months_var >= 6
+						NOT = { has_variable = mfk_cotton_collapse_fired }
+					}
+					set_variable = mfk_cotton_collapse_fired
+					c:USA ?= {
+						trigger_event = { id = mfk_p1837.2 popup = yes }
+					}
+				}
+				# Biddle's cotton scheme comes due
+				if = {
+					limit = { has_variable = mfk_biddle_months_var }
+					change_variable = { name = mfk_biddle_months_var add = 1 }
+					if = {
+						limit = { var:mfk_biddle_months_var >= 24 }
+						remove_variable = mfk_biddle_months_var
+						c:USA ?= {
+							trigger_event = { id = mfk_p1837.6 popup = yes }
+						}
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		scope:journal_entry ?= {
+			set_variable = { name = mfk_panic_months_var value = 0 }
+		}
+	}
+
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			scope:journal_entry = {
+				"scripted_bar_progress(mfk_panic_1837_recovery_bar)" >= 36
+			}
+		}
+		effect = {
+			remove_global_variable = mfk_panic_1837_var
+			c:USA ?= {
+				trigger_event = { id = mfk_p1837.3 popup = yes }
+			}
+		}
+	}
+}

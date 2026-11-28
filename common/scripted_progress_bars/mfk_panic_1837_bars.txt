@@ -1,0 +1,51 @@
+﻿# For je_mfk_panic_1837: the Union's recovery from the Bank Crash. Full at 36.
+mfk_panic_1837_recovery_bar = {
+	name = "mfk_panic_1837_recovery_bar"
+	desc = "mfk_panic_1837_recovery_bar_desc"
+
+	default_green = yes
+
+	monthly_progress = {
+		progress_condition = {
+			limit = {
+				c:USA ?= { in_default = no }
+			}
+			add = {
+				desc = "mfk_panic_from_solvency"
+				value = 1
+			}
+		}
+		progress_condition = {
+			limit = {
+				c:USA ?= {
+					in_default = no
+					has_variable = mfk_boe_loan
+				}
+			}
+			add = {
+				desc = "mfk_panic_from_boe_credit"
+				value = 1
+			}
+		}
+		# British investors return to a dominion they trust
+		progress_condition = {
+			limit = {
+				c:USA ?= {
+					in_default = no
+					is_subject_of = c:GBR
+				}
+				c:GBR ?= {
+					"relations(c:USA)" >= relations_threshold:cordial
+				}
+			}
+			add = {
+				desc = "mfk_panic_from_london_capital"
+				value = 1
+			}
+		}
+	}
+
+	start_value = 0
+	min_value = 0
+	max_value = 36
+}

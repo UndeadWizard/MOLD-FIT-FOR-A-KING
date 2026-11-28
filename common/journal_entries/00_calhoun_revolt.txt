@@ -1,8 +1,10 @@
-﻿je_calhoun_revolt = {
-	# PLACEHOLDER: the Calhoun revolt. Currently resolves once South Carolina (Calhoun's country) no longer exists.
-	icon = "gfx/interface/icons/event_icons/event_military.dds"
+﻿je_mfk_chimeric_question = {
+	# Stage zero. Two bars, modelled on vanilla's The Two Spains: the Question (Enforce <-> Compromise) drifts
+	# with politics and is pushed by buttons and events; Tension rises, faster the further the Question leans.
+	# At 100 Tension the Question is settled on whichever side it stands.
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
 
-	group = je_group_usa_american_civil_war
+	group = je_group_calhoun_revolt
 
 	activation_description = {
 		always = yes
@@ -10,11 +12,334 @@
 
 	is_shown_when_inactive = {
 		c:USA ?= ROOT
-		exists = c:SCR
+		has_variable = mfk_cq_opened
 	}
 
 	possible = {
 		c:USA ?= ROOT
+		has_law = law_type:law_chimeric_question
+		custom_tooltip = {
+			text = mfk_cq_opened_tt
+			has_variable = mfk_cq_opened
+		}
+	}
+
+	scripted_progress_bar = mfk_cq_question_bar
+	scripted_progress_bar = mfk_cq_tension_bar
+
+	scripted_button = mfk_cq_gag_rule_on_button
+	scripted_button = mfk_cq_gag_rule_off_button
+	scripted_button = mfk_cq_petition_whitehall_button
+	scripted_button = mfk_cq_government_house_button
+	scripted_button = mfk_cq_compensation_button
+	scripted_button = mfk_cq_compromise_bill_button
+	scripted_button = mfk_cq_enforcement_bill_button
+
+	immediate = {
+		set_variable = { name = mfk_cq_question_var value = 50 }
+		set_variable = { name = mfk_cq_slave_states_var value = 0 }
+		set_variable = { name = mfk_cq_crackdowns_var value = 0 }
+		if = {
+			limit = { NOT = { has_variable = mfk_cq_shift_var } }
+			set_variable = { name = mfk_cq_shift_var value = 0 }
+		}
+		# The opening chain gives a head start, not the result: halve the inherited lean and cap it at 1 either way
+		change_variable = { name = mfk_cq_shift_var multiply = 0.5 }
+		if = {
+			limit = { var:mfk_cq_shift_var > 1 }
+			set_variable = { name = mfk_cq_shift_var value = 1 }
+		}
+		if = {
+			limit = { var:mfk_cq_shift_var < -1 }
+			set_variable = { name = mfk_cq_shift_var value = -1 }
+		}
+	}
+
+	# Tension boils over with the Question leaning to the Compromise
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "white_outcome"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			scope:journal_entry = {
+				"scripted_bar_progress(mfk_cq_tension_bar)" >= 100
+				"scripted_bar_progress(mfk_cq_question_bar)" >= 50
+			}
+		}
+		effect = {
+			custom_tooltip = mfk_cq_outcome_compromise_tt
+			set_variable = {
+				name = mfk_cq_question_var
+				value = "scope:journal_entry.scripted_bar_progress(mfk_cq_question_bar)"
+			}
+			trigger_event = { id = mfk_cq.1 popup = yes }
+		}
+	}
+
+	# Tension boils over with the Question leaning to enforcement
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "blue_negative"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			scope:journal_entry = {
+				"scripted_bar_progress(mfk_cq_tension_bar)" >= 100
+				"scripted_bar_progress(mfk_cq_question_bar)" < 50
+			}
+		}
+		effect = {
+			custom_tooltip = mfk_cq_outcome_enforce_tt
+			set_variable = {
+				name = mfk_cq_question_var
+				value = "scope:journal_entry.scripted_bar_progress(mfk_cq_question_bar)"
+			}
+			trigger_event = { id = mfk_cq.1 popup = yes }
+		}
+	}
+
+	# Settled early, by a button or by changing the slavery law directly
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "white_outcome"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			custom_tooltip = {
+				text = mfk_cq_settled_by_law_tt
+				NOT = { has_law = law_type:law_chimeric_question }
+			}
+		}
+		effect = {
+			if = {
+				limit = { has_law = law_type:law_slavery_banned }
+				mfk_enforce_abolition_effect = yes
+			}
+			else = {
+				mfk_verdigri_compromise_effect = yes
+			}
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			set_variable = {
+				name = mfk_cq_question_var
+				value = "scope:journal_entry.scripted_bar_progress(mfk_cq_question_bar)"
+			}
+			# Tension weighs on the whole Union
+			scope:journal_entry = {
+				remove_modifier = mfk_cq_tension_modifier
+				add_modifier = {
+					name = mfk_cq_tension_modifier
+					multiplier = {
+						value = "scope:journal_entry.scripted_bar_progress(mfk_cq_tension_bar)"
+						divide = 10
+					}
+				}
+			}
+			# Past choices fade
+			if = {
+				limit = { has_variable = mfk_cq_shift_var }
+				change_variable = { name = mfk_cq_shift_var multiply = 0.97 }
+			}
+			# A bill before the Commons: the decisive vote once it reaches the Study phase
+			if = {
+				limit = {
+					has_variable = mfk_cq_bill
+					NOT = { has_variable = mfk_cq_vote_called }
+					OR = {
+						AND = {
+							has_variable = mfk_cq_bill_compromise
+							is_enacting_law = law_type:law_chimeric_slavery
+						}
+						AND = {
+							has_variable = mfk_cq_bill_enforce
+							is_enacting_law = law_type:law_slavery_banned
+						}
+					}
+					enactment_phase >= 1
+				}
+				set_variable = mfk_cq_vote_called
+				trigger_event = { id = mfk_cq.10 popup = yes }
+			}
+			# The bill died some other way (the enactment failed or was abandoned)
+			if = {
+				limit = {
+					has_variable = mfk_cq_bill
+					NOT = { has_variable = mfk_cq_vote_called }
+					NOR = {
+						AND = {
+							has_variable = mfk_cq_bill_compromise
+							is_enacting_law = law_type:law_chimeric_slavery
+						}
+						AND = {
+							has_variable = mfk_cq_bill_enforce
+							is_enacting_law = law_type:law_slavery_banned
+						}
+					}
+				}
+				mfk_cq_clear_bill_effect = yes
+			}
+			set_variable = { name = mfk_cq_slave_states_var value = 0 }
+			set_variable = { name = mfk_cq_crackdowns_var value = 0 }
+			# The grey trade: states that actually hold enslaved Verdigri
+			every_scope_state = {
+				limit = {
+					is_slave_state = yes
+					any_scope_pop = {
+						is_pop_type = slaves
+						culture = cu:verdigri
+					}
+				}
+				root = {
+					change_variable = { name = mfk_cq_slave_states_var add = 1 }
+				}
+			}
+			every_scope_state = {
+				limit = { has_decree = decree_mfk_verdigri_crackdown }
+				root = {
+					change_variable = { name = mfk_cq_crackdowns_var add = 1 }
+				}
+			}
+		}
+		random_events = {
+			100 = 0
+			10 = mfk_cq.2 # A dispatch from Whitehall
+			10 = mfk_cq.3 # The grey trade
+			10 = mfk_cq.4 # A Verdigri freedom suit
+			10 = mfk_cq.5 # The governorships flaunt the Act
+		}
+	}
+
+	weight = 200
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_mfk_nullification_crisis = {
+	# Stage one, modelled on vanilla je_acw_countdown. While it is active the pro-slavery movement is
+	# strengthened, and if it breaks out in a civil war the rebels form the Cavalier Confederation (CAV).
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	group = je_group_calhoun_revolt
+
+	activation_description = {
+		always = yes
+	}
+
+	is_shown_when_inactive = {
+		c:USA ?= ROOT
+		has_variable = mfk_verdigri_compromise
+	}
+
+	possible = {
+		c:USA ?= ROOT
+		has_variable = mfk_verdigri_compromise
+		NOT = { has_variable = mfk_calhoun_revolt_started }
+	}
+
+	modifiers_while_active = {
+		mfk_compromise_holds
+	}
+
+	immediate = {
+		set_variable = {
+			name = mfk_nullification_var
+			value = 0
+		}
+	}
+
+	# Abolition holds for ten years without a revolt: Calhoun's cause is spent
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			scope:journal_entry = {
+				is_goal_complete = yes
+			}
+			has_law_or_variant = law_type:law_slavery_banned
+		}
+		effect = {
+			set_variable = calhoun_revolt_resolved
+			if = {
+				limit = { has_modifier = mfk_compromise_defiance }
+				remove_modifier = mfk_compromise_defiance
+			}
+			trigger_event = { id = mfk_calhoun.5 popup = yes }
+		}
+	}
+
+	# The pro-slavery movement rises: the Cavalier States revolt
+	outcome = {
+		header = je_standard_failure_header
+		effect_header = je_standard_on_failure_header
+		color = "blue_negative"
+		conclusion_desc = je_standard_failure_conclusion_desc
+		trigger = {
+			has_civil_war_from_movement_type = movement_type:movement_pro_slavery
+		}
+		effect = {
+			set_variable = mfk_calhoun_revolt_started
+			if = {
+				limit = { has_modifier = mfk_compromise_defiance }
+				remove_modifier = mfk_compromise_defiance
+			}
+			custom_tooltip = {
+				text = mfk_calhoun_revolt_will_happen_tt
+				trigger_event = { id = mfk_calhoun.1 popup = yes }
+			}
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					has_law_or_variant = law_type:law_slavery_banned
+				}
+				change_variable = {
+					name = mfk_nullification_var
+					add = 1
+				}
+			}
+		}
+	}
+
+	current_value = {
+		value = root.var:mfk_nullification_var
+	}
+
+	goal_add_value = {
+		value = 120
+	}
+
+	progressbar = yes
+
+	weight = 100
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+
+je_calhoun_revolt = {
+	# Stage two: the revolt itself. Ends when the Cavalier Confederation is reabsorbed or wins its independence.
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	group = je_group_calhoun_revolt
+
+	activation_description = {
+		always = yes
+	}
+
+	is_shown_when_inactive = {
+		c:USA ?= ROOT
+		has_variable = mfk_calhoun_revolt_started
+	}
+
+	possible = {
+		c:USA ?= ROOT
+		has_variable = mfk_calhoun_revolt_started
 	}
 
 	outcome = {
@@ -24,15 +349,138 @@
 		conclusion_desc = je_standard_completion_conclusion_desc
 		trigger = {
 			custom_tooltip = {
-				text = je_calhoun_revolt_scr_gone_tt
+				text = je_calhoun_revolt_cav_gone_tt
+				NOT = { exists = c:CAV }
 				NOT = { exists = c:SCR }
 			}
 		}
 		effect = {
 			set_variable = calhoun_revolt_resolved
+			trigger_event = { id = mfk_calhoun.3 popup = yes }
+		}
+	}
+
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "red_outcome"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			custom_tooltip = {
+				text = je_calhoun_revolt_cav_free_tt
+				exists = c:CAV
+				c:CAV = {
+					NOT = { is_subject_of = ROOT }
+				}
+				NOT = { has_war_with = c:CAV }
+				NOT = { has_variable = mfk_cav_defeated }
+			}
+		}
+		effect = {
+			set_variable = mfk_calhoun_revolt_lost
+			trigger_event = { id = mfk_calhoun.4 popup = yes }
+		}
+	}
+
+	on_monthly_pulse = {
+		events = {
+			mfk_calhoun.10 # The Emancipation Proclamation
+		}
+		effect = {
+			random = {
+				chance = 8
+				c:CAV ?= {
+					trigger_event = { id = mfk_calhoun.11 } # The Free Upcountry
+				}
+			}
+			# A white peace: if the Confederation is left a subject, it goes its own way
+			if = {
+				limit = {
+					has_variable = mfk_cav_stalemate
+					NOT = { has_variable = mfk_cav_defeated }
+					exists = c:CAV
+					NOT = { has_war_with = c:CAV }
+					c:CAV = { is_subject = yes }
+				}
+				c:CAV = { make_independent = yes }
+			}
+			# The revolt is beaten, whoever led the war for the Union and whatever the peace said: fold the Confederation back in
+			if = {
+				limit = {
+					has_variable = mfk_cav_defeated
+					exists = c:CAV
+					NOT = { has_war_with = c:CAV }
+				}
+				annex = c:CAV
+			}
 		}
 	}
 
 	weight = 100
 	should_be_pinned_by_default_uninvolved_or_context = yes
 }
+
+je_mfk_men_not_tools = {
+	# Reconstruction's equality step, adapted from vanilla je_acw_equality: freedmen and Verdigri alike must be accepted.
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	group = je_group_calhoun_revolt
+
+	activation_description = {
+		always = yes
+	}
+
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			country_average_culture_pop_acceptance = {
+				culture = cu:afro_american
+				value >= 60
+			}
+			country_average_culture_pop_acceptance = {
+				culture = cu:verdigri
+				value >= 60
+			}
+		}
+		effect = {
+			custom_tooltip = {
+				text = acw_african_american_culture
+				set_variable = acw_gain_african_american
+			}
+			add_primary_culture = cu:verdigri
+			custom_tooltip = {
+				text = reconstruction_progress
+				change_variable = {
+					name = reconstruction_var
+					add = 1
+				}
+			}
+		}
+	}
+
+	outcome = {
+		header = JOURNAL_ENTRY_TIMEOUT
+		effect_header = JOURNAL_ENTRY_ON_TIMEOUT
+		flags = { timeout }
+		conclusion_desc = JOURNAL_ENTRY_TIMEOUT_CONCLUSION_DESC
+		effect = {
+		}
+	}
+
+	on_monthly_pulse = {
+		random_events = {
+			180 = 0
+			20 = acw_followup_events.4 # Forty Acres and a Mule
+			20 = acw_followup_events.5 # Supremacist Violence
+			20 = acw_followup_events.6 # Redeemers
+		}
+	}
+
+	timeout = 4380
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}
+

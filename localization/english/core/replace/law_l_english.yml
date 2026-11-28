@@ -2,16 +2,20 @@
  law_clan_mother:0 "Clan Mother"
  law_clan_mother_desc:0 "The Clan Mother holds much weight in the Haudenosaunee.  The Clan Mother is a leader not only of her clan, but of the nation as well.  The Clan Mother selects their spokesman (Hoyane or Chief) to represent them in council.  If their Hoyane doesn’t represent their clan, the Clan Mother has the authority to remove their leader as well after warnings.  The Hoyane and the Clan Mother work together to best represent the people of her clan."
  law_hoyaneh_ascendancy:0 "Hoyaneh Ascendancy"
- law_hoyaneh_ascendancy_desc:0 "The [concept_grand_hoyaneh] governs the League as its chief executive, as Isaac Brant once did. Treaties are signed, warriors raised and decrees issued in his name alone, while the Grand Council and the Clan Mothers are reduced to giving advice that may be ignored.
-
-This is the cause of the #b Dehorners#!, not of John Brant: enacting it strengthens their hand in the struggle for the Antlers of Office."
+ law_hoyaneh_ascendancy_desc:0 "The [concept_grand_hoyaneh] governs the League as its chief executive, as Isaac Brant once did. Treaties are signed, warriors raised and decrees issued in his name alone, while the Grand Council and the Clan Mothers are reduced to giving advice that may be ignored.\n\nThis is the cause of the #b Dehorners#!, not of John Brant: enacting it strengthens their hand in the struggle for the Antlers of Office."
 
  law_council_fires:0 "Council Fires"
  law_council_fires_desc:0 "The Confederacy is governed as the Peacemaker ordained: by the Grand Council at Onondaga, where only the Royaneh of the five elder nations, the Mohawk, Oneida, Onondaga, Cayuga and Seneca, may decide. The Tuscarora, the adopted nations and the Sheltering Nations may sit by the fire and be heard, but they have no voice in its decisions."
 
  law_chimeric_slavery:0 "Chimeric Slavery"
- law_chimeric_slavery_desc:0 "Under the letter of the law, no man may own another. A [concept_verdigri] is no man: he is a worker remade by plasm and copper, and the law treats him as a tool.\n\nIn the plantations, slaves are taken to the refinement vats and come back green-scarred and hoofed. In the cities, the courts send criminals to the vats, and kidnapped orphans and the destitute follow them. Each Verdigri owes the cost of his own refinement, and those who cannot pay are bound until they do. The few who earn enough may stay free."
+ law_chimeric_slavery_desc:0 "Under the letter of the law, no man may own another. A [concept_verdigri] is no man: he is a worker remade by plasm and copper, and the law treats him as a tool."
  law_chimeric_slavery_plasm_tt:0 "#v Plasm#! is sold in our market"
  law_chimeric_slavery_bound_tt:0 "Each year, poor free #v Verdigri#! pops of the lower strata may be bound as #v Slaves#! for their refinement debt: #v 50%#! chance at wealth 5 or below, #v 20%#! up to wealth 10. Binding stops in states where #v Slaves#! make up #v 25%#! or more of the population"
  law_chimeric_slavery_refinement_tt:0 "Each year, in states whose market sells #v Plasm#!, #v 3%#! of non-Verdigri #v Slaves#! are refined into #v Verdigri#!"
  law_chimeric_slavery_penal_tt:0 "Each year, in states whose market sells #v Plasm#!, #v 1%#! of unemployed lower-strata pops are sentenced to refinement and become #v Verdigri#!, rising to #v 2%#! under #v Child Labor Allowed#!. This needs a policing law other than #v No Police#!"
+ law_chimeric_question:0 "The Chimeric Question"
+ law_chimeric_question_desc:0 "The Crown's Act of 1833 freed every man in the Union, and Philadelphia enforces it. What Philadelphia has never decided is whether a [concept_verdigri] is a man. In the Slave States the Question goes unasked: the Verdigri are held, bought and sold as tools, and the poor among the free Verdigri are bound for the cost of their refinement. In the Cavalier Governorships, Jackson has never enforced the Act at all."
+ law_chimeric_question_slave_states_tt:0 "Slavery continues only in #v Slave States#! and cannot spread to new ones"
+ law_chimeric_question_binding_tt:0 "Each year, in #v Slave States#!, poor free #v Verdigri#! pops of the lower strata may be bound as #v Slaves#!: #v 25%#! chance at wealth 5 or below, #v 10%#! up to wealth 10. Binding stops in states where #v Slaves#! make up #v 25%#! or more of the population, and in states under the #v Verdigri Crackdown#! decree"
+ law_chimeric_question_vats_tt:0 "Each year, in #v Slave States#! whose market sells #v Plasm#!, back-street vats refine #v 0.5%#! of unemployed lower-strata pops into free #v Verdigri#!. This stops in states under the #v Verdigri Crackdown#! decree"
+

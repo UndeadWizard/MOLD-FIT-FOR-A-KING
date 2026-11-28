@@ -1,0 +1,254 @@
+﻿# Buttons for je_mfk_chimeric_question
+
+mfk_cq_gag_rule_on_button = {
+	name = "mfk_cq_gag_rule_on_button"
+	desc = "mfk_cq_gag_rule_on_button_desc"
+
+	visible = {
+		NOT = { has_modifier = mfk_gag_rule }
+	}
+
+	possible = {
+		NOT = { has_modifier = mfk_gag_rule }
+	}
+
+	ai_chance = {
+		value = 5
+	}
+
+	effect = {
+		add_modifier = { name = mfk_gag_rule }
+	}
+}
+
+mfk_cq_gag_rule_off_button = {
+	name = "mfk_cq_gag_rule_off_button"
+	desc = "mfk_cq_gag_rule_off_button_desc"
+
+	visible = {
+		has_modifier = mfk_gag_rule
+	}
+
+	possible = {
+		has_modifier = mfk_gag_rule
+	}
+
+	ai_chance = {
+		value = 5
+	}
+
+	effect = {
+		remove_modifier = mfk_gag_rule
+	}
+}
+
+# With a British Governor-General, Philadelphia can ask the Crown to weigh in
+mfk_cq_petition_whitehall_button = {
+	name = "mfk_cq_petition_whitehall_button"
+	desc = "mfk_cq_petition_whitehall_button_desc"
+
+	visible = {
+		NOT = { has_variable = mfk_gg_last_was_american }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = mfk_cq_question_compromise_lean_tt
+			je:je_mfk_chimeric_question ?= {
+				"scripted_bar_progress(mfk_cq_question_bar)" >= 45
+			}
+		}
+	}
+
+	cooldown = { days = 730 }
+
+	ai_chance = {
+		value = 10
+	}
+
+	effect = {
+		je:je_mfk_chimeric_question ?= {
+			add_progress = { value = -8 name = mfk_cq_question_bar }
+			add_progress = { value = 10 name = mfk_cq_tension_bar }
+		}
+		change_variable = { name = mfk_cq_shift_var add = -0.4 }
+		# A Union in debt to London listens harder to Whitehall
+		if = {
+			limit = { has_variable = mfk_boe_loan }
+			je:je_mfk_chimeric_question ?= {
+				add_progress = { value = -4 name = mfk_cq_question_bar }
+			}
+		}
+		add_modifier = {
+			name = mfk_cq_lobbying_costs
+			years = 1
+			multiplier = money_amount_multiplier_medium
+		}
+		c:GBR ?= {
+			change_relations = {
+				country = ROOT
+				value = 10
+			}
+		}
+	}
+}
+
+# With an American Governor-General, Government House can be asked to look away
+mfk_cq_government_house_button = {
+	name = "mfk_cq_government_house_button"
+	desc = "mfk_cq_government_house_button_desc"
+
+	visible = {
+		has_variable = mfk_gg_last_was_american
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = mfk_cq_question_enforce_lean_tt
+			je:je_mfk_chimeric_question ?= {
+				"scripted_bar_progress(mfk_cq_question_bar)" <= 55
+			}
+		}
+	}
+
+	cooldown = { days = 730 }
+
+	ai_chance = {
+		value = 10
+	}
+
+	effect = {
+		je:je_mfk_chimeric_question ?= {
+			add_progress = { value = 8 name = mfk_cq_question_bar }
+			add_progress = { value = 5 name = mfk_cq_tension_bar }
+		}
+		change_variable = { name = mfk_cq_shift_var add = 0.4 }
+		add_modifier = {
+			name = mfk_cq_lobbying_costs
+			years = 1
+			multiplier = money_amount_multiplier_medium
+		}
+		c:GBR ?= {
+			change_relations = {
+				country = ROOT
+				value = -10
+			}
+		}
+	}
+}
+
+# Buy the planters out, as Britain did in 1833. Makes enforcement cheaper.
+mfk_cq_compensation_button = {
+	name = "mfk_cq_compensation_button"
+	desc = "mfk_cq_compensation_button_desc"
+
+	visible = {
+		NOT = { has_variable = mfk_cq_compensation }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = mfk_cq_question_enforce_side_tt
+			je:je_mfk_chimeric_question ?= {
+				"scripted_bar_progress(mfk_cq_question_bar)" <= 40
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 5
+	}
+
+	effect = {
+		set_variable = mfk_cq_compensation
+		add_modifier = {
+			name = mfk_cq_compensation_costs
+			years = 5
+			multiplier = money_amount_multiplier_large
+		}
+		custom_tooltip = mfk_cq_compensation_tt
+		je:je_mfk_chimeric_question ?= {
+			add_progress = { value = -5 name = mfk_cq_tension_bar }
+		}
+	}
+}
+
+# Bring a bill to settle the Chimeric Question before the Commons. It is enacted like any law,
+# until the decisive vote (mfk_cq.10) cuts the process short one way or the other.
+mfk_cq_compromise_bill_button = {
+	name = "mfk_cq_compromise_bill_button"
+	desc = "mfk_cq_compromise_bill_button_desc"
+
+	visible = {
+		NOT = { has_variable = mfk_cq_bill }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = mfk_cq_question_compromise_60_tt
+			je:je_mfk_chimeric_question ?= {
+				"scripted_bar_progress(mfk_cq_question_bar)" >= 60
+			}
+		}
+		ig:ig_landowners ?= {
+			is_in_government = yes
+		}
+		custom_tooltip = {
+			text = mfk_cq_bill_cooldown_tt
+			NOT = { has_variable = mfk_cq_bill_cooldown }
+		}
+	}
+
+	ai_chance = {
+		value = 20
+	}
+
+	effect = {
+		set_variable = mfk_cq_bill
+		set_variable = mfk_cq_bill_compromise
+		cancel_enactment = yes
+		start_enactment = law_type:law_chimeric_slavery
+		add_enactment_modifier = {
+			name = mfk_cq_bill_backing
+		}
+	}
+}
+
+mfk_cq_enforcement_bill_button = {
+	name = "mfk_cq_enforcement_bill_button"
+	desc = "mfk_cq_enforcement_bill_button_desc"
+
+	visible = {
+		NOT = { has_variable = mfk_cq_bill }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = mfk_cq_question_enforce_40_tt
+			je:je_mfk_chimeric_question ?= {
+				"scripted_bar_progress(mfk_cq_question_bar)" <= 40
+			}
+		}
+		ig:ig_intelligentsia ?= {
+			is_in_government = yes
+		}
+		custom_tooltip = {
+			text = mfk_cq_bill_cooldown_tt
+			NOT = { has_variable = mfk_cq_bill_cooldown }
+		}
+	}
+
+	ai_chance = {
+		value = 20
+	}
+
+	effect = {
+		set_variable = mfk_cq_bill
+		set_variable = mfk_cq_bill_enforce
+		cancel_enactment = yes
+		start_enactment = law_type:law_slavery_banned
+		add_enactment_modifier = {
+			name = mfk_cq_bill_backing
+		}
+	}
+}

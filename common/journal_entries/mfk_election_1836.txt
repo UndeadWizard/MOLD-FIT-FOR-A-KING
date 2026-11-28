@@ -1,0 +1,213 @@
+﻿je_mfk_election_1836 = {
+	# The NAU's opening journal entry: the 1836 election, while Jackson's coalition holds the government.
+	# Ends when the first election campaign does. The winning faction sets the Chimeric Question's first lean.
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	group = je_group_internal_affairs
+
+	activation_description = {
+		always = yes
+	}
+
+	is_shown_when_inactive = {
+		c:USA ?= ROOT
+		NOT = { has_variable = mfk_nau_first_election_done }
+	}
+
+	possible = {
+		c:USA ?= ROOT
+	}
+
+	scripted_button = mfk_e1836_fund_jacksonian_button
+	scripted_button = mfk_e1836_fund_whig_button
+	scripted_button = mfk_e1836_fund_barnburner_button
+
+	immediate = {
+		set_variable = {
+			name = mfk_e1836_support_jacksonian
+			value = mfk_e1836_jacksonian_share
+		}
+		change_variable = { name = mfk_e1836_support_jacksonian multiply = 100 }
+		set_variable = {
+			name = mfk_e1836_support_whig
+			value = mfk_e1836_whig_share
+		}
+		change_variable = { name = mfk_e1836_support_whig multiply = 100 }
+		set_variable = {
+			name = mfk_e1836_support_barnburner
+			value = mfk_e1836_barnburner_share
+		}
+		change_variable = { name = mfk_e1836_support_barnburner multiply = 100 }
+		set_variable = { name = mfk_e1836_lean_jacksonian value = 0 }
+		set_variable = { name = mfk_e1836_lean_whig value = 0 }
+		set_variable = { name = mfk_e1836_lean_barnburner value = 0 }
+		# New England abolitionism gives the Barnburners a base
+		if = {
+			limit = {
+				any_scope_state = { state_region = s:STATE_MASSACHUSETTS }
+			}
+			set_variable = { name = mfk_e1836_lean_barnburner value = 5 }
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			# jacksonian: drift towards the faction's clout plus its lasting campaign lean, plus its own campaigning
+			change_variable = {
+				name = mfk_e1836_support_jacksonian
+				add = {
+					value = mfk_e1836_jacksonian_share
+					multiply = 100
+					add = var:mfk_e1836_lean_jacksonian
+					subtract = var:mfk_e1836_support_jacksonian
+					multiply = 0.1
+				}
+			}
+			random = {
+				chance = 35
+				change_variable = { name = mfk_e1836_support_jacksonian add = 3 }
+			}
+			change_variable = { name = mfk_e1836_lean_jacksonian multiply = 0.97 }
+			if = {
+				limit = { var:mfk_e1836_support_jacksonian < 1 }
+				set_variable = { name = mfk_e1836_support_jacksonian value = 1 }
+			}
+			# whig: drift towards the faction's clout plus its lasting campaign lean, plus its own campaigning
+			change_variable = {
+				name = mfk_e1836_support_whig
+				add = {
+					value = mfk_e1836_whig_share
+					multiply = 100
+					add = var:mfk_e1836_lean_whig
+					subtract = var:mfk_e1836_support_whig
+					multiply = 0.1
+				}
+			}
+			random = {
+				chance = 35
+				change_variable = { name = mfk_e1836_support_whig add = 3 }
+			}
+			change_variable = { name = mfk_e1836_lean_whig multiply = 0.97 }
+			if = {
+				limit = { var:mfk_e1836_support_whig < 1 }
+				set_variable = { name = mfk_e1836_support_whig value = 1 }
+			}
+			# barnburner: drift towards the faction's clout plus its lasting campaign lean, plus its own campaigning
+			change_variable = {
+				name = mfk_e1836_support_barnburner
+				add = {
+					value = mfk_e1836_barnburner_share
+					multiply = 100
+					add = var:mfk_e1836_lean_barnburner
+					subtract = var:mfk_e1836_support_barnburner
+					multiply = 0.1
+				}
+			}
+			random = {
+				chance = 35
+				change_variable = { name = mfk_e1836_support_barnburner add = 3 }
+			}
+			change_variable = { name = mfk_e1836_lean_barnburner multiply = 0.97 }
+			if = {
+				limit = { var:mfk_e1836_support_barnburner < 1 }
+				set_variable = { name = mfk_e1836_support_barnburner value = 1 }
+			}
+			# The gag rule debate
+			if = {
+				limit = {
+					game_date >= 1836.5.1
+					NOT = { has_variable = mfk_e1836_event_4_fired }
+				}
+				set_variable = mfk_e1836_event_4_fired
+				trigger_event = { id = mfk_e1836.4 popup = yes }
+			}
+			# The Specie Circular
+			if = {
+				limit = {
+					game_date >= 1836.7.1
+					NOT = { has_variable = mfk_e1836_event_2_fired }
+				}
+				set_variable = mfk_e1836_event_2_fired
+				trigger_event = { id = mfk_e1836.2 popup = yes }
+			}
+			# The Whigs' many candidates
+			if = {
+				limit = {
+					game_date >= 1836.9.1
+					NOT = { has_variable = mfk_e1836_event_3_fired }
+				}
+				set_variable = mfk_e1836_event_3_fired
+				trigger_event = { id = mfk_e1836.3 popup = yes }
+			}
+			# Old Hickory takes the stump
+			if = {
+				limit = {
+					game_date >= 1836.10.1
+					NOT = { has_variable = mfk_e1836_event_5_fired }
+				}
+				set_variable = mfk_e1836_event_5_fired
+				trigger_event = { id = mfk_e1836.5 popup = yes }
+			}
+		}
+	}
+
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "white_outcome"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			custom_tooltip = {
+				text = mfk_e1836_jacksonian_wins_tt
+				has_variable = mfk_nau_first_election_done
+				var:mfk_e1836_jacksonian_result >= var:mfk_e1836_whig_result
+				var:mfk_e1836_jacksonian_result >= var:mfk_e1836_barnburner_result
+			}
+		}
+		effect = {
+			set_variable = mfk_e1836_winner_jacksonian
+			trigger_event = { id = mfk_e1836.1 popup = yes }
+		}
+	}
+
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "white_outcome"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			custom_tooltip = {
+				text = mfk_e1836_whig_wins_tt
+				has_variable = mfk_nau_first_election_done
+				var:mfk_e1836_whig_result >= var:mfk_e1836_jacksonian_result
+				var:mfk_e1836_whig_result >= var:mfk_e1836_barnburner_result
+			}
+		}
+		effect = {
+			set_variable = mfk_e1836_winner_whig
+			trigger_event = { id = mfk_e1836.1 popup = yes }
+		}
+	}
+
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "white_outcome"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			custom_tooltip = {
+				text = mfk_e1836_barnburner_wins_tt
+				has_variable = mfk_nau_first_election_done
+				var:mfk_e1836_barnburner_result >= var:mfk_e1836_jacksonian_result
+				var:mfk_e1836_barnburner_result >= var:mfk_e1836_whig_result
+			}
+		}
+		effect = {
+			set_variable = mfk_e1836_winner_barnburner
+			trigger_event = { id = mfk_e1836.1 popup = yes }
+		}
+	}
+
+	weight = 300
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

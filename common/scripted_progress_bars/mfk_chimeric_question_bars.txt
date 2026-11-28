@@ -1,0 +1,206 @@
+﻿# For je_mfk_chimeric_question. The Question's value is the Compromise's share: 100 is the Verdigri Compromise, 0 is Enforce the Act.
+# Variables are refreshed monthly by the journal entry.
+mfk_cq_question_bar = {
+	name = "mfk_cq_question_bar"
+	desc = "mfk_cq_question_bar_left_desc"
+	second_desc = "mfk_cq_question_bar_right_desc"
+
+	# Blue fill from the left is the Compromise; the gold remainder on the right is enforcement
+	progress_texture = "gfx/interface/progressbar/progressbar_default.dds"
+	glow_texture = "gfx/interface/progressbar/progressbar_default_glow.dds"
+	glow_line_texture = "gfx/interface/progressbar/progressbar_default_glow_line.dds"
+	background_texture = "gfx/interface/progressbar/progressbar_gold.dds"
+	marker = yes
+
+	monthly_progress = {
+		progress_condition = {
+			limit = {
+				owner = { ig:ig_landowners ?= { ig_clout > 0 } }
+			}
+			add = {
+				desc = "mfk_cq_from_landowner_clout"
+				value = owner.ig:ig_landowners.ig_clout
+				multiply = 5
+			}
+		}
+		progress_condition = {
+			limit = {
+				owner = { ig:ig_intelligentsia ?= { ig_clout > 0 } }
+			}
+			add = {
+				desc = "mfk_cq_from_intelligentsia_clout"
+				value = owner.ig:ig_intelligentsia.ig_clout
+				multiply = -5
+			}
+		}
+		progress_condition = {
+			limit = {
+				owner = { ig:ig_landowners ?= { is_in_government = yes } }
+			}
+			add = {
+				desc = "mfk_cq_from_landowners_in_government"
+				value = 0.5
+			}
+		}
+		progress_condition = {
+			limit = {
+				owner = { ig:ig_intelligentsia ?= { is_in_government = yes } }
+			}
+			add = {
+				desc = "mfk_cq_from_intelligentsia_in_government"
+				value = -0.5
+			}
+		}
+		progress_condition = {
+			limit = {
+				owner = { has_variable = mfk_gg_last_was_american }
+			}
+			add = {
+				desc = "mfk_cq_from_american_governor_general"
+				value = 0.5
+			}
+		}
+		progress_condition = {
+			limit = {
+				owner = { NOT = { has_variable = mfk_gg_last_was_american } }
+			}
+			add = {
+				desc = "mfk_cq_from_british_governor_general"
+				value = -0.5
+			}
+		}
+		progress_condition = {
+			limit = {
+				owner = { has_variable = mfk_cq_slave_states_var }
+			}
+			add = {
+				desc = "mfk_cq_from_grey_trade"
+				value = owner.var:mfk_cq_slave_states_var
+				multiply = 0.25
+				max = 1
+			}
+		}
+		progress_condition = {
+			limit = {
+				owner = {
+					has_variable = mfk_cq_crackdowns_var
+					var:mfk_cq_crackdowns_var > 0
+				}
+			}
+			add = {
+				desc = "mfk_cq_from_crackdowns"
+				value = owner.var:mfk_cq_crackdowns_var
+				multiply = -0.75
+			}
+		}
+		progress_condition = {
+			limit = {
+				owner = { has_modifier = mfk_gag_rule }
+			}
+			add = {
+				desc = "mfk_cq_from_gag_rule"
+				value = 0.5
+			}
+		}
+		# Moderates in the Commons pull the Question back towards the middle, harder the further it leans
+		progress_condition = {
+			limit = {
+				owner = { has_variable = mfk_cq_question_var }
+			}
+			add = {
+				desc = "mfk_cq_from_moderates"
+				value = 50
+				subtract = owner.var:mfk_cq_question_var
+				multiply = 0.08
+			}
+		}
+		# Earlier choices keep pushing, fading slowly
+		progress_condition = {
+			limit = {
+				owner = { has_variable = mfk_cq_shift_var }
+			}
+			add = {
+				desc = "mfk_cq_from_past_choices"
+				value = owner.var:mfk_cq_shift_var
+			}
+		}
+	}
+
+	start_value = 50
+	min_value = 0
+	max_value = 100
+}
+
+# For je_mfk_chimeric_question. When Tension reaches 100 the Question is settled on whichever side it stands.
+mfk_cq_tension_bar = {
+	name = "mfk_cq_tension_bar"
+	desc = "mfk_cq_tension_bar_desc"
+
+	default_bad = yes
+
+	monthly_progress = {
+		progress_condition = {
+			limit = {
+				always = yes
+			}
+			add = {
+				desc = "mfk_cq_tension_from_base"
+				value = 0.5
+			}
+		}
+		progress_condition = {
+			limit = {
+				owner = { has_variable = mfk_cq_question_var }
+			}
+			add = {
+				desc = "mfk_cq_tension_from_polarisation"
+				value = owner.var:mfk_cq_question_var
+				subtract = 50
+				abs = yes
+				divide = 25
+			}
+		}
+		progress_condition = {
+			limit = {
+				owner = {
+					has_variable = mfk_cq_crackdowns_var
+					var:mfk_cq_crackdowns_var > 0
+				}
+			}
+			add = {
+				desc = "mfk_cq_tension_from_crackdowns"
+				value = owner.var:mfk_cq_crackdowns_var
+				multiply = 0.25
+			}
+		}
+		# The Union is polarised: the Question sits at either extreme
+		progress_condition = {
+			limit = {
+				owner = {
+					has_variable = mfk_cq_question_var
+					OR = {
+						var:mfk_cq_question_var >= 75
+						var:mfk_cq_question_var <= 25
+					}
+				}
+			}
+			add = {
+				desc = "mfk_cq_tension_from_extreme"
+				value = 1.5
+			}
+		}
+		progress_condition = {
+			limit = {
+				owner = { has_modifier = mfk_gag_rule }
+			}
+			add = {
+				desc = "mfk_cq_tension_from_gag_rule"
+				value = -1.5
+			}
+		}
+	}
+
+	start_value = 10
+	min_value = 0
+	max_value = 100
+}

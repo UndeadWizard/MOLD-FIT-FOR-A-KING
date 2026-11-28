@@ -265,8 +265,16 @@ mfk_gg.2 = {
 				trigger = { scope:new_crown_favourite ?= { has_variable = mfk_british_peer } }
 				desc = mfk_gg.2.d_peer
 			}
-			triggered_desc = {
+			triggered_desc = { # The first American Governor-General
+				trigger = { NOT = { has_variable = mfk_gg_had_american } }
 				desc = mfk_gg.2.d_american
+			}
+			triggered_desc = { # Another American straight after an American
+				trigger = { has_variable = mfk_gg_last_was_american }
+				desc = mfk_gg.2.d_american_again
+			}
+			triggered_desc = { # An American again, after a British peer
+				desc = mfk_gg.2.d_american_return
 			}
 		}
 	}
@@ -288,6 +296,24 @@ mfk_gg.2 = {
 	option = { # Accept the Crown's choice
 		name = mfk_gg.2.a
 		default_option = yes
+		c:GBR ?= {
+			change_relations = {
+				country = ROOT
+				value = 10
+			}
+		}
+		scope:new_crown_favourite.interest_group ?= {
+			add_modifier = {
+				name = mfk_royal_patronage
+				years = 2
+			}
+		}
+		if = {
+			limit = {
+				ig:ig_rural_folk ?= { has_modifier = crown_favourite_resentment }
+			}
+			custom_tooltip = mfk_gg.2.a_resentment_tt
+		}
 	}
 
 	option = { # Protest to Whitehall
@@ -303,6 +329,20 @@ mfk_gg.2 = {
 			}
 		}
 		ai_chance = { base = 1 }
+	}
+
+	# Remember whether this Governor-General was American, for the next appointment's text
+	after = {
+		if = {
+			limit = {
+				scope:new_crown_favourite ?= { has_variable = mfk_british_peer }
+			}
+			remove_variable = mfk_gg_last_was_american
+		}
+		else = {
+			set_variable = mfk_gg_last_was_american
+			set_variable = mfk_gg_had_american
+		}
 	}
 }
 
@@ -491,5 +531,296 @@ mfk_gg.5 = {
 	option = {
 		name = mfk_gg.5.a
 		default_option = yes
+		# What the confirmation brought, applied by the Crown's own event
+		if = {
+			limit = { has_variable = mfk_gg_warm_confirmation }
+			show_as_tooltip = {
+				c:GBR ?= {
+					change_relations = {
+						country = ROOT
+						value = 10
+					}
+				}
+				scope:new_president_general = {
+					add_modifier = {
+						name = mfk_crown_blessing
+						years = 2
+					}
+					interest_group ?= {
+						add_modifier = {
+							name = mfk_investiture_blessing_ig
+							years = 2
+						}
+					}
+				}
+			}
+		}
+		else = {
+			custom_tooltip = mfk_gg_formal_confirmation_tt
+		}
 	}
 }
+
+# Reserving a bill. Root = Great Britain. The Union has begun enacting a law the Crown objects to, and the
+# Governor-General asks London whether to reserve it for His Majesty's pleasure.
+mfk_gg.20 = {
+	type = country_event
+	placement = root
+
+	title = mfk_gg.20.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:governor_general ?= { has_variable = mfk_british_peer } }
+				desc = mfk_gg.20.d_peer
+			}
+			triggered_desc = {
+				desc = mfk_gg.20.d_american
+			}
+		}
+	}
+	flavor = mfk_gg.20.f
+
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	trigger = {
+		c:USA ?= {
+			mfk_crown_would_reserve_law = yes
+			NOT = { has_variable = mfk_bill_reserved }
+		}
+	}
+
+	immediate = {
+		c:USA = {
+			save_scope_as = nau_scope
+			currently_enacting_law = { save_scope_as = reserved_law }
+			random_scope_character = {
+				limit = { has_role = character_role_governor_general }
+				save_scope_as = governor_general
+			}
+		}
+	}
+
+	# Reserve the bill
+	option = {
+		name = mfk_gg.20.a
+		set_variable = {
+			name = mfk_reservation_cooldown
+			years = 2
+		}
+		scope:nau_scope = {
+			set_variable = mfk_bill_reserved
+			add_modifier = { name = mfk_bill_reserved }
+			custom_tooltip = mfk_gg_bill_reserved_tt
+			hidden_effect = {
+				trigger_event = { id = mfk_gg.21 popup = yes }
+			}
+		}
+		change_relations = {
+			country = scope:nau_scope
+			value = -5
+		}
+		# An American Governor-General reserving against his own countrymen
+		if = {
+			limit = { scope:governor_general ?= { NOT = { has_variable = mfk_british_peer } } }
+			scope:nau_scope = { add_liberty_desire = 5 }
+			scope:governor_general.interest_group ?= {
+				add_modifier = {
+					name = mfk_gg_reserved_against_countrymen
+					years = 2
+				}
+			}
+		}
+		hidden_effect = {
+			trigger_event = { id = mfk_gg.22 days = 90 popup = yes }
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				trigger = { scope:governor_general ?= { has_variable = mfk_british_peer } }
+				add = 30
+			}
+		}
+	}
+
+	# Let the Commons decide
+	option = {
+		name = mfk_gg.20.b
+		default_option = yes
+		ai_chance = {
+			base = 40
+			modifier = {
+				trigger = { scope:governor_general ?= { NOT = { has_variable = mfk_british_peer } } }
+				add = 30
+			}
+		}
+	}
+}
+
+# The bill is reserved. Root = the NAU
+mfk_gg.21 = {
+	type = country_event
+	placement = root
+
+	title = mfk_gg.21.t
+	desc = mfk_gg.21.d
+	flavor = mfk_gg.21.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	trigger = {
+		has_variable = mfk_bill_reserved
+	}
+
+	immediate = {
+		currently_enacting_law = { save_scope_as = reserved_law }
+	}
+
+	# Wait on London
+	option = {
+		name = mfk_gg.21.a
+		default_option = yes
+		custom_tooltip = mfk_gg_wait_on_london_tt
+		ai_chance = {
+			base = 70
+		}
+	}
+
+	# Withdraw the bill rather than see it disallowed
+	option = {
+		name = mfk_gg.21.b
+		cancel_enactment = yes
+		ai_chance = {
+			base = 30
+		}
+	}
+}
+
+# His Majesty's pleasure. Root = Great Britain
+mfk_gg.22 = {
+	type = country_event
+	placement = root
+
+	title = mfk_gg.22.t
+	desc = mfk_gg.22.d
+	flavor = mfk_gg.22.f
+
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	trigger = {
+		c:USA ?= { has_variable = mfk_bill_reserved }
+	}
+
+	immediate = {
+		c:USA = {
+			save_scope_as = nau_scope
+			currently_enacting_law ?= { save_scope_as = reserved_law }
+		}
+	}
+
+	# Royal assent
+	option = {
+		name = mfk_gg.22.a
+		scope:nau_scope = {
+			remove_variable = mfk_bill_reserved
+			remove_modifier = mfk_bill_reserved
+			custom_tooltip = mfk_gg_royal_assent_tt
+			hidden_effect = {
+				set_variable = { name = mfk_reservation_result value = flag:assent }
+				trigger_event = { id = mfk_gg.23 popup = yes }
+			}
+		}
+		change_relations = {
+			country = scope:nau_scope
+			value = 10
+		}
+		ai_chance = {
+			base = 40
+		}
+	}
+
+	# Disallowance
+	option = {
+		name = mfk_gg.22.b
+		default_option = yes
+		scope:nau_scope = {
+			hidden_effect = {
+				set_variable = { name = mfk_reservation_result value = flag:disallowed }
+				trigger_event = { id = mfk_gg.23 popup = yes }
+			}
+			custom_tooltip = mfk_gg_disallowed_tt
+			cancel_enactment = yes
+			add_modifier = {
+				name = mfk_bill_disallowed
+				years = 3
+			}
+			add_liberty_desire = 10
+		}
+		change_relations = {
+			country = scope:nau_scope
+			value = -20
+		}
+		ai_chance = {
+			base = 60
+		}
+	}
+}
+
+# London's answer reaches Philadelphia. Root = the NAU
+mfk_gg.23 = {
+	type = country_event
+	placement = root
+
+	title = mfk_gg.23.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { var:mfk_reservation_result ?= flag:assent }
+				desc = mfk_gg.23.d_assent
+			}
+			triggered_desc = {
+				desc = mfk_gg.23.d_disallowed
+			}
+		}
+	}
+	flavor = mfk_gg.23.f
+
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	duration = 3
+
+	option = {
+		name = mfk_gg.23.a
+		default_option = yes
+		hidden_effect = {
+			remove_variable = mfk_reservation_result
+		}
+	}
+}
+

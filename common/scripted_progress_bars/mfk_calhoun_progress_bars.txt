@@ -1,0 +1,61 @@
+﻿# For je_mfk_nullification_crisis: how close South Carolina is to open revolt against the Union.
+mfk_nullification_progress_bar = {
+	name = "mfk_nullification_progress_bar"
+	desc = "mfk_nullification_progress_bar_desc"
+
+	default = yes
+
+	monthly_progress = {
+		# Calhoun's agitation never stops.
+		progress_condition = {
+			limit = {
+				always = yes
+			}
+			add = {
+				desc = "mfk_nullification_from_calhoun"
+				value = 1
+			}
+		}
+		# The Union moves to enforce abolition.
+		progress_condition = {
+			limit = {
+				OR = {
+					has_law = law_type:law_slavery_banned
+					is_enacting_law = law_type:law_slavery_banned
+				}
+			}
+			add = {
+				desc = "mfk_nullification_from_abolition"
+				value = 4
+			}
+		}
+		# The planters have no voice in the Union government.
+		progress_condition = {
+			limit = {
+				ig:ig_landowners ?= {
+					is_in_government = no
+				}
+			}
+			add = {
+				desc = "mfk_nullification_from_landowners_out"
+				value = 1
+			}
+		}
+		# Jackson's coalition keeps abolition unenforced in the Cavalier States.
+		progress_condition = {
+			limit = {
+				ig:ig_rural_folk ?= {
+					is_in_government = yes
+				}
+			}
+			add = {
+				desc = "mfk_nullification_from_jackson"
+				value = -1
+			}
+		}
+	}
+
+	start_value = 20
+	min_value = 0
+	max_value = 100
+}

@@ -6,6 +6,14 @@
 
 	progressiveness = -50
 
+	# The NAU only sees it once the Verdigri Compromise is before the Commons or has become law
+	is_visible = {
+		OR = {
+			NOT = { has_law = law_type:law_chimeric_question }
+			has_variable = mfk_cq_bill_compromise
+		}
+	}
+
 	disallowing_laws = {
 		law_multicultural
 		law_affirmative_action
@@ -13,6 +21,13 @@
 
 	# Refinement is impossible without plasm
 	can_enact = {
+		custom_tooltip = {
+			text = mfk_cq_law_locked_tt
+			OR = {
+				NOT = { has_journal_entry = je_mfk_chimeric_question }
+				has_variable = mfk_cq_bill_compromise
+			}
+		}
 		custom_tooltip = {
 			text = law_chimeric_slavery_plasm_tt
 			market_capital ?= {
@@ -84,5 +99,40 @@
 			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
 		}
+	}
+}
+
+# The NAU's 1836 settlement. The Crown's 1833 Act is enforced for people, but Jackson has never ruled on
+# whether a Verdigri is a person. In the Slave States (states that already hold slaves) Verdigri bondage
+# goes on unregulated, and poor free Verdigri are bound into it. It cannot spread to new states.
+law_chimeric_question = {
+	group = lawgroup_slavery
+	parent = law_legacy_slavery # Inherits ideological stances from parent
+
+	icon = "gfx/interface/icons/law_icons/legacy_slavery.dds"
+
+	progressiveness = -30
+
+	is_visible = {
+		c:USA ?= ROOT
+	}
+
+	can_enact = {
+		c:USA ?= ROOT
+	}
+
+	disallowing_laws = {
+		law_multicultural
+		law_affirmative_action
+	}
+
+	on_activate = {
+		custom_tooltip = law_chimeric_question_slave_states_tt
+		custom_tooltip = law_chimeric_question_binding_tt
+		custom_tooltip = law_chimeric_question_vats_tt
+	}
+
+	ai_will_do = {
+		always = no
 	}
 }

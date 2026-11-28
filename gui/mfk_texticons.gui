@@ -1,4 +1,4 @@
-texticon = {
+﻿texticon = {
   icon = imperial_estate
   iconsize = {
     offset = { 0 7 }
@@ -99,4 +99,24 @@ texticon = {
 		fontsize = 18
 		texture = "gfx/interface/icons/goods_icons/steel.dds"
 	}
+}
+
+texticon = {
+  icon = vatwrights
+
+  iconsize = {
+    offset = { 0 50 }
+    fontsize = 250
+    texture = "gfx/interface/icons/pops_icons/vatwrights.dds"
+  }
+}
+
+texticon = {
+  icon = vatwrights
+
+  iconsize = {
+    offset = { 0 5 }
+    fontsize = 30
+    texture = "gfx/interface/icons/pops_icons/vatwrights_15.dds"
+  }
 }

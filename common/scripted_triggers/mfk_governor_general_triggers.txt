@@ -1,0 +1,22 @@
+﻿# Scope = the NAU. The Union is enacting a law the Crown may reserve for His Majesty's pleasure: tariffs against British
+# trade, the slave trade the Crown abolished, or a government the Compact does not allow. The Chimeric Question bills
+# are not on the list: the Chimeric Question settles them.
+mfk_crown_would_reserve_law = {
+	OR = {
+		is_enacting_law = law_type:law_protectionism
+		is_enacting_law = law_type:law_isolationism
+		is_enacting_law = law_type:law_slave_trade
+		is_enacting_law = law_type:law_monarchy
+		is_enacting_law = law_type:law_council_republic
+		is_enacting_law = law_type:law_theocracy
+		is_enacting_law = law_type:law_corporate_state
+	}
+}
+
+# Scope = the NAU. The Governor-General is a peer sent from London.
+mfk_gg_is_british_peer = {
+	any_scope_character = {
+		has_role = character_role_governor_general
+		has_variable = mfk_british_peer
+	}
+}

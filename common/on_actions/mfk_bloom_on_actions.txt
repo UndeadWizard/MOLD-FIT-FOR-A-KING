@@ -1,0 +1,121 @@
+﻿# Called from on_monthly_pulse_country.
+mfk_vatmoss_bloom_monthly = {
+	effect = {
+		# A blooming state strips its soil. Burning limits the damage.
+		every_scope_state = {
+			limit = {
+				state_region = {
+					has_harvest_condition = mfk_vatmoss_bloom
+				}
+			}
+			if = {
+				limit = {
+					has_decree = decree_mfk_moss_burning
+				}
+				state_region = {
+					add_devastation = 1
+				}
+			}
+			else = {
+				state_region = {
+					add_devastation = 3
+				}
+			}
+		}
+
+		# The first bloom reaches Ireland: the exodus to the Union begins.
+		if = {
+			limit = {
+				has_global_variable = mfk_first_bloom_var
+				NOT = { has_global_variable = mfk_irish_exodus_done }
+				exists = c:USA
+				any_scope_state = {
+					is_homeland = cu:irish
+					state_region = {
+						has_harvest_condition = mfk_vatmoss_bloom
+					}
+				}
+			}
+			set_global_variable = mfk_irish_exodus_done
+			save_scope_as = mfk_exodus_origin
+			c:USA = {
+				ordered_scope_state = {
+					limit = {
+						state_is_eligible_as_mass_migration_target = yes
+					}
+					order_by = migration_pull
+					position = 0
+					check_range_bounds = no
+					save_scope_as = mfk_exodus_target
+				}
+			}
+			if = {
+				limit = {
+					exists = scope:mfk_exodus_target
+				}
+				scope:mfk_exodus_target = {
+					create_mass_migration = {
+						origin = scope:mfk_exodus_origin
+						culture = cu:irish
+					}
+				}
+			}
+		}
+	}
+}
+
+# Called from on_monthly_pulse_country. Dated events of the Plasm controversy, leading into the Chimeric Question.
+mfk_chimeric_question_monthly = {
+	trigger = {
+		c:USA ?= this
+		has_law = law_type:law_chimeric_question
+		NOT = { has_variable = mfk_cq_opened }
+	}
+	effect = {
+		if = {
+			limit = {
+				game_date >= 1838.8.1
+				NOT = { has_variable = mfk_cq_emancipation_crisis_fired }
+			}
+			set_variable = mfk_cq_emancipation_crisis_fired
+			trigger_event = { id = mfk_cq.7 popup = yes }
+		}
+		else_if = {
+			limit = {
+				game_date >= 1839.3.1
+				has_variable = mfk_cq_emancipation_crisis_fired
+			}
+			trigger_event = { id = mfk_cq.8 popup = yes }
+		}
+	}
+}
+
+# Called from on_monthly_pulse_country. The Bank Crash of 1837.
+mfk_nau_panic_monthly = {
+	trigger = {
+		c:USA ?= this
+		NOT = { has_variable = mfk_panic_1837_fired }
+		game_date >= 1837.5.10
+	}
+	effect = {
+		set_variable = mfk_panic_1837_fired
+		trigger_event = { id = mfk_p1837.1 popup = yes }
+	}
+}
+
+# Called from on_monthly_pulse_country. The Florida bonds come due after the crash.
+mfk_nau_florida_bonds_monthly = {
+	trigger = {
+		c:USA ?= this
+		has_variable = mfk_panic_1837_fired
+		NOT = { has_variable = mfk_florida_bonds_fired }
+		game_date >= 1841.3.1
+		exists = c:FLR
+		c:FLR = { is_subject_of = c:USA }
+	}
+	effect = {
+		set_variable = mfk_florida_bonds_fired
+		trigger_event = { id = mfk_p1837.7 popup = yes }
+	}
+}
+

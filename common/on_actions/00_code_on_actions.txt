@@ -83,19 +83,19 @@ on_monthly_pulse = {
 		# assemble_german_confederation_list_effect
 		# assemble_great_power_list_effect
 
-		### Potato Famine
+		### The first Vatmoss bloom (the Hungry Forties): Lancashire's spores reach Ireland in the summer of 1845
 		if = {
 			limit = {
 				NOT = { has_global_variable = hungry_forties_happened }
 				NOT = { has_global_variable = hungry_forties_var }
-				any_state_in_europe = {
-					state_region = {
-						has_harvest_condition = disease_outbreak
-					}
-					count >= 15
-				}
+				game_date >= 1845.6.1
 			}
 			set_global_variable = hungry_forties_var
+			set_global_variable = mfk_first_bloom_var
+			set_global_variable = {
+				name = mfk_first_bloom_young_var
+				days = 365
+			}
 		}
 
 		# Gründerzeit JE - has to happen here in order to not kill performance
@@ -176,7 +176,7 @@ on_monthly_pulse_country = {
 		communism.8 # Red Army
 		nomenklatura.1 # Nomenklatura
 		opium_wars.1
-		native_resettlement.1
+		# native_resettlement.1 # Worcester v. Georgia / Indian Removal: disabled, the NAU's Cavalier States are governorships until Calhoun's Revolt
 		bic_breakup.1
 		dreyfus.1
 		dei_breakup.1
@@ -418,10 +418,15 @@ on_monthly_pulse_country = {
 
 		# For Ukraine and Belarus Cultural Renaissances
 		cultural_renaissances_modifier_setup = yes
+
 	}
 	on_actions = { # delay ensures events won't fire simultaneously
 		# Country-specific pulses (defined in 00_on_actions_monthly.txt)
 		on_monthly_pulse_country_turkey
+		mfk_vatmoss_bloom_monthly
+		mfk_chimeric_question_monthly
+		mfk_nau_panic_monthly
+		mfk_nau_florida_bonds_monthly
 		on_monthly_pulse_country_portugal
 		on_monthly_pulse_country_spain
 		on_monthly_pulse_country_morocco
@@ -466,6 +471,7 @@ on_yearly_pulse_country = {
 
 		# Chimeric Slavery: binding, refinement and penal sentences
 		mfk_chimeric_slavery_yearly_effect = yes
+		mfk_chimeric_question_yearly_effect = yes
 
 		if = {
 			limit = {
@@ -1607,16 +1613,28 @@ on_new_ruler = {
 			}
 		}
 
-		# Whitehall confirms every new President-General; it only chooses how warmly
+		# Whitehall confirms every new President-General; it only chooses how warmly.
+		# The engine re-installs the sitting ruler at events such as an election campaign starting,
+		# so remember who was last confirmed and skip anyone already in office.
+		if = {
+			limit = {
+				game_date <= 1836.2.1
+				owner = { mfk_crown_favourite_country = yes }
+			}
+			owner = { set_variable = { name = mfk_last_confirmed_pg value = prev } }
+		}
 		if = {
 			limit = {
 				game_date > 1836.2.1
 				owner = { mfk_crown_favourite_country = yes }
+				NOT = { owner.var:mfk_last_confirmed_pg ?= this }
+				owner = { in_election_campaign = no }
 			}
+			owner = { set_variable = { name = mfk_last_confirmed_pg value = prev } }
 			save_scope_as = new_president_general
 			owner = { save_scope_as = nau_scope }
 			c:GBR = {
-				trigger_event = { id = mfk_gg.3 popup = yes }
+				trigger_event = { id = mfk_gg.3 days = 30 popup = yes } # Whitehall's confirmation takes a month to cross the Atlantic
 			}
 		}
 	}
@@ -2579,6 +2597,18 @@ on_production_method_changed = {
 # Executed when enactment of any law begins
 on_law_enactment_started = {
 	effect = {
+		# The Governor-General may reserve a bill the Crown objects to
+		if = {
+			limit = {
+				c:USA ?= this
+				exists = c:GBR
+				is_subject_of = c:GBR
+				mfk_crown_would_reserve_law = yes
+				any_scope_character = { has_role = character_role_governor_general }
+				NOT = { c:GBR = { has_variable = mfk_reservation_cooldown } }
+			}
+			c:GBR = { trigger_event = { id = mfk_gg.20 popup = yes } }
+		}
 		#Montenegro events
 		if = {
 			limit = {
@@ -3101,6 +3131,15 @@ on_law_enactment_fail = {
 # will work as expected, even though the enactment is _just_ about to end
 on_law_enactment_ended = {
 	effect = {
+		# A reserved bill is no longer before the Commons
+		if = {
+			limit = { has_variable = mfk_bill_reserved }
+			remove_variable = mfk_bill_reserved
+		}
+		if = {
+			limit = { has_modifier = mfk_bill_reserved }
+			remove_modifier = mfk_bill_reserved
+		}
 		if = {
 			limit = {
 				has_variable = unanimity_achievement_possible
@@ -3838,10 +3877,37 @@ on_lost_war = {
 			limit = { exists = scope:victim_of_wargoal }
 			set_variable = { name = recently_lost_war days = 1825 value = yes }
 		}
+		# The Cavalier Confederation has lost Calhoun's Revolt: the Union will fold it back in
+		if = {
+			limit = {
+				c:CAV ?= this
+				exists = c:USA
+				c:USA = {
+					has_variable = mfk_calhoun_revolt_started
+					NOT = { has_variable = calhoun_revolt_resolved }
+				}
+			}
+			c:USA = { set_variable = mfk_cav_defeated }
+		}
 	}
 }
 
-on_inconclusive_war = {}
+on_inconclusive_war = {
+	effect = {
+		# Calhoun's Revolt ends in a white peace: a secession the Union could not crush stands
+		if = {
+			limit = {
+				c:CAV ?= this
+				exists = c:USA
+				c:USA = {
+					has_variable = mfk_calhoun_revolt_started
+					NOT = { has_variable = calhoun_revolt_resolved }
+				}
+			}
+			c:USA = { set_variable = mfk_cav_stalemate }
+		}
+	}
+}
 
 # Root = Interest Group
 on_ig_resigned_government = {
@@ -4334,6 +4400,55 @@ on_election_campaign_start = {
 # Root = Country
 on_election_campaign_end = {
 	effect = {
+		# The NAU's first election: Jackson's coalition is no longer locked in, and the Chimeric Question opens
+		if = {
+			limit = {
+				c:USA ?= this
+			}
+			# The Election of 1836: record each faction's share, then end the campaigns
+			if = {
+				limit = { has_variable = mfk_e1836_support_jacksonian }
+				set_variable = { name = mfk_e1836_jacksonian_result value = var:mfk_e1836_support_jacksonian }
+			}
+			else = {
+				set_variable = { name = mfk_e1836_jacksonian_result value = 0 }
+			}
+			if = {
+				limit = { has_variable = mfk_e1836_support_whig }
+				set_variable = { name = mfk_e1836_whig_result value = var:mfk_e1836_support_whig }
+			}
+			else = {
+				set_variable = { name = mfk_e1836_whig_result value = 0 }
+			}
+			if = {
+				limit = { has_variable = mfk_e1836_support_barnburner }
+				set_variable = { name = mfk_e1836_barnburner_result value = var:mfk_e1836_support_barnburner }
+			}
+			else = {
+				set_variable = { name = mfk_e1836_barnburner_result value = 0 }
+			}
+			set_variable = mfk_nau_first_election_done
+			# Any interim change of ruler before the election result forms the government goes unannounced
+			if = {
+				limit = { has_journal_entry = je_mfk_election_1836 }
+				set_variable = { name = hide_ruler_change_notification days = 60 }
+			}
+			if = {
+				limit = {
+					NOT = { has_variable = mfk_cq_opened }
+					has_law = law_type:law_chimeric_question
+				}
+				trigger_event = { id = mfk_cq.6 days = 14 popup = yes }
+			}
+			# The election result event lifts the coalition once the new government forms
+			if = {
+				limit = {
+					has_modifier = mfk_jacksons_coalition
+					NOT = { has_journal_entry = je_mfk_election_1836 }
+				}
+				remove_modifier = mfk_jacksons_coalition
+			}
+		}
 		debug_log = "[TimeKeeper.GetCurrentDate.GetString]: Election Campaign Ended - [THIS.GetCountry.GetNameNoFormatting]"
 		if = {
 			limit = {

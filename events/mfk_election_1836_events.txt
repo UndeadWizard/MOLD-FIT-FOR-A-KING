@@ -1,0 +1,433 @@
+﻿namespace = mfk_e1836
+
+# The Election of 1836 is decided (NAU)
+mfk_e1836.1 = {
+	type = country_event
+	placement = root
+
+	title = mfk_e1836.1.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					has_variable = mfk_e1836_winner_jacksonian
+					scope:mfk_new_pg ?= { has_template = usa_andrew_jackson_template }
+				}
+				desc = mfk_e1836.1.d_jacksonian_jackson
+			}
+			triggered_desc = {
+				trigger = { has_variable = mfk_e1836_winner_jacksonian }
+				desc = mfk_e1836.1.d_jacksonian
+			}
+			triggered_desc = {
+				trigger = { has_variable = mfk_e1836_winner_whig }
+				desc = mfk_e1836.1.d_whig
+			}
+			triggered_desc = {
+				trigger = { has_variable = mfk_e1836_winner_barnburner }
+				desc = mfk_e1836.1.d_barnburner
+			}
+		}
+	}
+	flavor = mfk_e1836.1.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	fire_only_once = yes
+
+	# The winners form the government
+	immediate = {
+		add_modifier = {
+			name = mfk_commons_has_spoken
+			years = 2
+		}
+		# The result event announces the President-General itself
+		set_variable = { name = hide_ruler_change_notification days = 3 }
+		# The coalition gives way to the winners' mandate
+		if = {
+			limit = { has_modifier = mfk_jacksons_coalition }
+			remove_modifier = mfk_jacksons_coalition
+		}
+		if = {
+			limit = { has_variable = mfk_e1836_winner_jacksonian }
+			set_ruling_interest_groups = { ig_rural_folk ig_landowners }
+			add_modifier = {
+				name = mfk_e1836_mandate_jacksonian
+				years = 2
+			}
+			ig:ig_rural_folk.leader ?= {
+				save_scope_as = mfk_new_pg
+				set_character_as_ruler = yes
+			}
+		}
+		else_if = {
+			limit = { has_variable = mfk_e1836_winner_whig }
+			set_ruling_interest_groups = { ig_industrialists ig_petty_bourgeoisie }
+			add_modifier = {
+				name = mfk_e1836_mandate_whig
+				years = 2
+			}
+			ig:ig_industrialists.leader ?= {
+				save_scope_as = mfk_new_pg
+				set_character_as_ruler = yes
+			}
+		}
+		else_if = {
+			limit = { has_variable = mfk_e1836_winner_barnburner }
+			set_ruling_interest_groups = { ig_intelligentsia ig_industrialists }
+			add_modifier = {
+				name = mfk_e1836_mandate_barnburner
+				years = 2
+			}
+			ig:ig_intelligentsia.leader ?= {
+				save_scope_as = mfk_new_pg
+				set_character_as_ruler = yes
+			}
+		}
+	}
+
+	option = {
+		name = mfk_e1836.1.jacksonian
+		default_option = yes
+		trigger = { has_variable = mfk_e1836_winner_jacksonian }
+		custom_tooltip = mfk_e1836.1.jacksonian_tt
+		if = {
+			limit = { NOT = { has_variable = mfk_cq_shift_var } }
+			set_variable = { name = mfk_cq_shift_var value = 0 }
+		}
+		change_variable = { name = mfk_cq_shift_var add = 0.5 }
+	}
+
+	option = {
+		name = mfk_e1836.1.whig
+		default_option = yes
+		trigger = { has_variable = mfk_e1836_winner_whig }
+		custom_tooltip = mfk_e1836.1.whig_tt
+		if = {
+			limit = { NOT = { has_variable = mfk_cq_shift_var } }
+			set_variable = { name = mfk_cq_shift_var value = 0 }
+		}
+		change_variable = { name = mfk_cq_shift_var add = -0.25 }
+	}
+
+	option = {
+		name = mfk_e1836.1.barnburner
+		default_option = yes
+		trigger = { has_variable = mfk_e1836_winner_barnburner }
+		custom_tooltip = mfk_e1836.1.barnburner_tt
+		if = {
+			limit = { NOT = { has_variable = mfk_cq_shift_var } }
+			set_variable = { name = mfk_cq_shift_var value = 0 }
+		}
+		change_variable = { name = mfk_cq_shift_var add = -0.75 }
+	}
+}
+
+mfk_e1836.2 = {
+	type = country_event
+	placement = root
+
+	title = mfk_e1836.2.t
+	desc = mfk_e1836.2.d
+	flavor = mfk_e1836.2.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	fire_only_once = yes
+
+	trigger = {
+		has_journal_entry = je_mfk_election_1836
+	}
+
+	option = {
+		name = mfk_e1836.2.a
+		default_option = yes
+		change_variable = { name = mfk_e1836_support_jacksonian add = 6 }
+		change_variable = { name = mfk_e1836_lean_jacksonian add = 6 }
+		custom_tooltip = mfk_e1836_sup_jacksonian_p6
+		change_variable = { name = mfk_e1836_support_whig add = 2 }
+		change_variable = { name = mfk_e1836_lean_whig add = 2 }
+		custom_tooltip = mfk_e1836_sup_whig_p2
+		if = {
+			limit = { in_election_campaign = yes }
+			hidden_effect = {
+				py:conservative_party ?= { add_momentum = 0.2 }
+			}
+		}
+		custom_tooltip = mfk_e1836_mom_conservative_p20
+		if = {
+			limit = { in_election_campaign = yes }
+			hidden_effect = {
+				py:liberal_party ?= { add_momentum = 0.1 }
+			}
+		}
+		custom_tooltip = mfk_e1836_mom_liberal_p10
+	}
+
+	option = {
+		name = mfk_e1836.2.b
+		change_variable = { name = mfk_e1836_support_whig add = 6 }
+		change_variable = { name = mfk_e1836_lean_whig add = 6 }
+		custom_tooltip = mfk_e1836_sup_whig_p6
+		change_variable = { name = mfk_e1836_support_jacksonian add = -4 }
+		change_variable = { name = mfk_e1836_lean_jacksonian add = -4 }
+		custom_tooltip = mfk_e1836_sup_jacksonian_m4
+		if = {
+			limit = { in_election_campaign = yes }
+			hidden_effect = {
+				py:liberal_party ?= { add_momentum = 0.2 }
+			}
+		}
+		custom_tooltip = mfk_e1836_mom_liberal_p20
+		if = {
+			limit = { in_election_campaign = yes }
+			hidden_effect = {
+				py:conservative_party ?= { add_momentum = -0.1 }
+			}
+		}
+		custom_tooltip = mfk_e1836_mom_conservative_m10
+	}
+}
+
+mfk_e1836.3 = {
+	type = country_event
+	placement = root
+
+	title = mfk_e1836.3.t
+	desc = mfk_e1836.3.d
+	flavor = mfk_e1836.3.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	fire_only_once = yes
+
+	trigger = {
+		has_journal_entry = je_mfk_election_1836
+	}
+
+	option = {
+		name = mfk_e1836.3.a
+		default_option = yes
+		change_variable = { name = mfk_e1836_support_whig add = -4 }
+		change_variable = { name = mfk_e1836_lean_whig add = -4 }
+		custom_tooltip = mfk_e1836_sup_whig_m4
+		change_variable = { name = mfk_e1836_support_barnburner add = 5 }
+		change_variable = { name = mfk_e1836_lean_barnburner add = 5 }
+		custom_tooltip = mfk_e1836_sup_barnburner_p5
+		if = {
+			limit = { in_election_campaign = yes }
+			hidden_effect = {
+				py:liberal_party ?= { add_momentum = 0.1 }
+			}
+		}
+		custom_tooltip = mfk_e1836_mom_liberal_p10
+	}
+
+	option = {
+		name = mfk_e1836.3.b
+		change_variable = { name = mfk_e1836_support_whig add = 5 }
+		change_variable = { name = mfk_e1836_lean_whig add = 5 }
+		custom_tooltip = mfk_e1836_sup_whig_p5
+		change_variable = { name = mfk_e1836_support_barnburner add = -4 }
+		change_variable = { name = mfk_e1836_lean_barnburner add = -4 }
+		custom_tooltip = mfk_e1836_sup_barnburner_m4
+		if = {
+			limit = { in_election_campaign = yes }
+			hidden_effect = {
+				py:liberal_party ?= { add_momentum = 0.1 }
+			}
+		}
+		custom_tooltip = mfk_e1836_mom_liberal_p10
+	}
+}
+
+mfk_e1836.4 = {
+	type = country_event
+	placement = root
+
+	title = mfk_e1836.4.t
+	desc = mfk_e1836.4.d
+	flavor = mfk_e1836.4.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	fire_only_once = yes
+
+	trigger = {
+		has_journal_entry = je_mfk_election_1836
+	}
+
+	option = {
+		name = mfk_e1836.4.a
+		default_option = yes
+		change_variable = { name = mfk_e1836_support_jacksonian add = 5 }
+		change_variable = { name = mfk_e1836_lean_jacksonian add = 5 }
+		custom_tooltip = mfk_e1836_sup_jacksonian_p5
+		change_variable = { name = mfk_e1836_support_barnburner add = -3 }
+		change_variable = { name = mfk_e1836_lean_barnburner add = -3 }
+		custom_tooltip = mfk_e1836_sup_barnburner_m3
+		if = {
+			limit = { in_election_campaign = yes }
+			hidden_effect = {
+				py:conservative_party ?= { add_momentum = 0.2 }
+			}
+		}
+		custom_tooltip = mfk_e1836_mom_conservative_p20
+		if = {
+			limit = { in_election_campaign = yes }
+			hidden_effect = {
+				py:liberal_party ?= { add_momentum = -0.1 }
+			}
+		}
+		custom_tooltip = mfk_e1836_mom_liberal_m10
+	}
+
+	option = {
+		name = mfk_e1836.4.b
+		change_variable = { name = mfk_e1836_support_barnburner add = 6 }
+		change_variable = { name = mfk_e1836_lean_barnburner add = 6 }
+		custom_tooltip = mfk_e1836_sup_barnburner_p6
+		change_variable = { name = mfk_e1836_support_jacksonian add = -2 }
+		change_variable = { name = mfk_e1836_lean_jacksonian add = -2 }
+		custom_tooltip = mfk_e1836_sup_jacksonian_m2
+		if = {
+			limit = { in_election_campaign = yes }
+			hidden_effect = {
+				py:liberal_party ?= { add_momentum = 0.2 }
+			}
+		}
+		custom_tooltip = mfk_e1836_mom_liberal_p20
+		if = {
+			limit = { in_election_campaign = yes }
+			hidden_effect = {
+				py:conservative_party ?= { add_momentum = -0.1 }
+			}
+		}
+		custom_tooltip = mfk_e1836_mom_conservative_m10
+	}
+}
+
+mfk_e1836.5 = {
+	type = country_event
+	placement = root
+
+	title = mfk_e1836.5.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					ig:ig_rural_folk.leader ?= { has_template = usa_andrew_jackson_template }
+				}
+				desc = mfk_e1836.5.d_jackson
+			}
+			triggered_desc = {
+				desc = mfk_e1836.5.d
+			}
+		}
+	}
+	flavor = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					ig:ig_rural_folk.leader ?= { has_template = usa_andrew_jackson_template }
+				}
+				desc = mfk_e1836.5.f_jackson
+			}
+			triggered_desc = {
+				desc = mfk_e1836.5.f
+			}
+		}
+	}
+
+	event_image = {
+		video = "europenorthamerica_political_extremism"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	duration = 3
+
+	fire_only_once = yes
+
+	immediate = {
+		ig:ig_rural_folk.leader ?= {
+			save_scope_as = mfk_jacksonian_candidate
+		}
+	}
+
+	trigger = {
+		has_journal_entry = je_mfk_election_1836
+		# Old Hickory must still be alive to take the stump
+		any_scope_character = {
+			has_template = usa_andrew_jackson_template
+		}
+	}
+
+	option = {
+		name = mfk_e1836.5.a
+		default_option = yes
+		change_variable = { name = mfk_e1836_support_jacksonian add = 6 }
+		change_variable = { name = mfk_e1836_lean_jacksonian add = 6 }
+		custom_tooltip = mfk_e1836_sup_jacksonian_p6
+		if = {
+			limit = { in_election_campaign = yes }
+			hidden_effect = {
+				py:conservative_party ?= { add_momentum = 0.2 }
+			}
+		}
+		custom_tooltip = mfk_e1836_mom_conservative_p20
+	}
+
+	option = {
+		name = mfk_e1836.5.b
+		change_variable = { name = mfk_e1836_support_whig add = 4 }
+		change_variable = { name = mfk_e1836_lean_whig add = 4 }
+		custom_tooltip = mfk_e1836_sup_whig_p4
+		change_variable = { name = mfk_e1836_support_jacksonian add = 2 }
+		change_variable = { name = mfk_e1836_lean_jacksonian add = 2 }
+		custom_tooltip = mfk_e1836_sup_jacksonian_p2
+		if = {
+			limit = { in_election_campaign = yes }
+			hidden_effect = {
+				py:liberal_party ?= { add_momentum = 0.1 }
+			}
+		}
+		custom_tooltip = mfk_e1836_mom_liberal_p10
+		if = {
+			limit = { in_election_campaign = yes }
+			hidden_effect = {
+				py:conservative_party ?= { add_momentum = 0.1 }
+			}
+		}
+		custom_tooltip = mfk_e1836_mom_conservative_p10
+	}
+}

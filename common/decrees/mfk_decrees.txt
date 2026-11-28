@@ -1,0 +1,72 @@
+﻿# Burn the moss out of a state. Only available where a bloom journal entry is active,
+# in a blooming state or one bordering a bloom.
+decree_mfk_moss_burning = {
+	texture = "gfx/interface/icons/decree/decree_emergency_relief.dds"
+
+	state_trigger = {
+		owner = {
+			OR = {
+				has_journal_entry = je_mfk_vatmoss_bloom
+				has_journal_entry = je_the_hungry_forties
+			}
+		}
+		OR = {
+			state_region = {
+				has_harvest_condition = mfk_vatmoss_bloom
+			}
+			any_neighbouring_state = {
+				state_region = {
+					has_harvest_condition = mfk_vatmoss_bloom
+				}
+			}
+		}
+	}
+
+	modifier = {
+		building_group_bg_agriculture_throughput_add = -0.10
+		building_group_bg_ranching_throughput_add = -0.10
+		building_vatmoss_hotbed_throughput_add = -0.50
+		state_mfk_vatmoss_spores_add = -10
+	}
+
+	cost = 50
+
+	ai_weight = {
+		value = 0
+		if = {
+			limit = {
+				state_region = {
+					has_harvest_condition = mfk_vatmoss_bloom
+				}
+			}
+			add = 100
+		}
+		else = {
+			add = 40
+		}
+	}
+}
+
+# Stop Verdigri binding in one of the NAU's Slave States, at the cost of planter anger.
+decree_mfk_verdigri_crackdown = {
+	texture = "gfx/interface/icons/decree/decree_violent_suppression.dds"
+
+	state_trigger = {
+		owner = {
+			has_law = law_type:law_chimeric_question
+		}
+		is_slave_state = yes
+	}
+
+	modifier = {
+		state_radicals_from_political_movements_mult = 0.25
+		building_group_bg_plantations_throughput_add = -0.10
+		building_group_bg_agriculture_throughput_add = -0.05
+	}
+
+	cost = 50
+
+	ai_weight = {
+		value = 10
+	}
+}

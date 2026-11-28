@@ -1,0 +1,124 @@
+﻿# Buttons for je_mfk_election_1836. Fund a faction's campaign: +6 support, six months of expenses, one campaign every 180 days, shared across all three.
+
+mfk_e1836_fund_jacksonian_button = {
+	name = "mfk_e1836_fund_jacksonian_button"
+	desc = "mfk_e1836_fund_jacksonian_button_desc"
+
+	possible = {
+		custom_tooltip = {
+			text = mfk_e1836_funding_cooldown_tt
+			NOT = { has_variable = mfk_e1836_funding_cooldown }
+		}
+	}
+
+	ai_chance = {
+		value = 5
+	}
+
+	effect = {
+		set_variable = {
+			name = mfk_e1836_funding_cooldown
+			days = 180
+		}
+		change_variable = { name = mfk_e1836_support_jacksonian add = 6 }
+		change_variable = { name = mfk_e1836_lean_jacksonian add = 6 }
+		add_modifier = {
+			name = mfk_e1836_rally_jacksonian
+			months = 6
+		}
+		add_modifier = {
+			name = mfk_e1836_funding_jacksonian
+			months = 6
+			multiplier = money_amount_multiplier_small
+		}
+		if = {
+			limit = { in_election_campaign = yes }
+			hidden_effect = {
+				py:conservative_party ?= { add_momentum = 0.2 }
+			}
+		}
+		custom_tooltip = mfk_e1836_mom_conservative_p20
+	}
+}
+
+mfk_e1836_fund_whig_button = {
+	name = "mfk_e1836_fund_whig_button"
+	desc = "mfk_e1836_fund_whig_button_desc"
+
+	possible = {
+		custom_tooltip = {
+			text = mfk_e1836_funding_cooldown_tt
+			NOT = { has_variable = mfk_e1836_funding_cooldown }
+		}
+	}
+
+	ai_chance = {
+		value = 5
+	}
+
+	effect = {
+		set_variable = {
+			name = mfk_e1836_funding_cooldown
+			days = 180
+		}
+		change_variable = { name = mfk_e1836_support_whig add = 6 }
+		change_variable = { name = mfk_e1836_lean_whig add = 6 }
+		add_modifier = {
+			name = mfk_e1836_rally_whig
+			months = 6
+		}
+		add_modifier = {
+			name = mfk_e1836_funding_whig
+			months = 6
+			multiplier = money_amount_multiplier_small
+		}
+		if = {
+			limit = { in_election_campaign = yes }
+			hidden_effect = {
+				py:liberal_party ?= { add_momentum = 0.2 }
+			}
+		}
+		custom_tooltip = mfk_e1836_mom_liberal_p20
+	}
+}
+
+mfk_e1836_fund_barnburner_button = {
+	name = "mfk_e1836_fund_barnburner_button"
+	desc = "mfk_e1836_fund_barnburner_button_desc"
+
+	possible = {
+		custom_tooltip = {
+			text = mfk_e1836_funding_cooldown_tt
+			NOT = { has_variable = mfk_e1836_funding_cooldown }
+		}
+	}
+
+	ai_chance = {
+		value = 5
+	}
+
+	effect = {
+		set_variable = {
+			name = mfk_e1836_funding_cooldown
+			days = 180
+		}
+		change_variable = { name = mfk_e1836_support_barnburner add = 6 }
+		change_variable = { name = mfk_e1836_lean_barnburner add = 6 }
+		add_modifier = {
+			name = mfk_e1836_rally_barnburner
+			months = 6
+		}
+		add_modifier = {
+			name = mfk_e1836_funding_barnburner
+			months = 6
+			multiplier = money_amount_multiplier_small
+		}
+		if = {
+			limit = { in_election_campaign = yes }
+			hidden_effect = {
+				py:liberal_party ?= { add_momentum = 0.2 }
+			}
+		}
+		custom_tooltip = mfk_e1836_mom_liberal_p20
+	}
+}

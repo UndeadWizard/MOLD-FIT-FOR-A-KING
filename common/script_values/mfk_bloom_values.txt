@@ -1,0 +1,8 @@
+﻿# State region scope: total Vatmoss spore release from every state in the region.
+mfk_state_region_spores = {
+	value = 0
+	every_scope_state = {
+		add = modifier:state_mfk_vatmoss_spores_add
+	}
+	min = 0
+}

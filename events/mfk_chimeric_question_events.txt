@@ -1,0 +1,603 @@
+﻿namespace = mfk_cq
+
+# The Chimeric Question must be answered (NAU)
+mfk_cq.1 = {
+	type = country_event
+	placement = root
+
+	title = mfk_cq.1.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { var:mfk_cq_question_var >= 50 }
+				desc = mfk_cq.1.d
+			}
+			triggered_desc = {
+				desc = mfk_cq.1.d_enforce
+			}
+		}
+	}
+	flavor = mfk_cq.1.f
+
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	fire_only_once = yes
+
+	option = { # The Verdigri Compromise
+		name = mfk_cq.1.a
+		default_option = yes
+		trigger = {
+			var:mfk_cq_question_var >= 50
+		}
+		mfk_verdigri_compromise_effect = yes
+		ai_chance = {
+			base = 70
+		}
+	}
+
+	option = { # Enforce the Act
+		name = mfk_cq.1.b
+		default_option = yes
+		trigger = {
+			var:mfk_cq_question_var < 50
+		}
+		mfk_enforce_abolition_effect = yes
+		ai_chance = {
+			base = 30
+			modifier = {
+				trigger = {
+					ig:ig_intelligentsia ?= { is_in_government = yes }
+				}
+				add = 40
+			}
+		}
+	}
+}
+
+# A dispatch from Whitehall (NAU)
+mfk_cq.2 = {
+	type = country_event
+	placement = root
+
+	title = mfk_cq.2.t
+	desc = mfk_cq.2.d
+	flavor = mfk_cq.2.f
+
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	cooldown = { days = 730 }
+
+	duration = 3
+
+	trigger = {
+		has_journal_entry = je_mfk_chimeric_question
+		NOT = { has_variable = mfk_calhoun_revolt_started }
+		NOT = { has_variable = mfk_verdigri_compromise }
+	}
+
+	option = { # Promise action
+		name = mfk_cq.2.a
+		default_option = yes
+		je:je_mfk_chimeric_question ?= {
+			add_progress = { value = -10 name = mfk_cq_question_bar }
+			add_progress = { value = 10 name = mfk_cq_tension_bar }
+		}
+		change_variable = { name = mfk_cq_shift_var add = -0.5 }
+		c:GBR ?= {
+			change_relations = {
+				country = ROOT
+				value = 10
+			}
+		}
+	}
+
+	option = { # Philadelphia governs itself
+		name = mfk_cq.2.b
+		je:je_mfk_chimeric_question ?= {
+			add_progress = { value = 5 name = mfk_cq_question_bar }
+			add_progress = { value = 5 name = mfk_cq_tension_bar }
+		}
+		change_variable = { name = mfk_cq_shift_var add = 0.25 }
+		c:GBR ?= {
+			change_relations = {
+				country = ROOT
+				value = -15
+			}
+		}
+	}
+}
+
+# The grey trade in a Slave State (NAU)
+mfk_cq.3 = {
+	type = country_event
+	placement = root
+
+	title = mfk_cq.3.t
+	desc = mfk_cq.3.d
+	flavor = mfk_cq.3.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_default.dds"
+
+	cooldown = { days = 730 }
+
+	duration = 3
+
+	trigger = {
+		has_journal_entry = je_mfk_chimeric_question
+		NOT = { has_variable = mfk_calhoun_revolt_started }
+		NOT = { has_variable = mfk_verdigri_compromise }
+		any_scope_state = { is_slave_state = yes }
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = { is_slave_state = yes }
+			save_scope_as = grey_trade_state
+		}
+	}
+
+	option = { # Make an example of the binders
+		name = mfk_cq.3.a
+		default_option = yes
+		je:je_mfk_chimeric_question ?= {
+			add_progress = { value = -8 name = mfk_cq_question_bar }
+			add_progress = { value = 8 name = mfk_cq_tension_bar }
+		}
+		change_variable = { name = mfk_cq_shift_var add = -0.4 }
+		scope:grey_trade_state = {
+			add_radicals_in_state = {
+				value = 0.1
+			}
+		}
+	}
+
+	option = { # Look the other way
+		name = mfk_cq.3.b
+		je:je_mfk_chimeric_question ?= {
+			add_progress = { value = 8 name = mfk_cq_question_bar }
+			add_progress = { value = 3 name = mfk_cq_tension_bar }
+		}
+		change_variable = { name = mfk_cq_shift_var add = 0.4 }
+	}
+}
+
+# A Verdigri freedom suit (NAU)
+mfk_cq.4 = {
+	type = country_event
+	placement = root
+
+	title = mfk_cq.4.t
+	desc = mfk_cq.4.d
+	flavor = mfk_cq.4.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	cooldown = { days = 730 }
+
+	duration = 3
+
+	trigger = {
+		has_journal_entry = je_mfk_chimeric_question
+		NOT = { has_variable = mfk_calhoun_revolt_started }
+		NOT = { has_variable = mfk_verdigri_compromise }
+	}
+
+	option = { # The court rules he is a man
+		name = mfk_cq.4.a
+		default_option = yes
+		je:je_mfk_chimeric_question ?= {
+			add_progress = { value = -15 name = mfk_cq_question_bar }
+			add_progress = { value = 15 name = mfk_cq_tension_bar }
+		}
+		change_variable = { name = mfk_cq_shift_var add = -0.75 }
+	}
+
+	option = { # The court rules he is property
+		name = mfk_cq.4.b
+		je:je_mfk_chimeric_question ?= {
+			add_progress = { value = 15 name = mfk_cq_question_bar }
+			add_progress = { value = 10 name = mfk_cq_tension_bar }
+		}
+		change_variable = { name = mfk_cq_shift_var add = 0.75 }
+		every_interest_group = {
+			limit = {
+				law_stance = {
+					law = law_type:law_slavery_banned
+					value > neutral
+				}
+			}
+			add_modifier = {
+				name = delayed_emancipation
+				days = short_modifier_time
+			}
+		}
+	}
+}
+
+# The governorships flaunt the Act (NAU)
+mfk_cq.5 = {
+	type = country_event
+	placement = root
+
+	title = mfk_cq.5.t
+	desc = mfk_cq.5.d
+	flavor = mfk_cq.5.f
+
+	event_image = {
+		video = "europenorthamerica_political_extremism"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	cooldown = { days = 730 }
+
+	duration = 3
+
+	trigger = {
+		has_journal_entry = je_mfk_chimeric_question
+		NOT = { has_variable = mfk_calhoun_revolt_started }
+		NOT = { has_variable = mfk_verdigri_compromise }
+		any_subject_or_below = {
+			OR = {
+				c:SCR ?= THIS
+				c:NCR ?= THIS
+				c:GRG ?= THIS
+				c:FLR ?= THIS
+			}
+		}
+	}
+
+	immediate = {
+		random_subject_or_below = {
+			limit = {
+				OR = {
+					c:SCR ?= THIS
+					c:NCR ?= THIS
+					c:GRG ?= THIS
+					c:FLR ?= THIS
+				}
+			}
+			save_scope_as = defiant_governorship
+		}
+	}
+
+	option = { # Remonstrate with the governor
+		name = mfk_cq.5.a
+		default_option = yes
+		je:je_mfk_chimeric_question ?= {
+			add_progress = { value = -5 name = mfk_cq_question_bar }
+			add_progress = { value = 10 name = mfk_cq_tension_bar }
+		}
+		change_variable = { name = mfk_cq_shift_var add = -0.25 }
+		scope:defiant_governorship = {
+			add_liberty_desire = 5
+		}
+	}
+
+	option = { # Let Jackson's exemption stand
+		name = mfk_cq.5.b
+		je:je_mfk_chimeric_question ?= {
+			add_progress = { value = 10 name = mfk_cq_question_bar }
+			add_progress = { value = 3 name = mfk_cq_tension_bar }
+		}
+		change_variable = { name = mfk_cq_shift_var add = 0.5 }
+	}
+}
+
+# The Vat Deaths: reports of deaths in compulsory refinement open the Chimeric Question (NAU, after the 1836 election)
+mfk_cq.6 = {
+	type = country_event
+	placement = root
+
+	title = mfk_cq.6.t
+	desc = mfk_cq.6.d
+	flavor = mfk_cq.6.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	fire_only_once = yes
+
+	trigger = {
+		has_law = law_type:law_chimeric_question
+		NOT = { has_variable = mfk_cq_vat_deaths_reported }
+	}
+
+	option = { # Open an inquiry in the Commons
+		name = mfk_cq.6.a
+		default_option = yes
+		set_variable = mfk_cq_vat_deaths_reported
+		if = {
+			limit = { NOT = { has_variable = mfk_cq_shift_var } }
+			set_variable = { name = mfk_cq_shift_var value = 0 }
+		}
+		change_variable = { name = mfk_cq_shift_var add = -0.5 }
+		custom_tooltip = mfk_cq.6.a_tt
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	option = { # The provinces govern their own labourers
+		name = mfk_cq.6.b
+		set_variable = mfk_cq_vat_deaths_reported
+		if = {
+			limit = { NOT = { has_variable = mfk_cq_shift_var } }
+			set_variable = { name = mfk_cq_shift_var value = 0 }
+		}
+		change_variable = { name = mfk_cq_shift_var add = 0.5 }
+		custom_tooltip = mfk_cq.6.b_tt
+		c:GBR ?= {
+			change_relations = {
+				country = ROOT
+				value = -5
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# The Emancipation Crisis: Britain ends Caribbean apprenticeship early (NAU, 1 August 1838)
+mfk_cq.7 = {
+	type = country_event
+	placement = root
+
+	title = mfk_cq.7.t
+	desc = mfk_cq.7.d
+	flavor = mfk_cq.7.f
+
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	fire_only_once = yes
+
+	trigger = {
+		has_law = law_type:law_chimeric_question
+		NOT = { has_variable = mfk_cq_opened }
+	}
+
+	option = { # Freedom is freedom
+		name = mfk_cq.7.a
+		default_option = yes
+		if = {
+			limit = { NOT = { has_variable = mfk_cq_shift_var } }
+			set_variable = { name = mfk_cq_shift_var value = 0 }
+		}
+		change_variable = { name = mfk_cq_shift_var add = -0.5 }
+		custom_tooltip = mfk_cq.6.a_tt
+		c:GBR ?= {
+			change_relations = {
+				country = ROOT
+				value = 10
+			}
+		}
+		ig:ig_landowners ?= {
+			add_modifier = {
+				name = delayed_emancipation
+				days = short_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	option = { # Apprenticeship is not refinement
+		name = mfk_cq.7.b
+		if = {
+			limit = { NOT = { has_variable = mfk_cq_shift_var } }
+			set_variable = { name = mfk_cq_shift_var value = 0 }
+		}
+		change_variable = { name = mfk_cq_shift_var add = 0.5 }
+		custom_tooltip = mfk_cq.6.b_tt
+		ig:ig_intelligentsia ?= {
+			add_modifier = {
+				name = delayed_emancipation
+				days = short_modifier_time
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# The Parliamentary Investigation: testimony on the vats opens the Chimeric Question (NAU, 1 March 1839)
+mfk_cq.8 = {
+	type = country_event
+	placement = root
+
+	title = mfk_cq.8.t
+	desc = mfk_cq.8.d
+	flavor = mfk_cq.8.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	fire_only_once = yes
+
+	trigger = {
+		has_law = law_type:law_chimeric_question
+		NOT = { has_variable = mfk_cq_opened }
+	}
+
+	option = { # Publish the testimony
+		name = mfk_cq.8.a
+		default_option = yes
+		if = {
+			limit = { NOT = { has_variable = mfk_cq_shift_var } }
+			set_variable = { name = mfk_cq_shift_var value = 0 }
+		}
+		change_variable = { name = mfk_cq_shift_var add = -0.5 }
+		set_variable = mfk_cq_opened
+		custom_tooltip = mfk_cq.8.a_tt
+		add_journal_entry = { type = je_mfk_chimeric_question }
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	option = { # Seal the findings
+		name = mfk_cq.8.b
+		if = {
+			limit = { NOT = { has_variable = mfk_cq_shift_var } }
+			set_variable = { name = mfk_cq_shift_var value = 0 }
+		}
+		change_variable = { name = mfk_cq_shift_var add = 0.5 }
+		set_variable = mfk_cq_opened
+		custom_tooltip = mfk_cq.8.b_tt
+		add_journal_entry = { type = je_mfk_chimeric_question }
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# The Division in the Commons: the decisive vote cuts a Chimeric Question bill short (NAU)
+mfk_cq.10 = {
+	type = country_event
+	placement = root
+
+	title = mfk_cq.10.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { has_variable = mfk_cq_bill_compromise }
+				desc = mfk_cq.10.d_compromise
+			}
+			triggered_desc = {
+				desc = mfk_cq.10.d_enforce
+			}
+		}
+	}
+	flavor = mfk_cq.10.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	duration = 3
+
+	immediate = {
+		je:je_mfk_chimeric_question ?= {
+			save_scope_as = cq_journal_entry
+		}
+		set_variable = {
+			name = mfk_cq_question_var
+			value = "je:je_mfk_chimeric_question.scripted_bar_progress(mfk_cq_question_bar)"
+		}
+	}
+
+	# The bill carries: the Question still backs it
+	option = {
+		name = mfk_cq.10.a
+		default_option = yes
+		trigger = {
+			OR = {
+				AND = {
+					has_variable = mfk_cq_bill_compromise
+					var:mfk_cq_question_var >= 50
+				}
+				AND = {
+					has_variable = mfk_cq_bill_enforce
+					var:mfk_cq_question_var < 50
+				}
+			}
+		}
+		mfk_cq_pass_bill_effect = yes
+	}
+
+	# Whip the vote: a narrow miss, forced through
+	option = {
+		name = mfk_cq.10.b
+		trigger = {
+			OR = {
+				AND = {
+					has_variable = mfk_cq_bill_compromise
+					var:mfk_cq_question_var < 50
+					var:mfk_cq_question_var >= 40
+				}
+				AND = {
+					has_variable = mfk_cq_bill_enforce
+					var:mfk_cq_question_var >= 50
+					var:mfk_cq_question_var < 60
+				}
+			}
+		}
+		add_modifier = {
+			name = mfk_cq_forced_settlement
+			years = 2
+		}
+		mfk_cq_pass_bill_effect = yes
+	}
+
+	# The bill is defeated
+	option = {
+		name = mfk_cq.10.c
+		trigger = {
+			OR = {
+				AND = {
+					has_variable = mfk_cq_bill_compromise
+					var:mfk_cq_question_var < 50
+				}
+				AND = {
+					has_variable = mfk_cq_bill_enforce
+					var:mfk_cq_question_var >= 50
+				}
+			}
+		}
+		cancel_enactment = yes
+		je:je_mfk_chimeric_question ?= {
+			add_progress = { value = 15 name = mfk_cq_tension_bar }
+		}
+		custom_tooltip = mfk_cq.10.c_tt
+		mfk_cq_clear_bill_effect = yes
+	}
+}
+

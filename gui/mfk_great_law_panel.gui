@@ -156,7 +156,21 @@ types mfk_great_law_types
 
 		blockoverride "close_great_law_panel" {}
 
-		blockoverride "entire_back_button" {}
+		# The panel's emblem fills the back button's socket in the header
+		blockoverride "entire_back_button" {
+			button_icon_round = {
+				position = { 8 30 }
+				size = { 47 47 }
+				tooltip = "MFK_GREAT_LAW_BUTTON_TT"
+
+				blockoverride "icon" {
+					texture = "gfx/interface/icons/faction_icons/faction_grand_hoyaneh.dds"
+				}
+				blockoverride "icon_size" {
+					size = { 34 34 }
+				}
+			}
+		}
 
 		blockoverride "header_close_button" {
 			onclick = "[GetVariableSystem.Clear('mfk_great_law_open')]"

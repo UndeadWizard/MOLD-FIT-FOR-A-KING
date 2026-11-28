@@ -1,0 +1,84 @@
+﻿# The Vatmoss bloom. Seeded by uncontained Vatmoss (spore release from open hotbeds and backwoods use),
+# spreads to neighbouring regions, and burns itself out: blooming regions gain devastation, and a
+# devastated or burned region cannot bloom again until it recovers.
+mfk_vatmoss_bloom = {
+	trigger = {
+		is_arid_region = no
+		NOT = {
+			any_scope_state = {
+				devastation > 0.4
+			}
+		}
+		NOT = {
+			any_scope_state = {
+				has_decree = decree_mfk_moss_burning
+			}
+		}
+	}
+
+	incompatible_with = drought
+	incompatible_with = heatwave
+
+	range = {
+		integer_range = {
+			min = 0
+			max = 1
+		}
+	}
+
+	duration = {
+		fixed_range = {
+			min = 26
+			max = 52
+		}
+	}
+
+	modifier = {
+		building_group_bg_agriculture_throughput_add = -0.03
+		building_group_bg_ranching_throughput_add = -0.03
+		building_group_bg_plantations_throughput_add = -0.02
+		state_peasants_consumption_multiplier_add = 0.02
+		building_vatmoss_hotbed_throughput_add = 0.05
+	}
+
+	intensity = {
+		fixed_range = {
+			min = 2
+			max = 5
+		}
+		if = {
+			limit = {
+				has_global_variable = mfk_first_bloom_var
+				is_homeland = cu:irish
+			}
+			add = 2
+		}
+	}
+
+	chance = {
+		value = mfk_state_region_spores
+		multiply = 0.0001
+		if = { # The first bloom: Lancashire's spores reach Ireland's potato fields
+			limit = {
+				has_global_variable = mfk_first_bloom_var
+				any_scope_state = {
+					region = sr:region_western_europe
+				}
+			}
+			if = {
+				limit = {
+					is_homeland = cu:irish
+				}
+				add = 0.02
+			}
+			else = {
+				multiply = 10
+			}
+		}
+	}
+
+	color = { 92 120 70 }
+	icon = "gfx/interface/icons/harvest_condition_icons/disease_outbreak.dds"
+	map_texture = "gfx/map/map_painting/harvest_conditions_map_patterns/harvest_conditions_bad.dds"
+	graphics = disease_outbreak
+}

@@ -21,3 +21,11 @@ movement_support_mfk_sheltered_cultures = {
 		is_political_movement_type = movement_dehorners
 	}
 }
+
+movement_support_je_mfk_nullification_crisis = {
+	name = je_mfk_nullification_crisis
+
+	visible = {
+		owner ?= { has_journal_entry = je_mfk_nullification_crisis }
+	}
+}

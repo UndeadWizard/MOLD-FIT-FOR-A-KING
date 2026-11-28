@@ -1,0 +1,513 @@
+﻿namespace = mfk_p1837
+
+# The banks suspend payment (NAU, 10 May 1837)
+mfk_p1837.1 = {
+	type = country_event
+	placement = root
+
+	title = mfk_p1837.1.t
+	desc = mfk_p1837.1.d
+	flavor = mfk_p1837.1.f
+
+	event_image = {
+		video = "unspecific_factory_closed"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	fire_only_once = yes
+
+	immediate = {
+		set_global_variable = mfk_panic_1837_var
+		save_scope_as = nau_scope
+	}
+
+	option = {
+		name = mfk_p1837.1.a
+		default_option = yes
+		if = {
+			limit = {
+				exists = c:GBR
+				is_subject_of = c:GBR
+			}
+			custom_tooltip = mfk_p1837.1.a_tt
+			c:GBR = {
+				trigger_event = { id = mfk_p1837.4 popup = yes }
+			}
+		}
+		else = {
+			trigger_event = { id = mfk_p1837.5 days = 7 popup = yes }
+		}
+	}
+
+}
+
+# The Cotton Collapse (NAU, six months into the crash)
+mfk_p1837.2 = {
+	type = country_event
+	placement = root
+
+	title = mfk_p1837.2.t
+	desc = mfk_p1837.2.d
+	flavor = mfk_p1837.2.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	fire_only_once = yes
+
+	option = { # Relief for the cotton growers: back Biddle's scheme to hold up the price
+		name = mfk_p1837.2.a
+		default_option = yes
+		add_modifier = {
+			name = mfk_cotton_relief_costs
+			years = 2
+			multiplier = money_amount_multiplier_medium
+		}
+		add_modifier = {
+			name = mfk_biddle_cotton
+			years = 2
+		}
+		every_subject_or_below = {
+			limit = { is_involved_in_journal_entry = je_mfk_panic_1837 }
+			add_modifier = {
+				name = mfk_biddle_cotton
+				years = 2
+			}
+		}
+		je:je_mfk_panic_1837 ?= {
+			set_variable = { name = mfk_biddle_months_var value = 0 }
+		}
+		custom_tooltip = mfk_panic_biddle_reckoning_tt
+		if = {
+			limit = { NOT = { has_variable = mfk_cq_shift_var } }
+			set_variable = { name = mfk_cq_shift_var value = 0 }
+		}
+		change_variable = { name = mfk_cq_shift_var add = 0.25 }
+		custom_tooltip = mfk_p1837.2.a_tt
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	option = { # The market will correct itself
+		name = mfk_p1837.2.b
+		ig:ig_landowners ?= {
+			add_modifier = {
+				name = delayed_emancipation
+				days = normal_modifier_time
+			}
+		}
+		set_global_variable = {
+			name = mfk_cotton_collapse
+			years = 3
+		}
+		custom_tooltip = mfk_p1837.2.b_tt
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# The recovery (NAU)
+mfk_p1837.3 = {
+	type = country_event
+	placement = root
+
+	title = mfk_p1837.3.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { has_variable = mfk_boe_loan }
+				desc = mfk_p1837.3.d_loan
+			}
+			triggered_desc = {
+				desc = mfk_p1837.3.d_treasury
+			}
+		}
+	}
+	flavor = mfk_p1837.3.f
+
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	fire_only_once = yes
+
+	option = {
+		name = mfk_p1837.3.a
+		default_option = yes
+	}
+}
+
+# The American Panic: London decides whether to extend credit to Philadelphia (Great Britain)
+mfk_p1837.4 = {
+	type = country_event
+	placement = root
+
+	title = mfk_p1837.4.t
+	desc = mfk_p1837.4.d
+	flavor = mfk_p1837.4.f
+
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	option = { # Extend the Bank of England's credit
+		name = mfk_p1837.4.a
+		default_option = yes
+		add_modifier = {
+			name = mfk_boe_loan_outlay
+			years = 2
+			multiplier = money_amount_multiplier_medium
+		}
+		change_relations = {
+			country = scope:nau_scope
+			value = 20
+		}
+		scope:nau_scope = {
+			add_liberty_desire = -10
+			set_variable = mfk_boe_offered
+			trigger_event = { id = mfk_p1837.5 days = 7 popup = yes }
+		}
+		ai_chance = {
+			base = 70
+		}
+	}
+
+	option = { # Let the colonials sort it out
+		name = mfk_p1837.4.b
+		change_relations = {
+			country = scope:nau_scope
+			value = -15
+		}
+		scope:nau_scope = {
+			trigger_event = { id = mfk_p1837.5 days = 7 popup = yes }
+		}
+		ai_chance = {
+			base = 30
+		}
+	}
+}
+
+# London's answer: accept the Bank of England's credit, or go it alone (NAU)
+mfk_p1837.5 = {
+	type = country_event
+	placement = root
+
+	title = mfk_p1837.5.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { has_variable = mfk_boe_offered }
+				desc = mfk_p1837.5.d_offered
+			}
+			triggered_desc = {
+				desc = mfk_p1837.5.d_refused
+			}
+		}
+	}
+	flavor = mfk_p1837.5.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	fire_only_once = yes
+
+	option = { # Bank of England credit
+		name = mfk_p1837.5.a
+		default_option = yes
+		trigger = { has_variable = mfk_boe_offered }
+		set_variable = mfk_boe_loan
+		# London's money breeds its own resentment
+		trigger_event = { id = mfk_p1837.8 days = 240 popup = yes }
+		add_modifier = {
+			name = mfk_boe_credit
+			years = 5
+		}
+		add_modifier = {
+			name = mfk_boe_repayments
+			years = 5
+			multiplier = money_amount_multiplier_medium
+		}
+		c:GBR ?= {
+			change_relations = {
+				country = ROOT
+				value = 15
+			}
+			add_modifier = {
+				name = mfk_boe_repayments_received
+				years = 5
+				multiplier = money_amount_multiplier_medium
+			}
+		}
+		custom_tooltip = mfk_p1837.5.a_tt
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	option = { # An Independent Treasury
+		name = mfk_p1837.5.b
+		add_modifier = {
+			name = mfk_independent_treasury
+			years = 5
+		}
+		ig:ig_industrialists ?= {
+			add_modifier = {
+				name = mfk_independent_treasury_bankers
+				years = 5
+			}
+		}
+		custom_tooltip = mfk_p1837.5.b_tt
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+
+# Biddle's Corner: the cotton scheme comes due (NAU)
+mfk_p1837.6 = {
+	type = country_event
+	placement = root
+
+	title = mfk_p1837.6.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { has_variable = mfk_biddle_collapsed }
+				desc = mfk_p1837.6.d_collapse
+			}
+			triggered_desc = {
+				desc = mfk_p1837.6.d_holds
+			}
+		}
+	}
+	flavor = mfk_p1837.6.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	fire_only_once = yes
+
+	immediate = {
+		random_list = {
+			60 = { set_variable = mfk_biddle_collapsed }
+			40 = {}
+		}
+	}
+
+	option = { # The scheme collapses
+		name = mfk_p1837.6.a
+		default_option = yes
+		trigger = { has_variable = mfk_biddle_collapsed }
+		je:je_mfk_panic_1837 ?= {
+			add_progress = { value = -10 name = mfk_panic_1837_recovery_bar }
+		}
+		ig:ig_industrialists ?= {
+			add_modifier = {
+				name = mfk_biddle_ruined
+				years = 2
+			}
+		}
+	}
+
+	option = { # The scheme holds
+		name = mfk_p1837.6.b
+		default_option = yes
+		trigger = { NOT = { has_variable = mfk_biddle_collapsed } }
+		je:je_mfk_panic_1837 ?= {
+			add_progress = { value = 6 name = mfk_panic_1837_recovery_bar }
+		}
+	}
+}
+
+# The Florida Bonds: a Governorship threatens to repudiate its London-held bonds (NAU)
+mfk_p1837.7 = {
+	type = country_event
+	placement = root
+
+	title = mfk_p1837.7.t
+	desc = mfk_p1837.7.d
+	flavor = mfk_p1837.7.f
+
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	fire_only_once = yes
+
+	trigger = {
+		exists = c:FLR
+		c:FLR = { is_subject_of = ROOT }
+	}
+
+	immediate = {
+		c:FLR = { save_scope_as = mfk_bond_governorship }
+	}
+
+	option = { # Philadelphia guarantees the bonds
+		name = mfk_p1837.7.a
+		default_option = yes
+		add_modifier = {
+			name = mfk_bond_guarantee
+			years = 3
+			multiplier = money_amount_multiplier_medium
+		}
+		c:GBR ?= {
+			change_relations = {
+				country = ROOT
+				value = 10
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	option = { # Ask the Treasury in London to stand behind them
+		name = mfk_p1837.7.b
+		trigger = {
+			exists = c:GBR
+			is_subject_of = c:GBR
+		}
+		add_modifier = {
+			name = mfk_imperial_bond_oversight
+			years = 10
+		}
+		add_liberty_desire = -10
+		ig:ig_rural_folk ?= {
+			add_modifier = {
+				name = mfk_crown_oversight_resented
+				years = 3
+			}
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+
+	option = { # Let Florida default
+		name = mfk_p1837.7.c
+		add_modifier = {
+			name = mfk_repudiation
+			years = 5
+		}
+		c:GBR ?= {
+			change_relations = {
+				country = ROOT
+				value = -20
+			}
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+
+# The Hunters' Lodges: anti-imperial societies spread after London's bailout (NAU)
+mfk_p1837.8 = {
+	type = country_event
+	placement = root
+
+	title = mfk_p1837.8.t
+	desc = mfk_p1837.8.d
+	flavor = mfk_p1837.8.f
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_protest.dds"
+
+	duration = 3
+
+	fire_only_once = yes
+
+	trigger = {
+		exists = c:GBR
+		is_subject_of = c:GBR
+	}
+
+	option = { # Break up the lodges
+		name = mfk_p1837.8.a
+		default_option = yes
+		ig:ig_rural_folk ?= {
+			add_modifier = {
+				name = mfk_lodges_suppressed
+				years = 2
+			}
+		}
+		ig:ig_intelligentsia ?= {
+			add_modifier = {
+				name = mfk_lodges_suppressed
+				years = 2
+			}
+		}
+		c:GBR ?= {
+			change_relations = {
+				country = ROOT
+				value = 10
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	option = { # They are only talking
+		name = mfk_p1837.8.b
+		add_modifier = {
+			name = mfk_hunters_lodges
+			years = 3
+		}
+		add_liberty_desire = 10
+		c:GBR ?= {
+			change_relations = {
+				country = ROOT
+				value = -10
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+}
+

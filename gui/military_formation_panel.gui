@@ -2838,19 +2838,130 @@ types military_formation_panel_types
 			}
 		}
 
-		dynamicgridbox = {
+		# Unit groups in a fixed order: one pass over the eligible groups per group.
+		# Groups the country has no unit types for stay hidden.
+		flowcontainer = {
 			visible = "[MilitaryFormation.IsArmy]"
 			parentanchor = hcenter
+			direction = vertical
 
-			datamodel = "[MilitaryFormation.GetEligibleGroups]"
+			# infantry
+			dynamicgridbox = {
+				parentanchor = hcenter
+				datamodel = "[MilitaryFormation.GetEligibleGroups]"
 
-			item = {
-				flowcontainer = {
-					# hide groups the country has no unit types for
-					visible = "[MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).IsValid]"
-					margin = { 0 5 }
+				item = {
+					flowcontainer = {
+						visible = "[And( MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).IsValid, ObjectsEqual(CombatUnitGroup.Self, GetCombatUnitGroup('combat_unit_group_infantry').Self) )]"
+						margin = { 0 5 }
 
-					military_formation_unit_type_group = {}
+						military_formation_unit_type_group = {}
+					}
+				}
+			}
+
+			# galvanic_infantry
+			dynamicgridbox = {
+				parentanchor = hcenter
+				datamodel = "[MilitaryFormation.GetEligibleGroups]"
+
+				item = {
+					flowcontainer = {
+						visible = "[And( MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).IsValid, ObjectsEqual(CombatUnitGroup.Self, GetCombatUnitGroup('combat_unit_group_galvanic_infantry').Self) )]"
+						margin = { 0 5 }
+
+						military_formation_unit_type_group = {}
+					}
+				}
+			}
+
+			# voltaic_infantry
+			dynamicgridbox = {
+				parentanchor = hcenter
+				datamodel = "[MilitaryFormation.GetEligibleGroups]"
+
+				item = {
+					flowcontainer = {
+						visible = "[And( MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).IsValid, ObjectsEqual(CombatUnitGroup.Self, GetCombatUnitGroup('combat_unit_group_voltaic_infantry').Self) )]"
+						margin = { 0 5 }
+
+						military_formation_unit_type_group = {}
+					}
+				}
+			}
+
+			# artillery
+			dynamicgridbox = {
+				parentanchor = hcenter
+				datamodel = "[MilitaryFormation.GetEligibleGroups]"
+
+				item = {
+					flowcontainer = {
+						visible = "[And( MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).IsValid, ObjectsEqual(CombatUnitGroup.Self, GetCombatUnitGroup('combat_unit_group_artillery').Self) )]"
+						margin = { 0 5 }
+
+						military_formation_unit_type_group = {}
+					}
+				}
+			}
+
+			# cavalry
+			dynamicgridbox = {
+				parentanchor = hcenter
+				datamodel = "[MilitaryFormation.GetEligibleGroups]"
+
+				item = {
+					flowcontainer = {
+						visible = "[And( MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).IsValid, ObjectsEqual(CombatUnitGroup.Self, GetCombatUnitGroup('combat_unit_group_cavalry').Self) )]"
+						margin = { 0 5 }
+
+						military_formation_unit_type_group = {}
+					}
+				}
+			}
+
+			# armor
+			dynamicgridbox = {
+				parentanchor = hcenter
+				datamodel = "[MilitaryFormation.GetEligibleGroups]"
+
+				item = {
+					flowcontainer = {
+						visible = "[And( MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).IsValid, ObjectsEqual(CombatUnitGroup.Self, GetCombatUnitGroup('combat_unit_group_armor').Self) )]"
+						margin = { 0 5 }
+
+						military_formation_unit_type_group = {}
+					}
+				}
+			}
+
+			# marines
+			dynamicgridbox = {
+				parentanchor = hcenter
+				datamodel = "[MilitaryFormation.GetEligibleGroups]"
+
+				item = {
+					flowcontainer = {
+						visible = "[And( MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).IsValid, ObjectsEqual(CombatUnitGroup.Self, GetCombatUnitGroup('combat_unit_group_marines').Self) )]"
+						margin = { 0 5 }
+
+						military_formation_unit_type_group = {}
+					}
+				}
+			}
+
+			# any other group, in engine order
+			dynamicgridbox = {
+				parentanchor = hcenter
+				datamodel = "[MilitaryFormation.GetEligibleGroups]"
+
+				item = {
+					flowcontainer = {
+						visible = "[And( MilitaryFormation.GetSelectedUnitTypeForGroup(CombatUnitGroup.Self).IsValid, Not( Or( ObjectsEqual(CombatUnitGroup.Self, GetCombatUnitGroup('combat_unit_group_infantry').Self), Or( ObjectsEqual(CombatUnitGroup.Self, GetCombatUnitGroup('combat_unit_group_galvanic_infantry').Self), Or( ObjectsEqual(CombatUnitGroup.Self, GetCombatUnitGroup('combat_unit_group_voltaic_infantry').Self), Or( ObjectsEqual(CombatUnitGroup.Self, GetCombatUnitGroup('combat_unit_group_artillery').Self), Or( ObjectsEqual(CombatUnitGroup.Self, GetCombatUnitGroup('combat_unit_group_cavalry').Self), Or( ObjectsEqual(CombatUnitGroup.Self, GetCombatUnitGroup('combat_unit_group_armor').Self), ObjectsEqual(CombatUnitGroup.Self, GetCombatUnitGroup('combat_unit_group_marines').Self) ) ) ) ) ) ) ) )]"
+						margin = { 0 5 }
+
+						military_formation_unit_type_group = {}
+					}
 				}
 			}
 		}

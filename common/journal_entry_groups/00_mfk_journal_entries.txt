@@ -26,3 +26,10 @@ je_group_great_law = {
 	context = country
 	updates_strategic_region_stances = yes
 }
+
+# Calhoun's Revolt. Uses the crises illustration rather than vanilla's American Civil War art.
+je_group_calhoun_revolt = {
+	context = country
+	illustration = "gfx/interface/illustrations/journal/je_group_illu_crises.dds"
+	themed = yes
+}
