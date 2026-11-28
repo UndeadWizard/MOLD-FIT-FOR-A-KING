@@ -15,3 +15,6 @@
  gov_compagnie_des_indes:0 "Conseil Supérieur"
  gov_compagnie_des_indes_desc:0 "The Compagnie des Indes, bankrupt since 1769, governs Pondicherry and the Circars through its Conseil supérieur. Its [Concept('concept_ruler','$RULER_TITLE_COMMANDANT_GENERAL|q$')] answers to the restored Crown in name, but the officers who ran French India alone through the years of warlordism have not forgotten it.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
  RULER_TITLE_COMMANDANT_GENERAL:0 "Commandant-Général"
+ gov_mamluk_beylicate:0 "Mamluk Beylicate"
+ gov_mamluk_beylicate_desc:0 "Egypt is ruled by its Mamluk beys, a caste of soldiers bought as boys in the Caucasus, freed, and raised in the great households of Cairo. The Porte still sends a pasha to the Citadel, but power rests with the chief bey, the [Concept('concept_ruler','$RULER_TITLE_SHAYKH_AL_BALAD|q$')]. When he dies, the beys choose his successor from among themselves.\n\n$TRANSFER_OF_POWER_NAME_DESC$"
+ RULER_TITLE_SHAYKH_AL_BALAD:0 "Shaykh al-Balad"

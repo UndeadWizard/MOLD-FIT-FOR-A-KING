@@ -16,3 +16,27 @@
 		post_change_to_dictatorial = yes
 	}
 }
+
+# Egypt is held by the Mamluk beys. The Porte sends a pasha, but the chief bey, the Shaykh al-Balad, rules from Cairo.
+# Mamluk households pass power to freedmen of the household, not to sons, so there is no heir.
+gov_mamluk_beylicate = {
+	transfer_of_power = dictatorial
+	male_ruler = "RULER_TITLE_SHAYKH_AL_BALAD"
+	female_ruler = "" # Empty on purpose
+
+	possible = {
+		has_law = law_type:law_monarchy
+		exists = c:EGY
+		c:EGY = ROOT
+		NOT = { is_subject_type = subject_type_crown_land }
+		has_gov_regency = no
+		is_domain_alliance_gov = no
+	}
+
+	on_government_type_change = {
+		change_to_dictatorial = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_dictatorial = yes
+	}
+}

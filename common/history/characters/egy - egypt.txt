@@ -1,0 +1,15 @@
+﻿CHARACTERS = {
+	c:EGY ?= {
+		create_character = {
+			template = mfk_egy_husayn_bey_al_alfi_template
+		}
+
+		create_character = {
+			template = egy_rifa_a_at-Tahtawi
+		}
+
+		create_character = {
+			template = EGY_matush_bey
+		}
+	}
+}

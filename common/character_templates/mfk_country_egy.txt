@@ -1,0 +1,24 @@
+﻿# Egypt - EGY
+
+### Rulers
+
+mfk_egy_husayn_bey_al_alfi_template = {
+	first_name = "Husayn"
+	last_name = "mfk_bey_al_alfi"
+	historical = yes
+	birth_date = 1781.6.1
+	ruler = yes
+	is_general = yes
+	commander_rank = commander_rank_3
+	hq = region_nile_basin
+	culture = cu:circassian
+	religion = rel:sunni
+	interest_group = ig_armed_forces
+	ideology = ideology_traditionalist
+	home_region = STATE_LOWER_EGYPT
+	traits = {
+		ambitious
+		imperious
+		plains_commander
+	}
+}
