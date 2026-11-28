@@ -1,0 +1,35 @@
+﻿l_english:
+ state_mfk_vatmoss_spores_add:0 "Vatmoss Spore Release"
+ state_mfk_vatmoss_spores_add_desc:0 "Uncontained Vatmoss released into the state. The more spores a region releases, the more likely a Vatmoss bloom becomes. Refining Vatmoss into plasm or iksir destroys it and lowers the release."
+
+ mfk_vatmoss_bloom:0 "Vatmoss Bloom"
+ mfk_vatmoss_bloom_desc:0 "Wild Vatmoss is spreading through the fields, smothering crops and feeding on the soil. Each month the bloom lasts, it adds [concept_devastation] to the region."
+
+ decree_mfk_moss_burning:0 "Moss Burning"
+ decree_mfk_moss_burning_desc:0 "Burn infected fields and the hotbeds around them. Stops the bloom from taking hold or spreading here and limits the [concept_devastation] it causes, at the cost of this season's harvest. Only available in states blooming or bordering a bloom while a bloom [concept_journal_entry] is active."
+
+ je_mfk_vatmoss_bloom:0 "Vatmoss Bloom"
+ je_mfk_vatmoss_bloom_reason:0 "Wild Vatmoss has broken out across our states. Where it spreads it eats the harvest and strips the soil, adding [concept_devastation] every month until there is nothing left for it to feed on.\n\nThe bloom ends when no state of ours is blooming, either because it has burned itself out or because we have burned it out first with the $decree_mfk_moss_burning$ decree."
+ mfk_bloom_cooldown_tt:0 "A bloom has not ended in our lands within the past year"
+ mfk_first_bloom_over_tt:0 "The bloom has been raging for at least a year, and no state in Western Europe is blooming any longer"
+
+ hungry_forties_triggered_tt:0 "The summer of 1845 has arrived"
+ je_the_hungry_forties_reason:0 "Spores from the open Vatmoss hotbeds of Lancashire have crossed the Irish Sea and taken hold in Ireland's potato fields. The bloom is spreading through Western Europe, eating the harvest and stripping the soil wherever it passes.\n\n#b The Great Bloom#!:\nWhile this [concept_journal_entry] is active, the $mfk_vatmoss_bloom$ [concept_harvest_condition] spreads rapidly through Western Europe, and hardest of all through Ireland. Blooming states gain [concept_devastation] every month until the bloom burns itself out. The $decree_mfk_moss_burning$ decree can contain it, at a cost.\n\nThe bloom ends when no state in the region is blooming."
+
+ hungry_forties.1.d:0 "Wild Vatmoss has broken out in [SCOPE.sState('relevant_state').GetName] and is spreading through the fields of Western Europe. Where it passes, the crop rots under a grey-green mat and the soil beneath is left spent. With a failed harvest looming, fears of famine have begun to circle."
+ hungry_forties.1.f:0 "The doctor lifted the mat of moss with his instrument, and leaned aside so his colleague could see. Beneath it, the potato had collapsed into a grey pulp, threaded with green.\n\n"It's the bloom, I'm afraid. Spores off the Lancashire beds, most likely. Every field in the parish will be the same within the month. As it stands, I would recommend extraordinary measures.""
+ hungry_forties.2.d:0 "The bloom that wracked Western Europe throughout the "hungry [SCOPE.GetRootScope.GetCountry.GetCustom('getDecadeName')]" has finally burned out. The scoured fields will take years to recover, and in Ireland whole parishes have emptied onto the ships bound for the Union."
+ hungry_forties.2.f:0 ""Did you hear? They're burning the beds at the first sign of it now, by order."\n\nThe man leaning on the other side of the fence raised an eyebrow. "About time. Too late, even. I had to have my kids eating hay to make it through the winter."\n\n"You got off easy. The family down the road took the boat to Boston. Too damned late, indeed.""
+
+ modifier_european_potato_famine:0 "The Great Bloom"
+ modifier_european_potato_famine_relief:0 "Bloom Famine Relief"
+
+ hungry_forties_rye_tt:0 "[THIS.GetState.GetName] is a #b Rye#! and #b Potato#!-producing region, severely exposed to #v The Great Bloom#!"
+ hungry_forties_wheat_tt:0 "[THIS.GetState.GetName] is a #b Wheat#!-producing region, moderately exposed to #v The Great Bloom#!"
+ hungry_forties_maize_tt:0 "[THIS.GetState.GetName] is a #b Maize#!-producing region, largely sheltered from #v The Great Bloom#!"
+ hungry_forties_rice_tt:0 "[THIS.GetState.GetName] is a #b Rice#!-producing region, largely sheltered from #v The Great Bloom#!"
+ hungry_forties_livestock_tt:0 "[THIS.GetState.GetName] is a region sustained by #b Fishing#! and #b Livestock#!, largely sheltered from #v The Great Bloom#!"
+ hungry_forties_disease_outbreak_tt:0 "[THIS.GetState.GetName] is in the grip of a $mfk_vatmoss_bloom$"
+ decree_mfk_verdigri_crackdown:0 "Verdigri Crackdown"
+ decree_mfk_verdigri_crackdown_desc:0 "Send federal marshals into a Slave State to stop the binding of free Verdigri. The planters will not forgive it."
+

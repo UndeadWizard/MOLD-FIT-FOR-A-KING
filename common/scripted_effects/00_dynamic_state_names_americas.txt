@@ -246,6 +246,7 @@ STATE_DISTRICT_OF_COLUMBIA_state_name_assign = {
             type = city
             name = HUB_NAME_STATE_DISTRICT_OF_COLUMBIA_city_victoria
         }
+        set_state_name = STATE_DISTRICT_OF_COLUMBIA_victoria
     }
     else_if = {
         limit = {

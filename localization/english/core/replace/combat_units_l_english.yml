@@ -25,7 +25,7 @@
   mfk_unit_war_hounds_bayou_desc: "Placeholder - Hound crossed with nutria or otter. Swimmers for water chases and smuggling runs."
 
   combat_unit_type_grafted: "Grafted"
-  combat_unit_type_grafted_desc: "PLACEHOLDER - Grafted infantry description."
+  combat_unit_type_grafted_desc: "Placeholder - Galvanic infantry. Soldiers with vat-grown limbs and organs grafted on, kept from rejection by a steady supply of plasm."
 
   combat_unit_type_regenerate: "Regenerates"
   combat_unit_type_regenerate_desc: "Placeholder - Galvanic infantry. Grafted soldiers whose wounds close mid-battle. Recover faster."

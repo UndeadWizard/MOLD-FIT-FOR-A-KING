@@ -1,0 +1,52 @@
+﻿je_mfk_vatmoss_bloom = {
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	group = je_group_internal_affairs
+
+	activation_description = {
+		always = yes
+	}
+
+	should_be_pinned_by_default = yes
+	weight = 1000
+
+	is_shown_when_inactive = {
+		any_scope_state = {
+			modifier:state_mfk_vatmoss_spores_add > 0
+		}
+	}
+
+	possible = {
+		NOT = { has_journal_entry = je_the_hungry_forties }
+		any_scope_state = {
+			state_region = {
+				has_harvest_condition = mfk_vatmoss_bloom
+			}
+		}
+		custom_tooltip = {
+			text = mfk_bloom_cooldown_tt
+			NOT = { has_variable = mfk_bloom_cooldown_var }
+		}
+	}
+
+	outcome = {
+		header = je_standard_completion_header
+		effect_header = je_standard_on_completion_header
+		color = "gold_positive"
+		conclusion_desc = je_standard_completion_conclusion_desc
+		trigger = {
+			NOT = {
+				any_scope_state = {
+					state_region = {
+						has_harvest_condition = mfk_vatmoss_bloom
+					}
+				}
+			}
+		}
+		effect = {
+			set_variable = {
+				name = mfk_bloom_cooldown_var
+				days = 365
+			}
+		}
+	}
+}
