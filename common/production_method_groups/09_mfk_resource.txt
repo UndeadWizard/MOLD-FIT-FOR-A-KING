@@ -64,33 +64,192 @@ pmg_base_building_silk_hatchery = {
 # Chimeric livestock. Optional groups on vanilla farms and plantations; the first method is "none".
 pmg_chimeric_herds_building_livestock_ranch = {
 	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
 	production_methods = {
 		pm_no_chimeric_herds
+		pm_moss_fed_herds
 		pm_wool_elk_herds
 		pm_marsh_boar_herds
 	}
 }
 
-pmg_delta_mules_building_rice_farm = {
-	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+pmg_saika_building_arms_industry = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	ai_selection = most_productive
 	production_methods = {
-		pm_no_delta_mules
+		pm_no_saika_arms
+		pm_saika_barrels
+	}
+}
+
+pmg_saika_building_artillery_foundry = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	ai_selection = most_productive
+	production_methods = {
+		pm_no_saika_artillery
+		pm_saika_cannon
+	}
+}
+
+pmg_saika_building_shipyard = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	ai_selection = most_productive
+	production_methods = {
+		pm_no_saika_shipbuilding
+		pm_saika_rigging
+		pm_saika_plating
+	}
+}
+
+pmg_saika_building_railway = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_refining.dds"
+	ai_selection = most_productive
+	production_methods = {
+		pm_no_saika_rails
+		pm_saika_rails
+	}
+}
+
+pmg_vatmoss_labour_building_coal_mine = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	production_methods = {
+		pm_no_vatmoss_labour
+		pm_moss_tonics_building_coal_mine
+		pm_grafted_labour_building_coal_mine
+		pm_regenerate_shifts_building_coal_mine
+		pm_tilsim_haulers_building_coal_mine
+	}
+}
+
+pmg_vatmoss_labour_building_iron_mine = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	production_methods = {
+		pm_no_vatmoss_labour
+		pm_moss_tonics_building_iron_mine
+		pm_grafted_labour_building_iron_mine
+		pm_regenerate_shifts_building_iron_mine
+		pm_tilsim_haulers_building_iron_mine
+	}
+}
+
+pmg_vatmoss_labour_building_lead_mine = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	production_methods = {
+		pm_no_vatmoss_labour
+		pm_moss_tonics_building_lead_mine
+		pm_grafted_labour_building_lead_mine
+		pm_regenerate_shifts_building_lead_mine
+		pm_tilsim_haulers_building_lead_mine
+	}
+}
+
+pmg_vatmoss_labour_building_sulfur_mine = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	production_methods = {
+		pm_no_vatmoss_labour
+		pm_moss_tonics_building_sulfur_mine
+		pm_grafted_labour_building_sulfur_mine
+		pm_regenerate_shifts_building_sulfur_mine
+		pm_tilsim_haulers_building_sulfur_mine
+	}
+}
+
+pmg_vatmoss_labour_building_gold_mine = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	production_methods = {
+		pm_no_vatmoss_labour
+		pm_moss_tonics_building_gold_mine
+		pm_grafted_labour_building_gold_mine
+		pm_regenerate_shifts_building_gold_mine
+		pm_tilsim_haulers_building_gold_mine
+	}
+}
+
+pmg_vatmoss_labour_building_copper_mine = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	production_methods = {
+		pm_no_vatmoss_labour
+		pm_moss_tonics_building_copper_mine
+		pm_grafted_labour_building_copper_mine
+		pm_regenerate_shifts_building_copper_mine
+		pm_tilsim_haulers_building_copper_mine
+	}
+}
+
+pmg_vatmoss_labour_building_logging_camp = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	production_methods = {
+		pm_no_vatmoss_labour
+		pm_moss_tonics_building_logging_camp
+		pm_grafted_labour_building_logging_camp
+		pm_regenerate_shifts_building_logging_camp
+		pm_tilsim_haulers_building_logging_camp
+	}
+}
+
+pmg_vatmoss_labour_building_steel_mill = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	production_methods = {
+		pm_no_vatmoss_labour
+		pm_moss_tonics_building_steel_mill
+		pm_grafted_labour_building_steel_mill
+		pm_regenerate_shifts_building_steel_mill
+		pm_tilsim_haulers_building_steel_mill
+	}
+}
+
+pmg_vatmoss_labour_building_tooling_workshop = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	production_methods = {
+		pm_no_vatmoss_labour
+		pm_moss_tonics_building_tooling_workshop
+		pm_grafted_labour_building_tooling_workshop
+		pm_regenerate_shifts_building_tooling_workshop
+		pm_tilsim_haulers_building_tooling_workshop
+	}
+}
+
+pmg_vatmoss_labour_building_rice_farm = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	production_methods = {
+		pm_no_vatmoss_labour
+		pm_moss_fed_stock_building_rice_farm
 		pm_delta_mules_building_rice_farm
+		pm_chimeric_draught_building_rice_farm
+		pm_tilsim_ploughs_building_rice_farm
 	}
 }
 
-pmg_delta_mules_building_sugar_plantation = {
+pmg_vatmoss_labour_building_sugar_plantation = {
 	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
 	production_methods = {
-		pm_no_delta_mules
+		pm_no_vatmoss_labour
+		pm_moss_fed_stock_building_sugar_plantation
 		pm_delta_mules_building_sugar_plantation
+		pm_chimeric_draught_building_sugar_plantation
+		pm_tilsim_ploughs_building_sugar_plantation
 	}
 }
 
-pmg_delta_mules_building_cotton_plantation = {
+pmg_vatmoss_labour_building_cotton_plantation = {
 	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
 	production_methods = {
-		pm_no_delta_mules
+		pm_no_vatmoss_labour
+		pm_moss_fed_stock_building_cotton_plantation
 		pm_delta_mules_building_cotton_plantation
+		pm_chimeric_draught_building_cotton_plantation
+		pm_tilsim_ploughs_building_cotton_plantation
 	}
 }
