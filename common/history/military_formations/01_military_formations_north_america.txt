@@ -3,7 +3,7 @@
 		create_military_formation = {
 			type = army
 			hq_region = sr:region_atlantic_coast
-			name = "United States Marine Corps" # TODO PRCAL-44441
+			name = Union_Marine_Corps
 
 			combat_unit = { # Roughly 1000 men
 				type = unit_type:combat_unit_type_mid_tier_marines
@@ -15,7 +15,7 @@
 		create_military_formation = {
 			type = army
 			hq_region = sr:region_atlantic_coast
-			name = Army_of_Observation
+			name = Army_of_the_Southwest
 
 			combat_unit = {
 				type = unit_type:combat_unit_type_skirmish_infantry
@@ -28,7 +28,7 @@
 		create_military_formation = {
 			type = army
 			hq_region = sr:region_atlantic_coast
-			name = Regular_Army
+			name = The_Royal_Americans
 
 			combat_unit = {
 				type = unit_type:combat_unit_type_skirmish_infantry

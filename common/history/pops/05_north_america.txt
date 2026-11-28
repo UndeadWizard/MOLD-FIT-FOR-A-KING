@@ -11,16 +11,15 @@
 			}
 			create_pop = {
 				culture = dixie
-				size = 86263
+				size = 101263
 			}
 			create_pop = {
 				culture = afro_american
 				size = 7818
 			}
 			create_pop = {
-				pop_type = slaves
 				culture = verdigri
-				size = 500
+				size = 1200
 			}
 		}
 	}
@@ -98,13 +97,12 @@
 				size = 16000
 			}
 			create_pop = {
-				pop_type = slaves
 				culture = verdigri
-				size = 2400
+				size = 6000
 			}
 			create_pop = {
 				culture = verdigri
-				size = 1600
+				size = 4000
 			}
 		}
 	}
@@ -112,7 +110,7 @@
 		region_state:USA = {
 			create_pop = {
 				culture = dixie
-				size = 423597
+				size = 408597
 			}
 			create_pop = {
 				culture = dixie
@@ -124,14 +122,17 @@
 				size = 35120
 			}
 			create_pop = {
-				pop_type = slaves
 				culture = afro_american
 				size = 312079
 			}
 			create_pop = {
 				pop_type = slaves
 				culture = verdigri
-				size = 14000
+				size = 40000
+			}
+			create_pop = {
+				culture = verdigri
+				size = 10000
 			}
 		}
 	}
@@ -732,13 +733,12 @@
 				size = 12144
 			}
 			create_pop = {
-				pop_type = slaves
 				culture = verdigri
-				size = 200
+				size = 500
 			}
 			create_pop = {
 				culture = verdigri
-				size = 400
+				size = 1000
 			}
 		}
 		region_state:IRO = {
@@ -789,7 +789,6 @@
 				size = 6117 # 4917 free in 1830, 7317 free in 1840
 			}
 			create_pop = {
-				pop_type = slaves
 				culture = afro_american
 				size = 81879
 			}
@@ -800,7 +799,11 @@
 			create_pop = {
 				pop_type = slaves
 				culture = verdigri
-				size = 3500
+				size = 10000
+			}
+			create_pop = {
+				culture = verdigri
+				size = 3000
 			}
 		}
 	}
@@ -823,7 +826,6 @@
 				size = 5040 # 4555 free in 1830, 5524 free in 1840
 			}
 			create_pop = {
-				pop_type = slaves
 				culture = afro_american
 				size = 92960
 			}
@@ -838,7 +840,11 @@
 			create_pop = {
 				pop_type = slaves
 				culture = verdigri
-				size = 4000
+				size = 12000
+			}
+			create_pop = {
+				culture = verdigri
+				size = 3000
 			}
 		}
 	}
@@ -982,7 +988,7 @@
 			create_pop = {
 				pop_type = slaves
 				culture = afro_american
-				size = 55183
+				size = 50133
 			}
 			create_pop = {
 				culture = muskogean
@@ -991,7 +997,11 @@
 			create_pop = {
 				pop_type = slaves
 				culture = verdigri
-				size = 2950
+				size = 8000
+			}
+			create_pop = {
+				culture = verdigri
+				size = 2000
 			}
 		}
 		region_state:SML = {
@@ -1024,12 +1034,16 @@
 			create_pop = {
 				pop_type = slaves
 				culture = afro_american
-				size = 256172
+				size = 232172
 			}
 			create_pop = {
 				pop_type = slaves
 				culture = verdigri
-				size = 16000
+				size = 40000
+			}
+			create_pop = {
+				culture = verdigri
+				size = 8000
 			}
 		}
 	}
@@ -1052,14 +1066,12 @@
 			# Maryland: 102994 in 1830, 89737 in 1840
 			# Delaware: 3292 in 1830, 2605 in 1840
 			create_pop = {
-				pop_type = slaves
 				culture = afro_american
 				size = 58467
 			}
 			create_pop = {
-				pop_type = slaves
 				culture = verdigri
-				size = 2500
+				size = 6200
 			}
 		}
 	}
@@ -1075,7 +1087,6 @@
 					size = 16919
 			}
 			create_pop = {
-					pop_type = slaves
 					culture = afro_american
 					size = 2605
 			}
@@ -1107,13 +1118,12 @@
 				size = 43996
 			}
 			create_pop = {
-				pop_type = slaves
 				culture = verdigri
-				size = 1500
+				size = 3800
 			}
 			create_pop = {
 				culture = verdigri
-				size = 1000
+				size = 2500
 			}
 		}
 	}
@@ -1133,13 +1143,12 @@
 				size = 15996
 			}
 			create_pop = {
-				pop_type = slaves
 				culture = verdigri
-				size = 300
+				size = 800
 			}
 			create_pop = {
 				culture = verdigri
-				size = 300
+				size = 800
 			}
 		}
 	}
@@ -1193,13 +1202,12 @@
 				size = 28400
 			}
 			create_pop = {
-				pop_type = slaves
 				culture = verdigri
-				size = 400
+				size = 1000
 			}
 			create_pop = {
 				culture = verdigri
-				size = 600
+				size = 1500
 			}
 		}
 	}
@@ -1324,7 +1332,7 @@
 			create_pop = {
 				pop_type = slaves
 				culture = afro_american
-				size = 222862
+				size = 202662
 			}
 			create_pop = {
 				culture = cherokee
@@ -1333,7 +1341,11 @@
 			create_pop = {
 				pop_type = slaves
 				culture = verdigri
-				size = 14800
+				size = 35000
+			}
+			create_pop = {
+				culture = verdigri
+				size = 6000
 			}
 		}
 	}
@@ -1427,12 +1439,16 @@
 			create_pop = {
 				pop_type = slaves
 				culture = afro_american
-				size = 318693
+				size = 295493
 			}
 			create_pop = {
 				pop_type = slaves
 				culture = verdigri
-				size = 11800
+				size = 35000
+			}
+			create_pop = {
+				culture = verdigri
+				size = 8000
 			}
 		}
 	}

@@ -102,7 +102,7 @@ building_rice_farm = {
 		pmg_base_building_rice_farm
 		pmg_secondary_building_rice_farm
 		pmg_harvesting_process_building_rice_farm
-		pmg_delta_mules_building_rice_farm
+		pmg_vatmoss_labour_building_rice_farm
 	}
 
 	required_construction = construction_cost_low

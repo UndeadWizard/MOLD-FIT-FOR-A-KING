@@ -815,6 +815,11 @@ STATE_KONYA = {
         building_logging_camp = 4
         building_fishing_wharf = 6
     }
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 4
+        discovered_amount = 6
+    }
     naval_exit_id = 3034
     min_cold_effect = 0.00
     max_cold_effect = 0.22
@@ -857,6 +862,11 @@ STATE_DIYARBAKIR = {
     capped_resources = {
         building_coal_mine = 32
         building_copper_mine = 6
+    }
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 4
+        discovered_amount = 4
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.22
@@ -922,6 +932,11 @@ STATE_ERZURUM = {
         building_lead_mine = 36
         building_logging_camp = 9
     }
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 6
+        discovered_amount = 4
+    }
     min_cold_effect = 0.00
     max_cold_effect = 0.26
 }
@@ -940,6 +955,11 @@ STATE_ANKARA = {
     capped_resources = {
         building_logging_camp = 9
         building_copper_mine = 6
+    }
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 4
+        discovered_amount = 4
     }
     min_cold_effect = 0.00
     max_cold_effect = 0.26
@@ -960,6 +980,11 @@ STATE_KARS = {
         building_copper_mine = 6
         building_logging_camp = 9
         building_fishing_wharf = 5
+    }
+    resource = {
+        type = "building_saika_mine"
+        undiscovered_amount = 4
+        discovered_amount = 2
     }
     naval_exit_id = 3094
     min_cold_effect = 0.00

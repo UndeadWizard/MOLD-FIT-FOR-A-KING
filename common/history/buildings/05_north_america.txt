@@ -160,6 +160,19 @@
 	s:STATE_NEW_YORK={
 		region_state:USA={
 			create_building={
+				building="building_vatmoss_hotbed"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:USA"
+						levels=2
+						region="STATE_NEW_YORK"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_vatmoss" }
+			}
+			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
@@ -358,6 +371,19 @@
 	}
 	s:STATE_VIRGINIA={
 		region_state:USA={
+			create_building={
+				building="building_plasm_industry"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:USA"
+						levels=1
+						region="STATE_VIRGINIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steam_plasm" }
+			}
 			create_building={
 				building="building_government_administration"
 				add_ownership={
@@ -719,6 +745,19 @@
 	}
 	s:STATE_OHIO={
 		region_state:USA={
+			create_building={
+				building="building_vatmoss_hotbed"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:USA"
+						levels=2
+						region="STATE_OHIO"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_vatmoss" }
+			}
 			create_building={
 				building="building_government_administration"
 				add_ownership={
@@ -1176,6 +1215,19 @@
 	}
 	s:STATE_GEORGIA={
 		region_state:GRG={
+			create_building={
+				building="building_plasm_industry"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:GRG"
+						levels=1
+						region="STATE_GEORGIA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steam_plasm" }
+			}
 			create_building={
 				building="building_government_administration"
 				add_ownership={
@@ -1847,6 +1899,19 @@
 	s:STATE_MASSACHUSETTS={
 		region_state:USA={
 			create_building={
+				building="building_vatmoss_hotbed"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:USA"
+						levels=1
+						region="STATE_MASSACHUSETTS"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_simple_vatmoss" }
+			}
+			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
@@ -2350,6 +2415,19 @@
 	}
 	s:STATE_SOUTH_CAROLINA={
 		region_state:SCR={
+			create_building={
+				building="building_plasm_industry"
+				add_ownership={
+					building={
+						type="building_manor_house"
+						country="c:SCR"
+						levels=2
+						region="STATE_SOUTH_CAROLINA"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_steam_plasm" }
+			}
 			create_building={
 				building="building_government_administration"
 				add_ownership={

@@ -14,3 +14,7 @@
  ig_royaneh_desc: "The hereditary chiefs of the League, raised up by the Clan Mothers to speak for their clans in council."
  ig_longhouse_families: "Longhouse Families"
  ig_longhouse_families_desc: "The farming households of the Haudenosaunee, who still plant the Three Sisters in the old way."
+
+  # American IGs
+ ig_southern_planters_desc:0 "Placeholder - The men who drew up the Compact of Union wanted a Union of Freeholders, but they could not do without the planters of the South, and the planters have never let them forget it. Their tobacco and cotton pay for much of the Union. Since abolition took their slaves, they have turned to the vats to keep the plantations working."
+ ig_yeoman_farmers_desc:0 "Placeholder - The smallholding farmers of the Union, whom the framers of the Compact called the bedrock of the dominion. Jealous of their land and their liberty, the yeomen are the heart of rural populism and the vanguard of the push west, whatever lines London has drawn on the map."

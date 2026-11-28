@@ -42,6 +42,10 @@ STATE_GUATEMALA = {
         type = "building_rubber_plantation"
         undiscovered_amount = 20
     }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 3
+    }
     naval_exit_id = 3026
 }
 
@@ -111,6 +115,10 @@ STATE_COSTA_RICA = {
     resource = {
         type = "building_rubber_plantation"
         undiscovered_amount = 12
+    }
+    resource = {
+        type = "building_vatmoss_hotbed"
+        undiscovered_amount = 2
     }
     naval_exit_id = 3026
 }

@@ -247,6 +247,7 @@
 		OR = {
 			is_pop_type = capitalists
 			is_pop_type = engineers
+			is_pop_type = vatwrights
 			is_pop_type = shopkeepers
 			AND = {
 				exists = c:BIC
@@ -273,6 +274,20 @@
 				}
 				value = 250
 				add = this.standard_of_living
+			}
+		}
+
+		add = {
+			desc = "POP_VATWRIGHTS"
+			if = {
+				limit = {
+					is_pop_type = vatwrights
+				}
+				value = 40
+				add = {
+					value = this.standard_of_living
+					multiply = 2
+				}
 			}
 		}
 

@@ -921,3 +921,14 @@ MYS = {
 	capital = STATE_MYSORE
 	is_named_from_capital = yes
 }
+
+CAV = { # The Cavalier governorships in revolt against the Union, formed from South Carolina
+	color = { 150 60 50 }
+
+	country_type = recognized
+
+	tier = kingdom
+
+	cultures = { dixie }
+	capital = STATE_SOUTH_CAROLINA
+}

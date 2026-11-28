@@ -39,7 +39,7 @@ building_cotton_plantation = {
 		pmg_base_building_cotton_plantation
 		pmg_cotton_exploitation
 		pmg_train_automation_building_cotton_plantation
-		pmg_delta_mules_building_cotton_plantation
+		pmg_vatmoss_labour_building_cotton_plantation
 	}
 	ownership_type = self
 
@@ -272,7 +272,7 @@ building_sugar_plantation = {
 		pmg_refinement_building_sugar_plantation
 		pmg_exploitation_sugar
 		pmg_train_automation_building_sugar_plantation
-		pmg_delta_mules_building_sugar_plantation
+		pmg_vatmoss_labour_building_sugar_plantation
 	}
 	ownership_type = self
 

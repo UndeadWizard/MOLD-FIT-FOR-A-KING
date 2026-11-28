@@ -186,6 +186,7 @@ building_tooling_workshop = {
 	production_method_groups = {
 		pmg_base_building_tooling_workshop
 		pmg_automation_building_tooling_workshop
+		pmg_vatmoss_labour_building_tooling_workshop
 	}
 
 	required_construction = construction_cost_high
@@ -434,6 +435,7 @@ building_steel_mill = {
 		pmg_steelmaking_process
 		pmg_automation_building_steel_mill
 		pmg_saika_steel_building_steel_mill
+		pmg_vatmoss_labour_building_steel_mill
 	}
 
 	required_construction = construction_cost_very_high
@@ -534,6 +536,7 @@ building_shipyard = {
 
 	production_method_groups = {
 		pmg_base_building_shipyard
+		pmg_saika_building_shipyard
 	}
 
 	required_construction = construction_cost_high
@@ -679,6 +682,7 @@ building_arms_industry = {
 	production_method_groups = {
 		pmg_firearms_manufacturing
 		pmg_automation_building_arms_industry
+		pmg_saika_building_arms_industry
 	}
 
 	required_construction = construction_cost_high
@@ -702,6 +706,7 @@ building_artillery_foundry = {
 	production_method_groups = {
 		pmg_foundries
 		pmg_automation_building_arms_industry
+		pmg_saika_building_artillery_foundry
 	}
 
 	required_construction = construction_cost_high

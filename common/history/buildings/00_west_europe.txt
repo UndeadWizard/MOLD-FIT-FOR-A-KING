@@ -2236,6 +2236,19 @@
 	s:STATE_WEST_COUNTRY={
 		region_state:GBR={
 			create_building={
+				building="building_copper_mine"
+				add_ownership={
+					building={
+						type="building_financial_district"
+						country="c:GBR"
+						levels=6
+						region="STATE_WEST_COUNTRY"
+					}
+				}
+				reserves=1
+				activate_production_methods={ "pm_picks_and_shovels_building_copper_mine" }
+			}
+			create_building={
 				building="building_government_administration"
 				add_ownership={
 					country={
